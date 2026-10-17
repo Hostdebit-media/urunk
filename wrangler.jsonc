@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "urunk",
+  "name": "urunk-website",
   "main": "./worker.ts",
   "compatibility_date": "2026-08-12",
   "workers_dev": false,
