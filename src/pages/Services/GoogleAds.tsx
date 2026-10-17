@@ -1,0 +1,204 @@
+import React from 'react';
+import Callout from '../../components/Callout';
+import SEO from '../../components/SEO';
+import { Check, ArrowRight, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Google Ads for Hotels",
+    "description": "Data-driven Google Ads management to capture high-intent travelers searching for accommodation in your area.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Urunk"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Morocco"
+      },
+      {
+        "@type": "Country",
+        "name": "Worldwide"
+      }
+    ],
+    "url": "https://urunk.com/services/google-ads"
+  };
+
+export default function GoogleAds() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Google Ads Management",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urunk"
+    },
+    "description": "Professional Google Ads management for hotels, riads, and tour operators to drive direct bookings."
+  };
+
+  const faqs = [
+    { q: "What is a good budget for Google Ads?", a: "For a single riad or small hotel in Morocco, we recommend starting with a minimum ad spend of 3,000 - 5,000 MAD per month. This provides enough data to optimize campaigns effectively." },
+    { q: "How do you track success?", a: "We implement rigorous conversion tracking. We don't just report on 'clicks' or 'impressions'. We track actual booking engine transactions, form submissions, and direct WhatsApp clicks so you know exactly what your cost-per-acquisition is." },
+    { q: "Am I locked into a long contract?", a: "No. Our ad management operates on a month-to-month basis. We believe in earning your business through performance. You can cancel anytime with 15 days' notice." }
+  ];
+
+  return (
+    <div className="w-full">
+      <SEO 
+        title="Google Ads Management for Hotels & Riads | Urunk" 
+        description="Capture high-intent searches with professional Google Ads management for hotels, riads, and tour operators. Lower your cost-per-booking today." 
+        schema={[schema, serviceSchema]}
+      />
+      
+      {/* Hero & AI Answer Block */}
+      <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+            Search Engine Marketing
+          </span>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Google Ads Management</h1>
+          <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
+            Stop burning money on bad clicks. Capture guests right when they are searching for a place to stay.
+          </p>
+          <div className="max-w-3xl mx-auto mb-10 text-left">
+            <Callout variant="dark">
+              <strong>What we do:</strong> Urunk provides specialized Google Ads management for hospitality businesses. We target high-intent search queries (e.g., "riad with pool Marrakech") to intercept travelers before they go to OTAs, actively lowering your cost-per-booking and maximizing ROI.
+            </Callout>
+          </div>
+          <Link to="/en/contact" className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">
+            Request an Ads Audit <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-20 px-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Are you buying clicks, or bookings?</h2>
+            <p className="text-primary/80 mb-6 leading-relaxed">
+              Many hotels run Google Ads but fail to track conversions properly. They bid on broad terms like "Morocco vacation" and wonder why their budget vanishes with zero direct bookings to show for it.
+            </p>
+            <p className="text-primary/80 leading-relaxed">
+              Without proper keyword negative lists, precise match types, and tight conversion tracking, Google Ads is a fast way to lose money. We flip the script by focusing only on search intent that signals readiness to book.
+            </p>
+          </div>
+          <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10">
+             <h3 className="text-xl font-bold mb-4">Common Google Ads Mistakes:</h3>
+             <ul className="space-y-4">
+                <li className="flex gap-3 text-primary/80"><Check size={20} className="text-accent shrink-0" /> Bidding on competitor names unnecessarily</li>
+                <li className="flex gap-3 text-primary/80"><Check size={20} className="text-accent shrink-0" /> No conversion tracking installed</li>
+                <li className="flex gap-3 text-primary/80"><Check size={20} className="text-accent shrink-0" /> Sending all traffic to the homepage instead of specific offers</li>
+                <li className="flex gap-3 text-primary/80"><Check size={20} className="text-accent shrink-0" /> Letting Google "auto-apply" broad match recommendations</li>
+             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="bg-primary text-white py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Data-driven ad management.</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400">Keyword Strategy</h3>
+              <p className="text-white/80 text-sm leading-relaxed">We identify the exact phrases your ideal guests are searching for, separating high-intent bookers from casual browsers.</p>
+            </div>
+            <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400">Compelling Ad Copy</h3>
+              <p className="text-white/80 text-sm leading-relaxed">We write engaging search ads that highlight your unique amenities, current promotions, and direct-booking perks to maximize click-through rates.</p>
+            </div>
+            <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400">Continuous Optimization</h3>
+              <p className="text-white/80 text-sm leading-relaxed">We monitor search terms daily, adding negative keywords and adjusting bids to ensure your cost-per-acquisition keeps dropping.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process & Pricing */}
+      <section className="py-20 px-6 bg-bg-alt">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+          <div>
+            <h2 className="text-3xl font-bold mb-8">How it works</h2>
+            <div className="space-y-8">
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">1</div>
+                <div>
+                  <h3 className="font-bold mb-1">Audit & Tracking Setup</h3>
+                  <p className="text-sm text-primary/80">We review past data and ensure strict conversion tracking is correctly firing on your site.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">2</div>
+                <div>
+                  <h3 className="font-bold mb-1">Campaign Build</h3>
+                  <p className="text-sm text-primary/80">We structure campaigns, ad groups, and keywords tailored to your specific property and goals.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">3</div>
+                <div>
+                  <h3 className="font-bold mb-1">Monthly Reporting</h3>
+                  <p className="text-sm text-primary/80">You receive a plain-English report every month showing exactly how much you spent and how many bookings resulted.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white p-10 rounded-2xl shadow-sm border border-primary/10 flex flex-col justify-center items-center text-center">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">Management Fee</span>
+            <h3 className="text-4xl font-bold mb-2">From 4,000 MAD<span className="text-xl font-normal text-primary/70">/mo</span></h3>
+            <p className="text-primary/70 text-sm mb-8">Plus your chosen Google Ad spend. No long-term contracts.</p>
+            <Link to="/en/contact" className="w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors">Start Growing Today</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study Proof */}
+      <section className="py-20 px-6 max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-6">Strategic Campaign Design</h2>
+        <p className="text-primary/80 mb-8 max-w-2xl mx-auto">
+          Explore our strategic framework illustrating how to structure search campaigns for maximum visibility while targeting high-ticket corporate inquiries.
+        </p>
+        <Link to="/en/work/nomad-eats-catering" className="text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors">
+          Explore Strategy Example <ArrowRight size={18} />
+        </Link>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+          <div className="flex flex-col border-t border-primary/20">
+            {faqs.map((faq, i) => (
+              <details key={i} className="group border-b border-primary/20">
+                <summary className="flex justify-between items-center font-medium cursor-pointer list-none py-6 pr-4 text-lg">
+                  <span>{faq.q}</span>
+                  <span className="transition group-open:rotate-180 text-accent">
+                    <ChevronDown size={24} />
+                  </span>
+                </summary>
+                <div className="text-primary/70 pb-6 pr-4 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6">Ready for measurable growth?</h2>
+        <p className="text-xl text-primary/80 mb-8">Let's turn search traffic into direct revenue.</p>
+        <Link to="/en/contact" className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors">
+          Get a Free Campaign Proposal <ArrowRight size={18} />
+        </Link>
+      </section>
+    </div>
+  );
+}

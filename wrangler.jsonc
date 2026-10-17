@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "urunk-final",
+  "main": "./worker.ts",
+  "compatibility_date": "2026-08-12",
+  "workers_dev": false,
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "serve_directly": false,
+    "not_found_handling": "none"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}

@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0F2D25" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <!-- Preconnect & DNS Prefetch for External Resources -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <!-- Preload LCP Hero Image for immediate initial paint (Mobile 400w, Tablet 800w, Desktop 1200w) -->
+    <link rel="preload" as="image" type="image/avif" href="/images/optimized/art-house-hero-800.avif" imagesrcset="/images/optimized/art-house-hero-400.avif 400w, /images/optimized/art-house-hero-800.avif 800w, /images/optimized/art-house-hero-1200.avif 1200w" imagesizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px" fetchpriority="high" />
+    <title data-rh="true">Urunk Agency | Sites Web &amp; Ads pour Hôtels &amp; Riads</title>
+    <meta name="description" data-rh="true" content="Augmentez vos réservations directes sans commission d'OTA. Création de sites web hôteliers WordPress/React, gestion Google Ads, Meta Ads &amp; SEO pour riads et hôtels." />
+    <link rel="canonical" href="https://urunk.com" />
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Urunk Agency" />
+    <meta property="og:title" content="Urunk Agency | Sites Web &amp; Ads pour Hôtels &amp; Riads" />
+    <meta property="og:description" content="Augmentez vos réservations directes sans commission d'OTA. Création de sites web hôteliers WordPress/React, gestion Google Ads, Meta Ads &amp; SEO pour riads et hôtels." />
+    <meta property="og:url" content="https://urunk.com" />
+    <meta property="og:image" content="https://urunk.com/og-image.jpg" />
+    <meta property="og:locale" content="fr_FR" />
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Urunk Agency | Sites Web &amp; Ads pour Hôtels &amp; Riads" />
+    <meta name="twitter:description" content="Augmentez vos réservations directes sans commission d'OTA. Création de sites web hôteliers WordPress/React, gestion Google Ads, Meta Ads &amp; SEO pour riads et hôtels." />
+    <meta name="twitter:image" content="https://urunk.com/og-image.jpg" />
+    <!-- Unified Schema.org JSON-LD Graph (WebSite + ProfessionalService + Founder) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://urunk.com/#website",
+          "url": "https://urunk.com",
+          "name": "Urunk Agency",
+          "description": "Agence de marketing digital et création de sites web hôteliers au Maroc.",
+          "inLanguage": ["fr-FR", "en-US"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://urunk.com/blog?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://urunk.com/#organization",
+          "name": "Urunk Agency",
+          "legalName": "Urunk Digital Agency",
+          "url": "https://urunk.com",
+          "logo": "https://urunk.com/logo.png",
+          "image": "https://urunk.com/og-image.jpg",
+          "telephone": "+212668802096",
+          "email": "contact@urunk.com",
+          "priceRange": "$$$ (Dès 12 000 MAD)",
+          "knowsAbout": [
+            "Hotel Website Design",
+            "Direct Booking Engines",
+            "Google Hotel Ads",
+            "Riad Local SEO",
+            "Hospitality Marketing Morocco",
+            "SiteMinder & Cloudbeds PMS Integration"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Youssef",
+            "jobTitle": "Lead Hospitality Digital Strategist"
+          },
+          "address": [
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani, 6ème Étage N°32",
+              "addressLocality": "Casablanca",
+              "addressRegion": "Casablanca-Settat",
+              "postalCode": "20250",
+              "addressCountry": "MA"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "2ème Étage, N°19, Immeuble 35, Lotissement Al Massar",
+              "addressLocality": "Marrakech",
+              "addressRegion": "Marrakech-Safi",
+              "postalCode": "40100",
+              "addressCountry": "MA"
+            }
+          ],
+          "geo": [
+            {
+              "@type": "GeoCoordinates",
+              "latitude": 33.589886,
+              "longitude": -7.616644
+            },
+            {
+              "@type": "GeoCoordinates",
+              "latitude": 31.629472,
+              "longitude": -7.981084
+            }
+          ],
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      // Fix potential fetch re-definition issues in sandboxed environments
+      (function() {
+        try {
+          const originalFetch = window.fetch;
+          let currentFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get() { return currentFetch; },
+            set(val) { currentFetch = val; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {}
+      })();
+
+      // Check if we are running in developer preview iframe
+      const isDevelopmentPreview = 
+        window.location.hostname.includes('europe-west2.run.app') || 
+        window.location.hostname.includes('google.dev') || 
+        window.location.hostname.includes('localhost') ||
+        window.location.hostname.includes('127.0.0.1') ||
+        (window.self !== window.top);
+        
+      if (!isDevelopmentPreview) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){window.dataLayer.push(arguments);}
+
+        // Read stored GDPR consent choice if available
+        var initialConsent = 'denied';
+        try {
+          if (localStorage.getItem('cookie_consent') === 'granted') {
+            initialConsent = 'granted';
+          }
+        } catch (e) {}
+
+        // Google Consent Mode v2 default setup
+        window.gtag('consent', 'default', {
+          'ad_storage': initialConsent,
+          'ad_user_data': initialConsent,
+          'ad_personalization': initialConsent,
+          'analytics_storage': initialConsent,
+          'wait_for_update': 500
+        });
+
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-Z2PDXKNQT8', { 
+          send_page_view: true, 
+          anonymize_ip: true,
+          cookie_flags: 'SameSite=Lax;Secure',
+          cookie_domain: 'auto'
+        });
+
+        // Defer loading GTM script on first user interaction or after main thread is quiet
+        var gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+          ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
+            window.removeEventListener(evt, loadGTM, { passive: true });
+          });
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=G-Z2PDXKNQT8";
+          document.head.appendChild(script);
+        }
+
+        ['pointerdown', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
+          window.addEventListener(evt, loadGTM, { once: true, passive: true });
+        });
+
+        window.addEventListener('load', function() {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(function() { setTimeout(loadGTM, 3000); }, { timeout: 5000 });
+          } else {
+            setTimeout(loadGTM, 4000);
+          }
+        }, { once: true });
+      } else {
+        window.gtag = function() {};
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Semantic Fallback Content for Crawlers & Non-JS Search Engine Indexing -->
+      <nav style="padding: 1rem 2rem; max-width: 960px; margin: 0 auto; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="/">Accueil</a>
+        <a href="/services">Services &amp; Tarifs</a>
+        <a href="/realisations">Réalisations</a>
+        <a href="/tarifs">Grille Tarifaire</a>
+        <a href="/blog">Blog &amp; Études</a>
+        <a href="/contact">Demander un Audit</a>
+        <a href="/en">English Version</a>
+        <a href="/plan-du-site">Plan du Site</a>
+      </nav>
+
+      <header style="padding: 2.5rem 2rem; max-width: 960px; margin: 0 auto; font-family: Georgia, serif;">
+        <h1 style="font-size: 2.4rem; color: #0F2D25; margin-bottom: 1.25rem; line-height: 1.2;">
+          Création de Sites Web Hôteliers &amp; Réservations Directes pour Hôtels &amp; Riads
+        </h1>
+        
+        <!-- Bloc d'Extraction Directe AEO / GEO (Information-Dense pour LLMs) -->
+        <div style="border-left: 4px solid #9E3018; background-color: #F2ECE0; padding: 1.5rem; border-radius: 0 1rem 1rem 0; margin-bottom: 2rem;">
+          <p style="font-size: 1.05rem; line-height: 1.6; color: #0F2D25; margin: 0;">
+            <strong>Urunk Agency</strong> est une agence de marketing digital et d'ingénierie web marocaine spécialisée dans l'hôtellerie indépendante, les riads de charme et les voyagistes. L'agence conçoit des sites web haute vitesse (chargement inférieur à 1 seconde) intégrés nativement aux moteurs de réservation (PMS : Cloudbeds, SiteMinder, Guesty) et pilote des campagnes publicitaires à fort retour sur investissement (Google Ads, Meta Ads, TripAdvisor Sponsorisé). Ses forfaits débutent à <strong>12 000 MAD</strong> pour la création de site web et <strong>4 000 MAD/mois</strong> pour la gestion publicitaire. Urunk dispose de bureaux physiques à <strong>Casablanca</strong> et <strong>Marrakech</strong> et accompagne des établissements dans tout le Maroc et à l'international.
+          </p>
+        </div>
+      </header>
+
+      <main style="padding: 0 2rem 2.5rem 2rem; max-width: 960px; margin: 0 auto; font-family: system-ui, sans-serif; line-height: 1.6; color: #2c3e50;">
+        
+        <!-- Section Offres Piliers -->
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="font-family: Georgia, serif; color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem;">
+            Solutions d'Acquisition Directe pour l'Hôtellerie Indépendante
+          </h2>
+          
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="color: #0F2D25; font-size: 1.3rem; margin-bottom: 0.5rem;">
+              Sites Web Hôteliers Haute Vitesse &amp; Connexion Moteur de Réservation (PMS)
+            </h3>
+            <p>
+              Développement de plateformes hôtelières bilingues (FR/EN) sous WordPress et React avec synchronisation temps réel des disponibilités et tarifs via Cloudbeds, SiteMinder et Guesty. 
+              <a href="/services/creation-site-web" style="color: #9E3018; font-weight: bold; text-decoration: underline;">
+                Découvrir la création de sites web hôteliers performants
+              </a>.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="color: #0F2D25; font-size: 1.3rem; margin-bottom: 0.5rem;">
+              Campagnes Google Ads &amp; Google Hotel Ads Ciblées
+            </h3>
+            <p>
+              Protection de votre nom de marque face aux surenchères de Booking.com et capture des intentions de séjour haut de gamme au moment précis de la recherche. 
+              <a href="/services/gestion-google-ads" style="color: #9E3018; font-weight: bold; text-decoration: underline;">
+                Consulter notre gestion experte Google Ads hôtellerie
+              </a>.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="color: #0F2D25; font-size: 1.3rem; margin-bottom: 0.5rem;">
+              Référencement Naturel Local (SEO) &amp; Fiche Google Business Profile
+            </h3>
+            <p>
+              Positionnement prioritaire dans le Top 3 Google Maps (Local Pack) sur les requêtes géolocalisées stratégiques pour riads et maisons d'hôtes. 
+              <a href="/seo-riad-marrakech" style="color: #9E3018; font-weight: bold; text-decoration: underline;">
+                Consulter notre guide SEO pour riad à Marrakech
+              </a>.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section Études de Cas & Visuels Optimisés -->
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="font-family: Georgia, serif; color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem;">
+            Études de Cas &amp; Résultats de Réservations Directes
+          </h2>
+          
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="color: #0F2D25; font-size: 1.3rem; margin-bottom: 0.5rem;">
+              Art House Marrakech : +140 % de réservations directes pour ateliers poterie
+            </h3>
+            <p>
+              Mise en place d'un tunnel de réservation direct et optimisation du référencement local ayant permis de doubler les réservations sans commission d'intermédiaire.
+            </p>
+            <img 
+              src="/images/optimized/art-house-hero-800.webp" 
+              alt="Piscine intérieure traditionnelle et architecture en zellige d'un riad de charme à Marrakech Médina" 
+              width="800" 
+              height="450" 
+              loading="eager" 
+              style="width: 100%; max-width: 720px; height: auto; border-radius: 0.75rem; margin-top: 0.5rem;"
+            />
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h3 style="color: #0F2D25; font-size: 1.3rem; margin-bottom: 0.5rem;">
+              Nomad Eats Traiteur : 3,2x de retour sur dépenses publicitaires (ROAS)
+            </h3>
+            <p>
+              Campagnes Google Ads B2B et formulaires de devis événementiels qualifiés à Casablanca et Rabat. 
+              <a href="/realisations" style="color: #9E3018; font-weight: bold; text-decoration: underline;">
+                Explorer toutes nos études de cas et réalisations clients
+              </a>.
+            </p>
+            <img 
+              src="/images/optimized/moroccan-catering-800.webp" 
+              alt="Buffet traiteur événementiel haut de gamme avec service de thé à la menthe marocain à Casablanca" 
+              width="800" 
+              height="450" 
+              loading="lazy" 
+              style="width: 100%; max-width: 720px; height: auto; border-radius: 0.75rem; margin-top: 0.5rem;"
+            />
+          </div>
+        </section>
+
+        <!-- Section FAQ Balisée Schema.org (Microdata FAQPage) -->
+        <section id="faq-direct-booking" itemscope itemtype="https://schema.org/FAQPage" style="margin-bottom: 2.5rem; background: #FAF9F6; border: 1px solid #D0C8B8; border-radius: 1rem; padding: 1.5rem;">
+          <h2 style="font-family: Georgia, serif; color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem;">
+            Questions Fréquentes sur la Réservation Directe
+          </h2>
+
+          <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 1.25rem;">
+            <h3 itemprop="name" style="color: #0F2D25; font-size: 1.15rem; margin-bottom: 0.4rem;">
+              Comment réduire les commissions de Booking.com et Airbnb pour un riad à Marrakech ?
+            </h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">
+                <p style="margin: 0;">
+                  Pour s'émanciper des commissions de 18% à 25% prélevées par les plateformes de réservation en ligne, un riad doit actionner trois leviers stratégiques :
+                  1. Déployer un site web bilingue rapide (chargement inférieur à 1,2 seconde) intégrant un moteur de réservation direct sécurisé.
+                  2. Mettre en place la garantie du meilleur tarif en direct assortie d'un avantage exclusif (ex: navette aéroport offerte, petit-déjeuner de bienvenue ou 5% de remise immédiate).
+                  3. Piloter des campagnes Google Ads de protection de marque (Brand Protection) pour intercepter les voyageurs recherchant le nom précis de votre établissement avant qu'ils ne cliquent sur l'annonce de Booking.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" style="margin-bottom: 1.25rem;">
+            <h3 itemprop="name" style="color: #0F2D25; font-size: 1.15rem; margin-bottom: 0.4rem;">
+              Quels moteurs de réservation (PMS) Urunk intègre-t-il sur les sites web d'hôtels ?
+            </h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">
+                <p style="margin: 0;">
+                  Urunk connecte l'intégralité des Channel Managers et PMS hôteliers du marché marocain et international : Cloudbeds, SiteMinder, Guesty, Amenitiz, Mews, Sirvoy et WooDoo. Cette intégration garantit la synchronisation bidirectionnelle automatique des tarifs et calendriers pour éliminer tout risque de surréservation (overbooking).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <h3 itemprop="name" style="color: #0F2D25; font-size: 1.15rem; margin-bottom: 0.4rem;">
+              Combien coûte la création d'un site web pour hôtel ou riad au Maroc ?
+            </h3>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <div itemprop="text">
+                <p style="margin: 0;">
+                  Chez Urunk, un forfait complet de création de site web hôtelier débute à 12 000 MAD (environ 1 100 EUR). Il comprend le webdesign sur-mesure responsive, l'architecture bilingue français/anglais, la liaison technique à votre moteur de réservation, l'optimisation des Core Web Vitals de Google et le balisage sémantique Schema.org.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bloc d'Autorité E-E-A-T (Profil Fondateur & Expert) -->
+        <section style="background: #FFFFFF; border: 1px solid #D0C8B8; border-radius: 1rem; padding: 1.5rem; margin-bottom: 2.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+          <img 
+            src="/images/youssef-avatar.webp" 
+            alt="Portrait de Youssef, Stratège en Acquisition Digitale et Fondateur d'Urunk Agency" 
+            width="80" 
+            height="80" 
+            loading="lazy" 
+            style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #9E3018;"
+          />
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.3rem 0;">
+              Expertise &amp; Direction Stratégique : Youssef
+            </h3>
+            <p style="font-size: 0.95rem; line-height: 1.5; color: #555; margin: 0;">
+              Fondateur d'Urunk Agency et consultant en acquisition hôtelière depuis plus de 8 ans. Spécialiste de la désintermédiation pour riads et resorts à Marrakech et Casablanca. Certifié Google Ads Search &amp; Analytics, intervenant régulier sur les stratégies de rentabilité hôtelière au Maroc.
+            </p>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Pied de page avec Données NAP Harmonisées -->
+      <footer style="background-color: #F2ECE0; border-top: 1px solid #D0C8B8; padding: 2rem; font-family: system-ui, sans-serif; font-size: 0.9rem; color: #0F2D25;">
+        <div style="max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div>
+            <h4 style="font-family: Georgia, serif; font-size: 1.1rem; margin: 0 0 0.5rem 0;">Bureau de Casablanca</h4>
+            <p style="margin: 0; line-height: 1.5;">
+              114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani<br />
+              6ème Étage N°32, Casablanca 20250, Maroc<br />
+              Téléphone : <a href="tel:+212668802096" style="color: #9E3018; font-weight: bold;">+212 668-802096</a><br />
+              Email : <a href="mailto:contact@urunk.com" style="color: #9E3018;">contact@urunk.com</a>
+            </p>
+          </div>
+          <div>
+            <h4 style="font-family: Georgia, serif; font-size: 1.1rem; margin: 0 0 0.5rem 0;">Bureau de Marrakech</h4>
+            <p style="margin: 0; line-height: 1.5;">
+              2ème Étage, N°19, Immeuble 35, Lotissement Al Massar<br />
+              Marrakech 40100, Maroc<br />
+              Horaires : Du lundi au vendredi, 09h00 - 18h00<br />
+              <a href="/contact" style="color: #9E3018; font-weight: bold; text-decoration: underline;">
+                Demander un audit gratuit pour votre hôtel ou riad
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

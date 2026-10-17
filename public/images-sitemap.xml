@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://urunk.com/</loc>
+    <image:image>
+      <image:loc>https://urunk.com/logo.png</image:loc>
+      <image:title>Logo Urunk</image:title>
+      <image:caption>Logo Agence Digitale Hôtellerie Urunk</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en</loc>
+    <image:image>
+      <image:loc>https://urunk.com/logo.png</image:loc>
+      <image:title>Urunk Logo</image:title>
+      <image:caption>Urunk Hospitality Digital Agency Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/realisations/services-voyage-maroc</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/travel-morocco-hero.webp</image:loc>
+      <image:title>Stratégie de Réservation Directe pour Tour-Opérateurs au Maroc Exemple de Stratégie</image:title>
+      <image:caption>Exemple de Stratégie : Croissance des Réservations Directes pour Tour-Opérateurs au Maroc</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/work/travel-morocco-services</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/travel-morocco-hero.webp</image:loc>
+      <image:title>Direct Booking Strategy for Moroccan Tour Operators Strategy Example</image:title>
+      <image:caption>Example Strategy: Direct Booking Growth for a Moroccan Tour Operator</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/realisations/nomad-eats-traiteur</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/nomad-eats-hero.webp</image:loc>
+      <image:title>Stratégie Marketing Digital B2B pour Traiteurs au Maroc Exemple de Stratégie</image:title>
+      <image:caption>Exemple de Stratégie : Acquisition de Prospects B2B pour Traiteurs &amp; Événements au Maroc</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/work/nomad-eats-catering</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/nomad-eats-hero.webp</image:loc>
+      <image:title>B2B Digital Marketing Strategy for Catering Services Strategy Example</image:title>
+      <image:caption>Example Strategy: B2B Lead Generation for Catering &amp; Event Services in Morocco</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/realisations/art-house-marrakech</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/art-house-hero.webp</image:loc>
+      <image:title>SEO Local &amp; Social Ads pour Ateliers &amp; Expériences Exemple de Stratégie</image:title>
+      <image:caption>Exemple de Stratégie : SEO Local &amp; Social Ads pour Ateliers &amp; Expériences à Marrakech</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/work/art-house-marrakech</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/art-house-hero.webp</image:loc>
+      <image:title>Local SEO &amp; Paid Social Strategy for Tourism Experiences Strategy Example</image:title>
+      <image:caption>Example Strategy: Local SEO &amp; Social Ads for Workshops &amp; Experiences in Marrakech</image:caption>
+    </image:image>
+  </url>
+</urlset>

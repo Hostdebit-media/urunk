@@ -1,0 +1,1896 @@
+{
+  "links": [
+    {
+      "file": "src/components/Breadcrumbs.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? '/' : '/en'} className=\"inline-flex items-center py-1 hover:text-accent transition-colors\">"
+    },
+    {
+      "file": "src/components/Breadcrumbs.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={routePath} className=\"hover:text-accent transition-colors truncate max-w-[150px] md:max-w-none py-1\">"
+    },
+    {
+      "file": "src/components/CookieConsent.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n              to={isFrench ? \"/politique-de-confidentialite\" : \"/en/privacy-policy\"}\n              className=\"text-[11px] text-white/70 hover:text-yellow-400 underline transition-colors ml-auto py-1\"\n            >"
+    },
+    {
+      "file": "src/components/Header.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n          to={isFrench ? \"/\" : \"/en\"} \n          aria-label=\"Urunk Homepage\" \n          className=\"text-2xl font-serif font-bold text-primary tracking-tight hover:text-accent transition-colors shrink-0\"\n        >"
+    },
+    {
+      "file": "src/components/Header.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n            to={contactLink} \n            className=\"bg-accent hover:bg-accent-hover text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-xs flex items-center gap-1.5 hover:scale-[1.02] active:scale-[0.98]\"\n          >"
+    },
+    {
+      "file": "src/components/Header.tsx",
+      "target": "https://wa.me/212668802096",
+      "type": "a",
+      "raw": "<a\n            href=\"https://wa.me/212668802096\"\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n            aria-label={isFrench ? \"Discuter sur WhatsApp\" : \"Chat on WhatsApp\"}\n            className=\"bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-full flex items-center justify-center transition-all shadow-xs shrink-0 hover:scale-[1.05] active:scale-[0.95]\"\n          >"
+    },
+    {
+      "file": "src/components/Home/BottomFormSection.tsx",
+      "target": "/en/privacy-policy",
+      "type": "Link",
+      "raw": "<Link to=\"/en/privacy-policy\" className=\"underline text-accent\">"
+    },
+    {
+      "file": "src/components/Home/BottomFormSection.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a \n              href=\"mailto:contact@urunk.com\" \n              onClick={() =>"
+    },
+    {
+      "file": "src/components/Home/BottomFormSection.tsx",
+      "target": "tel:+212668802096",
+      "type": "a",
+      "raw": "<a \n              href=\"tel:+212668802096\" \n              onClick={() =>"
+    },
+    {
+      "file": "src/components/Home/PortfolioSection.tsx",
+      "target": "/work/${study.slug}",
+      "type": "Link",
+      "raw": "<Link \n                  to={`/work/${study.slug}`} \n                  className=\"inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-accent-hover transition-colors mt-auto pt-2\"\n                >"
+    },
+    {
+      "file": "src/components/Home/PricingSection.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link \n                  to=\"/en/contact\" \n                  onClick={() =>"
+    },
+    {
+      "file": "src/components/Home/PricingSection.tsx",
+      "target": "/en/seo-agency-morocco",
+      "type": "Link",
+      "raw": "<Link to=\"/en/seo-agency-morocco\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/Home/PricingSection.tsx",
+      "target": "/en/services/google-ads",
+      "type": "Link",
+      "raw": "<Link to=\"/en/services/google-ads\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/Home/PricingSection.tsx",
+      "target": "/en/services/meta-ads",
+      "type": "Link",
+      "raw": "<Link to=\"/en/services/meta-ads\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/Home/PricingSection.tsx",
+      "target": "/en/services/tripadvisor-ads",
+      "type": "Link",
+      "raw": "<Link to=\"/en/services/tripadvisor-ads\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/Home/PricingSection.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link \n            to=\"/en/contact\" \n            onClick={() =>"
+    },
+    {
+      "file": "src/components/LanguageSwitcher.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n      to={targetRoute}\n      onClick={handleClick}\n      className={`flex items-center gap-1.5 px-4 py-2.5 min-h-[44px] rounded-full text-xs font-semibold transition-all border border-primary/15 hover:border-accent hover:text-accent bg-white shadow-2xs cursor-pointer ${className}`}\n      aria-label={isFrench ? \"Switch to English\" : \"Passer en Français\"}\n      title={isFrench ? \"Switch to English\" : \"Passer en Français\"}\n      hrefLang={isFrench ? \"en\" : \"fr\"}\n    >"
+    },
+    {
+      "file": "src/components/Layout.tsx",
+      "target": "#main-content",
+      "type": "a",
+      "raw": "<a\n        href=\"#main-content\"\n        className=\"sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2.5 focus:bg-accent focus:text-white focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white transition-all text-xs uppercase tracking-wider\"\n      >"
+    },
+    {
+      "file": "src/components/StickyMobileCTA.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n          to={contactPath}\n          onClick={() =>"
+    },
+    {
+      "file": "src/components/StickyMobileCTA.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "a",
+      "raw": "<a \n          href={whatsappUrl} \n          target=\"_blank\" \n          rel=\"noopener noreferrer\"\n          onClick={() =>"
+    },
+    {
+      "file": "src/components/WhatsAppButton.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "a",
+      "raw": "<a\n      href={url}\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n      onClick={() =>"
+    },
+    {
+      "file": "src/components/fr/HomeFR/BottomFormSectionFR.tsx",
+      "target": "/politique-de-confidentialite",
+      "type": "Link",
+      "raw": "<Link to=\"/politique-de-confidentialite\" className=\"underline text-accent\">"
+    },
+    {
+      "file": "src/components/fr/HomeFR/BottomFormSectionFR.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a \n              href=\"mailto:contact@urunk.com\" \n              onClick={() =>"
+    },
+    {
+      "file": "src/components/fr/HomeFR/BottomFormSectionFR.tsx",
+      "target": "tel:+212668802096",
+      "type": "a",
+      "raw": "<a \n              href=\"tel:+212668802096\" \n              onClick={() =>"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PortfolioSectionFR.tsx",
+      "target": "/fr/realisations/${study.frSlug}",
+      "type": "Link",
+      "raw": "<Link \n                  to={`/fr/realisations/${study.frSlug}`} \n                  className=\"inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-accent-hover transition-colors mt-auto pt-2\"\n                >"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PricingSectionFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link \n                  to=\"/contact\" \n                  onClick={() =>"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PricingSectionFR.tsx",
+      "target": "/agence-seo-maroc",
+      "type": "Link",
+      "raw": "<Link to=\"/agence-seo-maroc\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PricingSectionFR.tsx",
+      "target": "/google-ads-maroc",
+      "type": "Link",
+      "raw": "<Link to=\"/google-ads-maroc\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PricingSectionFR.tsx",
+      "target": "/services/gestion-publicites-meta",
+      "type": "Link",
+      "raw": "<Link to=\"/services/gestion-publicites-meta\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PricingSectionFR.tsx",
+      "target": "/services/tripadvisor-ads",
+      "type": "Link",
+      "raw": "<Link to=\"/services/tripadvisor-ads\" className=\"text-xs font-bold text-accent hover:underline flex items-center gap-1 mt-auto\">"
+    },
+    {
+      "file": "src/components/fr/HomeFR/PricingSectionFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link \n            to=\"/contact\" \n            onClick={() =>"
+    },
+    {
+      "file": "src/components/navigation/DesktopNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n              key={group.id}\n              to={isFrench ? group.link!.fr : group.link!.en}\n              className=\"py-2 px-1 text-primary/90 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent outline-none rounded-md transition-colors\"\n            >"
+    },
+    {
+      "file": "src/components/navigation/DesktopNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n                to={isFrench ? group.link.fr : group.link.en}\n                className={`flex items-center gap-1.5 py-2 px-1 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent outline-none rounded-md transition-colors cursor-pointer text-primary/90 hover:text-primary ${isOpen ? 'text-accent font-semibold' : ''}`}\n                aria-expanded={isOpen}\n                aria-haspopup=\"true\"\n              >"
+    },
+    {
+      "file": "src/components/navigation/DesktopNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n                              key={itemIdx}\n                              to={href}\n                              className=\"group/item flex items-start gap-3 p-2.5 rounded-xl hover:bg-bg-alt focus-visible:bg-bg-alt outline-none transition-all block\"\n                            >"
+    },
+    {
+      "file": "src/components/navigation/DesktopNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n                        key={itemIdx}\n                        to={href}\n                        className=\"group/item flex items-start gap-3 p-2.5 rounded-xl hover:bg-bg-alt focus-visible:bg-bg-alt outline-none transition-all block\"\n                      >"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={homeLink} className=\"text-2xl font-serif font-bold text-primary tracking-tight hover:text-accent transition-colors block\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                to={contactLink}\n                className=\"inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider bg-accent text-white px-5 py-2.5 rounded-full hover:bg-accent-hover transition-all shadow-xs\"\n              >"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/services/creation-site-web\" : \"/en/services/website-design\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/agence-web-maroc\" : \"/en/web-design-morocco\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/site-web-hotel\" : \"/en/hotel-website-design\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/agence-seo-maroc\" : \"/en/seo-agency-morocco\"} className=\"hover:text-accent transition-colors block py-0.5 font-semibold text-primary\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/agence-seo-casablanca\" : \"/en/seo-agency-casablanca\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/seo-hotel\" : \"/en/hotel-seo\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/google-ads-maroc\" : \"/en/google-ads-morocco\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/reservation-directe\" : \"/en/direct-booking\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/secteurs/hotels-resorts\" : \"/en/industries/hotels-resorts\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/secteurs/riads-maisons-hotes\" : \"/en/industries/riads-boutique-hotels\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/secteurs/tour-operateurs\" : \"/en/industries/tour-operators\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/secteurs/restaurants-traiteurs\" : \"/en/industries/restaurants-catering\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/secteurs/pme-entreprises\" : \"/en/industries/corporate-smes\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones\" : \"/en/locations\"} className=\"hover:underline\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones\" : \"/en/locations\"} className=\"hover:text-accent transition-colors block py-0.5 font-semibold\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones/maroc\" : \"/en/locations/morocco\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones/casablanca\" : \"/en/locations/casablanca\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones/marrakech\" : \"/en/locations/marrakech\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones/rabat\" : \"/en/locations/rabat\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/zones/agadir\" : \"/en/locations/agadir\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/a-propos\" : \"/en/about\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/realisations\" : \"/en/work\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/blog\" : \"/en/blog\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/tarifs\" : \"/en/pricing\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/faq\" : \"/en/faq\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/contact\" : \"/en/contact\"} className=\"hover:text-accent transition-colors block py-0.5\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/plan-du-site\" : \"/en/sitemap\"} className=\"hover:text-accent transition-colors block py-0.5 text-primary/60\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/politique-de-confidentialite\" : \"/en/privacy-policy\"} className=\"hover:text-primary transition-colors\">"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/conditions-generales\" : \"/en/terms-of-service\"} className=\"hover:text-primary transition-colors\">"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/\" : \"/en\"} onClick={onClose} className=\"text-2xl font-serif font-bold text-primary\">"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                      to={isFrench ? group.link!.fr : group.link!.en}\n                      onClick={onClose}\n                      className=\"text-base font-bold text-primary hover:text-accent transition-colors block py-3\"\n                    >"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                        to={isFrench ? group.link.fr : group.link.en}\n                        onClick={onClose}\n                        className=\"text-base font-bold text-primary hover:text-accent transition-colors flex-grow py-2\"\n                      >"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n                                  key={itemIdx}\n                                  to={isFrench ? item.link.fr : item.link.en}\n                                  onClick={onClose}\n                                  className=\"block py-2 px-2.5 rounded-lg hover:bg-white text-sm font-medium text-primary hover:text-accent transition-colors\"\n                                >"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n                              key={itemIdx}\n                              to={isFrench ? item.link.fr : item.link.en}\n                              onClick={onClose}\n                              className=\"block py-2 px-2.5 rounded-lg hover:bg-white text-sm font-medium text-primary hover:text-accent transition-colors\"\n                            >"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n            to={contactLink}\n            onClick={onClose}\n            className=\"w-full bg-accent hover:bg-accent-hover text-white px-6 py-3.5 rounded-full font-semibold shadow-md text-center flex items-center justify-center gap-2 transition-all min-h-[48px]\"\n          >"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a href=\"mailto:contact@urunk.com\" className=\"hover:text-accent\">"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "target": "tel:+212668802096",
+      "type": "a",
+      "raw": "<a href=\"tel:+212668802096\" className=\"hover:text-accent\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/google-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/google-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/tripadvisor-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/tripadvisor-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/signs-website-losing-bookings",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/signs-website-losing-bookings\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/direct-booking-website-cost-morocco",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/direct-booking-website-cost-morocco\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/tripadvisor-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/tripadvisor-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/get-more-5-star-reviews",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/get-more-5-star-reviews\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/pricing",
+      "type": "a",
+      "raw": "<a href=\"/en/pricing\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/google-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/tripadvisor-vs-google-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/tripadvisor-vs-google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/optimize-tripadvisor-listing",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/optimize-tripadvisor-listing\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/work",
+      "type": "a",
+      "raw": "<a href=\"/en/work\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/pricing",
+      "type": "a",
+      "raw": "<a href=\"/en/pricing\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/meta-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/meta-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/wordpress-vs-wix-hospitality",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/wordpress-vs-wix-hospitality\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/pricing",
+      "type": "a",
+      "raw": "<a href=\"/en/pricing\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/case-study-roundup-success",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/case-study-roundup-success\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/google-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/work/travel-morocco-services",
+      "type": "a",
+      "raw": "<a href=\"/en/work/travel-morocco-services\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/get-more-5-star-reviews",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/get-more-5-star-reviews\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/website-design",
+      "type": "a",
+      "raw": "<a href=\"/en/services/website-design\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/google-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/meta-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/meta-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/blog/reduce-ota-commissions",
+      "type": "a",
+      "raw": "<a href=\"/en/blog/reduce-ota-commissions\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/pricing",
+      "type": "a",
+      "raw": "<a href=\"/en/pricing\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsEN.ts",
+      "target": "/en/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/en/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-google-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/tripadvisor-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/tripadvisor-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-google-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/tripadvisor-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/tripadvisor-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/signes-site-web-perd-reservations",
+      "type": "a",
+      "raw": "<a href=\"/blog/signes-site-web-perd-reservations\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/cout-site-web-reservation-directe-maroc",
+      "type": "a",
+      "raw": "<a href=\"/blog/cout-site-web-reservation-directe-maroc\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/tripadvisor-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/tripadvisor-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/obtenir-plus-avis-5-etoiles",
+      "type": "a",
+      "raw": "<a href=\"/blog/obtenir-plus-avis-5-etoiles\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/tarifs",
+      "type": "a",
+      "raw": "<a href=\"/tarifs\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-google-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/optimiser-annonce-tripadvisor",
+      "type": "a",
+      "raw": "<a href=\"/blog/optimiser-annonce-tripadvisor\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/realisations",
+      "type": "a",
+      "raw": "<a href=\"/realisations\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/tarifs",
+      "type": "a",
+      "raw": "<a href=\"/tarifs\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-publicites-meta",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-publicites-meta\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/wordpress-vs-wix-hotellerie",
+      "type": "a",
+      "raw": "<a href=\"/blog/wordpress-vs-wix-hotellerie\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/tarifs",
+      "type": "a",
+      "raw": "<a href=\"/tarifs\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/etudes-de-cas-succes-hotellerie",
+      "type": "a",
+      "raw": "<a href=\"/blog/etudes-de-cas-succes-hotellerie\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-google-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/realisations/services-voyage-maroc",
+      "type": "a",
+      "raw": "<a href=\"/realisations/services-voyage-maroc\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/obtenir-plus-avis-5-etoiles",
+      "type": "a",
+      "raw": "<a href=\"/blog/obtenir-plus-avis-5-etoiles\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/creation-site-web",
+      "type": "a",
+      "raw": "<a href=\"/services/creation-site-web\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-google-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-google-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/gestion-publicites-meta",
+      "type": "a",
+      "raw": "<a href=\"/services/gestion-publicites-meta\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/blog/reduire-commissions-ota",
+      "type": "a",
+      "raw": "<a href=\"/blog/reduire-commissions-ota\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/tarifs",
+      "type": "a",
+      "raw": "<a href=\"/tarifs\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/data/blogPostsFR.ts",
+      "target": "/services/bundle-site-ads",
+      "type": "a",
+      "raw": "<a href=\"/services/bundle-site-ads\" class=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/pages/About.tsx",
+      "target": "/en/services/website-design",
+      "type": "Link",
+      "raw": "<Link \n              to=\"/en/services/website-design\" \n              className=\"mt-8 inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all\"\n              id=\"about-phil-cta\"\n            >"
+    },
+    {
+      "file": "src/pages/About.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link \n            to=\"/en/contact\" \n            className=\"inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold hover:bg-accent/90 transition-all shadow-lg\"\n            id=\"about-cta-btn\"\n          >"
+    },
+    {
+      "file": "src/pages/Blog/Index.tsx",
+      "target": "/en/blog/${post.slug}",
+      "type": "Link",
+      "raw": "<Link to={`/en/blog/${post.slug}`} key={i} className=\"group bg-white border border-primary/10 rounded-2xl p-8 hover:shadow-sm transition-all flex flex-col h-full hover:border-accent/40\">"
+    },
+    {
+      "file": "src/pages/Blog/Post.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/blog\" : \"/en/blog\"} className=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/pages/Blog/Post.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/blog\" : \"/en/blog\"} className=\"text-sm font-medium flex items-center gap-2 text-primary/70 hover:text-accent mb-8 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Blog/Post.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/contact\" : \"/en/contact\"} className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium text-center transition-all shadow-md\">"
+    },
+    {
+      "file": "src/pages/Blog/Post.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/tarifs\" : \"/en/pricing\"} className=\"border border-white/20 hover:bg-white/10 text-white px-8 py-4 rounded-full font-medium text-center transition-all\">"
+    },
+    {
+      "file": "src/pages/Blog/Post.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/blog\" : \"/en/blog\"} className=\"text-sm font-semibold text-accent hover:underline flex items-center gap-1\">"
+    },
+    {
+      "file": "src/pages/Blog/Post.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                  to={isFrench ? `/blog/${relPost.slug}` : `/en/blog/${relPost.slug}`} \n                  key={idx} \n                  className=\"group bg-bg-alt border border-primary/10 rounded-2xl p-6 hover:shadow-md transition-all flex flex-col justify-between\"\n                >"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "target": "/en/privacy-policy",
+      "type": "Link",
+      "raw": "<Link to=\"/en/privacy-policy\" className=\"underline text-accent\">"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a href=\"mailto:contact@urunk.com\" className=\"text-base font-bold text-primary hover:text-accent transition-colors block\">"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "target": "tel:+212668802096",
+      "type": "a",
+      "raw": "<a href=\"tel:+212668802096\" className=\"text-base font-bold text-primary hover:text-accent transition-colors block\">"
+    },
+    {
+      "file": "src/pages/FAQ.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-xl font-bold text-sm\">"
+    },
+    {
+      "file": "src/pages/FAQ.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link\n                to=\"/en/contact\"\n                className=\"inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold hover:bg-accent/90 transition-all shadow-lg text-sm\"\n              >"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link \n                to=\"/en/contact\" \n                className=\"w-full sm:w-auto bg-accent text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 hover:shadow-accent/40 transform hover:-translate-y-0.5\"\n                id=\"hero-cta-btn\"\n              >"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "target": "/en/hotel-digital-marketing",
+      "type": "Link",
+      "raw": "<Link \n                to=\"/en/hotel-digital-marketing\" \n                className=\"inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-bg-alt transition-colors\"\n              >"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "target": "/en/work",
+      "type": "Link",
+      "raw": "<Link to=\"/en/work\" className=\"text-accent hover:underline font-semibold inline-flex items-center gap-1.5 ml-1\">"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link key={idx} to={service.link} className=\"block group\" id={`service-link-${idx}`}>"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                  key={idx}\n                  to={chip.path}\n                  className=\"px-4 py-2 rounded-full bg-bg border border-primary/10 hover:border-accent hover:text-accent text-sm font-semibold text-primary/80 transition-all shadow-xs hover:scale-[1.03]\"\n                >"
+    },
+    {
+      "file": "src/pages/Home.tsx",
+      "target": "https://wa.me/212668802096",
+      "type": "a",
+      "raw": "<a \n                href=\"https://wa.me/212668802096\" \n                target=\"_blank\" \n                rel=\"noopener noreferrer\"\n                className=\"w-full sm:w-auto bg-white text-primary border-2 border-primary/10 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-accent/30 hover:text-accent transition-all\"\n                id=\"hero-whatsapp-btn\"\n              >"
+    },
+    {
+      "file": "src/pages/Industries/IndustryLandingPage.tsx",
+      "target": "/en",
+      "type": "Link",
+      "raw": "<Link to=\"/en\" className=\"text-accent underline mt-4 inline-block\">"
+    },
+    {
+      "file": "src/pages/Industries/IndustryLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2\"\n            >"
+    },
+    {
+      "file": "src/pages/Industries/IndustryLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/realisations\" : \"/work\"} \n              className=\"border border-white/20 hover:border-accent text-white px-8 py-4 rounded-xl font-medium transition-all inline-flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm\"\n            >"
+    },
+    {
+      "file": "src/pages/Industries/IndustryLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              key={i} \n              to={item.link} \n              className=\"p-6 md:p-8 rounded-2xl border border-primary/10 bg-white hover:border-accent hover:shadow-md transition-all group flex flex-col justify-between w-full\"\n            >"
+    },
+    {
+      "file": "src/pages/Industries/IndustryLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n            to={isFrench ? `/fr/realisations/${data.caseStudySlug}` : `/work/${data.caseStudySlug}`} \n            className=\"shrink-0 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-md hover:shadow-lg transition-all inline-flex items-center gap-2\"\n          >"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "target": "/en",
+      "type": "Link",
+      "raw": "<Link to=\"/en\" className=\"text-accent underline mt-4 inline-block\">"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2\"\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/tarifs\" : \"/pricing\"} \n              className=\"border border-white/20 hover:border-accent text-white px-8 py-4 rounded-xl font-medium transition-all inline-flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm\"\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              key={i} \n              to={item.link} \n              className=\"p-6 md:p-8 rounded-2xl border border-primary/10 bg-white hover:border-accent hover:shadow-md transition-all group flex flex-col justify-between w-full\"\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                key={idx} \n                to={hub.link} \n                className=\"p-6 bg-white rounded-xl border border-primary/10 hover:border-accent transition-all group\"\n              >"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2\"\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationsIndex.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/contact\" : \"/en/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2\"\n              id=\"locations-cta-audit\"\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationsIndex.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/tarifs\" : \"/en/pricing\"} \n              className=\"border border-white/20 hover:border-accent text-white px-8 py-4 rounded-xl font-medium transition-all inline-flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm\"\n              id=\"locations-cta-pricing\"\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationsIndex.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              key={idx}\n              to={isFrench ? loc.pathFr : loc.path}\n              className=\"group bg-white p-8 rounded-2xl border border-primary/10 hover:border-accent/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between\"\n              id={`hub-card-${idx}`}\n            >"
+    },
+    {
+      "file": "src/pages/Locations/LocationsIndex.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                key={sIdx}\n                to={isFrench ? sec.pathFr : sec.path}\n                className=\"bg-white p-6 rounded-xl border border-primary/10 hover:border-accent hover:shadow-md transition-all group flex items-center justify-between\"\n                id={`sector-link-${sIdx}`}\n              >"
+    },
+    {
+      "file": "src/pages/Locations/LocationsIndex.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                to={isFrench ? \"/contact\" : \"/en/contact\"}\n                className=\"bg-white hover:bg-bg-light text-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm inline-flex items-center justify-center gap-2\"\n                id=\"banner-contact-btn\"\n              >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/fr\" : \"/en\"} className=\"hover:text-white transition-colors\">"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/fr/services\" : \"/en/services\"} className=\"hover:text-white transition-colors\">"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                  to={isFrench ? `/fr/zones/${resolvedLocationId}` : `/en/locations/${resolvedLocationId}`} \n                  className=\"hover:text-white transition-colors\"\n                >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/en/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center justify-center gap-2 text-center\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link\n                to={isFrench ? \"/fr/tarifs\" : \"/en/pricing\"}\n                className=\"text-accent hover:text-accent-hover text-xs font-bold inline-flex items-center gap-1 transition-colors\"\n              >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? `/fr/realisations/${indData.caseStudySlug}` : `/en/work/${indData.caseStudySlug}`} \n              className=\"shrink-0 bg-white hover:bg-white/90 text-primary px-7 py-3.5 rounded-xl font-bold shadow-md transition-all inline-flex items-center gap-2 text-sm\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/en/contact\"}\n              className=\"bg-primary hover:bg-primary-light text-white px-7 py-3.5 rounded-xl font-bold transition-colors inline-flex items-center justify-center gap-2 text-sm\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/tarifs\" : \"/en/pricing\"}\n              className=\"border border-primary/20 hover:bg-primary/5 text-primary px-7 py-3.5 rounded-xl font-bold transition-colors inline-flex items-center justify-center text-sm\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/en/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg transition-all inline-flex items-center gap-2\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                to={isFrench ? `/fr/zones/${resolvedLocationId}` : `/en/locations/${resolvedLocationId}`}\n                className=\"hover:text-accent transition-colors underline underline-offset-2\"\n              >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/services\" : \"/en/services\"}\n              className=\"hover:text-accent transition-colors underline underline-offset-2\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                to={isFrench ? `/fr/secteurs/${effectiveIndustryId}` : `/en/industries/${effectiveIndustryId}`}\n                className=\"hover:text-accent transition-colors underline underline-offset-2\"\n              >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/tarifs\" : \"/en/pricing\"} \n              className=\"hover:text-accent font-semibold transition-colors\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "#market-intelligence",
+      "type": "a",
+      "raw": "<a \n              href=\"#market-intelligence\" \n              className=\"px-6 py-4 rounded-xl font-semibold text-white/90 hover:text-white hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2 text-sm border border-white/20\"\n            >"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "target": "tel:+212522000000",
+      "type": "a",
+      "raw": "<a \n              href=\"tel:+212522000000\" \n              className=\"text-white/80 hover:text-white px-6 py-4 rounded-xl font-semibold inline-flex items-center gap-2 text-sm border border-white/20 hover:bg-white/10 transition-colors\"\n            >"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n          to={isFrench ? \"/\" : \"/en\"} \n          className=\"bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/NotFound.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n          to={isFrench ? \"/contact\" : \"/en/contact\"} \n          className=\"bg-bg-alt text-primary px-6 py-3 rounded-full hover:bg-bg-alt/80 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/Pricing.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/en/contact\"\n              className=\"w-full block text-center bg-primary text-white py-3.5 rounded-xl font-medium hover:bg-primary-light transition-colors mt-auto\"\n            >"
+    },
+    {
+      "file": "src/pages/Pricing.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/en/contact\"\n              className=\"w-full block text-center bg-yellow-400 text-primary py-3.5 rounded-xl font-bold hover:bg-yellow-500 transition-colors mt-auto shadow-lg\"\n            >"
+    },
+    {
+      "file": "src/pages/Pricing.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/en/contact\"\n              className=\"w-full block text-center border-2 border-primary text-primary py-3.5 rounded-xl font-medium hover:bg-primary/5 transition-colors mt-auto\"\n            >"
+    },
+    {
+      "file": "src/pages/Pricing.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/en/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/PrivacyPolicy.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a href=\"mailto:contact@urunk.com\" className=\"text-accent font-bold hover:underline\">"
+    },
+    {
+      "file": "src/pages/Services/Bundle.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\">"
+    },
+    {
+      "file": "src/pages/Services/Bundle.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-xl font-medium transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/Bundle.tsx",
+      "target": "/en/work/nomad-eats-catering",
+      "type": "Link",
+      "raw": "<Link to=\"/en/work/nomad-eats-catering\" className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/Bundle.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/GoogleAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\">"
+    },
+    {
+      "file": "src/pages/Services/GoogleAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/GoogleAds.tsx",
+      "target": "/en/work/nomad-eats-catering",
+      "type": "Link",
+      "raw": "<Link to=\"/en/work/nomad-eats-catering\" className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/GoogleAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/Index.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                  key={index}\n                  to={isFrench ? service.pathFr : service.path}\n                  id={`service-card-${index}`}\n                  className=\"group bg-white p-8 rounded-2xl border border-primary/10 hover:border-accent/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full premium-card\"\n                >"
+    },
+    {
+      "file": "src/pages/Services/Index.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                to={isFrench ? \"/contact\" : \"/en/contact\"}\n                className=\"btn-white bg-white hover:bg-bg-light text-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm inline-flex items-center gap-2\"\n              >"
+    },
+    {
+      "file": "src/pages/Services/MetaAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\">"
+    },
+    {
+      "file": "src/pages/Services/MetaAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/MetaAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/ServiceLandingPage.tsx",
+      "target": "/en",
+      "type": "Link",
+      "raw": "<Link to=\"/en\" className=\"text-accent underline mt-4 inline-block\">"
+    },
+    {
+      "file": "src/pages/Services/ServiceLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/contact\"} \n              className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\"\n            >"
+    },
+    {
+      "file": "src/pages/Services/ServiceLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n              to={isFrench ? \"/fr/contact\" : \"/contact\"} \n              className=\"w-full bg-accent hover:bg-accent-hover text-white py-4 rounded-xl font-bold shadow-md hover:shadow-lg transition-all relative z-10 flex items-center justify-center gap-2\"\n            >"
+    },
+    {
+      "file": "src/pages/Services/ServiceLandingPage.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/fr/tarifs\" : \"/pricing\"} className=\"hover:text-yellow-400 font-medium transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/TripadvisorAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\">"
+    },
+    {
+      "file": "src/pages/Services/TripadvisorAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/TripadvisorAds.tsx",
+      "target": "/en/work/travel-morocco-services",
+      "type": "Link",
+      "raw": "<Link to=\"/en/work/travel-morocco-services\" className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/TripadvisorAds.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/WebsiteDesign.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\">"
+    },
+    {
+      "file": "src/pages/Services/WebsiteDesign.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link\n                to=\"/en/contact\"\n                className=\"w-full bg-primary hover:bg-primary-light text-white py-3.5 rounded-xl font-bold transition-all text-center block text-sm\"\n              >"
+    },
+    {
+      "file": "src/pages/Services/WebsiteDesign.tsx",
+      "target": "/en/work/art-house-marrakech",
+      "type": "Link",
+      "raw": "<Link to=\"/en/work/art-house-marrakech\" className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Services/WebsiteDesign.tsx",
+      "target": "/en/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/en/contact\" className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\">"
+    },
+    {
+      "file": "src/pages/Sitemap.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={link.path} className=\"flex items-center justify-between text-primary hover:text-accent transition-colors py-1\">"
+    },
+    {
+      "file": "src/pages/Sitemap.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={link.path} className=\"flex items-center justify-between text-primary hover:text-accent transition-colors py-1\">"
+    },
+    {
+      "file": "src/pages/Sitemap.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={link.path} className=\"flex items-center justify-between text-primary hover:text-accent transition-colors py-1\">"
+    },
+    {
+      "file": "src/pages/Sitemap.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={link.path} className=\"flex items-center justify-between text-primary hover:text-accent transition-colors py-1\">"
+    },
+    {
+      "file": "src/pages/Sitemap.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={link.path} className=\"flex items-center justify-between text-primary hover:text-accent transition-colors py-1\">"
+    },
+    {
+      "file": "src/pages/ThankYou.tsx",
+      "target": "/en/work",
+      "type": "Link",
+      "raw": "<Link \n          to=\"/en/work\" \n          className=\"w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-6 py-3.5 rounded-xl font-medium flex items-center justify-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/ThankYou.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "a",
+      "raw": "<a\n          href={whatsappUrl}\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n          onClick={() =>"
+    },
+    {
+      "file": "src/pages/Work/CaseStudy.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link to={isFrench ? \"/realisations\" : \"/en/work\"} className=\"text-accent hover:underline font-medium\">"
+    },
+    {
+      "file": "src/pages/Work/CaseStudy.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                key={i} \n                to={srv.url}\n                className=\"bg-white hover:bg-accent/10 border border-primary/15 px-4 py-2 rounded-lg text-sm font-medium text-primary hover:text-accent transition-colors flex items-center gap-2\"\n              >"
+    },
+    {
+      "file": "src/pages/Work/CaseStudy.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n            to={isFrench ? \"/contact\" : \"/en/contact\"} \n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 transition-colors shadow-lg\"\n          >"
+    },
+    {
+      "file": "src/pages/Work/Index.tsx",
+      "target": "/en/work/${study.slug}",
+      "type": "Link",
+      "raw": "<Link to={`/en/work/${study.slug}`} key={index} className=\"group bg-white rounded-2xl border border-primary/10 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col\">"
+    },
+    {
+      "file": "src/pages/fr/AboutFR.tsx",
+      "target": "/services/creation-site-web",
+      "type": "Link",
+      "raw": "<Link \n              to=\"/services/creation-site-web\" \n              className=\"mt-8 inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all\"\n              id=\"about-phil-cta-fr\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/AboutFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link \n            to=\"/contact\" \n            className=\"inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-bold hover:bg-accent/90 transition-all shadow-lg\"\n            id=\"about-cta-btn-fr\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/BlogFR.tsx",
+      "target": "/blog/${post.slug}",
+      "type": "Link",
+      "raw": "<Link\n              to={`/blog/${post.slug}`}\n              key={i}\n              className=\"group bg-white border border-primary/10 rounded-2xl p-8 hover:shadow-sm transition-all flex flex-col h-full border hover:border-accent/40\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/ContactFR.tsx",
+      "target": "/politique-de-confidentialite",
+      "type": "Link",
+      "raw": "<Link to=\"/politique-de-confidentialite\" className=\"underline text-accent\">"
+    },
+    {
+      "file": "src/pages/fr/ContactFR.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a\n                href=\"mailto:contact@urunk.com\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/pages/fr/ContactFR.tsx",
+      "target": "tel:+212668802096",
+      "type": "a",
+      "raw": "<a\n                href=\"tel:+212668802096\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/pages/fr/ContactFR.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "a",
+      "raw": "<a \n                href={whatsappUrl}\n                target=\"_blank\"\n                rel=\"noopener noreferrer\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/pages/fr/FAQFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n            to=\"/contact\"\n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/HomeFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link \n                to=\"/contact\" \n                className=\"w-full sm:w-auto bg-accent text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 hover:shadow-accent/40 transform hover:-translate-y-0.5\"\n                id=\"hero-cta-btn-fr\"\n              >"
+    },
+    {
+      "file": "src/pages/fr/HomeFR.tsx",
+      "target": "/marketing-digital-hotelier",
+      "type": "Link",
+      "raw": "<Link \n                to=\"/marketing-digital-hotelier\" \n                className=\"inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-bg-alt transition-colors\"\n              >"
+    },
+    {
+      "file": "src/pages/fr/HomeFR.tsx",
+      "target": "/realisations",
+      "type": "Link",
+      "raw": "<Link to=\"/realisations\" className=\"text-accent hover:underline font-semibold inline-flex items-center gap-1.5 ml-1\">"
+    },
+    {
+      "file": "src/pages/fr/HomeFR.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link key={idx} to={service.link} className=\"block group\" id={`service-link-fr-${idx}`}>"
+    },
+    {
+      "file": "src/pages/fr/HomeFR.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "Link",
+      "raw": "<Link \n                  key={idx}\n                  to={chip.path}\n                  className=\"px-4 py-2 rounded-full bg-bg border border-primary/10 hover:border-accent hover:text-accent text-sm font-semibold text-primary/80 transition-all shadow-xs hover:scale-[1.03]\"\n                >"
+    },
+    {
+      "file": "src/pages/fr/HomeFR.tsx",
+      "target": "https://wa.me/212668802096",
+      "type": "a",
+      "raw": "<a \n                href=\"https://wa.me/212668802096\" \n                target=\"_blank\" \n                rel=\"noopener noreferrer\"\n                className=\"w-full sm:w-auto bg-white text-primary border-2 border-primary/10 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-accent/30 hover:text-accent transition-all\"\n                id=\"hero-whatsapp-btn-fr\"\n              >"
+    },
+    {
+      "file": "src/pages/fr/PricingFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full block text-center bg-primary text-white py-3.5 rounded-xl font-medium hover:bg-primary-light transition-colors mt-auto\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/PricingFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full block text-center bg-yellow-400 text-primary py-3.5 rounded-xl font-bold hover:bg-yellow-500 transition-colors mt-auto shadow-lg\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/PricingFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full block text-center border-2 border-primary text-primary py-3.5 rounded-xl font-medium hover:bg-primary/5 transition-colors mt-auto\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/PricingFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/PrivacyPolicyFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link to=\"/contact\" className=\"text-accent hover:underline\">"
+    },
+    {
+      "file": "src/pages/fr/PrivacyPolicyFR.tsx",
+      "target": "mailto:contact@urunk.com",
+      "type": "a",
+      "raw": "<a href=\"mailto:contact@urunk.com\" className=\"text-accent hover:underline font-bold\">"
+    },
+    {
+      "file": "src/pages/fr/Services/BundleFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n            to=\"/contact\"\n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/Services/BundleFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full bg-yellow-400 hover:bg-yellow-500 text-primary py-3 rounded-xl font-bold transition-colors shadow-lg\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/Services/BundleFR.tsx",
+      "target": "/realisations/nomad-eats-traiteur",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/realisations/nomad-eats-traiteur\"\n          className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/BundleFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/GoogleAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n            to=\"/contact\"\n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/Services/GoogleAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/Services/GoogleAdsFR.tsx",
+      "target": "/realisations/nomad-eats-traiteur",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/realisations/nomad-eats-traiteur\"\n          className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/GoogleAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/MetaAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n            to=\"/contact\"\n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/Services/MetaAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/Services/MetaAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/TripadvisorAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n            to=\"/contact\"\n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/Services/TripadvisorAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/contact\"\n              className=\"w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/Services/TripadvisorAdsFR.tsx",
+      "target": "/realisations/services-voyage-maroc",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/realisations/services-voyage-maroc\"\n          className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/TripadvisorAdsFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/WebsiteDesignFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n            to=\"/contact\"\n            className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2\"\n          >"
+    },
+    {
+      "file": "src/pages/fr/Services/WebsiteDesignFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n                to=\"/contact\"\n                className=\"w-full bg-primary hover:bg-primary-light text-white py-3.5 rounded-xl font-bold transition-all text-center block text-sm\"\n              >"
+    },
+    {
+      "file": "src/pages/fr/Services/WebsiteDesignFR.tsx",
+      "target": "/realisations/art-house-marrakech",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/realisations/art-house-marrakech\"\n          className=\"text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/Services/WebsiteDesignFR.tsx",
+      "target": "/contact",
+      "type": "Link",
+      "raw": "<Link\n          to=\"/contact\"\n          className=\"bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/TermsOfServiceFR.tsx",
+      "target": "/services/creation-site-web",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/services/creation-site-web\"\n              className=\"text-accent hover:underline\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/TermsOfServiceFR.tsx",
+      "target": "/services/gestion-google-ads",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/services/gestion-google-ads\"\n              className=\"text-accent hover:underline\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/TermsOfServiceFR.tsx",
+      "target": "/services/tripadvisor-ads",
+      "type": "Link",
+      "raw": "<Link\n              to=\"/services/tripadvisor-ads\"\n              className=\"text-accent hover:underline\"\n            >"
+    },
+    {
+      "file": "src/pages/fr/ThankYouFR.tsx",
+      "target": "/realisations",
+      "type": "Link",
+      "raw": "<Link \n          to=\"/realisations\" \n          className=\"w-full sm:w-auto bg-primary hover:bg-primary/90 text-white px-6 py-3.5 rounded-xl font-medium flex items-center justify-center gap-2 transition-colors\"\n        >"
+    },
+    {
+      "file": "src/pages/fr/ThankYouFR.tsx",
+      "target": "DYNAMIC_OR_PROP",
+      "type": "a",
+      "raw": "<a\n          href={whatsappUrl}\n          target=\"_blank\"\n          rel=\"noopener noreferrer\"\n          onClick={() =>"
+    },
+    {
+      "file": "src/pages/fr/WorkFR.tsx",
+      "target": "/realisations/${study.frSlug}",
+      "type": "Link",
+      "raw": "<Link\n                to={`/realisations/${study.frSlug}`}\n                key={index}\n                className=\"group bg-white rounded-2xl border border-primary/10 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col\"\n              >"
+    }
+  ],
+  "buttons": [
+    {
+      "file": "src/components/CookieConsent.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n              onClick={handleDecline}\n              aria-label={isFrench ? \"Fermer et refuser\" : \"Close and decline\"}\n              className=\"text-white/60 hover:text-white p-1 rounded-lg transition-colors -mr-1\"\n            >"
+    },
+    {
+      "file": "src/components/CookieConsent.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n              onClick={handleAccept}\n              className=\"bg-accent hover:bg-accent-hover text-white text-xs font-bold px-4 py-2 rounded-xl transition-all shadow-xs cursor-pointer\"\n            >"
+    },
+    {
+      "file": "src/components/CookieConsent.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n              onClick={handleDecline}\n              className=\"bg-white/10 hover:bg-white/20 text-white text-xs font-medium px-3.5 py-2 rounded-xl transition-colors border border-white/10 cursor-pointer\"\n            >"
+    },
+    {
+      "file": "src/components/ErrorBoundary.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n            onClick={this.handleReload}\n            className=\"bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow-md flex items-center gap-2 cursor-pointer\"\n          >"
+    },
+    {
+      "file": "src/components/Header.tsx",
+      "hasOnClick": true,
+      "type": "button",
+      "raw": "<button \n            type=\"button\"\n            className=\"p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-primary hover:bg-primary/5 focus:outline-none transition-colors\"\n            onClick={() =>"
+    },
+    {
+      "file": "src/components/Home/BottomFormSection.tsx",
+      "hasOnClick": false,
+      "type": "submit",
+      "raw": "<button \n                  type=\"submit\" \n                  disabled={formSubmitting}\n                  className=\"w-full bg-accent hover:bg-accent-hover active:scale-[0.99] text-white py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-75\"\n                >"
+    },
+    {
+      "file": "src/components/Home/FaqSection.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                onClick={() =>"
+    },
+    {
+      "file": "src/components/LanguageBanner.tsx",
+      "hasOnClick": true,
+      "raw": "<button \n        onClick={handleSwitch} \n        className=\"bg-accent hover:bg-accent-hover active:scale-95 text-white px-3.5 py-1.5 min-h-[36px] rounded-full font-semibold transition-all text-xs shadow-xs shrink-0 cursor-pointer\"\n      >"
+    },
+    {
+      "file": "src/components/LanguageBanner.tsx",
+      "hasOnClick": true,
+      "raw": "<button \n        onClick={dismissBanner}\n        className=\"absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center hover:text-accent transition-colors cursor-pointer\"\n        aria-label=\"Fermer / Close\"\n      >"
+    },
+    {
+      "file": "src/components/fr/HomeFR/BottomFormSectionFR.tsx",
+      "hasOnClick": false,
+      "type": "submit",
+      "raw": "<button \n                  type=\"submit\" \n                  disabled={formSubmitting}\n                  className=\"w-full bg-accent hover:bg-accent-hover active:scale-[0.99] text-white py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-75\"\n                >"
+    },
+    {
+      "file": "src/components/fr/HomeFR/FaqSectionFR.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                onClick={() =>"
+    },
+    {
+      "file": "src/components/navigation/DesktopNav.tsx",
+      "hasOnClick": true,
+      "type": "button",
+      "raw": "<button\n                type=\"button\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/components/navigation/FooterNav.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n              onClick={() =>"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "hasOnClick": true,
+      "type": "button",
+      "raw": "<button \n                type=\"button\" \n                onClick={onClose}\n                className=\"p-2.5 rounded-xl hover:bg-bg-alt text-primary min-h-[44px] min-w-[44px] flex items-center justify-center\"\n                aria-label=\"Close menu\"\n              >"
+    },
+    {
+      "file": "src/components/navigation/MobileNav.tsx",
+      "hasOnClick": true,
+      "type": "button",
+      "raw": "<button\n                      type=\"button\"\n                      onClick={() =>"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                  onClick={() =>"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "hasOnClick": false,
+      "type": "submit",
+      "raw": "<button\n                  type=\"submit\"\n                  disabled={isSubmitting}\n                  className=\"w-full py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all flex items-center justify-center gap-2 shadow-lg text-base disabled:opacity-50\"\n                >"
+    },
+    {
+      "file": "src/pages/FAQ.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n              key={cat.id}\n              onClick={() =>"
+    },
+    {
+      "file": "src/pages/FAQ.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                    onClick={() =>"
+    },
+    {
+      "file": "src/pages/Industries/IndustryLandingPage.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                className=\"w-full py-5 px-6 flex justify-between items-center text-left hover:bg-bg-alt/40 transition-colors\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/pages/Locations/LocationLandingPage.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                className=\"w-full py-5 px-6 flex justify-between items-center text-left hover:bg-bg-alt/40 transition-colors\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/pages/MatrixLandingPage.tsx",
+      "hasOnClick": true,
+      "type": "button",
+      "raw": "<button\n                      type=\"button\"\n                      aria-expanded={isOpen}\n                      aria-controls={`faq-answer-${index}`}\n                      onClick={() =>"
+    },
+    {
+      "file": "src/pages/Services/Index.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                  key={idx}\n                  onClick={() =>"
+    },
+    {
+      "file": "src/pages/Services/ServiceLandingPage.tsx",
+      "hasOnClick": true,
+      "raw": "<button\n                className=\"w-full py-5 px-6 flex justify-between items-center text-left hover:bg-bg-alt/40 transition-colors\"\n                onClick={() =>"
+    },
+    {
+      "file": "src/pages/fr/ContactFR.tsx",
+      "hasOnClick": false,
+      "type": "submit",
+      "raw": "<button\n                    type=\"submit\"\n                    disabled={isSubmitting}\n                    className=\"w-full bg-accent hover:bg-accent-hover text-white py-4 rounded-xl font-bold transition-colors flex items-center justify-center gap-2 disabled:opacity-75 cursor-pointer shadow-md\"\n                  >"
+    }
+  ],
+  "forms": [
+    {
+      "file": "src/components/Home/BottomFormSection.tsx",
+      "hasOnSubmit": true,
+      "raw": "<form action=\"https://formsubmit.co/contact@urunk.com\" method=\"POST\" onSubmit={handleFormSubmit} className=\"bg-white rounded-2xl p-6 sm:p-8 md:p-10 text-primary shadow-xl\">"
+    },
+    {
+      "file": "src/components/fr/HomeFR/BottomFormSectionFR.tsx",
+      "hasOnSubmit": true,
+      "raw": "<form action=\"https://formsubmit.co/contact@urunk.com\" method=\"POST\" onSubmit={handleFormSubmit} className=\"bg-white rounded-2xl p-6 sm:p-8 md:p-10 text-primary shadow-xl\">"
+    },
+    {
+      "file": "src/pages/Contact.tsx",
+      "hasOnSubmit": true,
+      "raw": "<form onSubmit={handleSubmit} className=\"space-y-6\">"
+    },
+    {
+      "file": "src/pages/fr/ContactFR.tsx",
+      "hasOnSubmit": true,
+      "raw": "<form\n              action=\"https://formsubmit.co/contact@urunk.com\"\n              method=\"POST\"\n              onSubmit={handleSubmit}\n              className=\"bg-white rounded-2xl p-8 md:p-10 text-primary shadow-md\"\n            >"
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+import React from "react";
+import Callout from "../../../components/fr/CalloutFR";
+import SEO from "../../../components/SEO";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export default function BundleFR() {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Site Web & Publicité pour Hôtels",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Urunk"
+    },
+    "description": "Solution complète : Site WordPress sur-mesure et 3 mois de gestion publicitaire incluse."
+  };
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Forfait Site Web et Publicité",
+    "description": "L'offre complète pour les hôtels : conception de site web performant et gestion de trafic qualifié pour lancer vos réservations directes.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Urunk"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "Morocco" },
+      { "@type": "Country", "name": "Worldwide" }
+    ],
+    "url": "https://urunk.com/services/bundle-site-ads"
+  };
+  const faqs = [
+    {
+      q: "Combien de temps prend le déploiement du pack complet ?",
+      a: "Le délai moyen est de 3 à 4 semaines. Pendant que l'équipe technique développe le site web, nos spécialistes préparent l'architecture des campagnes publicitaires et la configuration du suivi de conversion pour un lancement simultané.",
+    },
+    {
+      q: "Puis-je choisir entre Google Ads et TripAdvisor Ads pour la partie publicité ?",
+      a: "Oui ! Selon le profil de votre établissement et vos canaux d'acquisition prioritaires, nous configurons soit des campagnes Google Ads ciblées, soit des emplacements sponsorisés TripAdvisor.",
+    },
+    {
+      q: "Pourquoi le pack offre-t-il un meilleur rapport qualité-prix qu'un achat séparé ?",
+      a: "En confiant le site web et la gestion des publicités à la même agence, vous gagnez du temps, éliminez les problèmes d'intégration technique et bénéficiez d'un tarif préférentiel réuni dans une seule stratégie d'acquisition.",
+    },
+  ];
+
+  return (
+    <div className="w-full">
+      <SEO
+        title="Pack Site Web + Publicités pour Hôtels & Riads | Urunk"
+        description="Une solution complète pour maximiser vos réservations directes : création de site WordPress rapide et gestion de vos publicités (Google ou TripAdvisor)."
+        schema={[schema, serviceSchema]}
+      />
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+            Offre de Croissance
+          </span>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+            Pack Site Web + Publicités
+          </h1>
+          <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
+            Le moteur complet de réservation directe. Un site web moderne
+            optimisé pour la conversion associé à des publicités ciblées pour
+            attirer immédiatement des clients.
+          </p>
+          <div className="max-w-3xl mx-auto mb-10 text-left">
+            <Callout variant="dark">
+              <strong>La stratégie unifiée :</strong> Créer un site web sans
+              trafic ne génère aucune réservation. De même, envoyer de la
+              publicité vers un site obsolète gaspille votre budget. Le Pack Urunk
+              réunit la création web et la gestion publicitaire pour créer une
+              machine à réservation directe clé en main.
+            </Callout>
+          </div>
+          <Link
+            to="/contact"
+            className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
+          >
+            Discuter de votre projet avec un expert <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="py-20 px-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">
+              Pourquoi faire appel à deux agences quand vous pouvez tout aligner
+              ?
+            </h2>
+            <p className="text-primary/80 mb-6 leading-relaxed">
+              De nombreux hôtels font l'erreur d'engager un développeur web qui
+              ne comprend pas le marketing, puis une agence de publicité qui
+              blâme le site web pour le manque de conversions.
+            </p>
+            <p className="text-primary/80 leading-relaxed">
+              Avec le Pack Urunk, vous bénéficiez d'un partenaire unique
+              responsable de la chaîne complète d'acquisition : de la première
+              impression publicitaire sur l'écran du voyageur jusqu'au clic
+              final sur votre moteur de réservation.
+            </p>
+          </div>
+          <div className="bg-bg-alt p-8 rounded-2xl border border-primary/10">
+            <h3 className="text-xl font-bold mb-4">
+              Pourquoi le pack est gagnant :
+            </h3>
+            <ul className="space-y-4">
+              <li className="flex gap-3 text-primary/80">
+                <Check size={20} className="text-accent shrink-0" />{" "}
+                Interlocuteur et responsable unique
+              </li>
+              <li className="flex gap-3 text-primary/80">
+                <Check size={20} className="text-accent shrink-0" /> Retour sur
+                investissement dès le lancement du site
+              </li>
+              <li className="flex gap-3 text-primary/80">
+                <Check size={20} className="text-accent shrink-0" /> Intégration
+                impeccable du suivi des conversions
+              </li>
+              <li className="flex gap-3 text-primary/80">
+                <Check size={20} className="text-accent shrink-0" /> Message
+                cohérent de l'annonce publicitaire jusqu'au moteur de
+                réservation
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Ce qui est inclus */}
+      <section className="bg-primary/5 py-20 px-6 border-y border-primary/10">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-12">
+            Que comprend le pack complet ?
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 text-left">
+            <div className="bg-white p-10 rounded-2xl shadow-sm border border-primary/10">
+              <div className="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
+                <Check size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">
+                1. Nouveau Site Web Sur-Mesure
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Design WordPress
+                  sur-mesure et adapté aux mobiles
+                </li>
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Intégration du moteur
+                  de réservation directe / WhatsApp
+                </li>
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Chargement ultra-rapide
+                  et bases SEO techniques
+                </li>
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Back-office simple et
+                  autonome pour modifier vos textes/photos
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-10 rounded-2xl shadow-sm border border-primary/10">
+              <div className="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
+                <Check size={24} />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">
+                2. Gestion Publicitaire (1 au choix)
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Configuration des
+                  annonces Google Ads OU TripAdvisor Ads
+                </li>
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Recherche approfondie
+                  de mots-clés et de la concurrence
+                </li>
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Optimisation mensuelle
+                  continue
+                </li>
+                <li className="flex gap-3 text-primary/80 text-sm">
+                  <span className="text-accent">→</span> Rapports de performance
+                  transparents
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process & Pricing */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-8">
+              Le Processus de Lancement
+            </h2>
+            <div className="space-y-8">
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">Double Stratégie</h3>
+                  <p className="text-sm text-primary/80">
+                    Nous concevons en parallèle l'arborescence de votre site et
+                    l'architecture de vos campagnes publicitaires.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">Phase de Développement</h3>
+                  <p className="text-sm text-primary/80">
+                    Pendant que les développeurs créent le site, nos
+                    spécialistes paramètrent les outils de suivi et rédigent les
+                    annonces.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 className="font-bold mb-1">Lancement Simultané</h3>
+                  <p className="text-sm text-primary/80">
+                    Dès que le site est validé, nous activons le trafic
+                    publicitaire pour générer des réservations immédiates.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-primary text-white p-10 rounded-2xl shadow-md flex flex-col justify-center items-center text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-yellow-400 text-primary text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+              DISPONIBILITÉ LIMITÉE
+            </div>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-yellow-400 text-sm font-medium mb-6">
+              Tarif du Pack
+            </span>
+            <h3 className="text-2xl font-bold mb-2">Devis Sur-Mesure</h3>
+            <p className="text-white/80 text-sm mb-6">
+              Chaque établissement ayant des besoins spécifiques, nous
+              établissons une proposition ajustée pour l'ensemble du projet.
+            </p>
+            <div className="bg-white/10 p-4 rounded-xl mb-8 w-full">
+              <p className="text-sm text-yellow-400 font-medium">
+                Seulement 3 nouveaux packs pris en charge par mois pour garantir
+                un niveau de qualité optimal.
+              </p>
+            </div>
+            <Link
+              to="/contact"
+              className="w-full bg-yellow-400 hover:bg-yellow-500 text-primary py-3 rounded-xl font-bold transition-colors shadow-lg"
+            >
+              Vérifier la disponibilité
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study Proof */}
+      <section className="py-20 px-6 max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-6">Découvrez le modèle stratégique</h2>
+        <p className="text-primary/80 mb-8 max-w-2xl mx-auto">
+          Nous avons conçu un plan complet Web + Publicités d'exemple pour les concepts de traiteur et de gastronomie d'entreprise, illustrant des structures d'acquisition performantes.
+        </p>
+        <Link
+          to="/realisations/nomad-eats-traiteur"
+          className="text-accent hover:text-accent-hover font-medium flex items-center justify-center gap-2 transition-colors"
+        >
+          Explorer le modèle de stratégie <ArrowRight size={18} />
+        </Link>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            Foire aux questions
+          </h2>
+          <div className="flex flex-col border-t border-primary/20">
+            {faqs.map((faq, i) => (
+              <details key={i} className="group border-b border-primary/20">
+                <summary className="flex justify-between items-center font-medium cursor-pointer list-none py-6 pr-4 text-lg">
+                  <span>{faq.q}</span>
+                  <span className="transition group-open:rotate-180 text-accent">
+                    <ChevronDown size={24} />
+                  </span>
+                </summary>
+                <div className="text-primary/70 pb-6 pr-4 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6">
+          Prenez le contrôle de vos réservations.
+        </h2>
+        <p className="text-xl text-primary/80 mb-8">
+          Une seule agence. Une stratégie cohérente. Des résultats concrets.
+        </p>
+        <Link
+          to="/contact"
+          className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors"
+        >
+          Obtenir mon devis gratuit <ArrowRight size={18} />
+        </Link>
+      </section>
+    </div>
+  );
+}

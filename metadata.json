@@ -1,0 +1,6 @@
+{
+  "name": "Urunk Agency",
+  "description": "Premium digital agency specializing in direct booking websites and paid advertisements for hotels, riads, and luxury hospitality brands.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
