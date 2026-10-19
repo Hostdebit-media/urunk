@@ -293,14 +293,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to discover how much OTA commissions are actually costing your property?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk offers a complimentary direct booking audit analyzing your mobile speed, conversion funnel, and OTA channel dependencies.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Hospitality Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -534,14 +527,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to identify the optimal ad mix for your hospitality brand?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk provides a complimentary advertising audit evaluating your brand protection, mobile conversion funnel, and review platform presence.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Advertising Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -682,14 +668,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to know why your mobile website is losing direct bookings?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk offers a complimentary mobile UX audit examining your button ergonomics, booking engine responsiveness, and GA4 event tracking.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Mobile UX Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -824,14 +803,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Unsure which technical platform suits your riad or hotel?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk provides a free technical consultation evaluating PMS compatibility, multilingual requirements, and 3-year cost projections.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Request My Free Technical Study
-        </a>
-      </div>
+    
     `
   },
   {
@@ -973,14 +945,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to discover what your TripAdvisor listing is delivering to your direct bottom line?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk offers a complimentary e-reputation audit assessing your profile completeness, response quality, and direct referral conversion potential.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Listing Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1197,14 +1162,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Looking for a transparent, itemized website proposal for your property?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk provides a complimentary technical discovery assessment, complete with upfront development costs, annual hosting overheads, and customized ROI modeling based on your real OTA volume.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Request My Free Project Assessment
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1318,14 +1276,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want an exhaustive, independent UX and booking funnel audit of your website?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk delivers a free diagnostic assessment reviewing real-world mobile speed, booking engine friction, and multi-language alignment for Moroccan hospitality properties.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free UX Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1541,14 +1492,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want a comprehensive Google Ads audit and profitability roadmap for your property?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk delivers a free review of your campaign architecture, keyword intent, negative exclusion lists, and max CPC thresholds.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Google Ads Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1690,14 +1634,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to build an automated, fully compliant reputation workflow for your property?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk delivers a free reputation audit analyzing your Google Business Profile, review velocity, and response strategies across Google and TripAdvisor.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Reputation Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1962,14 +1899,7 @@ export const blogPostsEN: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Ready to launch high-ROAS Meta campaigns for your property?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk provides a complimentary advertising and tracking audit, installs server-side Conversions API (CAPI), and builds bespoke campaign architectures guaranteed to keep acquisition costs below OTA commissions.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim My Free Meta Ads Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2099,14 +2029,7 @@ export const blogPostsEN: BlogPostItem[] = [
           <p class="text-sm text-primary/80 leading-relaxed mb-0">Google Business Profile optimizations usually generate measurable phone calls and site visits within 3 to 4 weeks. Organic web ranking improvements typically manifest in 60 to 90 days.</p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to discover your riad's current local SEO ranking score?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk conducts full technical and local SEO audits for Moroccan hotels, identifying untapped ranking opportunities that drive direct guests.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Claim Your Free SEO Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2215,14 +2138,7 @@ export const blogPostsEN: BlogPostItem[] = [
           <p class="text-sm text-primary/80 leading-relaxed mb-0">For independent riads, securing a 30% to 50% deposit via credit card at the time of booking maximizes direct conversion while virtually eliminating guest no-shows.</p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Need guidance selecting or integrating your PMS & booking engine?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk specializes in connecting world-class booking engines with bespoke hotel websites designed for maximum direct conversion.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Speak With Our Tech Specialists
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2406,14 +2322,7 @@ export const blogPostsEN: BlogPostItem[] = [
           <p class="text-sm text-primary/80 leading-relaxed mb-0">In Merzouga and Zagora, scorching heat (>45°C) makes daytime operations challenging. In Agafay, however, camps remain highly profitable in summer by offering refreshing pool experiences and "Sunset & Dinner" evening escapes starting at 6:30 PM for Marrakech residents seeking cooler evening air.</p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Looking to scale direct bookings for your Moroccan desert camp?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk designs lightning-fast experiential websites and manages high-yield direct booking funnels for glamping sites and luxury bivouacs across Morocco.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Request a Tailored Desert Camp Strategy Session
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2525,14 +2434,7 @@ export const blogPostsEN: BlogPostItem[] = [
         <li><strong>Days 31 to 45:</strong> Launch localized mobile Google Ads campaigns targeting tourists currently inside your destination city (€15 to €25 daily test budget).</li>
         <li><strong>Days 46 to 60:</strong> Visit 30 premier riads in your area to distribute concierge cards with custom QR codes and automated partner referral commissions.</li>
       </ol>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Are you a tour operator or transport agency looking to sell direct?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk builds high-converting activity booking websites, instant WhatsApp checkout funnels, and precision Google Ads campaigns for Moroccan operators.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Launch Your Direct Tour Booking Funnel
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2642,14 +2544,7 @@ export const blogPostsEN: BlogPostItem[] = [
           <p class="text-sm text-primary/80 leading-relaxed mb-0">Remove obsolete plugins and defer the PMS booking widget until after initial page render. Estimated gain: +15 to +25 points.</p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Does your hotel website take more than 3 seconds to load on mobile?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk conducts in-depth Core Web Vitals speed audits for Moroccan riads and boutique hotels, optimizing every asset to maximize direct reservations.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Request a Free Website Speed Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2865,14 +2760,7 @@ export const blogPostsEN: BlogPostItem[] = [
         <li><strong>Days 8 – 11:</strong> Integrate automated webhook triggers between your PMS (Cloudbeds, Amenitiz) or Zapier/Make automations.</li>
         <li><strong>Days 12 – 15:</strong> Train front-desk managers and medina luggage porters on real-time guest arrivals and fast 2-minute response protocols.</li>
       </ol>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Want to automate WhatsApp guest hospitality for your riad or hotel?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk crafts customized multilingual messaging flows, integrates your PMS, and automates high-volume 5-star review generation.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Schedule a WhatsApp Hospitality Demo
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3026,14 +2914,7 @@ export const blogPostsEN: BlogPostItem[] = [
       </ul>
 
       <p class="mb-6">Explore our specialized hotel marketing services for <a href="/en/services/google-ads" class="text-accent hover:underline">Hotel Google Ads Management</a> and <a href="/en/services/meta-ads" class="text-accent hover:underline">Hotel Meta Ads Management</a>.</p>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Are your digital advertising campaigns underperforming?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk engineers high-converting hotel landing pages natively integrated with your PMS booking engine and paid advertising funnels.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Request a Landing Page Conversion Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3185,14 +3066,7 @@ export const blogPostsEN: BlogPostItem[] = [
       </ol>
 
       <p class="mb-6">Discover our complete guide to <a href="/en/blog/reduce-ota-commissions" class="text-accent hover:underline">slashing OTA commissions in Morocco</a> or explore our <a href="/en/services/bundle-site-ads" class="text-accent hover:underline">Complete Website + Paid Ads Package</a>.</p>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Ready to optimize your seasonal pricing and expand your RevPAR?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk's hospitality revenue consultants design dynamic pricing frameworks and configure your Channel Manager to maximize net operating margins.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Request a Revenue Management Audit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3350,14 +3224,7 @@ export const blogPostsEN: BlogPostItem[] = [
       </ul>
 
       <p class="mb-6">Explore our turnkey solutions for <a href="/en/services/website-design" class="text-accent hover:underline">Hospitality Website Design</a> and our <a href="/en/services/bundle-site-ads" class="text-accent hover:underline">Complete Website + Paid Ads Package</a>.</p>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Planning a property reopening or full brand relaunch?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk orchestrates your entire digital relaunch: protecting your hard-earned SEO authority, designing your new website, and driving direct bookings from day one.</p>
-        <a href="/en/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Plan Your Digital Relaunch
-        </a>
-      </div>
+    
     `
   }
 ];

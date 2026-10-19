@@ -1,8 +1,8 @@
 import React from 'react';
 import SEO from '../../components/SEO';
 import { useParams, Link, useLocation } from 'react-router-dom';
-import { getBlogPostBySlug, getBlogPosts } from '../../data/blogPosts';
-import { ArrowLeft, ArrowRight, Clock, User, Share2 } from 'lucide-react';
+import { getBlogPostBySlug } from '../../data/blogPosts';
+import { ArrowLeft, Clock } from 'lucide-react';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -10,7 +10,6 @@ export default function BlogPost() {
   const isFrench = !location.pathname.startsWith('/en');
   
   const post = getBlogPostBySlug(slug, isFrench);
-  const allPosts = getBlogPosts(isFrench).filter(p => p.slug !== slug).slice(0, 3);
 
   if (!post) {
     return (
@@ -103,16 +102,16 @@ export default function BlogPost() {
         />
         
         {/* Action Callout Box */}
-        <div className="mt-16 bg-primary p-8 md:p-10 rounded-2xl text-white shadow-md">
+        <div className="mt-16 bg-primary p-8 md:p-10 rounded-2xl text-white shadow-md text-center flex flex-col items-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent">
             {isFrench ? "Prêt à Augmenter Vos Réservations Directes ?" : "Ready to Boost Your Direct Bookings?"}
           </h2>
-          <p className="text-white/80 mb-8 leading-relaxed text-sm md:text-base max-w-2xl">
+          <p className="text-white/80 mb-8 leading-relaxed text-sm md:text-base max-w-2xl mx-auto">
             {isFrench 
               ? "Notre équipe chez Urunk est spécialisée dans la transformation de ces stratégies en revenus réels sans commissions pour les hôtels, riads et voyagistes."
               : "Our team at Urunk specializes in turning these exact strategies into commission-free direct revenue for hotels, riads, and tour operators."}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to={isFrench ? "/contact" : "/en/contact"} className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium text-center transition-all shadow-md">
               {isFrench ? "Demander une Consultation Gratuite" : "Book a Free Strategy Consultation"}
             </Link>
@@ -121,38 +120,6 @@ export default function BlogPost() {
             </Link>
           </div>
         </div>
-
-        {/* Interlinking Section: Related Articles */}
-        {allPosts.length > 0 && (
-          <div className="mt-20 pt-12 border-t border-primary/10">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold">
-                {isFrench ? "Articles Connexes" : "Related Insights"}
-              </h2>
-              <Link to={isFrench ? "/blog" : "/en/blog"} className="text-sm font-semibold text-accent hover:underline flex items-center gap-1">
-                {isFrench ? "Voir tous les articles" : "View all articles"} <ArrowRight size={14}/>
-              </Link>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {allPosts.map((relPost, idx) => (
-                <Link 
-                  to={isFrench ? `/blog/${relPost.slug}` : `/en/blog/${relPost.slug}`} 
-                  key={idx} 
-                  className="group bg-bg-alt border border-primary/10 rounded-2xl p-6 hover:shadow-md transition-all flex flex-col justify-between"
-                >
-                  <div>
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">{relPost.category}</span>
-                    <h3 className="font-bold text-base mb-2 group-hover:text-accent transition-colors line-clamp-2">{relPost.title}</h3>
-                  </div>
-                  <span className="text-xs text-accent font-semibold flex items-center gap-1 mt-4">
-                    {isFrench ? "Lire" : "Read"} <ArrowRight size={12}/>
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </section>
     </div>
   );

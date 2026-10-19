@@ -321,14 +321,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez savoir combien vos commissions OTA vous coûtent réellement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de vos réservations directes, de votre parcours mobile et de votre dépendance aux plateformes.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -587,14 +580,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez savoir quel canal publicitaire correspond le mieux à votre établissement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de votre parcours de réservation, de votre protection de marque et de votre présence sur les plateformes d'avis.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -839,14 +825,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez comprendre pourquoi votre site perd des réservations sur mobile ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de votre parcours de réservation, de vos boutons d'action et de votre suivi de conversion GA4.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1080,14 +1059,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous hésitez entre plusieurs solutions techniques pour votre établissement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose une étude gratuite de votre besoin : compatibilité avec votre moteur PMS, stratégie multilingue et estimation budgétaire sur trois ans.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon étude personnalisée
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1296,14 +1268,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez savoir ce que votre fiche TripAdvisor rapporte réellement à votre site ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de votre fiche, de la qualité de vos réponses et de leur impact sur vos réservations directes.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1525,14 +1490,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez un devis détaillé poste par poste pour votre établissement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose une étude gratuite de votre besoin, avec un chiffrage séparé des coûts initiaux et annuels, et un calcul de rentabilité basé sur vos propres volumes OTA.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon étude personnalisée
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1667,14 +1625,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez un audit complet de ces cinq points sur votre site ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un diagnostic gratuit, avec mesures de performance mobile, test du parcours de réservation et analyse de vos réservations par pays.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -1942,14 +1893,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez savoir quelles requêtes rentables et quelles exclusions appliquer à votre riad ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de votre structure de campagne, de vos mots-clés et de votre enchère maximale.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit Google Ads
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2091,14 +2035,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez une méthode de sollicitation d'avis conforme aux règles, adaptée à votre établissement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de votre processus d'avis, de vos canaux de relance et de vos réponses aux commentaires.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit d'e-réputation
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2363,14 +2300,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez lancer des campagnes Meta rentables pour votre établissement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk audite gratuitement votre présence publicitaire, configure votre Pixel + CAPI et conçoit des campagnes sur-mesure garantissant un coût d'acquisition direct inférieur aux commissions OTA.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit Meta Ads gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2560,14 +2490,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez savoir pourquoi votre riad n'apparaît pas sur les recherches locales ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk propose un audit gratuit de votre fiche Google Business Profile, de votre structure technique Core Web Vitals et de vos pages de destination hôtelières.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander mon audit SEO gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2729,14 +2652,7 @@ export const blogPostsFR: BlogPostItem[] = [
           </p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous voulez tester la compatibilité technique de votre site avec un PMS avant de signer ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk vérifie gratuitement l'intégration de votre moteur de réservation, analyse la vitesse de synchronisation et conçoit le tunnel de réservation direct le plus rapide pour votre établissement.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander une vérification technique
-        </a>
-      </div>
+    
     `
   },
   {
@@ -2920,14 +2836,7 @@ export const blogPostsFR: BlogPostItem[] = [
           <p class="text-sm text-primary/80 leading-relaxed mb-0">À Merzouga et Zagora, les températures caniculaires (> 45°C) rendent l'exploitation diurne très difficile ; la plupart ferment ou réduisent la voilure. À Agafay, de nombreux camps maintiennent une excellente rentabilité en adaptant leur offre : piscines désertiques, tentes climatisées et soirées « Sunset & Dinner » débutant à 18h30 pour les résidents et touristes fuyant la chaleur de Marrakech.</p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous gérez un camp dans le désert et souhaitez booster vos réservations directes ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk crée des sites immersifs ultra-rapides et déploie des tunnels de vente dédiés aux expériences désertiques au Maroc.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander un audit commercial pour votre camp
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3039,14 +2948,7 @@ export const blogPostsFR: BlogPostItem[] = [
         <li><strong>Jours 31 à 45 :</strong> Lancement de la campagne Google Ads géolocalisée sur les terminaux mobiles présents dans votre ville (budget test de 15 à 25 € / jour).</li>
         <li><strong>Jours 46 à 60 :</strong> Tournée commerciale des 30 plus beaux riads de votre zone pour leur distribuer vos cartes conciergerie avec QR-Code et commission partenaire.</li>
       </ol>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous êtes tour-opérateur ou transporteur touristique au Maroc ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk met en place vos pages de vente d'activités, votre tunnel de réservation WhatsApp et vos campagnes Google Ads locales.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Développer vos réservations d'excursions directes
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3156,14 +3058,7 @@ export const blogPostsFR: BlogPostItem[] = [
           <p class="text-sm text-primary/80 leading-relaxed mb-0">Suppression des plugins et trackers inutiles, chargement différé du widget PMS. Gain estimé : +15 à +25 points.</p>
         </div>
       </div>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Votre site d'hôtel met plus de 3 secondes à charger sur smartphone ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk audite gratuitement les Core Web Vitals de votre établissement et optimise votre architecture web pour maximiser vos réservations directes.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander un audit de vitesse gratuit
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3379,14 +3274,7 @@ export const blogPostsFR: BlogPostItem[] = [
         <li><strong>Jours 8 à 11 :</strong> Connexion de l'API avec les webhooks de votre PMS ou mise en place des séquences automatisées.</li>
         <li><strong>Jours 12 à 15 :</strong> Formation de l'équipe de réception et du bagagiste pour intervenir en direct lors des arrivées et répondre sous 2 minutes.</li>
       </ol>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous souhaitez déployer la conciergerie WhatsApp automatisée pour votre riad ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk configure vos séquences multilingues, connecte votre PMS et automatise la récolte d'avis 5 étoiles pour vos hôtes.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander une démonstration conciergerie WhatsApp
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3540,14 +3428,7 @@ export const blogPostsFR: BlogPostItem[] = [
       </ul>
 
       <p class="mb-6">Consultez également nos solutions spécialisées <a href="/services/gestion-google-ads" class="text-accent hover:underline">Google Ads Hôtellerie</a> et <a href="/services/gestion-publicites-meta" class="text-accent hover:underline">Meta Ads Hôtellerie</a>.</p>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vos campagnes publicitaires ne convertissent pas assez ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk conçoit des landing pages hôtelières haute conversion connectées à votre moteur de réservation et à vos campagnes publicitaires.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Commander un audit de landing page
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3699,14 +3580,7 @@ export const blogPostsFR: BlogPostItem[] = [
       </ol>
 
       <p class="mb-6">Pour aller plus loin, découvrez notre guide détaillé pour <a href="/blog/reduire-commissions-ota" class="text-accent hover:underline">réduire les commissions OTA au Maroc</a> ou explorez notre <a href="/services/bundle-site-ads" class="text-accent hover:underline">offre globale de digitalisation hôtelière</a>.</p>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Besoin d'optimiser votre grille tarifaire et votre RevPAR ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Les consultants Urunk conçoivent votre stratégie de tarification dynamique et paramètrent votre Channel Manager pour maximiser vos marges nettes.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Demander un audit de Revenue Management
-        </a>
-      </div>
+    
     `
   },
   {
@@ -3864,14 +3738,7 @@ export const blogPostsFR: BlogPostItem[] = [
       </ul>
 
       <p class="mb-6">Consultez également nos offres complètes pour <a href="/services/creation-site-web" class="text-accent hover:underline">la création de sites web hôteliers</a> et notre pack <a href="/services/bundle-site-ads" class="text-accent hover:underline">Site Web + Campagnes Ads All-in-One</a>.</p>
-
-      <div class="my-8 p-6 bg-accent/10 border border-accent/20 rounded-2xl text-center">
-        <p class="font-bold text-primary text-base mb-2">Vous planifiez la réouverture ou le rebranding de votre établissement ?</p>
-        <p class="text-sm text-primary/80 mb-4 max-w-xl mx-auto">Urunk gère l'intégralité de votre relancement digital : préservation de votre SEO, conception du nouveau site et campagnes publicitaires de relance.</p>
-        <a href="/contact" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-6 py-3 rounded-full text-sm transition-all shadow-sm">
-          Planifier votre relancement digital
-        </a>
-      </div>
+    
     `
   }
 ];
