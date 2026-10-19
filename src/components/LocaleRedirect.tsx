@@ -10,7 +10,7 @@ export default function LocaleRedirect() {
     if (browserLang.toLowerCase().startsWith('en')) {
       navigate('/en/', { replace: true });
     } else {
-      navigate('/fr/', { replace: true });
+      navigate('/', { replace: true });
     }
   }, [navigate]);
 

@@ -60,7 +60,7 @@ export default function PortfolioSectionFR() {
                 </div>
 
                 <Link 
-                  to={`/fr/realisations/${study.frSlug}`} 
+                  to={`/realisations/${study.frSlug}`} 
                   className="inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-accent-hover transition-colors mt-auto pt-2"
                 >
                   <span>Consulter le plan stratégique</span>

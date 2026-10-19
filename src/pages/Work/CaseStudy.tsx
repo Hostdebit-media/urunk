@@ -50,7 +50,7 @@ export default function CaseStudy() {
   const roadmap = isFrench ? study.frImplementationRoadmap : study.implementationRoadmap;
   const services = isFrench ? study.frRelatedServices : study.relatedServices;
 
-  const canonicalUrl = `https://urunk.com${isFrench ? `/fr/realisations/${study.frSlug}` : `/work/${study.slug}`}`;
+  const canonicalUrl = `https://urunk.com${isFrench ? `/realisations/${study.frSlug}` : `/en/work/${study.slug}`}`;
 
   const schema = {
     "@context": "https://schema.org",

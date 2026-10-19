@@ -60,7 +60,7 @@ export default function PortfolioSection() {
                 </div>
 
                 <Link 
-                  to={`/work/${study.slug}`} 
+                  to={`/en/work/${study.slug}`} 
                   className="inline-flex items-center gap-2 text-xs font-bold text-accent hover:text-accent-hover transition-colors mt-auto pt-2"
                 >
                   <span>Read Strategy Blueprint</span>

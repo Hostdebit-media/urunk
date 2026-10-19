@@ -509,7 +509,7 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
             </div>
             
             <Link 
-              to={isFrench ? `/fr/realisations/${indData.caseStudySlug}` : `/en/work/${indData.caseStudySlug}`} 
+              to={isFrench ? `/realisations/${indData.caseStudySlug}` : `/en/work/${indData.caseStudySlug}`} 
               className="shrink-0 bg-white hover:bg-white/90 text-primary px-7 py-3.5 rounded-xl font-bold shadow-md transition-all inline-flex items-center gap-2 text-sm"
             >
               <span>{isFrench ? "Lire l'Étude de Cas" : "View Case Study"}</span>

@@ -217,12 +217,12 @@ export function getEquivalentRoute(pathname: string): string {
         (r.slugs.en.service === parts[1] && r.slugs.en.target === parts[0])
       );
       if (rel) {
-        return `/fr/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
+        return `/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
       }
-      return `/fr/expertise/${parts[0]}/${parts[1]}`;
+      return `/expertise/${parts[0]}/${parts[1]}`;
     }
     if (parts.length === 3) {
-      return `/fr/expertise/${parts[0]}/${parts[1]}/${parts[2]}`;
+      return `/expertise/${parts[0]}/${parts[1]}/${parts[2]}`;
     }
   }
   if (cleanPath.startsWith('/fr/expertise/') || cleanPath.startsWith('/expertise/')) {
