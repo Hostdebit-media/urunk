@@ -57,7 +57,7 @@ export default function GoogleAds() {
       <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Search Engine Marketing
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Google Ads Management</h1>
@@ -105,15 +105,15 @@ export default function GoogleAds() {
           <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Data-driven ad management.</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">Keyword Strategy</h3>
+              <h3 className="text-xl font-bold mb-4 text-accent">Keyword Strategy</h3>
               <p className="text-white/80 text-sm leading-relaxed">We identify the exact phrases your ideal guests are searching for, separating high-intent bookers from casual browsers.</p>
             </div>
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">Compelling Ad Copy</h3>
+              <h3 className="text-xl font-bold mb-4 text-accent">Compelling Ad Copy</h3>
               <p className="text-white/80 text-sm leading-relaxed">We write engaging search ads that highlight your unique amenities, current promotions, and direct-booking perks to maximize click-through rates.</p>
             </div>
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">Continuous Optimization</h3>
+              <h3 className="text-xl font-bold mb-4 text-accent">Continuous Optimization</h3>
               <p className="text-white/80 text-sm leading-relaxed">We monitor search terms daily, adding negative keywords and adjusting bids to ensure your cost-per-acquisition keeps dropping.</p>
             </div>
           </div>

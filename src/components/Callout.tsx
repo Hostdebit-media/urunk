@@ -18,7 +18,7 @@ export default function Callout({ children, variant = 'light' }: CalloutProps) {
       {/* Decorative accent line */}
       <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-accent"></div>
       
-      <div className={`shrink-0 p-3 rounded-xl ${isDark ? 'bg-white/10 text-yellow-400' : 'bg-accent/10 text-accent'}`}>
+      <div className={`shrink-0 p-3 rounded-xl ${isDark ? 'bg-white/10 text-accent' : 'bg-accent/10 text-accent'}`}>
         <Lightbulb size={28} strokeWidth={1.5} />
       </div>
       

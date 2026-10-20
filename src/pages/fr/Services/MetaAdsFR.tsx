@@ -58,7 +58,7 @@ export default function MetaAdsFR() {
       <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Publicité sur les réseaux sociaux
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
@@ -71,7 +71,7 @@ export default function MetaAdsFR() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong className="text-yellow-400 font-semibold">Ce que nous faisons :</strong> Urunk propose une gestion
+              <strong className="text-accent font-semibold">Ce que nous faisons :</strong> Urunk propose une gestion
               spécialisée des publicités Meta (Facebook & Instagram). Nous créons
               des campagnes visuelles captivantes pour valoriser votre
               établissement, promouvoir vos offres spéciales et recibler
@@ -147,7 +147,7 @@ export default function MetaAdsFR() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+              <h3 className="text-xl font-bold mb-4 text-accent">
                 Ciblage d'Audience
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">
@@ -157,7 +157,7 @@ export default function MetaAdsFR() {
               </p>
             </div>
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+              <h3 className="text-xl font-bold mb-4 text-accent">
                 Création & Rédaction
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">
@@ -167,7 +167,7 @@ export default function MetaAdsFR() {
               </p>
             </div>
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+              <h3 className="text-xl font-bold mb-4 text-accent">
                 Retargeting Puissant
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">

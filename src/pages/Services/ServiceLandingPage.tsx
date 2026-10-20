@@ -87,7 +87,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
       <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             <Sparkles size={14} /> {isFrench ? "Service de Croissance Tourisme" : "Tourism Growth Solution"}
           </span>
 
@@ -100,7 +100,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
           </p>
 
           {/* AEO / GEO Information-Dense Summary Block */}
-          <div className="max-w-3xl mx-auto mb-8 bg-white/10 border-l-4 border-accent p-6 rounded-r-2xl backdrop-blur-xs text-left">
+          <div className="max-w-3xl mx-auto mb-8 bg-white/10 border border-white/15 p-6 rounded-2xl backdrop-blur-xs text-left">
             <p className="text-sm md:text-base leading-relaxed text-white/95 m-0 font-normal">
               <strong>Urunk Agency</strong> {isFrench
                 ? `délivre ce service spécialisé avec une garantie de performance technique et de retour sur investissement. Basée à Casablanca et Marrakech, notre agence applique les standards internationaux (Core Web Vitals, Google Ads accrédité, balisage Schema.org) pour décupler votre acquisition directe au Maroc et à l'international. Tarif transparent : ${data.investmentPrice}.`
@@ -110,7 +110,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
 
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong className="text-yellow-400 font-semibold">{data.calloutTitle}:</strong> {data.calloutBody}
+              <strong className="text-accent font-semibold">{data.calloutTitle}:</strong> {data.calloutBody}
             </Callout>
           </div>
 
@@ -208,7 +208,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
           <div className="bg-primary text-white p-8 md:p-12 rounded-3xl shadow-xl border border-white/10 flex flex-col items-center text-center relative overflow-hidden lg:sticky lg:top-32">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_60%)]"></div>
             
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
               {data.investmentTitle}
             </span>
             <h3 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-white relative z-10">{data.investmentPrice}</h3>
@@ -300,12 +300,12 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
       <section className="bg-primary text-white py-12 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-white/60">
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
-            <span className="flex items-center gap-1"><Check size={12} className="text-yellow-400" /> {isFrench ? "Paiement 100% Sécurisé" : "100% Secure Payment"}</span>
-            <span className="flex items-center gap-1"><Check size={12} className="text-yellow-400" /> {isFrench ? "Accompagnement Dédié" : "Dedicated Local Experts"}</span>
-            <span className="flex items-center gap-1"><Check size={12} className="text-yellow-400" /> {isFrench ? "Sans Frais Cachés" : "Transparent Fixed Invoicing"}</span>
+            <span className="flex items-center gap-1"><Check size={12} className="text-accent" /> {isFrench ? "Paiement 100% Sécurisé" : "100% Secure Payment"}</span>
+            <span className="flex items-center gap-1"><Check size={12} className="text-accent" /> {isFrench ? "Accompagnement Dédié" : "Dedicated Local Experts"}</span>
+            <span className="flex items-center gap-1"><Check size={12} className="text-accent" /> {isFrench ? "Sans Frais Cachés" : "Transparent Fixed Invoicing"}</span>
           </div>
           <div>
-            <Link to={isFrench ? "/tarifs" : "/en/pricing"} className="hover:text-yellow-400 font-medium transition-colors">
+            <Link to={isFrench ? "/tarifs" : "/en/pricing"} className="hover:text-accent transition-colors font-medium">
               {isFrench ? "Consulter Nos Tarifs Généraux" : "View Global Price Index"} →
             </Link>
           </div>

@@ -1539,6 +1539,7 @@ function prerender() {
     .replace(/<meta\s+property="og:[^"]*"[\s\S]*?\/>\s*/gi, '')
     .replace(/<meta\s+name="twitter:[^"]*"[\s\S]*?\/>\s*/gi, '')
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/gi, '')
+    .replace(/<meta[^>]*name="robots"[^>]*>\s*/gi, '')
     .replace(/<!-- Open Graph Tags -->\s*/gi, '')
     .replace(/<!-- Twitter Card Tags -->\s*/gi, '');
   const allPages: PageMetadata[] = [...staticPages];

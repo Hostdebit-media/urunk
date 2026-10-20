@@ -83,32 +83,39 @@ function escapeXml(unsafe: string): string {
 function generatePagesSitemap() {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`;
+  const seenUrls = new Set<string>();
 
   for (const page of CORE_PAGES) {
     const frUrl = page.fr === '/' ? `${BASE_URL}/` : `${BASE_URL}${page.fr}`;
     const enUrl = `${BASE_URL}${page.en}`;
 
     // Add French version (Primary/Root)
-    xml += `  <url>\n`;
-    xml += `    <loc>${frUrl}</loc>\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
-    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
-    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
-    xml += `    <priority>${page.priority}</priority>\n`;
-    xml += `  </url>\n`;
+    if (!seenUrls.has(frUrl)) {
+      seenUrls.add(frUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
+      xml += `  </url>\n`;
+    }
 
     // Add English version (Secondary /en/)
-    xml += `  <url>\n`;
-    xml += `    <loc>${enUrl}</loc>\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
-    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
-    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
-    xml += `    <priority>${page.priority}</priority>\n`;
-    xml += `  </url>\n`;
+    if (!seenUrls.has(enUrl)) {
+      seenUrls.add(enUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${enUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
+      xml += `  </url>\n`;
+    }
   }
 
   // Add Live Matrix Relations (curated in src/data/matrixRelations.ts)
@@ -117,25 +124,31 @@ function generatePagesSitemap() {
     const frUrl = `${BASE_URL}/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
     const enUrl = `${BASE_URL}/en/expertise/${rel.slugs.en.service}/${rel.slugs.en.target}`;
 
-    xml += `  <url>\n`;
-    xml += `    <loc>${enUrl}</loc>\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
-    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
-    xml += `    <changefreq>monthly</changefreq>\n`;
-    xml += `    <priority>0.8</priority>\n`;
-    xml += `  </url>\n`;
+    if (!seenUrls.has(enUrl)) {
+      seenUrls.add(enUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${enUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>monthly</changefreq>\n`;
+      xml += `    <priority>0.8</priority>\n`;
+      xml += `  </url>\n`;
+    }
     
-    xml += `  <url>\n`;
-    xml += `    <loc>${frUrl}</loc>\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
-    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
-    xml += `    <changefreq>monthly</changefreq>\n`;
-    xml += `    <priority>0.8</priority>\n`;
-    xml += `  </url>\n`;
+    if (!seenUrls.has(frUrl)) {
+      seenUrls.add(frUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>monthly</changefreq>\n`;
+      xml += `    <priority>0.8</priority>\n`;
+      xml += `  </url>\n`;
+    }
   }
 
   xml += `</urlset>\n`;
@@ -147,20 +160,44 @@ function generatePagesSitemap() {
 function generateFrenchPagesSitemap() {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n`;
+  const seenUrls = new Set<string>();
 
   for (const page of CORE_PAGES) {
     const frUrl = page.fr === '/' ? `${BASE_URL}/` : `${BASE_URL}${page.fr}`;
     const enUrl = `${BASE_URL}${page.en}`;
 
-    xml += `  <url>\n`;
-    xml += `    <loc>${frUrl}</loc>\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
-    xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
-    xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
-    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
-    xml += `    <priority>${page.priority}</priority>\n`;
-    xml += `  </url>\n`;
+    if (!seenUrls.has(frUrl)) {
+      seenUrls.add(frUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  // Include Live French Matrix Relations
+  const liveMatrixRelations = matrixRelations.filter(r => r.status === 'live');
+  for (const rel of liveMatrixRelations) {
+    const frUrl = `${BASE_URL}/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
+    const enUrl = `${BASE_URL}/en/expertise/${rel.slugs.en.service}/${rel.slugs.en.target}`;
+
+    if (!seenUrls.has(frUrl)) {
+      seenUrls.add(frUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>monthly</changefreq>\n`;
+      xml += `    <priority>0.8</priority>\n`;
+      xml += `  </url>\n`;
+    }
   }
 
   xml += `</urlset>\n`;

@@ -222,22 +222,22 @@ export default function WebsiteDesignFR() {
               </ul>
             </div>
             <div className="lg:col-span-6 bg-primary text-white p-8 md:p-10 rounded-3xl space-y-6">
-              <h3 className="text-xl font-serif font-bold text-yellow-400">Périmètre des Livrables & Garanties</h3>
+              <h3 className="text-xl font-serif font-bold text-accent">Périmètre des Livrables & Garanties</h3>
               <ul className="space-y-3 text-xs text-white/90 font-light">
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Investissement Forfaitaire :</strong> À partir de 12 000 MAD (≈1 100 €) pour la création complète du site web sur-mesure.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Délais de Réalisation :</strong> 4 à 6 semaines du cadrage initial au déploiement en production.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Garantie de Croissance :</strong> Engagement de performance sur 90 jours après livraison.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Propriété à 100 % :</strong> Vous êtes propriétaire exclusif du code source, du nom de domaine et du contenu.</span>
                 </li>
               </ul>

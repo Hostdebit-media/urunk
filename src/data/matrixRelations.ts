@@ -34,7 +34,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'seo-hotel', target: 'marrakech' },
       en: { service: 'hotel-seo', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 2. Hotel Website Design × Marrakech
@@ -48,7 +48,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'site-web-hotel', target: 'marrakech' },
       en: { service: 'hotel-website-design', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 3. Riad SEO × Marrakech
@@ -62,7 +62,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'seo-riad', target: 'marrakech' },
       en: { service: 'riad-seo', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 4. Riad Website Design × Marrakech
@@ -76,7 +76,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'site-web-riad', target: 'marrakech' },
       en: { service: 'riad-website-design', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 5. Direct Booking Strategy × Marrakech
@@ -90,7 +90,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'reservation-directe', target: 'marrakech' },
       en: { service: 'direct-booking', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 6. Hotel SEO × Agadir (Coastal & surf resort capital)
@@ -104,7 +104,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'seo-hotel', target: 'agadir' },
       en: { service: 'hotel-seo', target: 'agadir' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 7. Hotel Website Design × Agadir
@@ -118,7 +118,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'site-web-hotel', target: 'agadir' },
       en: { service: 'hotel-website-design', target: 'agadir' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 8. Direct Booking Strategy × Agadir
@@ -132,7 +132,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'reservation-directe', target: 'agadir' },
       en: { service: 'direct-booking', target: 'agadir' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 9. Hotel SEO × Casablanca (Corporate & business hospitality)
@@ -146,7 +146,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'seo-hotel', target: 'casablanca' },
       en: { service: 'hotel-seo', target: 'casablanca' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 10. Web Design × Casablanca (Commercial/B2B focus)
@@ -160,7 +160,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'creation-site-web', target: 'casablanca' },
       en: { service: 'web-design', target: 'casablanca' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 11. Local SEO × Casablanca
@@ -174,7 +174,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'referencement-local', target: 'casablanca' },
       en: { service: 'local-seo', target: 'casablanca' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 12. Google Ads × Casablanca
@@ -188,7 +188,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'google-ads', target: 'casablanca' },
       en: { service: 'google-ads', target: 'casablanca' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 13. Google Ads × Marrakech
@@ -202,21 +202,21 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'google-ads', target: 'marrakech' },
       en: { service: 'google-ads', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 14. TripAdvisor Ads × Marrakech
   {
     id: 'tripadvisor-ads-marrakech',
     type: 'service_location',
-    serviceId: 'tripadvisor-ads',
+    serviceId: 'hotel-digital-marketing',
     targetId: 'marrakech',
     locationId: 'marrakech',
     slugs: {
       fr: { service: 'tripadvisor-ads', target: 'marrakech' },
       en: { service: 'tripadvisor-ads', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 15. Hotel SEO × Rabat (Diplomatic & institutional business hotels)
@@ -230,7 +230,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'seo-hotel', target: 'rabat' },
       en: { service: 'hotel-seo', target: 'rabat' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 16. Web Design × Rabat
@@ -244,21 +244,21 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'creation-site-web', target: 'rabat' },
       en: { service: 'web-design', target: 'rabat' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 17. Meta Ads × Marrakech (Visual hospitality & dining)
   {
     id: 'meta-ads-marrakech',
     type: 'service_location',
-    serviceId: 'meta-ads',
+    serviceId: 'hotel-digital-marketing',
     targetId: 'marrakech',
     locationId: 'marrakech',
     slugs: {
       fr: { service: 'meta-ads', target: 'marrakech' },
       en: { service: 'meta-ads', target: 'marrakech' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 18. Service × Industry: Hotel SEO × Hotels & Resorts
@@ -272,7 +272,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'seo-hotel', target: 'hotels-resorts' },
       en: { service: 'hotel-seo', target: 'hotels-resorts' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   },
   // 19. Service × Industry: Direct Booking × Riads & Boutique Stays
@@ -286,7 +286,7 @@ export const matrixRelations: MatrixRelation[] = [
       fr: { service: 'reservation-directe', target: 'riads-maisons-hotes' },
       en: { service: 'direct-booking', target: 'riads-boutique-hotels' }
     },
-    status: 'planned',
+    status: 'live',
     priority: 0.6
   }
 ];

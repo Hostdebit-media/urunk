@@ -74,7 +74,7 @@ export default function WebsiteDesign() {
       <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Digital Transformation
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Hotel & Riad Website Design</h1>
@@ -196,22 +196,22 @@ export default function WebsiteDesign() {
               </ul>
             </div>
             <div className="lg:col-span-6 bg-primary text-white p-8 md:p-10 rounded-3xl space-y-6">
-              <h3 className="text-xl font-serif font-bold text-yellow-400">Scope of Deliverables & Guarantees</h3>
+              <h3 className="text-xl font-serif font-bold text-accent">Scope of Deliverables & Guarantees</h3>
               <ul className="space-y-3 text-xs text-white/90 font-light">
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Fixed Investment:</strong> From 12,000 MAD (≈€1,100) for complete custom website engineering.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Execution Timeline:</strong> 4 to 6 weeks from initial kickoff to live domain launch.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>Growth Guarantee:</strong> Backed by our 90-day direct booking performance guarantee.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-1.5 shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
                   <span><strong>100% Asset Ownership:</strong> You retain complete legal ownership of code, domain, and media.</span>
                 </li>
               </ul>

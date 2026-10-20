@@ -58,7 +58,7 @@ export default function TripadvisorAdsFR() {
       <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Plateformes de voyage
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
@@ -71,7 +71,7 @@ export default function TripadvisorAdsFR() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong className="text-yellow-400 font-semibold">Notre valeur ajoutée :</strong> Urunk aide les hôtels et
+              <strong className="text-accent font-semibold">Notre valeur ajoutée :</strong> Urunk aide les hôtels et
               riads à maximiser leur visibilité sur TripAdvisor dans des marchés
               hautement concurrentiels, transformant leur réputation en un moteur
               constant de réservations directes.
@@ -81,7 +81,7 @@ export default function TripadvisorAdsFR() {
             to="/contact"
             className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
           >
-            Dominerez TripAdvisor dès maintenant <ArrowRight size={18} />
+            Dominez TripAdvisor dès maintenant <ArrowRight size={18} />
           </Link>
         </div>
       </section>
@@ -137,7 +137,7 @@ export default function TripadvisorAdsFR() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+              <h3 className="text-xl font-bold mb-4 text-accent">
                 Emplacements Sponsorisés
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">
@@ -147,7 +147,7 @@ export default function TripadvisorAdsFR() {
               </p>
             </div>
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+              <h3 className="text-xl font-bold mb-4 text-accent">
                 Optimisation de la Fiche
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">
@@ -157,7 +157,7 @@ export default function TripadvisorAdsFR() {
               </p>
             </div>
             <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+              <h3 className="text-xl font-bold mb-4 text-accent">
                 Stratégie d'Avis Clients
               </h3>
               <p className="text-white/80 text-sm leading-relaxed">

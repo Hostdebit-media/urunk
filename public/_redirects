@@ -181,20 +181,13 @@
 /services/website-design /en/services/website-design 301!
 /services/google-ads /en/services/google-ads 301!
 /services/meta-ads /en/services/meta-ads 301!
-/services/tripadvisor-ads /en/services/tripadvisor-ads 301!
 /services/bundle /services/bundle-site-ads 301!
-/services/bundle-site-ads /services/bundle-site-ads 301!
-/services/ai-seo-optimization /en/services/ai-seo-optimization 301!
-/services/wordpress-seo /en/services/wordpress-seo 301!
-/services/ecommerce-seo /en/services/ecommerce-seo 301!
-/services/google-business-profile /en/services/google-business-profile 301!
-/services/local-seo-morocco /en/services/local-seo-morocco 301!
 
 # 10. Specific SEO URL Normalization 301 Redirects
 /blog/pages-atterrissage-haute-conversion-hotels /blog/landing-pages-hotels 301!
 /en/blog/high-converting-hotel-landing-pages /en/blog/landing-pages-hotels 301!
-/secteurs/ecommerce /secteurs 301!
-/en/industries/ecommerce /en/industries 301!
+/secteurs/ecommerce /secteurs/hotels-resorts 301!
+/en/industries/ecommerce /en/industries/hotels-resorts 301!
 /en/services/bundle /en/services/bundle-site-ads 301!
 
 # 10. Legacy English Industries & Locations -> /en/

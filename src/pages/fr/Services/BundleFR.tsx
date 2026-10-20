@@ -58,7 +58,7 @@ export default function BundleFR() {
       <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Offre de Croissance
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
@@ -247,10 +247,10 @@ export default function BundleFR() {
           </div>
 
           <div className="bg-primary text-white p-10 rounded-2xl shadow-md flex flex-col justify-center items-center text-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-yellow-400 text-primary text-xs font-bold px-4 py-1.5 rounded-bl-xl">
+            <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">
               DISPONIBILITÉ LIMITÉE
             </div>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-yellow-400 text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-accent-soft text-sm font-medium mb-6">
               Tarif du Pack
             </span>
             <h3 className="text-2xl font-bold mb-2">Devis Sur-Mesure</h3>
@@ -259,14 +259,14 @@ export default function BundleFR() {
               établissons une proposition ajustée pour l'ensemble du projet.
             </p>
             <div className="bg-white/10 p-4 rounded-xl mb-8 w-full">
-              <p className="text-sm text-yellow-400 font-medium">
+              <p className="text-sm text-white/90 font-medium">
                 Seulement 3 nouveaux packs pris en charge par mois pour garantir
                 un niveau de qualité optimal.
               </p>
             </div>
             <Link
               to="/contact"
-              className="w-full bg-yellow-400 hover:bg-yellow-500 text-primary py-3 rounded-xl font-bold transition-colors shadow-lg"
+              className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-xl font-bold transition-all shadow-md"
             >
               Vérifier la disponibilité
             </Link>
