@@ -97,7 +97,7 @@ export default function BottomFormSectionFR() {
 
         <div className="flex-1 w-full">
           <form action="https://formsubmit.co/contact@urunk.com" method="POST" onSubmit={handleFormSubmit} className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 text-primary shadow-xl">
-            <h3 className="text-2xl font-serif font-bold mb-6">Demander un <span className="text-accent italic font-semibold">Devis Gratuit</span></h3>
+            <h3 className="text-2xl font-serif font-bold mb-6">Demander un <span className="text-accent italic font-semibold">Audit Gratuit</span></h3>
             
             {formError && (
               <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-600 rounded-xl text-xs font-medium">
@@ -116,27 +116,19 @@ export default function BottomFormSectionFR() {
                 <input id="home_name" type="text" name="name" required placeholder="Omar Aziz" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
               </div>
               <div>
-                <label htmlFor="home_contact" className="block font-medium mb-1">WhatsApp ou Email *</label>
-                <input id="home_contact" type="text" name="email" required placeholder="+212 600-000000 ou vous@etablissement.com" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
+                <label htmlFor="home_contact" className="block font-medium mb-1">Email ou WhatsApp *</label>
+                <input id="home_contact" type="text" name="contact" required placeholder="+212 600-000000 ou vous@etablissement.com" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
               </div>
               <div>
-                <label htmlFor="home_business" className="block font-medium mb-1">Nom de votre Établissement</label>
-                <input id="home_business" type="text" name="business" placeholder="Riad Atlas & Spa" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
-              </div>
-              <div>
-                <label htmlFor="home_service" className="block font-medium mb-1">Service Souhaité</label>
-                <select id="home_service" name="service" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer text-sm bg-white">
-                  <option value="Pas encore sûr — Devis personnalisé">Pas encore sûr — Devis personnalisé</option>
-                  <option value="Site Web Hôtelier">Création de Site Web Hôtelier (Dès 12 000 MAD)</option>
-                  <option value="SEO & Référencement">SEO Hôtelier & Local Maps (Dès 4 000 MAD/mois)</option>
-                  <option value="Google Ads Maroc">Gestion Google Ads (Dès 4 000 MAD/mois)</option>
-                  <option value="Meta & Instagram Ads">Meta & Instagram Ads (Dès 4 000 MAD/mois)</option>
-                  <option value="Pack Croissance Directe">Pack Tout-en-Un Site + Ads (Meilleure Valeur)</option>
+                <label htmlFor="home_establishment" className="block font-medium mb-1">Type d'établissement *</label>
+                <select id="home_establishment" name="establishment_type" required className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer text-sm bg-white">
+                  <option value="">Sélectionnez votre type d'établissement</option>
+                  <option value="Riad & Maison d'hôtes">Riad & Maison d'hôtes</option>
+                  <option value="Hôtel & Resort">Hôtel & Resort</option>
+                  <option value="Agence de voyage & Tour-opérateur">Agence de voyage & Tour-opérateur</option>
+                  <option value="PME & Entreprise">PME & Entreprise</option>
+                  <option value="Autre">Autre activité</option>
                 </select>
-              </div>
-              <div>
-                <label htmlFor="home_message" className="block font-medium mb-1">Message Optionnel (site actuel, objectifs d'occupation, budget pub)</label>
-                <textarea id="home_message" name="message" rows={3} placeholder="Lien du site actuel, objectifs principaux, délais..." className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm resize-none"></textarea>
               </div>
 
               {/* Anti-spam honeypot (off-screen, invisible to humans, traps spam bots) */}
@@ -165,11 +157,11 @@ export default function BottomFormSectionFR() {
                   disabled={formSubmitting}
                   className="w-full bg-accent hover:bg-accent-hover active:scale-[0.99] text-white py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-75"
                 >
-                  <span>Obtenir mon Devis Gratuit</span>
+                  <span>Demander un Audit Gratuit</span>
                   <ArrowRight size={16} />
                 </button>
                 <p className="text-[11px] text-primary/60 text-center mt-3 font-medium">
-                  Vos données sont confidentielles. Réponse personnalisée sous 24h avec devis forfaitaire. Sans engagement.
+                  Vos données sont confidentielles. Analyse personnalisée sous 24h sans engagement.
                 </p>
               </div>
             </div>

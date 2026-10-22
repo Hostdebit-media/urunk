@@ -213,6 +213,30 @@ export default function FooterNav({ isFrench }: FooterNavProps) {
 
         </div>
 
+        {/* Local NAP Block (Casablanca & Marrakech) */}
+        <div className="py-8 border-b border-primary/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-primary/80">
+          <div>
+            <p className="font-bold uppercase tracking-wider text-accent mb-2">Casablanca</p>
+            <p className="leading-relaxed font-mono text-[11px]">[ADRESSE_CASABLANCA_ANFA]</p>
+            <p className="text-primary/60 mt-1">Casablanca, Maroc</p>
+          </div>
+          <div>
+            <p className="font-bold uppercase tracking-wider text-accent mb-2">Marrakech</p>
+            <p className="leading-relaxed font-mono text-[11px]">[ADRESSE_MARRAKECH_GUELIZ]</p>
+            <p className="text-primary/60 mt-1">Marrakech, Maroc</p>
+          </div>
+          <div>
+            <p className="font-bold uppercase tracking-wider text-accent mb-2">{isFrench ? "Téléphone" : "Phone"}</p>
+            <p className="font-mono text-[11px]">[TELEPHONE]</p>
+            <p className="text-primary/60 mt-1">{isFrench ? "Lun - Ven: 09:00 - 18:00" : "Mon - Fri: 09:00 - 18:00"}</p>
+          </div>
+          <div>
+            <p className="font-bold uppercase tracking-wider text-accent mb-2">Email</p>
+            <p className="font-mono text-[11px]">[EMAIL]</p>
+            <p className="text-primary/60 mt-1">{isFrench ? "Réponse sous 24h ouvrées" : "Reply within 24 business hours"}</p>
+          </div>
+        </div>
+
         {/* Bottom Copyright & Legal Links */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary/85">
           <p>© {new Date().getFullYear()} Urunk. {isFrench ? "Tous droits réservés." : "All rights reserved."}</p>

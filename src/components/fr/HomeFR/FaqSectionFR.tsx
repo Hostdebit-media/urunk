@@ -8,7 +8,7 @@ export default function FaqSectionFR() {
   const faqItems = [
     {
       q: "Comment aidez-vous les riads et hôtels marocains à réduire les commissions des OTA ?",
-      a: "Nous concevons des sites internet haut de gamme et ultra-rapides (dès 12 000 MAD / ≈1 100 €) connectés directement à votre PMS (Cloudbeds, Mews, etc.). Associés à des campagnes Google Ads ciblées (4 000 MAD/mois / ≈370 €/mois de frais de gestion) et du référencement local, nous interceptons les voyageurs avant qu'ils ne réservent sur les plateformes tierces, réduisant la dépendance aux OTA et augmentant vos ventes directes de +40 %."
+      a: "Nous concevons des sites internet haut de gamme et ultra-rapides (dès 12 000 MAD / ≈1 100 €) connectés directement à votre PMS (Cloudbeds, Mews, etc.). Associés à des campagnes Google Ads ciblées (4 000 MAD/mois / ≈370 €/mois de frais de gestion) et du référencement local, nous interceptons les voyageurs avant qu'ils ne réservent sur les plateformes tierces, réduisant la dépendance aux OTA et augmentant vos réservations directes."
     },
     {
       q: "Combien de temps faut-il pour qu'une stratégie SEO porte ses fruits ?",
@@ -16,11 +16,11 @@ export default function FaqSectionFR() {
     },
     {
       q: "Qu'est-ce qui est inclus dans l'offre de création de site web ?",
-      a: "Chaque projet (12 000 MAD / ≈1 100 € investissement fixe) comprend : design UX sur-mesure de standing, développement performance Jamstack/React (vitesse de chargement optimale), architecture multilingue (français, anglais, arabe), raccordement API de votre moteur de réservation et configuration SEO technique intégrale. Livraison sous 4 à 6 semaines, avec notre garantie de performance sous 90 jours."
+      a: "Chaque projet (12 000 MAD / ≈1 100 € investissement fixe) comprend : design UX sur-mesure de standing, développement performance Jamstack/React (vitesse de chargement optimale), architecture bilingue (français, anglais), raccordement API de votre moteur de réservation et configuration SEO technique intégrale. Livraison sous 4 à 6 semaines, avec garantie de performance sous 90 jours soumise aux [CONDITIONS_GARANTIE]."
     },
     {
       q: "Quel levier est le plus efficace : Google Ads ou Meta Ads ?",
-      a: "Google Ads (frais de gestion à 4 000 MAD/mois / ≈370 €/mois) capte les voyageurs ayant une intention d'achat immédiate pour une destination marocaine spécifique. Meta Ads (Instagram/Facebook) excelle dans la mise en valeur visuelle de l'architecture et de l'expérience de votre établissement auprès de cibles qualifiées en Europe ou Amérique du Nord, réduisant le coût d'acquisition de prospects de -35 %."
+      a: "Google Ads (frais de gestion à 4 000 MAD/mois / ≈370 €/mois) capte les voyageurs ayant une intention d'achat immédiate pour une destination marocaine spécifique. Meta Ads (Instagram/Facebook) excelle dans la mise en valeur visuelle de l'architecture et de l'expérience de votre établissement auprès de cibles qualifiées en Europe ou Amérique du Nord, optimisant le coût d'acquisition de vos réservations."
     },
     {
       q: "Pouvez-vous connecter le site web à mon PMS existant ?",
@@ -68,7 +68,12 @@ export default function FaqSectionFR() {
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
             Réponses Claires
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Foire Aux Questions</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
+            Questions fréquentes sur le SEO, les sites web et les commissions OTA
+          </h2>
+          <p className="text-base md:text-lg text-primary/75 max-w-3xl mx-auto font-light leading-relaxed">
+            Cette foire aux questions rassemble les réponses pratiques sur le référencement naturel, la création de sites internet pour l'hôtellerie au Maroc et la réduction des commissions prélevées par les plateformes de réservation en ligne. Les réponses détaillent les coûts, les délais de livraison et le fonctionnement opérationnel.
+          </p>
         </div>
 
         <div className="space-y-4">

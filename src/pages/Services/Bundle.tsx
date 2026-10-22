@@ -48,8 +48,8 @@ export default function Bundle() {
   return (
     <div className="w-full">
       <SEO 
-        title="Hotel Web Design & Ads Package | Urunk" 
-        description="Our best value package: A new direct-booking website combined with immediate targeted traffic via Google and TripAdvisor ads." 
+        title="Hotel Website + Ads Bundle | Urunk" 
+        description="Combined package pairing a high-speed hotel website with targeted search ads to maximize direct booking return on investment." 
         schema={[schema, serviceSchema]}
       />
       
@@ -60,7 +60,7 @@ export default function Bundle() {
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Growth Bundle
           </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Website + Ads Bundle</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Hotel Website + Ads Bundle</h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
             The complete direct-booking engine. A high-converting site fueled by immediate, targeted traffic.
           </p>

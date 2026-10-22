@@ -48,8 +48,8 @@ export default function MetaAds() {
   return (
     <div className="w-full">
       <SEO 
-        title="Facebook & Meta Ads for Hotels | Urunk" 
-        description="Inspire travelers and drive direct bookings with professional Facebook and Instagram Ads management. Build awareness and retarget lost visitors." 
+        title="Meta Ads for Hotels and Riads | Urunk" 
+        description="Visual Facebook and Instagram advertising targeting international travelers and retargeting engaged website visitors for hotels." 
         schema={[schema, serviceSchema]}
       />
       
@@ -60,7 +60,7 @@ export default function MetaAds() {
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Paid Social Media
           </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Meta Ads Management</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Meta Ads for Hotels and Riads</h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
             Stop losing potential guests. Inspire travelers on Facebook and Instagram, and retarget them until they book.
           </p>

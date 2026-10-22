@@ -40,7 +40,6 @@ const CORE_PAGES = [
   { fr: '/site-web-riad-marrakech', en: '/en/riad-website-design-marrakech', changefreq: 'monthly', priority: '0.9' },
 
   // Services sub-pages
-  { fr: '/services/gestion-google-ads', en: '/en/services/google-ads', changefreq: 'monthly', priority: '0.9' },
   { fr: '/services/gestion-publicites-meta', en: '/en/services/meta-ads', changefreq: 'monthly', priority: '0.9' },
   { fr: '/services/tripadvisor-ads', en: '/en/services/tripadvisor-ads', changefreq: 'monthly', priority: '0.9' },
   { fr: '/services/bundle-site-ads', en: '/en/services/bundle-site-ads', changefreq: 'monthly', priority: '0.9' },

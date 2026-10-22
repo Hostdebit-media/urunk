@@ -143,7 +143,7 @@ export default function App() {
               <Route path="site-web-riad-marrakech" element={<SiteWebRiadMarrakech />} />
 
               {/* Core Services Routes FR */}
-              <Route path="services/gestion-google-ads" element={<GoogleAdsFR />} />
+              <Route path="services/gestion-google-ads" element={<Navigate to="/google-ads-maroc" replace />} />
               <Route path="services/gestion-publicites-meta" element={<MetaAdsFR />} />
               <Route path="services/tripadvisor-ads" element={<TripadvisorAdsFR />} />
               <Route path="services/bundle-site-ads" element={<BundleFR />} />

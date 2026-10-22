@@ -3427,7 +3427,7 @@ export const blogPostsFR: BlogPostItem[] = [
         <li><strong>Pixels et suivi des conversions opérationnels :</strong> Événements Google Ads Conversion et Meta Pixel Purchase configurés sur la page de remerciement post-paiement.</li>
       </ul>
 
-      <p class="mb-6">Consultez également nos solutions spécialisées <a href="/services/gestion-google-ads" class="text-accent hover:underline">Google Ads Hôtellerie</a> et <a href="/services/gestion-publicites-meta" class="text-accent hover:underline">Meta Ads Hôtellerie</a>.</p>
+      <p class="mb-6">Consultez également nos solutions spécialisées <a href="/google-ads-maroc" class="text-accent hover:underline">Google Ads Hôtellerie</a> et <a href="/services/gestion-publicites-meta" class="text-accent hover:underline">Meta Ads Hôtellerie</a>.</p>
     
     `
   },

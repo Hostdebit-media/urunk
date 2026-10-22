@@ -18,11 +18,11 @@ export default function PortfolioSection() {
         <div className="mb-16">
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
             <Compass size={14} />
-            Industry Strategy Examples
+            Case Studies & Frameworks
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-primary">Strategic Frameworks for Digital Growth</h2>
-          <p className="text-lg text-primary/75 max-w-2xl font-light leading-relaxed">
-            Explore our action-oriented blueprints designed for Moroccan tourism, hospitality, and B2B services. Learn how we structure direct booking systems and high-performing acquisition channels.
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-primary">Applied Strategy Examples</h2>
+          <p className="text-base md:text-lg text-primary/75 max-w-3xl font-light leading-relaxed">
+            These typical scenarios illustrate how tailored digital infrastructures operate in the Moroccan market. Each framework integrates high-speed web development, direct PMS connectivity, local search engine optimization, and targeted paid acquisition designed to structurally decrease reliance on third-party online travel agencies and intermediary commission fees.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function PortfolioSection() {
                 />
                 <span className="absolute top-3 left-3 bg-white/95 text-accent font-bold text-xs px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
                   <Target size={12} />
-                  Strategy Example
+                  Typical Scenario Blueprint
                 </span>
               </div>
               <div className="p-6 flex flex-col flex-grow">

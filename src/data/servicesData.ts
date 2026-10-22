@@ -89,9 +89,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ]
     },
     "fr": {
-      "title": "Création Site Web Maroc Prix : Tarifs Création de Site Internet | Urunk",
-      "description": "Découvrez les prix de création de site web au Maroc. Urunk conçoit des sites internet haute performance avec un excellent rapport qualité-prix.",
-      "heroTitle": "Création Site Web Maroc Prix",
+      "title": "Création Site Web Maroc : Tarifs et Prix | Urunk",
+      "description": "Tarifs clairs pour la création de sites web au Maroc : forfaits fixes dès 12 000 MAD, optimisés pour le référencement Google et les réservations directes.",
+      "heroTitle": "Création Site Web Maroc : Tarifs et Prix",
       "heroSub": "Quel est le coût réel d'un site internet performant et optimisé SEO au Maroc ? Nous proposons des forfaits transparents, adaptés à votre budget d'acquisition.",
       "calloutTitle": "Un investissement rentable pour votre visibilité",
       "calloutBody": "Ne payez pas pour un site internet lent ou invisible sur Google. Urunk conçoit des architectures web ultra-rapides, adaptées aux exigences modernes du référencement et optimisées pour générer un retour sur investissement rapide.",
@@ -155,9 +155,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   },
   "web-design-morocco": {
     "en": {
-      "title": "Website Design Morocco: Hotel Web Design | Urunk",
-      "description": "Get more direct bookings with our specialized Moroccan web design agency. We build blazing-fast, high-converting websites for hotels, riads, and tourism businesses.",
-      "heroTitle": "Morocco's Leading Hospitality Web Design Agency",
+      "title": "Web Agency Morocco: Sites for Hotels & Riads | Urunk",
+      "description": "Morocco web agency designing fast direct booking websites for hotels, riads, and boutique hospitality brands. High-converting mobile layouts.",
+      "heroTitle": "Web Agency Morocco: Sites for Hotels and Riads",
       "heroSub": "We engineer beautiful, lightning-fast websites designed specifically to increase direct bookings for Moroccan hotels, riads, and tour operators.",
       "calloutTitle": "Stop Losing Guests to OTAs",
       "calloutBody": "Your website is your most powerful booking engine. We build custom WordPress sites for Moroccan hospitality brands that capture attention, load instantly, and drive direct reservations without Booking.com commissions.",
@@ -219,10 +219,10 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ]
     },
     "fr": {
-      "title": "Création Site Web Maroc : Agence Digitale Riad | Urunk",
-      "description": "Augmentez vos réservations directes avec notre agence web spécialisée au Maroc. Sites internet ultra-rapides et optimisés pour la conversion hôtelière.",
-      "heroTitle": "L'Agence Web Hôtelière de Référence au Maroc",
-      "heroSub": "Nous concevons des sites web magnifiques et ultra-rapides, spécialement créés pour augmenter les réservations directes de votre riad ou hôtel.",
+      "title": "Agence Web Maroc : Sites pour Hôtels et Riads | Urunk",
+      "description": "Agence de création de sites web au Maroc pour hôtels et riads : plateformes rapides, design haut de gamme et moteur de réservation directe sans commission.",
+      "heroTitle": "Agence Web Maroc : Sites pour Hôtels et Riads",
+      "heroSub": "Nous concevons des sites web performants et ultra-rapides, spécialement créés pour développer les réservations directes de votre riad ou hôtel au Maroc.",
       "calloutTitle": "Cessez de perdre des clients face aux OTA",
       "calloutBody": "Votre site web est votre moteur de réservation le plus puissant. Nous créons des sites sur mesure pour les marques hôtelières marocaines qui captivent l'attention et génèrent des réservations directes sans commissions.",
       "problemTitle": "Votre site actuel vous fait-il perdre des réservations ?",
@@ -480,11 +480,11 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
     },
     "fr": {
       "title": "Agence Marketing Digital Hôtelier au Maroc | Urunk",
-      "description": "Marketing digital complet pour hôtels, riads et tour-opérateurs marocains. SEO, Google Ads et design web haute conversion.",
-      "heroTitle": "Agence de Marketing Digital Hôtelier",
+      "description": "Stratégie marketing globale pour l'hôtellerie marocaine : acquisition multicanale, visibilité internationale et croissance des réservations directes.",
+      "heroTitle": "Agence Marketing Digital Hôtelier au Maroc",
       "heroSub": "Stratégies de croissance complètes pour remplir vos chambres, réduire la dépendance aux OTA et bâtir une marque digitale forte.",
-      "calloutTitle": "Marketing Basé sur les Données pour Hôtels et Riads",
-      "calloutBody": "Nous ne nous contentons pas de diffuser des annonces ; nous créons des écosystèmes digitaux holistiques. De la capture d'intention sur Google au reciblage sur Meta, nous gardons votre marque hôtelière à l'esprit des voyageurs.",
+      "calloutTitle": "Définition : Marketing Digital Hôtelier",
+      "calloutBody": "Le marketing digital hôtelier regroupe l'ensemble des leviers web (site internet performant, référencement naturel local, Google Ads et réseaux sociaux) permettant à un hôtel ou un riad d'attirer des voyageurs et de générer des réservations sans commission tierce.",
       "problemTitle": "Votre budget marketing génère-t-il de vraies réservations ?",
       "problemText1": "De nombreux hôtels gaspillent leur budget avec des agences généralistes qui ne maîtrisent pas le parcours de réservation hôtelier. Les « j'aime » ne paient pas les factures ; les réservations directes, si.",
       "problemText2": "Notre approche centrée sur l'hôtellerie signifie que chaque campagne est mesurée par le coût par acquisition (CPA) et le retour sur investissement publicitaire (ROAS).",
@@ -740,11 +740,11 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
     },
     "fr": {
       "title": "Stratégies Réservation Directe : Moins d'OTA | Urunk",
-      "description": "Stratégies éprouvées pour augmenter les réservations directes de votre hôtel ou riad. Conservez vos revenus et fidélisez vos clients.",
-      "heroTitle": "Maximisez les Réservations Directes, Minimisez les Commissions",
+      "description": "Méthodes concrètes pour réduire la part des plateformes OTA et transformer les visiteurs de votre site en réservations directes sans commission.",
+      "heroTitle": "Stratégies Réservation Directe : Moins d'OTA",
       "heroSub": "Mettez en œuvre des stratégies avancées pour détourner vos revenus des OTA coûteuses vers votre propre canal, beaucoup plus rentable.",
-      "calloutTitle": "Récupérez Vos Revenus face aux OTA",
-      "calloutBody": "Chaque réservation via une OTA vous coûte 15 à 25%. Nous mettons en place des incitations persuasives, des entonnoirs de réservation optimisés et un marketing ciblé pour que les clients choisissent de réserver directement avec vous.",
+      "calloutTitle": "Définition : Réservation Directe",
+      "calloutBody": "Une réservation directe est une réservation effectuée sur le site web officiel ou les canaux propres de l'établissement (téléphone, WhatsApp), sans passer par une plateforme intermédiaire comme Booking ou Expedia.",
       "problemTitle": "Êtes-vous trop dépendant de Booking.com ?",
       "problemText1": "Bien que les OTA soient utiles pour la visibilité initiale, en dépendre pour la majorité de vos réservations limite fortement votre rentabilité et vous empêche de posséder la relation client.",
       "problemText2": "Sans un avantage clair à réserver en direct, les clients choisiront la facilité. Vous avez besoin d'une stratégie qui fait de la réservation directe le choix le plus évident et le plus gratifiant.",
@@ -1129,10 +1129,10 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ]
     },
     "fr": {
-      "title": "Agence SEO Casablanca : Référencement B2B | Urunk",
-      "description": "L'agence SEO la mieux notée de Casablanca. Nous sommes spécialisés dans la génération de leads B2B et la visibilité organique pour les entreprises.",
-      "heroTitle": "La Première Agence SEO de Casablanca",
-      "heroSub": "Optimisez les résultats de recherche dans la capitale économique du Maroc. Nous générons des leads B2B de grande valeur grâce au SEO.",
+      "title": "Agence SEO Casablanca : Référencement B2B & PME | Urunk",
+      "description": "Agence de référencement naturel à Casablanca pour entreprises B2B et PME : positionnement sur les requêtes stratégiques et génération de leads qualifiés.",
+      "heroTitle": "Agence SEO Casablanca pour Entreprises et PME",
+      "heroSub": "Développez votre visibilité dans la capitale économique du Maroc grâce à des stratégies de référencement naturel B2B axées sur la génération de prospects.",
       "calloutTitle": "Gagnez le Marché de Casablanca",
       "calloutBody": "Dans un environnement concurrentiel comme Casablanca, être visible sur Google est non négociable. Nos stratégies SEO sont conçues pour générer des leads qualifiés et dépasser vos concurrents.",
       "problemTitle": "Votre entreprise perd-elle des parts de marché à Casablanca ?",
@@ -1260,8 +1260,8 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
     },
     "fr": {
       "title": "Gestion Google Ads Maroc : Campagnes Payantes | Urunk",
-      "description": "Gestion experte de Google Ads pour les entreprises marocaines et l'hôtellerie. Maximisez votre ROAS et captez le trafic à forte intention.",
-      "heroTitle": "L'Agence Google Ads Axée sur le ROI au Maroc",
+      "description": "Campagnes Google Ads rentables et ciblées par mots-clés transactionnels pour attirer une clientèle qualifiée au Maroc et à l'international.",
+      "heroTitle": "Gestion Google Ads Maroc : Campagnes Payantes",
       "heroSub": "Transformez votre budget publicitaire en un moteur de revenus prévisible. Spécialistes des campagnes Google Search et Performance Max.",
       "calloutTitle": "Captez les Acheteurs Prêts à Convertir",
       "calloutBody": "Lorsque les internautes recherchent vos services sur Google, ils sont prêts à acheter. Nos campagnes placent votre entreprise tout en haut des résultats, vous garantissant les clics les plus précieux.",
@@ -1389,12 +1389,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ]
     },
     "fr": {
-      "title": "SEO Local Casablanca : Optimisez Google Maps | Urunk",
-      "description": "Classez-vous #1 sur Google Maps à Casablanca. Nos services de SEO local génèrent du trafic, des appels et des clients pour les entreprises casablancaises.",
-      "heroTitle": "Référencement Local & Google Maps à Casablanca",
+      "title": "Référencement Local Casablanca : Google Maps | Urunk",
+      "description": "Optimisez votre présence sur Google Maps et le pack local à Casablanca pour générer des visites et des appels de clients de proximité.",
+      "heroTitle": "Référencement Local et Google Maps à Casablanca",
       "heroSub": "Urunk accompagne les entreprises, hôtels et restaurants de Casablanca avec le SEO local, l'optimisation Google Business Profile et Google Maps pour attirer des clients à proximité.",
       "calloutTitle": "Gagnez les recherches 'à proximité'",
-      "calloutBody": "Lorsque les clients à Casablanca recherchent des services à proximité, ils s'arrêtent à la carte Google. Si votre entreprise n'est pas dans le top 3, vous êtes invisible pour les acheteurs locaux.",
+      "calloutBody": "Lorsque les clients à Casablanca recherchent des services à proximité, ils consultent la carte Google. Une présence optimisée dans les résultats locaux renforce votre visibilité auprès des acheteurs locaux.",
       "problemTitle": "Votre entreprise de Casablanca est-elle cachée sur Google Maps ?",
       "problemText1": "De nombreuses entreprises locales perdent face à leurs concurrents simplement parce que leur fiche Google My Business n'est pas optimisée, ou manque de cohérence sur le web.",
       "problemText2": "Le SEO local ne concerne pas seulement les mots-clés ; il s'agit de construire une pertinence géographique pour que Google recommande votre entreprise en toute confiance.",
@@ -2499,5 +2499,252 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       }
     ]
   }
-}
+},
+"meta-ads": {
+    "en": {
+      "title": "Meta Ads for Hotels and Riads | Urunk",
+      "description": "Visual Facebook and Instagram advertising targeting international travelers and retargeting engaged website visitors for hotels.",
+      "heroTitle": "Meta Ads for Hotels and Riads",
+      "heroSub": "Build brand desire and capture guest reservations with targeted Facebook and Instagram advertising campaigns designed for Moroccan hospitality.",
+      "calloutTitle": "Social Advertising for Hotels",
+      "calloutBody": "Meta Ads allows you to showcase the beauty of your riad or hotel to qualified travelers before they search on OTAs, and retarget them when they leave without booking.",
+      "problemTitle": "Are boosted posts wasting your social ad budget?",
+      "problemText1": "Simply boosting posts on Instagram generates vanity likes but rarely drives direct booking revenue. A complete conversion funnel is essential.",
+      "problemText2": "We engineer structured ad funnels using Meta Ads Manager with custom audiences, lookalikes, and dynamic retargeting that generate verifiable bookings.",
+      "signsTitle": "Signs your hospitality social advertising needs an overhaul:",
+      "signs": [
+        "High engagement rates but zero trackable direct room reservations",
+        "No dynamic pixel retargeting for users who view room availability",
+        "Ad creative lacks professional video assets and clear booking calls-to-action",
+        "Inability to track actual guest acquisition cost across campaigns"
+      ],
+      "featuresTitle": "Our Meta Ads Capabilities:",
+      "features": [
+        {
+          "title": "Full-Funnel Social Architecture",
+          "desc": "Prospecting campaigns for cold international audiences paired with high-intent retargeting."
+        },
+        {
+          "title": "Custom Luxury Ad Creatives",
+          "desc": "Short-form video ads and curated photo carousels highlighting authentic architecture and amenities."
+        },
+        {
+          "title": "Direct Booking Tracking",
+          "desc": "Pixel and Conversions API setup to attribute bookings directly to specific ad sets."
+        }
+      ],
+      "processTitle": "Our Social Advertising Methodology",
+      "processSteps": [
+        { "step": 1, "title": "Audience & Market Research", "desc": "Identifying feeder travel markets and interest behaviors." },
+        { "step": 2, "title": "Creative Production & Copywriting", "desc": "Developing scroll-stopping visual ads tailored to luxury travelers." },
+        { "step": 3, "title": "Continuous Optimization & Scaling", "desc": "Allocating budget to the most cost-effective ad sets weekly." }
+      ],
+      "investmentTitle": "Meta Ads Management",
+      "investmentPrice": "From 4,000 MAD / month",
+      "investmentDesc": "Management retainer plus ad spend paid directly to Meta.",
+      "faqs": [
+        { "q": "How much should I spend on Meta Ads?", "a": "We recommend a minimum ad spend of 3,000 to 5,000 MAD per month paid directly to Meta for optimal algorithmic learning." },
+        { "q": "What is the difference between boosting and Meta Ads Manager?", "a": "Boosting optimizes for superficial engagement, whereas Ads Manager targets conversion-ready travelers and implements retargeting." }
+      ]
+    },
+    "fr": {
+      "title": "Publicité Meta Ads pour hôtels et riads | Urunk",
+      "description": "Campagnes visuelles sur Facebook et Instagram ciblant les voyageurs internationaux et reciblant les visiteurs indécis.",
+      "heroTitle": "Publicité Meta Ads pour hôtels et riads",
+      "heroSub": "Inspirez les voyageurs sur Facebook et Instagram et convertissez-les en réservations directes grâce à des entonnoirs publicitaires ciblés.",
+      "calloutTitle": "Publicité Visuelle Hôtelière",
+      "calloutBody": "Meta Ads permet de valoriser l'architecture et l'atmosphère unique de votre établissement auprès d'audiences qualifiées en Europe et à l'international, puis de recibler ceux qui ont visité votre site sans réserver.",
+      "problemTitle": "Vos publications sponsorisées sont-elles inefficaces ?",
+      "problemText1": "Booster une publication sur Instagram génère des mentions « j'aime », mais rarement des réservations effectives dans vos chambres.",
+      "problemText2": "Un véritable retour sur investissement nécessite l'utilisation du gestionnaire de publicités Meta avec des audiences personnalisées et du reciblage dynamique.",
+      "signsTitle": "Signes que votre stratégie Meta Ads doit être revue :",
+      "signs": [
+        "Beaucoup d'interactions sociales mais aucune réservation directe traçable",
+        "Aucun pixel de reciblage installé sur votre moteur de réservation",
+        "Visuels publicitaires génériques sans proposition de valeur claire",
+        "Absence de mesure précise du coût par acquisition (CPA)"
+      ],
+      "featuresTitle": "Nos Services Publicitaires Meta :",
+      "features": [
+        {
+          "title": "Entonnoirs Complets d'Acquisition",
+          "desc": "Campagnes de notoriété auprès des voyageurs ciblant le Maroc combinées au retargeting dynamique."
+        },
+        {
+          "title": "Création Visuelle Haute Définition",
+          "desc": "Mise en avant de l'expérience, de la gastronomie et du standing de votre établissement."
+        },
+        {
+          "title": "Suivi Précis des Réservations",
+          "desc": "Configuration de l'API de conversions Meta pour mesurer exactement le retour sur investissement."
+        }
+      ],
+      "processTitle": "Notre Méthode de Gestion Publicitaire",
+      "processSteps": [
+        { "step": 1, "title": "Ciblage & Audiences", "desc": "Définition des profils de voyageurs et des pays émetteurs prioritaires." },
+        { "step": 2, "title": "Conception des Annonces", "desc": "Rédaction persuasive et sélection de formats vidéo et carrousel performants." },
+        { "step": 3, "title": "Optimisation Continue", "desc": "Ajustement hebdomadaire des enchères et tests des variantes les plus rentables." }
+      ],
+      "investmentTitle": "Gestion Meta Ads",
+      "investmentPrice": "À partir de 4 000 MAD / mois",
+      "investmentDesc": "Honoraires de gestion mensuels plus budget publicitaire réglé directement à Meta.",
+      "faqs": [
+        { "q": "Combien investir sur Meta Ads ?", "a": "Nous préconisons un budget média de 3 000 à 5 000 MAD par mois réglé à Meta pour nourrir les algorithmes d'apprentissage." },
+        { "q": "Quelle différence avec le bouton booster ?", "a": "Le bouton booster recherche de simples interactions, alors que nos campagnes ciblent des actes de réservation." }
+      ]
+    }
+  },
+  "tripadvisor-ads": {
+    "en": {
+      "title": "TripAdvisor Ads for Hotels in Morocco | Urunk",
+      "description": "Sponsored TripAdvisor campaign management to capture high-intent travelers planning stays in Morocco.",
+      "heroTitle": "TripAdvisor Ads for Hotels in Morocco",
+      "heroSub": "Secure priority sponsored placement on the world's leading travel review platform to intercept guests comparing Moroccan accommodations.",
+      "calloutTitle": "Capture High-Intent Travel Demand",
+      "calloutBody": "TripAdvisor Sponsored Placements place your property in front of travelers actively browsing reviews in your destination right before making their booking decision.",
+      "problemTitle": "Is your hotel lost in crowded TripAdvisor rankings?",
+      "problemText1": "In competitive destinations like Marrakech or Casablanca, hundreds of properties compete for visibility. Organic review rank alone may take months to climb.",
+      "problemText2": "TripAdvisor Sponsored Placements instantly elevate your property to the top of search results, putting your direct rates in front of high-intent travelers.",
+      "signsTitle": "Signs you should leverage TripAdvisor advertising:",
+      "signs": [
+        "Your property has excellent reviews but low page views due to competitive volume",
+        "Competitors appear above your listing on destination category pages",
+        "You want to direct TripAdvisor traffic straight to your commission-free booking engine",
+        "You need immediate high-season booking acceleration"
+      ],
+      "featuresTitle": "What our TripAdvisor management covers:",
+      "features": [
+        { "title": "Sponsored Placements Setup", "desc": "Top-of-page advertising placement on destination and competitor search pages." },
+        { "title": "Business Advantage Optimization", "desc": "Showcasing your best amenities, custom header photos, and exclusive direct offers." },
+        { "title": "Direct Booking Link Integration", "desc": "Sending qualified travelers directly to your PMS rather than OTAs." }
+      ],
+      "processTitle": "Our TripAdvisor Advertising Process",
+      "processSteps": [
+        { "step": 1, "title": "Listing Audit", "desc": "Reviewing photo order, amenity accuracy, and current rating velocity." },
+        { "step": 2, "title": "Campaign Launch", "desc": "Activating sponsored placements with target geo-filtering." },
+        { "step": 3, "title": "Bid Management", "desc": "Adjusting cost-per-click bids based on seasonal demand trends." }
+      ],
+      "investmentTitle": "TripAdvisor Campaign Management",
+      "investmentPrice": "From 3,000 MAD / month",
+      "investmentDesc": "Management fee plus clicks budget paid directly to TripAdvisor.",
+      "faqs": [
+        { "q": "Do I need a high organic rank to advertise?", "a": "No, sponsored placements allow your property to appear prominently regardless of current organic position." },
+        { "q": "Can TripAdvisor traffic book directly on my site?", "a": "Yes, with TripConnect and Business Advantage, travelers link directly to your official website." }
+      ]
+    },
+    "fr": {
+      "title": "Publicité TripAdvisor pour hôtels au Maroc | Urunk",
+      "description": "Optimisation de votre présence sponsorisée sur TripAdvisor pour capter les voyageurs en phase finale de décision au Maroc.",
+      "heroTitle": "Publicité TripAdvisor pour hôtels au Maroc",
+      "heroSub": "Positionnez votre établissement en tête de liste sur TripAdvisor pour capter les voyageurs qui comparent activement les hébergements au Maroc.",
+      "calloutTitle": "Captation d'Audience à Forte Intention",
+      "calloutBody": "Les annonces sponsorisées TripAdvisor permettent d'afficher votre hôtel ou riad en première position sur les pages de destination, au moment exact où le voyageur consulte les avis.",
+      "problemTitle": "Votre établissement est-il noyé dans le classement TripAdvisor ?",
+      "problemText1": "À Marrakech ou Casablanca, des centaines de riads et hôtels se disputent les premières places. Gravir l'algorithme organique prend du temps.",
+      "problemText2": "Les annonces sponsorisées TripAdvisor positionnent immédiatement votre établissement devant les voyageurs qualifiés, redirigeant le trafic vers votre moteur de réservation.",
+      "signsTitle": "Signes que TripAdvisor Ads est pertinent pour vous :",
+      "signs": [
+        "Votre établissement dispose d'excellentes notes mais d'un trafic direct insuffisant",
+        "Des concurrents moins bien notés apparaissent devant vous grâce au sponsoring",
+        "Vous souhaitez canaliser les visiteurs vers votre site officiel plutôt que Booking",
+        "Vous préparez une montée en charge pour la haute saison touristique"
+      ],
+      "featuresTitle": "Nos Services TripAdvisor Ads :",
+      "features": [
+        { "title": "Gestion des Emplacements Sponsorisés", "desc": "Présence en haut des résultats de recherche pour votre ville ou zone." },
+        { "title": "Optimisation de la Fiche Établissement", "desc": "Hiérarchisation des photos, mise en avant des équipements clés et des offres directes." },
+        { "title": "Redirection vers Votre Moteur Direct", "desc": "Connexion des liens directs pour éliminer les commissions intermédiaires." }
+      ],
+      "processTitle": "Notre Démarche Opérationnelle",
+      "processSteps": [
+        { "step": 1, "title": "Audit de Profil", "desc": "Vérification des informations, photos et cohérence tarifaire." },
+        { "step": 2, "title": "Paramétrage Campagne", "desc": "Configuration des enchères au coût par clic et du ciblage géographique." },
+        { "step": 3, "title": "Suivi & Optimisation", "desc": "Analyse mensuelle des retombées et optimisation du retour sur investissement." }
+      ],
+      "investmentTitle": "Gestion Publicitaire TripAdvisor",
+      "investmentPrice": "À partir de 3 000 MAD / mois",
+      "investmentDesc": "Frais de gestion mensuels plus budget clics versé directement à TripAdvisor.",
+      "faqs": [
+        { "q": "Faut-il être premier au classement pour faire de la publicité ?", "a": "Non, le sponsoring permet justement d'apparaître en tête même si votre classement naturel est encore en progression." },
+        { "q": "Les voyageurs peuvent-ils réserver en direct ?", "a": "Oui, les annonces renvoient directement les utilisateurs vers le moteur de réservation de votre site officiel." }
+      ]
+    }
+  },
+  "bundle-site-ads": {
+    "en": {
+      "title": "Hotel Website + Ads Bundle | Urunk",
+      "description": "Combined package pairing a high-speed hotel website with targeted search ads to maximize direct booking return on investment.",
+      "heroTitle": "Hotel Website + Ads Bundle",
+      "heroSub": "The complete direct acquisition system: a bespoke high-converting website paired with targeted advertising to drive immediate guest bookings.",
+      "calloutTitle": "The Integrated Acquisition Engine",
+      "calloutBody": "A beautiful website without qualified traffic generates no bookings. Conversely, sending paid traffic to a slow website wastes your budget. Our bundle connects both for maximum ROI.",
+      "problemTitle": "Why separate web designers from your marketing team?",
+      "problemText1": "When agencies work in silos, tracking breaks, page speed suffers, and neither team takes accountability for direct revenue.",
+      "problemText2": "Our unified bundle aligns technical speed engineering, booking engine connectivity, and advertising campaigns under a single accountable team.",
+      "signsTitle": "Why a bundled solution delivers better ROI:",
+      "signs": [
+        "Single point of contact for technical development and acquisition marketing",
+        "Ad landing pages engineered specifically for high conversion and sub-second load times",
+        "Direct tracking and analytics configured flawlessly from launch day",
+        "Cost savings compared to retaining separate design and media agencies"
+      ],
+      "featuresTitle": "What the Bundle Includes:",
+      "features": [
+        { "title": "Bespoke Direct Booking Website", "desc": "Ultra-fast custom site with PMS engine integration and mobile-first UX." },
+        { "title": "Managed Paid Advertising", "desc": "Targeted Google Ads or TripAdvisor Ads driving qualified international travel demand." },
+        { "title": "Comprehensive Technical SEO", "desc": "Schema markup, Google Maps profile alignment, and Core Web Vitals optimization." }
+      ],
+      "processTitle": "Our Bundle Implementation Roadmap",
+      "processSteps": [
+        { "step": 1, "title": "Strategy & UX Prototyping", "desc": "Mapping conversion pathways and booking funnel integration." },
+        { "step": 2, "title": "Development & Campaign Setup", "desc": "Engineering the fast website while preparing ad accounts concurrently." },
+        { "step": 3, "title": "Simultaneous Launch & Scaling", "desc": "Turning on qualified ad traffic the moment the new website goes live." }
+      ],
+      "investmentTitle": "Pack Site + Ads",
+      "investmentPrice": "From 16,000 MAD initial + 4,000 MAD / mo",
+      "investmentDesc": "Complete website creation plus first month of dedicated ad management.",
+      "faqs": [
+        { "q": "How quickly can the bundled solution go live?", "a": "The website build takes 4 to 6 weeks, with ad campaigns ready to launch simultaneously on day one." },
+        { "q": "Are we tied to a long-term contract?", "a": "No, you own the website 100%, and monthly ad management operates on flexible terms with a 15-day notice." }
+      ]
+    },
+    "fr": {
+      "title": "Pack site web + publicité pour hôtels | Urunk",
+      "description": "Offre combinée associant un site web hôtelier ultra-rapide et des campagnes publicitaires ciblées pour maximiser le retour sur investissement.",
+      "heroTitle": "Pack site web + publicité pour hôtels",
+      "heroSub": "L'écosystème d'acquisition complet : un site web hôtelier haut de gamme connecté à votre PMS et des campagnes publicitaires ciblées pour générer des réservations dès le lancement.",
+      "calloutTitle": "L'Approche Intégrée Site + Publicité",
+      "calloutBody": "Créer un site web sans trafic ne génère aucune réservation. Envoyer de la publicité payante vers un site lent gaspille votre budget. Notre pack combine infrastructure rapide et acquisition ciblée pour une rentabilité optimale.",
+      "problemTitle": "Pourquoi unifier le développement web et l'acquisition publicitaire ?",
+      "problemText1": "Travailler avec deux agences distinctes entraîne des frictions techniques, des retards d'intégration et une dilution des responsabilités sur le chiffre d'affaires direct.",
+      "problemText2": "Notre formule tout-en-un garantit que votre site internet est techniquement conçu pour convertir immédiatement le trafic publicitaire envoyé via Google ou TripAdvisor.",
+      "signsTitle": "Les avantages d'un pack intégré :",
+      "signs": [
+        "Un interlocuteur unique responsable de votre site et de vos campagnes payantes",
+        "Pages d'atterrissage optimisées pour charger en moins d'une seconde sur mobile",
+        "Suivi analytique et balisage des conversions configurés sans faille dès le premier jour",
+        "Économies substantielles par rapport à deux prestataires séparés"
+      ],
+      "featuresTitle": "Ce qui est inclus dans le Pack :",
+      "features": [
+        { "title": "Création du Site Web Hôtelier", "desc": "Design sur-mesure, intégration de votre moteur PMS et vitesse optimale." },
+        { "title": "Gestion Publicitaire Dédiée", "desc": "Campagnes Google Ads ou TripAdvisor ciblées sur les voyageurs intentionnistes." },
+        { "title": "Optimisation SEO & Données Structurées", "desc": "Balisage Schema.org hôtelier, SEO local et fiches Google Maps." }
+      ],
+      "processTitle": "Notre Calendrier de Déploiement",
+      "processSteps": [
+        { "step": 1, "title": "Cadrage Stratégique & Design", "desc": "Conception de l'architecture et parcours de réservation sans commission." },
+        { "step": 2, "title": "Développement & Préparation Média", "desc": "Programmation du site web et paramétrage simultané des campagnes d'annonces." },
+        { "step": 3, "title": "Mise en Ligne & Activation", "desc": "Lancement du site et activation immédiate des flux de visiteurs qualifiés." }
+      ],
+      "investmentTitle": "Pack Site + Publicité",
+      "investmentPrice": "Dès 16 000 MAD création + 4 000 MAD / mois",
+      "investmentDesc": "Création intégrale du site et gestion publicitaire mensuelle sans engagement forcé.",
+      "faqs": [
+        { "q": "Quel est le délai de mise en ligne du pack ?", "a": "Le site est conçu et testé en 4 à 6 semaines, les campagnes publicitaires étant activées dès le jour du lancement." },
+        { "q": "Sommes-nous engagés sur la durée ?", "a": "Non, vous êtes propriétaire à 100 % de votre site, et la gestion publicitaire s'effectue sans engagement forcé à long terme." }
+      ]
+    }
+  }
 };
+

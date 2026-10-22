@@ -49,8 +49,8 @@ export default function TripadvisorAdsFR() {
   return (
     <div className="w-full">
       <SEO
-        title="Gestion TripAdvisor Ads pour Hôtels & Riads | Urunk"
-        description="Surpassez vos concurrents sur TripAdvisor. Emplacements sponsorisés et optimisation de fiche pour capter des voyageurs hautement qualifiés."
+        title="Publicité TripAdvisor pour hôtels au Maroc | Urunk"
+        description="Optimisation de votre présence sponsorisée sur TripAdvisor pour capter les voyageurs en phase finale de décision au Maroc."
         schema={[schema, serviceSchema]}
       />
 
@@ -62,7 +62,7 @@ export default function TripadvisorAdsFR() {
             Plateformes de voyage
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
-            Gestion TripAdvisor Ads
+            Publicité TripAdvisor pour hôtels au Maroc
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
             Optimisez les recherches sur TripAdvisor. Placez votre établissement

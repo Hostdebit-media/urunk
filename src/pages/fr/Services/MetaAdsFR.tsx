@@ -49,8 +49,8 @@ export default function MetaAdsFR() {
   return (
     <div className="w-full">
       <SEO
-        title="Gestion Meta Ads (Facebook & Instagram) pour Hôtels | Urunk"
-        description="Inspirez les voyageurs sur Facebook et Instagram et convertissez-les en réservations directes grâce au ciblage ciblé et au retargeting."
+        title="Publicité Meta Ads pour hôtels et riads | Urunk"
+        description="Campagnes visuelles sur Facebook et Instagram ciblant les voyageurs internationaux et reciblant les visiteurs indécis."
         schema={[schema, serviceSchema]}
       />
 
@@ -62,7 +62,7 @@ export default function MetaAdsFR() {
             Publicité sur les réseaux sociaux
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
-            Gestion Meta Ads
+            Publicité Meta Ads pour hôtels et riads
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
             Ne laissez plus partir vos futurs clients. Inspirez les voyageurs

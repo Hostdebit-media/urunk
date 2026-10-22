@@ -18,11 +18,11 @@ export default function PortfolioSectionFR() {
         <div className="mb-16">
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
             <Compass size={14} />
-            Exemples de Stratégies Sectorielles
+            Études & Scénarios Types
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-primary">Modèles Stratégiques pour la Croissance Digitale</h2>
-          <p className="text-lg text-primary/75 max-w-2xl font-light leading-relaxed">
-            Découvrez nos cadres d'action conçus pour le tourisme, l'hôtellerie et les services au Maroc. Apprenez comment nous structurons les canaux de réservation directe et les moteurs d'acquisition.
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-primary">Exemples de stratégies appliquées</h2>
+          <p className="text-base md:text-lg text-primary/75 max-w-3xl font-light leading-relaxed">
+            Ces scénarios types illustrent la mise en place d'architectures digitales adaptées aux réalités du marché marocain. Chaque projet intègre la refonte technique du site, la connexion au PMS hôtelier, l'optimisation sémantique locale et des campagnes publicitaires ciblées pour réduire durablement la dépendance aux plateformes tierces.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function PortfolioSectionFR() {
                 />
                 <span className="absolute top-3 left-3 bg-white/95 text-accent font-bold text-xs px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
                   <Target size={12} />
-                  Modèle stratégique illustratif
+                  Scénario type illustratif
                 </span>
               </div>
               <div className="p-6 flex flex-col flex-grow">

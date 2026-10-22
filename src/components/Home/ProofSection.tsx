@@ -132,8 +132,8 @@ export default function ProofSection() {
               </p>
             </div>
             <div className="mt-6 p-4 bg-white rounded-xl border border-primary/5 text-xs text-primary/70">
-              <span className="font-bold text-accent block mb-1">Key Hospitality Performance Metrics</span>
-              Achieved a 94% average increase in direct booking ratio for Marrakech Medina riads and 150%+ organic visibility growth within the first 6 months of campaign deployment.
+              <span className="font-bold text-accent block mb-1">Performance Tracking</span>
+              We support hotels and riads across Morocco to expand their direct reservations and continuously strengthen their local search authority.
             </div>
           </div>
 

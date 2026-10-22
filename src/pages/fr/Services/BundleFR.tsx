@@ -49,8 +49,8 @@ export default function BundleFR() {
   return (
     <div className="w-full">
       <SEO
-        title="Pack Site Web + Publicités pour Hôtels & Riads | Urunk"
-        description="Une solution complète pour maximiser vos réservations directes : création de site WordPress rapide et gestion de vos publicités (Google ou TripAdvisor)."
+        title="Pack site web + publicité pour hôtels | Urunk"
+        description="Offre combinée associant un site web hôtelier ultra-rapide et des campagnes publicitaires ciblées pour maximiser le retour sur investissement."
         schema={[schema, serviceSchema]}
       />
 
@@ -62,7 +62,7 @@ export default function BundleFR() {
             Offre de Croissance
           </span>
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
-            Pack Site Web + Publicités
+            Pack site web + publicité pour hôtels
           </h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
             Le moteur complet de réservation directe. Un site web moderne

@@ -105,7 +105,7 @@ export const caseStudies: StrategyExampleItem[] = [
     topicName: "Direct Booking Strategy for Moroccan Tour Operators",
     frTopicName: "Stratégie de Réservation Directe pour Tour-Opérateurs au Maroc",
     title: "Example Strategy: Direct Booking Growth for a Moroccan Tour Operator",
-    frTitle: "Exemple de Stratégie : Croissance des Réservations Directes pour Tour-Opérateurs au Maroc",
+    frTitle: "Scénario type : Croissance des Réservations Directes pour Tour-Opérateurs au Maroc",
     seoTitle: "Tour Operator Direct Booking Strategy | Urunk",
     frSeoTitle: "Réservation Directe Tour-Opérateurs | Urunk",
     metaDescription: "Strategic framework outlining how Moroccan tour operators can build high-converting direct booking channels, lower OTA commissions, and scale search visibility.",
@@ -257,7 +257,7 @@ export const caseStudies: StrategyExampleItem[] = [
       { phase: "Phase 3 : Campagnes Google & TripAdvisor", duration: "Semaines 7-12", focus: "Lancement des campagnes publicitaires ciblées, suivi du coût par prospect et optimisation du ROAS" }
     ],
     frRelatedServices: [
-      { label: "Gestion Google Ads", url: "/services/gestion-google-ads" },
+      { label: "Gestion Google Ads", url: "/google-ads-maroc" },
       { label: "Création Site Web", url: "/services/creation-site-web" },
       { label: "Réservation Directe", url: "/reservation-directe" },
       { label: "TripAdvisor Ads", url: "/services/tripadvisor-ads" }
@@ -284,7 +284,7 @@ export const caseStudies: StrategyExampleItem[] = [
     topicName: "B2B Digital Marketing Strategy for Catering Services",
     frTopicName: "Stratégie Marketing Digital B2B pour Traiteurs au Maroc",
     title: "Example Strategy: B2B Lead Generation for Catering & Event Services in Morocco",
-    frTitle: "Exemple de Stratégie : Acquisition de Prospects B2B pour Traiteurs & Événements au Maroc",
+    frTitle: "Scénario type : Acquisition de Prospects B2B pour Traiteurs & Événements au Maroc",
     seoTitle: "B2B Catering Lead Generation Strategy | Urunk",
     frSeoTitle: "Acquisition B2B Traiteurs Événements | Urunk",
     metaDescription: "Strategic framework detailing how commercial catering businesses in Casablanca and Marrakech can capture corporate event budgets through targeted B2B SEO and Google Ads.",
@@ -437,7 +437,7 @@ export const caseStudies: StrategyExampleItem[] = [
     ],
     frRelatedServices: [
       { label: "Création Site Web", url: "/services/creation-site-web" },
-      { label: "Gestion Google Ads", url: "/services/gestion-google-ads" },
+      { label: "Gestion Google Ads", url: "/google-ads-maroc" },
       { label: "SEO Local Casablanca", url: "/referencement-local-casablanca" },
       { label: "Agence SEO Maroc", url: "/agence-seo-maroc" }
     ],
@@ -463,7 +463,7 @@ export const caseStudies: StrategyExampleItem[] = [
     topicName: "Local SEO & Paid Social Strategy for Tourism Experiences",
     frTopicName: "SEO Local & Social Ads pour Ateliers & Expériences",
     title: "Example Strategy: Local SEO & Social Ads for Workshops & Experiences in Marrakech",
-    frTitle: "Exemple de Stratégie : SEO Local & Social Ads pour Ateliers & Expériences à Marrakech",
+    frTitle: "Scénario type : SEO Local & Social Ads pour Ateliers & Expériences à Marrakech",
     seoTitle: "Local SEO & Social Ads for Experiences | Urunk",
     frSeoTitle: "SEO Local & Ads pour Ateliers Marrakech | Urunk",
     metaDescription: "Strategic blueprint outlining how art galleries, pottery studios, and cultural experience providers in Marrakech can drive direct visitor bookings via Meta Ads and Google Maps.",

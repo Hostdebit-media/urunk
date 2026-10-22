@@ -79,20 +79,21 @@ export default function Sitemap() {
   ];
 
   const servicesLinks: SitemapLink[] = isFrench ? [
-    { label: "Création de Site Web WordPress & PMS", path: "/services/creation-site-web" },
+    { label: "Création Site Web Maroc : Tarifs et Prix", path: "/creation-site-web" },
     { label: "Création de Site Web Riad Marrakech", path: "/site-web-riad-marrakech" },
-    { label: "Gestion Publicitaire Google Ads", path: "/services/gestion-google-ads" },
-    { label: "Gestion Publicitaire Meta Ads (FB & IG)", path: "/services/gestion-publicites-meta" },
-    { label: "Gestion des Annonces TripAdvisor Ads", path: "/services/tripadvisor-ads" },
-    { label: "Pack Complet Site + Campagnes Ads", path: "/services/bundle-site-ads" },
+    { label: "Gestion Google Ads Maroc : Campagnes Payantes", path: "/google-ads-maroc" },
+    { label: "Publicité Meta Ads pour hôtels et riads", path: "/services/gestion-publicites-meta" },
+    { label: "Publicité TripAdvisor pour hôtels au Maroc", path: "/services/tripadvisor-ads" },
+    { label: "Pack site web + publicité pour hôtels", path: "/services/bundle-site-ads" },
+    { label: "Stratégies Réservation Directe : Moins d'OTA", path: "/reservation-directe" },
     { label: "Référencement Naturel Local Maroc", path: "/services/local-seo-morocco" },
     { label: "Optimisation de Fiche Google Business Profile", path: "/services/google-business-profile" },
     { label: "Optimisation SEO WordPress & Technique", path: "/services/wordpress-seo" }
   ] : [
-    { label: "Custom Website Design & PMS Integration", path: "/en/services/website-design" },
+    { label: "Website Design Morocco: Pricing and Rates", path: "/en/services/website-design" },
     { label: "Riad Website Design Marrakech", path: "/en/riad-website-design-marrakech" },
-    { label: "Google Ads Campaign Management", path: "/en/services/google-ads" },
-    { label: "Meta Ads (Instagram & Facebook) Management", path: "/en/services/meta-ads" },
+    { label: "Google Ads Management Morocco: Paid Campaigns", path: "/en/google-ads-morocco" },
+    { label: "Meta Ads for Hotels and Riads", path: "/en/services/meta-ads" },
     { label: "TripAdvisor Ads Optimization", path: "/en/services/tripadvisor-ads" },
     { label: "Complete Hospitality Bundle (Site + Ads)", path: "/en/services/bundle-site-ads" },
     { label: "Local Search Optimization Morocco", path: "/en/services/local-seo-morocco" },

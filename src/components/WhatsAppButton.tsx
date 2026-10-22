@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
   const defaultMessage = isFrench 
     ? "Bonjour Urunk, je souhaite obtenir un devis gratuit pour mon entreprise touristique." 
     : "Hello Urunk, I want a free quote for my tourism business.";
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  const url = "https://wa.me/[NUMERO_SANS_ESPACES]?text=Bonjour%2C%20je%20souhaite%20un%20audit%20gratuit";
 
   return (
     <a
@@ -17,7 +17,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent('whatsapp_click', { source: 'floating_button' })}
-      className="print:hidden fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebd5a] text-white p-3 md:p-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 hidden md:flex items-center justify-center group"
+      className="print:hidden fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebd5a] text-white p-3 md:p-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center group"
       aria-label={isFrench ? "Contactez-nous sur WhatsApp" : "Contact us on WhatsApp"}
     >
       <svg

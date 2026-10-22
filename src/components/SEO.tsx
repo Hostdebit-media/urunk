@@ -140,30 +140,30 @@ export default function SEO({ title, description, image, schema, noindex }: SEOP
     finalDescription = `${finalDescription}${suffix}`;
   }
 
-  // If description is too short, programmatically append high-converting Call To Action (CTA) to hit the 120-158 length sweet spot
-  if (finalDescription.length < 120) {
-    const cta = isFrench
-      ? " Obtenez un devis gratuit et augmentez vos réservations en ligne !"
-      : " Get a free direct booking audit and custom quote for your business today!";
-    
-    if (finalDescription.length + cta.length <= 158) {
-      finalDescription = `${finalDescription}${cta}`;
-    } else {
-      const remainingSpace = 158 - finalDescription.length - 4;
-      if (remainingSpace > 15) {
-        finalDescription = `${finalDescription} ${cta.substring(0, remainingSpace).trim()}...`;
+  // Final length sanity limit check - ensure description <= 155 chars and never cuts a sentence
+  if (finalDescription.length > 155) {
+    const withinLimit = finalDescription.substring(0, 155);
+    // Find last complete sentence ending (.!?) within the 155 character limit
+    const sentenceMatches = [...withinLimit.matchAll(/[.!?](\s+|$)/g)];
+    if (sentenceMatches.length > 0) {
+      const lastMatch = sentenceMatches[sentenceMatches.length - 1];
+      const endIdx = (lastMatch.index ?? 0) + 1;
+      if (endIdx >= 80) {
+        finalDescription = finalDescription.substring(0, endIdx).trim();
       }
-    }
-  }
-
-  // Final length sanity limit check - truncate cleanly at word boundary if over 158 characters
-  if (finalDescription.length > 158) {
-    const truncated = finalDescription.substring(0, 155);
-    const lastSpace = truncated.lastIndexOf(' ');
-    if (lastSpace > 100) {
-      finalDescription = `${truncated.substring(0, lastSpace).trim()}...`;
     } else {
-      finalDescription = `${truncated.trim()}...`;
+      // Fallback: cut cleanly at word boundary without dangling stop words
+      const lastSpace = withinLimit.lastIndexOf(' ');
+      if (lastSpace > 80) {
+        let trimmed = withinLimit.substring(0, lastSpace).trim();
+        trimmed = trimmed.replace(/\b(pour les|pour le|pour la|pour|et|de|des|du|en|au|aux|avec|dans|sur|for|and|the|to|in|at|of|with|a|an)\s*$/i, '').trim();
+        if (!trimmed.endsWith('.') && !trimmed.endsWith('!') && !trimmed.endsWith('?')) {
+          trimmed += '.';
+        }
+        finalDescription = trimmed;
+      } else {
+        finalDescription = withinLimit.trim();
+      }
     }
   }
 

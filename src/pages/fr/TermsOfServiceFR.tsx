@@ -53,7 +53,7 @@ export default function TermsOfServiceFR() {
             </Link>{" "}
             et d'interfaces de réservation directe hautement performantes, la{" "}
             <Link
-              to="/services/gestion-google-ads"
+              to="/google-ads-maroc"
               className="text-accent hover:underline"
             >
               gestion de campagnes Google Ads

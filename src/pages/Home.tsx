@@ -19,75 +19,102 @@ function SectionSkeleton() {
   );
 }
 
+// Client Reviews component hidden by default and powered by empty array (Rule 4 & Task 5)
+function ClientReviews() {
+  const reviews: { author: string; text: string; rating: number }[] = [];
+  if (reviews.length === 0) return null;
+  return <div className="hidden" aria-hidden="true"></div>;
+}
+
 export default function Home() {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Digital Growth Agency Morocco | Web Design & SEO | Urunk</title>
-        <meta name="description" content="Urunk is a digital growth agency in Morocco. We deliver high-speed web design, advanced Local SEO, Google Ads, and custom acquisition channels for businesses and hospitality brands." />
+        <title>Morocco Web & SEO Agency for Hotels & Riads | Urunk</title>
+        <meta name="description" content="Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking engines, Google Ads, and local SEO in Casablanca and Marrakech. Free audit." />
         <link rel="canonical" href="https://urunk.com/en/" />
         <link rel="alternate" hrefLang="en" href="https://urunk.com/en/" />
         <link rel="alternate" hrefLang="fr" href="https://urunk.com/" />
         <link rel="alternate" hrefLang="x-default" href="https://urunk.com/en/" />
         <script type="application/ld+json">
           {`
-            {
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              "name": "Urunk",
-              "image": "https://urunk.com/og-image.jpg",
-              "@id": "https://urunk.com/en/#organization",
-              "url": "https://urunk.com/en/",
-              "telephone": "+212500000000",
-              "priceRange": "4000 MAD - 12000 MAD",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Gueliz",
-                "addressLocality": "Marrakech",
-                "addressRegion": "Marrakech-Safi",
-                "postalCode": "40000",
-                "addressCountry": "MA"
+            [
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "@id": "https://urunk.com/en/#organization",
+                "name": "Urunk",
+                "url": "https://urunk.com/en/",
+                "logo": "https://urunk.com/logo.png",
+                "sameAs": [
+                  "[URL_LINKEDIN]",
+                  "[URL_FACEBOOK]",
+                  "[URL_INSTAGRAM]"
+                ]
               },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 31.629472,
-                "longitude": -7.981111
-              },
-              "sameAs": [
-                "https://www.linkedin.com/company/urunk"
-              ],
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday"
-                ],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              "department": [
-                {
-                  "@type": "ProfessionalService",
-                  "name": "Urunk Casablanca",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Anfa",
-                    "addressLocality": "Casablanca",
-                    "addressRegion": "Casablanca-Settat",
-                    "postalCode": "20000",
-                    "addressCountry": "MA"
-                  },
-                  "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 33.5731,
-                    "longitude": -7.5898
-                  }
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": "https://urunk.com/en/#localbusiness-casablanca",
+                "name": "Urunk Casablanca",
+                "url": "https://urunk.com/en/locations/casablanca",
+                "telephone": "[TELEPHONE]",
+                "priceRange": "4000 MAD - 12000 MAD",
+                "areaServed": "MA",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "[ADRESSE_CASABLANCA_ANFA]",
+                  "addressLocality": "Casablanca",
+                  "addressRegion": "Casablanca-Settat",
+                  "postalCode": "20000",
+                  "addressCountry": "MA"
                 }
-              ]
-            }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "@id": "https://urunk.com/en/#localbusiness-marrakech",
+                "name": "Urunk Marrakech",
+                "url": "https://urunk.com/en/locations/marrakech",
+                "telephone": "[TELEPHONE]",
+                "priceRange": "4000 MAD - 12000 MAD",
+                "areaServed": "MA",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "[ADRESSE_MARRAKECH_GUELIZ]",
+                  "addressLocality": "Marrakech",
+                  "addressRegion": "Marrakech-Safi",
+                  "postalCode": "40000",
+                  "addressCountry": "MA"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Website Design for Hotels and Riads",
+                "provider": { "@id": "https://urunk.com/en/#organization" },
+                "areaServed": "MA",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "12000",
+                  "priceCurrency": "MAD"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Hospitality Search Engine Optimization Morocco",
+                "provider": { "@id": "https://urunk.com/en/#organization" },
+                "areaServed": "MA"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "Google Ads Campaign Management Morocco",
+                "provider": { "@id": "https://urunk.com/en/#organization" },
+                "areaServed": "MA"
+              }
+            ]
           `}
         </script>
       </Helmet>
@@ -100,13 +127,13 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-xs font-bold tracking-widest uppercase mb-8 border border-accent/20" id="hero-badge">
-            Digital Growth Agency for Moroccan Businesses & Hospitality
+            Digital Growth for Hospitality in Morocco
           </span>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-primary max-w-5xl leading-tight md:leading-tight mb-8" id="hero-h1">
-            Increase your <span className="text-accent italic font-semibold">direct bookings</span> — Web Agency, SEO & Digital Marketing in Morocco
+            Web & SEO Agency for Hotels, Riads and SMEs in Morocco
           </h1>
           <p className="text-lg md:text-xl text-primary/70 max-w-3xl font-light leading-relaxed mb-12" id="hero-subtext">
-            Urunk is a Morocco-based digital growth agency specializing in high-performance websites, SEO, Google Maps optimization, and digital acquisition for hotels, riads, tour operators, and businesses across Morocco to bypass high OTA commissions.
+            We assist hotels, riads, and Moroccan businesses in establishing profitable digital channels: commission-free direct booking engines, top local search visibility, and high-conversion paid acquisition campaigns.
           </p>
           
           <div className="flex flex-col items-center gap-4" id="hero-actions-container">
@@ -116,10 +143,10 @@ export default function Home() {
                 className="w-full sm:w-auto bg-accent text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-accent/90 transition-all shadow-lg shadow-accent/20 hover:shadow-accent/40 transform hover:-translate-y-0.5"
                 id="hero-cta-btn"
               >
-                Get My Free Quote <ArrowRight size={18} />
+                Request a Free Audit <ArrowRight size={18} />
               </Link>
               <a 
-                href="https://wa.me/212668802096" 
+                href="https://wa.me/[NUMERO_SANS_ESPACES]?text=Bonjour%2C%20je%20souhaite%20un%20audit%20gratuit" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-white text-primary border-2 border-primary/10 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-accent/30 hover:text-accent transition-all"
@@ -129,9 +156,8 @@ export default function Home() {
               </a>
             </div>
             
-            {/* Phase 4 item 2: Trust strip under CTAs */}
             <div className="mt-4 text-xs text-primary/60 font-medium tracking-wide flex flex-wrap justify-center gap-x-4 gap-y-1" id="hero-trust-strip">
-              <span>✓ 90-Day Performance Guarantee</span>
+              <span>✓ 90-Day Growth Guarantee [CONDITIONS_GARANTIE]</span>
               <span className="hidden sm:inline">•</span>
               <span>✓ 100% Asset Ownership</span>
               <span className="hidden sm:inline">•</span>
@@ -257,77 +283,257 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Core Services / "What We Do" */}
-      <section className="py-24 bg-white relative border-t border-primary/10" id="services-block">
+      {/* 3. Thematic Capabilities / 4 Thematic Blocks */}
+      <section className="py-24 bg-white relative border-t border-primary/10" id="thematic-blocks">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-bold tracking-wider uppercase mb-6 border border-accent/20" id="services-eyebrow">
-              What We Do
+              Core Capabilities
             </span>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6" id="services-title">
-              Web Design, SEO & Digital Marketing in Morocco
+              Web Design and SEO for Hotels and Riads in Morocco
             </h2>
-            <p className="text-lg text-primary/70 max-w-4xl mx-auto font-light leading-relaxed" id="services-intro-paragraph">
-              Urunk provides website design, technical SEO, local SEO, Google Business Profile optimization, Google Ads, Meta Ads and conversion optimization for businesses across Morocco. Our strongest expertise is helping hotels, riads, tour operators and hospitality brands increase qualified traffic, leads and direct bookings.
+            <p className="text-lg text-primary/75 max-w-4xl mx-auto font-light leading-relaxed" id="services-intro-paragraph">
+              Hotel website design and organic SEO enable Moroccan riads and boutique hotels to attract travelers directly via search engines. By pairing a commission-free booking engine with fast page speeds and local search optimization, properties capture direct guests while preserving room revenue without paying intermediary booking platform fees.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
-            {[
-              {
-                title: "Web Design & WordPress",
-                desc: "We design high-speed, high-converting websites, fully integrated with your direct booking tools for optimal Core Web Vitals.",
-                icon: <Smartphone size={24} />,
-                link: "/en/services/website-design"
-              },
-              {
-                title: "Local SEO & Google Maps",
-                desc: "Dominate local Google search results and capture travelers and local leads exactly when they are looking for your services.",
-                icon: <Search size={24} />,
-                link: "/en/seo-agency-morocco"
-              },
-              {
-                title: "Google Ads & Meta Ads",
-                desc: "Generate an immediate and measurable stream of direct business opportunities and bookings through targeted ad campaigns.",
-                icon: <Globe size={24} />,
-                link: "/en/google-ads-morocco"
-              }
-            ].map((service, idx) => (
-              <Link key={idx} to={service.link} className="block group" id={`service-link-${idx}`}>
-                <div className="bg-bg p-8 rounded-2xl border border-primary/10 hover:border-accent/40 transition-all h-full shadow-xs hover:shadow-sm">
-                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-accent mb-6 shadow-xs border border-primary/5 group-hover:scale-110 transition-transform">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">{service.title}</h3>
-                  <p className="text-primary/70 font-light leading-relaxed mb-6">
-                    {service.desc}
-                  </p>
-                  <span className="flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all">
-                    Explore this Service <ArrowRight size={16} />
-                  </span>
-                </div>
-              </Link>
-            ))}
+          {/* 4 Thematic Blocks */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" id="thematic-quad-grid">
+            {/* Block 1: Hospitality */}
+            <div className="bg-bg p-6 rounded-2xl border border-primary/10 flex flex-col justify-between shadow-xs hover:border-accent/30 transition-all">
+              <div>
+                <Link to="/en/industries/riads-boutique-hotels" className="group flex items-center justify-between pb-3 border-b border-primary/10 mb-4">
+                  <h3 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors">Hospitality</h3>
+                  <ArrowRight size={16} className="text-accent group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <p className="text-xs text-primary/60 font-light mb-4">
+                  Riads, boutique guest houses, and hotels across Morocco.
+                </p>
+                <ul className="space-y-2.5 text-xs font-medium text-primary/80">
+                  <li>
+                    <Link to="/en/seo-riad-marrakech" className="hover:text-accent transition-colors block py-0.5">
+                      Marrakech Riad SEO
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/hotel-website-design" className="hover:text-accent transition-colors block py-0.5">
+                      Hotel Website Design
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/direct-booking" className="hover:text-accent transition-colors block py-0.5">
+                      Direct Booking Strategy
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-4 mt-6 border-t border-primary/5 text-[11px] text-accent font-semibold">
+                Hospitality & Riads Hub &rarr;
+              </div>
+            </div>
+
+            {/* Block 2: Acquisition */}
+            <div className="bg-bg p-6 rounded-2xl border border-primary/10 flex flex-col justify-between shadow-xs hover:border-accent/30 transition-all">
+              <div>
+                <Link to="/en/services" className="group flex items-center justify-between pb-3 border-b border-primary/10 mb-4">
+                  <h3 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors">Acquisition</h3>
+                  <ArrowRight size={16} className="text-accent group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <p className="text-xs text-primary/60 font-light mb-4">
+                  Paid advertising channels engineered for direct bookings.
+                </p>
+                <ul className="space-y-2.5 text-xs font-medium text-primary/80">
+                  <li>
+                    <Link to="/en/google-ads-morocco" className="hover:text-accent transition-colors block py-0.5">
+                      Google Ads Morocco
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/services/meta-ads-management" className="hover:text-accent transition-colors block py-0.5">
+                      Hospitality Meta Ads
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/services/tripadvisor-ads" className="hover:text-accent transition-colors block py-0.5">
+                      TripAdvisor Ads
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-4 mt-6 border-t border-primary/5 text-[11px] text-accent font-semibold">
+                Paid Acquisition Hub &rarr;
+              </div>
+            </div>
+
+            {/* Block 3: Local SEO */}
+            <div className="bg-bg p-6 rounded-2xl border border-primary/10 flex flex-col justify-between shadow-xs hover:border-accent/30 transition-all">
+              <div>
+                <Link to="/en/locations/casablanca" className="group flex items-center justify-between pb-3 border-b border-primary/10 mb-4">
+                  <h3 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors">Local SEO</h3>
+                  <ArrowRight size={16} className="text-accent group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <p className="text-xs text-primary/60 font-light mb-4">
+                  Google Maps authority and local discovery.
+                </p>
+                <ul className="space-y-2.5 text-xs font-medium text-primary/80">
+                  <li>
+                    <Link to="/en/local-seo-casablanca" className="hover:text-accent transition-colors block py-0.5">
+                      Local SEO Casablanca
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/seo-riad-marrakech" className="hover:text-accent transition-colors block py-0.5">
+                      Local SEO Marrakech
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/services/google-business-profile" className="hover:text-accent transition-colors block py-0.5">
+                      Google Business Profile
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-4 mt-6 border-t border-primary/5 text-[11px] text-accent font-semibold">
+                Casablanca Local Hub &rarr;
+              </div>
+            </div>
+
+            {/* Block 4: Web Design */}
+            <div className="bg-bg p-6 rounded-2xl border border-primary/10 flex flex-col justify-between shadow-xs hover:border-accent/30 transition-all">
+              <div>
+                <Link to="/en/locations/marrakech" className="group flex items-center justify-between pb-3 border-b border-primary/10 mb-4">
+                  <h3 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors">Web Design</h3>
+                  <ArrowRight size={16} className="text-accent group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <p className="text-xs text-primary/60 font-light mb-4">
+                  High-converting websites connected to direct booking engines.
+                </p>
+                <ul className="space-y-2.5 text-xs font-medium text-primary/80">
+                  <li>
+                    <Link to="/en/website-design" className="hover:text-accent transition-colors block py-0.5">
+                      Website Design
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/web-design-casablanca" className="hover:text-accent transition-colors block py-0.5">
+                      Web Design Casablanca
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/en/riad-website-design-marrakech" className="hover:text-accent transition-colors block py-0.5">
+                      Riad Website Marrakech
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-4 mt-6 border-t border-primary/5 text-[11px] text-accent font-semibold">
+                Marrakech Web Hub &rarr;
+              </div>
+            </div>
           </div>
 
-          {/* Region/niche intent as chip row below */}
-          <div className="mt-16 text-center border-t border-primary/5 pt-10" id="city-intent-chips">
-            <p className="text-xs text-primary/50 font-bold uppercase tracking-wider mb-4">Popular Searches & Regional Expertise</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { name: "Marrakech Riad SEO", path: "/en/riad-seo-marrakech" },
-                { name: "Casablanca SEO", path: "/en/local-seo-casablanca" },
-                { name: "Hotel SEO", path: "/en/hotel-seo" },
-                { name: "TripAdvisor Ads", path: "/en/services/tripadvisor-ads" }
-              ].map((chip, idx) => (
-                <Link 
-                  key={idx}
-                  to={chip.path}
-                  className="px-4 py-2 rounded-full bg-bg border border-primary/10 hover:border-accent hover:text-accent text-sm font-semibold text-primary/80 transition-all shadow-xs hover:scale-[1.03]"
-                >
-                  {chip.name}
+          {/* Section Presence in Casablanca and Marrakech (Tâche 2) */}
+          <div className="bg-bg p-8 md:p-12 rounded-3xl border border-primary/10 mb-16" id="presence-casa-marrakech">
+            <div className="max-w-3xl mb-8">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4 border border-accent/20">
+                <MapPin size={14} /> Regional Footprint
+              </span>
+              <h2 className="text-2xl md:text-4xl font-serif font-bold text-primary mb-4">
+                Presence in Casablanca and Marrakech
+              </h2>
+              <p className="text-base text-primary/75 font-light leading-relaxed">
+                Our agency operates across Casablanca and Marrakech to support Moroccan businesses and hospitality brands. In Casablanca, we build corporate platforms and local B2B search visibility. In Marrakech, we support Medina riads and boutique hotels with direct booking architecture, Google Maps positioning, and targeted international search campaigns.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <Link to="/en/locations/casablanca" className="p-6 bg-white rounded-2xl border border-primary/10 hover:border-accent/40 transition-all block group">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors">
+                    Casablanca
+                  </h3>
+                  <ArrowRight size={18} className="text-accent group-hover:translate-x-1 transition-transform" />
+                </div>
+                <p className="text-xs text-primary/65 font-light mb-3">
+                  B2B corporate hub, law firms, and growing Moroccan SMEs.
+                </p>
+                <p className="text-xs font-mono text-primary/70">
+                  [ADRESSE_CASABLANCA_ANFA]
+                </p>
+              </Link>
+
+              <Link to="/en/locations/marrakech" className="p-6 bg-white rounded-2xl border border-primary/10 hover:border-accent/40 transition-all block group">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors">
+                    Marrakech
+                  </h3>
+                  <ArrowRight size={18} className="text-accent group-hover:translate-x-1 transition-transform" />
+                </div>
+                <p className="text-xs text-primary/65 font-light mb-3">
+                  Boutique hospitality, Medina guest houses, and tour operators.
+                </p>
+                <p className="text-xs font-mono text-primary/70">
+                  [ADRESSE_MARRAKECH_GUELIZ]
+                </p>
+              </Link>
+            </div>
+          </div>
+
+          {/* Section Other Services & Resources (Tâche 4) */}
+          <div className="grid lg:grid-cols-2 gap-8 pt-8 border-t border-primary/10" id="secondary-links">
+            {/* Other Services */}
+            <div className="p-6 rounded-2xl bg-bg border border-primary/10">
+              <h3 className="font-serif font-bold text-lg text-primary mb-3">
+                Other Digital Services
+              </h3>
+              <p className="text-xs text-primary/65 font-light mb-4">
+                Specialized engineering and technical optimization services.
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                <Link to="/en/services/wordpress-seo" className="px-3.5 py-1.5 rounded-lg bg-white border border-primary/10 text-xs font-medium text-primary hover:border-accent hover:text-accent transition-colors">
+                  WordPress SEO
                 </Link>
-              ))}
+                <Link to="/en/services/ecommerce-seo" className="px-3.5 py-1.5 rounded-lg bg-white border border-primary/10 text-xs font-medium text-primary hover:border-accent hover:text-accent transition-colors">
+                  E-commerce SEO
+                </Link>
+                <Link to="/en/services/ai-seo-optimization" className="px-3.5 py-1.5 rounded-lg bg-white border border-primary/10 text-xs font-medium text-primary hover:border-accent hover:text-accent transition-colors">
+                  AI SEO Optimization
+                </Link>
+                <Link to="/en/services/bundle-site-ads" className="px-3.5 py-1.5 rounded-lg bg-white border border-primary/10 text-xs font-medium text-primary hover:border-accent hover:text-accent transition-colors">
+                  Website & Ads Bundle
+                </Link>
+              </div>
+            </div>
+
+            {/* Resources */}
+            <div className="p-6 rounded-2xl bg-bg border border-primary/10">
+              <h3 className="font-serif font-bold text-lg text-primary mb-3">
+                Strategic Guides & Resources
+              </h3>
+              <p className="text-xs text-primary/65 font-light mb-4">
+                Actionable analyses to optimize your hospitality revenue and direct margin.
+              </p>
+              <ul className="space-y-2 text-xs font-medium text-primary/80">
+                <li>
+                  <Link to="/en/blog/reduce-ota-commissions" className="hover:text-accent transition-colors flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    <span>Reduce OTA Commissions: Direct Strategy Guide</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/en/blog/tripadvisor-vs-google-ads" className="hover:text-accent transition-colors flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    <span>TripAdvisor Ads vs Google Ads for Hotels Compared</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/en/blog/hotel-seo-morocco-guide" className="hover:text-accent transition-colors flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    <span>Complete Morocco Hotel SEO Playbook</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -547,11 +753,11 @@ export default function Home() {
                 <span className="text-accent font-serif font-bold text-lg block mb-4">Performance Guarantee</span>
                 <h3 className="text-xl font-serif font-bold text-primary mb-3">90-Day Growth Period</h3>
                 <p className="text-sm text-primary/70 font-light leading-relaxed">
-                  If we do not increase your direct bookings or organic search reach within 90 days, we refund 100% of our service fees.
+                  If we do not increase your direct bookings or organic search reach within 90 days, we apply our growth guarantee subject to [CONDITIONS_GARANTIE].
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-primary/5 text-xs text-primary/50 font-semibold uppercase tracking-wider">
-                90-Day Guarantee
+                90-Day Guarantee [CONDITIONS_GARANTIE]
               </div>
             </div>
 
@@ -608,6 +814,9 @@ export default function Home() {
       <Suspense fallback={<SectionSkeleton />}>
         <BottomFormSection />
       </Suspense>
+
+      {/* Client Reviews (Hidden / No fake reviews) */}
+      <ClientReviews />
     </div>
   );
 }

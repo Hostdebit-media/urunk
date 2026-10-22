@@ -100,7 +100,7 @@ export default function CaseStudy() {
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/20 text-accent-hover border border-accent/30 text-xs font-bold uppercase tracking-wider">
               <Compass size={14} />
-              {isFrench ? "Exemple de Stratégie Sectorielle" : "Industry Strategy Example"}
+              {isFrench ? "Scénario Type Sectoriel" : "Representative Industry Scenario"}
             </span>
             <span className="text-white/70 text-sm font-medium">
               {industry} · {studyLocation}

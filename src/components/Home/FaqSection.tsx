@@ -8,7 +8,7 @@ export default function FaqSection() {
   const faqItems = [
     {
       q: "How do you help Moroccan riads and hotels reduce OTA commissions?",
-      a: "We build high-performance, ultra-fast direct booking websites (starting at 12,000 MAD / ≈1,100 €) integrated with your Property Management System. Combined with targeted Google Search campaigns (4,000 MAD/month / ≈370 €/month management retainer) and local SEO, we intercept travelers before they book on third-party channels, reducing dependency and driving up to a +40% increase in direct revenue."
+      a: "We build high-performance, ultra-fast direct booking websites (starting at 12,000 MAD / ≈1,100 €) integrated with your Property Management System. Combined with targeted Google Search campaigns (4,000 MAD/month / ≈370 €/month management retainer) and local SEO, we intercept travelers before they book on third-party channels, reducing dependency and increasing your direct bookings."
     },
     {
       q: "How long does it take for an SEO strategy to show results?",
@@ -16,11 +16,11 @@ export default function FaqSection() {
     },
     {
       q: "What is included in your website creation package?",
-      a: "Every project (12,000 MAD / ≈1,100 € fixed investment) includes custom luxury user experience design, rapid React performance engineering, multi-language structure (English, French, Arabic), native booking engine API integration, and complete technical SEO. We deliver in 4 to 6 weeks, backed by our 90-day growth guarantee."
+      a: "Every project (12,000 MAD / ≈1,100 € fixed investment) includes custom luxury user experience design, rapid React performance engineering, bilingual structure (English, French), native booking engine API integration, and complete technical SEO. We deliver in 4 to 6 weeks, backed by our 90-day growth guarantee subject to [CONDITIONS_GARANTIE]."
     },
     {
       q: "Which advertising channel is more effective: Google Ads or Meta Ads?",
-      a: "Google Ads (managed at 4,000 MAD/month / ≈370 €/month) capture high-intent travelers actively searching for specific Moroccan destinations. Meta Ads (Instagram and Facebook) excel at showcasing room architecture and amenities to qualified audiences in Europe and North America, reducing inquiry costs by -35%."
+      a: "Google Ads (managed at 4,000 MAD/month / ≈370 €/month) capture high-intent travelers actively searching for specific Moroccan destinations. Meta Ads (Instagram and Facebook) excel at showcasing room architecture and amenities to qualified audiences in Europe and North America, optimizing your direct inquiry acquisition costs."
     },
     {
       q: "Can you connect the website to my existing PMS?",
@@ -68,7 +68,12 @@ export default function FaqSection() {
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
             Clear Answers
           </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-primary">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
+            Frequently Asked Questions About SEO, Websites, and OTA Commissions
+          </h2>
+          <p className="text-base md:text-lg text-primary/75 max-w-3xl mx-auto font-light leading-relaxed">
+            This frequently asked questions section provides factual details regarding search engine optimization, hospitality web design in Morocco, and lowering commission costs from online travel agents. Answers cover typical investment budgets, implementation timelines, property management software integration, and contractual terms without long-term lock-in or hidden licensing fees.
+          </p>
         </div>
 
         <div className="space-y-4">

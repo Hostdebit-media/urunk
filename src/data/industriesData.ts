@@ -189,7 +189,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       caseStudySlug: "art-house-marrakech",
       caseStudyName: "Luxury Riad Direct Acquisition Framework",
       caseStudyMetric: "Example KPI: 3x Google Ads ROAS Benchmark",
-      caseStudyDesc: "An educational framework designed to guide authentic Medina guest houses in local search visibility and direct guest acquisition. Our direct-booking SEO campaigns secured top Maps spots and delivered a +40% margin increase.",
+      caseStudyDesc: "An educational framework designed to guide authentic Medina guest houses in local search visibility and direct guest acquisition. Our direct-booking SEO campaigns secured prominent Maps positions and strengthened direct booking margins.",
       faqs: [
         {
           q: "Why is local SEO critical for a Riad in Marrakech?",
@@ -207,7 +207,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       heroTitle: "Marketing Digital & Création Web pour Riads & Maisons d'Hôtes",
       heroSub: "Sublimez l'authenticité de votre riad en réservations directes internationales. Nous créons des sites immersifs et appliquons un SEO ultra-local à Marrakech.",
       calloutTitle: "Visibilité SEO Riad & Expérience Client",
-      calloutBody: "Du positionnement #1 sur Google Maps dans la médina de Marrakech à la création de sites web haute conversion avec réponse WhatsApp intégrée.",
+      calloutBody: "De l'optimisation prioritaire sur Google Maps dans la médina de Marrakech à la création de sites web haute conversion avec réponse WhatsApp intégrée.",
       overviewTitle: "Saturation en Médina : Se démarquer parmi plus de 1 500 riads à Marrakech",
       overviewText1: "Les riads traditionnels et maisons d'hôtes de charme constituent le cœur de l'expérience touristique marocaine. Pourtant, dans les médinas de Marrakech, Fès ou Essaouira, la rivalité commerciale est colossale. La seule ville de Marrakech compte plus de 1 500 riads actifs. Cette densité extrême contraint de nombreux gérants à se reposer exclusivement sur les OTA (Booking.com, Airbnb), acceptant des commissions de 18% à 25% qui réduisent à néant leurs marges opérationnelles. Briser cette dépendance est impératif pour préserver la rentabilité hôtelière.",
       overviewText2: "Le voyageur moderne à la recherche d'un riad de luxe s'appuie massivement sur une navigation mobile géo-référencée et visuelle. L'utilisation de Google Maps au cœur des ruelles de la médina et la recherche d'inspiration sur Instagram priment. Si votre riad ne bénéficie pas d'un excellent référencement sur carte, d'un site web ultra-rapide et de visuels à couper le souffle, il perd plus de 70 % de ses clients potentiels. La clientèle étant internationale (française, anglaise, italienne, espagnole), une présence digitale multilingue est indispensable pour retranscrire le luxe et l'authenticité de votre hospitalité.",
@@ -245,7 +245,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       caseStudySlug: "art-house-marrakech",
       caseStudyName: "Cadre d'Acquisition Directe pour Riads de Luxe",
       caseStudyMetric: "Indicateur Illustratif : ROAS Cible 3x sur Google Ads",
-      caseStudyDesc: "Un cadre stratégique éducatif conçu pour aider les riads traditionnels de la médina à optimiser le référencement local et attirer des clients en direct. Nos solutions ont propulsé plusieurs riads dans le Top 3 Maps, accroissant la marge directe de +40 %.",
+      caseStudyDesc: "Un cadre stratégique éducatif conçu pour aider les riads traditionnels de la médina à optimiser le référencement local et attirer des clients en direct. Nos solutions accompagnent les riads dans le pack local Maps, améliorant durablement leur marge directe.",
       faqs: [
         {
           q: "Pourquoi le SEO local est-il capital pour un riad à Marrakech ?",

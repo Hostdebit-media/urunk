@@ -132,8 +132,8 @@ export default function ProofSectionFR() {
               </p>
             </div>
             <div className="mt-6 p-4 bg-white rounded-xl border border-primary/5 text-xs text-primary/70">
-              <span className="font-bold text-accent block mb-1">Indicateurs de Performance Clés</span>
-              Hausse moyenne de 94% de la part de réservations directes pour nos riads partenaires à Marrakech et plus de 150% de gain de trafic SEO organique après 6 mois de collaboration.
+              <span className="font-bold text-accent block mb-1">Indicateurs de Suivi</span>
+              Nous accompagnons des hôtels et riads au Maroc dans le développement de leurs réservations directes et l'optimisation continue de leur visibilité locale.
             </div>
           </div>
 

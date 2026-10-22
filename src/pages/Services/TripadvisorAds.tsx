@@ -48,8 +48,8 @@ export default function TripadvisorAds() {
   return (
     <div className="w-full">
       <SEO 
-        title="TripAdvisor Ads Management for Hotels | Urunk" 
-        description="Boost your hotel's visibility on the world's largest travel platform. Expert TripAdvisor Sponsored Placements management." 
+        title="TripAdvisor Ads for Hotels in Morocco | Urunk" 
+        description="Sponsored TripAdvisor campaign management to capture high-intent travelers planning stays in Morocco." 
         schema={[schema, serviceSchema]}
       />
       
@@ -60,7 +60,7 @@ export default function TripadvisorAds() {
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
             Marketplace Advertising
           </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">TripAdvisor Ads Management</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">TripAdvisor Ads for Hotels in Morocco</h1>
           <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
             Jump to the top of your local destination page and capture travelers during their planning phase.
           </p>

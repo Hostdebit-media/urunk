@@ -97,7 +97,7 @@ export default function BottomFormSection() {
 
         <div className="flex-1 w-full">
           <form action="https://formsubmit.co/contact@urunk.com" method="POST" onSubmit={handleFormSubmit} className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 text-primary shadow-xl">
-            <h3 className="text-2xl font-serif font-bold mb-6">Request a <span className="text-accent italic font-semibold">Free Quote</span></h3>
+            <h3 className="text-2xl font-serif font-bold mb-6">Request a <span className="text-accent italic font-semibold">Free Audit</span></h3>
             
             {formError && (
               <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-600 rounded-xl text-xs font-medium">
@@ -116,27 +116,19 @@ export default function BottomFormSection() {
                 <input id="home_name" type="text" name="name" required placeholder="Omar Aziz" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
               </div>
               <div>
-                <label htmlFor="home_contact" className="block font-medium mb-1">WhatsApp or Email *</label>
-                <input id="home_contact" type="text" name="email" required placeholder="+212 600-000000 or you@business.com" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
+                <label htmlFor="home_contact" className="block font-medium mb-1">Email or WhatsApp *</label>
+                <input id="home_contact" type="text" name="contact" required placeholder="+212 600-000000 or you@business.com" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
               </div>
               <div>
-                <label htmlFor="home_business" className="block font-medium mb-1">Business Name</label>
-                <input id="home_business" type="text" name="business" placeholder="Riad Atlas & Spa" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm" />
-              </div>
-              <div>
-                <label htmlFor="home_service" className="block font-medium mb-1">Service Needed</label>
-                <select id="home_service" name="service" className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer text-sm bg-white">
-                  <option value="Not sure yet — Custom quote">Not sure yet — Custom quote</option>
-                  <option value="Website Package">Website Package (Starting at 12,000 MAD)</option>
-                  <option value="Google Ads">Google Ads (Starting at 4,000 MAD/mo)</option>
-                  <option value="Meta Ads">Meta Ads (Starting at 4,000 MAD/mo)</option>
-                  <option value="TripAdvisor Ads">TripAdvisor Ads (Starting at 3,000 MAD/mo)</option>
-                  <option value="Website + 1 Ad Channel Bundle">Website + 1 Ad Channel (Best Value Bundle)</option>
+                <label htmlFor="home_establishment" className="block font-medium mb-1">Property / Business Type *</label>
+                <select id="home_establishment" name="establishment_type" required className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer text-sm bg-white">
+                  <option value="">Select your property type</option>
+                  <option value="Riad & Boutique Stay">Riad & Boutique Stay</option>
+                  <option value="Hotel & Resort">Hotel & Resort</option>
+                  <option value="Tour Operator & Travel Agency">Tour Operator & Travel Agency</option>
+                  <option value="Corporate & SME">Corporate & SME</option>
+                  <option value="Other">Other Business</option>
                 </select>
-              </div>
-              <div>
-                <label htmlFor="home_message" className="block font-medium mb-1">Optional Message (current website, ad budget, or occupancy goals)</label>
-                <textarea id="home_message" name="message" rows={3} placeholder="Current website, main goals, timeline..." className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm resize-none"></textarea>
               </div>
 
               {/* Anti-spam honeypot (off-screen, invisible to humans, traps spam bots) */}
@@ -165,11 +157,11 @@ export default function BottomFormSection() {
                   disabled={formSubmitting}
                   className="w-full bg-accent hover:bg-accent-hover active:scale-[0.99] text-white py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer disabled:opacity-75"
                 >
-                  <span>Get My Free Quote</span>
+                  <span>Request a Free Audit</span>
                   <ArrowRight size={16} />
                 </button>
                 <p className="text-[11px] text-primary/60 text-center mt-3 font-medium">
-                  Your data is secure. We never share your information. We'll reply within 24 hours with a clear quote and next steps. No obligation.
+                  Your data is secure. We provide a customized strategic review within 24 hours. No obligation.
                 </p>
               </div>
             </div>

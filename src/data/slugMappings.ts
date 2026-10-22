@@ -76,7 +76,7 @@ export const routeMap: Record<string, string> = {
   '/seo-riad-marrakech': '/en/riad-seo-marrakech',
   '/site-web-riad-marrakech': '/en/riad-website-design-marrakech',
   
-  '/services/gestion-google-ads': '/en/services/google-ads',
+  '/services/gestion-google-ads': '/en/google-ads-morocco',
   '/services/gestion-publicites-meta': '/en/services/meta-ads',
   '/services/tripadvisor-ads': '/en/services/tripadvisor-ads',
   '/services/bundle-site-ads': '/en/services/bundle-site-ads',
@@ -131,7 +131,7 @@ export const routeMap: Record<string, string> = {
   '/en/riad-seo-marrakech': '/seo-riad-marrakech',
   '/en/riad-website-design-marrakech': '/site-web-riad-marrakech',
 
-  '/en/services/google-ads': '/services/gestion-google-ads',
+  '/en/services/google-ads': '/google-ads-maroc',
   '/en/services/meta-ads': '/services/gestion-publicites-meta',
   '/en/services/tripadvisor-ads': '/services/tripadvisor-ads',
   '/en/services/bundle-site-ads': '/services/bundle-site-ads',

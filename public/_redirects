@@ -2,6 +2,10 @@
 # Urunk URL Architecture 301 Redirect Rules (French Root / English /en/)
 # ==============================================================================
 
+# 0. Canonical Service Consolidation
+/services/gestion-google-ads /google-ads-maroc 301!
+/services/gestion-google-ads.html /google-ads-maroc 301!
+
 # 0. Direct .html Extension Single-Hop Normalization
 /fr/tarifs.html /tarifs 301!
 /tarifs.html /tarifs 301!
@@ -106,7 +110,7 @@
 
 # 4. Legacy /fr/services/* -> Root French Services
 /fr/services/creation-site-web /services/creation-site-web 301!
-/fr/services/gestion-google-ads /services/gestion-google-ads 301!
+/fr/services/gestion-google-ads /google-ads-maroc 301!
 /fr/services/gestion-publicites-meta /services/gestion-publicites-meta 301!
 /fr/services/tripadvisor-ads /services/tripadvisor-ads 301!
 /fr/services/bundle /services/bundle-site-ads 301!
@@ -117,7 +121,7 @@
 /fr/services/google-business-profile /services/google-business-profile 301!
 /fr/services/local-seo-morocco /services/local-seo-morocco 301!
 /fr/services/website-design /services/creation-site-web 301!
-/fr/services/google-ads /services/gestion-google-ads 301!
+/fr/services/google-ads /google-ads-maroc 301!
 /fr/services/meta-ads /services/gestion-publicites-meta 301!
 /fr/services /services 301!
 /fr/services/ /services 301!
