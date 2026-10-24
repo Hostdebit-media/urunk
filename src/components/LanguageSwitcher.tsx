@@ -30,7 +30,7 @@ export default function LanguageSwitcher({ className = '', showIcon = true }: La
     <Link 
       to={targetRoute}
       onClick={handleClick}
-      className={`flex items-center gap-1.5 px-4 py-2.5 min-h-[44px] rounded-full text-xs font-semibold transition-all border border-primary/15 hover:border-accent hover:text-accent bg-white shadow-2xs cursor-pointer ${className}`}
+      className={`flex items-center gap-1.5 px-3.5 py-2 min-h-[38px] rounded-full text-xs font-semibold whitespace-nowrap shrink-0 transition-all border border-primary/15 hover:border-accent hover:text-accent bg-white shadow-2xs cursor-pointer ${className}`}
       aria-label={isFrench ? "Switch to English" : "Passer en Français"}
       title={isFrench ? "Switch to English" : "Passer en Français"}
       hrefLang={isFrench ? "en" : "fr"}

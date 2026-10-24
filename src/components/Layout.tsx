@@ -119,7 +119,7 @@ export default function Layout() {
   }, [location.pathname, location.search]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-bg-light font-sans antialiased text-primary selection:bg-accent/20 selection:text-accent w-full overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-bg-light font-sans antialiased text-primary selection:bg-accent/20 selection:text-accent w-full overflow-x-clip">
       {/* Skip to Main Content Link (WCAG 2.2 AA) */}
       <a
         href="#main-content"
