@@ -179,8 +179,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/google-ads-maroc',
     lang: 'fr',
-    title: 'Gestion Google Ads Maroc : Campagnes Payantes | Urunk',
-    description: 'Gestion experte Google Ads au Maroc dès 4 000 MAD/mois pour hôtels et riads : campagnes rentables à forte intention d\'achat. Audit stratégique gratuit.'
+    title: 'Agence Google Ads Maroc : Campagnes SEA & ROI | Urunk',
+    description: 'Agence Google Ads Maroc orientée ROI : gestion Search, Performance Max, Shopping et Hotel Ads dès 4 000 MAD/mois. Audit SEA gratuit sous 24h.'
   },
   {
     path: '/services/gestion-publicites-meta',
@@ -629,7 +629,7 @@ const customServiceTitles: Record<string, { en: string; fr: string }> = {
   },
   "google-ads-morocco": {
     en: "Google Ads Morocco: PPC Campaigns for Hotels | Urunk",
-    fr: "Gestion Google Ads Maroc : Publicités Payantes | Urunk"
+    fr: "Agence Google Ads Maroc : Campagnes SEA & ROI | Urunk"
   },
   "meta-ads": {
     en: "Meta Ads Management: Facebook & Instagram Ads | Urunk",
@@ -848,7 +848,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               ${isFR ? "Campagnes publicitaires payantes pour générer des réservations." : "Paid search and social channels for direct bookings."}
             </p>
             <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.8; font-size: 0.95rem;">
-              <li><a href="${isFR ? '/google-ads-maroc' : '/en/google-ads-morocco'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'Google Ads Maroc' : 'Google Ads Morocco'}</a></li>
+              <li><a href="${isFR ? '/google-ads-maroc' : '/en/google-ads-morocco'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'Agence Google Ads Maroc' : 'Google Ads Morocco'}</a></li>
               <li><a href="${isFR ? '/services/gestion-publicites-meta' : '/en/services/meta-ads'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'Meta Ads Hôtellerie' : 'Hospitality Meta Ads'}</a></li>
               <li><a href="${isFR ? '/services/tripadvisor-ads' : '/en/services/tripadvisor-ads'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'TripAdvisor Ads' : 'TripAdvisor Ads'}</a></li>
             </ul>
@@ -1011,11 +1011,14 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       <p style="font-size: 1.15rem; margin-bottom: 2.5rem; color: #4a5568; line-height: 1.6;">${escapeHtml(page.description)}</p>
       <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
     `;
+    const seenServiceHrefs = new Set<string>();
     for (const mapping of serviceRouteMapping) {
       const sData = servicesData[mapping.key];
       if (sData) {
         const item = isFR ? sData.fr : sData.en;
         const href = isFR ? mapping.frPath : mapping.enPath;
+        if (seenServiceHrefs.has(href)) continue;
+        seenServiceHrefs.add(href);
         html += `
           <div style="padding: 2rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
             <h2 style="margin: 0 0 0.75rem 0; font-size: 1.6rem; font-family: Georgia, serif;"><a href="${href}" style="color: #0F2D25; text-decoration: none;">${escapeHtml(item.title)}</a></h2>
@@ -1028,6 +1031,317 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       }
     }
     html += `</div>`;
+  } else if (page.path === '/google-ads-maroc') {
+    const gData = servicesData['google-ads-morocco'].fr;
+    html += `
+      <article>
+        <header style="margin-bottom: 2.5rem;">
+          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">
+            <a href="/" style="color: #718096; text-decoration: none;">Accueil</a> &gt;
+            <a href="/services" style="color: #718096; text-decoration: none;">Services</a> &gt;
+            <span>Agence Google Ads Maroc</span>
+          </p>
+          <p style="font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.08em; color: #D46E55; margin-bottom: 0.75rem;">
+            Agence Google Ads Maroc · Référencement Payant SEA &amp; Performance
+          </p>
+          <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">
+            Agence Google Ads au Maroc : Campagnes SEA Rentables &amp; Acquisition à Fort ROI
+          </h1>
+          <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">
+            En tant qu'<strong>agence Google Ads au Maroc</strong> basée à Casablanca et Marrakech, Urunk structure, pilote et rentabilise vos campagnes publicitaires sur le Réseau de Recherche (Search), Performance Max, Google Shopping, YouTube et Google Hotel Ads. Que vous dirigiez une PME ou une entreprise B2B à Casablanca et Rabat, une enseigne e-commerce nationale ou un hôtel et riad à Marrakech et Agadir, nous transformons votre budget média en prospects qualifiés, appels entrants, ventes vérifiées et réservations directes sans commission.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <a href="/contact" style="background: #D46E55; color: white; padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+              Demander un Audit Google Ads Gratuit &rarr;
+            </a>
+            <a href="/tarifs" style="border: 1px solid #0F2D25; color: #0F2D25; padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+              Consulter nos Forfaits SEA
+            </a>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; background: #FAF8F5; padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 12px;">
+            <div>
+              <strong style="font-size: 1.5rem; color: #0F2D25; display: block;">4 000 MAD</strong>
+              <span style="font-size: 0.85rem; color: #4a5568;">Forfait mensuel fixe de gestion SEA, sans frais de mise en service.</span>
+            </div>
+            <div>
+              <strong style="font-size: 1.5rem; color: #0F2D25; display: block;">0 %</strong>
+              <span style="font-size: 0.85rem; color: #4a5568;">Aucune commission variable prélevée sur votre budget publicitaire Google.</span>
+            </div>
+            <div>
+              <strong style="font-size: 1.5rem; color: #0F2D25; display: block;">24 – 48 h</strong>
+              <span style="font-size: 0.85rem; color: #4a5568;">Premiers prospects, appels et clics haute intention dès l'activation.</span>
+            </div>
+            <div>
+              <strong style="font-size: 1.5rem; color: #0F2D25; display: block;">FR · EN · AR</strong>
+              <span style="font-size: 0.85rem; color: #4a5568;">Campagnes multilingues ciblant le Maroc et les marchés internationaux.</span>
+            </div>
+          </div>
+        </header>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #0F2D25; font-size: 1.9rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+            Pourquoi choisir une agence Google Ads spécialisée au Maroc plutôt qu'une gestion générique ?
+          </h2>
+          <p style="margin-bottom: 1rem; color: #4a5568; line-height: 1.7;">
+            Sur le marché marocain, plus de 60 % des budgets investis sans méthodologie rigoureuse sur Google Ads s'évaporent sur des requêtes trop larges, des clics informationnels sans intention d'achat ou le Réseau des partenaires de recherche activé par défaut. Une campagne lancée en mode automatique (« Smart Campaign ») mélange les internautes cherchant un emploi, un stage, un tutoriel gratuit et vos véritables acheteurs prêts à signer un devis ou payer une commande.
+          </p>
+          <p style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7;">
+            Collaborer avec une <strong>agence SEA au Maroc</strong> maîtrisant les réalités locales change radicalement l'équation financière : arbitrage du coût par clic (CPC) par ville et par langue, suivi précis des conversions hybrides propres aux habitudes marocaines (formulaires de devis, appels téléphoniques mobiles, conversations WhatsApp Business, paiements carte CMI, commandes e-commerce confirmées et moteurs PMS hôteliers), et transparence comptable totale puisque vous réglez Google directement sur votre propre compte publicitaire.
+          </p>
+
+          <div style="overflow-x: auto; margin-bottom: 2rem;">
+            <table style="width: 100%; border-collapse: collapse; background: #ffffff; border: 1px solid #e2e8f0;">
+              <thead>
+                <tr style="background: #0F2D25; color: #ffffff; text-align: left;">
+                  <th style="padding: 0.85rem 1rem;">Critère d'évaluation</th>
+                  <th style="padding: 0.85rem 1rem;">Gestion interne / Boost auto</th>
+                  <th style="padding: 0.85rem 1rem;">Agence classique au % média</th>
+                  <th style="padding: 0.85rem 1rem; color: #FAF8F5;">Agence Google Ads Urunk</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.85rem 1rem; font-weight: bold;">Modèle de rémunération</td>
+                  <td style="padding: 0.85rem 1rem;">Temps interne non dédié</td>
+                  <td style="padding: 0.85rem 1rem;">15 % à 25 % du budget dépensé</td>
+                  <td style="padding: 0.85rem 1rem; font-weight: bold; color: #0F2D25;">Forfait fixe dès 4 000 MAD/mois (0 % sur média)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.85rem 1rem; font-weight: bold;">Propriété du compte</td>
+                  <td style="padding: 0.85rem 1rem;">Interne mais mal structuré</td>
+                  <td style="padding: 0.85rem 1rem;">Souvent bloqué sous compte agence</td>
+                  <td style="padding: 0.85rem 1rem; font-weight: bold; color: #0F2D25;">100 % propriétaire (accès administrateur client)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.85rem 1rem; font-weight: bold;">Filtrage du gaspillage</td>
+                  <td style="padding: 0.85rem 1rem;">Requêtes larges non filtrées</td>
+                  <td style="padding: 0.85rem 1rem;">Revue mensuelle superficielle</td>
+                  <td style="padding: 0.85rem 1rem; font-weight: bold; color: #0F2D25;">Audit hebdomadaire des termes &amp; mots-clés négatifs</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.85rem 1rem; font-weight: bold;">Suivi des conversions</td>
+                  <td style="padding: 0.85rem 1rem;">Clics et impressions uniquement</td>
+                  <td style="padding: 0.85rem 1rem;">Page de remerciement basique</td>
+                  <td style="padding: 0.85rem 1rem; font-weight: bold; color: #0F2D25;">GTM + GA4 + WhatsApp + Appels + CMI / PMS</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.85rem 1rem; font-weight: bold;">Engagement contractuel</td>
+                  <td style="padding: 0.85rem 1rem;">Aucun</td>
+                  <td style="padding: 0.85rem 1rem;">6 à 12 mois verrouillés</td>
+                  <td style="padding: 0.85rem 1rem; font-weight: bold; color: #0F2D25;">Mensuel sans engagement forcé (préavis 15 jours)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #0F2D25; font-size: 1.9rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">
+            Nos 6 leviers de campagnes Google Ads gérés pour les entreprises au Maroc
+          </h2>
+          <p style="margin-bottom: 1.5rem; color: #4a5568; line-height: 1.7;">
+            Chaque secteur économique exige une architecture publicitaire adaptée. Nous combinons les formats à plus haute intention commerciale de l'écosystème Google Ads afin de capter la demande active au coût par acquisition (CPA) le plus compétitif :
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+            <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.5rem;">01. Campagnes Google Search (Réseau de Recherche Haute Intention)</h3>
+              <p style="color: #4a5568; margin-bottom: 0.75rem;">Nous ciblons exclusivement les requêtes transactionnelles et commerciales en correspondance exacte et d'expression (français, anglais et arabe), tout en enrichissant chaque semaine une liste stricte de mots-clés négatifs pour éliminer les clics hors cible. Objectif : un Quality Score de 8 à 10/10 réduisant mécaniquement votre CPC face à vos concurrents.</p>
+              <ul style="padding-left: 1.25rem; margin: 0; color: #4a5568;">
+                <li>Groupes d'annonces thématiques granulaires alignés sur chaque prestation ou gamme</li>
+                <li>Annonces responsives (RSA) avec extensions d'appel direct, de prix, de lieu et d'accroche</li>
+                <li>Exclusion systématique des recherches gratuites, emplois, stages et requêtes informatives</li>
+              </ul>
+            </div>
+
+            <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.5rem;">02. Performance Max &amp; Acquisition Multicanale Pilotée par le ROAS</h3>
+              <p style="color: #4a5568; margin-bottom: 0.75rem;">Déploiement maîtrisé sur Search, YouTube, Display, Discover, Gmail et Maps grâce à vos signaux d'audience propriétaires (listes clients CRM, visiteurs chauds, paniers abandonnés) et à l'isolation stricte du trafic de marque pour garantir une croissance réellement incrémentale.</p>
+              <ul style="padding-left: 1.25rem; margin: 0; color: #4a5568;">
+                <li>Segmentation des groupes d'assets visuels et vidéos par ligne de service ou marge</li>
+                <li>Exclusion des termes de marque pour mesurer le véritable coût d'acquisition de nouveaux clients</li>
+                <li>Stratégies d'enchères Smart Bidding basées sur la valeur réelle (tROAS / tCPA)</li>
+              </ul>
+            </div>
+
+            <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.5rem;">03. Google Shopping &amp; Croissance E-commerce au Maroc</h3>
+              <p style="color: #4a5568; margin-bottom: 0.75rem;">Pour les boutiques Shopify, WooCommerce et PrestaShop au Maroc, nous optimisons votre flux Google Merchant Center (titres produits sémantiques, prix en dirhams MAD, disponibilité) et distinguons les paiements par carte CMI des commandes en paiement à la livraison (COD) effectivement livrées.</p>
+              <ul style="padding-left: 1.25rem; margin: 0; color: #4a5568;">
+                <li>Audit et correction technique des flux produits dans Google Merchant Center</li>
+                <li>Découpage des campagnes Shopping par marge brute, best-sellers et saisonnalité</li>
+                <li>Remontée fiable du chiffre d'affaires e-commerce via Google Tag Manager et GA4</li>
+              </ul>
+            </div>
+
+            <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.5rem;">04. Google Hotel Ads &amp; Réservation Directe Sans Commission OTA</h3>
+              <p style="color: #4a5568; margin-bottom: 0.75rem;">Les plateformes comme Booking.com et Expedia enchérissent sur le nom même de votre hôtel ou riad au Maroc pour prélever 15 à 25 % de commission. En connectant votre moteur PMS (Cloudbeds, Mews, SiteMinder, Amenitiz) à Google Hotel Ads et à des campagnes Search sur les marchés émetteurs (France, Royaume-Uni, Espagne, États-Unis, Suisse), nous affichons votre tarif officiel en tête de Google.</p>
+              <ul style="padding-left: 1.25rem; margin: 0; color: #4a5568;">
+                <li>Protection de votre marque hôtelière et activation des liens officiels Google Hotel Center</li>
+                <li>Ciblage des voyageurs internationaux à fort panier moyen en phase de réservation</li>
+                <li>Suivi exact des nuitées et revenus directs générés sans commission intermédiaire</li>
+              </ul>
+            </div>
+
+            <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.5rem;">05. Publicité Locale &amp; Visibilité Sponsorisée sur Google Maps</h3>
+              <p style="color: #4a5568; margin-bottom: 0.75rem;">Conçu pour les cliniques, cabinets médicaux et dentaires, écoles supérieures, concessions automobiles, showrooms immobiliers et prestataires de proximité à Casablanca, Marrakech, Rabat, Tanger et Agadir. Synchronisation complète avec votre fiche Google Business Profile pour stimuler les appels directs et itinéraires.</p>
+            </div>
+
+            <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.5rem;">06. Remarketing Display &amp; YouTube Ads de Réassurance</h3>
+              <p style="color: #4a5568; margin-bottom: 0.75rem;">Un décideur B2B à Casablanca ou un acheteur comparant plusieurs prestataires consulte en moyenne 4 à 6 sites avant de convertir. Nos campagnes de reciblage plafonnées en fréquence sur YouTube et le Réseau Display ramènent vos visiteurs qualifiés vers la prise de contact au meilleur CPA.</p>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <h2 style="color: #0F2D25; font-size: 1.85rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">
+            Coût par clic (CPC), budgets Google Ads au Maroc et dotation e-commerce
+          </h2>
+          <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">
+            Quel budget prévoir avec une <strong>agence Google Ads au Maroc</strong> ? Contrairement aux marchés français ou nord-américains où les CPC dépassent fréquemment 30 à 80 MAD, la SERP marocaine offre encore un excellent levier de rentabilité lorsque le Quality Score et le ciblage géographique sont finement pilotés :
+          </p>
+          <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+            <table style="width: 100%; border-collapse: collapse; background: #ffffff; border: 1px solid #e2e8f0;">
+              <thead>
+                <tr style="background: #0F2D25; color: #ffffff; text-align: left;">
+                  <th style="padding: 0.75rem 1rem;">Secteur d'activité</th>
+                  <th style="padding: 0.75rem 1rem;">Zones principales</th>
+                  <th style="padding: 0.75rem 1rem;">CPC moyen constaté</th>
+                  <th style="padding: 0.75rem 1rem;">Budget média conseillé</th>
+                  <th style="padding: 0.75rem 1rem;">Objectif prioritaire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 1rem; font-weight: bold;">PME, Services B2B &amp; Industrie</td>
+                  <td style="padding: 0.75rem 1rem;">Casablanca, Rabat, Tanger, Kénitra</td>
+                  <td style="padding: 0.75rem 1rem;">3,50 – 9,00 MAD</td>
+                  <td style="padding: 0.75rem 1rem;">4 000 – 12 000 MAD / mois</td>
+                  <td style="padding: 0.75rem 1rem;">Demandes de devis qualifiées &amp; appels</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 1rem; font-weight: bold;">Hôtels, Riads &amp; Tour-Opérateurs</td>
+                  <td style="padding: 0.75rem 1rem;">Marrakech, Agadir, Essaouira, Fès</td>
+                  <td style="padding: 0.75rem 1rem;">4,00 – 11,50 MAD</td>
+                  <td style="padding: 0.75rem 1rem;">5 000 – 15 000 MAD / mois</td>
+                  <td style="padding: 0.75rem 1rem;">Réservations directes PMS (ROAS 5x–9x)</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 1rem; font-weight: bold;">E-commerce &amp; Marques D2C</td>
+                  <td style="padding: 0.75rem 1rem;">Maroc entier &amp; Export</td>
+                  <td style="padding: 0.75rem 1rem;">1,20 – 4,50 MAD</td>
+                  <td style="padding: 0.75rem 1rem;">5 000 – 20 000 MAD / mois</td>
+                  <td style="padding: 0.75rem 1rem;">Ventes validées (CMI / COD confirmé)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.75rem 1rem; font-weight: bold;">Immobilier, Cliniques &amp; Enseignement</td>
+                  <td style="padding: 0.75rem 1rem;">Casablanca, Rabat, Marrakech, Tanger</td>
+                  <td style="padding: 0.75rem 1rem;">4,50 – 12,00 MAD</td>
+                  <td style="padding: 0.75rem 1rem;">5 000 – 15 000 MAD / mois</td>
+                  <td style="padding: 0.75rem 1rem;">Rendez-vous, visites showrooms &amp; WhatsApp</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 style="color: #0F2D25; font-size: 1.25rem; margin-bottom: 0.5rem;">Facturation Google Ads au Maroc, carte internationale et dotation e-commerce</h3>
+          <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1rem;">
+            Pour garantir votre indépendance, vos dépenses publicitaires sont réglées directement à Google Ireland / Google LLC via la carte bancaire internationale professionnelle de votre société marocaine (dotation e-commerce / dotation professionnelle Office des Changes activée auprès d'Attijariwafa Bank, CIH, BMCE Bank of Africa, Banque Populaire ou CFG Bank) ou via un moyen de paiement international existant. Nos honoraires de pilotage SEA sont facturés séparément et en toute clarté à partir de 4 000 MAD/mois.
+          </p>
+          <h3 style="color: #0F2D25; font-size: 1.25rem; margin-bottom: 0.5rem;">Arbitrage sémantique multilingue : Français, Anglais et Arabe</h3>
+          <p style="color: #4a5568; line-height: 1.7; margin: 0;">
+            Au Maroc, un même acheteur alterne entre le français pour les services B2B et médicaux, l'arabe pour certaines recherches locales sur mobile et l'anglais pour le tourisme international, l'IT ou l'investissement. Nous séparons les campagnes par langue et par zone urbaine (Casablanca Anfa/Maarif/Sidi Maârouf, Rabat Agdal/Hay Riad, Marrakech Guéliz/Hivernage/Médina, Tanger, Agadir) afin d'aligner chaque annonce sur la langue exacte de l'utilisateur.
+          </p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #0F2D25; font-size: 1.9rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">
+            Notre méthodologie de pilotage SEA et de tracking des conversions
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.35rem 0;">Étape 01 : Audit SEA Complet &amp; Cartographie d'Intention</h3>
+              <p style="margin: 0; color: #4a5568;">Analyse approfondie de votre compte existant ou des enchères concurrentes au Maroc, estimation des volumes mensuels de recherche, calcul du CPA cible acceptable selon votre marge commerciale et plan média détaillé.</p>
+            </div>
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.35rem 0;">Étape 02 : Tracking Chirurgical (GTM, GA4, WhatsApp, Appels &amp; CMI/PMS)</h3>
+              <p style="margin: 0; color: #4a5568;">Déploiement complet de Google Tag Manager (GTM), Google Analytics 4 (GA4) et des Conversions Améliorées (Enhanced Conversions) pour remonter chaque demande de devis, appel téléphonique, clic WhatsApp qualifié, transaction CMI ou réservation directe PMS.</p>
+            </div>
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.35rem 0;">Étape 03 : Structuration Granulaire &amp; Pages d'Atterrissage Rapides</h3>
+              <p style="margin: 0; color: #4a5568;">Rédaction d'annonces persuasives à haut taux de clic (CTR), paramétrage de toutes les extensions pertinentes et recommandations d'optimisation sur vos landing pages pour améliorer le taux de conversion sur mobile.</p>
+            </div>
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.35rem 0;">Étape 04 : Optimisation Hebdomadaire &amp; Reporting ROI Transparent</h3>
+              <p style="margin: 0; color: #4a5568;">Nettoyage hebdomadaire des termes de recherche, exclusions négatives, réallocation budgétaire vers les campagnes les plus rentables et tableau de bord mensuel centré sur le coût par prospect qualifié et le chiffre d'affaires généré.</p>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem; background: #0F2D25; color: white; padding: 2.25rem; border-radius: 12px;">
+          <h2 style="color: white; font-size: 1.85rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">
+            Tarif Agence Google Ads Maroc : Forfait Mensuel Fixe &amp; Transparent
+          </h2>
+          <p style="font-size: 2rem; font-weight: bold; color: #D46E55; margin-bottom: 0.75rem;">
+            ${escapeHtml(gData.investmentPrice)} <span style="font-size: 1rem; font-weight: normal; color: #e2e8f0;">(hors budget média payé directement à Google)</span>
+          </p>
+          <p style="color: #e2e8f0; line-height: 1.7; margin-bottom: 1.5rem;">
+            ${escapeHtml(gData.investmentDesc)} Supervision senior par Youssef (Consultant certifié Google Ads &amp; GA4), zéro frais d'ouverture de compte, propriété intégrale de vos données historiques et liberté contractuelle mensuelle.
+          </p>
+          <a href="/contact" style="display: inline-block; background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+            Recevoir mon Audit Google Ads Gratuit sous 24h
+          </a>
+        </section>
+
+        <section style="margin-bottom: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+          <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+            <h2 style="color: #0F2D25; font-size: 1.3rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">Pôles Google Ads par Ville au Maroc</h2>
+            <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.9;">
+              <li><a href="/expertise/google-ads/casablanca" style="color: #0F2D25; text-decoration: underline;">Campagnes Google Ads à Casablanca (PME &amp; B2B)</a></li>
+              <li><a href="/expertise/google-ads/marrakech" style="color: #0F2D25; text-decoration: underline;">Campagnes Google Ads à Marrakech (Hôtels, Riads &amp; Services)</a></li>
+              <li><a href="/zones/rabat" style="color: #0F2D25; text-decoration: underline;">Acquisition Digitale &amp; SEA à Rabat</a></li>
+              <li><a href="/zones/agadir" style="color: #0F2D25; text-decoration: underline;">Acquisition Touristique &amp; Resorts à Agadir</a></li>
+              <li><a href="/zones/maroc" style="color: #0F2D25; text-decoration: underline;">Couverture Nationale Maroc</a></li>
+            </ul>
+          </div>
+          <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+            <h2 style="color: #0F2D25; font-size: 1.3rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">Synergie SEA + SEO &amp; Conversion</h2>
+            <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.9;">
+              <li><a href="/agence-seo-maroc" style="color: #0F2D25; text-decoration: underline;">Agence SEO Maroc (Référencement Naturel Durable)</a></li>
+              <li><a href="/creation-site-web" style="color: #0F2D25; text-decoration: underline;">Création de Site Web &amp; Landing Pages Rapides</a></li>
+              <li><a href="/services/bundle-site-ads" style="color: #0F2D25; text-decoration: underline;">Pack Complet Site Web + Campagnes Google Ads</a></li>
+              <li><a href="/services/gestion-publicites-meta" style="color: #0F2D25; text-decoration: underline;">Publicités Meta Ads (Instagram &amp; Facebook)</a></li>
+              <li><a href="/reservation-directe" style="color: #0F2D25; text-decoration: underline;">Stratégie de Réservation Directe Hôtelière</a></li>
+            </ul>
+          </div>
+          <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+            <h2 style="color: #0F2D25; font-size: 1.3rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">Secteurs &amp; Ressources Pratiques</h2>
+            <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.9;">
+              <li><a href="/secteurs/pme-entreprises" style="color: #0F2D25; text-decoration: underline;">Marketing Digital pour PME &amp; Entreprises B2B</a></li>
+              <li><a href="/secteurs/hotels-resorts" style="color: #0F2D25; text-decoration: underline;">Solutions Digitales Hôtels &amp; Resorts</a></li>
+              <li><a href="/blog/tripadvisor-vs-google-ads" style="color: #0F2D25; text-decoration: underline;">Comparatif : Google Ads vs TripAdvisor Ads</a></li>
+              <li><a href="/blog/google-ads-riads-recherche-mots-cles" style="color: #0F2D25; text-decoration: underline;">Guide Recherche de Mots-Clés Google Ads au Maroc</a></li>
+              <li><a href="/realisations" style="color: #0F2D25; text-decoration: underline;">Études de Cas &amp; Résultats Clients</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1.5rem; font-family: Georgia, serif;">
+            Questions fréquentes sur notre Agence Google Ads au Maroc
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            ${gData.faqs.map(faq => `
+              <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff;">
+                <h3 style="color: #0F2D25; font-size: 1.15rem; margin-top: 0; margin-bottom: 0.5rem;">${escapeHtml(faq.q)}</h3>
+                <p style="margin: 0; color: #4a5568; line-height: 1.65;">${escapeHtml(faq.a)}</p>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      </article>
+    `;
   } else if (serviceMapping && servicesData[serviceMapping.key]) {
     // INDIVIDUAL SERVICE PAGE
     const sData = servicesData[serviceMapping.key];
@@ -2850,7 +3164,8 @@ function prerender() {
 
     const isNoIndexPage = page.path === '/en/thank-you' || page.path === '/merci' || page.path === '/404';
     const isBlogPost = page.path.startsWith('/blog/') || page.path.startsWith('/en/blog/');
-    const isCommercialService = page.path.startsWith('/services/') || page.path.startsWith('/en/services/');
+    const matchedServiceMapping = serviceRouteMapping.find(m => page.lang === 'fr' ? m.frPath === page.path : m.enPath === page.path);
+    const isCommercialService = page.path.startsWith('/services/') || page.path.startsWith('/en/services/') || Boolean(matchedServiceMapping);
     const isFaqPage = page.path === '/faq' || page.path === '/en/faq' || page.path === '/tarifs' || page.path === '/en/pricing';
     const isCalculatorPage = page.path.includes('calculator');
 
@@ -2956,6 +3271,8 @@ function prerender() {
       let schemaDesc = pageDesc;
       if (page.path.includes("website-design") || page.path.includes("creation-site-web")) {
          schemaDesc = page.lang === "fr" ? "Création de site web sur-mesure à 12 000 MAD (approx. 1 100 €), livré en 4 à 6 semaines, conçu pour éliminer les commissions OTA." : "Custom 12,000 MAD (approx. €1,100) direct booking website delivered in 4-6 weeks to eliminate OTA commissions.";
+      } else if (page.path === '/google-ads-maroc') {
+         schemaDesc = "Agence Google Ads au Maroc spécialisée dans la création, l'audit et le pilotage de campagnes SEA rentables (Search, Performance Max, Google Shopping, YouTube Ads et Google Hotel Ads) pour PME, B2B, e-commerce et hôtellerie dès 4 000 MAD/mois.";
       } else if (page.path.includes("google-ads") || page.path.includes("gestion-google-ads")) {
          schemaDesc = page.lang === "fr" ? "Gestion Google Ads experte à 4 000 MAD/mois (approx. 370 €/mois), avec garantie de performance sous 90 jours [CONDITIONS_GARANTIE] pour maximiser les réservations directes." : "Expert Google Ads management at 4,000 MAD/mo (approx. €370/mo), backed by a 90-day guarantee [CONDITIONS_GARANTIE] to drive direct bookings.";
       } else if (page.path.includes("meta-ads") || page.path.includes("gestion-publicites-meta")) {
@@ -2966,31 +3283,100 @@ function prerender() {
          schemaDesc = page.lang === "fr" ? "Architecture digitale complète incluant un site à 12 000 MAD (approx. 1 100 €) (4-6 semaines) et la gestion de campagnes (4 000 MAD/mois (approx. 370 €/mois)) sous garantie de 90 jours [CONDITIONS_GARANTIE]." : "Complete digital architecture including a 12,000 MAD (approx. €1,100) website (4-6 weeks) and campaign management (4,000 MAD/mo (approx. €370/mo)) under a 90-day guarantee [CONDITIONS_GARANTIE].";
       }
 
-      schemas.push({
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": pageTitle,
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Urunk",
-          "url": "https://urunk.com"
-        },
-        "areaServed": "Morocco",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": `${pageTitle} Offers`,
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": pageTitle,
-                "description": schemaDesc
+      if (page.path === '/google-ads-maroc') {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": `${canonicalUrl}#service`,
+          "name": "Agence Google Ads Maroc — Gestion SEA & Acquisition Payante",
+          "serviceType": "Agence Google Ads & Gestion SEA",
+          "description": schemaDesc,
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Urunk",
+            "url": "https://urunk.com",
+            "address": [
+              {
+                "@type": "PostalAddress",
+                "addressLocality": "Casablanca",
+                "addressRegion": "Casablanca-Settat",
+                "addressCountry": "MA"
+              },
+              {
+                "@type": "PostalAddress",
+                "addressLocality": "Marrakech",
+                "addressRegion": "Marrakech-Safi",
+                "addressCountry": "MA"
               }
-            }
-          ]
+            ]
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "Morocco" },
+            { "@type": "City", "name": "Casablanca" },
+            { "@type": "City", "name": "Marrakech" },
+            { "@type": "City", "name": "Rabat" },
+            { "@type": "City", "name": "Tangier" },
+            { "@type": "City", "name": "Agadir" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "4000",
+            "priceCurrency": "MAD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "4000",
+              "priceCurrency": "MAD",
+              "unitText": "MONTH"
+            },
+            "availability": "https://schema.org/InStock",
+            "url": canonicalUrl
+          }
+        });
+      } else {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": pageTitle,
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Urunk",
+            "url": "https://urunk.com"
+          },
+          "areaServed": "Morocco",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": `${pageTitle} Offers`,
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": pageTitle,
+                  "description": schemaDesc
+                }
+              }
+            ]
+          }
+        });
+      }
+
+      if (matchedServiceMapping && servicesData[matchedServiceMapping.key]) {
+        const srvEntry = servicesData[matchedServiceMapping.key][page.lang];
+        if (srvEntry && srvEntry.faqs && srvEntry.faqs.length > 0) {
+          schemas.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": srvEntry.faqs.map(f => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f.a
+              }
+            }))
+          });
         }
-      });
+      }
     }
 
     if (page.path === '/tarifs' || page.path === '/en/pricing') {
@@ -3325,6 +3711,31 @@ function prerender() {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           "itemListElement": breadcrumbItems
+        });
+      } else if (isCommercialService && page.path !== '/services' && page.path !== '/en/services') {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": page.lang === 'fr' ? 'Accueil' : 'Home',
+              "item": page.lang === 'fr' ? `${BASE_URL}/` : `${BASE_URL}/en`
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": page.lang === 'fr' ? `${BASE_URL}/services` : `${BASE_URL}/en/services`
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": page.path === '/google-ads-maroc' ? 'Agence Google Ads Maroc' : pageTitle,
+              "item": canonicalUrl
+            }
+          ]
         });
       } else {
         schemas.push({

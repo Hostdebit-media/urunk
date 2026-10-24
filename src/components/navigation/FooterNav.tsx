@@ -84,8 +84,8 @@ export default function FooterNav({ isFrench }: FooterNavProps) {
                 </Link>
               </li>
               <li>
-                <Link to={isFrench ? "/google-ads-maroc" : "/en/google-ads-morocco"} className="hover:text-accent transition-colors block py-0.5">
-                  {isFrench ? 'Google Ads Maroc' : 'Google Ads Morocco'}
+                <Link to={isFrench ? "/google-ads-maroc" : "/en/google-ads-morocco"} className="hover:text-accent transition-colors block py-0.5 font-semibold text-primary">
+                  {isFrench ? 'Agence Google Ads Maroc' : 'Google Ads Morocco'}
                 </Link>
               </li>
               <li>

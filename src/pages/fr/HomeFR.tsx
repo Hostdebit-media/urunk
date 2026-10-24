@@ -110,7 +110,7 @@ export default function HomeFR() {
               {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Gestion Publicitaire Google Ads Maroc",
+                "name": "Agence Google Ads Maroc — Gestion SEA & Acquisition",
                 "provider": { "@id": "https://urunk.com/#organization" },
                 "areaServed": "MA"
               }
@@ -193,7 +193,7 @@ export default function HomeFR() {
           <div className="mt-20 pt-10 border-t border-primary/10 w-full max-w-4xl flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale" id="hero-quick-capabilities-fr">
              <div className="flex items-center gap-2 font-bold text-primary/80"><Globe size={20} /> Création de Site Internet</div>
              <div className="flex items-center gap-2 font-bold text-primary/80"><Search size={20} /> SEO Local & National</div>
-             <div className="flex items-center gap-2 font-bold text-primary/80"><TrendingUp size={20} /> Gestion Google Ads</div>
+             <div className="flex items-center gap-2 font-bold text-primary/80"><TrendingUp size={20} /> Agence Google Ads Maroc</div>
           </div>
         </div>
       </section>
@@ -348,7 +348,7 @@ export default function HomeFR() {
                 <ul className="space-y-2.5 text-xs font-medium text-primary/80">
                   <li>
                     <Link to="/google-ads-maroc" className="hover:text-accent transition-colors block py-0.5">
-                      Google Ads Maroc
+                      Agence Google Ads Maroc
                     </Link>
                   </li>
                   <li>

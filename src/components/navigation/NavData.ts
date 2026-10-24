@@ -59,8 +59,8 @@ export const navData: NavGroup[] = [
         badge: { en: 'Popular', fr: 'Populaire' }
       },
       {
-        title: { en: 'Google Ads', fr: 'Google Ads' },
-        desc: { en: 'High-intent search campaigns targeting active searchers', fr: 'Campagnes d\'acquisition ciblées sur Google pour un ROI immédiat' },
+        title: { en: 'Google Ads', fr: 'Agence Google Ads Maroc' },
+        desc: { en: 'High-intent search campaigns targeting active searchers', fr: 'Agence SEA au Maroc : Search, Performance Max & ROI vérifié' },
         link: { en: '/en/google-ads-morocco', fr: '/google-ads-maroc' },
         icon: Megaphone
       },

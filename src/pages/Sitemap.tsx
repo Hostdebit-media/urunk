@@ -81,7 +81,7 @@ export default function Sitemap() {
   const servicesLinks: SitemapLink[] = isFrench ? [
     { label: "Création Site Web Maroc : Tarifs et Prix", path: "/creation-site-web" },
     { label: "Création de Site Web Riad Marrakech", path: "/site-web-riad-marrakech" },
-    { label: "Gestion Google Ads Maroc : Campagnes Payantes", path: "/google-ads-maroc" },
+    { label: "Agence Google Ads Maroc : Campagnes SEA & ROI", path: "/google-ads-maroc" },
     { label: "Publicité Meta Ads pour hôtels et riads", path: "/services/gestion-publicites-meta" },
     { label: "Publicité TripAdvisor pour hôtels au Maroc", path: "/services/tripadvisor-ads" },
     { label: "Pack site web + publicité pour hôtels", path: "/services/bundle-site-ads" },

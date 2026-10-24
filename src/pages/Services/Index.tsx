@@ -222,9 +222,9 @@ const services: ServiceItem[] = [
     category: 'Paid Advertising',
     categoryFr: 'Publicité Payante',
     title: 'Google Ads Management',
-    titleFr: 'Gestion Google Ads Maroc : Campagnes Payantes',
+    titleFr: 'Agence Google Ads Maroc : Campagnes SEA & ROI',
     desc: 'Create high-converting Search, Display, and Performance Max campaigns targeting ready-to-book global travelers.',
-    descFr: 'Campagnes Google Ads rentables et ciblées par mots-clés transactionnels pour attirer une clientèle qualifiée au Maroc.',
+    descFr: 'Agence Google Ads au Maroc spécialisée Search, Performance Max, Shopping et Hotel Ads dès 4 000 MAD/mois pour PME, e-commerce et hôtellerie.',
     path: '/en/services/google-ads',
     pathFr: '/google-ads-maroc',
   },
@@ -314,10 +314,14 @@ export default function ServicesIndex() {
 
   const [activeTab, setActiveTab] = useState('All Services');
 
-  // Filter services
+  // Filter services and deduplicate by localized destination path
+  const seenPaths = new Set<string>();
   const filteredServices = services.filter(service => {
-    if (activeTab === 'All Services') return true;
-    return service.category === activeTab;
+    if (activeTab !== 'All Services' && service.category !== activeTab) return false;
+    const targetPath = isFrench ? service.pathFr : service.path;
+    if (seenPaths.has(targetPath)) return false;
+    seenPaths.add(targetPath);
+    return true;
   });
 
   return (

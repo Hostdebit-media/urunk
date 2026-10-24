@@ -1245,80 +1245,104 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         }
       ],
       "investmentTitle": "Google Ads Management",
-      "investmentPrice": "Starting at 5,000 MAD/mo",
-      "investmentDesc": "Plus your dedicated ad spend budget paid directly to Google.",
+      "investmentPrice": "Starting at 4,000 MAD/mo",
+      "investmentDesc": "Transparent fixed monthly retainer plus your media budget paid directly to Google (0% commission).",
       "faqs": [
         {
           "q": "How much should I spend on Google Ads in Morocco?",
-          "a": "Ad spend varies drastically by industry. For local businesses, a 3,000 - 4,000 MAD/mo budget is a good starting point. For competitive hospitality terms, 5,000 MAD+/mo is recommended."
+          "a": "Ad spend varies by sector and competition. For local Moroccan SMEs and B2B services, a 3,500 to 6,000 MAD/mo media budget is a strong starting point. For competitive hospitality, real estate, or national e-commerce campaigns, 5,000 to 15,000+ MAD/mo paid directly to Google is recommended."
         },
         {
           "q": "How long does it take to see results?",
-          "a": "Unlike SEO, Google Ads can generate traffic and leads within 24 hours of launching the campaign. However, optimal ROAS is usually achieved after 2-4 weeks of data collection and optimization."
+          "a": "Unlike organic SEO, Google Ads generates qualified clicks, calls, and booking inquiries within 24 to 48 hours of campaign launch. Peak ROAS and lowest Cost-Per-Acquisition (CPA) are typically reached after 2 to 4 weeks of search-term pruning and bid optimization."
         }
       ]
     },
     "fr": {
-      "title": "Gestion Google Ads Maroc : Campagnes Payantes | Urunk",
-      "description": "Campagnes Google Ads rentables et ciblées par mots-clés transactionnels pour attirer une clientèle qualifiée au Maroc et à l'international.",
-      "heroTitle": "Gestion Google Ads Maroc : Campagnes Payantes",
-      "heroSub": "Transformez votre budget publicitaire en un moteur de revenus prévisible. Spécialistes des campagnes Google Search et Performance Max.",
-      "calloutTitle": "Captez les Acheteurs Prêts à Convertir",
-      "calloutBody": "Lorsque les internautes recherchent vos services sur Google, ils sont prêts à acheter. Nos campagnes placent votre entreprise tout en haut des résultats, vous garantissant les clics les plus précieux.",
-      "problemTitle": "Votre budget Google Ads est-il gaspillé ?",
-      "problemText1": "De nombreuses entreprises marocaines tentent de gérer elles-mêmes leurs campagnes Google Ads ou engagent des agences généralistes, ce qui entraîne des dépenses inutiles sur des mots-clés trop larges et des pages de destination qui ne convertissent pas.",
-      "problemText2": "Une campagne réussie nécessite un ciblage précis, une gestion des mots-clés à exclure, des annonces percutantes et des tests A/B continus pour garantir un retour sur investissement (ROAS) positif.",
-      "signsTitle": "Signes que votre stratégie Google Ads actuelle échoue :",
+      "title": "Agence Google Ads Maroc : Campagnes SEA & ROI | Urunk",
+      "description": "Agence Google Ads Maroc orientée ROI : gestion Search, Performance Max, Shopping et Hotel Ads dès 4 000 MAD/mois. Audit SEA gratuit sous 24h.",
+      "heroTitle": "Agence Google Ads au Maroc : Campagnes SEA Rentables & Acquisition à Fort ROI",
+      "heroSub": "Transformez chaque dirham investi sur Google en prospects qualifiés, ventes e-commerce et réservations directes. Pilotage SEA certifié à Casablanca, Marrakech, Rabat, Tanger et Agadir.",
+      "calloutTitle": "Honoraires Fixes & Zéro Commission sur Votre Budget Média",
+      "calloutBody": "Contrairement aux agences facturant 15 à 20 % de vos dépenses publicitaires, notre agence Google Ads au Maroc applique un forfait fixe dès 4 000 MAD/mois. Vous réglez votre budget média directement à Google et restez propriétaire à 100 % de votre compte.",
+      "problemTitle": "Pourquoi 70 % des budgets Google Ads au Maroc perdent en rentabilité ?",
+      "problemText1": "Beaucoup d'entreprises marocaines lancent des campagnes en requête large (Broad Match) sans listes d'exclusion ni suivi précis des conversions. Résultat : le budget s'épuise sur des clics curieux ou hors zone géographique, tandis que les pages de destination lentes sur mobile font fuir les acheteurs prêts à signer.",
+      "problemText2": "Une agence Google Ads experte du marché marocain structure vos campagnes autour de l'intention transactionnelle réelle (français, anglais, arabe), connecte Google Tag Manager et GA4 à vos appels, messages WhatsApp, paiements CMI ou moteur PMS, et optimise chaque enchère sur le coût par client acquis (CPA).",
+      "signsTitle": "Signes que votre compte Google Ads nécessite une reprise en main experte :",
       "signs": [
-        "Votre coût par acquisition (CPA) est trop élevé",
-        "Vous avez beaucoup de clics mais très peu de leads ou réservations",
-        "Vous n'utilisez pas le suivi des conversions ou le reciblage",
-        "Votre niveau de qualité est bas, vous payez donc plus cher par clic"
+        "Votre coût par prospect (CPA) augmente alors que le volume de ventes ou de devis stagne",
+        "Vous recevez des clics non qualifiés (chercheurs d'emploi, requêtes gratuites, zones hors cible)",
+        "Vos conversions WhatsApp, appels téléphoniques, formulaires ou paiements CMI/PMS ne remontent pas dans GA4",
+        "Votre Quality Score est inférieur à 7/10, vous forçant à surpayer chaque clic face à vos concurrents"
       ],
-      "featuresTitle": "Notre Méthodologie Google Ads :",
+      "featuresTitle": "Nos 6 Leviers d'Acquisition Google Ads au Maroc :",
       "features": [
         {
-          "title": "Ciblage Précis des Mots-Clés",
-          "desc": "Concentration stricte sur les termes de recherche à forte intention d'achat."
+          "title": "Campagnes Google Search Haute Intention",
+          "desc": "Ciblage chirurgical des mots-clés transactionnels exacts et expressions, annonces responsives à fort taux de clic (CTR) et filtrage quotidien des termes négatifs."
         },
         {
-          "title": "Optimisation de la Page de Destination",
-          "desc": "Garantir que la page de l'annonce est conçue pour une conversion maximale."
+          "title": "Performance Max, Shopping & E-commerce",
+          "desc": "Optimisation Google Merchant Center, flux produits Shopify/WooCommerce et diffusion multicanale (Search, YouTube, Display, Discover, Maps) pilotée par le ROAS."
         },
         {
-          "title": "Mise à l'Échelle Basée sur les Données",
-          "desc": "Suivi avancé pour développer les campagnes qui fonctionnent et stopper les autres."
+          "title": "Google Hotel Ads & Réservation Directe",
+          "desc": "Connexion PMS (Cloudbeds, Mews, SiteMinder) pour afficher vos tarifs officiels sur Google et capter les voyageurs avant Booking.com ou Expedia."
         }
       ],
-      "processTitle": "Comment Nous Maximisons Votre Budget",
+      "processTitle": "Notre Méthodologie de Pilotage SEA au Maroc",
       "processSteps": [
         {
           "step": 1,
-          "title": "Recherche d'Audience et de Concurrents",
-          "desc": "Analyse du volume de recherche et des enchères de vos concurrents."
+          "title": "Audit SEA & Étude Concurrentielle",
+          "desc": "Analyse complète des volumes de recherche au Maroc et à l'international, benchmark des CPC sectoriels et diagnostic des fuites de budget."
         },
         {
           "step": 2,
-          "title": "Architecture de la Campagne",
-          "desc": "Structuration de votre compte avec des groupes d'annonces très ciblés."
+          "title": "Tracking GTM, GA4 & Landing Pages",
+          "desc": "Déploiement du suivi des conversions améliorées (WhatsApp, appels, formulaires B2B, transactions CMI/PMS) et optimisation des pages d'atterrissage."
         },
         {
           "step": 3,
-          "title": "Optimisation Continue",
-          "desc": "Surveillance quotidienne, ajustement des enchères et tests A/B des annonces."
+          "title": "Architecture Granulaire & Scaling ROAS",
+          "desc": "Structuration thématique serrée, tests A/B d'annonces et ajustement hebdomadaire des enchères pour réduire le CPA et maximiser la marge nette."
         }
       ],
-      "investmentTitle": "Gestion Google Ads",
-      "investmentPrice": "À partir de 5 000 MAD / mois",
-      "investmentDesc": "Plus votre budget publicitaire payé directement à Google.",
+      "investmentTitle": "Forfait Agence Google Ads Maroc",
+      "investmentPrice": "Dès 4 000 MAD / mois",
+      "investmentDesc": "Honoraires fixes sans commission sur votre budget média (payé directement à Google). Sans engagement forcé, préavis de 15 jours.",
       "faqs": [
         {
-          "q": "Combien dois-je dépenser sur Google Ads au Maroc ?",
-          "a": "Le budget varie selon le secteur. Pour les entreprises locales, 3 000 à 4 000 MAD/mois est un bon début. Pour l'hôtellerie très concurrentielle, 5 000 MAD et plus par mois est recommandé."
+          "q": "Pourquoi choisir une agence Google Ads au Maroc plutôt que gérer ses campagnes en interne ?",
+          "a": "Le marché marocain présente des spécificités fortes : recherches multilingues (français, anglais, arabe/darija), parcours de conversion hybrides mêlant formulaires web, appels directs et WhatsApp Business, et arbitrages d'enchères très différents entre Casablanca, Marrakech, Rabat ou les marchés européens émetteurs. Faire appel à une agence Google Ads spécialisée au Maroc permet d'éviter 30 à 50 % de clics hors cible dès le premier mois grâce à une architecture granulaire, des listes de mots-clés négatifs sectorielles et un Quality Score supérieur à 8/10 qui réduit mécaniquement votre coût par clic."
         },
         {
-          "q": "Combien de temps pour voir des résultats ?",
-          "a": "Contrairement au SEO, Google Ads peut générer du trafic en 24h. Cependant, le ROAS optimal est généralement atteint après 2 à 4 semaines d'optimisation."
+          "q": "Quel budget publicitaire prévoir pour Google Ads au Maroc (CPC moyen et investissement média) ?",
+          "a": "Le coût par clic (CPC) au Maroc reste très compétitif : comptez en moyenne 1,20 à 4,50 MAD en e-commerce/Shopping, 3,50 à 9,00 MAD pour les services B2B et PME à Casablanca ou Rabat, et 4,00 à 11,50 MAD dans l'immobilier, les cliniques ou l'hôtellerie ciblant l'Europe. Nous recommandons un budget média de départ de 3 500 à 6 000 MAD/mois pour une PME locale, et de 6 000 à 15 000+ MAD/mois pour un site e-commerce national ou un établissement hôtelier à forte ambition."
+        },
+        {
+          "q": "Comment régler le budget publicitaire Google Ads depuis le Maroc (dotation e-commerce et devises) ?",
+          "a": "Vous réglez vos dépenses publicitaires directement auprès de Google via votre carte bancaire professionnelle marocaine dotée de la dotation e-commerce internationale (plafond Office des Changes pour les sociétés marocaines) ou via un compte en devises / carte internationale. Urunk vous accompagne dans la configuration conforme de la facturation Google Ads afin que vous receviez vos factures officielles chaque mois sans aucun intermédiaire ni frais de change cachés."
+        },
+        {
+          "q": "Combien coûtent les honoraires de gestion de votre agence Google Ads au Maroc ?",
+          "a": "Nos honoraires de gestion Google Ads démarrent à un tarif fixe et transparent de 4 000 MAD HT / mois (environ 370 €/mois), avec 0 MAD de frais de mise en service sur les comptes standards et 0 % de commission sur votre budget média. Contrairement aux agences qui prélèvent 15 à 20 % des dépenses publicitaires, notre rémunération fixe aligne totalement nos intérêts sur votre rentabilité nette (ROAS et CPA)."
+        },
+        {
+          "q": "En combien de temps obtient-on les premiers leads ou réservations avec Google Ads ?",
+          "a": "Contrairement au référencement naturel (SEO) qui demande 3 à 6 mois de montée en puissance, une campagne Google Search ou Google Hotel Ads génère ses premiers visiteurs intentionnistes, appels et demandes de devis sous 24 à 48 heures après validation des annonces. La phase d'apprentissage algorithmique et d'affinement des termes de recherche permet d'atteindre un rythme de croisière optimal entre la 2e et la 4e semaine."
+        },
+        {
+          "q": "Accompagnez-vous uniquement les hôtels ou aussi les PME, le B2B et l'e-commerce au Maroc ?",
+          "a": "Urunk accompagne l'ensemble des entreprises marocaines à forte exigence de retour sur investissement : PME et prestataires B2B à Casablanca, Rabat et Tanger (génération de devis et appels), boutiques e-commerce nationales (Google Shopping et Performance Max), cliniques, promoteurs immobiliers et établissements d'enseignement, ainsi que notre pôle historique dédié aux hôtels, riads et tour-opérateurs à Marrakech, Agadir et dans tout le Royaume."
+        },
+        {
+          "q": "Suis-je propriétaire à 100 % de mon compte Google Ads et de mes données ?",
+          "a": "Oui, intégralement et dès le premier jour. Le compte Google Ads, le conteneur Google Tag Manager (GTM) et la propriété Google Analytics 4 (GA4) sont ouverts à votre nom avec accès administrateur exclusif. Vous conservez l'historique complet de vos campagnes, vos listes d'audiences remarketing et vos données de conversion, avec une liberté contractuelle totale (préavis simple de 15 jours)."
+        },
+        {
+          "q": "Faut-il combiner Google Ads (SEA) et référencement naturel (SEO) au Maroc ?",
+          "a": "Absolument. Google Ads capte immédiatement les acheteurs prêts à convertir sur des mots-clés transactionnels et vous révèle en quelques semaines quelles requêtes génèrent réellement du chiffre d'affaires. Nous réinjectons ensuite ces données de conversion exactes dans votre stratégie SEO pour bâtir des positions organiques durables et réduire progressivement votre coût d'acquisition global."
         }
       ]
     }
