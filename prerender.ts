@@ -1251,7 +1251,13 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       const desc = (isFR ? study.frMetaDescription : study.metaDescription) || study.metaDescription;
       const kpis = (isFR ? study.frRecommendedKPIs : study.recommendedKPIs) || [];
       const scenario = isFR ? study.frBusinessScenario || study.businessScenario : study.businessScenario;
+      const challenges = (isFR ? study.frDigitalChallenges : study.digitalChallenges) || [];
       const solution = isFR ? study.frRecommendedStrategy || study.recommendedStrategy : study.recommendedStrategy;
+      const challengeDetail = isFR ? study.frChallengeDetail || study.challengeDetail : study.challengeDetail;
+      const solutionDetail = isFR ? study.frSolutionDetail || study.solutionDetail : study.solutionDetail;
+      const resultsDetail = isFR ? study.frResultsDetail || study.resultsDetail : study.resultsDetail;
+      const roadmap = (isFR ? study.frImplementationRoadmap : study.implementationRoadmap) || [];
+      const measurement = isFR ? study.frMeasurementFramework || study.measurementFramework : study.measurementFramework;
 
       html += `
         <article>
@@ -1274,14 +1280,44 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </section>
 
           <section style="margin-bottom: 2.5rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Contexte & Scénario Métier' : 'Business Scenario'}</h2>
-            <p style="color: #4a5568; line-height: 1.7; font-size: 1.05rem;">${escapeHtml(scenario)}</p>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Contexte & Scénario Métier' : 'Business Scenario & Market Context'}</h2>
+            <p style="color: #4a5568; line-height: 1.7; font-size: 1.05rem; margin-bottom: 1rem;">${escapeHtml(scenario)}</p>
+            ${challengeDetail ? `<p style="color: #4a5568; line-height: 1.7; font-size: 1rem; margin-bottom: 1rem;">${escapeHtml(challengeDetail)}</p>` : ''}
+            ${challenges.length > 0 ? `
+              <h3 style="color: #0F2D25; font-size: 1.25rem; margin-bottom: 0.75rem;">${isFR ? 'Freins Digitaux Identifiés' : 'Key Digital Bottlenecks Identified'}</h3>
+              <ul style="padding-left: 1.5rem; color: #4a5568; line-height: 1.65;">
+                ${challenges.map(c => `<li style="margin-bottom: 0.5rem;">${escapeHtml(c)}</li>`).join('')}
+              </ul>
+            ` : ''}
           </section>
 
           <section style="margin-bottom: 2.5rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Stratégie Recommandée Urunk' : 'Recommended Urunk Strategy'}</h2>
-            <p style="color: #4a5568; line-height: 1.7; font-size: 1.05rem;">${escapeHtml(solution)}</p>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Stratégie Recommandée Urunk' : 'Recommended Urunk Execution Strategy'}</h2>
+            <p style="color: #4a5568; line-height: 1.7; font-size: 1.05rem; margin-bottom: 1rem;">${escapeHtml(solution)}</p>
+            ${solutionDetail ? `<p style="color: #4a5568; line-height: 1.7; font-size: 1rem; margin-bottom: 1rem;">${escapeHtml(solutionDetail)}</p>` : ''}
+            ${resultsDetail ? `
+              <div style="background: #ffffff; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-top: 1.25rem;">
+                <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.5rem 0;">${isFR ? 'Impact Opérationnel & Résultats Cibles' : 'Projected Commercial Impact & Outcomes'}</h3>
+                <p style="margin: 0; color: #4a5568; line-height: 1.65;">${escapeHtml(resultsDetail)}</p>
+              </div>
+            ` : ''}
           </section>
+
+          ${roadmap.length > 0 ? `
+          <section style="margin-bottom: 2.5rem;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Feuille de Route de Déploiement' : 'Implementation Roadmap'}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+              ${roadmap.map(step => `
+                <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <div style="font-size: 0.85rem; font-weight: bold; color: #D46E55; text-transform: uppercase;">${escapeHtml(step.duration)}</div>
+                  <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0.35rem 0 0.5rem 0;">${escapeHtml(step.phase)}</h3>
+                  <p style="margin: 0; color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${escapeHtml(step.focus)}</p>
+                </div>
+              `).join('')}
+            </div>
+            ${measurement ? `<p style="color: #4a5568; line-height: 1.65; margin-top: 1.25rem;"><strong>${isFR ? 'Cadre de Mesure Analytique :' : 'Analytics & Attribution Framework:'}</strong> ${escapeHtml(measurement)}</p>` : ''}
+          </section>
+          ` : ''}
 
           <div style="text-align: center; margin-top: 3rem;">
             <a href="${isFR ? '/contact' : '/en/contact'}" style="background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
@@ -1291,6 +1327,394 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         </article>
       `;
     }
+  } else if (page.path === '/realisations' || page.path === '/en/work') {
+    // WORK / CASE STUDIES DIRECTORY INDEX
+    html += `
+      <article>
+        <header style="margin-bottom: 2.5rem; text-align: center;">
+          <span style="display: inline-block; padding: 0.35rem 1rem; border-radius: 9999px; background: rgba(212,110,85,0.1); color: #D46E55; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; margin-bottom: 1rem;">
+            ${isFR ? 'Études de Cas & Architectures Appliquées' : 'Applied Growth Frameworks & Case Studies'}
+          </span>
+          <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">
+            ${isFR ? 'Nos Réalisations & Modèles de Croissance au Maroc' : 'Hospitality & B2B Digital Growth Case Studies in Morocco'}
+          </h1>
+          <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.65; max-width: 800px; margin: 0 auto;">
+            ${isFR
+              ? "Découvrez comment Urunk conçoit des écosystèmes d'acquisition directe sans commission pour les riads de Marrakech, les opérateurs touristiques nationaux et les entreprises de services à Casablanca."
+              : "Explore how Urunk architects commission-free direct booking ecosystems and high-intent B2B lead pipelines for boutique Marrakech riads, Moroccan tour operators, and Casablanca service brands."}
+          </p>
+        </header>
+
+        <section style="margin-bottom: 2.5rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">
+            ${isFR ? 'Notre Approche : Ingénierie Web, SEO Local et Rentabilité Directe' : 'Our Engineering Methodology: Speed, Search Authority & Net Margin'}
+          </h2>
+          <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1rem;">
+            ${isFR
+              ? "Dans l'hôtellerie et le tourisme au Maroc, la majorité des établissements perdent entre 15 % et 25 % de leur chiffre d'affaires brut en commissions versées aux plateformes tierces (Booking.com, Expedia, GetYourGuide). Parallèlement, de nombreuses PME à Casablanca et Rabat souffrent de sites institutionnels lents qui ne convertissent pas les décideurs B2B sur mobile. Nos études de cas détaillent comment la refonte technique sous architecture rapide (< 1,5 seconde), l'intégration native des moteurs PMS (Cloudbeds, Mews, SiteMinder) et le ciblage Google Search permettent de reprendre le contrôle commercial."
+              : "Across Morocco's hospitality and tourism sectors, independent properties routinely surrender 15% to 25% of gross room and excursion revenue to third-party OTA intermediaries such as Booking.com, Expedia, and GetYourGuide. Meanwhile, corporate service providers in Casablanca and Rabat often rely on slow legacy websites that fail to capture high-intent mobile searchers. Our applied strategy case studies document how sub-second web engineering, frictionless PMS checkout integration (Cloudbeds, Mews, SiteMinder), and precision Google Search & Maps campaigns rebuild direct revenue sovereignty."}
+          </p>
+          <p style="color: #4a5568; line-height: 1.7; margin: 0;">
+            ${isFR
+              ? "Chaque architecture présentée ci-dessous repose sur des indicateurs mesurables : coût par acquisition (CPA), part des réservations directes face aux OTA, positionnement dans le Pack Local Google Maps Top 3 et retour sur dépenses publicitaires (ROAS). Nos déploiements sont livrés clé en main en 4 à 6 semaines à tarif fixe dès 12 000 MAD, accompagnés de notre garantie contractuelle de performance de 90 jours."
+              : "Every framework showcased below is anchored on verifiable commercial KPIs: Cost Per Acquisition (CPA), direct-to-OTA booking ratio, Google Maps Local 3-Pack rankings, and Return on Ad Spend (ROAS). All custom website builds start at a transparent 12,000 MAD fixed investment delivered in 4 to 6 weeks, backed by our contractual 90-day performance guarantee."}
+          </p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.5rem; font-family: Georgia, serif;">
+            ${isFR ? 'Dossiers Stratégiques & Études Sectorielles Détaillées' : 'Detailed Sector Case Studies & Strategic Blueprints'}
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 2rem;">
+            ${caseStudies.map(study => {
+              const sTitle = isFR ? study.frTitle || study.title : study.title;
+              const sIndustry = isFR ? study.frIndustry || study.industry : study.industry;
+              const sLoc = isFR ? study.frLocation || study.location : study.location;
+              const sScenario = isFR ? study.frBusinessScenario || study.businessScenario : study.businessScenario;
+              const sStrategy = isFR ? study.frRecommendedStrategy || study.recommendedStrategy : study.recommendedStrategy;
+              const sKpis = (isFR ? study.frRecommendedKPIs : study.recommendedKPIs) || [];
+              const sHref = isFR ? `/realisations/${study.frSlug || study.slug}` : `/en/work/${study.slug}`;
+              return `
+                <div style="padding: 2rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
+                  <div style="font-size: 0.85rem; color: #D46E55; font-weight: bold; text-transform: uppercase; margin-bottom: 0.5rem;">
+                    ${escapeHtml(sIndustry)} &bull; ${escapeHtml(sLoc)}
+                  </div>
+                  <h3 style="font-size: 1.5rem; color: #0F2D25; margin: 0 0 0.75rem 0; font-family: Georgia, serif;">
+                    <a href="${sHref}" style="color: #0F2D25; text-decoration: none;">${escapeHtml(sTitle)}</a>
+                  </h3>
+                  <p style="color: #4a5568; line-height: 1.65; margin-bottom: 0.75rem;"><strong>${isFR ? 'Problématique :' : 'Challenge:'}</strong> ${escapeHtml(sScenario)}</p>
+                  <p style="color: #4a5568; line-height: 1.65; margin-bottom: 1.25rem;"><strong>${isFR ? 'Dispositif déployé :' : 'Strategic Solution:'}</strong> ${escapeHtml(sStrategy)}</p>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 1.25rem;">
+                    ${sKpis.map(k => `
+                      <div style="padding: 0.75rem; background: #FAF8F5; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="font-weight: bold; color: #0F2D25; font-size: 0.95rem;">${escapeHtml(k.metric)}</div>
+                        <div style="font-size: 0.85rem; color: #4a5568;">${escapeHtml(k.targetDescription)}</div>
+                      </div>
+                    `).join('')}
+                  </div>
+                  <a href="${sHref}" style="color: #D46E55; font-weight: bold; text-decoration: underline;">
+                    ${isFR ? 'Consulter l\'étude complète →' : 'Read full case study →'}
+                  </a>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </section>
+
+        <section style="background: #0F2D25; color: #ffffff; padding: 2rem; border-radius: 12px; text-align: center;">
+          <h2 style="color: #ffffff; font-size: 1.75rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">
+            ${isFR ? 'Prêt à Bâtir Votre Propre Canal d\'Acquisition Directe ?' : 'Ready to Build Your Own Direct Acquisition Engine?'}
+          </h2>
+          <p style="color: #e2e8f0; max-width: 650px; margin: 0 auto 1.5rem auto; line-height: 1.6;">
+            ${isFR
+              ? "Demandez votre diagnostic gratuit sous 24 à 48 heures. Nos ingénieurs analysent votre vitesse mobile, vos fuites de commissions OTA et votre potentiel SEO local."
+              : "Request your complimentary 24–48 hour channel diagnostic. Our team audits your mobile speed, OTA commission leakage, and local Google Search opportunity."}
+          </p>
+          <a href="${isFR ? '/contact' : '/en/contact'}" style="display: inline-block; background: #D46E55; color: #ffffff; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+            ${isFR ? 'Demander Mon Audit Gratuit' : 'Request My Free Strategy Audit'}
+          </a>
+        </section>
+      </article>
+    `;
+  } else if (page.path.startsWith('/secteurs/') || page.path.startsWith('/en/industries/')) {
+    // INDUSTRY VERTICAL LANDING PAGES (10 PAGES)
+    const rawSlug = page.path.replace(/^\/(?:secteurs|en\/industries)\//, '');
+    const industrySlugMap: Record<string, string> = {
+      'hotels-resorts': 'hotels-resorts',
+      'riads-maisons-hotes': 'riads-boutique-hotels',
+      'riads-boutique-hotels': 'riads-boutique-hotels',
+      'tour-operateurs': 'tour-operators',
+      'tour-operators': 'tour-operators',
+      'restaurants-traiteurs': 'restaurants-catering',
+      'restaurants-catering': 'restaurants-catering',
+      'pme-entreprises': 'corporate-smes',
+      'corporate-smes': 'corporate-smes',
+      'ecommerce': 'ecommerce'
+    };
+    const indKey = industrySlugMap[rawSlug] || rawSlug;
+    const indMap = industriesData[indKey];
+    if (indMap) {
+      const data = indMap[lang];
+      const matchedStudy = caseStudies.find(s => s.slug === data.caseStudySlug || s.frSlug === data.caseStudySlug);
+      const studyHref = isFR
+        ? `/realisations/${matchedStudy ? (matchedStudy.frSlug || matchedStudy.slug) : data.caseStudySlug}`
+        : `/en/work/${matchedStudy ? matchedStudy.slug : data.caseStudySlug}`;
+
+      html += `
+        <article>
+          <header style="margin-bottom: 2.5rem;">
+            <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">
+              <a href="${isFR ? '/' : '/en'}" style="color: #718096; text-decoration: none;">${isFR ? 'Accueil' : 'Home'}</a> &gt;
+              <a href="${isFR ? '/services' : '/en/services'}" style="color: #718096; text-decoration: none;">${isFR ? 'Secteurs' : 'Industries'}</a> &gt;
+              ${escapeHtml(data.heroTitle)}
+            </p>
+            <h1 style="font-size: 2.65rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(data.heroTitle)}</h1>
+            <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.65; margin-bottom: 1.5rem;">${escapeHtml(data.heroSub)}</p>
+            <div style="background: #f8fafc; border-left: 4px solid #0F2D25; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 1.25rem;">
+              <p style="margin: 0; color: #2d3748; line-height: 1.65;">
+                <strong>Urunk Agency</strong> ${isFR
+                  ? "déploie des architectures numériques de pointe pour les acteurs de ce secteur au Maroc (Casablanca, Marrakech, Rabat, Agadir). Nos équipes conçoivent des sites web ultra-rapides synchronisés avec vos systèmes métiers et pilotent des campagnes Google Ads et SEO d'autorité générant plus de 40 % de requêtes directes sans commission d'intermédiaire. Forfaits création dès 12 000 MAD, gestion marketing dès 4 000 MAD/mois."
+                  : "engineers high-performance web systems and direct-booking channels for this sector across Morocco and international feeder markets. We build speed-optimized platforms seamlessly integrated with industry booking engines, driving a 40%+ increase in direct revenue while bypassing steep OTA commissions. Web design starts at 12,000 MAD, performance ad management at 4,000 MAD/mo."}
+              </p>
+            </div>
+            <aside style="background: #FAF8F5; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0;">
+              <strong style="color: #0F2D25;">${escapeHtml(data.calloutTitle)} :</strong>
+              <p style="margin: 0.4rem 0 0 0; color: #4a5568; line-height: 1.6;">${escapeHtml(data.calloutBody)}</p>
+            </aside>
+          </header>
+
+          <section style="margin-bottom: 2.75rem;">
+            <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(data.overviewTitle)}</h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">${escapeHtml(data.overviewText1)}</p>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1.5rem;">${escapeHtml(data.overviewText2)}</p>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.75rem;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(data.keyChallengesTitle)}</h3>
+              <ul style="padding-left: 1.5rem; margin: 0; color: #4a5568; line-height: 1.7;">
+                ${data.keyChallenges.map(ch => `<li style="margin-bottom: 0.5rem;">${escapeHtml(ch)}</li>`).join('')}
+              </ul>
+            </div>
+          </section>
+
+          <section style="margin-bottom: 2.75rem;">
+            <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">${escapeHtml(data.solutionsTitle)}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+              ${data.solutions.map((sol, idx) => `
+                <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.5rem 0;">0${idx + 1}. ${escapeHtml(sol.title)}</h3>
+                  <p style="color: #4a5568; line-height: 1.65; margin: 0 0 0.85rem 0;">${escapeHtml(sol.desc)}</p>
+                  <a href="${sol.link}" style="color: #D46E55; font-weight: 600; text-decoration: underline;">${isFR ? 'Explorer la solution →' : 'Explore service →'}</a>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <section style="margin-bottom: 2.75rem; background: #0F2D25; color: #ffffff; padding: 2rem; border-radius: 12px;">
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #ECC94B; font-weight: bold;">${escapeHtml(data.caseStudyTitle)}</span>
+            <h2 style="color: #ffffff; font-size: 1.7rem; margin: 0.5rem 0; font-family: Georgia, serif;">${escapeHtml(data.caseStudyName)}</h2>
+            <p style="color: #ECC94B; font-weight: bold; margin: 0 0 0.75rem 0;">${escapeHtml(data.caseStudyMetric)}</p>
+            <p style="color: #e2e8f0; line-height: 1.65; margin: 0 0 1.25rem 0;">${escapeHtml(data.caseStudyDesc)}</p>
+            <a href="${studyHref}" style="display: inline-block; background: #D46E55; color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+              ${isFR ? 'Consulter l\'Étude Complète' : 'Explore Full Case Study'}
+            </a>
+          </section>
+
+          <section style="margin-bottom: 2.5rem;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">
+              ${isFR ? 'Questions Fréquentes sur ce Secteur' : 'Sector Frequently Asked Questions'}
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              ${data.faqs.map(faq => `
+                <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">${escapeHtml(faq.q)}</h3>
+                  <p style="margin: 0; color: #4a5568; line-height: 1.65;">${escapeHtml(faq.a)}</p>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        </article>
+      `;
+    }
+  } else if ((page.path.startsWith('/zones/') && page.path !== '/zones') || (page.path.startsWith('/en/locations/') && page.path !== '/en/locations')) {
+    // REGIONAL LOCATION HUB PAGES (10 PAGES)
+    const rawLoc = page.path.replace(/^\/(?:zones|en\/locations)\//, '');
+    const locKey = rawLoc === 'maroc' ? 'morocco' : rawLoc;
+    const locMap = locationsData[locKey];
+    if (locMap) {
+      const data = locMap[lang];
+      const stats = locMap.marketStats || [];
+
+      html += `
+        <article>
+          <header style="margin-bottom: 2.5rem;">
+            <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">
+              <a href="${isFR ? '/' : '/en'}" style="color: #718096; text-decoration: none;">${isFR ? 'Accueil' : 'Home'}</a> &gt;
+              <a href="${isFR ? '/zones' : '/en/locations'}" style="color: #718096; text-decoration: none;">${isFR ? 'Zones' : 'Locations'}</a> &gt;
+              ${escapeHtml(data.heroTitle)}
+            </p>
+            <h1 style="font-size: 2.65rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(data.heroTitle)}</h1>
+            <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.65; margin-bottom: 1.5rem;">${escapeHtml(data.heroSub)}</p>
+            <div style="background: #f8fafc; border-left: 4px solid #0F2D25; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 1.25rem;">
+              <p style="margin: 0; color: #2d3748; line-height: 1.65;">
+                <strong>Urunk Agency</strong> ${isFR
+                  ? "déploie une présence opérationnelle et stratégique dans ce pôle économique marocain. Nos spécialistes accompagnent les entreprises, hôtels et riads locaux avec des solutions de création web sur-mesure (dès 12 000 MAD) et des campagnes d'acquisition locale Google Maps & Google Ads (dès 4 000 MAD/mois) pour capturer les flux de clients qualifiés sans intermédiaire."
+                  : "maintains an active operational and strategic presence in this premier Moroccan economic hub. We equip local businesses, resorts, and boutique riads with custom speed-engineered web platforms (from 12,000 MAD) and high-intent local SEO & Google Ads management (from 4,000 MAD/mo)."}
+              </p>
+            </div>
+            <aside style="background: #FAF8F5; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0;">
+              <strong style="color: #0F2D25;">${escapeHtml(data.calloutTitle)} :</strong>
+              <p style="margin: 0.4rem 0 0 0; color: #4a5568; line-height: 1.6;">${escapeHtml(data.calloutBody)}</p>
+            </aside>
+          </header>
+
+          ${stats.length > 0 ? `
+          <section style="margin-bottom: 2.5rem;">
+            <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+              ${isFR ? 'Indicateurs Économiques & Digitaux Clés' : 'Key Regional Market & Search Benchmarks'}
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+              ${stats.map(st => `
+                <div style="padding: 1.15rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <div style="font-size: 1.45rem; font-weight: bold; color: #D46E55;">${escapeHtml(st.value)}</div>
+                  <div style="font-size: 0.85rem; color: #4a5568; margin-top: 0.25rem;">${escapeHtml(st.label[lang])}</div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+          ` : ''}
+
+          <section style="margin-bottom: 2.75rem;">
+            <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(data.overviewTitle)}</h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">${escapeHtml(data.overviewText1)}</p>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1.5rem;">${escapeHtml(data.overviewText2)}</p>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.75rem;">
+              <h3 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(data.marketHighlightsTitle)}</h3>
+              <ul style="padding-left: 1.5rem; margin: 0; color: #4a5568; line-height: 1.7;">
+                ${data.marketHighlights.map(hl => `<li style="margin-bottom: 0.5rem;">${escapeHtml(hl)}</li>`).join('')}
+              </ul>
+            </div>
+          </section>
+
+          <section style="margin-bottom: 2.75rem;">
+            <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">${escapeHtml(data.localServicesTitle)}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem;">
+              ${data.localServices.map((srv, idx) => `
+                <div style="padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <h3 style="color: #0F2D25; font-size: 1.2rem; margin: 0 0 0.5rem 0;">0${idx + 1}. ${escapeHtml(srv.title)}</h3>
+                  <p style="color: #4a5568; line-height: 1.65; margin: 0 0 0.85rem 0;">${escapeHtml(srv.desc)}</p>
+                  <a href="${srv.link}" style="color: #D46E55; font-weight: 600; text-decoration: underline;">${isFR ? 'Découvrir le service →' : 'Explore service →'}</a>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          ${data.whyPartnerTitle && data.whyPartnerText ? `
+          <section style="margin-bottom: 2.75rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <h2 style="color: #0F2D25; font-size: 1.75rem; margin-top: 0; margin-bottom: 0.85rem; font-family: Georgia, serif;">${escapeHtml(data.whyPartnerTitle)}</h2>
+            <p style="margin: 0; color: #4a5568; line-height: 1.75;">${escapeHtml(data.whyPartnerText)}</p>
+          </section>
+          ` : ''}
+
+          <section style="margin-bottom: 2.75rem;">
+            <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(data.nearbyLocationsTitle)}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+              ${data.nearbyLocations.map(nb => `
+                <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <h3 style="font-size: 1.1rem; margin: 0 0 0.4rem 0;"><a href="${nb.link}" style="color: #0F2D25; text-decoration: underline;">${escapeHtml(nb.title)}</a></h3>
+                  <p style="margin: 0; color: #4a5568; font-size: 0.92rem; line-height: 1.55;">${escapeHtml(nb.desc)}</p>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <section style="margin-bottom: 2.5rem;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">
+              ${isFR ? 'Questions Fréquentes sur ce Pôle Régional' : 'Regional Hub Frequently Asked Questions'}
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              ${data.faqs.map(faq => `
+                <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                  <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">${escapeHtml(faq.q)}</h3>
+                  <p style="margin: 0; color: #4a5568; line-height: 1.65;">${escapeHtml(faq.a)}</p>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+        </article>
+      `;
+    }
+  } else if (page.path === '/services/creation-site-web') {
+    // COMMERCIAL WEBSITE CREATION SERVICE PAGE (/services/creation-site-web)
+    html += `
+      <article>
+        <header style="margin-bottom: 2.5rem;">
+          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;"><a href="/" style="color: #718096; text-decoration: none;">Accueil</a> &gt; <a href="/services" style="color: #718096; text-decoration: none;">Services</a> &gt; Création de Site Web Sur-Mesure</p>
+          <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">Création de Site Web Sur-Mesure au Maroc : Vitesse, SEO & Conversion Directe</h1>
+          <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.65; margin-bottom: 1.5rem;">
+            Nous concevons des plateformes web ultra-rapides en React et WordPress optimisé pour les hôtels, riads, restaurants et PME marocaines souhaitant transformer leur trafic mobile en réservations et prospects directs sans commission.
+          </p>
+          <aside style="background: #FAF8F5; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0;">
+            <strong style="color: #0F2D25;">Investissement Clé en Main dès 12 000 MAD (≈ 1 100 €) :</strong>
+            <p style="margin: 0.4rem 0 0 0; color: #4a5568; line-height: 1.6;">Livraison complète en 4 à 6 semaines, propriété intellectuelle à 100 %, zéro frais de licence mensuel et garantie contractuelle de performance sous 90 jours.</p>
+          </aside>
+        </header>
+
+        <section style="margin-bottom: 2.75rem;">
+          <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1rem; font-family: Georgia, serif;">Pourquoi les Sites Web Classiques Freinent Votre Chiffre d'Affaires au Maroc</h2>
+          <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
+            Plus de 82 % des recherches touristiques et commerciales au Maroc s'effectuent désormais sur smartphone. Pourtant, la majorité des établissements hôteliers de Marrakech ou Agadir et des entreprises de services à Casablanca utilisent encore des thèmes préfabriqués surchargés qui mettent plus de 5 secondes à s'afficher sur réseau 4G. Chaque seconde supplémentaire de chargement entraîne une chute mesurable du taux de conversion : l'internaute quitte la page et réserve sur Booking.com (vous coûtant 18 % à 25 % de commission) ou contacte un concurrent mieux positionné sur Google.
+          </p>
+          <p style="color: #4a5568; line-height: 1.75; margin-bottom: 0;">
+            Chez Urunk, notre pôle d'ingénierie web traite votre site internet comme votre actif commercial le plus rentable. Nous éliminons les extensions superflues, structurons chaque page autour de l'intention de recherche Google (balisage Schema.org natif, hiérarchie Hn sémantique, Core Web Vitals dans le vert) et intégrons un parcours de conversion sans friction connecté directement à votre moteur de réservation PMS ou à votre CRM commercial.
+          </p>
+        </section>
+
+        <section style="margin-bottom: 2.75rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem;">
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1.25rem; font-family: Georgia, serif;">Architecture Technique & Livrables Inclus dans Chaque Projet</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem;">
+            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">01. Design UX Mobile-First Sur-Mesure</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Maquettes éditoriales haute couture valorisant votre identité visuelle, vos chambres ou vos offres B2B avec appels à l'action persistants sur mobile.</p>
+            </div>
+            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">02. Performance Core Web Vitals (&lt; 1,5s)</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Compression d'images WebP/AVIF nouvelle génération, pré-rendu statique ultra-léger et distribution CDN mondiale pour un affichage quasi instantané.</p>
+            </div>
+            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">03. Intégration PMS, CMI & WhatsApp</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Connexion fluide avec Cloudbeds, Mews, SiteMinder, Amenitiz, passerelles de paiement marocaines CMI/PayZone et qualification directe via WhatsApp Business.</p>
+            </div>
+            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">04. Fondations SEO Bilingues & IA</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Architecture multilingue native (français, anglais, espagnol) avec balises hreflang réciproques, données structurées JSON-LD et suivi analytique GA4 complet.</p>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 2.75rem;">
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">Méthodologie de Déploiement en 4 à 6 Semaines</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaine 1 : Audit Sémantique & Architecture de Conversion</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Analyse des requêtes Google de votre marché à Casablanca, Marrakech, Rabat ou Agadir, cartographie de l'arborescence SEO et wireframes orientés réservation directe.</p>
+            </div>
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaines 2 à 3 : Direction Artistique & Rédaction Persuasive</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Création de l'interface sur-mesure, optimisation photographique et rédaction de contenus bilingues calibrés pour convaincre vos futurs hôtes et décideurs.</p>
+            </div>
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaines 4 à 5 : Développement Front-End & Connexions API</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Intégration du code propre, branchement du moteur de réservation ou des formulaires CRM, tests rigoureux sur iOS et Android et validation PageSpeed.</p>
+            </div>
+            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaine 6 : Mise en Production, Indexation Google & Formation</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Déploiement sécurisé SSL, soumission des sitemaps sur Google Search Console, transfert intégral des accès administrateurs et formation de votre équipe.</p>
+            </div>
+          </div>
+        </section>
+
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">Questions Fréquentes — Création de Site Web au Maroc</h2>
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">Sommes-nous propriétaires à 100 % du site web livré ?</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.65;">Oui, intégralement. Dès la livraison finale, le nom de domaine, le code source, les visuels et l'ensemble des comptes analytiques vous appartiennent sans aucune redevance mensuelle obligatoire envers Urunk.</p>
+            </div>
+            <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">En combien de temps l'investissement de 12 000 MAD est-il rentabilisé ?</h3>
+              <p style="margin: 0; color: #4a5568; line-height: 1.65;">Pour un riad ou un hôtel facturant 1 500 MAD la nuitée, économiser 20 % de commission Booking.com sur à peine 40 nuitées directes rembourse intégralement le coût de création du site internet.</p>
+            </div>
+          </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="/contact" style="background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
+            Demander un Devis & Audit Gratuit
+          </a>
+        </div>
+      </article>
+    `;
   } else {
     // GENERIC / CORE PAGE FALLBACK
     if (page.path === '/a-propos' || page.path === '/en/about') {
@@ -1302,27 +1726,49 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </header>
 
           <section style="margin-bottom: 2.5rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Notre Mission : Libérer les Hôteliers des Intermédiaires' : 'Our Core Mission: Direct Revenue Sovereignty'}</h2>
-            <p style="font-size: 1.05rem; line-height: 1.7; color: #4a5568;">
-              ${isFR ? 'Nous offrons aux établissements une souveraineté numérique totale en combinant des sites web haut de gamme à tarif fixe (12 000 MAD (approx. 1 100 €)) et des campagnes d\'acquisition directe à haute intention.' : 'We restore property revenue sovereignty through fixed-fee custom web engineering (12,000 MAD (approx. €1,100) one-time build) coupled with high-intent direct acquisition channels.'}
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Notre Mission : Rendre aux Hôteliers et Entreprises Marocaines Leur Souveraineté Digitale' : 'Our Core Mission: Restoring Direct Revenue Sovereignty Across Morocco'}</h2>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #4a5568; margin-bottom: 1rem;">
+              ${isFR
+                ? "Fondée pour répondre à un déséquilibre structurel du marché touristique et B2B marocain, Urunk accompagne les hôtels indépendants, les riads de prestige, les opérateurs d'excursions et les PME ambitieuses dans la reprise en main de leur acquisition client. Pendant trop longtemps, d'excellents établissements à Marrakech, Agadir ou Fès ont cédé entre 18 % et 25 % de leur chiffre d'affaires brut aux agences de voyages en ligne (OTA), faute de disposer d'une plateforme web rapide et d'une visibilité directe sur Google."
+                : "Founded to solve a structural margin leak across Morocco's hospitality and B2B sectors, Urunk empowers independent hotels, luxury Medina riads, tour operators, and growth-stage SMEs to own their customer acquisition pipeline. For years, exceptional properties in Marrakech, Agadir, and Fes surrendered 18% to 25% of their gross room revenue to Online Travel Agencies simply because their own websites loaded slowly on mobile devices and ranked poorly on Google Search."}
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.75; color: #4a5568; margin-bottom: 0;">
+              ${isFR
+                ? "Nous combinons une ingénierie web moderne (sites sur-mesure à 12 000 MAD livrés en 4 à 6 semaines, temps de chargement inférieur à 1,5 seconde) avec un pilotage chirurgical du référencement naturel local (SEO Google Maps) et des campagnes payantes à haute intention sur Google Ads, Meta Ads et TripAdvisor. Notre modèle économique est 100 % aligné sur votre rentabilité : zéro commission sur vos ventes, propriété intellectuelle totale de vos actifs et transparence absolue."
+                : "We bridge modern front-end software engineering (fixed-fee 12,000 MAD custom websites delivered in 4 to 6 weeks with sub-1.5-second load times) with surgical local SEO, Google Maps 3-Pack positioning, and high-intent paid acquisition across Google Ads, Meta Ads, and TripAdvisor. Our business model is 100% aligned with your net margin: zero commission on your bookings, full ownership of all source code and ad accounts, and transparent monthly reporting."}
             </p>
           </section>
 
           <section style="margin-bottom: 2.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Principes Opérationnels de Croissance Directe' : 'Hospitality Direct Growth Operating Principles'}</h2>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Principes Opérationnels de Croissance Directe' : 'Hospitality & B2B Growth Operating Principles'}</h2>
             <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1rem;">
-              ${isFR ? 'Chaque projet géré par Urunk repose sur une structure contractuelle transparente et des normes de livraisons strictes pour garantir une efficacité maximale :' : 'Every client engagement managed by Urunk operates under rigorous engineering standards and clear performance parameters:'}
+              ${isFR ? 'Chaque projet géré par Urunk repose sur une structure contractuelle transparente et des normes d\'ingénierie strictes pour garantir un retour sur investissement mesurable :' : 'Every client engagement managed by Urunk operates under rigorous engineering benchmarks and clear contractual commitments:'}
             </p>
-            <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">
-              <li><strong>${isFR ? 'Site Web sur-mesure (12 000 MAD (approx. 1 100 €))' : 'Custom Direct Booking Website (12,000 MAD (approx. €1,100))'}</strong> — ${isFR ? 'Livré sous 4 à 6 semaines, vitesse inférieure à 1,5s et 0% de commission d\'intermédiaire.' : 'Engineered for high-speeds load speed and delivered turnkey in 4–6 weeks with zero commission fees.'}</li>
-              <li><strong>${isFR ? 'Gestion Publicitaire Ciblée (4 000 MAD/mois Google/Meta, 3 000 MAD/mois TripAdvisor)' : 'Targeted Ad Acquisition (4,000 MAD/mo Google/Meta, 3,000 MAD/mo TripAdvisor)'}</strong> — ${isFR ? 'Campagnes haute intention apportant +40% de réservations directes et -35% de coût par demande.' : 'High-intent search & paid social marketing delivering +40% direct bookings and -35% cost per inquiry.'}</li>
-              <li><strong>${isFR ? 'Garantie Contractuelle de 90 Jours' : 'Contractual 90-Day Performance Guarantee'}</strong> — ${isFR ? 'Engagement formel sur la croissance de vos réservations directes.' : 'Strict 90-day direct revenue guarantee protecting your marketing investment.'}</li>
+            <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; color: #4a5568; line-height: 1.65; margin-bottom: 0;">
+              <li><strong>${isFR ? 'Site Web Sur-Mesure (12 000 MAD / ≈ 1 100 €)' : 'Custom Direct Booking Website (12,000 MAD / ≈ €1,100)'}</strong> — ${isFR ? 'Livré clé en main sous 4 à 6 semaines, vitesse mobile optimale, raccordement PMS (Cloudbeds, Mews, SiteMinder) et 0 % de commission d\'intermédiaire.' : 'Engineered for sub-second mobile performance, integrated directly with Cloudbeds, Mews, or SiteMinder, and delivered turnkey in 4–6 weeks with zero commission fees.'}</li>
+              <li><strong>${isFR ? 'Gestion Publicitaire & SEO (4 000 MAD/mois Google/Meta/SEO, 3 000 MAD/mois TripAdvisor)' : 'Targeted Ad & SEO Retainers (4,000 MAD/mo Google/Meta/SEO, 3,000 MAD/mo TripAdvisor)'}</strong> — ${isFR ? 'Campagnes haute intention ciblant les marchés émetteurs européens, britanniques et nord-américains ainsi que les décideurs locaux au Maroc.' : 'High-intent multilingual search and paid social marketing capturing travelers in France, the UK, Germany, and North America alongside domestic Moroccan buyers.'}</li>
+              <li><strong>${isFR ? 'Zéro Engagement Forcé & Préavis de 15 Jours' : 'Zero Lock-In Contracts & 15-Day Flexibility'}</strong> — ${isFR ? 'Nous fidélisons nos partenaires par la performance réelle de leurs réservations directes, jamais par des clauses d\'engagement rigides.' : 'We earn client retention month after month through verifiable revenue performance rather than restrictive annual agency retainers.'}</li>
+              <li><strong>${isFR ? 'Garantie Contractuelle de 90 Jours' : 'Contractual 90-Day Performance Guarantee'}</strong> — ${isFR ? 'Si les jalons de performance définis ne sont pas atteints sous 90 jours, nous poursuivons l\'optimisation sans frais de gestion additionnels.' : 'If agreed direct channel milestones are not met within 90 days of launch, we continue optimizing your campaigns with zero additional management fees.'}</li>
             </ul>
+          </section>
+
+          <section style="margin-bottom: 2.5rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Ancrage Local à Casablanca et Marrakech' : 'On-the-Ground Presence in Casablanca and Marrakech'}</h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
+              ${isFR
+                ? "Contrairement aux agences généralistes étrangères déconnectées des réalités du terrain marocain, Urunk opère depuis deux pôles complémentaires : Casablanca (Anfa) pour accompagner les directions générales, PME industrielles, acteurs de la restauration et enseignes B2B, et Marrakech (Guéliz / Médina) au plus près des propriétaires de riads, hôtels-boutiques, camps du désert et agences réceptives."
+                : "Unlike offshore agencies unfamiliar with Moroccan market nuances, Urunk operates across two strategic hubs: Casablanca (Anfa) serving corporate SMEs, B2B enterprises, and hospitality groups, and Marrakech (Gueliz & Medina) working directly alongside boutique riad owners, luxury resorts, desert camps, and inbound tour operators."}
+            </p>
+            <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+              ${isFR
+                ? "Cette double expertise nous permet de maîtriser simultanément les exigences réglementaires locales (conformité CNDP Loi 09-08, passerelles monétiques CMI, saisonnalité touristique régionale) et les standards internationaux du référencement multilingue (français, anglais, espagnol, arabe) et de l'optimisation pour les moteurs IA (ChatGPT, Gemini, Perplexity)."
+                : "This dual footprint enables our strategists and engineers to combine local operational mastery—including CNDP Law 09-08 compliance, CMI payment gateway workflows, and regional tourism seasonality—with international multilingual SEO (English, French, Spanish, Arabic) and Answer Engine Optimization (GEO) for modern AI discovery platforms."}
+            </p>
           </section>
 
           <div style="text-align: center; margin-top: 2.5rem;">
             <a href="${isFR ? '/contact' : '/en/contact'}" style="background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
-              ${isFR ? 'Demander un Audit Gratuit' : 'Schedule a Strategy Audit'}
+              ${isFR ? 'Demander un Audit Stratégique Gratuit' : 'Schedule a Complimentary Strategy Audit'}
             </a>
           </div>
         </article>
@@ -1336,9 +1782,11 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </header>
 
           <section style="margin-bottom: 3rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.5rem; font-family: Georgia, serif; text-align: center;">${isFR ? 'Comparatif des Investissements & ROI' : 'Investment & ROI Comparison'}</h2>
-            <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem; text-align: center;">
-              ${isFR ? 'Découvrez la grille tarifaire transparente Urunk conçue pour générer +40% de réservations directes :' : 'Explore our transparent, commission-free service investment models built to deliver +40% direct bookings:'}
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif; text-align: center;">${isFR ? 'Comparatif des Investissements & Retour sur Investissement' : 'Transparent Investment & ROI Comparison'}</h2>
+            <p style="color: #4a5568; line-height: 1.7; margin-bottom: 1.5rem;">
+              ${isFR
+                ? "Contrairement aux agences traditionnelles facturant au pourcentage ou imposant des abonnements propriétaires opaques, la grille tarifaire d'Urunk est publique, forfaitaire et conçue pour maximiser votre marge nette dès le premier trimestre. Vous conservez 100 % de la propriété de votre code source, de votre nom de domaine et de vos comptes publicitaires."
+                : "Unlike legacy agencies hiding behind custom quotes or charging ongoing software licensing fees, Urunk publishes clear, fixed-rate investments engineered to maximize your net margin from quarter one. You retain 100% ownership of your website code, domain, analytics, and ad accounts."}
             </p>
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.95rem;">
               <thead>
@@ -1352,7 +1800,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               <tbody>
                 <tr style="background: #ffffff;">
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'Création de Site Web' : 'Custom Hotel Website'}</td>
-                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 12 000 MAD (approx. 1 100 €)' : 'Starting at 12,000 MAD (approx. €1,100)'} ${isFR ? '(Paiement unique)' : '(One-Time)'}</td>
+                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 12 000 MAD (approx. 1 100 €) (Paiement unique)' : 'Starting at 12,000 MAD (approx. €1,100) (One-Time)'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0;">${isFR ? '4 à 6 semaines' : '4–6 Weeks'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? '0 % de commission OTA' : '0% OTA Commissions'}</td>
                 </tr>
@@ -1360,7 +1808,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'SEO & Référencement Local' : 'SEO & Local Search'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 4 000 MAD/mois (approx. 370 €/mois)' : 'Starting at 4,000 MAD/mo (approx. €370/mo)'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0;">${isFR ? 'Accompagnement continu' : 'Ongoing'}</td>
-                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Visibilité Google Maps' : 'Google Maps Visibility'}</td>
+                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Visibilité Google Maps Top 3' : 'Google Maps 3-Pack Visibility'}</td>
                 </tr>
                 <tr style="background: #ffffff;">
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'Gestion Google Ads' : 'Google Ads Management'}</td>
@@ -1383,10 +1831,26 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               </tbody>
             </table>
 
+            <section style="margin-bottom: 2rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem;">
+              <h2 style="color: #0F2D25; font-size: 1.65rem; margin-top: 0; margin-bottom: 0.85rem; font-family: Georgia, serif;">
+                ${isFR ? 'Calcul de Rentabilité : Pourquoi l\'Acquisition Directe Surpasse les OTA' : 'Break-Even Math: Why Direct Channels Outperform 20% OTA Commissions'}
+              </h2>
+              <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
+                ${isFR
+                  ? "Un riad ou hôtel-boutique de 12 chambres affichant un tarif moyen de 1 600 MAD par nuitée et un taux d'occupation de 70 % génère plus de 4,9 millions MAD de chiffre d'affaires annuel. Si 65 % de ces nuitées proviennent de Booking.com ou Expedia à 20 % de commission moyenne, l'établissement reverse plus de 630 000 MAD par an aux plateformes tierces. En transférant seulement 25 % à 40 % de ce volume vers votre propre moteur de réservation directe grâce à un site rapide (12 000 MAD une seule fois) et un pilotage SEO/Ads mensuel (4 000 MAD/mois), l'économie nette annuelle dépasse largement l'investissement initial dès les premières semaines."
+                  : "Consider a 12-room Marrakech riad or boutique hotel averaging 1,600 MAD per night at 70% occupancy—generating roughly 4.9 million MAD in annual room revenue. When 65% of those nights come through Booking.com or Expedia at a 20% blended commission, the property loses over 630,000 MAD every single year in intermediary fees. Shifting just 25% to 40% of that volume onto your own commission-free booking engine via a one-time 12,000 MAD website and a 4,000 MAD/month search acquisition retainer pays back the entire build within weeks and compounds net profit year-round."}
+              </p>
+              <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+                ${isFR
+                  ? "Modalités de facturation claires : acompte de 50 % au lancement pour les créations de sites web et solde de 50 % à la mise en ligne validée. Pour la gestion mensuelle SEO et publicitaire, le budget média est réglé directement par votre carte d'entreprise auprès de Google, Meta ou TripAdvisor pour une transparence comptable totale, sans aucun frais de dossier caché et avec un simple préavis de 15 jours."
+                  : "Straightforward billing structure: custom website builds follow a 50% kickoff milestone and 50% upon approved production launch. For monthly SEO and paid media retainers, your ad spend is billed directly to your own corporate payment method by Google, Meta, or TripAdvisor—ensuring 100% financial transparency, zero setup markups, and flexible 15-day cancellation notice."}
+              </p>
+            </section>
+
             <div style="background: #FAF8F5; border: 2px solid #0F2D25; border-radius: 12px; padding: 2rem; margin-top: 2rem;">
-              <h3 style="color: #0F2D25; font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; font-family: Georgia, serif;">${isFR ? 'Engagez-vous en Toute Sérénité : Garantie de 90 Jours' : 'Backed by Our 90-Day Guarantee'}</h3>
-              <p style="color: #4a5568; line-height: 1.6; margin-bottom: 1rem;">
-                ${isFR ? 'Tous nos contrats d\'accompagnement direct sont couverts par une garantie de performance de 90 jours. Nous nous engageons à optimiser continuellement vos canaux pour dépasser vos objectifs de réservation directe.' : 'Every website build (12,000 MAD (approx. €1,100)) and ad management program (starting at 3,000 MAD to 4,000 MAD) is backed by our strict 90-day direct revenue guarantee ensuring measurable growth.'}
+              <h3 style="color: #0F2D25; font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; font-family: Georgia, serif;">${isFR ? 'Engagez-vous en Toute Sérénité : Garantie de 90 Jours' : 'Backed by Our Contractual 90-Day Guarantee'}</h3>
+              <p style="color: #4a5568; line-height: 1.65; margin-bottom: 0;">
+                ${isFR ? 'Tous nos contrats d\'accompagnement direct sont couverts par une garantie de performance de 90 jours. Si les objectifs convenus lors de l\'audit initial ne sont pas atteints dans les 90 jours suivant le lancement, nos équipes maintiennent l\'optimisation de vos campagnes sans facturer d\'honoraires supplémentaires.' : 'Every website build (12,000 MAD) and monthly ad management program (3,000 MAD to 4,000 MAD/mo) is backed by our strict 90-day direct revenue guarantee: if agreed launch benchmarks are not met within 90 days, we continue optimizing at zero management fee until achieved.'}
               </p>
             </div>
           </section>
@@ -1405,35 +1869,62 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.6; max-width: 800px; margin: 0 auto;">${escapeHtml(subText)}</p>
           </header>
 
+          <section style="margin-bottom: 2.5rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">
+              ${isFR ? 'Stratégie de Référencement Régional & Intention de Recherche au Maroc' : 'Regional Search Strategy & Market Coverage Across Morocco'}
+            </h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
+              ${isFR
+                ? "Le paysage numérique marocain exige des stratégies d'acquisition calibrées selon les réalités économiques et saisonnières de chaque ville. Des riads historiques de la Médina de Marrakech aux sièges d'entreprises de Casablanca, en passant par l'écosystème institutionnel de Rabat et les complexes balnéaires d'Agadir et Taghazout, les requêtes formulées sur Google et Google Maps diffèrent radicalement. Urunk déploie un maillage national combinant référencement local avancé, optimisation du Pack Local Google Maps Top 3 et ingénierie web ultra-rapide dès 12 000 MAD."
+                : "Morocco's digital economy demands localized search strategies calibrated to the distinct commercial and seasonal dynamics of each city. From historic Medina riads in Marrakech and corporate headquarters in Casablanca to institutional consultancies in Rabat and Atlantic surf resorts in Agadir and Taghazout, buyer search behavior varies sharply by region. Urunk operates a nationwide growth network combining hyper-local SEO, Google Maps 3-Pack positioning, and sub-second web engineering starting at 12,000 MAD."}
+            </p>
+            <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+              ${isFR
+                ? "Grâce à nos implantations opérationnelles à Marrakech et Casablanca, nous maîtrisons le référencement multilingue (français, anglais, arabe, espagnol) indispensable pour capter simultanément les décideurs B2B nationaux et les voyageurs européens ou nord-américains à haute valeur ajoutée, réduisant de 15 % à 25 % les frais de commission versés aux plateformes intermédiaires."
+                : "Operating on-the-ground hubs in Marrakech and Casablanca allows our team to execute native multilingual search campaigns (English, French, Spanish, Arabic) that capture both domestic B2B decision-makers and high-spending European and North American travelers—helping hospitality clients bypass 15% to 25% OTA commissions and lift direct bookings by +40%."}
+            </p>
+          </section>
+
           <section style="margin-bottom: 3rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.5rem; font-family: Georgia, serif; text-align: center;">${isFR ? "Pôles Régionaux & Hubs SEO" : "Regional Hubs & SEO Coverage"}</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.5rem; font-family: Georgia, serif; text-align: center;">${isFR ? "Pôles Régionaux & Hubs SEO Dédiés" : "Dedicated Regional Hubs & SEO Coverage"}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px;">
                 <h3 style="color: #0F2D25; margin-top: 0;"><a href="${isFR ? '/zones/maroc' : '/en/locations/morocco'}" style="color: #0F2D25; text-decoration: none;">${isFR ? 'Maroc (Hub National)' : 'Morocco (National Hub)'}</a></h3>
-                <p style="color: #4a5568; font-size: 0.95rem;">${isFR ? 'Stratégies d\'acquisition hôtelière et référencement naturel à fort impact.' : 'Nationwide digital growth footprint for hotels and hospitality brands.'}</p>
+                <p style="color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${isFR ? 'Couverture nationale pour groupes hôteliers, marques touristiques et entreprises visant une autorité organique bilingue sur l\'ensemble du Royaume.' : 'Kingdom-wide digital growth architecture for hotel groups, national tour operators, and enterprises building bilingual organic authority across Morocco.'}</p>
               </div>
-              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px;">
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px;">
                 <h3 style="color: #0F2D25; margin-top: 0;"><a href="${isFR ? '/zones/casablanca' : '/en/locations/casablanca'}" style="color: #0F2D25; text-decoration: none;">Casablanca</a></h3>
-                <p style="color: #4a5568; font-size: 0.95rem;">${isFR ? 'Capitale économique, SEO local B2B et création de portails d\'entreprises.' : 'Commercial capital, B2B local SEO, corporate web design & Google Maps.'}</p>
+                <p style="color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${isFR ? 'Capitale économique : génération de leads B2B, portails institutionnels rapides, référencement Google Maps et acquisition pour restaurants et traiteurs.' : 'Commercial capital: B2B lead generation, high-speed corporate web platforms, Google Maps 3-Pack dominance, and fine-dining & catering acquisition.'}</p>
               </div>
-              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px;">
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px;">
                 <h3 style="color: #0F2D25; margin-top: 0;"><a href="${isFR ? '/zones/marrakech' : '/en/locations/marrakech'}" style="color: #0F2D25; text-decoration: none;">Marrakech</a></h3>
-                <p style="color: #4a5568; font-size: 0.95rem;">${isFR ? 'Référencement de riads en Médina, visibilité Google Maps et réservation directe.' : 'Medina boutique Riad SEO, Google Maps 3-Pack, direct booking sites.'}</p>
+                <p style="color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${isFR ? 'Cœur touristique : SEO spécialisé pour riads en Médina et hôtels de charme à Guéliz et la Palmeraie, moteurs PMS sans commission et TripAdvisor Ads.' : 'Hospitality heartland: specialized Medina Riad SEO, luxury hotel web design across Gueliz and Palmeraie, PMS direct booking engines, and TripAdvisor Ads.'}</p>
               </div>
-              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px;">
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px;">
                 <h3 style="color: #0F2D25; margin-top: 0;"><a href="${isFR ? '/zones/rabat' : '/en/locations/rabat'}" style="color: #0F2D25; text-decoration: none;">Rabat</a></h3>
-                <p style="color: #4a5568; font-size: 0.95rem;">${isFR ? 'Capitale institutionnelle, SEO d\'autorité et création web PME.' : 'Institutional center, corporate authority SEO and web development.'}</p>
+                <p style="color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${isFR ? 'Capitale administrative : SEO d\'autorité pour cabinets de conseil, PME technologiques, cliniques et établissements hôteliers d\'affaires.' : 'Institutional capital: authority SEO, AEO/GEO AI search visibility, corporate web development, and targeted Google Search campaigns for B2B firms.'}</p>
               </div>
-              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 8px;">
-                <h3 style="color: #0F2D25; margin-top: 0;"><a href="${isFR ? '/zones/agadir' : '/en/locations/agadir'}" style="color: #0F2D25; text-decoration: none;">Agadir</a></h3>
-                <p style="color: #4a5568; font-size: 0.95rem;">${isFR ? 'Pôle balnéaire, marketing resorts et SEO surf camps Taghazout.' : 'Coastal resort & surf hub, beachfront hotel marketing & Taghazout SEO.'}</p>
+              <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px;">
+                <h3 style="color: #0F2D25; margin-top: 0;"><a href="${isFR ? '/zones/agadir' : '/en/locations/agadir'}" style="color: #0F2D25; text-decoration: none;">Agadir &amp; Taghazout</a></h3>
+                <p style="color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${isFR ? 'Pôle balnéaire atlantique : marketing digital pour resorts côtiers, SEO international pour surf camps de Taghazout et campagnes Meta visuelles.' : 'Atlantic resort & surf hub: beachfront hotel marketing, Taghazout surf & yoga retreat SEO, and European feeder-market paid social acquisition.'}</p>
               </div>
             </div>
           </section>
 
+          <section style="margin-bottom: 2.5rem;">
+            <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+              ${isFR ? 'Accompagnement dans Toutes les Villes du Royaume' : 'Supporting Properties & Businesses Nationwide'}
+            </h2>
+            <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+              ${isFR
+                ? "Au-delà de nos cinq hubs principaux, nos équipes accompagnent également les maisons d'hôtes, kasbahs, bivouacs de luxe et entreprises situés à Tanger, Fès, Essaouira, Ouarzazate, Merzouga et Dakhla. Chaque projet débute par un audit gratuit sous 24 à 48 heures mesurant le volume de recherche exact de votre zone géographique et les opportunités immédiates de réservation directe."
+                : "Beyond our five primary hubs, Urunk actively supports boutique kasbahs, desert luxury camps, coastal guesthouses, and growing SMEs in Tangier, Fes, Essaouira, Ouarzazate, Merzouga, and Dakhla. Every partnership begins with a complimentary 24–48 hour regional audit quantifying exact local search demand and immediate direct booking opportunities."}
+            </p>
+          </section>
+
           <div style="text-align: center; margin-top: 2.5rem;">
             <a href="${isFR ? '/contact' : '/en/contact'}" style="background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
-              ${isFR ? 'Obtenir un Audit Gratuit' : 'Get a Free Visibility Audit'}
+              ${isFR ? 'Obtenir un Audit Local Gratuit' : 'Get a Free Regional Visibility Audit'}
             </a>
           </div>
         </article>
@@ -1460,6 +1951,21 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       `;
     } else if (page.path === '/plan-du-site' || page.path === '/en/sitemap') {
       const posts = isFR ? blogPostsFR : blogPostsEN;
+      const corePagesList = isFR ? [
+        { name: 'Accueil Urunk', url: '/', desc: 'Portail principal de notre agence de croissance digitale et hôtelière au Maroc.' },
+        { name: 'À Propos', url: '/a-propos', desc: 'Notre mission, nos hubs à Casablanca et Marrakech et notre méthodologie.' },
+        { name: 'Tarifs & Formules', url: '/tarifs', desc: 'Grille tarifaire fixe transparente dès 12 000 MAD sans commission OTA.' },
+        { name: 'Réalisations & Études de Cas', url: '/realisations', desc: 'Exemples concrets de stratégies SEO, Google Ads et réservation directe.' },
+        { name: 'Foire Aux Questions (FAQ)', url: '/faq', desc: 'Réponses sur les délais, la propriété du code, les PMS et la garantie 90 jours.' },
+        { name: 'Contact & Audit Gratuit', url: '/contact', desc: 'Demandez votre diagnostic digital complet livré sous 24 à 48 heures.' }
+      ] : [
+        { name: 'Urunk Home', url: '/en', desc: 'Main portal for our Moroccan hospitality and B2B digital growth agency.' },
+        { name: 'About Urunk', url: '/en/about', desc: 'Our mission, Casablanca and Marrakech hubs, and engineering standards.' },
+        { name: 'Pricing & Packages', url: '/en/pricing', desc: 'Transparent fixed-fee pricing from 12,000 MAD with zero OTA commissions.' },
+        { name: 'Work & Case Studies', url: '/en/work', desc: 'Applied strategy blueprints across boutique riads, tour operators, and B2B.' },
+        { name: 'Frequently Asked Questions', url: '/en/faq', desc: 'Direct answers on timelines, full code ownership, PMS sync, and 90-day guarantee.' },
+        { name: 'Contact & Free Audit', url: '/en/contact', desc: 'Request your complimentary 24–48 hour website and direct booking audit.' }
+      ];
       const sectors = isFR ? [
         { name: 'Hôtels & Resorts', url: '/secteurs/hotels-resorts' },
         { name: 'Riads & Maisons d\'Hôtes', url: '/secteurs/riads-maisons-hotes' },
@@ -1489,7 +1995,8 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         { name: 'Agadir', url: '/en/locations/agadir' }
       ];
       const services = isFR ? [
-        { name: 'Création Site Web', url: '/creation-site-web' },
+        { name: 'Création Site Web (Tarifs)', url: '/creation-site-web' },
+        { name: 'Service Création Site Web', url: '/services/creation-site-web' },
         { name: 'Agence Web Maroc', url: '/agence-web-maroc' },
         { name: 'Agence Web Casablanca', url: '/agence-web-casablanca' },
         { name: 'Agence SEO Maroc', url: '/agence-seo-maroc' },
@@ -1507,7 +2014,6 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         { name: 'SEO E-commerce', url: '/services/ecommerce-seo' },
         { name: 'Fiche Google Business Profile', url: '/services/google-business-profile' },
         { name: 'SEO Local Maroc', url: '/services/local-seo-morocco' },
-        { name: 'Gestion Google Ads', url: '/google-ads-maroc' },
         { name: 'Publicités Meta', url: '/services/gestion-publicites-meta' },
         { name: 'TripAdvisor Ads', url: '/services/tripadvisor-ads' },
         { name: 'Pack Réservation Directe', url: '/services/bundle-site-ads' }
@@ -1516,7 +2022,6 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         { name: 'Web Design Morocco', url: '/en/web-design-morocco' },
         { name: 'Web Design Casablanca', url: '/en/web-design-casablanca' },
         { name: 'SEO Agency Morocco', url: '/en/seo-agency-morocco' },
-        { name: 'SEO Morocco', url: '/en/seo-agency-morocco' },
         { name: 'SEO Agency Casablanca', url: '/en/seo-agency-casablanca' },
         { name: 'Hotel SEO', url: '/en/hotel-seo' },
         { name: 'Hotel Digital Marketing', url: '/en/hotel-digital-marketing' },
@@ -1544,32 +2049,287 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.6; max-width: 800px; margin: 0 auto;">${escapeHtml(page.description)}</p>
           </header>
 
+          <section style="margin-bottom: 2.5rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <h2 style="color: #0F2D25; font-size: 1.75rem; margin-top: 0; margin-bottom: 0.85rem; font-family: Georgia, serif;">
+              ${isFR ? 'Architecture Sémantique & Guide de Navigation Urunk' : 'Website Architecture & Navigation Guide'}
+            </h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
+              ${isFR
+                ? "Notre plateforme est structurée selon une architecture plate à deux niveaux conçue pour offrir une accessibilité immédiate aux dirigeants d'hôtels, propriétaires de riads, décideurs B2B ainsi qu'aux moteurs de recherche et agents IA. Les contenus sont organisés autour de quatre piliers complémentaires : nos services d'ingénierie web et d'acquisition directe (création de sites dès 12 000 MAD, gestion SEO et publicitaire dès 4 000 MAD/mois), nos expertises sectorielles verticales, nos hubs géographiques au Maroc et notre bibliothèque d'études et de guides pratiques."
+                : "Our platform is engineered on a flat, two-tier semantic architecture built for effortless navigation by hoteliers, riad owners, corporate decision-makers, and search crawlers alike. All resources are organized across four interconnected pillars: core web engineering and direct acquisition services (custom websites starting at 12,000 MAD, monthly SEO and paid media retainers from 4,000 MAD/mo), vertical industry playbooks, regional Moroccan hubs, and in-depth hospitality research guides."}
+            </p>
+            <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+              ${isFR
+                ? "Chaque page publiée en français dispose de son équivalent exact en anglais relié par un balisage hreflang réciproque. Pour identifier rapidement la solution adaptée à votre établissement, commencez par explorer le pôle géographique de votre ville, consultez les études de cas de votre secteur d'activité, puis demandez votre diagnostic gratuit sous 24 à 48 heures."
+                : "Every English page maintains a one-to-one French counterpart connected via reciprocal hreflang tags. To pinpoint the right growth strategy for your business, explore your city's regional hub, review applied case studies for your industry vertical, or jump straight to our transparent pricing and complimentary 24–48 hour channel diagnostic."}
+            </p>
+          </section>
+
           <section style="margin-bottom: 3rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Services & Spécialités' : 'Services & Specializations'}</h2>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Pages Institutionnelles & Utilitaires' : 'Core Agency & Corporate Pages'}</h2>
+            <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
+              ${isFR
+                ? "Accédez aux informations essentielles concernant la mission d'Urunk, nos tarifs fixes sans commission, nos réalisations clients, notre foire aux questions et nos engagements légaux conformes à la loi marocaine 09-08."
+                : "Access essential pages detailing Urunk's mission, transparent fixed-fee pricing, client strategy frameworks, frequently asked questions, and legal compliance under Moroccan Law 09-08 and GDPR."}
+            </p>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; list-style: none; padding: 0;">
+              ${corePagesList.map(c => `<li style="padding: 0.85rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px;"><a href="${c.url}" style="color: #0F2D25; text-decoration: none; font-weight: bold;">${escapeHtml(c.name)}</a><p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; color: #4a5568; line-height: 1.5;">${escapeHtml(c.desc)}</p></li>`).join('')}
+            </ul>
+          </section>
+
+          <section style="margin-bottom: 3rem;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Services & Spécialités d\'Acquisition' : 'Services & Direct Acquisition Specializations'}</h2>
+            <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
+              ${isFR
+                ? "Découvrez l'ensemble de nos prestations techniques dédiées à la création de sites web rapides, à l'intégration de moteurs de réservation PMS, au référencement naturel local Google Business Profile et à la gestion de campagnes Google Ads, Meta Ads et TripAdvisor."
+                : "Browse our full suite of technical services spanning sub-second custom website design, direct PMS booking integration, Google Business Profile optimization, and ROI-tracked Google Ads, Meta Ads, and TripAdvisor Sponsored Placements."}
+            </p>
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
               ${services.map(s => `<li><a href="${s.url}" style="color: #0F2D25; text-decoration: none; font-weight: 500;">${escapeHtml(s.name)}</a></li>`).join('')}
             </ul>
           </section>
 
           <section style="margin-bottom: 3rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Secteurs d\'Activité' : 'Industries Served'}</h2>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Secteurs d\'Activité Accompagnés' : 'Industries & Verticals Served'}</h2>
+            <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
+              ${isFR
+                ? "Chaque secteur présente des cycles de décision et des marges spécifiques : explorez nos feuilles de route dédiées aux hôtels et resorts, riads en Médina, tour-opérateurs, restaurants gastronomiques et PME B2B."
+                : "Each vertical faces distinct margin structures and search behaviors: explore our specialized growth playbooks for luxury hotels, boutique Medina riads, inbound tour operators, restaurants, and corporate SMEs."}
+            </p>
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
               ${sectors.map(s => `<li><a href="${s.url}" style="color: #0F2D25; text-decoration: none; font-weight: 500;">${escapeHtml(s.name)}</a></li>`).join('')}
             </ul>
           </section>
 
           <section style="margin-bottom: 3rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Zones & Hubs Régionaux' : 'Locations & Regional Hubs'}</h2>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Zones & Hubs Régionaux au Maroc' : 'Locations & Regional Hubs in Morocco'}</h2>
+            <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
+              ${isFR
+                ? "Consultez nos pages régionales couvrant Casablanca, Marrakech, Rabat, Agadir et l'ensemble du Maroc pour découvrir les statistiques locales de recherche et nos dispositifs SEO de proximité."
+                : "Explore our regional hub pages covering Casablanca, Marrakech, Rabat, Agadir, and nationwide Morocco for localized search benchmarks and Google Maps visibility strategies."}
+            </p>
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
               ${locations.map(l => `<li><a href="${l.url}" style="color: #0F2D25; text-decoration: none; font-weight: 500;">${escapeHtml(l.name)}</a></li>`).join('')}
             </ul>
           </section>
 
           <section style="margin-bottom: 3rem;">
-            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Articles de Blog & Guides' : 'Blog Articles & Resources'}</h2>
+            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Articles de Blog & Guides Stratégiques' : 'Blog Articles & Hospitality Research Guides'}</h2>
+            <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
+              ${isFR
+                ? "Notre bibliothèque éditoriale regroupe des guides approfondis sur la réduction des commissions Booking.com et Airbnb, le choix d'un PMS hôtelier, l'optimisation de la vitesse mobile et la rentabilité des campagnes Google et Meta Ads."
+                : "Our editorial library provides actionable, data-backed guides on reducing Booking.com and Airbnb commissions, selecting hotel PMS software, optimizing mobile Core Web Vitals, and scaling profitable Google and Meta ad funnels."}
+            </p>
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
               ${posts.map(p => `<li><a href="${isFR ? '/blog/' : '/en/blog/'}${p.slug}" style="color: #0F2D25; text-decoration: none;">${escapeHtml(p.title)}</a></li>`).join('')}
             </ul>
+          </section>
+        </article>
+      `;
+    } else if (page.path === '/contact' || page.path === '/en/contact') {
+      html += `
+        <article>
+          <header style="margin-bottom: 2.5rem; text-align: center;">
+            <span style="display: inline-block; padding: 0.35rem 1rem; border-radius: 9999px; background: rgba(212,110,85,0.1); color: #D46E55; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; margin-bottom: 1rem;">
+              ${isFR ? 'Diagnostic Gratuit sous 24 à 48h' : 'Complimentary 24–48h Strategy Diagnostic'}
+            </span>
+            <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">
+              ${isFR ? 'Contactez Urunk & Demandez Votre Audit Digital Gratuit' : 'Contact Urunk & Request Your Free Direct Booking Audit'}
+            </h1>
+            <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.65; max-width: 780px; margin: 0 auto;">
+              ${escapeHtml(page.description)}
+            </p>
+          </header>
+
+          <section style="margin-bottom: 2.5rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">
+              ${isFR ? 'Ce Que Contient Votre Audit Stratégique Gratuit (Livré en 24–48h)' : 'What Your Complimentary 24–48 Hour Channel Audit Includes'}
+            </h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
+              ${isFR
+                ? "Avant tout engagement commercial, notre équipe d'ingénieurs web et de stratèges SEO réalise une analyse complète et personnalisée de l'écosystème numérique actuel de votre établissement hôtelier, riad ou entreprise au Maroc. Plutôt qu'un rapport automatisé générique, vous recevez une feuille de route chiffrée identifiant précisément vos fuites de revenus et vos leviers de croissance rapide :"
+                : "Before you commit a single dirham, our senior web engineers and search strategists prepare a custom, manual diagnostic of your hotel, riad, or corporate digital footprint in Morocco. Rather than an automated generic PDF, you receive a quantified growth roadmap pinpointing exact revenue leaks and immediate opportunities:"}
+            </p>
+            <ul style="padding-left: 1.5rem; color: #4a5568; line-height: 1.7; margin-bottom: 0;">
+              <li style="margin-bottom: 0.5rem;"><strong>${isFR ? 'Audit de Performance Mobile & Core Web Vitals :' : 'Mobile Speed & Core Web Vitals Benchmark:'}</strong> ${isFR ? 'Mesure précise du temps de chargement sur réseau mobile et détection des frictions qui font fuir vos visiteurs vers les OTA.' : 'Real-device load-time testing and checkout UX analysis uncovering why mobile visitors bounce back to third-party OTAs.'}</li>
+              <li style="margin-bottom: 0.5rem;"><strong>${isFR ? 'Évaluation des Pertes en Commissions OTA (15 % à 25 %) :' : 'OTA Commission Leakage & Rate Parity Check:'}</strong> ${isFR ? 'Estimation du volume de réservations récupérables en direct via l\'intégration fluide d\'un moteur PMS sans commission.' : 'Calculation of annual Booking.com and Expedia fees you can recapture through a commission-free direct PMS booking funnel.'}</li>
+              <li style="margin-bottom: 0.5rem;"><strong>${isFR ? 'Visibilité SEO Locale & Google Business Profile :' : 'Local SEO & Google Maps 3-Pack Visibility:'}</strong> ${isFR ? 'Analyse de votre positionnement sur Google Maps et sur les requêtes bilingues stratégiques à Marrakech, Casablanca, Rabat ou Agadir.' : 'Ranking audit across Google Maps and high-intent English/French search terms in Marrakech, Casablanca, Rabat, or Agadir.'}</li>
+              <li><strong>${isFR ? 'Potentiel Google Ads, Meta Ads & TripAdvisor :' : 'Paid Search & Metasearch Opportunity Sizing:'}</strong> ${isFR ? 'Projection du budget média optimal et du coût par demande cible pour générer des réservations qualifiées sous 30 jours.' : 'Recommended media budget allocation and target Cost Per Acquisition (CPA) to generate direct inquiries within 30 days.'}</li>
+            </ul>
+          </section>
+
+          <section style="margin-bottom: 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+            <div style="padding: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+              <h2 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Nos Bureaux & Coordonnées Directes' : 'Direct Contact & Operational Hubs'}</h2>
+              <p style="color: #4a5568; line-height: 1.65; margin-bottom: 0.75rem;">
+                <strong>Email :</strong> urunkagency@gmail.com<br />
+                <strong>${isFR ? 'Hub Casablanca :' : 'Casablanca Hub:'}</strong> Quartier Anfa, Casablanca, Maroc<br />
+                <strong>${isFR ? 'Hub Marrakech :' : 'Marrakech Hub:'}</strong> Quartier Guéliz, Marrakech, Maroc
+              </p>
+              <p style="color: #4a5568; line-height: 1.65; margin: 0; font-size: 0.95rem;">
+                ${isFR
+                  ? "Consultations en présentiel sur rendez-vous à Casablanca et Marrakech, ou en visioconférence Google Meet partout au Maroc et à l'international du lundi au vendredi (09h00 – 18h30 GMT+1)."
+                  : "In-person strategy sessions available by appointment in Casablanca and Marrakech, or via Google Meet video consultation across Morocco and Europe Monday through Friday (09:00 – 18:30 GMT+1)."}
+              </p>
+            </div>
+            <div style="padding: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px;">
+              <h2 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Déroulement après Votre Prise de Contact' : 'What Happens After You Reach Out'}</h2>
+              <ol style="padding-left: 1.25rem; color: #4a5568; line-height: 1.65; margin: 0;">
+                <li style="margin-bottom: 0.5rem;"><strong>${isFR ? 'Sous 24 heures :' : 'Within 24 Hours:'}</strong> ${isFR ? 'Confirmation de réception et lancement de l\'audit technique de votre domaine et de votre fiche Google.' : 'Confirmation of your request and manual technical review of your domain, PMS flow, and Google Maps listing.'}</li>
+                <li style="margin-bottom: 0.5rem;"><strong>${isFR ? 'Sous 48 heures :' : 'Within 48 Hours:'}</strong> ${isFR ? 'Envoi de votre diagnostic détaillé accompagné de recommandations tarifées transparentes (forfait fixe dès 12 000 MAD).' : 'Delivery of your tailored diagnostic with transparent fixed-fee recommendations (websites from 12,000 MAD, retainers from 4,000 MAD/mo).'}</li>
+                <li><strong>${isFR ? 'Session Stratégique (30 min) :' : '30-Minute Strategy Call:'}</strong> ${isFR ? 'Présentation claire du plan d\'action sur 90 jours, sans aucune pression commerciale.' : 'Walkthrough of your 90-day direct growth roadmap with zero sales pressure or long-term lock-in.'}</li>
+              </ol>
+            </div>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+              ${isFR ? 'Questions Fréquentes avant de Démarrer' : 'Pre-Consultation Frequently Asked Questions'}
+            </h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                <h3 style="color: #0F2D25; font-size: 1.1rem; margin: 0 0 0.4rem 0;">${isFR ? 'L\'audit initial est-il réellement gratuit et sans engagement ?' : 'Is the initial digital audit genuinely free and non-binding?'}</h3>
+                <p style="margin: 0; color: #4a5568; line-height: 1.65;">${isFR ? 'Oui, à 100 %. Vous conservez l\'intégralité des constats techniques et des pistes d\'optimisation partagés lors de notre diagnostic, que vous décidiez de confier le déploiement à Urunk ou à votre équipe interne.' : 'Yes, 100%. All technical findings, speed benchmarks, and keyword opportunities shared in your diagnostic are yours to keep whether you partner with Urunk or implement them internally.'}</p>
+              </div>
+              <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                <h3 style="color: #0F2D25; font-size: 1.1rem; margin: 0 0 0.4rem 0;">${isFR ? 'Quelles informations préparer pour accélérer l\'analyse ?' : 'What details should we share to get the most accurate audit?'}</h3>
+                <p style="margin: 0; color: #4a5568; line-height: 1.65;">${isFR ? 'Indiquez simplement l\'adresse actuelle de votre site web (ou le nom de votre établissement sur Google Maps / Booking), votre ville au Maroc et votre objectif prioritaire (refonte web, SEO local ou lancement Google/Meta Ads).' : 'Simply share your current website URL (or your property name on Google Maps / Booking.com), your city in Morocco, and your primary priority (new direct booking website, local SEO, or paid search/social acquisition).'}</p>
+              </div>
+            </div>
+          </section>
+        </article>
+      `;
+    } else if (page.path === '/politique-de-confidentialite' || page.path === '/en/privacy-policy') {
+      html += `
+        <article>
+          <header style="margin-bottom: 2.5rem;">
+            <span style="display: inline-block; padding: 0.3rem 0.85rem; border-radius: 9999px; background: rgba(212,110,85,0.12); color: #D46E55; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">
+              ${isFR ? 'Conformité Loi 09-08 (CNDP) & RGPD' : 'Law 09-08 (CNDP) & GDPR Compliance'}
+            </span>
+            <h1 style="font-size: 2.65rem; color: #0F2D25; margin-bottom: 0.75rem; line-height: 1.2; font-family: Georgia, serif;">
+              ${isFR ? 'Politique de Confidentialité & Protection des Données Personnelles' : 'Privacy Policy & Personal Data Protection'}
+            </h1>
+            <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.65;">
+              ${isFR
+                ? "Dernière mise à jour : Août 2026. La présente Politique de Confidentialité détaille la manière dont Urunk collecte, utilise, sécurise et protège vos informations personnelles dans le strict respect de la Loi marocaine n° 09-08 et du Règlement Général sur la Protection des Données (RGPD)."
+                : "Last updated: August 2026. This Privacy Policy details how Urunk collects, processes, secures, and protects personal information in strict compliance with Moroccan Law No. 09-08 (supervised by the CNDP) and the European General Data Protection Regulation (GDPR)."}
+            </p>
+          </header>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '1. Responsable du Traitement & Engagements Légaux' : '1. Data Controller & Regulatory Commitment'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Urunk (« nous », « notre agence ») accorde une priorité absolue à la confidentialité des données de ses visiteurs, prospects et clients partenaires hôteliers et entreprises. Lorsque vous naviguez sur urunk.com, demandez un audit gratuit ou signez un contrat de prestation digitale, vos données sont traitées de manière loyale, licite et transparente conformément aux dispositions de la Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP) au Maroc et aux standards européens du RGPD."
+                : "Urunk ('we,' 'our,' or 'us') is committed to safeguarding the privacy of website visitors, prospective audit requesters, and contracted hospitality and corporate clients. Whenever you browse urunk.com, submit a diagnostic request, or engage our agency for web engineering, SEO, or paid media services, personal data is processed lawfully and transparently under the supervision standards of Morocco's CNDP (Law No. 09-08) and the EU GDPR."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '2. Catégories de Données Personnelles Collectées' : '2. Categories of Personal Data We Collect'}</h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 0.75rem;">
+              ${isFR ? 'Nous limitons strictement la collecte aux informations nécessaires à l\'élaboration de votre diagnostic et au suivi de votre projet :' : 'We strictly limit data collection to the minimum information required to prepare your audit and deliver contracted services:'}
+            </p>
+            <ul style="padding-left: 1.5rem; color: #4a5568; line-height: 1.7;">
+              <li><strong>${isFR ? 'Données d\'identité professionnelle :' : 'Professional Identity Data:'}</strong> ${isFR ? 'Nom complet, nom de votre hôtel, riad ou société, ville d\'implantation et fonction.' : 'Full name, hotel, riad, or company name, city of operation, and professional role.'}</li>
+              <li><strong>${isFR ? 'Données de contact :' : 'Contact Data:'}</strong> ${isFR ? 'Adresse e-mail professionnelle, numéro de téléphone et coordonnées WhatsApp Business communiquées volontairement.' : 'Business email address, telephone number, and voluntarily submitted WhatsApp contact details.'}</li>
+              <li><strong>${isFR ? 'Données techniques et de navigation :' : 'Technical & Usage Data:'}</strong> ${isFR ? 'Adresse IP anonymisée, type de navigateur, appareil mobile ou ordinateur, pages consultées et temps de chargement mesurés à des fins d\'optimisation ergonomique.' : 'Anonymized IP address, browser version, device type, visited pages, and performance metrics used to maintain fast, accessible user experiences.'}</li>
+            </ul>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '3. Finalités du Traitement & Base Juridique' : '3. Purpose of Processing & Lawful Basis'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Vos données personnelles ne sont jamais vendues, louées ni cédées à des courtiers publicitaires tiers. Elles sont exclusivement utilisées pour : (a) réaliser et vous transmettre votre audit de performance web, SEO local ou réservation directe sous 24 à 48 heures ; (b) assurer la gestion contractuelle, la facturation et le support technique des projets confiés ; (c) améliorer la vitesse, la sécurité et la pertinence éditoriale de notre site ; et (d) respecter nos obligations comptables, fiscales et légales en vigueur au Royaume du Maroc."
+                : "We never sell, rent, or trade your personal data to third-party data brokers. Information collected is used exclusively to: (a) prepare and deliver your complimentary website speed, SEO, or direct booking audit within 24–48 hours; (b) manage project onboarding, milestone communication, and billing for contracted clients; (c) monitor site security and Core Web Vitals performance; and (d) satisfy statutory accounting and legal obligations under Moroccan law."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '4. Politique de Cookies & Mesure d\'Audience' : '4. Cookies & Privacy-Respecting Analytics'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Le site urunk.com utilise des cookies techniques essentiels au bon fonctionnement de la navigation bilingue (français/anglais) ainsi que des cookies analytiques anonymisés permettant d'évaluer l'ergonomie de nos pages sur mobile et ordinateur. Vous pouvez à tout moment configurer votre navigateur web pour refuser ou supprimer les cookies non essentiels sans altérer votre accès à nos contenus d'information."
+                : "Our website uses essential technical cookies required for bilingual navigation and form security, alongside privacy-compliant analytical cookies that aggregate anonymous traffic trends. You may configure your browser preferences at any time to block or delete non-essential cookies without losing access to our informational resources."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '5. Durée de Conservation, Sécurité SSL & Vos Droits' : '5. Data Retention, SSL Security & Your Individual Rights'}</h2>
+            <p style="color: #4a5568; line-height: 1.75; margin-bottom: 0.75rem;">
+              ${isFR
+                ? "Toutes les transmissions effectuées via nos formulaires sont chiffrées de bout en bout par protocole HTTPS/TLS. Les données relatives aux demandes d'audit sans suite commerciale sont supprimées ou anonymisées au bout de 24 mois maximum. Conformément à la Loi n° 09-08 et au RGPD, vous disposez d'un droit permanent d'accès, de rectification, d'effacement (« droit à l'oubli »), de limitation et d'opposition au traitement de vos données."
+                : "All form submissions on urunk.com are protected by end-to-end HTTPS/TLS encryption and restricted to authorized project strategists. Inquiry records that do not transition into an active agency agreement are purged or anonymized within 24 months. Under Moroccan Law No. 09-08 and GDPR, you hold the right of access, rectification, erasure ('right to be forgotten'), restriction, and objection at any time."}
+            </p>
+            <p style="color: #4a5568; line-height: 1.75; margin: 0;">
+              ${isFR
+                ? "Pour exercer l'un de ces droits ou poser toute question relative à la protection de vos données, adressez une demande écrite à notre équipe conformité à l'adresse urunkagency@gmail.com. Nous nous engageons à vous répondre dans un délai maximal de 30 jours."
+                : "To exercise any of these privacy rights or submit a data protection inquiry, please contact our compliance team in writing at urunkagency@gmail.com. All verified requests receive a formal response within 30 calendar days."}
+            </p>
+          </section>
+        </article>
+      `;
+    } else if (page.path === '/conditions-generales' || page.path === '/en/terms-of-service') {
+      html += `
+        <article>
+          <header style="margin-bottom: 2.5rem;">
+            <span style="display: inline-block; padding: 0.3rem 0.85rem; border-radius: 9999px; background: rgba(212,110,85,0.12); color: #D46E55; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">
+              ${isFR ? 'Cadre Contractuel & Engagements Client' : 'Client Service Agreement & Legal Terms'}
+            </span>
+            <h1 style="font-size: 2.65rem; color: #0F2D25; margin-bottom: 0.75rem; line-height: 1.2; font-family: Georgia, serif;">
+              ${isFR ? 'Conditions Générales d\'Utilisation et de Prestation de Services' : 'Terms of Service & Agency Client Agreements'}
+            </h1>
+            <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.65;">
+              ${isFR
+                ? "Dernière mise à jour : Août 2026. Les présentes Conditions Générales régissent l'accès au site urunk.com ainsi que les relations contractuelles relatives aux prestations de création de sites web, de référencement naturel (SEO) et de gestion publicitaire fournies par Urunk."
+                : "Last updated: August 2026. These Terms of Service govern access to urunk.com and set forth the contractual framework for custom website engineering, search engine optimization (SEO), and paid advertising management delivered by Urunk."}
+            </p>
+          </header>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '1. Objet et Périmètre des Prestations' : '1. Acceptance & Scope of Services'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Urunk fournit des services spécialisés d'ingénierie digitale destinés aux hôtels, riads, opérateurs touristiques, restaurateurs et PME au Maroc et à l'international : conception de sites internet rapides sur-mesure connectés aux systèmes PMS, optimisation technique et sémantique pour les moteurs de recherche (Google, Google Maps et moteurs IA), ainsi que création et pilotage de campagnes Google Ads, Meta Ads et TripAdvisor. Chaque mission fait l'objet d'un cahier des charges écrit précisant les livrables exacts et le calendrier d'exécution."
+                : "Urunk provides specialized digital growth engineering for hotels, boutique riads, tour operators, restaurants, and corporate SMEs in Morocco and internationally. Core deliverables include custom high-speed website development with PMS booking integration, technical and local Search Engine Optimization (Google Search, Google Maps, and AI answer engines), and paid media management across Google Ads, Meta Ads, and TripAdvisor. Every engagement is governed by a written Scope of Work (SOW) defining exact milestones and deliverables."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '2. Modalités Financières & Facturation Transparente' : '2. Fixed-Fee Billing & Media Spend Structure'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Les projets de création ou de refonte de site web à tarif fixe (dès 12 000 MAD) suivent un échéancier clair : un acompte initial de 50 % au démarrage du développement, puis le solde de 50 % à la validation finale avant mise en production sur votre domaine. Les prestations récurrentes de référencement SEO et de gestion publicitaire (3 000 MAD à 4 000 MAD/mois) sont facturées mensuellement en début de période. Les budgets d'achat média sont réglés directement par le client auprès des régies publicitaires (Google, Meta, TripAdvisor), garantissant une absence totale de marge cachée sur vos clics."
+                : "Fixed-price website development projects (starting at 12,000 MAD) require a 50% kickoff deposit prior to engineering commencement, with the remaining 50% balance payable upon final client approval prior to production domain launch. Ongoing monthly retainers for SEO or paid campaign management (3,000 MAD to 4,000 MAD/month) are invoiced monthly in advance. Advertising media spend is billed directly to the client's payment method by Google, Meta, or TripAdvisor with zero agency markup."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '3. Transfert Intégral de Propriété Intellectuelle' : '3. 100% Client Intellectual Property & Account Ownership'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Dès le règlement complet des échéances convenues, Urunk cède au client 100 % des droits d'exploitation et de propriété sur le design sur-mesure, les contenus rédigés, le code livré, les accès administrateurs du site, ainsi que l'intégralité des comptes Google Analytics, Google Search Console, Google Ads et Meta Business configurés pour l'établissement. Aucune redevance de licence propriétaire ni clause de rétention technique n'est appliquée."
+                : "Upon full settlement of agreed project invoices, Urunk transfers 100% ownership of the custom visual design, copywriting assets, production website code, CMS administrative credentials, and configured Google Analytics, Search Console, Google Ads, and Meta Business accounts to the client. We enforce zero proprietary platform lock-in or recurring software licensing fees."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '4. Délais de Coopération, Résiliation sous 15 Jours & Garantie' : '4. Timelines, 15-Day Notice Flexibility & 90-Day Guarantee'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Afin de respecter le délai standard de livraison de 4 à 6 semaines, le client s'engage à fournir les éléments nécessaires (photographies haute définition, grilles tarifaires, accès API PMS et retours de validation) dans des délais raisonnables. Nos contrats d'accompagnement mensuel fonctionnent sans engagement annuel verrouillé : chaque partie peut y mettre fin par simple notification écrite envoyée 15 jours avant le cycle mensuel suivant. Notre garantie de performance de 90 jours s'applique conformément aux indicateurs définis dans le cahier des charges signé."
+                : "To maintain our standard 4-to-6 week website delivery schedule, clients agree to supply required photography, room/service descriptions, PMS API keys, and milestone feedback promptly. Ongoing monthly SEO and ad management agreements carry no annual lock-in and may be cancelled at any time with 15 calendar days' written notice prior to the next billing date. Our 90-day performance guarantee applies in accordance with the target benchmarks defined in the signed SOW."}
+            </p>
+          </section>
+
+          <section style="margin-bottom: 2rem;">
+            <h2 style="color: #0F2D25; font-size: 1.55rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? '5. Limitation de Responsabilité & Droit Applicable' : '5. Limitation of Liability & Moroccan Governing Law'}</h2>
+            <p style="color: #4a5568; line-height: 1.75;">
+              ${isFR
+                ? "Urunk ne saurait être tenu responsable des interruptions imputables à des prestataires tiers (hébergeurs cloud, pannes de serveurs PMS externes ou modifications soudaines d'algorithmes par Google ou Meta). La responsabilité globale d'Urunk au titre d'un contrat ne peut excéder le montant des honoraires réglés par le client au cours des trois derniers mois. Les présentes Conditions Générales sont régies par le droit du Royaume du Maroc et relèvent de la compétence exclusive des tribunaux de commerce de Casablanca ou de Marrakech."
+                : "Urunk shall not be liable for indirect damages arising from third-party infrastructure outages, external PMS downtime, or unannounced algorithm updates by Google, Meta, or TripAdvisor. Total agency liability under any claim shall not exceed the fees paid by the client to Urunk during the preceding three-month period. These Terms of Service are governed exclusively by the laws of the Kingdom of Morocco under the jurisdiction of the commercial courts of Casablanca or Marrakech."}
+            </p>
           </section>
         </article>
       `;
@@ -1717,7 +2477,13 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             <section style="margin-bottom: 2.5rem;">
               <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(ctx.srvData.problemTitle)}</h2>
               <p style="margin-bottom: 1rem; color: #4a5568; line-height: 1.7;">${escapeHtml(ctx.srvData.problemText1)}</p>
-              <p style="margin-bottom: 0; color: #4a5568; line-height: 1.7;">${escapeHtml(ctx.srvData.problemText2)}</p>
+              <p style="margin-bottom: 1.25rem; color: #4a5568; line-height: 1.7;">${escapeHtml(ctx.srvData.problemText2)}</p>
+              ${ctx.srvData.signs && ctx.srvData.signs.length > 0 ? `
+                <h3 style="color: #0F2D25; font-size: 1.25rem; margin-bottom: 0.75rem;">${escapeHtml(ctx.srvData.signsTitle)}</h3>
+                <ul style="padding-left: 1.5rem; color: #4a5568; line-height: 1.65; margin-bottom: 0;">
+                  ${ctx.srvData.signs.map(s => `<li style="margin-bottom: 0.4rem;">${escapeHtml(s)}</li>`).join('')}
+                </ul>
+              ` : ''}
             </section>
 
             <section style="margin-bottom: 2.5rem;">
@@ -1733,6 +2499,20 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
                 `).join('')}
               </div>
             </section>
+
+            ${ctx.srvData.processSteps && ctx.srvData.processSteps.length > 0 ? `
+            <section style="margin-bottom: 2.5rem;">
+              <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(ctx.srvData.processTitle)}</h2>
+              <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+                ${ctx.srvData.processSteps.map(ps => `
+                  <div style="padding: 1.1rem 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
+                    <h3 style="color: #0F2D25; font-size: 1.1rem; margin: 0 0 0.3rem 0;">Phase ${escapeHtml(String(ps.step))} : ${escapeHtml(ps.title)}</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.6;">${escapeHtml(ps.desc)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+            ` : ''}
 
             <section style="margin-bottom: 2.5rem; padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
               <h2 style="color: #0F2D25; font-size: 1.5rem; margin: 0 0 0.5rem 0; font-family: Georgia, serif;">${escapeHtml(ctx.srvData.investmentTitle)}</h2>
@@ -1762,7 +2542,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         `;
       }
     } else {
-      // Standard static content
+      // Standard static content (noindex utility pages such as /merci, /en/thank-you, /404)
       html += `
         <article>
           <header style="margin-bottom: 2.5rem;">
@@ -2425,6 +3205,56 @@ function prerender() {
           "@id": canonicalUrl
         }
       });
+    }
+
+    if (page.path.startsWith('/secteurs/') || page.path.startsWith('/en/industries/')) {
+      const rawInd = page.path.replace(/^\/(?:secteurs|en\/industries)\//, '');
+      const indMapLookup: Record<string, string> = {
+        'hotels-resorts': 'hotels-resorts',
+        'riads-maisons-hotes': 'riads-boutique-hotels',
+        'riads-boutique-hotels': 'riads-boutique-hotels',
+        'tour-operateurs': 'tour-operators',
+        'tour-operators': 'tour-operators',
+        'restaurants-traiteurs': 'restaurants-catering',
+        'restaurants-catering': 'restaurants-catering',
+        'pme-entreprises': 'corporate-smes',
+        'corporate-smes': 'corporate-smes',
+        'ecommerce': 'ecommerce'
+      };
+      const indEntry = industriesData[indMapLookup[rawInd] || rawInd]?.[page.lang];
+      if (indEntry && indEntry.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": indEntry.faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        });
+      }
+    }
+
+    if ((page.path.startsWith('/zones/') && page.path !== '/zones') || (page.path.startsWith('/en/locations/') && page.path !== '/en/locations')) {
+      const rawLoc = page.path.replace(/^\/(?:zones|en\/locations)\//, '');
+      const locEntry = locationsData[rawLoc === 'maroc' ? 'morocco' : rawLoc]?.[page.lang];
+      if (locEntry && locEntry.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": locEntry.faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        });
+      }
     }
 
     const matrixCtx = resolveMatrixPageContext(page.path, page.lang);

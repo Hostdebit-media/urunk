@@ -257,6 +257,11 @@ export default function Sitemap() {
                 <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
                   <Globe className="text-accent" size={20} /> {textCoreHeader}
                 </h2>
+                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                  {isFrench
+                    ? "Découvrez la mission d'Urunk, notre transparence tarifaire sans commission d'intermédiaire, notre garantie contractuelle de 90 jours et l'accès direct à votre diagnostic gratuit."
+                    : "Explore Urunk's mission, our transparent commission-free pricing model, our 90-day direct growth guarantee, and direct access to your complimentary channel audit."}
+                </p>
                 <ul className="space-y-3 font-light text-sm">
                   {filteredCore.map((link, idx) => (
                     <li key={idx}>
@@ -275,6 +280,11 @@ export default function Sitemap() {
                 <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
                   <FileText className="text-accent" size={20} /> {textServicesHeader}
                 </h2>
+                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                  {isFrench
+                    ? "Solutions techniques de création de sites web ultra-rapides, d'intégration PMS, de référencement naturel local Google Maps et de pilotage publicitaire Google, Meta et TripAdvisor."
+                    : "Specialized engineering for high-speed direct booking websites, PMS integration, Google Maps local SEO, and high-intent Google, Meta, and TripAdvisor ad management."}
+                </p>
                 <ul className="space-y-3 font-light text-sm">
                   {filteredServices.map((link, idx) => (
                     <li key={idx}>
@@ -293,6 +303,11 @@ export default function Sitemap() {
                 <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
                   <Briefcase className="text-accent" size={20} /> {textIndustriesHeader}
                 </h2>
+                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                  {isFrench
+                    ? "Stratégies sectorielles calibrées pour réduire la dépendance aux OTA (15 à 25 % de commission) des hôtels, riads, tour-opérateurs, restaurateurs et PME B2B au Maroc."
+                    : "Vertical playbooks engineered to eliminate 15–25% OTA commission leakage across luxury hotels, boutique Medina riads, tour operators, restaurants, and corporate SMEs."}
+                </p>
                 <ul className="space-y-3 font-light text-sm">
                   {filteredIndustries.map((link, idx) => (
                     <li key={idx}>
@@ -311,6 +326,11 @@ export default function Sitemap() {
                 <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
                   <MapPin className="text-accent" size={20} /> {textLocationsHeader}
                 </h2>
+                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                  {isFrench
+                    ? "Couverture opérationnelle à Casablanca, Marrakech, Rabat, Agadir et sur tout le Royaume pour capter l'intention de recherche géolocalisée des clientèles locales et internationales."
+                    : "Dedicated regional hubs across Casablanca, Marrakech, Rabat, Agadir, and nationwide Morocco capturing localized commercial and international travel search demand."}
+                </p>
                 <ul className="space-y-3 font-light text-sm">
                   {filteredLocations.map((link, idx) => (
                     <li key={idx}>
@@ -329,6 +349,11 @@ export default function Sitemap() {
                 <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
                   <Building className="text-accent" size={20} /> {textLegalHeader}
                 </h2>
+                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                  {isFrench
+                    ? "Cadre réglementaire conforme à la loi marocaine 09-08 (CNDP) et au RGPD, conditions contractuelles transparentes, études de cas détaillées et bibliothèque d'articles experts."
+                    : "Full regulatory compliance under Moroccan Law 09-08 (CNDP) and GDPR, transparent client agreements, applied strategy case studies, and hospitality research guides."}
+                </p>
                 <ul className="space-y-3 font-light text-sm">
                   {filteredLegal.map((link, idx) => (
                     <li key={idx}>
@@ -343,6 +368,20 @@ export default function Sitemap() {
 
           </div>
         )}
+
+        {/* Editorial Architecture & Bilingual Coverage Note */}
+        <div className="mt-12 bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+          <h2 className="text-xl font-serif font-bold text-primary">
+            {isFrench
+              ? "Écosystème Bilingue, Maillage Sémantique & Ressources Éditoriales"
+              : "Bilingual Content Ecosystem, Semantic Linking & Editorial Resources"}
+          </h2>
+          <p className="text-xs md:text-sm text-primary/75 font-light leading-relaxed">
+            {isFrench
+              ? "L'intégralité des ressources répertoriées sur ce plan du site est disponible en français et en anglais avec un balisage hreflang réciproque intégral, permettant aux établissements hôteliers, riads et entreprises marocaines de rayonner simultanément auprès des décideurs locaux et des voyageurs internationaux d'Europe, du Royaume-Uni et d'Amérique du Nord. Nos guides éditoriaux approfondissent la réduction des commissions OTA, l'intégration des moteurs PMS (Cloudbeds, Mews, SiteMinder, Amenitiz), l'optimisation des Core Web Vitals et l'arbitrage budgétaire entre Google Search, Meta Ads et TripAdvisor."
+              : "Every resource indexed in this directory is published natively in both English and French with reciprocal hreflang annotations, enabling Moroccan hotels, boutique riads, tour operators, and B2B enterprises to engage domestic stakeholders alongside international travelers from Europe, the UK, and North America. Our editorial library covers practical playbooks on reducing third-party OTA commissions, integrating direct booking PMS engines (Cloudbeds, Mews, SiteMinder, Amenitiz), passing Core Web Vitals benchmarks, and allocating ad spend across Google Search, Meta Ads, and TripAdvisor."}
+          </p>
+        </div>
       </section>
     </div>
   );

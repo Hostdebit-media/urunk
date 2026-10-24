@@ -232,7 +232,11 @@ export default function FooterNav({ isFrench }: FooterNavProps) {
           </div>
           <div>
             <p className="font-bold uppercase tracking-wider text-accent mb-2">Email</p>
-            <p className="font-mono text-[11px]">[EMAIL]</p>
+            <p className="font-mono text-[11px]">
+              <a href="mailto:urunkagency@gmail.com" className="hover:text-accent transition-colors">
+                urunkagency@gmail.com
+              </a>
+            </p>
             <p className="text-primary/60 mt-1">{isFrench ? "Réponse sous 24h ouvrées" : "Reply within 24 business hours"}</p>
           </div>
         </div>

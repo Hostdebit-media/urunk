@@ -356,7 +356,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
-      caseStudySlug: "travel-morocco-services",
+      caseStudySlug: "services-voyage-maroc",
       caseStudyName: "Stratégie d'Acquisition Directe d'Excursions",
       caseStudyMetric: "Métrique de Planification : Leads Sans Commission",
       caseStudyDesc: "Un plan d'action d'exemple décrivant comment un tour-opérateur peut attirer des demandes de circuits sur-mesure en direct via des campagnes publicitaires ciblées. Nos campagnes digitales permettent de réduire le coût d'acquisition par prospect de -35 %.",
@@ -470,7 +470,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
-      caseStudySlug: "nomad-eats-catering",
+      caseStudySlug: "nomad-eats-traiteur",
       caseStudyName: "SEO Local & Acquisition Traiteur Événementiel",
       caseStudyMetric: "Objectif de Visibilité : Top 3 Google Maps Local",
       caseStudyDesc: "Un cadre méthodologique illustrant comment les traiteurs de luxe et restaurants haut de gamme peuvent capter les demandes d'événements d'entreprises. Nos dispositifs d'autorité locale garantissent un flux continu de demandes d'entreprises qualifiées.",
@@ -584,7 +584,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
-      caseStudySlug: "nomad-eats-catering",
+      caseStudySlug: "nomad-eats-traiteur",
       caseStudyName: "Génération de Leads d'Entreprises B2B",
       caseStudyMetric: "Métrique d'Exemple : Demandes Qualifiées B2B",
       caseStudyDesc: "Une étude de concept montrant comment les entreprises de services B2B peuvent se positionner auprès des directions d'entreprises et des décideurs. Nos stratégies sur-mesure maximisent votre exposition d'autorité sur le marché marocain.",
@@ -698,7 +698,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
-      caseStudySlug: "nomad-eats-catering",
+      caseStudySlug: "nomad-eats-traiteur",
       caseStudyName: "SEO Technique & Catalogue pour Boutiques E-commerce",
       caseStudyMetric: "Objectif Prévu : ROAS 4x sur les Campagnes de Catalogue",
       caseStudyDesc: "Un plan d'action d'exemple couvrant l'optimisation de l'affichage du catalogue, le référencement des fiches produits et la relance des paniers abandonnés.",
