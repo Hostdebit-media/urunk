@@ -24,7 +24,7 @@ export const INDUSTRY_LABELS: Record<
   },
   'riads-boutique-hotels': {
     fr: "Riads & Maisons d'Hôtes",
-    en: 'Riads & Boutique Stays',
+    en: 'Riads & Boutique Hotels',
     compactFr: 'Riads de Charme',
     compactEn: 'Boutique Riads',
     descFr: "riads et maisons d'hôtes",
@@ -317,8 +317,8 @@ const BESPOKE_MATRIX_DESCRIPTIONS: Record<string, { fr: string; en: string }> = 
     en: 'Targeted Google Search and Hotel Ads management in Marrakech: capture ready-to-book international travelers and send traffic straight to your PMS.',
   },
   'tripadvisor-ads:marrakech': {
-    fr: 'Gestion TripAdvisor Ads à Marrakech : placez votre riad ou hôtel en tête des classements sponsorisés et redirigez les voyageurs vers votre site.',
-    en: 'TripAdvisor Sponsored Placements management in Marrakech: secure top destination visibility and route high-intent reviewers to your booking engine.',
+    fr: 'Expertise TripAdvisor Ads à Marrakech : placez votre riad ou hôtel en tête des classements sponsorisés et dirigez les voyageurs vers votre site.',
+    en: 'TripAdvisor Ads expertise in Marrakech: secure top Sponsored Placements visibility and route high-intent travelers straight to your booking engine.',
   },
   'hotel-seo:rabat': {
     fr: "SEO pour hôtels et résidences à Rabat : captez la clientèle diplomatique, institutionnelle et d'affaires sur Google en français et en anglais.",
@@ -329,8 +329,8 @@ const BESPOKE_MATRIX_DESCRIPTIONS: Record<string, { fr: string; en: string }> = 
     en: 'Fast, secure custom web development in Rabat for corporate SMEs, institutions, and hospitality operators. Delivered turnkey in 4 to 6 weeks.',
   },
   'meta-ads:marrakech': {
-    fr: 'Publicités Instagram et Facebook pour hôtels et riads à Marrakech : vidéos immersives, retargeting dynamique et réservations directes mesurables.',
-    en: 'Instagram and Facebook Meta Ads for Marrakech riads and hotels: luxury video funnels and dynamic retargeting that turn viewers into direct guests.',
+    fr: 'Expertise Meta Ads à Marrakech (Instagram & Facebook) pour hôtels et riads : vidéos immersives, retargeting et réservations directes mesurables.',
+    en: 'Meta Ads expertise in Marrakech: Instagram and Facebook video funnels and dynamic retargeting for riads and hotels to grow direct bookings.',
   },
   'hotel-seo:hotels-resorts': {
     fr: 'Stratégie SEO dédiée aux hôtels et resorts au Maroc : surpassez les OTA sur vos requêtes de marque et de destination pour accroître votre marge.',
@@ -480,9 +480,16 @@ export function buildMatrixMetadata(params: {
       ? `${cleanServiceName} pour ${fullIndLabel} au Maroc`
       : `${cleanServiceName} for ${fullIndLabel} in Morocco`;
 
+    const fullCandidateFr = `${srvCompact} : ${fullIndLabel} | Urunk`;
+    const fullCandidateEn = `${srvCompact} for ${fullIndLabel} | Urunk`;
+
     metaPageTitle = isFrench
-      ? `${srvCompact} pour ${indCompact} au Maroc | Urunk`
-      : `${srvCompact} for ${indCompact} in Morocco | Urunk`;
+      ? fullCandidateFr.length <= 58
+        ? fullCandidateFr
+        : `${srvCompact} pour ${indCompact} au Maroc | Urunk`
+      : fullCandidateEn.length <= 58
+        ? fullCandidateEn
+        : `${srvCompact} for ${indCompact} in Morocco | Urunk`;
 
     const bespoke = industryId ? BESPOKE_MATRIX_DESCRIPTIONS[`${serviceId}:${industryId}`] : undefined;
     metaDescription = bespoke

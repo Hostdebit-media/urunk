@@ -106,8 +106,8 @@ export const caseStudies: StrategyExampleItem[] = [
     frTopicName: "Stratégie de Réservation Directe pour Tour-Opérateurs au Maroc",
     title: "Example Strategy: Direct Booking Growth for a Moroccan Tour Operator",
     frTitle: "Scénario type : Croissance des Réservations Directes pour Tour-Opérateurs au Maroc",
-    seoTitle: "Tour Operator Direct Booking Strategy | Urunk",
-    frSeoTitle: "Réservation Directe Tour-Opérateurs | Urunk",
+    seoTitle: "Morocco Travel Direct Booking Strategy | Urunk",
+    frSeoTitle: "Réservation Directe Voyage & Tours Maroc | Urunk",
     metaDescription: "Strategic framework outlining how Moroccan tour operators can build high-converting direct booking channels, lower OTA commissions, and scale search visibility.",
     frMetaDescription: "Cadre stratégique expliquant comment les tour-opérateurs au Maroc peuvent développer un canal de réservation directe, réduire les commissions OTA et maximiser leur SEO.",
     
@@ -285,8 +285,8 @@ export const caseStudies: StrategyExampleItem[] = [
     frTopicName: "Stratégie Marketing Digital B2B pour Traiteurs au Maroc",
     title: "Example Strategy: B2B Lead Generation for Catering & Event Services in Morocco",
     frTitle: "Scénario type : Acquisition de Prospects B2B pour Traiteurs & Événements au Maroc",
-    seoTitle: "B2B Catering Lead Generation Strategy | Urunk",
-    frSeoTitle: "Acquisition B2B Traiteurs Événements | Urunk",
+    seoTitle: "Nomad Eats: B2B Catering Lead Generation | Urunk",
+    frSeoTitle: "Nomad Eats : Acquisition B2B Traiteur | Urunk",
     metaDescription: "Strategic framework detailing how commercial catering businesses in Casablanca and Marrakech can capture corporate event budgets through targeted B2B SEO and Google Ads.",
     frMetaDescription: "Cadre stratégique détaillant comment les traiteurs événementiels à Casablanca et Marrakech peuvent capter des budgets d'entreprises grâce au SEO B2B et à Google Ads.",
     
@@ -464,8 +464,8 @@ export const caseStudies: StrategyExampleItem[] = [
     frTopicName: "SEO Local & Social Ads pour Ateliers & Expériences",
     title: "Example Strategy: Local SEO & Social Ads for Workshops & Experiences in Marrakech",
     frTitle: "Scénario type : SEO Local & Social Ads pour Ateliers & Expériences à Marrakech",
-    seoTitle: "Local SEO & Social Ads for Experiences | Urunk",
-    frSeoTitle: "SEO Local & Ads pour Ateliers Marrakech | Urunk",
+    seoTitle: "Art House Marrakech: Local SEO & Ads | Urunk",
+    frSeoTitle: "Art House Marrakech : SEO Local & Ads | Urunk",
     metaDescription: "Strategic blueprint outlining how art galleries, pottery studios, and cultural experience providers in Marrakech can drive direct visitor bookings via Meta Ads and Google Maps.",
     frMetaDescription: "Plan stratégique expliquant comment les galeries, ateliers d'artisanat et créateurs d'expériences à Marrakech peuvent attirer des visiteurs en direct via les Meta Ads et Google Maps.",
     

@@ -435,7 +435,7 @@ export const locationsData: Record<string, LocationDataMap> = {
             en: "Why does local SEO in Casablanca require a district-specific strategy?"
           },
           a: {
-            fr: "Casablanca is a polycentric metropolis where Google Maps local pack competition varies heavily between Finance City, Gauthier, Ain Sebaa, and Sidi Maarouf.",
+            fr: "Casablanca est une métropole polycentrique où la concurrence sur le Pack Local Google Maps varie fortement entre Casablanca Finance City, Gauthier, Aïn Sebaâ et Sidi Maârouf.",
             en: "Casablanca is a polycentric metropolis where Google Maps local pack competition varies heavily between Finance City, Gauthier, Ain Sebaa, and Sidi Maarouf."
           }
         }
@@ -602,8 +602,14 @@ export const locationsData: Record<string, LocationDataMap> = {
       'riad-website-design-marrakech': { fr: "", en: "" },
       'direct-booking': { fr: "", en: "" },
       'google-ads-morocco': { fr: "", en: "" },
-      'tripadvisor-ads': { fr: "", en: "" },
-      'meta-ads': { fr: "", en: "" }
+      'tripadvisor-ads': {
+        fr: "Notre expertise TripAdvisor Ads à Marrakech propulse votre riad ou hôtel de charme en tête des placements sponsorisés de la Médina, de Guéliz et de la Palmeraie pour rediriger les voyageurs directement vers votre moteur de réservation sans commission.",
+        en: "Our TripAdvisor Ads expertise in Marrakech places your Medina riad or boutique hotel at the top of Sponsored Placements, routing high-intent international travelers directly to your commission-free booking engine."
+      },
+      'meta-ads': {
+        fr: "Notre expertise Meta Ads à Marrakech (Instagram et Facebook) transforme l'architecture de votre riad, hôtel ou table gastronomique en réservations directes grâce à des campagnes vidéo immersives et un retargeting précis des voyageurs européens et nord-américains.",
+        en: "Our Meta Ads expertise in Marrakech (Instagram and Facebook) turns your riad, boutique hotel, or luxury hospitality brand into direct bookings through immersive Reels funnels and precision traveler retargeting."
+      }
     },
     marketStats: [
       {
@@ -633,6 +639,50 @@ export const locationsData: Record<string, LocationDataMap> = {
           a: {
             fr: "En ciblant des requêtes expérientielles de longue traîne, en optimisant la fiche Google Business Profile et en proposant un meilleur tarif direct.",
             en: "By targeting experiential long-tail search intent, optimizing the Google Business Profile, and guaranteeing best direct booking incentives."
+          }
+        }
+      ],
+      'meta-ads': [
+        {
+          q: {
+            fr: "Quel budget prévoir pour une campagne Meta Ads d'hôtel ou riad à Marrakech ?",
+            en: "What media budget is recommended for hotel or riad Meta Ads in Marrakech?"
+          },
+          a: {
+            fr: "Pour générer un flux régulier de réservations directes à Marrakech via Instagram et Facebook, nous recommandons un budget média de 3 000 à 6 000 MAD/mois ciblant les voyageurs en France, au Royaume-Uni, en Espagne et aux États-Unis, associé au suivi Meta Pixel sur votre moteur PMS.",
+            en: "To drive consistent direct bookings in Marrakech via Instagram and Facebook Meta Ads, we recommend a 3,000 to 6,000 MAD/month ad spend targeting travelers in the UK, France, Germany, and the US, paired with full PMS conversion tracking."
+          }
+        },
+        {
+          q: {
+            fr: "Comment vos publicités Meta Ads à Marrakech évitent-elles de renvoyer les clients vers Booking.com ?",
+            en: "How do your Marrakech Meta Ads prevent travelers from booking on OTAs instead?"
+          },
+          a: {
+            fr: "Nous combinons des formats Reels montrant l'expérience du riad à Marrakech avec une offre directe exclusive (transfert aéroport Ménara ou petit-déjeuner offert) et un retargeting lié à votre tunnel de réservation directe.",
+            en: "We pair immersive Marrakech property Reels with an exclusive direct-booking perk (such as complimentary Menara airport transfer) and dynamic retargeting connected straight to your direct booking checkout."
+          }
+        }
+      ],
+      'tripadvisor-ads': [
+        {
+          q: {
+            fr: "Pourquoi investir dans TripAdvisor Ads pour un riad ou hôtel à Marrakech ?",
+            en: "Why invest in TripAdvisor Ads for a riad or boutique hotel in Marrakech?"
+          },
+          a: {
+            fr: "À Marrakech, plus de 1 500 riads et hôtels se disputent l'attention des voyageurs en phase finale de comparaison. Les placements sponsorisés TripAdvisor Ads affichent votre établissement tout en haut de la catégorie et dirigent le clic vers votre site officiel plutôt que vers une OTA.",
+            en: "With over 1,500 competing riads and hotels in Marrakech, TripAdvisor Sponsored Placements position your property above competitors right when travelers compare reviews and dates, sending clicks directly to your official booking site."
+          }
+        },
+        {
+          q: {
+            fr: "Comment optimisez-vous le retour sur investissement TripAdvisor Ads à Marrakech ?",
+            en: "How do you optimize TripAdvisor Ads ROI in Marrakech?"
+          },
+          a: {
+            fr: "Nous ajustons vos enchères CPC selon votre calendrier d'occupation à Marrakech (haute saison printemps/automne vs basse saison), optimisons votre profil Business Advantage et suivons chaque clic sortant vers votre PMS.",
+            en: "We calibrate CPC bids around Marrakech's seasonal occupancy peaks, optimize your Business Advantage direct-contact links, and track outbound reservation clicks into your PMS."
           }
         }
       ]

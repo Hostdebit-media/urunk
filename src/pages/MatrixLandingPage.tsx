@@ -217,19 +217,19 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           {/* Breadcrumb Navigation */}
-          <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-xs text-white/60 mb-6 flex-wrap">
+          <nav aria-label={isFrench ? "Fil d'Ariane" : "Breadcrumb"} className="flex items-center gap-2 text-xs text-white/60 mb-6 flex-wrap">
             <Link to={isFrench ? "/" : "/en"} className="hover:text-white transition-colors">
               {isFrench ? "Accueil" : "Home"}
             </Link>
             <span>/</span>
             <Link to={isFrench ? "/services" : "/en/services"} className="hover:text-white transition-colors">
-              {isFrench ? "Expertises" : "Services"}
+              Expertise
             </Link>
             <span>/</span>
             {locData && (
               <>
                 <Link 
-                  to={isFrench ? `/zones/${resolvedLocationId}` : `/en/locations/${resolvedLocationId}`} 
+                  to={isFrench ? (resolvedLocationId === 'morocco' ? '/zones/maroc' : `/zones/${resolvedLocationId}`) : `/en/locations/${resolvedLocationId}`} 
                   className="hover:text-white transition-colors"
                 >
                   {locationName}
@@ -274,8 +274,8 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
           <div className="max-w-3xl mb-8 bg-white/10 border-l-4 border-accent p-6 rounded-r-2xl backdrop-blur-xs text-left">
             <p className="text-sm md:text-base leading-relaxed text-white/95 m-0 font-normal">
               <strong>Urunk Agency</strong> {isFrench 
-                ? `délivre cette solution experte à ${locationName} en combinant ingénierie web réactive (< 1s), intégration aux moteurs de réservation (PMS) et acquisition payante ciblée. Notre approche permet d'accroître les requêtes directes de plus de 40 % et d'éliminer les commissions intermédiaires. Forfaits dès 12 000 MAD.`
-                : `delivers this tailored technical capability in ${locationName}, fusing sub-second web architectures, native PMS booking engines, and precision paid ad campaigns. We help regional brands secure +40% direct inquiries and eliminate OTA commission drag. Packages from 12,000 MAD.`}
+                ? `déploie son expertise ${cleanServiceName} à ${locationName} en combinant ingénierie web réactive (< 1s), intégration aux moteurs de réservation (PMS) et acquisition ciblée. Notre approche permet d'accroître les requêtes directes de plus de 40 % et d'éliminer les commissions intermédiaires.`
+                : `delivers dedicated ${cleanServiceName} expertise in ${locationName}, fusing sub-second web architectures, native PMS booking engines, and precision acquisition campaigns to grow direct inquiries by +40% and eliminate OTA commission fees.`}
             </p>
           </div>
           

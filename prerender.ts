@@ -7,7 +7,7 @@ import { caseStudies } from './src/data/caseStudies';
 import { industriesData } from './src/data/industriesData';
 import { locationsData } from './src/data/locationsData';
 import { getEquivalentRoute } from './src/data/slugMappings';
-import { matrixRelations } from './src/data/matrixRelations';
+import { matrixRelations, findMatrixRelation } from './src/data/matrixRelations';
 import { buildMatrixMetadata } from './src/data/matrixMetadata';
 
 interface PageMetadata {
@@ -676,6 +676,86 @@ function generateShortTitle(title: string, lang?: 'en' | 'fr', slug?: string): s
   return res.length > 60 ? res.substring(0, 52).trim() + ' | Urunk' : res;
 }
 
+function resolveMatrixPageContext(pagePath: string, lang: 'en' | 'fr') {
+  if (!pagePath.startsWith('/expertise/') && !pagePath.startsWith('/en/expertise/')) {
+    return null;
+  }
+  const clean = pagePath.replace(/^\/en\//, '/');
+  const segs = clean.split('/').filter(Boolean); // ['expertise', seg1, seg2, seg3?]
+  let serviceId: string | undefined;
+  let locationId: string | undefined;
+  let industryId: string | undefined;
+
+  if (segs.length === 4) {
+    locationId = segs[1];
+    industryId = segs[2];
+    serviceId = segs[3];
+  } else if (segs.length === 3) {
+    const param1 = segs[1];
+    const param2 = segs[2];
+    const match = findMatrixRelation(param1, param2, lang) || findMatrixRelation(param2, param1, lang);
+    if (match) {
+      serviceId = match.serviceId;
+      if (match.type === 'service_location') {
+        locationId = match.locationId || match.targetId;
+      } else if (match.type === 'service_industry') {
+        industryId = match.industryId || match.targetId;
+      }
+    } else if (servicesData[param1]) {
+      serviceId = param1;
+      if (locationsData[param2]) locationId = param2;
+      else if (industriesData[param2]) industryId = param2;
+    } else if (servicesData[param2]) {
+      serviceId = param2;
+      if (locationsData[param1]) locationId = param1;
+      else if (industriesData[param1]) industryId = param1;
+    }
+  }
+
+  if (!serviceId || !servicesData[serviceId]) {
+    return null;
+  }
+
+  const meta = buildMatrixMetadata({
+    lang,
+    serviceId,
+    locationId,
+    industryId,
+  });
+
+  const srvData = servicesData[serviceId][lang];
+  const locMap = locationId ? locationsData[locationId] : undefined;
+  const localizedFaqs: { q: string; a: string }[] = [];
+
+  if (locMap?.faqByService?.[serviceId]) {
+    for (const item of locMap.faqByService[serviceId]) {
+      localizedFaqs.push({ q: item.q[lang], a: item.a[lang] });
+    }
+  }
+  if (srvData.faqs) {
+    for (const faq of srvData.faqs.slice(0, 4)) {
+      if (!localizedFaqs.some(f => f.q.toLowerCase() === faq.q.toLowerCase())) {
+        localizedFaqs.push(faq);
+      }
+    }
+  }
+
+  const marketStats =
+    locMap?.marketStats && locMap.marketStats.length > 0
+      ? locMap.marketStats
+      : locationsData['morocco']?.marketStats || [];
+
+  return {
+    serviceId,
+    locationId,
+    industryId,
+    meta,
+    srvData,
+    localizedFaqs,
+    marketStats,
+  };
+}
+
 function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): string {
   const isFR = page.lang === 'fr';
   const lang = isFR ? 'fr' : 'en';
@@ -683,7 +763,6 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
   
   // Header / Main Navigation
   let html = `
-    <div id="root">
       <nav style="padding: 1.5rem 2rem; max-width: 1100px; margin: 0 auto; display: flex; gap: 1.5rem; flex-wrap: wrap; border-bottom: 1px solid #eee; justify-content: space-between; align-items: center; font-family: sans-serif;">
         <a href="${isFR ? '/' : '/en'}" style="font-weight: bold; color: #0F2D25; text-decoration: none; font-size: 1.3rem; letter-spacing: 1px;">URUNK</a>
         <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 0.95rem;">
@@ -1585,6 +1664,103 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </section>
         </article>
       `;
+    } else if (page.path.startsWith('/expertise/') || page.path.startsWith('/en/expertise/')) {
+      const ctx = resolveMatrixPageContext(page.path, lang);
+      if (ctx) {
+        const locHref = ctx.locationId
+          ? isFR
+            ? ctx.locationId === 'morocco'
+              ? '/zones/maroc'
+              : `/zones/${ctx.locationId}`
+            : `/en/locations/${ctx.locationId}`
+          : '';
+        html += `
+          <article>
+            <nav aria-label="${isFR ? "Fil d'Ariane" : 'Breadcrumb'}" style="font-size: 0.85rem; color: #718096; margin-bottom: 1.25rem;">
+              <a href="${isFR ? '/' : '/en'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Accueil' : 'Home'}</a>
+              <span> / </span>
+              <a href="${isFR ? '/services' : '/en/services'}" style="color: #4a5568; text-decoration: none;">Expertise</a>
+              ${ctx.locationId ? `<span> / </span><a href="${locHref}" style="color: #4a5568; text-decoration: none;">${escapeHtml(ctx.meta.locationName)}</a>` : ''}
+              <span> / </span>
+              <span style="color: #D46E55; font-weight: 600;">${escapeHtml(ctx.meta.cleanServiceName)}</span>
+            </nav>
+
+            <header style="margin-bottom: 2.5rem;">
+              <span style="display: inline-block; padding: 0.3rem 0.85rem; border-radius: 9999px; background: rgba(212,110,85,0.12); color: #D46E55; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">
+                Expertise ${escapeHtml(ctx.meta.cleanServiceName)} — ${escapeHtml(ctx.meta.locationName)}
+              </span>
+              <h1 style="font-size: 2.5rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(ctx.meta.pageHeading)}</h1>
+              <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.65; margin-bottom: 1.25rem;">${escapeHtml(ctx.meta.leadIntroText)}</p>
+              <p style="font-size: 1rem; color: #2d3748; background: #f8fafc; border-left: 4px solid #D46E55; padding: 1rem 1.25rem; border-radius: 0 8px 8px 0;">
+                <strong>Urunk Agency</strong> ${isFR
+                  ? `déploie son expertise ${escapeHtml(ctx.meta.cleanServiceName)} à ${escapeHtml(ctx.meta.locationName)} pour développer vos réservations directes sans commission OTA, grâce à une architecture web ultra-rapide et un suivi ROI précis.`
+                  : `delivers specialized ${escapeHtml(ctx.meta.cleanServiceName)} expertise in ${escapeHtml(ctx.meta.locationName)} to grow commission-free direct bookings through sub-second web engineering and transparent ROI tracking.`}
+              </p>
+            </header>
+
+            ${ctx.marketStats.length > 0 ? `
+            <section style="margin-bottom: 2.5rem;">
+              <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+                ${isFR ? `Indicateurs Clés du Marché — ${escapeHtml(ctx.meta.locationName)}` : `Key Market Benchmarks — ${escapeHtml(ctx.meta.locationName)}`}
+              </h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                ${ctx.marketStats.map(stat => `
+                  <div style="padding: 1rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #0F2D25;">${escapeHtml(stat.value)}</div>
+                    <div style="font-size: 0.85rem; color: #4a5568;">${escapeHtml(stat.label[lang])}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+            ` : ''}
+
+            <section style="margin-bottom: 2.5rem;">
+              <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(ctx.srvData.problemTitle)}</h2>
+              <p style="margin-bottom: 1rem; color: #4a5568; line-height: 1.7;">${escapeHtml(ctx.srvData.problemText1)}</p>
+              <p style="margin-bottom: 0; color: #4a5568; line-height: 1.7;">${escapeHtml(ctx.srvData.problemText2)}</p>
+            </section>
+
+            <section style="margin-bottom: 2.5rem;">
+              <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">
+                ${isFR ? `Livrables & Méthodologie ${escapeHtml(ctx.meta.cleanServiceName)}` : `${escapeHtml(ctx.meta.cleanServiceName)} Deliverables & Execution`}
+              </h2>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem;">
+                ${ctx.srvData.features.map(feat => `
+                  <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                    <h3 style="color: #0F2D25; font-size: 1.1rem; margin: 0 0 0.5rem 0;">${escapeHtml(feat.title)}</h3>
+                    <p style="margin: 0; color: #4a5568; font-size: 0.95rem; line-height: 1.6;">${escapeHtml(feat.desc)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+
+            <section style="margin-bottom: 2.5rem; padding: 1.5rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
+              <h2 style="color: #0F2D25; font-size: 1.5rem; margin: 0 0 0.5rem 0; font-family: Georgia, serif;">${escapeHtml(ctx.srvData.investmentTitle)}</h2>
+              <p style="font-size: 1.25rem; font-weight: bold; color: #D46E55; margin: 0 0 0.5rem 0;">${escapeHtml(ctx.srvData.investmentPrice)}</p>
+              <p style="margin: 0 0 1rem 0; color: #4a5568;">${escapeHtml(ctx.srvData.investmentDesc)}</p>
+              <a href="${isFR ? '/contact' : '/en/contact'}" style="display: inline-block; background: #D46E55; color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                ${isFR ? 'Demander un Audit Gratuit' : 'Request a Free Strategy Audit'}
+              </a>
+            </section>
+
+            ${ctx.localizedFaqs.length > 0 ? `
+            <section style="margin-bottom: 2.5rem;">
+              <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">
+                ${isFR ? `Questions Fréquentes — ${escapeHtml(ctx.meta.cleanServiceName)} (${escapeHtml(ctx.meta.locationName)})` : `Frequently Asked Questions — ${escapeHtml(ctx.meta.cleanServiceName)} (${escapeHtml(ctx.meta.locationName)})`}
+              </h2>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                ${ctx.localizedFaqs.map(item => `
+                  <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
+                    <h3 style="color: #0F2D25; font-size: 1.1rem; margin: 0 0 0.5rem 0;">${escapeHtml(item.q)}</h3>
+                    <p style="margin: 0; color: #4a5568; line-height: 1.6;">${escapeHtml(item.a)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </section>
+            ` : ''}
+          </article>
+        `;
+      }
     } else {
       // Standard static content
       html += `
@@ -1647,7 +1823,6 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           <a href="${equivalentPath}" style="color: #D46E55; font-weight: 600; text-decoration: none;">${isFR ? 'Switch to English (EN)' : 'Passer en Français (FR)'}</a>
         </div>
       </footer>
-    </div>
   `;
   return html;
 }
@@ -2252,11 +2427,40 @@ function prerender() {
       });
     }
 
-    if (page.path !== '/' && page.path !== '/en') {
+    const matrixCtx = resolveMatrixPageContext(page.path, page.lang);
+    if (matrixCtx) {
       schemas.push({
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@type": "Service",
+        "name": matrixCtx.meta.pageHeading,
+        "description": pageDesc,
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "Urunk",
+          "url": "https://urunk.com"
+        },
+        "areaServed": matrixCtx.meta.locationName
+      });
+
+      if (matrixCtx.localizedFaqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": matrixCtx.localizedFaqs.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.a
+            }
+          }))
+        });
+      }
+    }
+
+    if (page.path !== '/' && page.path !== '/en') {
+      if (matrixCtx) {
+        const breadcrumbItems: object[] = [
           {
             "@type": "ListItem",
             "position": 1,
@@ -2266,11 +2470,52 @@ function prerender() {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": pageTitle,
-            "item": canonicalUrl
+            "name": "Expertise",
+            "item": page.lang === 'fr' ? `${BASE_URL}/services` : `${BASE_URL}/en/services`
           }
-        ]
-      });
+        ];
+        if (matrixCtx.locationId) {
+          const locUrl = page.lang === 'fr'
+            ? (matrixCtx.locationId === 'morocco' ? `${BASE_URL}/zones/maroc` : `${BASE_URL}/zones/${matrixCtx.locationId}`)
+            : `${BASE_URL}/en/locations/${matrixCtx.locationId}`;
+          breadcrumbItems.push({
+            "@type": "ListItem",
+            "position": 3,
+            "name": matrixCtx.meta.locationName,
+            "item": locUrl
+          });
+        }
+        breadcrumbItems.push({
+          "@type": "ListItem",
+          "position": breadcrumbItems.length + 1,
+          "name": matrixCtx.meta.pageHeading,
+          "item": canonicalUrl
+        });
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": breadcrumbItems
+        });
+      } else {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": page.lang === 'fr' ? 'Accueil' : 'Home',
+              "item": page.lang === 'fr' ? `${BASE_URL}/` : `${BASE_URL}/en`
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": pageTitle,
+              "item": canonicalUrl
+            }
+          ]
+        });
+      }
     }
 
     if (isCalculatorPage) {
