@@ -175,6 +175,8 @@ export const routeMap: Record<string, string> = {
   '/sitemap': '/plan-du-site',
   '/html-sitemap': '/plan-du-site',
   '/thank-you': '/merci',
+  '/en/seo-riad-marrakech': '/seo-riad-marrakech',
+  '/404': '/en',
 };
 
 export function getEquivalentRoute(pathname: string): string {

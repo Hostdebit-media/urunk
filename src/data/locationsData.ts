@@ -71,7 +71,7 @@ export const locationsData: Record<string, LocationDataMap> = {
         {
           title: "National Enterprise SEO",
           desc: "We optimize your web assets for highly competitive national B2B and B2C keywords, placing your brand at the summit of organic search engine results on Google.",
-          link: "/en/services/seo-morocco"
+          link: "/en/seo-morocco"
         },
         {
           title: "React Web Engineering",
@@ -663,7 +663,7 @@ export const locationsData: Record<string, LocationDataMap> = {
         {
           title: "B2B & Institutional SEO",
           desc: "We optimize your web footprint for complex, industry-specific search terms, positioning your consulting practice or software company in front of major buyers on Google.",
-          link: "/en/services/seo-morocco"
+          link: "/en/seo-morocco"
         },
         {
           title: "High-Security React Web Design",

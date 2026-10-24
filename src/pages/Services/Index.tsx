@@ -43,7 +43,7 @@ const services: ServiceItem[] = [
     titleFr: 'Création de Sites Web',
     desc: 'Custom, high-speed, mobile-optimized hotel websites built to convert lookers into direct bookings.',
     descFr: 'Conception de sites vitrines et marchands haut de gamme, rapides et optimisés pour la réservation.',
-    path: '/services/website-design',
+    path: '/en/services/website-design',
     pathFr: '/services/creation-site-web',
   },
   {
@@ -54,7 +54,7 @@ const services: ServiceItem[] = [
     titleFr: 'Agence Web Maroc',
     desc: 'Tailored Jamstack and modern frontend web engineering for businesses seeking elite speed and design.',
     descFr: 'Ingénierie web moderne et design haut de gamme pour les marques hôtelières et PME au Maroc.',
-    path: '/web-design-morocco',
+    path: '/en/web-design-morocco',
     pathFr: '/agence-web-maroc',
   },
   {
@@ -65,7 +65,7 @@ const services: ServiceItem[] = [
     titleFr: 'Agence Web Casablanca',
     desc: 'Custom enterprise and luxury brand websites tailored specifically for the Casablanca corporate ecosystem.',
     descFr: 'Création de sites internet premium et d\'applications web pour les entreprises de Casablanca.',
-    path: '/web-design-casablanca',
+    path: '/en/web-design-casablanca',
     pathFr: '/agence-web-casablanca',
   },
   {
@@ -76,7 +76,7 @@ const services: ServiceItem[] = [
     titleFr: 'Site Web Hôtel',
     desc: 'Sophisticated websites with immersive media, room display layouts, and seamless booking integration.',
     descFr: 'Portails hôteliers de luxe avec galeries immersives et parcours client fluide.',
-    path: '/hotel-website-design',
+    path: '/en/hotel-website-design',
     pathFr: '/site-web-hotel',
   },
   {
@@ -87,7 +87,7 @@ const services: ServiceItem[] = [
     titleFr: 'Site Web Riad Marrakech',
     desc: 'Bespoke websites designed specifically to capture the intimate, authentic luxury of boutique Medina riads.',
     descFr: 'Sites d\'exception reflétant le charme intime et l\'authenticité des riads et maisons d\'hôtes de la médina.',
-    path: '/riad-website-design-marrakech',
+    path: '/en/riad-website-design-marrakech',
     pathFr: '/site-web-riad-marrakech',
   },
 
@@ -100,7 +100,7 @@ const services: ServiceItem[] = [
     titleFr: 'Référencement SEO Maroc',
     desc: 'Expert search engine optimization to capture high-intent organic traffic searching for Morocco tourism.',
     descFr: 'Optimisation de référencement naturel pour optimiser Google Maroc et l\'international.',
-    path: '/seo-agency-morocco',
+    path: '/en/seo-morocco',
     pathFr: '/agence-seo-maroc',
   },
   {
@@ -111,7 +111,7 @@ const services: ServiceItem[] = [
     titleFr: 'Agence SEO Maroc',
     desc: 'High-performance organic positioning strategies from our specialized search consultancy.',
     descFr: 'Stratégies d\'acquisition organique complètes par notre agence de référencement basée au Maroc.',
-    path: '/seo-agency-morocco',
+    path: '/en/seo-agency-morocco',
     pathFr: '/agence-seo-maroc',
   },
   {
@@ -122,7 +122,7 @@ const services: ServiceItem[] = [
     titleFr: 'Agence SEO Casablanca',
     desc: 'B2B and hospitality search optimization targeting competitive corporate queries in Casablanca.',
     descFr: 'Positionnement de pointe sur les mots-clés stratégiques hautement concurrentiels à Casablanca.',
-    path: '/seo-agency-casablanca',
+    path: '/en/seo-agency-casablanca',
     pathFr: '/agence-seo-casablanca',
   },
   {
@@ -133,7 +133,7 @@ const services: ServiceItem[] = [
     titleFr: 'SEO Hôtelier',
     desc: 'Bypass OTAs completely by outranking Booking and TripAdvisor for valuable accommodation search queries.',
     descFr: 'Dépassez les OTA sur Google et positionnez vos chambres en tête des résultats pour capter l\'intention directe.',
-    path: '/hotel-seo',
+    path: '/en/hotel-seo',
     pathFr: '/seo-hotel',
   },
   {
@@ -144,7 +144,7 @@ const services: ServiceItem[] = [
     titleFr: 'SEO Riad Marrakech',
     desc: 'Hyper-local Medina SEO to capture high-ticket international guests searching for luxury riads in Marrakech.',
     descFr: 'Optimisation de visibilité pour les riads de Marrakech ciblant la clientèle touristique internationale.',
-    path: '/riad-seo-marrakech',
+    path: '/en/riad-seo-marrakech',
     pathFr: '/seo-riad-marrakech',
   },
   {
@@ -155,7 +155,7 @@ const services: ServiceItem[] = [
     titleFr: 'Optimisation SEO par l\'IA',
     desc: 'Leverage advanced AI semantic structures, schema markups, and search engine content clustering.',
     descFr: 'Utilisez la sémantique de l\'IA, les balises de schéma et le maillage sémantique prédictif.',
-    path: '/services/ai-seo-optimization',
+    path: '/en/services/ai-seo-optimization',
     pathFr: '/services/ai-seo-optimization',
   },
   {
@@ -166,7 +166,7 @@ const services: ServiceItem[] = [
     titleFr: 'SEO WordPress',
     desc: 'Fine-tune WordPress speed, technical performance, page structure, and core web vitals for maximum crawlability.',
     descFr: 'Optimisation technique WordPress pour la vitesse, la structure et un indexage parfait de vos contenus.',
-    path: '/services/wordpress-seo',
+    path: '/en/services/wordpress-seo',
     pathFr: '/services/wordpress-seo',
   },
   {
@@ -177,7 +177,7 @@ const services: ServiceItem[] = [
     titleFr: 'SEO E-commerce',
     desc: 'Scale organic sales with clean product page indexing, transactional structured data, and high-intent keyword mapping.',
     descFr: 'Augmentez vos ventes en ligne avec un indexage propre de vos fiches produits et des schémas transactionnels.',
-    path: '/services/ecommerce-seo',
+    path: '/en/services/ecommerce-seo',
     pathFr: '/services/ecommerce-seo',
   },
 
@@ -190,7 +190,7 @@ const services: ServiceItem[] = [
     titleFr: 'Référencement Local Casablanca',
     desc: 'Excel location-based searches, Google Maps Pack, and regional business directories in Casablanca.',
     descFr: 'Gagnez les meilleures places sur Google Maps et dans le Pack Local pour Casablanca.',
-    path: '/local-seo-casablanca',
+    path: '/en/local-seo-casablanca',
     pathFr: '/referencement-local-casablanca',
   },
   {
@@ -201,7 +201,7 @@ const services: ServiceItem[] = [
     titleFr: 'Optimisation Fiche Google Business',
     desc: 'Comprehensive optimization of your GBP listings, review management, and high-ranking local citation structures.',
     descFr: 'Gestion professionnelle et optimisation de votre profil Google Business pour maximiser l\'attraction locale.',
-    path: '/services/google-business-profile',
+    path: '/en/services/google-business-profile',
     pathFr: '/services/google-business-profile',
   },
   {
@@ -212,7 +212,7 @@ const services: ServiceItem[] = [
     titleFr: 'SEO Local Maroc',
     desc: 'Establish geographic visibility across Morocco with consistent citation clusters and region-targeted location SEO.',
     descFr: 'Citations locales précises et positionnement géocentrique pour être trouvé par les voyageurs partout au Maroc.',
-    path: '/services/local-seo-morocco',
+    path: '/en/services/local-seo-morocco',
     pathFr: '/services/local-seo-morocco',
   },
 
@@ -225,7 +225,7 @@ const services: ServiceItem[] = [
     titleFr: 'Gestion Google Ads Maroc : Campagnes Payantes',
     desc: 'Create high-converting Search, Display, and Performance Max campaigns targeting ready-to-book global travelers.',
     descFr: 'Campagnes Google Ads rentables et ciblées par mots-clés transactionnels pour attirer une clientèle qualifiée au Maroc.',
-    path: '/google-ads-morocco',
+    path: '/en/services/google-ads',
     pathFr: '/google-ads-maroc',
   },
   {
@@ -236,7 +236,7 @@ const services: ServiceItem[] = [
     titleFr: 'Gestion Publicités Meta',
     desc: 'Drive visual inspiration and targeted social media lead generation across Facebook and Instagram.',
     descFr: 'Campagnes visuelles percutantes sur Instagram et Facebook pour stimuler les réservations d\'inspiration.',
-    path: '/services/meta-ads',
+    path: '/en/services/meta-ads',
     pathFr: '/services/gestion-publicites-meta',
   },
   {
@@ -247,7 +247,7 @@ const services: ServiceItem[] = [
     titleFr: 'Optimisation TripAdvisor Ads',
     desc: 'Sponsor placement listings and optimize campaigns on TripAdvisor to capture active destination planners.',
     descFr: 'Sponsorisation et optimisation des annonces TripAdvisor pour attirer les touristes qualifiés.',
-    path: '/services/tripadvisor-ads',
+    path: '/en/services/tripadvisor-ads',
     pathFr: '/services/tripadvisor-ads',
   },
   {
@@ -258,7 +258,7 @@ const services: ServiceItem[] = [
     titleFr: 'Google Ads Maroc',
     desc: 'PPC search campaigns tailored for regional businesses seeking rapid lead generation within the Moroccan market.',
     descFr: 'Annonces ultra-ciblées sur Google Maroc pour générer rapidement des contacts et prospects hautement qualifiés.',
-    path: '/google-ads-morocco',
+    path: '/en/google-ads-morocco',
     pathFr: '/google-ads-maroc',
   },
 
@@ -271,7 +271,7 @@ const services: ServiceItem[] = [
     titleFr: 'Marketing Digital Hôtelier',
     desc: 'An omnichannel booking acquisition system combining search marketing, travel ads, and direct booking funnels.',
     descFr: 'Écosystème digital omnicanal complet pour maximiser le taux d\'occupation de votre hôtel.',
-    path: '/hotel-digital-marketing',
+    path: '/en/hotel-digital-marketing',
     pathFr: '/marketing-digital-hotelier',
   },
   {
@@ -282,7 +282,7 @@ const services: ServiceItem[] = [
     titleFr: 'Stratégie de Réservation Directe',
     desc: 'Bypass OTA commission fees with optimized PMS integration, loyalty systems, and conversion-focused UX.',
     descFr: 'Stratégies d\'intégration PMS, incitations de fidélisation et UX fluide pour contourner les commissions des OTA.',
-    path: '/direct-booking',
+    path: '/en/direct-booking',
     pathFr: '/reservation-directe',
   },
   {

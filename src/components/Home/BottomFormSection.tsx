@@ -51,7 +51,7 @@ export default function BottomFormSection() {
       if (res.ok) {
         setFormSuccess('Thank you! Your quote request has been sent. Redirecting...');
         setTimeout(() => {
-          window.location.href = '/thank-you';
+          window.location.href = '/en/thank-you';
         }, 1200);
       } else {
         form.submit();

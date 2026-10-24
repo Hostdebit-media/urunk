@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
         "name": "Worldwide"
       }
     ],
-    "url": "https://urunk.com/services/website-design"
+    "url": "https://urunk.com/en/services/website-design"
   };
 
 export default function WebsiteDesign() {

@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
         "name": "Worldwide"
       }
     ],
-    "url": "https://urunk.com/services/google-ads"
+    "url": "https://urunk.com/en/services/google-ads"
   };
 
 export default function GoogleAds() {

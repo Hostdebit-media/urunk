@@ -5,6 +5,10 @@
 # 0. Canonical Service Consolidation
 /services/gestion-google-ads /google-ads-maroc 301!
 /services/gestion-google-ads.html /google-ads-maroc 301!
+/en/seo-riad-marrakech /en/riad-seo-marrakech 301!
+/en/seo-riad-marrakech.html /en/riad-seo-marrakech 301!
+/en/services/meta-ads-management /en/services/meta-ads 301!
+/en/website-design /en/services/website-design 301!
 
 # 0. Direct .html Extension Single-Hop Normalization
 /fr/tarifs.html /tarifs 301!

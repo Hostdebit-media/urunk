@@ -18,7 +18,7 @@ export default function WorkIndex() {
     "@type": "WebPage",
     "name": "Industry Strategy Examples | Urunk Digital Agency",
     "description": "Explore Urunk's strategic frameworks and digital growth methodologies for Moroccan tourism, hospitality, and catering businesses.",
-    "url": "https://urunk.com/work"
+    "url": "https://urunk.com/en/work"
   };
 
   return (

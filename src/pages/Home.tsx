@@ -312,7 +312,7 @@ export default function Home() {
                 </p>
                 <ul className="space-y-2.5 text-xs font-medium text-primary/80">
                   <li>
-                    <Link to="/en/seo-riad-marrakech" className="hover:text-accent transition-colors block py-0.5">
+                    <Link to="/en/riad-seo-marrakech" className="hover:text-accent transition-colors block py-0.5">
                       Marrakech Riad SEO
                     </Link>
                   </li>
@@ -350,7 +350,7 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/en/services/meta-ads-management" className="hover:text-accent transition-colors block py-0.5">
+                    <Link to="/en/services/meta-ads" className="hover:text-accent transition-colors block py-0.5">
                       Hospitality Meta Ads
                     </Link>
                   </li>
@@ -383,7 +383,7 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/en/seo-riad-marrakech" className="hover:text-accent transition-colors block py-0.5">
+                    <Link to="/en/riad-seo-marrakech" className="hover:text-accent transition-colors block py-0.5">
                       Local SEO Marrakech
                     </Link>
                   </li>
@@ -411,7 +411,7 @@ export default function Home() {
                 </p>
                 <ul className="space-y-2.5 text-xs font-medium text-primary/80">
                   <li>
-                    <Link to="/en/website-design" className="hover:text-accent transition-colors block py-0.5">
+                    <Link to="/en/services/website-design" className="hover:text-accent transition-colors block py-0.5">
                       Website Design
                     </Link>
                   </li>

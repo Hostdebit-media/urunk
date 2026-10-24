@@ -751,7 +751,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               ${isFR ? "Riads, maisons d'hôtes et hébergements de charme." : "Riads, boutique hotels, and guest stays across Morocco."}
             </p>
             <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.8; font-size: 0.95rem;">
-              <li><a href="${isFR ? '/seo-riad-marrakech' : '/en/seo-riad-marrakech'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'SEO Riads Marrakech' : 'Marrakech Riad SEO'}</a></li>
+              <li><a href="${isFR ? '/seo-riad-marrakech' : '/en/riad-seo-marrakech'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'SEO Riads Marrakech' : 'Marrakech Riad SEO'}</a></li>
               <li><a href="${isFR ? '/site-web-hotel' : '/en/hotel-website-design'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'Sites Web Hôtels' : 'Hotel Website Design'}</a></li>
               <li><a href="${isFR ? '/reservation-directe' : '/en/direct-booking'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'Réservation Directe' : 'Direct Booking Strategy'}</a></li>
             </ul>
@@ -786,7 +786,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             </p>
             <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.8; font-size: 0.95rem;">
               <li><a href="${isFR ? '/referencement-local-casablanca' : '/en/local-seo-casablanca'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'SEO Local Casablanca' : 'Local SEO Casablanca'}</a></li>
-              <li><a href="${isFR ? '/seo-riad-marrakech' : '/en/seo-riad-marrakech'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'SEO Local Marrakech' : 'Local SEO Marrakech'}</a></li>
+              <li><a href="${isFR ? '/seo-riad-marrakech' : '/en/riad-seo-marrakech'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'SEO Local Marrakech' : 'Local SEO Marrakech'}</a></li>
               <li><a href="${isFR ? '/services/google-business-profile' : '/en/services/google-business-profile'}" style="color: #0F2D25; text-decoration: underline;">${isFR ? 'Google Business Profile' : 'Google Business Profile'}</a></li>
             </ul>
           </div>
@@ -1427,7 +1427,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         { name: 'SEO E-commerce', url: '/services/ecommerce-seo' },
         { name: 'Fiche Google Business Profile', url: '/services/google-business-profile' },
         { name: 'SEO Local Maroc', url: '/services/local-seo-morocco' },
-        { name: 'Gestion Google Ads', url: '/services/gestion-google-ads' },
+        { name: 'Gestion Google Ads', url: '/google-ads-maroc' },
         { name: 'Publicités Meta', url: '/services/gestion-publicites-meta' },
         { name: 'TripAdvisor Ads', url: '/services/tripadvisor-ads' },
         { name: 'Pack Réservation Directe', url: '/services/bundle-site-ads' }

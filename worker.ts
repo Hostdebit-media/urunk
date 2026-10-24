@@ -101,8 +101,59 @@ export default {
 
       // 2. Legacy /fr/ route handling (redirect /fr or /fr/path -> / or /path)
       if (pathname === "/fr" || pathname.startsWith("/fr/")) {
-        const targetPath = pathname === "/fr" || pathname === "/fr/" ? "/" : pathname.slice(3);
+        let targetPath = pathname === "/fr" || pathname === "/fr/" ? "/" : pathname.slice(3);
+        if (targetPath === "/services/gestion-google-ads") targetPath = "/google-ads-maroc";
+        if (targetPath === "/services/bundle") targetPath = "/services/bundle-site-ads";
         const redirectUrl = new URL(targetPath + search, url.origin);
+        const redirectHeaders = new Headers({
+          Location: redirectUrl.toString()
+        });
+        applySecurityHeaders(redirectHeaders);
+        return new Response(null, {
+          status: 301,
+          headers: redirectHeaders
+        });
+      }
+
+      // 2b. Canonical 301 Redirects for consolidated & legacy URLs
+      const CANONICAL_REDIRECTS: Record<string, string> = {
+        "/services/gestion-google-ads": "/google-ads-maroc",
+        "/services/gestion-google-ads.html": "/google-ads-maroc",
+        "/services/bundle": "/services/bundle-site-ads",
+        "/en/services/bundle": "/en/services/bundle-site-ads",
+        "/en/seo-riad-marrakech": "/en/riad-seo-marrakech",
+        "/en/seo-riad-marrakech.html": "/en/riad-seo-marrakech",
+        "/en/services/meta-ads-management": "/en/services/meta-ads",
+        "/en/website-design": "/en/services/website-design",
+        "/secteurs/ecommerce": "/secteurs/hotels-resorts",
+        "/en/industries/ecommerce": "/en/industries/hotels-resorts",
+        "/about": "/en/about",
+        "/pricing": "/en/pricing",
+        "/work": "/en/work",
+        "/terms-of-service": "/en/terms-of-service",
+        "/privacy-policy": "/en/privacy-policy",
+        "/thank-you": "/en/thank-you",
+        "/web-design-morocco": "/en/web-design-morocco",
+        "/web-design-casablanca": "/en/web-design-casablanca",
+        "/seo-morocco": "/en/seo-morocco",
+        "/seo-agency-morocco": "/en/seo-agency-morocco",
+        "/seo-agency-casablanca": "/en/seo-agency-casablanca",
+        "/hotel-seo": "/en/hotel-seo",
+        "/hotel-digital-marketing": "/en/hotel-digital-marketing",
+        "/hotel-website-design": "/en/hotel-website-design",
+        "/direct-booking": "/en/direct-booking",
+        "/google-ads-morocco": "/en/google-ads-morocco",
+        "/local-seo-casablanca": "/en/local-seo-casablanca",
+        "/riad-seo-marrakech": "/en/riad-seo-marrakech",
+        "/riad-website-design-marrakech": "/en/riad-website-design-marrakech",
+        "/services/website-design": "/en/services/website-design",
+        "/services/google-ads": "/en/services/google-ads",
+        "/services/meta-ads": "/en/services/meta-ads"
+      };
+
+      const normalizedPathname = pathname.toLowerCase();
+      if (CANONICAL_REDIRECTS[normalizedPathname]) {
+        const redirectUrl = new URL(CANONICAL_REDIRECTS[normalizedPathname] + search, url.origin);
         const redirectHeaders = new Headers({
           Location: redirectUrl.toString()
         });

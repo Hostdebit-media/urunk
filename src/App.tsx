@@ -204,11 +204,14 @@ export default function App() {
               <Route path="google-ads-morocco" element={<GoogleAdsMorocco />} />
               <Route path="local-seo-casablanca" element={<LocalSeoCasablanca />} />
               <Route path="riad-seo-marrakech" element={<RiadSeoMarrakech />} />
+              <Route path="seo-riad-marrakech" element={<Navigate to="/en/riad-seo-marrakech" replace />} />
+              <Route path="website-design" element={<Navigate to="/en/services/website-design" replace />} />
               <Route path="riad-website-design-marrakech" element={<RiadWebsiteDesignMarrakech />} />
               
               {/* Core Services Routes EN */}
               <Route path="services/google-ads" element={<GoogleAds />} />
               <Route path="services/meta-ads" element={<MetaAds />} />
+              <Route path="services/meta-ads-management" element={<Navigate to="/en/services/meta-ads" replace />} />
               <Route path="services/tripadvisor-ads" element={<TripadvisorAds />} />
               <Route path="services/bundle-site-ads" element={<Bundle />} />
               <Route path="services/bundle" element={<Navigate to="/en/services/bundle-site-ads" replace />} />

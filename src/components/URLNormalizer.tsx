@@ -76,6 +76,12 @@ export default function URLNormalizer() {
       '/work/art-house-marrakech-case-study': '/en/work/art-house-marrakech',
       '/realisations/art-house-marrakech-case-study': '/realisations/art-house-marrakech',
       '/fr/realisations/art-house-marrakech-case-study': '/realisations/art-house-marrakech',
+      '/services/gestion-google-ads': '/google-ads-maroc',
+      '/services/bundle': '/services/bundle-site-ads',
+      '/en/services/bundle': '/en/services/bundle-site-ads',
+      '/en/seo-riad-marrakech': '/en/riad-seo-marrakech',
+      '/en/services/meta-ads-management': '/en/services/meta-ads',
+      '/en/website-design': '/en/services/website-design',
     };
 
     if (redirectMappings[normalizedPath]) {

@@ -24,7 +24,7 @@ import { Link } from 'react-router-dom';
         "name": "Worldwide"
       }
     ],
-    "url": "https://urunk.com/services/meta-ads"
+    "url": "https://urunk.com/en/services/meta-ads"
   };
 
 export default function MetaAds() {

@@ -21,14 +21,14 @@
 - [English Homepage (EN)](https://urunk.com/en): Overview of services, guarantees, and direct booking calculator in English.
 - [Création Site Web (FR)](https://urunk.com/services/creation-site-web): Spécifications sites web hôteliers, intégrations PMS et conversion.
 - [Website Design (EN)](https://urunk.com/en/services/website-design): Hotel WordPress site specs, PMS integrations, and mobile conversion.
-- [Gestion Google Ads (FR)](https://urunk.com/services/gestion-google-ads): Publicités Google Ads pour riads et établissements hôteliers.
+- [Gestion Google Ads (FR)](https://urunk.com/google-ads-maroc): Publicités Google Ads pour riads et établissements hôteliers.
 - [Google Ads (EN)](https://urunk.com/en/services/google-ads): Search engine marketing, brand bidding, and campaign ROI.
 - [Gestion Publicités Meta (FR)](https://urunk.com/services/gestion-publicites-meta): Publicités Instagram et Facebook pour le tourisme.
 - [Meta Ads (EN)](https://urunk.com/en/services/meta-ads): Facebook and Instagram travel advertising.
 - [Gestion Publicités TripAdvisor (FR)](https://urunk.com/services/tripadvisor-ads): Sponsoring et optimisation d'annonces TripAdvisor.
 - [TripAdvisor Ads (EN)](https://urunk.com/en/services/tripadvisor-ads): Sponsored listings and review management.
-- [Forfait Site & Pub (FR)](https://urunk.com/services/bundle): Forfait tout-en-un site web + régies publicitaires.
-- [Website + Ads Bundle (EN)](https://urunk.com/en/services/bundle): Integrated direct revenue platform.
+- [Forfait Site & Pub (FR)](https://urunk.com/services/bundle-site-ads): Forfait tout-en-un site web + régies publicitaires.
+- [Website + Ads Bundle (EN)](https://urunk.com/en/services/bundle-site-ads): Integrated direct revenue platform.
 - [Tarifs (FR)](https://urunk.com/tarifs): Tarification transparente et forfaits fixes sans commission.
 - [Pricing (EN)](https://urunk.com/en/pricing): Flat-rate website pricing and monthly ad management.
 - [Réalisations & Cas Clients (FR)](https://urunk.com/realisations): Études de cas détaillées (Art House Marrakech, Nomad Eats, Travel Morocco).

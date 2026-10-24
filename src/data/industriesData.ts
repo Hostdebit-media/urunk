@@ -58,7 +58,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "International Multilingual SEO",
           desc: "We target high-intent search terms (e.g. 'luxury all-inclusive resort Taghazout') in English, French, and German, outranking OTAs and capturing guests before they reach third-party portals.",
-          link: "/en/services/seo-agency-morocco"
+          link: "/en/seo-agency-morocco"
         },
         {
           title: "Hyper-Targeted Google Hotel Ads",
@@ -114,17 +114,17 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "SEO International Multilingue",
           desc: "Nous positionnons le site officiel de votre hôtel en tête sur les mots-clés hôteliers stratégiques à forte valeur ajoutée en français, anglais et allemand.",
-          link: "/en/seo-hotel"
+          link: "/seo-hotel"
         },
         {
           title: "Publicités Google Hotel Ads",
           desc: "Nous programmons et gérons des campagnes publicitaires connectées à vos tarifs en temps réel pour capter l'internaute au moment crucial du comparatif hôtelier.",
-          link: "/en/google-ads-maroc"
+          link: "/google-ads-maroc"
         },
         {
           title: "Optimisation de la Vitesse Mobile",
           desc: "Nous développons des architectures web hôtelières en React ultra-rapides, chargeant en moins de 1 seconde pour éliminer toute friction d'achat mobile.",
-          link: "/en/site-web-hotel"
+          link: "/site-web-hotel"
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
@@ -223,17 +223,17 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "SEO Local Médina & Google Maps",
           desc: "Nous optimisons votre fiche Google Business Profile et vos avis locaux pour vous imposer dans le Top 3 Maps face aux touristes en recherche active.",
-          link: "/en/services/google-business-profile"
+          link: "/services/google-business-profile"
         },
         {
           title: "Création Web Immersive pour Riads",
           desc: "Nous créons des sites web hôteliers d'exception sous React, rapides et pensés pour mettre en valeur l'architecture, le patio et le spa de votre établissement.",
-          link: "/en/site-web-riad-marrakech"
+          link: "/site-web-riad-marrakech"
         },
         {
           title: "Gestion Publicitaire TripAdvisor & Social",
           desc: "Nous gérons vos campagnes d'acquisition payantes (TripAdvisor Ads, Meta Ads) pour capter des leads haut de gamme prêts à réserver leurs séjours de charme.",
-          link: "/en/services/tripadvisor-ads"
+          link: "/services/tripadvisor-ads"
         },
         {
           title: "Canal Direct & Intégration WhatsApp",
@@ -337,7 +337,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "Campagnes Google Search Spécialisées",
           desc: "Nous concevons des campagnes Google Ads d'acquisition pour capter les touristes recherchant des excursions privées et VIP, évitant Viator.",
-          link: "/en/google-ads-maroc"
+          link: "/google-ads-maroc"
         },
         {
           title: "Création de Sites E-commerce d'Excursions",
@@ -456,17 +456,17 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "Création Web Restauration Mobile-First",
           desc: "Nous concevons des sites web fluides avec menus digitaux interactifs, optimisés pour la conversion et la réservation directe de tables.",
-          link: "/en/services/google-business-profile"
+          link: "/services/google-business-profile"
         },
         {
           title: "Publicités Visuelles Meta & Instagram",
           desc: "Nous pilotons des campagnes vidéo immersives (Reels, Stories) mettant en scène vos plats, vos équipes et votre atmosphère pour attirer les gourmets marocains et étrangers.",
-          link: "/en/services/gestion-publicites-meta"
+          link: "/services/gestion-publicites-meta"
         },
         {
           title: "Génération de Leads Traiteur B2B",
           desc: "Nous créons des pages d'atterrissage B2B haut de gamme et gérons vos campagnes Google Ads pour capter des contrats de traiteur d'affaires lucratifs.",
-          link: "/en/services/creation-site-web"
+          link: "/services/creation-site-web"
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
@@ -509,7 +509,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "B2B Enterprise SEO & Authority",
           desc: "We optimize your corporate web properties for high-volume, industry-specific B2B keywords, positioning you as the leading national provider on Google.",
-          link: "/en/services/seo-agency-casablanca"
+          link: "/en/seo-agency-casablanca"
         },
         {
           title: "High-Performance React Web Design",
@@ -575,12 +575,12 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "Campagnes Google Search & LinkedIn Ads",
           desc: "Nous ciblons de manière chirurgicale les directeurs d'achats et décideurs marocains pour générer des prospects commerciaux de qualité supérieure.",
-          link: "/en/google-ads-maroc"
+          link: "/google-ads-maroc"
         },
         {
           title: "Optimisation pour Moteurs d'IA (AEO)",
           desc: "Nous structurons vos contenus pour que votre entreprise B2B soit recommandée en priorité par les agents conversationnels de ChatGPT, Gemini et Perplexity.",
-          link: "/en/services/ai-seo-optimization"
+          link: "/services/ai-seo-optimization"
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
@@ -679,7 +679,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "SEO E-commerce",
           desc: "Optimisation technique des catégories et fiches produits pour la recherche.",
-          link: "/en/services/ecommerce-seo"
+          link: "/services/ecommerce-seo"
         },
         {
           title: "Agence Web Maroc",
@@ -689,12 +689,12 @@ export const industriesData: Record<string, IndustryDataMap> = {
         {
           title: "Publicités Meta & Instagram",
           desc: "Campagnes de retargeting et pubs catalogue à fort retour sur investissement.",
-          link: "/en/services/gestion-publicites-meta"
+          link: "/services/gestion-publicites-meta"
         },
         {
           title: "Google Ads Maroc",
           desc: "Campagnes Google Shopping et Search ciblant les acheteurs intentionnistes.",
-          link: "/en/google-ads-maroc"
+          link: "/google-ads-maroc"
         }
       ],
       caseStudyTitle: "Modèle de Stratégie Vedette",
