@@ -179,7 +179,7 @@ export default function App() {
               <Route path="politique-de-confidentialite" element={<PrivacyPolicyFR />} />
               <Route path="conditions-generales" element={<TermsOfServiceFR />} />
               <Route path="plan-du-site" element={<Sitemap />} />
-              <Route path="sitemap" element={<Sitemap />} />
+              <Route path="sitemap" element={<Navigate to="/plan-du-site" replace />} />
               <Route path="merci" element={<ThankYouFR />} />
             </Route>
 
@@ -246,7 +246,7 @@ export default function App() {
               <Route path="privacy-policy" element={<PrivacyPolicy />} />
               <Route path="terms-of-service" element={<TermsOfService />} />
               <Route path="sitemap" element={<Sitemap />} />
-              <Route path="html-sitemap" element={<Sitemap />} />
+              <Route path="html-sitemap" element={<Navigate to="/en/sitemap" replace />} />
               <Route path="thank-you" element={<ThankYou />} />
             </Route>
 

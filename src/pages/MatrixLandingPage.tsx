@@ -4,6 +4,7 @@ import { locationsData, MarketStat, CityServiceFaqItem } from '../data/locations
 import { industriesData } from '../data/industriesData';
 import { servicesData } from '../data/servicesData';
 import { matrixRelations, findMatrixRelation, MatrixRelation } from '../data/matrixRelations';
+import { buildMatrixMetadata } from '../data/matrixMetadata';
 import SEO from '../components/SEO';
 import { buildFAQPageSchema } from '../components/SEO/StructuredData';
 import { 
@@ -134,46 +135,22 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
       ? locMap.marketStats 
       : (locationsData['morocco']?.marketStats || []);
 
-  // 5. Clean, authoritative Title generation
-  const cleanServiceName = srvData.title.split('|')[0].split(':')[0].trim();
-  const locationName = locData ? (locData.title.split('|')[0].split('in ')[1]?.trim() || locData.title.split('|')[0].replace('Services in', '').replace('Agence Web & Marketing Digital', '').trim()) : (isFrench ? 'Maroc' : 'Morocco');
-  const industryName = indData ? indData.title.split('|')[0].replace('Agency', '').replace('Digital Marketing Agency', '').trim() : '';
-
-  let pageHeading = '';
-  let metaPageTitle = '';
-
-  if (locData && indData && resolvedLocationId && resolvedIndustryId) {
-    pageHeading = isFrench 
-      ? `${cleanServiceName} pour ${industryName} à ${locationName}` 
-      : `${cleanServiceName} for ${industryName} in ${locationName}`;
-    metaPageTitle = isFrench 
-      ? `${cleanServiceName} pour ${industryName} à ${locationName} | Agence Urunk` 
-      : `${cleanServiceName} for ${industryName} in ${locationName} | Urunk Agency`;
-  } else if (locData) {
-    pageHeading = isFrench 
-      ? `${cleanServiceName} à ${locationName}` 
-      : `${cleanServiceName} in ${locationName}`;
-    metaPageTitle = isFrench 
-      ? `${cleanServiceName} à ${locationName} : Stratégie & Résultats | Urunk` 
-      : `${cleanServiceName} in ${locationName} | Direct Bookings & SEO | Urunk`;
-  } else {
-    pageHeading = isFrench 
-      ? `${cleanServiceName} pour ${industryName} au Maroc` 
-      : `${cleanServiceName} for ${industryName} in Morocco`;
-    metaPageTitle = isFrench 
-      ? `${cleanServiceName} pour ${industryName} au Maroc | Agence Urunk` 
-      : `${cleanServiceName} for ${industryName} in Morocco | Urunk Agency`;
-  }
-
-  // 6. Handwritten Intro Prioritization (0 AI filler)
-  const rawUniqueIntro = locMap?.uniqueIntroByService?.[resolvedServiceId]?.[lang];
-  const hasHandwrittenIntro = Boolean(rawUniqueIntro && rawUniqueIntro.trim().length > 0);
-  
-  const synthesizedIntro = isFrench
-    ? `Développez l'acquisition directe et le chiffre d'affaires de votre établissement à ${locationName} avec notre expertise en ${cleanServiceName.toLowerCase()}. Conçu pour contourner les commissions d'intermédiation élevées et capter une clientèle à forte valeur, notre dispositif allie référencement local, ingénierie de conversion et présence Google Maps à fort impact.`
-    : `Scale direct bookings and high-intent customer acquisition in ${locationName} with our performance-driven ${cleanServiceName.toLowerCase()} framework. Engineered to bypass high intermediary commission fees, our strategy couples deep local search dominance with conversion-focused web architecture.`;
-
-  const leadIntroText = hasHandwrittenIntro ? rawUniqueIntro! : synthesizedIntro;
+  // 5 & 6. Clean, authoritative Title, Heading, Meta Description & Handwritten Intro
+  const {
+    locationName,
+    industryName,
+    cleanServiceName,
+    pageHeading,
+    metaPageTitle,
+    metaDescription,
+    leadIntroText,
+  } = buildMatrixMetadata({
+    lang,
+    serviceId: resolvedServiceId,
+    locationId: resolvedLocationId,
+    industryId: resolvedIndustryId,
+    effectiveIndustryId,
+  });
 
   // 7. Structured FAQs (combining city-specific service FAQs + core service FAQs)
   const localizedFaqs: { q: string; a: string }[] = [];
@@ -211,7 +188,7 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
     <div className="min-h-screen bg-bg text-primary selection:bg-accent/20">
       <SEO 
         title={metaPageTitle}
-        description={leadIntroText}
+        description={metaDescription}
         schema={faqSchema}
         noindex={isPlanned}
       />

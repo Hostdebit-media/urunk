@@ -8,6 +8,7 @@ import { industriesData } from './src/data/industriesData';
 import { locationsData } from './src/data/locationsData';
 import { getEquivalentRoute } from './src/data/slugMappings';
 import { matrixRelations } from './src/data/matrixRelations';
+import { buildMatrixMetadata } from './src/data/matrixMetadata';
 
 interface PageMetadata {
   path: string;
@@ -172,7 +173,7 @@ const staticPages: PageMetadata[] = [
   {
     path: '/agence-seo-casablanca',
     lang: 'fr',
-    title: 'Agence SEO Casablanca : Optimisez les Mots-Clés Stratégiques | Urunk',
+    title: 'Agence SEO Casablanca : Référencement & Maps | Urunk',
     description: 'Développez votre autorité organique à Casablanca. Nous optimisons votre visibilité sur Google Maps et propulsons votre site devant vos concurrents.'
   },
   {
@@ -263,7 +264,7 @@ const staticPages: PageMetadata[] = [
     path: '/zones',
     lang: 'fr',
     title: 'Zones d\'Intervention — SEO & Web au Maroc | Urunk',
-    description: 'Découvrez nos zones d\'intervention au Maroc : Casablanca, Marrakech, Rabat, Agadir. SEO local, Google Business Profile et création de sites web performants.'
+    description: 'Nos zones d\'intervention au Maroc (Casablanca, Marrakech, Rabat, Agadir) : SEO local, fiches Google Business Profile et sites web performants.'
   },
   {
     path: '/zones/maroc',
@@ -519,9 +520,9 @@ const staticPages: PageMetadata[] = [
 const serviceRouteMapping: { key: string, enPath: string, frPath: string }[] = [
   { key: 'creation-site-web-prix', enPath: '/en/services/website-design', frPath: '/creation-site-web' },
   { key: 'google-ads-morocco', enPath: '/en/services/google-ads', frPath: '/google-ads-maroc' },
-  { key: 'hotel-digital-marketing', enPath: '/en/services/meta-ads', frPath: '/services/gestion-publicites-meta' },
-  { key: 'hotel-digital-marketing', enPath: '/en/services/tripadvisor-ads', frPath: '/services/tripadvisor-ads' },
-  { key: 'direct-booking', enPath: '/en/services/bundle-site-ads', frPath: '/services/bundle-site-ads' },
+  { key: 'meta-ads', enPath: '/en/services/meta-ads', frPath: '/services/gestion-publicites-meta' },
+  { key: 'tripadvisor-ads', enPath: '/en/services/tripadvisor-ads', frPath: '/services/tripadvisor-ads' },
+  { key: 'bundle-site-ads', enPath: '/en/services/bundle-site-ads', frPath: '/services/bundle-site-ads' },
   { key: 'web-design-morocco', enPath: '/en/web-design-morocco', frPath: '/agence-web-maroc' },
   { key: 'web-design-casablanca', enPath: '/en/web-design-casablanca', frPath: '/agence-web-casablanca' },
   { key: 'seo-agency-morocco', enPath: '/en/seo-agency-morocco', frPath: '/agence-seo-maroc' },
@@ -1589,7 +1590,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       html += `
         <article>
           <header style="margin-bottom: 2.5rem;">
-            <h1 style="font-size: 2.5rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(page.title)}</h1>
+            <h1 style="font-size: 2.5rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(page.title.replace(/\s*\|\s*(Agence\s+Urunk|Urunk\s+Agency|Urunk)\s*$/i, ''))}</h1>
             <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.6;">${escapeHtml(page.description)}</p>
           </header>
 
@@ -1740,7 +1741,7 @@ function prerender() {
     });
   }
 
-  // 7. Add Matrix Expertise Pages
+  // 7. Add Matrix Expertise Pages (3-Tuple: Location × Industry × Service)
   const matrixLocs = ['marrakech', 'casablanca', 'agadir', 'rabat'];
   const matrixInds = ['hotels-resorts', 'riads-boutique-hotels', 'restaurants-catering'];
   const matrixSrvs = ['hotel-seo', 'hotel-website-design', 'google-ads-morocco', 'direct-booking'];
@@ -1752,24 +1753,30 @@ function prerender() {
         const srvData = servicesData[srv];
         const locData = locationsData[loc];
         if (indData && srvData && locData) {
-          // English Matrix Page
-          const enTitle = `${srvData.en.title.split('|')[0].trim()} for ${indData.en.title.split('|')[0].replace('Agency', '').trim()} in ${locData.en.title.split('|')[0].split('in ')[1]?.trim() || locData.en.title.split('|')[0].replace('Services in', '').trim()}`;
-          const enDesc = `Maximize your reach in ${locData.en.title.split('|')[0].split('in ')[1] || 'Morocco'} with tailored ${srvData.en.title.split('|')[0].toLowerCase()}. Designed specifically for the ${indData.en.title.split('|')[0].toLowerCase()} sector.`;
+          const enMeta = buildMatrixMetadata({
+            lang: 'en',
+            serviceId: srv,
+            locationId: loc,
+            industryId: ind,
+          });
           allPages.push({
             path: `/en/expertise/${loc}/${ind}/${srv}`,
             lang: 'en',
-            title: enTitle,
-            description: enDesc
+            title: enMeta.metaPageTitle,
+            description: enMeta.metaDescription,
           });
 
-          // French Matrix Page
-          const frTitle = `${srvData.fr.title.split('|')[0].trim()} pour ${indData.fr.title.split('|')[0].replace('Agency', '').trim()} à ${locData.fr.title.split('|')[0].split('in ')[1]?.trim() || locData.fr.title.split('|')[0].replace('Services in', '').trim()}`;
-          const frDesc = `Optimisez votre visibilité à ${locData.fr.title.split('|')[0].split('in ')[1] || 'Maroc'} avec nos stratégies sur-mesure de ${srvData.fr.title.split('|')[0].toLowerCase()} pour le secteur ${indData.fr.title.split('|')[0].toLowerCase()}.`;
+          const frMeta = buildMatrixMetadata({
+            lang: 'fr',
+            serviceId: srv,
+            locationId: loc,
+            industryId: ind,
+          });
           allPages.push({
             path: `/expertise/${loc}/${ind}/${srv}`,
             lang: 'fr',
-            title: frTitle,
-            description: frDesc
+            title: frMeta.metaPageTitle,
+            description: frMeta.metaDescription,
           });
         }
       }
@@ -1780,41 +1787,31 @@ function prerender() {
   for (const rel of matrixRelations) {
     if (rel.status === 'live') {
       const srvData = servicesData[rel.serviceId];
-      const locData = rel.locationId ? locationsData[rel.locationId] : undefined;
-      const indData = rel.industryId ? industriesData[rel.industryId] : undefined;
-      
-      const frLocName = locData?.fr?.title.split('|')[0].replace('Agence Web & Marketing Digital', '').replace('Services in', '').trim() || 'Maroc';
-      const enLocName = locData?.en?.title.split('|')[0].split('in ')[1]?.trim() || 'Morocco';
-      const frIndName = indData?.fr?.title.split('|')[0].replace('Agency', '').trim() || '';
-      const enIndName = indData?.en?.title.split('|')[0].replace('Agency', '').trim() || '';
-
       if (srvData) {
-        const frTitle = locData 
-          ? `${srvData.fr.title.split('|')[0].trim()} à ${frLocName} : Stratégie & Résultats | Urunk`
-          : `${srvData.fr.title.split('|')[0].trim()} pour ${frIndName} au Maroc | Agence Urunk`;
-        const frDesc = locData 
-          ? `Développez l'acquisition directe et le chiffre d'affaires à ${frLocName} avec notre expertise en ${srvData.fr.title.split('|')[0].toLowerCase()}.`
-          : `Optimisez la rentabilité et la visibilité de votre activité dans le secteur ${frIndName} au Maroc.`;
-          
+        const frMeta = buildMatrixMetadata({
+          lang: 'fr',
+          serviceId: rel.serviceId,
+          locationId: rel.locationId,
+          industryId: rel.industryId,
+        });
         allPages.push({
           path: `/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`,
           lang: 'fr',
-          title: frTitle,
-          description: frDesc
+          title: frMeta.metaPageTitle,
+          description: frMeta.metaDescription,
         });
 
-        const enTitle = locData 
-          ? `${srvData.en.title.split('|')[0].trim()} in ${enLocName} | Direct Bookings & SEO | Urunk`
-          : `${srvData.en.title.split('|')[0].trim()} for ${enIndName} in Morocco | Urunk Agency`;
-        const enDesc = locData 
-          ? `Scale direct bookings and high-intent customer acquisition in ${enLocName} with performance-driven ${srvData.en.title.split('|')[0].toLowerCase()}.`
-          : `Accelerate customer acquisition and organic search dominance in the ${enIndName} sector in Morocco.`;
-
+        const enMeta = buildMatrixMetadata({
+          lang: 'en',
+          serviceId: rel.serviceId,
+          locationId: rel.locationId,
+          industryId: rel.industryId,
+        });
         allPages.push({
           path: `/en/expertise/${rel.slugs.en.service}/${rel.slugs.en.target}`,
           lang: 'en',
-          title: enTitle,
-          description: enDesc
+          title: enMeta.metaPageTitle,
+          description: enMeta.metaDescription,
         });
       }
     }

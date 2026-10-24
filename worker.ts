@@ -148,7 +148,10 @@ export default {
         "/riad-website-design-marrakech": "/en/riad-website-design-marrakech",
         "/services/website-design": "/en/services/website-design",
         "/services/google-ads": "/en/services/google-ads",
-        "/services/meta-ads": "/en/services/meta-ads"
+        "/services/meta-ads": "/en/services/meta-ads",
+        "/sitemap": "/plan-du-site",
+        "/html-sitemap": "/plan-du-site",
+        "/en/html-sitemap": "/en/sitemap"
       };
 
       const normalizedPathname = pathname.toLowerCase();

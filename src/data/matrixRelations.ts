@@ -209,7 +209,7 @@ export const matrixRelations: MatrixRelation[] = [
   {
     id: 'tripadvisor-ads-marrakech',
     type: 'service_location',
-    serviceId: 'hotel-digital-marketing',
+    serviceId: 'tripadvisor-ads',
     targetId: 'marrakech',
     locationId: 'marrakech',
     slugs: {
@@ -251,7 +251,7 @@ export const matrixRelations: MatrixRelation[] = [
   {
     id: 'meta-ads-marrakech',
     type: 'service_location',
-    serviceId: 'hotel-digital-marketing',
+    serviceId: 'meta-ads',
     targetId: 'marrakech',
     locationId: 'marrakech',
     slugs: {

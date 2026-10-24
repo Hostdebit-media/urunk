@@ -72,6 +72,7 @@ export default function URLNormalizer() {
       '/thank-you': '/en/thank-you',
       '/sitemap': '/plan-du-site',
       '/html-sitemap': '/plan-du-site',
+      '/en/html-sitemap': '/en/sitemap',
       '/work/nomad-eats-traiteur': '/realisations/nomad-eats-traiteur',
       '/work/art-house-marrakech-case-study': '/en/work/art-house-marrakech',
       '/realisations/art-house-marrakech-case-study': '/realisations/art-house-marrakech',
