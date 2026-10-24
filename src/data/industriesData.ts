@@ -32,8 +32,8 @@ export interface IndustryDataMap {
 export const industriesData: Record<string, IndustryDataMap> = {
   'hotels-resorts': {
     en: {
-      title: "Hotel & Resort Digital Marketing Agency | Urunk",
-      description: "Enterprise hotel digital growth agency in Morocco. Specialized in Hotel SEO, custom direct booking engines, Google Ads, and OTA commission reduction.",
+      title: "Hotels & Resorts Digital Marketing Agency | Urunk",
+      description: "Take back control from OTAs. We build custom high-converting web designs, SEO, and paid acquisition campaigns specifically for luxury hotels and resorts.",
       heroTitle: "Digital Growth & Direct Booking Strategy for Hotels & Resorts in Morocco",
       heroSub: "Stop losing 18–25% in commissions to OTAs like Booking.com and Expedia. We build fast, high-converting hotel websites and execute search engine visibility strategies that turn travelers into direct guests.",
       calloutTitle: "Hospitality Direct Booking Engine",

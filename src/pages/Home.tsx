@@ -30,12 +30,12 @@ export default function Home() {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Morocco Web & SEO Agency for Hotels & Riads | Urunk</title>
+        <title>Morocco Web & SEO Agency for Hotels & Riads | Urunk EN</title>
         <meta name="description" content="Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking engines, Google Ads, and local SEO in Casablanca and Marrakech. Free audit." />
-        <link rel="canonical" href="https://urunk.com/en/" />
-        <link rel="alternate" hrefLang="en" href="https://urunk.com/en/" />
+        <link rel="canonical" href="https://urunk.com/en" />
+        <link rel="alternate" hrefLang="en" href="https://urunk.com/en" />
         <link rel="alternate" hrefLang="fr" href="https://urunk.com/" />
-        <link rel="alternate" hrefLang="x-default" href="https://urunk.com/en/" />
+        <link rel="alternate" hrefLang="x-default" href="https://urunk.com/" />
         <script type="application/ld+json">
           {`
             [
@@ -44,7 +44,7 @@ export default function Home() {
                 "@type": "Organization",
                 "@id": "https://urunk.com/en/#organization",
                 "name": "Urunk",
-                "url": "https://urunk.com/en/",
+                "url": "https://urunk.com/en",
                 "logo": "https://urunk.com/logo.png",
                 "sameAs": [
                   "[URL_LINKEDIN]",

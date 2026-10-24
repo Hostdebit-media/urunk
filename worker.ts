@@ -85,8 +85,8 @@ export default {
     }
 
     try {
-      // 1. Trailing slash normalization (redirect /page/ -> /page, except root '/' and '/en/')
-      if (pathname.length > 1 && pathname.endsWith("/") && pathname !== "/en/") {
+      // 1. Trailing slash normalization (redirect /page/ -> /page, except root '/')
+      if (pathname.length > 1 && pathname.endsWith("/")) {
         const cleanPath = pathname.slice(0, -1);
         const redirectUrl = new URL(cleanPath + search, url.origin);
         const redirectHeaders = new Headers({

@@ -301,7 +301,7 @@ const staticPages: PageMetadata[] = [
   {
     path: '/en',
     lang: 'en',
-    title: 'Morocco Web & SEO Agency for Hotels & Riads | Urunk',
+    title: 'Morocco Web & SEO Agency for Hotels & Riads | Urunk EN',
     description: 'Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking engines, Google Ads, and local SEO in Casablanca and Marrakech. Free audit.'
   },
   {
@@ -451,7 +451,7 @@ const staticPages: PageMetadata[] = [
   {
     path: '/en/industries/hotels-resorts',
     lang: 'en',
-    title: 'Hotel & Resort Digital Marketing Agency | Urunk',
+    title: 'Hotels & Resorts Digital Marketing Agency | Urunk',
     description: 'Take back control from OTAs. We build custom high-converting web designs, SEO, and paid acquisition campaigns specifically for luxury hotels and resorts.'
   },
   {
