@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../../components/SEO';
+import { buildArticleSchema } from '../../components/SEO/StructuredData';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { caseStudies } from '../../data/caseStudies';
 import { ArrowRight, Check, Compass, Target, BarChart3, Search, Megaphone, Smartphone, MessageSquare, Layers, ShieldCheck } from 'lucide-react';
@@ -52,33 +53,23 @@ export default function CaseStudy() {
 
   const canonicalUrl = `https://urunk.com${isFrench ? `/realisations/${study.frSlug}` : `/en/work/${study.slug}`}`;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": title,
-    "description": metaDescription,
-    "image": `https://urunk.com${study.heroImage}`,
-    "author": {
-      "@type": "Organization",
-      "name": "Urunk Digital Agency",
-      "url": "https://urunk.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Urunk Agency",
-      "url": "https://urunk.com"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    }
-  };
+  const schema = buildArticleSchema({
+    type: 'Article',
+    url: canonicalUrl,
+    headline: title,
+    description: metaDescription,
+    image: study.heroImage,
+    datePublished: '2026-01-20',
+    lang: isFrench ? 'fr' : 'en'
+  });
 
   return (
     <div className="w-full pb-20 bg-bg text-primary">
       <SEO 
         title={pageSeoTitle}
         description={metaDescription}
+        image={study.heroImage}
+        type="article"
         schema={schema}
       />
       

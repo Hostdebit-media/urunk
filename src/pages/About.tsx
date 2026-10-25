@@ -8,7 +8,7 @@ export default function About() {
     <div className="w-full bg-bg text-primary" id="about-page">
       <Helmet>
         <title>About Urunk | Hospitality Digital Marketing Agency</title>
-        <meta name="description" content="Meet Urunk: A specialized digital growth agency engineered for Moroccan hotels and riads. We turn organic searchers into direct guests with high-performance web engineering and advanced SEO." />
+        <meta name="description" content="Meet Urunk, the digital growth agency built for Moroccan hotels and riads. We turn organic search traffic into commission-free direct guest bookings." />
         <link rel="canonical" href="https://urunk.com/en/about" />
         <link rel="alternate" hrefLang="en" href="https://urunk.com/en/about" />
         <link rel="alternate" hrefLang="fr" href="https://urunk.com/a-propos" />
@@ -241,17 +241,17 @@ export default function About() {
               Operating at the Intersection of Culture & Digital Innovation
             </h2>
             <p className="text-primary/80 font-light leading-relaxed">
-              Based between Marrakech, Casablanca, and Rabat, our team combines deep local immersion in Morocco's legendary hospitality ecosystem with world-class software engineering discipline. We understand the unique operational and marketing challenges faced by riad owners in the historic medinas, luxury resort operators along the Atlantic coast, desert camp managers in the Sahara, and specialized tour companies navigating seasonal travel fluctuations.
+              Headquartered at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco and operating across Marrakech and Rabat, our team combines deep local immersion in Morocco's legendary hospitality ecosystem with world-class software engineering discipline. We understand the unique operational and marketing challenges faced by riad owners in the historic medinas, luxury resort operators along the Atlantic coast, desert camp managers in the Sahara, and specialized tour companies navigating seasonal travel fluctuations.
             </p>
             <p className="text-primary/80 font-light leading-relaxed">
               By eliminating reliance on third-party intermediaries and digital middlemen, we empower Moroccan hospitality brands to reclaim absolute control over their guest relationships, guest data ownership, and net profit margins. We build permanent digital assets that grow in value over time.
             </p>
             <div className="flex flex-wrap gap-4 pt-2" id="about-locations-tags">
               <div className="flex items-center gap-2 text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded-lg">
-                <CheckCircle2 size={16} className="text-accent" /> Marrakech Hub
+                <CheckCircle2 size={16} className="text-accent" /> 3 Rue El Kadi Lass, Maarif, Casablanca
               </div>
               <div className="flex items-center gap-2 text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded-lg">
-                <CheckCircle2 size={16} className="text-accent" /> Casablanca Office
+                <CheckCircle2 size={16} className="text-accent" /> Marrakech Hub
               </div>
               <div className="flex items-center gap-2 text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded-lg">
                 <CheckCircle2 size={16} className="text-accent" /> International Standards

@@ -8,7 +8,7 @@ export default function AboutFR() {
     <div className="w-full bg-bg text-primary" id="about-page-fr">
       <Helmet>
         <title>À Propos | Agence Marketing Digital Hôtelier | Urunk</title>
-        <meta name="description" content="Découvrez Urunk : Une agence de croissance digitale spécialisée pour les hôtels et riads marocains. Nous transformons les internautes en clients directs avec une ingénierie web de haut niveau et un SEO de pointe." />
+        <meta name="description" content="Découvrez Urunk, l'agence de croissance digitale dédiée aux hôtels et riads au Maroc : ingénierie web rapide, SEO local et réservations sans commission." />
         <link rel="canonical" href="https://urunk.com/a-propos" />
         <link rel="alternate" hrefLang="en" href="https://urunk.com/en/about" />
         <link rel="alternate" hrefLang="fr" href="https://urunk.com/a-propos" />
@@ -241,17 +241,17 @@ export default function AboutFR() {
               Au carrefour de la culture et de l'innovation digitale
             </h2>
             <p className="text-primary/80 font-light leading-relaxed">
-              Basée entre Marrakech, Casablanca et Rabat, notre équipe combine une immersion locale profonde dans l'écosystème touristique légendaire du Maroc avec une rigueur d'ingénierie logicielle de classe mondiale. Nous comprenons les défis opérationnels et marketing uniques auxquels sont confrontés les propriétaires de riads dans les médinas historiques, les complexes hôteliers sur la côte atlantique, ou les agences de circuits gérant les fluctuations saisonnières.
+              Basée au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc et intervenant à Marrakech et Rabat, notre équipe combine une immersion locale profonde dans l'écosystème touristique légendaire du Maroc avec une rigueur d'ingénierie logicielle de classe mondiale. Nous comprenons les défis opérationnels et marketing uniques auxquels sont confrontés les propriétaires de riads dans les médinas historiques, les complexes hôteliers sur la côte atlantique, ou les agences de circuits gérant les fluctuations saisonnières.
             </p>
             <p className="text-primary/80 font-light leading-relaxed">
               En éliminant les intermédiaires numériques et les commissions abusives, nous redonnons aux hôteliers marocains le contrôle total de leur relation client, de leurs données et de leurs marges de profit. Nous construisons des actifs digitaux pérennes dont la valeur croît de jour en jour.
             </p>
             <div className="flex flex-wrap gap-4 pt-2" id="about-locations-tags-fr">
               <div className="flex items-center gap-2 text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded-lg">
-                <CheckCircle2 size={16} className="text-accent" /> Hub Marrakech
+                <CheckCircle2 size={16} className="text-accent" /> 3 Rue El Kadi Lass, Maarif, Casablanca
               </div>
               <div className="flex items-center gap-2 text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded-lg">
-                <CheckCircle2 size={16} className="text-accent" /> Bureau Casablanca
+                <CheckCircle2 size={16} className="text-accent" /> Hub Marrakech
               </div>
               <div className="flex items-center gap-2 text-sm font-medium text-primary bg-primary/5 px-4 py-2 rounded-lg">
                 <CheckCircle2 size={16} className="text-accent" /> Standards Internationaux

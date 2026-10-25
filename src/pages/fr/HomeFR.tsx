@@ -47,45 +47,33 @@ export default function HomeFR() {
                 "url": "https://urunk.com/",
                 "logo": "https://urunk.com/logo.png",
                 "sameAs": [
-                  "[URL_LINKEDIN]",
-                  "[URL_FACEBOOK]",
-                  "[URL_INSTAGRAM]"
+                  "https://linkedin.com/company/urunk",
+                  "https://facebook.com/urunk",
+                  "https://instagram.com/urunk"
                 ]
               },
               {
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
-                "@id": "https://urunk.com/#localbusiness-casablanca",
-                "name": "Urunk Casablanca",
-                "url": "https://urunk.com/zones/casablanca",
-                "telephone": "[TELEPHONE]",
+                "@id": "https://urunk.com/#localbusiness",
+                "name": "Urunk",
+                "url": "https://urunk.com/",
+                "telephone": "+212668802096",
+                "email": "contact@urunk.com",
                 "priceRange": "4000 MAD - 12000 MAD",
                 "areaServed": "MA",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": "[ADRESSE_CASABLANCA_ANFA]",
+                  "streetAddress": "3 Rue El Kadi Lass, Maarif",
                   "addressLocality": "Casablanca",
                   "addressRegion": "Casablanca-Settat",
-                  "postalCode": "20000",
+                  "postalCode": "20330",
                   "addressCountry": "MA"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "@id": "https://urunk.com/#localbusiness-marrakech",
-                "name": "Urunk Marrakech",
-                "url": "https://urunk.com/zones/marrakech",
-                "telephone": "[TELEPHONE]",
-                "priceRange": "4000 MAD - 12000 MAD",
-                "areaServed": "MA",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "[ADRESSE_MARRAKECH_GUELIZ]",
-                  "addressLocality": "Marrakech",
-                  "addressRegion": "Marrakech-Safi",
-                  "postalCode": "40000",
-                  "addressCountry": "MA"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 33.5855,
+                  "longitude": -7.6365
                 }
               },
               {
@@ -146,7 +134,7 @@ export default function HomeFR() {
                 Demander un Audit Gratuit <ArrowRight size={18} />
               </Link>
               <a 
-                href="https://wa.me/[NUMERO_SANS_ESPACES]?text=Bonjour%2C%20je%20souhaite%20un%20audit%20gratuit" 
+                href="https://wa.me/212668802096?text=Bonjour%2C%20je%20souhaite%20un%20audit%20gratuit" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-white text-primary border-2 border-primary/10 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:border-accent/30 hover:text-accent transition-all"
@@ -461,7 +449,7 @@ export default function HomeFR() {
                   Pôle d'affaires B2B, cabinets et PME casablancaises.
                 </p>
                 <p className="text-xs font-mono text-primary/70">
-                  [ADRESSE_CASABLANCA_ANFA]
+                  3 Rue El Kadi Lass, Maarif, Casablanca, Maroc
                 </p>
               </Link>
 
@@ -476,7 +464,7 @@ export default function HomeFR() {
                   Hôtellerie de charme, riads en Médina et tour-opérateurs.
                 </p>
                 <p className="text-xs font-mono text-primary/70">
-                  [ADRESSE_MARRAKECH_GUELIZ]
+                  Médina, Guéliz &amp; Palmeraie — Marrakech, Maroc
                 </p>
               </Link>
             </div>

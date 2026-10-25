@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../../components/SEO';
+import { buildArticleSchema } from '../../components/SEO/StructuredData';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { getBlogPostBySlug } from '../../data/blogPosts';
 import { ArrowLeft, Clock } from 'lucide-react';
@@ -22,31 +23,14 @@ export default function BlogPost() {
     );
   }
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.h1 || post.title,
-    "description": post.metaDescription,
-    "datePublished": "2026-10-01",
-    "dateModified": "2026-10-15",
-    "author": {
-      "@type": "Organization",
-      "name": "Urunk Agency",
-      "url": "https://urunk.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Urunk",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://urunk.com/logo.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://urunk.com${location.pathname}`
-    }
-  };
+  const schema = buildArticleSchema({
+    type: 'BlogPosting',
+    url: `https://urunk.com${location.pathname}`,
+    headline: post.h1 || post.title,
+    description: post.metaDescription,
+    datePublished: post.date,
+    lang: isFrench ? 'fr' : 'en'
+  });
 
   // Concise SEO Title under 60 characters
   const seoTitle = post.seoTitle || (() => {
@@ -62,6 +46,7 @@ export default function BlogPost() {
       <SEO 
         title={seoTitle}
         description={post.metaDescription}
+        type="article"
         schema={schema}
       />
       

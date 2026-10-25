@@ -1,6 +1,8 @@
 import React from "react";
 import Callout from "../../../components/fr/CalloutFR";
 import SEO from "../../../components/SEO";
+import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
+import { getMatrixLinksForService } from "../../../data/matrixRelations";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -251,6 +253,15 @@ export default function TripadvisorAdsFR() {
           Explorer le modèle de stratégie <ArrowRight size={18} />
         </Link>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Spécialisations Hôtelières par Destination"
+        title="TripAdvisor Ads & Réservation Directe à Marrakech et Agadir"
+        subtitle="Explorez nos stratégies de placements sponsorisés TripAdvisor, campagnes Google Ads et tunnels directs sans commission au Maroc."
+        links={getMatrixLinksForService('tripadvisor-ads', 'fr')}
+        isFrench={true}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

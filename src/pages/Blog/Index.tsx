@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../../components/SEO';
+import { buildArticleSchema, parseIsoDate } from '../../components/SEO/StructuredData';
 import { Link } from 'react-router-dom';
 import { getBlogPosts } from '../../data/blogPosts';
 import { ArrowRight, Clock } from 'lucide-react';
@@ -7,16 +8,45 @@ import { ArrowRight, Clock } from 'lucide-react';
 export default function BlogIndex() {
   const posts = getBlogPosts(false);
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Urunk Tourism Marketing & Direct Booking Blog",
-    "description": "Expert advice, SEO tips, and ad strategies for hotels, riads, and tour operators.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Urunk"
+  const schemaMarkup = [
+    buildArticleSchema({
+      type: 'Article',
+      url: 'https://urunk.com/en/blog',
+      headline: 'Hotel Marketing Blog: Direct Booking Guides | Urunk',
+      description: 'Actionable advice, SEO tips, and ad strategies for hotels, riads, and tour operators looking to increase direct bookings in Morocco & worldwide.',
+      datePublished: '2026-01-15',
+      lang: 'en'
+    }),
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://urunk.com/en/blog#blog",
+      "name": "Urunk Tourism Marketing & Direct Booking Blog",
+      "description": "Expert advice, SEO tips, and ad strategies for hotels, riads, and tour operators.",
+      "url": "https://urunk.com/en/blog",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Urunk",
+        "url": "https://urunk.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://urunk.com/logo.png"
+        }
+      },
+      "blogPost": posts.slice(0, 10).map(post => ({
+        "@type": "BlogPosting",
+        "headline": post.h1 || post.title,
+        "url": `https://urunk.com/en/blog/${post.slug}`,
+        "datePublished": parseIsoDate(post.date),
+        "author": {
+          "@type": "Person",
+          "name": "J.Mellal",
+          "url": "https://urunk.com/en/about"
+        }
+      }))
     }
-  };
+  ];
 
   return (
     <div className="w-full pb-20">

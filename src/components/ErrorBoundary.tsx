@@ -29,6 +29,24 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('Uncaught component error:', error, errorInfo);
+    const msg = error?.message || '';
+    const isChunkLoadError =
+      msg.includes('Failed to fetch dynamically imported module') ||
+      msg.includes('Importing a module script failed') ||
+      msg.includes('Loading chunk') ||
+      error?.name === 'ChunkLoadError';
+
+    if (isChunkLoadError) {
+      try {
+        const reloadKey = `urunk_boundary_reload_${window.location.pathname}`;
+        if (!sessionStorage.getItem(reloadKey)) {
+          sessionStorage.setItem(reloadKey, '1');
+          window.location.reload();
+        }
+      } catch {
+        // Fallback to manual reload button in ErrorBoundary UI
+      }
+    }
   }
 
   private handleReload = () => {

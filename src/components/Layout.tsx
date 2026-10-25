@@ -19,77 +19,34 @@ export default function Layout() {
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "@id": "https://urunk.com/#casablanca",
-      "name": "Urunk Casablanca",
-      "image": "https://urunk.com/logo.png",
-      "url": "https://urunk.com",
-      "telephone": "+212668802096",
-      "email": "urunkagency@gmail.com",
-      "priceRange": "$$$",
-      "description": isFrench 
-        ? "Agence de création de site web hôtelier et gestion Google Ads & TripAdvisor à Casablanca, Maroc."
-        : "Hotel website design and Google Ads & TripAdvisor management agency in Casablanca, Morocco.",
-      "sameAs": [
-        "https://facebook.com/urunk",
-        "https://instagram.com/urunk",
-        "https://linkedin.com/company/urunk",
-        "https://maps.google.com/?cid=urunk-casablanca"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani, 6ème Étage N°32",
-        "addressLocality": "Casablanca",
-        "addressRegion": "Casablanca-Settat",
-        "postalCode": "20250",
-        "addressCountry": "MA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.589886,
-        "longitude": -7.616644
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "areaServed": [
-        { "@type": "Country", "name": isFrench ? "Maroc" : "Morocco" },
-        { "@type": "AdministrativeArea", "name": isFrench ? "Monde entier" : "Worldwide" }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://urunk.com/#marrakech",
-      "name": "Urunk Marrakech",
+      "@id": "https://urunk.com/#localbusiness",
+      "name": "Urunk",
+      "legalName": "Urunk Digital Agency",
       "image": "https://urunk.com/logo.png",
       "url": "https://urunk.com",
       "telephone": "+212668802096",
       "email": "contact@urunk.com",
       "priceRange": "$$$",
-      "description": isFrench
-        ? "Agence marketing hôtellerie & riads à Marrakech, spécialiste réservations directes et Google Ads."
-        : "Hospitality & riad marketing agency in Marrakech, specializing in direct bookings and Google Ads.",
+      "description": isFrench 
+        ? "Agence de création de site web hôtelier, SEO local et gestion Google Ads & TripAdvisor basée à Casablanca, Maroc."
+        : "Hotel website design, local SEO, and Google Ads & TripAdvisor management agency based in Casablanca, Morocco.",
       "sameAs": [
         "https://facebook.com/urunk",
         "https://instagram.com/urunk",
-        "https://linkedin.com/company/urunk",
-        "https://maps.google.com/?cid=urunk-marrakech"
+        "https://linkedin.com/company/urunk"
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2ème Étage, N°19, Immeuble 35, Lotissement Al Massar",
-        "addressLocality": "Marrakech",
-        "addressRegion": "Marrakech-Safi",
-        "postalCode": "40100",
+        "streetAddress": "3 Rue El Kadi Lass, Maarif",
+        "addressLocality": "Casablanca",
+        "addressRegion": "Casablanca-Settat",
+        "postalCode": "20330",
         "addressCountry": "MA"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 31.629472,
-        "longitude": -7.981084
+        "latitude": 33.5855,
+        "longitude": -7.6365
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -99,6 +56,10 @@ export default function Layout() {
       },
       "areaServed": [
         { "@type": "Country", "name": isFrench ? "Maroc" : "Morocco" },
+        { "@type": "City", "name": "Casablanca" },
+        { "@type": "City", "name": "Marrakech" },
+        { "@type": "City", "name": "Rabat" },
+        { "@type": "City", "name": "Agadir" },
         { "@type": "AdministrativeArea", "name": isFrench ? "Monde entier" : "Worldwide" }
       ]
     }

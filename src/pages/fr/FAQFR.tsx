@@ -28,7 +28,7 @@ export default function FAQFR() {
     },
     {
       q: "Où se trouvent vos bureaux et travaillez-vous avec des clients internationaux ?",
-      a: "Urunk dispose de hubs opérationnels à Marrakech (Guéliz) et Casablanca (Anfa), alliant présence locale au Maroc et standards d'ingénierie internationaux. Nous accompagnons des hôtels, riads et voyagistes à travers le Maroc et à l'international, avec des réunions à distance sur Google Meet et des formules mensuelles sans engagement assorties d'un préavis de 15 jours.",
+      a: "Urunk est basée au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc, avec une présence opérationnelle à Marrakech, alliant ancrage local au Maroc et standards d'ingénierie internationaux. Nous accompagnons des hôtels, riads et voyagistes à travers le Maroc et à l'international, avec des réunions à distance sur Google Meet et des formules mensuelles sans engagement assorties d'un préavis de 15 jours.",
     },
     {
       q: "Pourquoi la vitesse de chargement est-elle cruciale pour un site hôtelier ?",

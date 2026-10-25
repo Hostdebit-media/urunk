@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { industriesData } from '../../data/industriesData';
+import { getMatrixLinksForIndustry } from '../../data/matrixRelations';
 import SEO from '../../components/SEO';
 import Callout from '../../components/Callout';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { Sparkles, Check, ArrowRight, ChevronDown, Award, ExternalLink, Building2 } from 'lucide-react';
 
 interface IndustryLandingPageProps {
@@ -26,6 +28,7 @@ export default function IndustryLandingPage({ industryKey }: IndustryLandingPage
   }
 
   const data = dataMap[lang];
+  const industryExpertiseLinks = getMatrixLinksForIndustry(industryKey, lang);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -194,6 +197,23 @@ export default function IndustryLandingPage({ industryKey }: IndustryLandingPage
         </div>
       </section>
 
+      <RelatedExpertiseSection
+        kicker={isFrench ? "Déploiement Régional par Métier" : "Regional & Vertical Playbooks"}
+        title={
+          isFrench
+            ? "Expertises Locales Dédiées à Votre Secteur d'Activité"
+            : "City & Sector Specializations for Your Industry"
+        }
+        subtitle={
+          isFrench
+            ? "Découvrez comment nous adaptons le référencement naturel, la création web rapide et les campagnes d'acquisition directe aux spécificités de votre secteur à Marrakech, Casablanca, Agadir et Rabat."
+            : "Explore how our engineering and search teams tailor fast web platforms, organic SEO, and paid acquisition for your vertical across Marrakech, Casablanca, Agadir, and Rabat."
+        }
+        links={industryExpertiseLinks}
+        isFrench={isFrench}
+        bgVariant="alt"
+      />
+
       {/* Featured Case Study Link */}
       <section className="bg-primary text-white py-16 px-6 border-y border-white/10">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
@@ -225,7 +245,7 @@ export default function IndustryLandingPage({ industryKey }: IndustryLandingPage
         <div className="bg-white border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-xs">
           <img 
             src="/images/youssef-avatar.webp" 
-            alt="Portrait de Youssef, Stratège en Acquisition Digitale et Fondateur d'Urunk Agency" 
+            alt={isFrench ? "Portrait de J.Mellal, Consultant SEO et Stratège Marketing Digital Propulsé par l'IA au Maroc" : "Portrait of J.Mellal, SEO Consultant and AI-Powered Digital Marketing Strategist in Morocco"} 
             width={88} 
             height={88} 
             loading="lazy" 
@@ -236,12 +256,12 @@ export default function IndustryLandingPage({ industryKey }: IndustryLandingPage
               {isFrench ? "Direction Conseil & Stratégie Sectorielle" : "Sector Strategic Direction"}
             </div>
             <h3 className="text-xl font-serif font-bold text-primary mb-2">
-              {isFrench ? "Expertise Dirigée par Youssef" : "Strategic Direction by Youssef"}
+              {isFrench ? "J.Mellal : Consultant SEO & Stratège Marketing Digital Propulsé par l'IA" : "J.Mellal : SEO Consultant & AI-Powered Digital Marketing Strategist"}
             </h3>
             <p className="text-sm text-primary/80 leading-relaxed m-0 font-light">
               {isFrench 
-                ? "Fondateur d'Urunk Agency et consultant en croissance digitale depuis plus de 8 ans au Maroc. Spécialiste de la rentabilité hôtelière, de la désintermédiation OTA et du positionnement de marque à Casablanca et Marrakech."
-                : "Founder of Urunk Agency and senior digital growth consultant with over 8 years of operational experience across Morocco. Specializing in direct hospitality acquisition, OTA disintermediation, and authority SEO in Casablanca and Marrakech."}
+                ? "Consultant SEO et stratège en marketing digital propulsé par l'IA, accompagnant la croissance en ligne des entreprises au Maroc. Spécialiste de la rentabilité hôtelière, de la désintermédiation OTA et du positionnement d'autorité à Casablanca et Marrakech."
+                : "SEO Consultant, AI-Powered Digital Marketing Strategist, and helping businesses grow online in Morocco. Specializing in direct hospitality acquisition, OTA disintermediation, and authority SEO in Casablanca and Marrakech."}
             </p>
           </div>
         </div>

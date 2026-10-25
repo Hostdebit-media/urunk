@@ -10,16 +10,23 @@ interface SEOProps {
   image?: string;
   schema?: object | object[];
   noindex?: boolean;
+  type?: 'website' | 'article';
 }
 
 const siteUrl = 'https://urunk.com';
 
-export default function SEO({ title, description, image, schema, noindex }: SEOProps) {
+export default function SEO({ title, description, image, schema, noindex, type }: SEOProps) {
   const location = useLocation();
   const isFrench = !location.pathname.startsWith('/en');
   const currentLang = isFrench ? 'fr' : 'en';
   
   const currentPath = location.pathname.endsWith('/') && location.pathname.length > 1 ? location.pathname.slice(0, -1) : location.pathname;
+  const isArticleRoute =
+    currentPath.startsWith('/blog/') ||
+    currentPath.startsWith('/en/blog/') ||
+    currentPath.startsWith('/realisations/') ||
+    currentPath.startsWith('/en/work/');
+  const ogType = type || (isArticleRoute ? 'article' : 'website');
   const pathSegments = currentPath.split('/').filter(Boolean);
 
   const breadcrumbsList = pathSegments.map((segment, index) => {
@@ -140,23 +147,30 @@ export default function SEO({ title, description, image, schema, noindex }: SEOP
     finalDescription = `${finalDescription}${suffix}`;
   }
 
-  // Final length sanity limit check - ensure description <= 155 chars and never cuts a sentence
-  if (finalDescription.length > 155) {
-    const withinLimit = finalDescription.substring(0, 155);
-    // Find last complete sentence ending (.!?) within the 155 character limit
+  // Final length sanity limit check - keep description within 110–160 chars (cap at 158, never cut below 115)
+  const cleanedDesc = finalDescription.replace(/\s+/g, ' ').trim();
+  if (cleanedDesc.length > 158) {
+    const withinLimit = cleanedDesc.substring(0, 158);
+    // Find last complete sentence ending (.!?) within [115, 158]
     const sentenceMatches = [...withinLimit.matchAll(/[.!?](\s+|$)/g)];
+    let cutApplied = false;
     if (sentenceMatches.length > 0) {
       const lastMatch = sentenceMatches[sentenceMatches.length - 1];
       const endIdx = (lastMatch.index ?? 0) + 1;
-      if (endIdx >= 80) {
-        finalDescription = finalDescription.substring(0, endIdx).trim();
+      if (endIdx >= 115) {
+        finalDescription = cleanedDesc.substring(0, endIdx).trim();
+        cutApplied = true;
       }
-    } else {
-      // Fallback: cut cleanly at word boundary without dangling stop words
+    }
+    if (!cutApplied) {
+      // Fallback: cut cleanly at word boundary without dangling stop words or possessives
       const lastSpace = withinLimit.lastIndexOf(' ');
-      if (lastSpace > 80) {
+      if (lastSpace >= 115) {
         let trimmed = withinLimit.substring(0, lastSpace).trim();
-        trimmed = trimmed.replace(/\b(pour les|pour le|pour la|pour|et|de|des|du|en|au|aux|avec|dans|sur|for|and|the|to|in|at|of|with|a|an)\s*$/i, '').trim();
+        trimmed = trimmed.replace(/[,;:\-–—]+\s*$/, '').trim();
+        trimmed = trimmed.replace(/\b(pour les|pour le|pour la|pour|et|de|des|du|en|au|aux|avec|dans|sur|par|vers|sans|for|and|the|to|in|at|of|with|by|from|on|or|a|an)\s*$/i, '').trim();
+        trimmed = trimmed.replace(/(?:[ldLD]['’]|['’]s)\s*$/, '').trim();
+        trimmed = trimmed.replace(/[,;:\-–—]+\s*$/, '').trim();
         if (!trimmed.endsWith('.') && !trimmed.endsWith('!') && !trimmed.endsWith('?')) {
           trimmed += '.';
         }
@@ -165,6 +179,8 @@ export default function SEO({ title, description, image, schema, noindex }: SEOP
         finalDescription = withinLimit.trim();
       }
     }
+  } else {
+    finalDescription = cleanedDesc;
   }
 
   // Canonical URLs and alternate language links (strictly preserve page parameters, but canonicalize sorting/filters)
@@ -188,7 +204,7 @@ export default function SEO({ title, description, image, schema, noindex }: SEOP
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={finalDescription} />
       <meta property="og:url" content={currentUrl} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content="Urunk" />
       <meta property="og:locale" content={isFrench ? "fr_FR" : "en_US"} />
       <meta property="og:image" content={image ? `${siteUrl}${image}` : `${siteUrl}/og-image.jpg`} />

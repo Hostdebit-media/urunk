@@ -1,6 +1,6 @@
 # Urunk Agency — Hospitality Marketing & Web Design Agency
 
-> Urunk Agency est l'agence digitale de référence au Maroc spécialisée dans la création de sites web hôteliers haute performance, le SEO local et la gestion de campagnes publicitaires (Google Ads, Meta Ads, TripAdvisor). Notre mission : maximiser les réservations directes des hôtels de luxe, riads, maisons d'hôtes et voyagistes pour supprimer leur dépendance aux commissions des agences de voyage en ligne (OTAs telles que Booking.com et Expedia). Bureaux opérationnels à Casablanca et Marrakech.
+> Urunk Agency est l'agence digitale de référence au Maroc spécialisée dans la création de sites web hôteliers haute performance, le SEO local et la gestion de campagnes publicitaires (Google Ads, Meta Ads, TripAdvisor). Notre mission : maximiser les réservations directes des hôtels de luxe, riads, maisons d'hôtes et voyagistes pour supprimer leur dépendance aux commissions des agences de voyage en ligne (OTAs telles que Booking.com et Expedia). Siège à Casablanca (3 Rue El Kadi Lass, Maarif) et couverture à Marrakech, Rabat et Agadir.
 
 ## Pages Principales & Stratégiques (Français)
 - [Accueil — Urunk Agency](https://urunk.com/): Présentation de l'agence, proposition de valeur pour l'hôtellerie, intégrations PMS et avis clients.
@@ -30,8 +30,8 @@
 - [PME & Entreprises Locales](https://urunk.com/secteurs/pme-entreprises): Sites vitrines modernes et stratégies d'acquisition B2B au Maroc.
 
 ## Zones Géographiques & Pôles Régionaux
-- [Agence Web & SEO Casablanca](https://urunk.com/zones/casablanca): Bureau central au Boulevard 11 Janvier, au cœur économique du Royaume.
-- [Agence Web & SEO Marrakech](https://urunk.com/zones/marrakech): Bureau dédié au Lotissement Al Massar pour l'écosystème hôtelier de Marrakech.
+- [Agence Web & SEO Casablanca](https://urunk.com/zones/casablanca): Siège au 3 Rue El Kadi Lass, Maarif, Casablanca, au cœur économique du Royaume.
+- [Agence Web & SEO Marrakech](https://urunk.com/zones/marrakech): Pôle régional dédié à l'écosystème hôtelier et aux riads de Marrakech.
 - [Agence Web & SEO Rabat](https://urunk.com/zones/rabat): Services digitaux pour la capitale administrative et le tourisme culturel.
 - [Agence Web & SEO Agadir](https://urunk.com/zones/agadir): Stratégies d'acquisition pour les resorts côtiers et le tourisme balnéaire.
 - [Agence Web Maroc (National)](https://urunk.com/zones/maroc): Couverture complète sur tout le territoire marocain et projets internationaux.
@@ -45,8 +45,8 @@
 - [Contact Urunk Agency (EN)](https://urunk.com/en/contact): International consultation inquiries and quote requests.
 
 ## Coordonnées Officielles
-- **Bureau Casablanca** : 114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani, 6ème Étage N°32, Casablanca, 20250, Maroc.
-- **Bureau Marrakech** : 2ème Étage, N°19, Immeuble 35, Lotissement Al Massar, Marrakech, 40100, Maroc.
+- **Adresse officielle** : 3 Rue El Kadi Lass, Maarif, Casablanca, 20330, Maroc.
+- **Zones d'intervention** : Casablanca, Marrakech, Rabat, Agadir et international.
 - **Téléphone / WhatsApp** : [+212 668-802096](tel:+212668802096)
 - **Email officiel** : [contact@urunk.com](mailto:contact@urunk.com)
 - **Horaires d'ouverture** : Lundi au Vendredi, 09h00 - 18h30 (GMT+1)

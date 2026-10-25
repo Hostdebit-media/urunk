@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import SEO from "../../components/SEO";
-import { Mail, Phone, ArrowRight, Check, Loader2, MessageCircle, ShieldCheck } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, Check, Loader2, MessageCircle, ShieldCheck } from "lucide-react";
 import { trackEvent } from "../../utils/analytics";
 
 const localBusinessSchema = [
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Urunk Casablanca",
+    name: "Urunk",
+    legalName: "Urunk Digital Agency",
     image: "https://urunk.com/logo.png",
-    "@id": "https://urunk.com/#casablanca",
+    "@id": "https://urunk.com/#localbusiness",
     url: "https://urunk.com",
     telephone: "+212668802096",
     email: "contact@urunk.com",
@@ -18,22 +19,20 @@ const localBusinessSchema = [
     sameAs: [
       "https://facebook.com/urunk",
       "https://instagram.com/urunk",
-      "https://linkedin.com/company/urunk",
-      "https://maps.google.com/?cid=urunk-casablanca"
+      "https://linkedin.com/company/urunk"
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress:
-        "114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani, 6ème Étage N°32",
+      streetAddress: "3 Rue El Kadi Lass, Maarif",
       addressLocality: "Casablanca",
       addressRegion: "Casablanca-Settat",
-      postalCode: "20250",
+      postalCode: "20330",
       addressCountry: "MA",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 33.589886,
-      longitude: -7.616644,
+      latitude: 33.5855,
+      longitude: -7.6365,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -42,54 +41,14 @@ const localBusinessSchema = [
       closes: "18:00",
     },
     areaServed: [
-      { "@type": "Country", "name": "Morocco" },
-      { "@type": "City", "name": "Casablanca" },
-      { "@type": "City", "name": "Marrakech" },
-      { "@type": "City", "name": "Agadir" },
-      { "@type": "City", "name": "Taghazout" }
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Urunk Marrakech",
-    image: "https://urunk.com/logo.png",
-    "@id": "https://urunk.com/#marrakech",
-    url: "https://urunk.com",
-    telephone: "+212668802096",
-    email: "contact@urunk.com",
-    priceRange: "$$$",
-    sameAs: [
-      "https://facebook.com/urunk",
-      "https://instagram.com/urunk",
-      "https://linkedin.com/company/urunk",
-      "https://maps.google.com/?cid=urunk-marrakech"
-    ],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "2ème Étage, N°19, Immeuble 35, Lotissement Al Massar",
-      addressLocality: "Marrakech",
-      addressRegion: "Marrakech-Safi",
-      postalCode: "40100",
-      addressCountry: "MA",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 31.629472,
-      longitude: -7.981084,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    areaServed: [
-      { "@type": "Country", "name": "Morocco" },
-      { "@type": "City", "name": "Marrakech" },
-      { "@type": "City", "name": "Casablanca" },
-      { "@type": "City", "name": "Essaouira" },
-      { "@type": "City", "name": "Fes" }
+      { "@type": "Country", name: "Morocco" },
+      { "@type": "City", name: "Casablanca" },
+      { "@type": "City", name: "Marrakech" },
+      { "@type": "City", name: "Rabat" },
+      { "@type": "City", name: "Agadir" },
+      { "@type": "City", name: "Taghazout" },
+      { "@type": "City", name: "Essaouira" },
+      { "@type": "City", name: "Fes" }
     ],
   },
 ];
@@ -232,6 +191,12 @@ export default function ContactFR() {
                 </div>
                 (+212)0668802096
               </a>
+              <div className="flex items-center gap-4 text-white/90 text-base">
+                <div className="bg-white/10 p-3 rounded-full shrink-0">
+                  <MapPin size={22} />
+                </div>
+                <span>3 Rue El Kadi Lass, Maarif, Casablanca, Maroc</span>
+              </div>
               <a 
                 href={whatsappUrl}
                 target="_blank"
@@ -440,7 +405,7 @@ export default function ContactFR() {
             <div className="lg:col-span-6 bg-primary text-white p-8 md:p-10 rounded-3xl space-y-6">
               <h3 className="text-2xl font-serif font-bold text-white">Bureaux & Disponibilité</h3>
               <p className="text-white/80 font-light text-sm leading-relaxed">
-                Grâce à nos hubs opérationnels situés à <strong>Casablanca (Anfa)</strong> et <strong>Marrakech (Guéliz)</strong>, notre équipe est disponible pour des réunions en personne ou des échanges en visioconférence via Google Meet pour nos clients internationaux.
+                Depuis notre bureau situé au <strong>3 Rue El Kadi Lass, Maarif, Casablanca, Maroc</strong>, avec une couverture opérationnelle dédiée à <strong>Marrakech, Rabat et Agadir</strong>, notre équipe est disponible pour des réunions en personne ou des échanges en visioconférence via Google Meet pour nos clients internationaux.
               </p>
               <div className="space-y-3 text-xs text-white/90 font-light">
                 <p className="flex items-center gap-2"><ShieldCheck className="text-yellow-400" size={16} /> <strong>Garantie de réponse :</strong> Toute demande professionnelle reçoit une réponse sous 24h ouvrées.</p>
@@ -496,7 +461,7 @@ export default function ContactFR() {
             <div className="bg-white p-6 rounded-2xl border border-primary/10">
               <h3 className="font-bold text-lg text-primary mb-2">2. Devons-nous nous rencontrer en personne ou à distance ?</h3>
               <p className="text-primary/70 text-sm leading-relaxed font-light">
-                Nous disposons de bureaux physiques à Casablanca et Marrakech pour des rendez-vous en personne, mais nous organisons également plus de 90% de nos réunions de cadrage via Google Meet ou Zoom pour plus de flexibilité.
+                Notre siège est situé au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc pour des rendez-vous sur place, et nous organisons plus de 90 % de nos réunions de cadrage à Marrakech, partout au Maroc et à l'international via Google Meet ou Zoom.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-primary/10">

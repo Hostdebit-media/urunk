@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "../../components/SEO";
+import { buildArticleSchema, parseIsoDate } from "../../components/SEO/StructuredData";
 import { Link } from "react-router-dom";
 import { getBlogPosts } from "../../data/blogPosts";
 import { ArrowRight, BookOpen, Clock } from "lucide-react";
@@ -7,17 +8,46 @@ import { ArrowRight, BookOpen, Clock } from "lucide-react";
 export default function BlogFR() {
   const posts = getBlogPosts(true);
 
-  const schemaMarkup = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    name: "Blog Urunk - Stratégies de Réservation Directe Hôtellerie",
-    description:
-      "Conseils d'experts et stratégies publicitaires pour hôtels, riads et voyagistes.",
-    publisher: {
-      "@type": "Organization",
-      name: "Urunk",
-    },
-  };
+  const schemaMarkup = [
+    buildArticleSchema({
+      type: "Article",
+      url: "https://urunk.com/blog",
+      headline: "Blog Marketing Riad : Conseils & Stratégies SEO | Urunk",
+      description: "Conseils pratiques, astuces SEO et stratégies publicitaires pour hôtels, riads et agences de voyage cherchant à augmenter leurs réservations directes au Maroc.",
+      datePublished: "2026-01-15",
+      lang: "fr"
+    }),
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": "https://urunk.com/blog#blog",
+      name: "Blog Urunk - Stratégies de Réservation Directe Hôtellerie",
+      description:
+        "Conseils d'experts et stratégies publicitaires pour hôtels, riads et voyagistes.",
+      url: "https://urunk.com/blog",
+      inLanguage: "fr-MA",
+      publisher: {
+        "@type": "Organization",
+        name: "Urunk",
+        url: "https://urunk.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://urunk.com/logo.png"
+        }
+      },
+      blogPost: posts.slice(0, 10).map((post) => ({
+        "@type": "BlogPosting",
+        headline: post.h1 || post.title,
+        url: `https://urunk.com/blog/${post.slug}`,
+        datePublished: parseIsoDate(post.date),
+        author: {
+          "@type": "Person",
+          name: "J.Mellal",
+          url: "https://urunk.com/a-propos"
+        }
+      }))
+    }
+  ];
 
   return (
     <div className="w-full pb-20">

@@ -8,7 +8,7 @@ export default function PrivacyPolicyFR() {
     <div className="w-full pb-20">
       <SEO
         title="Politique de confidentialité | Urunk Agency"
-        description="Politique de confidentialité d'Urunk, détaillant la façon dont nous gérons les données de nos clients."
+        description="Consultez la politique de confidentialité de l'agence Urunk, détaillant la collecte, le stockage et la protection de vos données personnelles."
         noindex={false}
       />
 
@@ -109,9 +109,11 @@ export default function PrivacyPolicyFR() {
             Si vous avez des questions ou des suggestions concernant notre politique de confidentialité, n'hésitez pas à nous contacter :
           </p>
           <p>
+            <strong>Adresse :</strong> 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc
+            <br />
             <strong>E-mail :</strong> contact@urunk.com
             <br />
-            <strong>Téléphone :</strong> (+212)0668802096
+            <strong>Téléphone :</strong> +212 668-802096
           </p>
         </div>
       </section>

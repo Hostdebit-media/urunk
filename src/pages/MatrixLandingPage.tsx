@@ -3,9 +3,10 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { locationsData, MarketStat, CityServiceFaqItem } from '../data/locationsData';
 import { industriesData } from '../data/industriesData';
 import { servicesData } from '../data/servicesData';
-import { matrixRelations, findMatrixRelation, MatrixRelation } from '../data/matrixRelations';
+import { matrixRelations, findMatrixRelation, MatrixRelation, getRelatedMatrixLinks } from '../data/matrixRelations';
 import { buildMatrixMetadata } from '../data/matrixMetadata';
 import SEO from '../components/SEO';
+import RelatedExpertiseSection from '../components/RelatedExpertiseSection';
 import { buildFAQPageSchema } from '../components/SEO/StructuredData';
 import { 
   MapPin, 
@@ -183,6 +184,17 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
 
   // Status gating & SEO indexation: planned pages receive noindex
   const isPlanned = matchedRelation?.status === 'planned';
+
+  const relatedExpertiseLinks = getRelatedMatrixLinks(
+    {
+      currentId: matchedRelation?.id,
+      serviceId: resolvedServiceId,
+      locationId: resolvedLocationId,
+      industryId: effectiveIndustryId
+    },
+    lang,
+    6
+  );
 
   return (
     <div className="min-h-screen bg-bg text-primary selection:bg-accent/20">
@@ -536,7 +548,7 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
         <div className="bg-white border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-xs">
           <img 
             src="/images/youssef-avatar.webp" 
-            alt="Portrait de Youssef, Stratège en Acquisition Digitale et Fondateur d'Urunk Agency" 
+            alt={isFrench ? "Portrait de J.Mellal, Consultant SEO et Stratège Marketing Digital Propulsé par l'IA au Maroc" : "Portrait of J.Mellal, SEO Consultant and AI-Powered Digital Marketing Strategist in Morocco"} 
             width={88} 
             height={88} 
             loading="lazy" 
@@ -547,12 +559,12 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
               {isFrench ? "Direction Conseil & Stratégie Métier" : "Senior Strategic Direction"}
             </div>
             <h3 className="text-xl font-serif font-bold text-primary mb-2">
-              {isFrench ? "Supervision par Youssef" : "Strategic Supervision by Youssef"}
+              {isFrench ? "J.Mellal : Consultant SEO & Stratège Marketing Digital Propulsé par l'IA" : "J.Mellal : SEO Consultant & AI-Powered Digital Marketing Strategist"}
             </h3>
             <p className="text-sm text-primary/80 leading-relaxed m-0 font-light">
               {isFrench 
-                ? "Fondateur d'Urunk Agency, intervenant régulier sur la désintermédiation hôtelière et les stratégies de rentabilité digitale au Maroc. Plus de 8 ans d'expérience opérationnelle sur Casablanca, Marrakech, Rabat et Agadir."
-                : "Founder of Urunk Agency and senior growth strategist with 8+ years of expertise. Specializing in hospitality disintermediation, Google Ads, and full-funnel direct-booking optimization across Morocco."}
+                ? "Consultant SEO et stratège en marketing digital propulsé par l'IA, accompagnant la croissance en ligne des entreprises et établissements hôteliers au Maroc (Casablanca, Marrakech, Rabat et Agadir)."
+                : "SEO Consultant, AI-Powered Digital Marketing Strategist, and helping businesses grow online in Morocco. Specializing in hospitality disintermediation, Google Ads, and full-funnel direct-booking optimization across Morocco."}
             </p>
           </div>
         </div>
@@ -611,6 +623,19 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
           </div>
         </section>
       )}
+
+      <RelatedExpertiseSection
+        kicker={isFrench ? "Maillage d'Expertises Complémentaires" : "Related Regional & Sector Expertise"}
+        title={isFrench ? `Autres Expertises Spécialisées (${locationName} & Maroc)` : `Complementary Specializations (${locationName} & Morocco)`}
+        subtitle={
+          isFrench
+            ? "Explorez nos pages d'intervention connexes combinant création web rapide, référencement local et campagnes d'acquisition directe dans les principaux pôles marocains."
+            : "Explore connected regional and vertical playbooks uniting sub-second web design, local search authority, and commission-free direct acquisition across Morocco."
+        }
+        links={relatedExpertiseLinks}
+        isFrench={isFrench}
+        bgVariant="default"
+      />
 
       {/* Conversion Final CTA */}
       <section className="py-16 md:py-24 px-6 bg-primary text-white text-center">

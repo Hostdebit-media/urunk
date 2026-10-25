@@ -43,7 +43,7 @@ export default function FAQ() {
     {
       category: 'general',
       question: 'Where is Urunk located and do you work with international clients?',
-      answer: 'Urunk maintains primary operational offices in Marrakech (Guéliz) and Casablanca (Anfa), providing local presence for Moroccan property owners alongside global service standards. We partner with luxury riads, boutique hotels, and tour operators across Morocco and internationally, offering remote consultations via Google Meet and flexible monthly retainers with a 15 days\' notice policy.'
+      answer: 'Urunk is headquartered at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco, with regional presence in Marrakech, providing local proximity for Moroccan property owners alongside global service standards. We partner with luxury riads, boutique hotels, and tour operators across Morocco and internationally, offering remote consultations via Google Meet and flexible monthly retainers with a 15 days\' notice policy.'
     },
     {
       category: 'seo',

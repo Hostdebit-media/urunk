@@ -1,6 +1,8 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
+import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -318,6 +320,15 @@ export default function WebsiteDesign() {
           Explore Marrakech Case Study <ArrowRight size={18} />
         </Link>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Regional Web Engineering"
+        title="Specialized Web Design & Direct Booking Hubs Across Morocco"
+        subtitle="Explore our city-specific web engineering and direct booking roadmaps across Marrakech, Casablanca, Agadir, and Rabat."
+        links={getMatrixLinksForService('website-design', 'en')}
+        isFrench={false}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

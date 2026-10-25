@@ -106,6 +106,17 @@ export default function TermsOfService() {
             </p>
           </div>
 
+          <div>
+            <h2 className="text-2xl font-serif font-bold text-primary mb-4">9. Contact Us</h2>
+            <p>
+              <strong>Address:</strong> 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco
+              <br />
+              <strong>Email:</strong> contact@urunk.com
+              <br />
+              <strong>Phone:</strong> +212 668-802096
+            </p>
+          </div>
+
         </div>
       </section>
     </div>

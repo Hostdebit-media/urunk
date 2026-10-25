@@ -28,7 +28,7 @@ export default function FaqSectionFR() {
     },
     {
       q: "Où êtes-vous basés et comment collaborez-vous avec vos clients ?",
-      a: "Urunk dispose de bureaux opérationnels à Marrakech (Guéliz) et à Casablanca (Anfa), assurant une proximité physique pour nos clients au Maroc. Nous collaborons à distance via des points réguliers sur Google Meet et proposons des contrats mensuels flexibles sans engagement abusif avec un préavis de résiliation de 15 jours."
+      a: "Urunk est basée au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc, avec une présence opérationnelle dédiée auprès des hôteliers à Marrakech, Rabat et Agadir. Nous collaborons à distance via des points réguliers sur Google Meet et proposons des contrats mensuels flexibles sans engagement abusif avec un préavis de résiliation de 15 jours."
     },
     {
       q: "Y a-t-il des frais de configuration pour les campagnes Google, Meta ou TripAdvisor ?",

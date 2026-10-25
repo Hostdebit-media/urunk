@@ -1,6 +1,8 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
+import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -157,6 +159,15 @@ export default function MetaAds() {
           </div>
         </div>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Regional Paid Social & Funnels"
+        title="Meta Ads & Direct Acquisition Across Moroccan Hubs"
+        subtitle="Discover how we pair Instagram and Facebook visual funnels with search and direct booking systems across Marrakech, Casablanca, and Agadir."
+        links={getMatrixLinksForService('meta-ads', 'en')}
+        isFrench={false}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

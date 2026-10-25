@@ -85,8 +85,17 @@ export default {
     }
 
     try {
-      // 1. Trailing slash normalization (redirect /page/ -> /page, except root '/')
-      if (pathname.length > 1 && pathname.endsWith("/")) {
+      const normalizedPathname = pathname.toLowerCase();
+      const isStaticAssetPath =
+        normalizedPathname.startsWith("/assets/") ||
+        normalizedPathname.startsWith("/images/") ||
+        normalizedPathname.startsWith("/icons/") ||
+        /\.(?:js|mjs|css|map|json|xml|txt|ico|svg|png|jpe?g|webp|avif|gif|woff2?|ttf|eot|webmanifest)$/i.test(
+          normalizedPathname
+        );
+
+      // 1. Trailing slash normalization for HTML routes only (redirect /page/ -> /page, except root '/')
+      if (!isStaticAssetPath && pathname.length > 1 && pathname.endsWith("/")) {
         const cleanPath = pathname.slice(0, -1);
         const redirectUrl = new URL(cleanPath + search, url.origin);
         const redirectHeaders = new Headers({
@@ -100,7 +109,7 @@ export default {
       }
 
       // 2. Legacy /fr/ route handling (redirect /fr or /fr/path -> / or /path)
-      if (pathname === "/fr" || pathname.startsWith("/fr/")) {
+      if (!isStaticAssetPath && (pathname === "/fr" || pathname.startsWith("/fr/"))) {
         let targetPath = pathname === "/fr" || pathname === "/fr/" ? "/" : pathname.slice(3);
         if (targetPath === "/services/gestion-google-ads") targetPath = "/google-ads-maroc";
         if (targetPath === "/services/bundle") targetPath = "/services/bundle-site-ads";
@@ -154,8 +163,7 @@ export default {
         "/en/html-sitemap": "/en/sitemap"
       };
 
-      const normalizedPathname = pathname.toLowerCase();
-      if (CANONICAL_REDIRECTS[normalizedPathname]) {
+      if (!isStaticAssetPath && CANONICAL_REDIRECTS[normalizedPathname]) {
         const redirectUrl = new URL(CANONICAL_REDIRECTS[normalizedPathname] + search, url.origin);
         const redirectHeaders = new Headers({
           Location: redirectUrl.toString()
@@ -169,6 +177,57 @@ export default {
 
       // 3. Attempt direct fetch from static assets
       let assetResponse = await env.ASSETS.fetch(request);
+      let isFallbackEntryAsset = false;
+
+      // 3b. Case-insensitive & deployment-skew resilience for /assets/* bundles
+      if (assetResponse.status === 404 && normalizedPathname.startsWith("/assets/")) {
+        // First try lowercase asset path in case crawler/proxy normalized casing
+        if (pathname !== normalizedPathname) {
+          const lowerAssetUrl = new URL(normalizedPathname + search, url.origin);
+          assetResponse = await env.ASSETS.fetch(new Request(lowerAssetUrl.toString(), request));
+        }
+
+        // Next, if a stale HTML cache or delayed crawler render queue requests a previous
+        // root entry bundle (/assets/index-<hash>.js or /assets/index-<hash>.css),
+        // serve the current live entry asset from /assets/asset-manifest.json so JS/CSS never 404s.
+        const isEntryJsRequest = /^\/assets\/index-[a-z0-9_-]+\.js$/i.test(normalizedPathname);
+        const isEntryCssRequest = /^\/assets\/index-[a-z0-9_-]+\.css$/i.test(normalizedPathname);
+
+        if (assetResponse.status === 404 && (isEntryJsRequest || isEntryCssRequest)) {
+          const manifestUrl = new URL("/assets/asset-manifest.json", url.origin);
+          const manifestRes = await env.ASSETS.fetch(new Request(manifestUrl.toString(), request));
+          if (manifestRes.status === 200) {
+            const manifest = (await manifestRes.json()) as {
+              entryJs?: string | null;
+              entryCss?: string | null;
+            };
+            const targetAssetPath = isEntryJsRequest ? manifest.entryJs : manifest.entryCss;
+            if (targetAssetPath) {
+              const fallbackUrl = new URL(targetAssetPath, url.origin);
+              const fallbackRes = await env.ASSETS.fetch(new Request(fallbackUrl.toString(), request));
+              if (fallbackRes.status === 200) {
+                assetResponse = fallbackRes;
+                isFallbackEntryAsset = true;
+              }
+            }
+          }
+        }
+
+        // If a non-existent static chunk/asset is still 404, return a clean non-HTML 404 (never cache 404s)
+        if (assetResponse.status === 404) {
+          const missingAssetHeaders = new Headers();
+          applySecurityHeaders(missingAssetHeaders);
+          missingAssetHeaders.set("Content-Type", "text/plain; charset=utf-8");
+          missingAssetHeaders.set("Cache-Control", "no-store, no-cache, must-revalidate");
+          missingAssetHeaders.set("CDN-Cache-Control", "no-store");
+          missingAssetHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+          return new Response("Asset Not Found", {
+            status: 404,
+            statusText: "Not Found",
+            headers: missingAssetHeaders
+          });
+        }
+      }
 
       // 4. Clean URL resolution: if 404 and no file extension in path, try .html or /index.html
       if (assetResponse.status === 404 && !pathname.includes(".")) {
@@ -195,6 +254,8 @@ export default {
         applySecurityHeaders(notFoundHeaders);
         notFoundHeaders.set("Content-Type", "text/html; charset=utf-8");
         notFoundHeaders.set("Cache-Control", "no-cache, no-store, must-revalidate");
+        notFoundHeaders.set("CDN-Cache-Control", "no-store");
+        notFoundHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
 
         const durationMs = Date.now() - startTime;
         console.log(
@@ -225,15 +286,41 @@ export default {
       if (pathname === "/.well-known/security.txt") {
         responseHeaders.set("Content-Type", "text/plain; charset=utf-8");
         responseHeaders.set("Cache-Control", "public, max-age=86400");
-      } else if (pathname.startsWith("/assets/") || pathname.startsWith("/images/") || pathname.endsWith(".svg")) {
+      } else if (isFallbackEntryAsset) {
+        // Ensure fallback responses for stale entry hashes execute with proper MIME type but are never cached permanently
+        if (pathname.toLowerCase().endsWith(".js")) {
+          responseHeaders.set("Content-Type", "application/javascript; charset=utf-8");
+        } else if (pathname.toLowerCase().endsWith(".css")) {
+          responseHeaders.set("Content-Type", "text/css; charset=utf-8");
+        }
+        responseHeaders.set("Cache-Control", "public, max-age=0, s-maxage=0, must-revalidate");
+        responseHeaders.set("CDN-Cache-Control", "no-store");
+        responseHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+      } else if (normalizedPathname === "/assets/asset-manifest.json") {
+        responseHeaders.set("Content-Type", "application/json; charset=utf-8");
+        responseHeaders.set("Cache-Control", "no-store, no-cache, must-revalidate");
+        responseHeaders.set("CDN-Cache-Control", "no-store");
+        responseHeaders.set("Cloudflare-CDN-Cache-Control", "no-store");
+      } else if (
+        normalizedPathname.startsWith("/assets/") ||
+        normalizedPathname.startsWith("/images/") ||
+        normalizedPathname.endsWith(".svg")
+      ) {
+        if (normalizedPathname.endsWith(".js") || normalizedPathname.endsWith(".mjs")) {
+          responseHeaders.set("Content-Type", "application/javascript; charset=utf-8");
+        } else if (normalizedPathname.endsWith(".css")) {
+          responseHeaders.set("Content-Type", "text/css; charset=utf-8");
+        }
         responseHeaders.set("Cache-Control", "public, max-age=31536000, immutable");
       } else if (pathname.endsWith(".ico") || pathname === "/favicon.ico") {
         responseHeaders.set("Cache-Control", "public, max-age=86400");
       } else if (pathname === "/robots.txt" || pathname === "/llms.txt" || pathname.endsWith(".xml")) {
         responseHeaders.set("Cache-Control", "public, max-age=3600");
       } else if (contentType.includes("text/html")) {
-        // Ensure pre-rendered HTML gets revalidated on new deploys
-        responseHeaders.set("Cache-Control", "public, max-age=0, must-revalidate");
+        // Prevent Cloudflare Edge CDN from serving stale pre-rendered HTML referencing deleted JS hashes across deploys
+        responseHeaders.set("Cache-Control", "public, max-age=0, s-maxage=0, must-revalidate");
+        responseHeaders.set("CDN-Cache-Control", "no-cache, no-store, must-revalidate");
+        responseHeaders.set("Cloudflare-CDN-Cache-Control", "no-cache, no-store, must-revalidate");
       }
 
       const durationMs = Date.now() - startTime;

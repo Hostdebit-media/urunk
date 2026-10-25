@@ -1,6 +1,8 @@
 import React from "react";
 import Callout from "../../../components/Callout";
 import SEO from "../../../components/SEO";
+import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
+import { getMatrixLinksForService } from "../../../data/matrixRelations";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -251,6 +253,15 @@ export default function MetaAdsFR() {
           </div>
         </div>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Acquisition Régionale & Social Ads"
+        title="Publicité Meta Ads & Réservation Directe par Ville au Maroc"
+        subtitle="Découvrez nos dispositifs d'acquisition Instagram, Facebook, Google Ads et réservation directe à Marrakech, Casablanca et Agadir."
+        links={getMatrixLinksForService('meta-ads', 'fr')}
+        isFrench={true}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

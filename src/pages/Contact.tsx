@@ -109,26 +109,19 @@ export default function Contact() {
               "telephone": "+212668802096",
               "email": "contact@urunk.com",
               "priceRange": "$$$",
-              "address": [
-                {
-                  "@type": "PostalAddress",
-                  "streetAddress": "114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani, 6ème Étage N°32",
-                  "addressLocality": "Casablanca",
-                  "postalCode": "20250",
-                  "addressCountry": "MA"
-                },
-                {
-                  "@type": "PostalAddress",
-                  "streetAddress": "2ème Étage, N°19, Immeuble 35, Lotissement Al Massar",
-                  "addressLocality": "Marrakech",
-                  "postalCode": "40100",
-                  "addressCountry": "MA"
-                }
-              ],
-              "geo": [
-                { "@type": "GeoCoordinates", "latitude": 33.589886, "longitude": -7.616644 },
-                { "@type": "GeoCoordinates", "latitude": 31.629472, "longitude": -7.981084 }
-              ],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3 Rue El Kadi Lass, Maarif",
+                "addressLocality": "Casablanca",
+                "addressRegion": "Casablanca-Settat",
+                "postalCode": "20330",
+                "addressCountry": "MA"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.5855,
+                "longitude": -7.6365
+              },
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -138,9 +131,7 @@ export default function Contact() {
               "sameAs": [
                 "https://facebook.com/urunk",
                 "https://instagram.com/urunk",
-                "https://linkedin.com/company/urunk",
-                "https://maps.google.com/?cid=urunk-casablanca",
-                "https://maps.google.com/?cid=urunk-marrakech"
+                "https://linkedin.com/company/urunk"
               ]
             }
           })}
@@ -205,9 +196,9 @@ export default function Contact() {
                     <MapPin size={22} />
                   </div>
                   <div>
-                    <span className="text-xs text-primary/60 uppercase tracking-wider font-semibold">Moroccan Offices</span>
+                    <span className="text-xs text-primary/60 uppercase tracking-wider font-semibold">Agency Address</span>
                     <p className="text-sm font-medium text-primary">
-                      Guéliz, Marrakech & Anfa, Casablanca
+                      3 Rue El Kadi Lass, Maarif, Casablanca, Morocco
                     </p>
                   </div>
                 </div>
@@ -446,7 +437,7 @@ export default function Contact() {
             <div className="lg:col-span-6 bg-primary text-white p-8 md:p-10 rounded-3xl space-y-6">
               <h3 className="text-2xl font-serif font-bold text-white">Office & Availability</h3>
               <p className="text-white/80 font-light text-sm leading-relaxed">
-                With operational hubs in <strong>Casablanca (Anfa)</strong> and <strong>Marrakech (Guéliz)</strong>, our team is readily accessible for in-person consultations with property owners across Morocco or seamless virtual sessions via Google Meet for international clients.
+                Headquartered at <strong>3 Rue El Kadi Lass, Maarif, Casablanca, Morocco</strong>, with dedicated hospitality coverage across <strong>Marrakech, Rabat, and Agadir</strong>, our team is readily accessible for in-person consultations with property owners across Morocco or seamless virtual sessions via Google Meet for international clients.
               </p>
               <div className="space-y-3 text-xs text-white/90 font-light">
                 <p className="flex items-center gap-2"><CheckCircle2 className="text-yellow-400" size={16} /> <strong>Response Guarantee:</strong> All business inquiries receive a response within 24 business hours.</p>
@@ -502,7 +493,7 @@ export default function Contact() {
             <div className="bg-white p-6 rounded-2xl border border-primary/10">
               <h3 className="font-bold text-lg text-primary mb-2">2. Do I need to meet in person, or can we connect remotely?</h3>
               <p className="text-primary/70 text-sm leading-relaxed font-light">
-                While we maintain physical offices in Marrakech and Casablanca for in-person meetings with property owners, 90% of our discovery sessions are conducted via Google Meet or Zoom for maximum convenience.
+                While our physical headquarters is located at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco for in-person meetings, 90% of our discovery sessions across Marrakech, Morocco, and abroad are conducted via Google Meet or Zoom for maximum convenience.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-primary/10">

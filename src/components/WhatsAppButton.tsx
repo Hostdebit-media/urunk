@@ -9,7 +9,7 @@ export default function WhatsAppButton() {
   const defaultMessage = isFrench 
     ? "Bonjour Urunk, je souhaite obtenir un devis gratuit pour mon entreprise touristique." 
     : "Hello Urunk, I want a free quote for my tourism business.";
-  const url = "https://wa.me/[NUMERO_SANS_ESPACES]?text=Bonjour%2C%20je%20souhaite%20un%20audit%20gratuit";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
   return (
     <a

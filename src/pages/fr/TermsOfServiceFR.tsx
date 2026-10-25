@@ -119,9 +119,11 @@ export default function TermsOfServiceFR() {
             Pour toute demande d'éclaircissement ou question concernant nos conditions contractuelles, vous pouvez joindre notre direction :
           </p>
           <p>
+            <strong>Adresse :</strong> 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc
+            <br />
             <strong>E-mail :</strong> contact@urunk.com
             <br />
-            <strong>Téléphone :</strong> (+212)0668802096
+            <strong>Téléphone :</strong> +212 668-802096
           </p>
         </div>
       </section>

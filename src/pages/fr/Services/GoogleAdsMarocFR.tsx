@@ -191,7 +191,16 @@ export default function GoogleAdsMarocFR() {
       '@type': 'ProfessionalService',
       name: 'Urunk',
       url: 'https://urunk.com',
-      email: 'urunkagency@gmail.com'
+      email: 'contact@urunk.com',
+      telephone: '+212668802096',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '3 Rue El Kadi Lass, Maarif',
+        addressLocality: 'Casablanca',
+        addressRegion: 'Casablanca-Settat',
+        postalCode: '20330',
+        addressCountry: 'MA'
+      }
     },
     areaServed: [
       { '@type': 'Country', name: 'Maroc' },
@@ -805,7 +814,7 @@ export default function GoogleAdsMarocFR() {
         <div className="bg-white border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
           <img
             src="/images/youssef-avatar.webp"
-            alt="Portrait de Youssef, Stratège SEA certifié Google Ads et Fondateur d'Urunk au Maroc"
+            alt="Portrait de J.Mellal, Consultant SEO et Stratège Marketing Digital Propulsé par l'IA au Maroc"
             width={88}
             height={88}
             loading="lazy"
@@ -813,13 +822,13 @@ export default function GoogleAdsMarocFR() {
           />
           <div>
             <p className="text-xs font-bold text-accent uppercase tracking-wider mb-1">
-              Direction Stratégique SEA &amp; Analytics
+              Direction Stratégique SEA, SEO &amp; IA
             </p>
             <h3 className="text-xl font-serif font-bold text-primary mb-2">
-              Comptes supervisés par Youssef — Consultant Certifié Google Ads &amp; GA4
+              J.Mellal : Consultant SEO &amp; Stratège Marketing Digital Propulsé par l'IA
             </h3>
             <p className="text-sm text-primary/80 leading-relaxed m-0 font-light">
-              Fondateur d'Urunk et stratège en acquisition payante depuis plus de 8 ans au Maroc. Chaque architecture de compte Google Ads (PME B2B à Casablanca, e-commerce national ou hôtellerie de charme à Marrakech) est auditée et pilotée avec une exigence unique : réduire votre coût par client acquis et maximiser votre marge nette vérifiée.
+              Consultant SEO et stratège en marketing digital propulsé par l'IA, J.Mellal accompagne la croissance en ligne des entreprises au Maroc. Chaque architecture de compte Google Ads et GA4 (PME B2B à Casablanca, e-commerce national ou hôtellerie de charme à Marrakech) est auditée et pilotée avec une exigence unique : réduire votre coût par client acquis et maximiser votre marge nette vérifiée.
             </p>
           </div>
         </div>
@@ -894,10 +903,10 @@ export default function GoogleAdsMarocFR() {
               <ArrowRight size={18} />
             </Link>
             <a
-              href="mailto:urunkagency@gmail.com"
+              href="mailto:contact@urunk.com"
               className="w-full sm:w-auto border border-white/20 hover:border-white/40 px-7 py-4 rounded-xl font-semibold text-white/90 hover:text-white transition-all inline-flex items-center justify-center"
             >
-              urunkagency@gmail.com
+              contact@urunk.com
             </a>
           </div>
         </div>

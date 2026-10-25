@@ -28,7 +28,7 @@ export default function FaqSection() {
     },
     {
       q: "Where is Urunk located and how do you work with clients?",
-      a: "Urunk maintains operational offices in Marrakech (Gueliz) and Casablanca (Anfa) for local presence in Morocco. We collaborate via remote consultations on Google Meet and offer flexible monthly agreements with a 15-day notice policy."
+      a: "Urunk is headquartered at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco, with active hospitality coverage in Marrakech, Rabat, and Agadir. We collaborate via remote consultations on Google Meet and offer flexible monthly agreements with a 15-day notice policy."
     },
     {
       q: "Are there setup fees for Google, Meta, or TripAdvisor campaigns?",

@@ -1,6 +1,8 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
+import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -168,6 +170,15 @@ export default function GoogleAds() {
           Explore Strategy Example <ArrowRight size={18} />
         </Link>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Regional Paid Search Hubs"
+        title="Google Ads & Direct Booking Specializations Across Morocco"
+        subtitle="Explore localized paid search, hospitality advertising, and direct booking strategies in Casablanca, Marrakech, and Agadir."
+        links={getMatrixLinksForService('google-ads-morocco', 'en')}
+        isFrench={false}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

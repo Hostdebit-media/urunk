@@ -1,5 +1,6 @@
 import React from "react";
 import SEO from "../../components/SEO";
+import { buildArticleSchema } from "../../components/SEO/StructuredData";
 import { Link } from "react-router-dom";
 import { caseStudies } from "../../data/caseStudies";
 import { ArrowRight, Compass, Target } from "lucide-react";
@@ -13,13 +14,25 @@ const getImageName = (slug: string) => {
 };
 
 export default function WorkIndex() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Exemples de Stratégies Digitales | Urunk",
-    "description": "Découvrez les cadres stratégiques et modèles de croissance d'Urunk pour les hôtels, riads, tour-opérateurs et traiteurs au Maroc.",
-    "url": "https://urunk.com/realisations"
-  };
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://urunk.com/realisations#webpage",
+      "name": "Exemples de Stratégies Digitales | Urunk",
+      "description": "Découvrez les cadres stratégiques et modèles de croissance d'Urunk pour les hôtels, riads, tour-opérateurs et traiteurs au Maroc.",
+      "url": "https://urunk.com/realisations",
+      "inLanguage": "fr-MA"
+    },
+    buildArticleSchema({
+      type: "Article",
+      url: "https://urunk.com/realisations",
+      headline: "Exemples de Stratégies Digitales & Modèles | Urunk",
+      description: "Découvrez les cadres stratégiques et modèles d'acquisition directe conçus par Urunk pour le tourisme, l'hôtellerie et les services au Maroc.",
+      datePublished: "2026-01-18",
+      lang: "fr"
+    })
+  ];
 
   return (
     <div className="w-full pb-20 bg-bg text-primary">

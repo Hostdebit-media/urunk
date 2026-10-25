@@ -213,28 +213,32 @@ export default function FooterNav({ isFrench }: FooterNavProps) {
 
         </div>
 
-        {/* Local NAP Block (Casablanca & Marrakech) */}
+        {/* Local NAP Block */}
         <div className="py-8 border-b border-primary/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-primary/80">
           <div>
-            <p className="font-bold uppercase tracking-wider text-accent mb-2">Casablanca</p>
-            <p className="leading-relaxed font-mono text-[11px]">[ADRESSE_CASABLANCA_ANFA]</p>
-            <p className="text-primary/60 mt-1">Casablanca, Maroc</p>
+            <p className="font-bold uppercase tracking-wider text-accent mb-2">{isFrench ? "Adresse" : "Address"}</p>
+            <p className="leading-relaxed font-mono text-[11px]">3 Rue El Kadi Lass, Maarif</p>
+            <p className="text-primary/60 mt-1">{isFrench ? "Casablanca, Maroc" : "Casablanca, Morocco"}</p>
           </div>
           <div>
-            <p className="font-bold uppercase tracking-wider text-accent mb-2">Marrakech</p>
-            <p className="leading-relaxed font-mono text-[11px]">[ADRESSE_MARRAKECH_GUELIZ]</p>
-            <p className="text-primary/60 mt-1">Marrakech, Maroc</p>
+            <p className="font-bold uppercase tracking-wider text-accent mb-2">{isFrench ? "Zones d'intervention" : "Service Hubs"}</p>
+            <p className="leading-relaxed font-mono text-[11px]">Casablanca · Marrakech · Rabat · Agadir</p>
+            <p className="text-primary/60 mt-1">{isFrench ? "Maroc & International" : "Morocco & Worldwide"}</p>
           </div>
           <div>
             <p className="font-bold uppercase tracking-wider text-accent mb-2">{isFrench ? "Téléphone" : "Phone"}</p>
-            <p className="font-mono text-[11px]">[TELEPHONE]</p>
+            <p className="font-mono text-[11px]">
+              <a href="tel:+212668802096" className="hover:text-accent transition-colors">
+                +212 668-802096
+              </a>
+            </p>
             <p className="text-primary/60 mt-1">{isFrench ? "Lun - Ven: 09:00 - 18:00" : "Mon - Fri: 09:00 - 18:00"}</p>
           </div>
           <div>
             <p className="font-bold uppercase tracking-wider text-accent mb-2">Email</p>
             <p className="font-mono text-[11px]">
-              <a href="mailto:urunkagency@gmail.com" className="hover:text-accent transition-colors">
-                urunkagency@gmail.com
+              <a href="mailto:contact@urunk.com" className="hover:text-accent transition-colors">
+                contact@urunk.com
               </a>
             </p>
             <p className="text-primary/60 mt-1">{isFrench ? "Réponse sous 24h ouvrées" : "Reply within 24 business hours"}</p>

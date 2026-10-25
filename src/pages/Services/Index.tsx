@@ -20,6 +20,8 @@ import {
   Megaphone
 } from 'lucide-react';
 import SEO from '../../components/SEO';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
+import { getAllLiveMatrixLinks } from '../../data/matrixRelations';
 
 interface ServiceItem {
   icon: React.ReactNode;
@@ -301,6 +303,7 @@ const services: ServiceItem[] = [
 export default function ServicesIndex() {
   const location = useLocation();
   const isFrench = !location.pathname.startsWith('/en');
+  const allExpertiseLinks = getAllLiveMatrixLinks(isFrench ? 'fr' : 'en');
   
   // Dynamic categories list based on language
   const rawCategories = [
@@ -410,6 +413,23 @@ export default function ServicesIndex() {
           )}
         </div>
       </section>
+
+      <RelatedExpertiseSection
+        kicker={isFrench ? "Expertises Croisées Ville & Secteur" : "Regional & Sector Matrix"}
+        title={
+          isFrench
+            ? "Expertises Spécialisées par Ville & Secteur au Maroc"
+            : "Specialized Services by Moroccan City & Sector"
+        }
+        subtitle={
+          isFrench
+            ? "Chaque marché local possède ses propres volumes de recherche, coûts par clic et comportements de réservation. Explorez nos 19 pôles d'expertise régionaux et sectoriels."
+            : "Search demand, CPC benchmarks, and booking behaviors vary across Moroccan cities. Explore all 19 dedicated city and vertical specializations."
+        }
+        links={allExpertiseLinks}
+        isFrench={isFrench}
+        bgVariant="white"
+      />
 
       {/* Trust Callout */}
       <section className="py-8 px-6 md:px-12">

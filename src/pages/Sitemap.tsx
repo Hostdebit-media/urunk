@@ -15,6 +15,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 import SEO from '../components/SEO';
+import { buildArticleSchema } from '../components/SEO/StructuredData';
+import { getAllLiveMatrixLinks } from '../data/matrixRelations';
 
 interface SitemapLink {
   label: string;
@@ -46,6 +48,7 @@ export default function Sitemap() {
   const textServicesHeader = isFrench ? "Nos Services d'Acquisition" : "Services & Solutions";
   const textIndustriesHeader = isFrench ? "Secteurs d'Activité" : "Industries We Serve";
   const textLocationsHeader = isFrench ? "Hubs Régionaux au Maroc" : "Locations We Serve";
+  const textExpertiseHeader = isFrench ? "Expertises par Ville & Secteur" : "City & Sector Expertise";
   const textLegalHeader = isFrench ? "Utilitaires & Mentions Légales" : "Legal & Utilities";
 
   const textSearchLabel = isFrench ? "Rechercher une page ou un service" : "Search pages or services...";
@@ -143,6 +146,11 @@ export default function Sitemap() {
     { label: "Blog & Strategic Hospitality Guides", path: "/en/blog" }
   ];
 
+  const expertiseLinks: SitemapLink[] = getAllLiveMatrixLinks(isFrench ? 'fr' : 'en').map(item => ({
+    label: item.anchor,
+    path: item.path
+  }));
+
   // Helper filter function for search term
   const filterLinks = (links: SitemapLink[]) => {
     if (!searchTerm.trim()) return links;
@@ -156,6 +164,7 @@ export default function Sitemap() {
   const filteredServices = filterLinks(servicesLinks);
   const filteredIndustries = filterLinks(industriesLinks);
   const filteredLocations = filterLinks(locationsLinks);
+  const filteredExpertise = filterLinks(expertiseLinks);
   const filteredLegal = filterLinks(legalLinks);
 
   const totalResults = 
@@ -163,6 +172,7 @@ export default function Sitemap() {
     filteredServices.length + 
     filteredIndustries.length + 
     filteredLocations.length + 
+    filteredExpertise.length +
     filteredLegal.length;
 
   return (
@@ -170,14 +180,25 @@ export default function Sitemap() {
       <SEO 
         title={pageTitle}
         description={pageDescription}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "@id": `https://urunk.com${location.pathname}#webpage`,
-          "url": `https://urunk.com${location.pathname}`,
-          "name": pageTitle,
-          "description": pageDescription
-        }}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "@id": `https://urunk.com${location.pathname}#webpage`,
+            "url": `https://urunk.com${location.pathname}`,
+            "name": pageTitle,
+            "description": pageDescription,
+            "inLanguage": isFrench ? "fr-MA" : "en-US"
+          },
+          buildArticleSchema({
+            type: 'Article',
+            url: `https://urunk.com${location.pathname}`,
+            headline: pageTitle,
+            description: pageDescription,
+            datePublished: '2026-01-15',
+            lang: isFrench ? 'fr' : 'en'
+          })
+        ]}
       />
 
       {/* Hero Section */}
@@ -333,6 +354,29 @@ export default function Sitemap() {
                 </p>
                 <ul className="space-y-3 font-light text-sm">
                   {filteredLocations.map((link, idx) => (
+                    <li key={idx}>
+                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
+                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* City & Sector Expertise Column */}
+            {filteredExpertise.length > 0 && (
+              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
+                  <Navigation className="text-accent" size={20} /> {textExpertiseHeader}
+                </h2>
+                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                  {isFrench
+                    ? "Pôles spécialisés associant chaque levier d'acquisition (SEO hôtelier, site web riad, réservation directe, Google Ads, Meta Ads, TripAdvisor) aux marchés de Marrakech, Casablanca, Agadir et Rabat."
+                    : "Specialized local-intent pages pairing core growth services (Hotel SEO, Riad Web Design, Direct Booking, Google Ads, Meta & TripAdvisor Ads) with Marrakech, Casablanca, Agadir, and Rabat."}
+                </p>
+                <ul className="space-y-3 font-light text-sm">
+                  {filteredExpertise.map((link, idx) => (
                     <li key={idx}>
                       <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
                         <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />

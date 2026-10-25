@@ -11,7 +11,6 @@
     "directory": "./dist",
     "binding": "ASSETS",
     "run_worker_first": true,
-    "serve_directly": false,
     "not_found_handling": "none"
   },
   "compatibility_flags": [

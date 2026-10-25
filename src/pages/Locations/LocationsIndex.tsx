@@ -17,6 +17,8 @@ import {
 } from 'lucide-react';
 import SEO from '../../components/SEO';
 import Callout from '../../components/Callout';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
+import { getAllLiveMatrixLinks } from '../../data/matrixRelations';
 
 interface LocationCard {
   city: string;
@@ -141,6 +143,7 @@ const sectorsList = [
 export default function LocationsIndex() {
   const location = useLocation();
   const isFrench = !location.pathname.startsWith('/en');
+  const allExpertiseLinks = getAllLiveMatrixLinks(isFrench ? 'fr' : 'en');
 
   const pageTitle = isFrench 
     ? "Zones d'Intervention — SEO & Web au Maroc | Urunk" 
@@ -355,6 +358,23 @@ export default function LocationsIndex() {
           </div>
         </div>
       </section>
+
+      <RelatedExpertiseSection
+        kicker={isFrench ? "Expertises Spécialisées par Ville" : "City-Specific Expertise Directory"}
+        title={
+          isFrench
+            ? "Nos Interventions Ciblées à Marrakech, Casablanca, Agadir & Rabat"
+            : "Targeted Growth Playbooks Across Marrakech, Casablanca, Agadir & Rabat"
+        }
+        subtitle={
+          isFrench
+            ? "Consultez nos pages d'expertise dédiées croisant chaque métier (SEO hôtelier, création web, réservation directe, Google Ads, Meta Ads, TripAdvisor) avec les réalités locales de votre ville."
+            : "Browse dedicated local-intent pages pairing specialized acquisition services (Hotel SEO, Web Design, Direct Booking, Google Ads, Meta & TripAdvisor Ads) with city-level market data."
+        }
+        links={allExpertiseLinks}
+        isFrench={isFrench}
+        bgVariant="white"
+      />
 
       {/* Trust & Methodology Callout */}
       <section className="py-16 px-6 max-w-5xl mx-auto" id="locations-audit-banner">

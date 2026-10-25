@@ -7,6 +7,9 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   X-XSS-Protection: 1; mode=block
   Cross-Origin-Opener-Policy: same-origin
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: no-cache, no-store, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, no-store, must-revalidate
 
 /.well-known/security.txt
   Content-Type: text/plain; charset=utf-8
@@ -14,6 +17,8 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+  CDN-Cache-Control: public, max-age=31536000, immutable
+  Cloudflare-CDN-Cache-Control: public, max-age=31536000, immutable
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable

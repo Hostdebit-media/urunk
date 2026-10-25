@@ -1,6 +1,8 @@
 import React from "react";
 import Callout from "../../../components/fr/CalloutFR";
 import SEO from "../../../components/SEO";
+import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
+import { getMatrixLinksForService } from "../../../data/matrixRelations";
 import { Check, ArrowRight, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -366,6 +368,15 @@ export default function WebsiteDesignFR() {
           Explorer notre cas d'étude Marrakech <ArrowRight size={18} />
         </Link>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Ingénierie Web par Ville"
+        title="Création de Sites Web & Réservation Directe par Ville au Maroc"
+        subtitle="Consultez nos feuilles de route dédiées à Marrakech, Casablanca, Agadir et Rabat pour les hôtels, riads et entreprises."
+        links={getMatrixLinksForService('website-design', 'fr')}
+        isFrench={true}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

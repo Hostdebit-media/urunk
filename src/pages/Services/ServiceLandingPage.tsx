@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { servicesData } from '../../data/servicesData';
+import { getMatrixLinksForService } from '../../data/matrixRelations';
 import SEO from '../../components/SEO';
 import Callout from '../../components/Callout';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { Check, ArrowRight, ChevronDown, Sparkles, Smartphone, Award, Calendar, ExternalLink } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -26,6 +28,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
   }
 
   const data = dataMap[lang];
+  const serviceExpertiseLinks = getMatrixLinksForService(serviceKey, lang);
 
   // Local state for interactive FAQ accordion
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -232,7 +235,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
         <div className="bg-white border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-xs">
           <img 
             src="/images/youssef-avatar.webp" 
-            alt="Portrait de Youssef, Stratège en Acquisition Digitale et Fondateur d'Urunk Agency" 
+            alt={isFrench ? "Portrait de J.Mellal, Consultant SEO et Stratège Marketing Digital Propulsé par l'IA au Maroc" : "Portrait of J.Mellal, SEO Consultant and AI-Powered Digital Marketing Strategist in Morocco"} 
             width={88} 
             height={88} 
             loading="lazy" 
@@ -243,16 +246,33 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
               {isFrench ? "Direction Conseil & Stratégie Métier" : "Senior Strategic Direction"}
             </div>
             <h3 className="text-xl font-serif font-bold text-primary mb-2">
-              {isFrench ? "Supervision par Youssef" : "Strategic Supervision by Youssef"}
+              {isFrench ? "J.Mellal : Consultant SEO & Stratège Marketing Digital Propulsé par l'IA" : "J.Mellal : SEO Consultant & AI-Powered Digital Marketing Strategist"}
             </h3>
             <p className="text-sm text-primary/80 leading-relaxed m-0 font-light">
               {isFrench 
-                ? "Fondateur d'Urunk Agency et consultant en croissance numérique depuis plus de 8 ans. Spécialiste de la désintermédiation pour hôtels et riads, certifié Google Ads & Analytics. Intervenant régulier sur les stratégies de rentabilité hôtelière à Casablanca et Marrakech."
-                : "Founder of Urunk Agency and senior growth strategist with 8+ years of expertise. Specializing in hospitality disintermediation, Google Ads, and full-funnel direct-booking optimization across Morocco."}
+                ? "Consultant SEO et stratège en marketing digital propulsé par l'IA, accompagnant la croissance en ligne des entreprises, hôtels et riads au Maroc. Spécialiste du référencement naturel, de Google Ads et de l'optimisation des réservations et conversions directes."
+                : "SEO Consultant, AI-Powered Digital Marketing Strategist, and helping businesses grow online in Morocco. Specializing in search engine optimization, Google Ads, and full-funnel direct-booking and conversion growth across Morocco."}
             </p>
           </div>
         </div>
       </section>
+
+      <RelatedExpertiseSection
+        kicker={isFrench ? "Déploiements par Ville & Secteur" : "City & Sector Specializations"}
+        title={
+          isFrench
+            ? "Déclinaisons Régionales & Sectorielles au Maroc"
+            : "Regional & Industry Applications Across Morocco"
+        }
+        subtitle={
+          isFrench
+            ? "Consultez nos stratégies dédiées par destination (Marrakech, Casablanca, Agadir, Rabat) et par typologie d'établissement pour évaluer les indicateurs propres à votre marché."
+            : "Review destination-specific benchmarks across Marrakech, Casablanca, Agadir, and Rabat along with vertical playbooks tailored to your property or business model."
+        }
+        links={serviceExpertiseLinks}
+        isFrench={isFrench}
+        bgVariant="alt"
+      />
 
       {/* Interactive Accordion FAQs Section */}
       <section className="py-8 md:py-16 px-6 max-w-4xl mx-auto">

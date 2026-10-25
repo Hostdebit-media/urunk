@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { locationsData } from '../../data/locationsData';
+import { getMatrixLinksForLocation } from '../../data/matrixRelations';
 import SEO from '../../components/SEO';
 import Callout from '../../components/Callout';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { MapPin, Check, ArrowRight, ChevronDown, Award, ExternalLink, Globe } from 'lucide-react';
 
 interface LocationLandingPageProps {
@@ -26,6 +28,7 @@ export default function LocationLandingPage({ locationKey }: LocationLandingPage
   }
 
   const data = dataMap[lang];
+  const regionalExpertiseLinks = getMatrixLinksForLocation(locationKey, lang);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -194,6 +197,23 @@ export default function LocationLandingPage({ locationKey }: LocationLandingPage
         </div>
       </section>
 
+      <RelatedExpertiseSection
+        kicker={isFrench ? "Spécialisations Locales Dédiées" : "Dedicated Regional Specializations"}
+        title={
+          isFrench
+            ? "Pôles d'Expertise Métier & Acquisition dans cette Zone"
+            : "Specialized Search, Web & Paid Acquisition Playbooks"
+        }
+        subtitle={
+          isFrench
+            ? "Accédez directement à nos feuilles de route techniques adaptées aux hôtels, riads et entreprises opérant sur ce marché régional."
+            : "Access dedicated technical roadmaps tailored for hotels, boutique riads, and enterprises competing in this regional market."
+        }
+        links={regionalExpertiseLinks}
+        isFrench={isFrench}
+        bgVariant="alt"
+      />
+
       {/* Why Choose a Local Partner Section */}
       {data.whyPartnerTitle && data.whyPartnerText && (
         <section className="bg-white py-16 md:py-24 px-6 border-t border-b border-primary/10">
@@ -246,7 +266,7 @@ export default function LocationLandingPage({ locationKey }: LocationLandingPage
         <div className="bg-white border border-primary/10 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-xs">
           <img 
             src="/images/youssef-avatar.webp" 
-            alt="Portrait de Youssef, Stratège en Acquisition Digitale et Fondateur d'Urunk Agency" 
+            alt={isFrench ? "Portrait de J.Mellal, Consultant SEO et Stratège Marketing Digital Propulsé par l'IA au Maroc" : "Portrait of J.Mellal, SEO Consultant and AI-Powered Digital Marketing Strategist in Morocco"} 
             width={88} 
             height={88} 
             loading="lazy" 
@@ -257,12 +277,12 @@ export default function LocationLandingPage({ locationKey }: LocationLandingPage
               {isFrench ? "Expertise Régionale & Direction Stratégique" : "Regional Strategic Direction"}
             </div>
             <h3 className="text-xl font-serif font-bold text-primary mb-2">
-              {isFrench ? "Accompagnement Supervisé par Youssef" : "Strategic Supervision by Youssef"}
+              {isFrench ? "J.Mellal : Consultant SEO & Stratège Marketing Digital Propulsé par l'IA" : "J.Mellal : SEO Consultant & AI-Powered Digital Marketing Strategist"}
             </h3>
             <p className="text-sm text-primary/80 leading-relaxed m-0 font-light">
               {isFrench 
-                ? "Fondateur d'Urunk Agency, intervenant depuis plus de 8 ans auprès des entreprises, riads et groupes hôteliers au Maroc. Spécialiste de la domination cartographique sur Google Maps et des campagnes publicitaires rentables à Casablanca, Marrakech, Rabat et Agadir."
-                : "Founder of Urunk Agency with 8+ years of expertise helping Moroccan corporate leaders, riads, and resorts dominate local search, scale high-converting websites, and reduce intermediary costs across Casablanca, Marrakech, Rabat, and Agadir."}
+                ? "Consultant SEO et stratège en marketing digital propulsé par l'IA, accompagnant la croissance en ligne des entreprises, riads et groupes hôteliers au Maroc (Casablanca, Marrakech, Rabat et Agadir) sur Google, Google Maps et Google Ads."
+                : "SEO Consultant, AI-Powered Digital Marketing Strategist, and helping businesses grow online in Morocco across Casablanca, Marrakech, Rabat, and Agadir through local search dominance, high-converting websites, and profitable ad campaigns."}
             </p>
           </div>
         </div>

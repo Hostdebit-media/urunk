@@ -27,36 +27,19 @@ export const mainAgencySchema = {
       "telephone": "+212668802096",
       "email": "contact@urunk.com",
       "priceRange": "$$$",
-      "address": [
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "114, Angle Boulevard 11 Janvier et Rue Mustapha El Maani, 6ème Étage N°32",
-          "addressLocality": "Casablanca",
-          "addressRegion": "Casablanca-Settat",
-          "postalCode": "20250",
-          "addressCountry": "MA"
-        },
-        {
-          "@type": "PostalAddress",
-          "streetAddress": "2ème Étage, N°19, Immeuble 35, Lotissement Al Massar",
-          "addressLocality": "Marrakech",
-          "addressRegion": "Marrakech-Safi",
-          "postalCode": "40100",
-          "addressCountry": "MA"
-        }
-      ],
-      "geo": [
-        {
-          "@type": "GeoCoordinates",
-          "latitude": 33.589886,
-          "longitude": -7.616644
-        },
-        {
-          "@type": "GeoCoordinates",
-          "latitude": 31.629472,
-          "longitude": -7.981084
-        }
-      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Rue El Kadi Lass, Maarif",
+        "addressLocality": "Casablanca",
+        "addressRegion": "Casablanca-Settat",
+        "postalCode": "20330",
+        "addressCountry": "MA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.5855,
+        "longitude": -7.6365
+      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",

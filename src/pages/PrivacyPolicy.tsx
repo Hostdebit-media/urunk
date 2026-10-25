@@ -97,7 +97,7 @@ export default function PrivacyPolicy() {
               <li><strong>Right to Object:</strong> You can object at any time to the processing of your data for direct marketing purposes.</li>
             </ul>
             <p>
-              To exercise any of these rights, please submit a written request to our data compliance team at <a href="mailto:contact@urunk.com" className="text-accent font-bold hover:underline">contact@urunk.com</a>. We will respond within 30 days.
+              To exercise any of these rights, please submit a written request to our data compliance team at <a href="mailto:contact@urunk.com" className="text-accent font-bold hover:underline">contact@urunk.com</a> or by mail at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco. We will respond within 30 days.
             </p>
           </div>
 
@@ -105,6 +105,17 @@ export default function PrivacyPolicy() {
             <h2 className="text-2xl font-serif font-bold text-primary mb-4">6. Data Security Measures</h2>
             <p>
               Urunk implements strict technical and administrative security frameworks to protect your data from unauthorized access, accidental loss, disclosure, or modification. All contact forms are protected by end-to-end SSL encryption. Access to your personal data is strictly restricted to authorized employees who require the information to perform project evaluations or delivery.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-2xl font-serif font-bold text-primary mb-4">7. Contact Information</h2>
+            <p>
+              <strong>Address:</strong> 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco
+              <br />
+              <strong>Email:</strong> contact@urunk.com
+              <br />
+              <strong>Phone:</strong> +212 668-802096
             </p>
           </div>
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
+import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -49,7 +51,7 @@ export default function TripadvisorAds() {
     <div className="w-full">
       <SEO 
         title="TripAdvisor Ads for Hotels in Morocco | Urunk" 
-        description="Sponsored TripAdvisor campaign management to capture high-intent travelers planning stays in Morocco." 
+        description="Drive ready-to-book travelers to your booking engine. Our TripAdvisor advertising experts capture high-intent users planning their Moroccan stays." 
         schema={[schema, serviceSchema]}
       />
       
@@ -167,6 +169,15 @@ export default function TripadvisorAds() {
           Explore Strategy Example <ArrowRight size={18} />
         </Link>
       </section>
+
+      <RelatedExpertiseSection
+        kicker="Hospitality Acquisition Hubs"
+        title="TripAdvisor Ads & Direct Booking Specializations in Morocco"
+        subtitle="Explore destination-specific TripAdvisor Sponsored Placements, Google Hotel Ads, and direct booking strategies across Marrakech and Agadir."
+        links={getMatrixLinksForService('tripadvisor-ads', 'en')}
+        isFrench={false}
+        bgVariant="white"
+      />
 
       {/* FAQ */}
       <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">

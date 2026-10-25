@@ -1,5 +1,6 @@
 import React from 'react';
 import SEO from '../../components/SEO';
+import { buildArticleSchema } from '../../components/SEO/StructuredData';
 import { Link } from 'react-router-dom';
 import { caseStudies } from '../../data/caseStudies';
 import { ArrowRight, Compass, Target } from 'lucide-react';
@@ -13,13 +14,25 @@ const getImageName = (slug: string) => {
 };
 
 export default function WorkIndex() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Industry Strategy Examples | Urunk Digital Agency",
-    "description": "Explore Urunk's strategic frameworks and digital growth methodologies for Moroccan tourism, hospitality, and catering businesses.",
-    "url": "https://urunk.com/en/work"
-  };
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://urunk.com/en/work#webpage",
+      "name": "Industry Strategy Examples | Urunk Digital Agency",
+      "description": "Explore Urunk's strategic frameworks and digital growth methodologies for Moroccan tourism, hospitality, and catering businesses.",
+      "url": "https://urunk.com/en/work",
+      "inLanguage": "en-US"
+    },
+    buildArticleSchema({
+      type: 'Article',
+      url: 'https://urunk.com/en/work',
+      headline: 'Industry Strategy Examples & Frameworks | Urunk',
+      description: "Explore Urunk's strategic digital frameworks and direct booking architectures for Moroccan hotels, riads, tour operators, and catering services.",
+      datePublished: '2026-01-18',
+      lang: 'en'
+    })
+  ];
 
   return (
     <div className="w-full pb-20 bg-bg text-primary">
