@@ -1,36 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ImageWithSkeleton from '../../components/ImageWithSkeleton';
 import OptimizedImage from '../../components/OptimizedImage';
-import SectorsAndHubsFR from '../../components/fr/HomeFR/SectorsAndHubsFR';
 import PricingSectionFR from '../../components/fr/HomeFR/PricingSectionFR';
 import FaqSectionFR from '../../components/fr/HomeFR/FaqSectionFR';
 import BottomFormSectionFR from '../../components/fr/HomeFR/BottomFormSectionFR';
 
 export default function HomeFR() {
-  const blueprints = [
-    {
-      sector: 'Excursions et circuits privés',
-      title: 'Réduire les commissions Viator et GetYourGuide grâce au site mobile et WhatsApp',
-      summary: 'Pages d’itinéraires rapides sur 4G (Marrakech, Atlas, Merzouga), balisage TourOperator et annonces de recherche ciblées pour traiter les demandes en direct.',
-      href: '/realisations/services-voyage-maroc'
-    },
-    {
-      sector: 'Traiteurs et événements B2B',
-      title: 'Capter les demandes de devis d’entreprises à Casablanca et Marrakech',
-      summary: 'Pages dédiées aux séminaires et réceptions, formulaire court de chiffrage par convive et campagnes Google Search diffusées sur les horaires de bureau.',
-      href: '/realisations/nomad-eats-traiteur'
-    },
-    {
-      sector: 'Ateliers et activités touristiques',
-      title: 'Attirer les voyageurs sur place en Médina via Google Maps et Instagram',
-      summary: 'Optimisation de la fiche Google Business Profile, réservation mobile directe et ciblage publicitaire dans un rayon proche à Marrakech.',
-      href: '/realisations/art-house-marrakech'
-    }
-  ];
-
   return (
     <div className="w-full">
       <Helmet>
@@ -98,7 +76,7 @@ export default function HomeFR() {
               {
                 "@context": "https://schema.org",
                 "@type": "Service",
-                "name": "Référencement naturel et Google Maps au Maroc",
+                "name": "Référencement local et Google Maps au Maroc",
                 "provider": { "@id": "https://urunk.com/#organization" },
                 "areaServed": "MA"
               },
@@ -114,310 +92,320 @@ export default function HomeFR() {
         </script>
       </Helmet>
 
-      {/* Chapitre 1A : Hero éditorial asymétrique */}
-      <section className="pt-14 pb-16 md:pt-20 md:pb-24 px-6 bg-bg-light" id="hero-section-fr">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="lg:col-span-7">
-            <p className="text-sm font-medium text-accent mb-4" id="hero-kicker-fr">
-              Casablanca et Marrakech · Hôtellerie, tourisme et PME
-            </p>
+      {/* 1. Promesse principale et aperçu annoté d'une page d'établissement livrée */}
+      <section className="pt-12 pb-16 md:pt-18 md:pb-22 px-6 bg-bg-light" id="hero-section-fr">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div className="lg:col-span-6 lg:pt-4">
             <h1
-              className="text-4xl sm:text-5xl lg:text-[3.4rem] font-serif font-bold text-primary leading-[1.1] mb-6"
+              className="text-4xl sm:text-5xl lg:text-[3.2rem] font-serif font-bold text-primary leading-[1.1] mb-6 [text-wrap:balance]"
               id="hero-h1-fr"
             >
-              Agence web et SEO pour hôtels, riads et PME au Maroc
+              Sites web, SEO local et annonces Google pour hôtels, riads et PME au Maroc
             </h1>
             <p
-              className="text-lg md:text-xl text-primary/80 leading-relaxed max-w-2xl mb-8"
+              className="text-base sm:text-lg text-primary/80 leading-relaxed max-w-xl mb-4"
               id="hero-subtext-fr"
             >
-              Nous créons des sites rapides connectés à votre moteur de réservation, optimisons votre présence sur Google Maps et gérons vos campagnes Google Ads pour générer des réservations directes sans commission et des demandes de devis qualifiées.
+              Depuis notre bureau de Casablanca, nous créons des sites rapides reliés à votre moteur de réservation, améliorons votre classement sur Google Maps et lançons vos annonces de recherche pour vous aider à recevoir plus de réservations directes ou de demandes de devis.
+            </p>
+            <p className="text-base text-primary/75 leading-relaxed max-w-xl mb-8">
+              Un site complet est livré en 4 à 6 semaines dès 12 000 MAD, et chaque suivi mensuel reste résiliable avec 15 jours de préavis.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-6" id="hero-actions-fr">
+            <div className="flex flex-wrap items-center gap-5 mb-6" id="hero-actions-fr">
               <Link
                 to="/contact"
-                className="bg-accent hover:bg-accent-hover text-white px-7 py-3.5 rounded-xl font-semibold text-sm inline-flex items-center gap-2 transition-colors"
+                className="bg-accent hover:bg-accent-hover text-white px-6 py-3.5 rounded-lg font-semibold text-sm inline-flex items-center gap-2 transition-colors whitespace-nowrap"
                 id="hero-cta-btn-fr"
               >
                 <span>Demander un audit gratuit</span>
-                <ArrowRight size={17} />
+                <ArrowRight size={16} />
               </Link>
               <a
-                href="https://wa.me/212668802096?text=Bonjour%2C%20je%20souhaite%20un%20audit%20gratuit"
+                href="https://wa.me/212668802096?text=Bonjour%2C%20je%20souhaite%20demander%20un%20audit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-primary hover:text-accent underline underline-offset-4 px-2 py-2 transition-colors"
+                className="text-sm font-medium text-primary/85 hover:text-accent underline underline-offset-4 transition-colors"
                 id="hero-whatsapp-btn-fr"
               >
-                Écrire sur WhatsApp (+212 668-802096)
+                WhatsApp : +212 668-802096
               </a>
             </div>
 
-            <p className="text-xs text-primary/65 leading-relaxed pt-4 border-t border-primary/10 max-w-xl">
-              Sites livrés en 4 à 6 semaines · Suivi mensuel avec 15 jours de préavis · Propriété complète du code et des comptes
+            <p className="text-xs text-primary/65 leading-relaxed">
+              3 Rue El Kadi Lass, Maarif, Casablanca · Intervention à Casablanca, Marrakech, Rabat et Agadir
             </p>
           </div>
 
-          <figure className="lg:col-span-5 rounded-2xl overflow-hidden border border-primary/10 bg-bg-alt" id="hero-image-container-fr">
-            <div className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[5/6] w-full">
+          {/* Aperçu annoté de l'architecture livrée */}
+          <figure
+            className="lg:col-span-6 bg-white rounded-xl border border-primary/15 overflow-hidden"
+            id="hero-image-container-fr"
+          >
+            <div className="px-4 py-2.5 bg-bg-alt border-b border-primary/10 flex items-center justify-between gap-4 text-xs text-primary/75">
+              <span className="font-mono text-[11px] truncate">Architecture type · Page officielle d’hébergement</span>
+              <span className="font-mono text-[11px] shrink-0">FR / EN · 4G mobile</span>
+            </div>
+
+            <div className="relative aspect-[16/10] w-full bg-bg-alt">
               <ImageWithSkeleton
-                src="/images/optimized/art-house-hero-800.jpg"
-                imageName="art-house-hero"
-                alt="Artisan potier dans un atelier traditionnel à Marrakech"
+                src="/images/optimized/moroccan-riad-architecture-800.jpg"
+                imageName="moroccan-riad-architecture"
+                alt="Cour intérieure d'un riad marocain traditionnel avec arches et zelliges"
                 className="w-full h-full"
                 imgClassName="object-cover"
                 priority={true}
                 loading="eager"
                 fetchPriority="high"
                 width={800}
-                height={960}
-                sizes="(max-width: 1024px) 100vw, 480px"
+                height={500}
+                sizes="(max-width: 1024px) 100vw, 560px"
               />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent p-4 sm:p-5 text-white">
+                <div className="flex flex-wrap items-end justify-between gap-3">
+                  <div>
+                    <p className="text-xs text-white/80">Parcours direct sur le domaine de l'établissement</p>
+                    <p className="font-serif font-bold text-base sm:text-lg">Chambres, tarifs en temps réel et contact immédiat</p>
+                  </div>
+                  <span className="text-xs font-medium bg-white/15 backdrop-blur-xs border border-white/25 px-3 py-1.5 rounded-md">
+                    Vérifier les disponibilités
+                  </span>
+                </div>
+              </div>
             </div>
-            <figcaption className="px-4 py-3 bg-white text-xs text-primary/70 border-t border-primary/10">
-              Accompagnement des riads, maisons d'hôtes, ateliers et entreprises de services au Maroc.
+
+            <figcaption className="p-4 sm:p-5 grid sm:grid-cols-3 gap-4 text-xs text-primary/80 divide-y sm:divide-y-0 sm:divide-x divide-primary/10">
+              <div className="pt-2 sm:pt-0 sm:pr-3 first:pt-0">
+                <strong className="font-semibold text-primary block mb-0.5">Chargement léger</strong>
+                <span>Photos converties en AVIF/WebP et lecture claire sur smartphone.</span>
+              </div>
+              <div className="pt-2 sm:pt-0 sm:px-3">
+                <strong className="font-semibold text-primary block mb-0.5">Connexion PMS</strong>
+                <span>Calendrier relié à Cloudbeds, Mews, Sirvoy ou Little Hotelier.</span>
+              </div>
+              <div className="pt-2 sm:pt-0 sm:pl-3">
+                <strong className="font-semibold text-primary block mb-0.5">Contact direct</strong>
+                <span>Lien WhatsApp, formulaire court et fiche Google Maps reliée.</span>
+              </div>
             </figcaption>
           </figure>
         </div>
       </section>
 
-      {/* Chapitre 1B : Le problème des commissions OTA vs réservations directes */}
-      <section className="bg-primary text-white py-20 px-6" id="ota-dependence-section-fr">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div className="lg:col-span-6">
-            <p className="text-sm font-medium text-yellow-400 mb-3">
-              Économie d'un établissement hôtelier
-            </p>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-5 leading-tight text-white">
-              Reprenez une part de vos nuitées vendues sur les plateformes OTA
+      {/* 2. Problème des commissions OTA et comparaison honnête des coûts */}
+      <section className="bg-primary text-white py-14 md:py-16 px-6" id="ota-dependence-section-fr">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div className="lg:col-span-5">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4 leading-snug text-white [text-wrap:balance]">
+              Pourquoi vos futurs clients passent encore par les plateformes à commission
             </h2>
-            <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">
-              Booking.com, Expedia et les revendeurs d'activités prélèvent entre 15 % et 25 % sur chaque réservation. Lorsque votre site officiel est lent sur téléphone ou absent de Google Maps, même les voyageurs qui connaissent déjà le nom de votre riad finissent par réserver via un intermédiaire.
+            <p className="text-sm sm:text-base text-white/85 leading-relaxed mb-4">
+              Lorsqu'un voyageur repère le nom de votre riad ou de votre hôtel mais tombe sur un site lent sur téléphone ou une fiche Google Maps incomplète, il retourne réserver sur Booking.com, Expedia ou Viator. Ces intermédiaires retiennent en général entre 15 % et 25 % du montant du séjour selon contrat.
             </p>
-            <Link
-              to="/marketing-digital-hotelier"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-yellow-400 hover:underline underline-offset-4"
-            >
-              <span>Consulter notre approche pour l'hôtellerie</span>
-              <ArrowRight size={16} />
-            </Link>
+            <p className="text-xs text-white/65 leading-relaxed">
+              Source et repère tarifaire : le taux de base moyen documenté par{' '}
+              <a
+                href="https://partner.booking.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-white/85 hover:text-white"
+              >
+                Booking.com Partner Hub
+              </a>{' '}
+              s'établit autour de 15 % hors options de visibilité additionnelles (programme Preferred Partner, Visibility Booster) ou revendeurs d'activités (documentation partenaires consultée en octobre 2026 ; vérifiez le taux exact inscrit à votre contrat).
+            </p>
           </div>
 
-          <div className="lg:col-span-6 border-t border-white/15 divide-y divide-white/15">
-            <div className="py-6 grid sm:grid-cols-12 gap-4">
-              <div className="sm:col-span-5">
-                <h3 className="font-serif font-bold text-lg text-white">Via une plateforme OTA</h3>
-                <p className="text-xs text-white/60 mt-1">Booking.com, Expedia, Viator</p>
-              </div>
-              <div className="sm:col-span-7 text-sm text-white/80 space-y-1.5 leading-relaxed">
-                <p><strong className="text-white font-semibold">15 à 25 % de commission</strong> retenue sur chaque séjour ou excursion (selon contrat).</p>
-                <p>Relation client intermédiée et affichage des établissements concurrents sur votre fiche.</p>
-              </div>
-            </div>
-
-            <div className="py-6 grid sm:grid-cols-12 gap-4">
-              <div className="sm:col-span-5">
-                <h3 className="font-serif font-bold text-lg text-yellow-400">Sur votre site officiel</h3>
-                <p className="text-xs text-white/60 mt-1">Moteur PMS ou contact direct</p>
-              </div>
-              <div className="sm:col-span-7 text-sm text-white/85 space-y-1.5 leading-relaxed">
-                <p><strong className="text-yellow-400 font-semibold">0 % de commission OTA</strong> sur les réservations directes enregistrées sur votre domaine.</p>
-                <p>Synchronisation directe avec votre PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier) et contact immédiat avec le voyageur.</p>
-              </div>
-            </div>
+          <div className="lg:col-span-7 overflow-x-auto">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-white/20 text-xs text-white/70">
+                  <th className="py-3 pr-4 font-semibold w-1/3">Canal de réservation</th>
+                  <th className="py-3 px-4 font-semibold">Frais appliqués par séjour</th>
+                  <th className="py-3 pl-4 font-semibold">Relation avec le client</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-white/15">
+                <tr>
+                  <td className="py-4 pr-4 align-top font-serif font-bold text-base text-white">
+                    Plateforme OTA
+                    <span className="block font-sans font-normal text-xs text-white/60 mt-0.5">
+                      Booking.com, Expedia, Viator
+                    </span>
+                  </td>
+                  <td className="py-4 px-4 align-top text-white/85 leading-relaxed tabular-nums">
+                    15 % à 25 % de commission selon votre contrat et les programmes de mise en avant activés.
+                  </td>
+                  <td className="py-4 pl-4 align-top text-white/80 leading-relaxed">
+                    Échanges filtrés par la plateforme et présentation d'établissements concurrents sous vos chambres.
+                  </td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-4 align-top font-serif font-bold text-base text-yellow-400">
+                    Votre site officiel
+                    <span className="block font-sans font-normal text-xs text-white/60 mt-0.5">
+                      Domaine propre + moteur PMS
+                    </span>
+                  </td>
+                  <td className="py-4 px-4 align-top text-white/90 leading-relaxed">
+                    Aucune commission d'agence en ligne. Vous réglez uniquement vos frais habituels de logiciel PMS, d'encaissement bancaire et votre éventuel budget publicitaire.
+                  </td>
+                  <td className="py-4 pl-4 align-top text-white/85 leading-relaxed">
+                    Confirmation directe avec le voyageur par e-mail ou WhatsApp avant son arrivée.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* Chapitre 2 : Pôles d'intervention, méthode en 3 étapes et plans d'action */}
-      <section className="py-20 md:py-28 bg-white border-t border-primary/10" id="thematic-blocks-fr">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mb-14">
-            <p className="text-sm font-medium text-accent mb-3">
-              Services et méthode de travail
-            </p>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-5" id="services-title-fr">
-              Création de sites web, référencement local et campagnes d'annonces
+      {/* 3. Trois services rédigés en prose naturelle (sans listes d'inventaire SEO) */}
+      <section className="py-16 md:py-20 px-6 bg-white border-t border-primary/10" id="thematic-blocks-fr">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="lg:col-span-4">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-4 leading-snug [text-wrap:balance]" id="services-title-fr">
+              Trois services complémentaires selon votre besoin
             </h2>
-            <p className="text-base md:text-lg text-primary/75 leading-relaxed">
-              Chaque levier répond à un objectif précis : disposer d'un site rapide qui convertit sur mobile, ressortir sur Google et Google Maps dans votre ville, et capter les recherches immédiates par la publicité lorsque la saison le demande.
+            <p className="text-sm sm:text-base text-primary/75 leading-relaxed mb-5">
+              Vous pouvez nous confier uniquement la refonte de votre site, ou y associer un travail mensuel sur Google Maps et les annonces payantes. Nous accompagnons aussi bien les hébergements touristiques que les agences d'excursions, les traiteurs et les PME de services.
+            </p>
+            <p className="text-sm">
+              <Link to="/realisations" className="font-semibold text-accent hover:underline underline-offset-4">
+                Consulter nos exemples d'architectures par métier
+              </Link>
             </p>
           </div>
 
-          {/* 4 colonnes éditoriales à filets fins (zéro boîte redondante) */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20" id="thematic-quad-grid-fr">
-            <div className="border-t-2 border-primary pt-5">
+          <div className="lg:col-span-8 divide-y divide-primary/15 border-y border-primary/15">
+            <article className="py-6">
               <h3 className="font-serif font-bold text-xl text-primary mb-2">
-                01. Sites web et réservation
+                Création de site web et réservation en ligne
               </h3>
-              <p className="text-sm text-primary/75 leading-relaxed mb-4">
-                Sites bilingues rapides sur mobile, raccordés à votre moteur de réservation ou à WhatsApp.
-              </p>
-              <ul className="space-y-2 text-sm font-medium text-primary">
-                <li><Link to="/creation-site-web" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Création de site web au Maroc</Link></li>
-                <li><Link to="/site-web-hotel" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Sites web pour hôtels</Link></li>
-                <li><Link to="/site-web-riad-marrakech" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Site web riad à Marrakech</Link></li>
-                <li><Link to="/agence-web-casablanca" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Agence web à Casablanca</Link></li>
-                <li><Link to="/reservation-directe" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Stratégie de réservation directe</Link></li>
-              </ul>
-            </div>
-
-            <div className="border-t-2 border-primary pt-5">
-              <h3 className="font-serif font-bold text-xl text-primary mb-2">
-                02. SEO et Google Maps
-              </h3>
-              <p className="text-sm text-primary/75 leading-relaxed mb-4">
-                Positionnement durable sur les recherches locales et optimisation complète des fiches d'établissement.
-              </p>
-              <ul className="space-y-2 text-sm font-medium text-primary">
-                <li><Link to="/agence-seo-maroc" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Agence SEO Maroc</Link></li>
-                <li><Link to="/seo-riad-marrakech" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">SEO pour riads à Marrakech</Link></li>
-                <li><Link to="/referencement-local-casablanca" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Référencement local Casablanca</Link></li>
-                <li><Link to="/services/google-business-profile" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Fiche Google Business Profile</Link></li>
-              </ul>
-            </div>
-
-            <div className="border-t-2 border-primary pt-5">
-              <h3 className="font-serif font-bold text-xl text-primary mb-2">
-                03. Campagnes payantes
-              </h3>
-              <p className="text-sm text-primary/75 leading-relaxed mb-4">
-                Annonces ciblées sur vos propres comptes pour générer des réservations directes ou des devis.
-              </p>
-              <ul className="space-y-2 text-sm font-medium text-primary">
-                <li><Link to="/google-ads-maroc" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Gestion Google Ads Maroc</Link></li>
-                <li><Link to="/services/gestion-publicites-meta" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Campagnes Meta Ads (Instagram)</Link></li>
-                <li><Link to="/services/tripadvisor-ads" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Sponsoring TripAdvisor Ads</Link></li>
-                <li><Link to="/services" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Tous nos services marketing</Link></li>
-              </ul>
-            </div>
-
-            <div className="border-t-2 border-primary pt-5">
-              <h3 className="font-serif font-bold text-xl text-primary mb-2">
-                04. Spécialités et guides
-              </h3>
-              <p className="text-sm text-primary/75 leading-relaxed mb-4">
-                Prestations techniques complémentaires et ressources pratiques pour hôteliers et dirigeants.
-              </p>
-              <ul className="space-y-2 text-sm font-medium text-primary">
-                <li><Link to="/services/wordpress-seo" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Audit et SEO WordPress</Link></li>
-                <li><Link to="/services/ecommerce-seo" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">SEO E-commerce</Link></li>
-                <li><Link to="/services/ai-seo-optimization" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Optimisation SEO sémantique</Link></li>
-                <li><Link to="/blog/reduire-commissions-ota" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Guide : réduire les commissions OTA</Link></li>
-                <li><Link to="/blog/tripadvisor-vs-google-ads" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Comparatif TripAdvisor vs Google Ads</Link></li>
-                <li><Link to="/blog/guide-seo-hotellerie-maroc" className="hover:text-accent underline decoration-primary/25 hover:decoration-accent underline-offset-4">Guide du SEO hôtelier au Maroc</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Déroulement en 3 étapes + Exemples de plans d'action appliqués */}
-          <div className="pt-16 border-t border-primary/15 grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-5 space-y-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-4">
-                  Déroulement d'un projet en trois étapes
-                </h3>
-                <ol className="divide-y divide-primary/10 border-y border-primary/10 text-sm">
-                  <li className="py-4">
-                    <span className="font-serif font-bold text-base text-primary block mb-1">
-                      1. Diagnostic gratuit sous 24 à 48 h
-                    </span>
-                    <span className="text-primary/75 leading-relaxed block">
-                      Vérification de la vitesse mobile actuelle, de votre visibilité Google Maps et du parcours de réservation ou de prise de contact.
-                    </span>
-                  </li>
-                  <li className="py-4">
-                    <span className="font-serif font-bold text-base text-primary block mb-1">
-                      2. Mise en place sous 4 à 6 semaines
-                    </span>
-                    <span className="text-primary/75 leading-relaxed block">
-                      Développement du site, connexion au PMS hôtelier ou aux formulaires de devis, balisage SEO et configuration du suivi analytique GA4.
-                    </span>
-                  </li>
-                  <li className="py-4">
-                    <span className="font-serif font-bold text-base text-primary block mb-1">
-                      3. Pilotage mensuel sans engagement captif
-                    </span>
-                    <span className="text-primary/75 leading-relaxed block">
-                      Optimisation continue des mots-clés, des annonces et des pages selon les réservations directes et demandes réellement reçues.
-                    </span>
-                  </li>
-                </ol>
-              </div>
-
-              <figure className="rounded-2xl overflow-hidden border border-primary/10 bg-bg-alt">
-                <div className="aspect-[16/10] w-full">
-                  <OptimizedImage
-                    src="/images/optimized/moroccan-riad-hospitality-800.jpg"
-                    imageName="moroccan-riad-hospitality"
-                    alt="Cour intérieure paisible d'un riad marocain"
-                    width={640}
-                    height={400}
-                    priority={true}
-                    loading="eager"
-                    className="w-full h-full"
-                    imgClassName="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 460px"
-                  />
-                </div>
-                <figcaption className="px-4 py-3 bg-bg-light text-xs text-primary/70 border-t border-primary/10">
-                  Parcours de réservation pensé pour les voyageurs consultant votre établissement sur smartphone.
-                </figcaption>
-              </figure>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="flex flex-wrap items-baseline justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary">
-                    Plans d'action types par métier
-                  </h3>
-                  <p className="text-sm text-primary/75 mt-1">
-                    Trois cadres d'intervention détaillant l'architecture technique et publicitaire mise en place selon le secteur.
-                  </p>
-                </div>
-                <Link
-                  to="/realisations"
-                  className="text-sm font-semibold text-accent hover:underline shrink-0"
-                >
-                  Voir tous les dossiers
+              <p className="text-sm sm:text-base text-primary/80 leading-relaxed mb-3">
+                Nous concevons des sites bilingues en français et en anglais qui chargent vite sur réseau mobile. Pour un hôtel ou un riad, nous connectons directement votre calendrier PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier). Pour une agence d'excursions, un traiteur ou une PME, nous mettons en place des pages claires avec demande de devis rapide et contact WhatsApp.{' '}
+                <Link to="/creation-site-web" className="font-semibold text-accent hover:underline underline-offset-4">
+                  Détail de la création web
                 </Link>
+              </p>
+            </article>
+
+            <article className="py-6">
+              <h3 className="font-serif font-bold text-xl text-primary mb-2">
+                Référencement local et fiche Google Maps
+              </h3>
+              <p className="text-sm sm:text-base text-primary/80 leading-relaxed mb-3">
+                Nous structurons vos pages par service et par quartier, corrigeons les lenteurs techniques et tenons à jour votre fiche Google Business Profile. L'objectif est d'améliorer durablement votre classement local lorsqu'un voyageur ou un acheteur professionnel cherche un établissement fiable dans votre ville.{' '}
+                <Link to="/agence-seo-maroc" className="font-semibold text-accent hover:underline underline-offset-4">
+                  Détail du suivi SEO local
+                </Link>
+              </p>
+            </article>
+
+            <article className="py-6">
+              <h3 className="font-serif font-bold text-xl text-primary mb-2">
+                Annonces Google Ads, Meta et TripAdvisor
+              </h3>
+              <p className="text-sm sm:text-base text-primary/80 leading-relaxed">
+                Lorsque vous souhaitez lancer des annonces pour soutenir une ouverture, remplir une basse saison ou obtenir des devis rapidement, nous créons et gérons vos campagnes sur vos propres comptes publicitaires. Nous écartons chaque semaine les requêtes hors sujet pour concentrer vos dépenses sur des demandes concrètes.{' '}
+                <Link to="/google-ads-maroc" className="font-semibold text-accent hover:underline underline-offset-4">
+                  Détail de la gestion d'annonces
+                </Link>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Méthode de travail illustrée (diptyque photo + déroulement en 3 étapes sans double numérotation) */}
+      <section className="py-16 md:py-20 px-6 bg-bg-alt border-t border-primary/10" id="process-section-fr">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+            <figure className="bg-white rounded-xl overflow-hidden border border-primary/10">
+              <div className="aspect-[4/5] w-full">
+                <OptimizedImage
+                  src="/images/optimized/art-house-hero-800.jpg"
+                  imageName="art-house-hero"
+                  alt="Artisan potier dans son atelier traditionnel au Maroc"
+                  width={500}
+                  height={625}
+                  priority={true}
+                  loading="eager"
+                  className="w-full h-full"
+                  imgClassName="object-cover"
+                  sizes="(max-width: 640px) 100vw, 280px"
+                />
+              </div>
+              <figcaption className="p-3 text-xs text-primary/75 border-t border-primary/10 leading-snug">
+                Ateliers, excursions et commerces : faciliter la réservation sur mobile.
+              </figcaption>
+            </figure>
+
+            <figure className="bg-white rounded-xl overflow-hidden border border-primary/10 sm:mt-8">
+              <div className="aspect-[4/5] w-full">
+                <OptimizedImage
+                  src="/images/optimized/moroccan-riad-hospitality-800.jpg"
+                  imageName="moroccan-riad-hospitality"
+                  alt="Patio calme avec piscine au sein d'un riad marocain"
+                  width={500}
+                  height={625}
+                  priority={true}
+                  loading="eager"
+                  className="w-full h-full"
+                  imgClassName="object-cover"
+                  sizes="(max-width: 640px) 100vw, 280px"
+                />
+              </div>
+              <figcaption className="p-3 text-xs text-primary/75 border-t border-primary/10 leading-snug">
+                Hôtels et maisons d'hôtes : relier le site officiel au planning des chambres.
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="lg:col-span-6">
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-6 leading-snug [text-wrap:balance]">
+              Comment se déroule un projet avec notre équipe
+            </h2>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-serif font-bold text-lg text-primary mb-1">
+                  Première étape : diagnostic écrit sous 24 heures ouvrées
+                </h3>
+                <p className="text-sm sm:text-base text-primary/80 leading-relaxed">
+                  Nous testons votre site actuel sur téléphone, vérifions votre fiche Google Maps et identifions les freins à la prise de contact. Vous recevez un constat clair accompagné d'un devis forfaitaire chiffré.
+                </p>
               </div>
 
-              <div className="divide-y divide-primary/15 border-y border-primary/15">
-                {blueprints.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className="group py-6 block hover:bg-bg-light/70 -mx-3 px-3 rounded-lg transition-colors"
-                  >
-                    <p className="text-xs font-semibold text-accent mb-1.5">
-                      {item.sector}
-                    </p>
-                    <h4 className="font-serif font-bold text-xl text-primary group-hover:text-accent transition-colors mb-2 flex items-start justify-between gap-4">
-                      <span>{item.title}</span>
-                      <ArrowUpRight size={18} className="text-accent shrink-0 mt-1" />
-                    </h4>
-                    <p className="text-sm text-primary/75 leading-relaxed">
-                      {item.summary}
-                    </p>
-                  </Link>
-                ))}
+              <div className="pt-5 border-t border-primary/15">
+                <h3 className="font-serif font-bold text-lg text-primary mb-1">
+                  Deuxième étape : mise en ligne sous 4 à 6 semaines
+                </h3>
+                <p className="text-sm sm:text-base text-primary/80 leading-relaxed">
+                  Nous rédigeons et intégrons vos pages en français et en anglais, optimisons le poids des photos, connectons votre moteur PMS ou vos formulaires de devis et installons la mesure des contacts sur Google Analytics.
+                </p>
+              </div>
+
+              <div className="pt-5 border-t border-primary/15">
+                <h3 className="font-serif font-bold text-lg text-primary mb-1">
+                  Troisième étape : suivi mensuel libre et résiliable
+                </h3>
+                <p className="text-sm sm:text-base text-primary/80 leading-relaxed">
+                  Lorsque nous assurons votre référencement local ou la gestion de vos annonces, nous vous envoyons chaque mois un relevé simple des actions menées et des demandes reçues. Vous pouvez arrêter le suivi à tout moment avec 15 jours de préavis écrit.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Chapitre 3 : Secteurs et villes au Maroc unifiés */}
-      <SectorsAndHubsFR />
-
-      {/* Chapitre 4 : Tarifs fixes et engagements contractuels unifiés */}
+      {/* 5. Tarifs en dirhams et garanties contractuelles */}
       <PricingSectionFR />
 
-      {/* Chapitre 5 : Questions fréquentes et demande d'audit */}
+      {/* 6. FAQ concise (4 questions pratiques non redondantes) */}
       <FaqSectionFR />
+
+      {/* 7. Appel concret à demander un audit */}
       <BottomFormSectionFR />
     </div>
   );

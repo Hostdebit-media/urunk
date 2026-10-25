@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { trackEvent } from '../../utils/analytics';
 
@@ -30,14 +30,14 @@ export default function BottomFormSection() {
     }
 
     if (!privacyAgreed) {
-      setFormError('Please accept the privacy policy to submit.');
+      setFormError('Please agree to the privacy policy to continue.');
       return;
     }
 
     localStorage.setItem('form_last_submit', now.toString());
     setFormSubmitting(true);
 
-    trackEvent('quote_form_submit', { source: 'homepage_bottom_form', service: formData.get('establishment_type') });
+    trackEvent('quote_form_submit', { source: 'homepage_bottom_form_en', service: formData.get('establishment_type') });
 
     try {
       const res = await fetch('https://formsubmit.co/ajax/contact@urunk.com', {
@@ -62,41 +62,37 @@ export default function BottomFormSection() {
   };
 
   return (
-    <section className="bg-primary text-white py-20 px-6" id="contact-audit-en">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div className="lg:col-span-6 pt-2">
-          <p className="text-sm font-medium text-yellow-400 mb-3">
-            Initial review and quote
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6 text-white leading-tight">
-            Request an audit of your website and local search visibility
+    <section className="bg-primary text-white py-16 md:py-20 px-6" id="contact-audit">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="lg:col-span-6 pt-1">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-serif font-bold mb-5 text-white leading-[1.12] [text-wrap:balance]">
+            Request a free audit of your website and Google Maps listing
           </h2>
-          <p className="text-white/80 text-base sm:text-lg mb-8 leading-relaxed">
-            Share your property or company details. We reply within 24 business hours with a straightforward review of current bottlenecks and a fixed-price proposal with no obligation.
+          <p className="text-white/85 text-base sm:text-lg mb-8 leading-relaxed max-w-xl">
+            Share the name of your property or your current website URL. Within 24 business hours, we will send written technical notes and a clear fixed-price quote.
           </p>
 
-          <div className="space-y-3.5 pt-6 border-t border-white/15 text-sm text-white/85">
-            <div className="flex items-start gap-3">
-              <MapPin size={18} className="text-yellow-400 shrink-0 mt-0.5" />
-              <span>3 Rue El Kadi Lass, Maarif, Casablanca, Morocco</span>
-            </div>
-            <a
-              href="mailto:contact@urunk.com"
-              onClick={() => trackEvent('email_click', { email: 'contact@urunk.com' })}
-              className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
-            >
-              <Mail size={18} className="text-yellow-400 shrink-0" />
-              <span>contact@urunk.com</span>
-            </a>
-            <a
-              href="tel:+212668802096"
-              onClick={() => trackEvent('call_click', { phone: '+212668802096' })}
-              className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
-            >
-              <Phone size={18} className="text-yellow-400 shrink-0" />
-              <span>+212 668-802096 (Phone or WhatsApp)</span>
-            </a>
-          </div>
+          <address className="not-italic space-y-2 pt-6 border-t border-white/15 text-sm text-white/85 leading-relaxed">
+            <p className="font-semibold text-white">Urunk · Casablanca Office</p>
+            <p>3 Rue El Kadi Lass, Maarif, Casablanca, Morocco</p>
+            <p>
+              <a
+                href="mailto:contact@urunk.com"
+                onClick={() => trackEvent('email_click', { email: 'contact@urunk.com' })}
+                className="underline underline-offset-4 hover:text-yellow-400 transition-colors"
+              >
+                contact@urunk.com
+              </a>
+              {' · '}
+              <a
+                href="tel:+212668802096"
+                onClick={() => trackEvent('call_click', { phone: '+212668802096' })}
+                className="underline underline-offset-4 hover:text-yellow-400 transition-colors"
+              >
+                +212 668-802096
+              </a>
+            </p>
+          </address>
         </div>
 
         <div className="lg:col-span-6 w-full">
@@ -104,33 +100,33 @@ export default function BottomFormSection() {
             action="https://formsubmit.co/contact@urunk.com"
             method="POST"
             onSubmit={handleFormSubmit}
-            className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 text-primary"
+            className="bg-white rounded-xl p-6 sm:p-8 text-primary"
           >
-            <h3 className="text-2xl font-serif font-bold mb-6">
-              Receive my free audit
+            <h3 className="text-xl font-serif font-bold mb-5">
+              Send your property or business details
             </h3>
 
             {formError && (
-              <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-700 rounded-xl text-xs font-medium">
+              <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-700 rounded-lg text-xs font-medium">
                 {formError}
               </div>
             )}
             {formSuccess && (
-              <div role="status" aria-live="polite" className="mb-4 p-3 bg-green-50 text-green-800 rounded-xl text-xs font-medium">
+              <div role="status" aria-live="polite" className="mb-4 p-3 bg-green-50 text-green-800 rounded-lg text-xs font-medium">
                 {formSuccess}
               </div>
             )}
 
             <div className="space-y-4 text-xs">
               <div>
-                <label htmlFor="home_en_name" className="block font-medium mb-1.5">Your name *</label>
+                <label htmlFor="home_en_name" className="block font-medium mb-1.5">Name and property / company *</label>
                 <input
                   id="home_en_name"
                   type="text"
                   name="name"
                   required
-                  placeholder="e.g. Karim Benali"
-                  className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm"
+                  placeholder="e.g. Karim Benali, Riad Dar..."
+                  className="w-full border border-primary/20 rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-primary transition-colors text-sm"
                 />
               </div>
               <div>
@@ -140,8 +136,8 @@ export default function BottomFormSection() {
                   type="text"
                   name="contact"
                   required
-                  placeholder="+212 600-000000 or contact@property.com"
-                  className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors text-sm"
+                  placeholder="+212 600-000000 or contact@domain.ma"
+                  className="w-full border border-primary/20 rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-primary transition-colors text-sm"
                 />
               </div>
               <div>
@@ -150,19 +146,19 @@ export default function BottomFormSection() {
                   id="home_en_establishment"
                   name="establishment_type"
                   required
-                  className="w-full border border-primary/20 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors cursor-pointer text-sm bg-white"
+                  className="w-full border border-primary/20 rounded-lg px-3.5 py-2.5 focus:outline-none focus:border-primary transition-colors cursor-pointer text-sm bg-white"
                 >
                   <option value="">Select your business type</option>
-                  <option value="Riad & Boutique Stay">Riad or guest house</option>
+                  <option value="Riad & Guesthouse">Riad or guesthouse</option>
                   <option value="Hotel & Resort">Hotel or resort</option>
-                  <option value="Tour Operator & Travel Agency">Tour operator or excursion agency</option>
-                  <option value="Restaurant & Catering">Restaurant or catering company</option>
+                  <option value="Tour Operator & Travel Agency">Tour operator or excursions</option>
+                  <option value="Restaurant & Catering">Restaurant or catering</option>
                   <option value="Corporate & SME">SME or B2B firm</option>
                 </select>
               </div>
 
               <div className="absolute -left-[9999px] -top-[9999px] opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
-                <label htmlFor="home_en_website_hp">Website URL</label>
+                <label htmlFor="home_en_website_hp">Website</label>
                 <input id="home_en_website_hp" type="text" name="_gotcha" tabIndex={-1} autoComplete="off" />
               </div>
 
@@ -172,29 +168,26 @@ export default function BottomFormSection() {
                   id="home_en_consent"
                   checked={privacyAgreed}
                   onChange={(e) => setPrivacyAgreed(e.target.checked)}
-                  className="mt-1 rounded border-primary/20 text-accent cursor-pointer"
+                  className="mt-0.5 rounded border-primary/20 text-accent cursor-pointer"
                   required
                 />
-                <label htmlFor="home_en_consent" className="text-[11px] text-primary/70 cursor-pointer leading-tight">
-                  I agree to the processing of this inquiry in accordance with the{' '}
+                <label htmlFor="home_en_consent" className="text-[11px] text-primary/70 cursor-pointer leading-snug">
+                  I agree to the processing of this information to answer my request under the{' '}
                   <Link to="/en/privacy-policy" className="underline text-accent">
-                    Privacy Policy
+                    privacy policy
                   </Link>.
                 </label>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-1">
                 <button
                   type="submit"
                   disabled={formSubmitting}
-                  className="w-full bg-accent hover:bg-accent-hover text-white py-3.5 rounded-xl font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                  className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-lg font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                 >
-                  <span>Send my audit request</span>
+                  <span>Send audit request</span>
                   <ArrowRight size={16} />
                 </button>
-                <p className="text-[11px] text-primary/60 text-center mt-3">
-                  Written reply within 24 business hours. No aggressive sales follow-up.
-                </p>
               </div>
             </div>
           </form>

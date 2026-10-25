@@ -884,148 +884,117 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
     // HOME PAGE
     html += `
       <header style="margin-bottom: 3rem;">
-        <p style="color: #9E3018; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem;">
-          ${isFR ? "Casablanca et Marrakech · Hôtellerie, tourisme et PME" : "Casablanca and Marrakech · Hospitality, tourism, and SMEs"}
-        </p>
         <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1.25rem; line-height: 1.15; font-family: Georgia, serif;">
-          ${isFR ? "Agence web et SEO pour hôtels, riads et PME au Maroc" : "Web and SEO Agency for Hotels, Riads, and SMEs in Morocco"}
+          ${isFR ? "Sites web, SEO local et annonces Google pour hôtels, riads et PME au Maroc" : "Websites, local SEO, and Google Ads for hotels, riads, and SMEs in Morocco"}
         </h1>
-        <p style="font-size: 1.15rem; line-height: 1.65; color: #2d3748; max-width: 720px; margin: 0 0 1.75rem 0;">
+        <p style="font-size: 1.1rem; line-height: 1.65; color: #2d3748; max-width: 680px; margin: 0 0 1rem 0;">
           ${isFR
-            ? "Nous créons des sites rapides connectés à votre moteur de réservation, optimisons votre présence sur Google Maps et gérons vos campagnes Google Ads pour générer des réservations directes sans commission et des demandes de devis qualifiées."
-            : "We build fast websites connected to your booking engine, optimize your Google Maps presence, and manage Google Ads campaigns to generate commission-free direct bookings and qualified quote inquiries."}
+            ? "Depuis notre bureau de Casablanca, nous créons des sites rapides reliés à votre moteur de réservation, améliorons votre classement sur Google Maps et lançons vos annonces de recherche pour vous aider à recevoir plus de réservations directes ou de demandes de devis."
+            : "From our office in Casablanca, we build fast websites connected to your booking engine, improve your local Google Maps rankings, and run search ads so you receive more direct bookings and quote inquiries."}
         </p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-          <a href="${isFR ? '/contact' : '/en/contact'}" style="background: #9E3018; color: white; padding: 0.85rem 1.75rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+        <p style="font-size: 1rem; line-height: 1.6; color: #4a5568; max-width: 680px; margin: 0 0 1.5rem 0;">
+          ${isFR
+            ? "Un site complet est livré en 4 à 6 semaines dès 12 000 MAD, et chaque suivi mensuel reste résiliable avec 15 jours de préavis."
+            : "Complete websites launch in 4 to 6 weeks starting at 12,000 MAD, and monthly services can be canceled anytime with 15 days notice."}
+        </p>
+        <div>
+          <a href="${isFR ? '/contact' : '/en/contact'}" style="background: #9E3018; color: white; padding: 0.85rem 1.6rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block;">
             ${isFR ? "Demander un audit gratuit" : "Request a free audit"}
-          </a>
-          <a href="${isFR ? '/marketing-digital-hotelier' : '/en/hotel-digital-marketing'}" style="color: #0F2D25; padding: 0.5rem 0.25rem; text-decoration: underline; font-weight: 600;">
-            ${isFR ? "Approche hôtellerie et réservation directe" : "Hospitality and direct booking approach"}
           </a>
         </div>
       </header>
 
-      <section style="margin-bottom: 3rem; padding: 1.75rem; background: #0F2D25; color: #ffffff; border-radius: 12px;">
-        <h2 style="color: #ffffff; font-size: 1.75rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">
-          ${isFR ? "Reprenez une part de vos nuitées vendues sur les plateformes OTA" : "Keep more room revenue by shifting stays toward direct bookings"}
+      <section style="margin-bottom: 2.5rem; padding: 1.75rem; background: #0F2D25; color: #ffffff; border-radius: 12px;">
+        <h2 style="color: #ffffff; font-size: 1.65rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">
+          ${isFR ? "Pourquoi vos futurs clients passent encore par les plateformes à commission" : "Why guests who already know your name still book through OTA platforms"}
         </h2>
-        <p style="line-height: 1.6; color: #e2e8f0; margin-bottom: 0;">
+        <p style="line-height: 1.6; color: #e2e8f0; margin-bottom: 0.75rem;">
           ${isFR
-            ? "Booking.com, Expedia et les revendeurs d'activités prélèvent 15 à 25 % de commission par réservation. Sur votre site officiel relié à votre PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier), vous encaissez vos réservations directes avec 0 % de commission intermédiaire."
-            : "Booking.com, Expedia, and activity aggregators deduct 15% to 25% commission per stay. On your official website synced with your PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier), you capture direct bookings with 0% OTA commission."}
+            ? "Lorsqu'un voyageur repère le nom de votre riad ou de votre hôtel mais tombe sur un site lent sur téléphone ou une fiche Google Maps incomplète, il retourne réserver sur Booking.com, Expedia ou Viator, où les commissions représentent en général 15 % à 25 % du montant du séjour selon contrat (taux de base moyen de 15 % hors options de visibilité selon Booking.com Partner Hub, partner.booking.com, consulté en octobre 2026)."
+            : "When a traveler looks up your riad or hotel by name and finds a slow mobile website or an incomplete Google Maps listing, they fall back to Booking.com, Expedia, or Viator, where commissions typically deduct 15% to 25% per stay depending on contract (standard base rate averaging 15% before optional visibility programs per Booking.com Partner Hub, partner.booking.com, reviewed October 2026)."}
+        </p>
+        <p style="line-height: 1.6; color: #cbd5e0; margin: 0;">
+          ${isFR
+            ? "Sur votre site officiel relié à votre moteur PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier), aucune commission d'agence en ligne ne s'applique : vous réglez uniquement vos frais habituels de logiciel PMS, d'encaissement bancaire et votre éventuel budget publicitaire."
+            : "On your official website connected to your PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier), no online travel agency commission applies: you pay only your standard PMS subscription, payment gateway fees, and any optional ad budget."}
         </p>
       </section>
 
-      <section style="margin-bottom: 3rem;">
-        <h2 style="color: #0F2D25; font-size: 1.9rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">
-          ${isFR ? "Création de sites web, référencement local et campagnes d'annonces" : "Websites, local search optimization, and paid search campaigns"}
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+          ${isFR ? "Trois services complémentaires selon votre besoin" : "Three practical services tailored to your stage"}
         </h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-          <div style="border-top: 2px solid #0F2D25; padding-top: 1rem;">
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #0F2D25;">${isFR ? '01. Sites web et réservation' : '01. Websites and booking'}</h3>
-            <ul style="padding-left: 1.2rem; margin: 0; line-height: 1.8;">
-              <li><a href="${isFR ? '/creation-site-web' : '/en/services/website-design'}" style="color: #0F2D25;">${isFR ? 'Création de site web au Maroc' : 'Website design in Morocco'}</a></li>
-              <li><a href="${isFR ? '/site-web-hotel' : '/en/hotel-website-design'}" style="color: #0F2D25;">${isFR ? 'Sites web pour hôtels' : 'Hotel website design'}</a></li>
-              <li><a href="${isFR ? '/site-web-riad-marrakech' : '/en/riad-website-design-marrakech'}" style="color: #0F2D25;">${isFR ? 'Site web riad à Marrakech' : 'Marrakech riad websites'}</a></li>
-              <li><a href="${isFR ? '/agence-web-casablanca' : '/en/web-design-casablanca'}" style="color: #0F2D25;">${isFR ? 'Agence web à Casablanca' : 'Web design Casablanca'}</a></li>
-              <li><a href="${isFR ? '/reservation-directe' : '/en/direct-booking'}" style="color: #0F2D25;">${isFR ? 'Stratégie de réservation directe' : 'Direct booking setup'}</a></li>
-            </ul>
-          </div>
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <article style="border-top: 1px solid #d0c8b8; padding-top: 1rem;">
+            <h3 style="margin: 0 0 0.4rem 0; font-size: 1.2rem; color: #0F2D25; font-family: Georgia, serif;">
+              ${isFR ? "Création de site web et réservation en ligne" : "Website design and online booking setup"}
+            </h3>
+            <p style="margin: 0; color: #2d3748; line-height: 1.6;">
+              ${isFR
+                ? "Sites bilingues français et anglais rapides sur réseau mobile, connectés à votre calendrier PMS ou équipés de formulaires courts de demande de devis et de contact WhatsApp."
+                : "Bilingual English and French websites built for mobile speed, connected to your live PMS calendar or equipped with short quote inquiry forms and direct WhatsApp contact."}
+              <a href="${isFR ? '/creation-site-web' : '/en/services/website-design'}" style="color: #9E3018; font-weight: 600; margin-left: 0.4rem;">${isFR ? 'Détail création web' : 'Website design details'}</a>
+            </p>
+          </article>
 
-          <div style="border-top: 2px solid #0F2D25; padding-top: 1rem;">
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #0F2D25;">${isFR ? '02. SEO et Google Maps' : '02. SEO and Google Maps'}</h3>
-            <ul style="padding-left: 1.2rem; margin: 0; line-height: 1.8;">
-              <li><a href="${isFR ? '/agence-seo-maroc' : '/en/seo-agency-morocco'}" style="color: #0F2D25;">${isFR ? 'Agence SEO Maroc' : 'SEO agency Morocco'}</a></li>
-              <li><a href="${isFR ? '/seo-riad-marrakech' : '/en/riad-seo-marrakech'}" style="color: #0F2D25;">${isFR ? 'SEO pour riads à Marrakech' : 'Marrakech riad SEO'}</a></li>
-              <li><a href="${isFR ? '/referencement-local-casablanca' : '/en/local-seo-casablanca'}" style="color: #0F2D25;">${isFR ? 'Référencement local Casablanca' : 'Local SEO Casablanca'}</a></li>
-              <li><a href="${isFR ? '/services/google-business-profile' : '/en/services/google-business-profile'}" style="color: #0F2D25;">Google Business Profile</a></li>
-            </ul>
-          </div>
+          <article style="border-top: 1px solid #d0c8b8; padding-top: 1rem;">
+            <h3 style="margin: 0 0 0.4rem 0; font-size: 1.2rem; color: #0F2D25; font-family: Georgia, serif;">
+              ${isFR ? "Référencement local et fiche Google Maps" : "Local SEO and Google Maps management"}
+            </h3>
+            <p style="margin: 0; color: #2d3748; line-height: 1.6;">
+              ${isFR
+                ? "Structuration des pages par service et par quartier, corrections techniques et suivi de votre fiche Google Business Profile pour améliorer votre classement local."
+                : "Service and neighborhood page structure, technical fixes, and Google Business Profile management to improve your local rankings."}
+              <a href="${isFR ? '/agence-seo-maroc' : '/en/seo-agency-morocco'}" style="color: #9E3018; font-weight: 600; margin-left: 0.4rem;">${isFR ? 'Détail SEO local' : 'Local SEO details'}</a>
+            </p>
+          </article>
 
-          <div style="border-top: 2px solid #0F2D25; padding-top: 1rem;">
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #0F2D25;">${isFR ? '03. Campagnes payantes' : '03. Paid ad management'}</h3>
-            <ul style="padding-left: 1.2rem; margin: 0; line-height: 1.8;">
-              <li><a href="${isFR ? '/google-ads-maroc' : '/en/google-ads-morocco'}" style="color: #0F2D25;">${isFR ? 'Gestion Google Ads Maroc' : 'Google Ads Morocco'}</a></li>
-              <li><a href="${isFR ? '/services/gestion-publicites-meta' : '/en/services/meta-ads'}" style="color: #0F2D25;">Meta Ads</a></li>
-              <li><a href="${isFR ? '/services/tripadvisor-ads' : '/en/services/tripadvisor-ads'}" style="color: #0F2D25;">TripAdvisor Ads</a></li>
-              <li><a href="${isFR ? '/services' : '/en/services'}" style="color: #0F2D25;">${isFR ? 'Tous nos services marketing' : 'All marketing services'}</a></li>
-            </ul>
-          </div>
-
-          <div style="border-top: 2px solid #0F2D25; padding-top: 1rem;">
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.2rem; color: #0F2D25;">${isFR ? '04. Spécialités et guides' : '04. Technical SEO and guides'}</h3>
-            <ul style="padding-left: 1.2rem; margin: 0; line-height: 1.8;">
-              <li><a href="${isFR ? '/services/wordpress-seo' : '/en/services/wordpress-seo'}" style="color: #0F2D25;">${isFR ? 'SEO WordPress' : 'WordPress SEO'}</a></li>
-              <li><a href="${isFR ? '/services/ecommerce-seo' : '/en/services/ecommerce-seo'}" style="color: #0F2D25;">${isFR ? 'SEO E-commerce' : 'E-commerce SEO'}</a></li>
-              <li><a href="${isFR ? '/services/ai-seo-optimization' : '/en/services/ai-seo-optimization'}" style="color: #0F2D25;">${isFR ? 'Optimisation SEO sémantique' : 'Semantic & AI search SEO'}</a></li>
-              <li><a href="${isFR ? '/services/bundle-site-ads' : '/en/services/bundle-site-ads'}" style="color: #0F2D25;">${isFR ? 'Pack Site web + Publicité' : 'Website + Ads bundle'}</a></li>
-              <li><a href="${isFR ? '/blog/reduire-commissions-ota' : '/en/blog/reduce-ota-commissions'}" style="color: #0F2D25;">${isFR ? 'Guide : réduire les commissions OTA' : 'Guide: reducing OTA commissions'}</a></li>
-              <li><a href="${isFR ? '/blog/tripadvisor-vs-google-ads' : '/en/blog/tripadvisor-vs-google-ads'}" style="color: #0F2D25;">TripAdvisor vs Google Ads</a></li>
-              <li><a href="${isFR ? '/blog/guide-seo-hotellerie-maroc' : '/en/blog/hotel-seo-morocco-guide'}" style="color: #0F2D25;">${isFR ? 'Guide du SEO hôtelier au Maroc' : 'Morocco hotel SEO guide'}</a></li>
-            </ul>
-          </div>
+          <article style="border-top: 1px solid #d0c8b8; padding-top: 1rem;">
+            <h3 style="margin: 0 0 0.4rem 0; font-size: 1.2rem; color: #0F2D25; font-family: Georgia, serif;">
+              ${isFR ? "Annonces Google Ads, Meta et TripAdvisor" : "Google Ads, Meta, and TripAdvisor campaigns"}
+            </h3>
+            <p style="margin: 0; color: #2d3748; line-height: 1.6;">
+              ${isFR
+                ? "Ouverture et tri hebdomadaire de vos campagnes directement sur vos propres comptes publicitaires pour soutenir vos périodes creuses ou obtenir des devis."
+                : "Campaign setup and weekly search term filtering directly inside your own ad accounts to fill low-season dates or generate quote inquiries."}
+              <a href="${isFR ? '/google-ads-maroc' : '/en/google-ads-morocco'}" style="color: #9E3018; font-weight: 600; margin-left: 0.4rem;">${isFR ? 'Détail annonces' : 'Ad management details'}</a>
+            </p>
+          </article>
         </div>
       </section>
 
-      <section style="margin-bottom: 3rem; border-top: 1px solid #d0c8b8; padding-top: 2rem;">
-        <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">
-          ${isFR ? "Établissements accompagnés et villes d'intervention" : "Businesses we serve and cities we cover"}
+      <section style="margin-bottom: 2.5rem; border-top: 1px solid #d0c8b8; padding-top: 1.75rem;">
+        <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">
+          ${isFR ? "Tarifs fixes en dirhams et garanties écrites" : "Fixed pricing in Moroccan dirhams and written contract terms"}
         </h2>
-        <p style="color: #2d3748; line-height: 1.6; margin-bottom: 1.25rem;">
+        <p style="color: #2d3748; line-height: 1.6; margin-bottom: 0.75rem;">
           ${isFR
-            ? "Siège au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc. Interventions auprès des riads, hôtels, tour-opérateurs, traiteurs et PME à Casablanca, Marrakech, Rabat et Agadir."
-            : "Office at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco. Supporting riads, hotels, tour operators, caterers, and SMEs in Casablanca, Marrakech, Rabat, and Agadir."}
+            ? "Création de site web complet à partir de 12 000 MAD (livré en 4 à 6 semaines). Suivis mensuels sans durée minimale : SEO local et Google Maps à 4 000 MAD/mois, Google Ads à 4 000 MAD/mois, Meta Ads à 4 000 MAD/mois et TripAdvisor Ads à 3 000 MAD/mois."
+            : "Complete website build starting at 12,000 MAD (delivered in 4 to 6 weeks). Month-to-month retainers: Local SEO and Google Maps at 4,000 MAD/mo, Google Ads at 4,000 MAD/mo, Meta Ads at 4,000 MAD/mo, and TripAdvisor Ads at 3,000 MAD/mo."}
         </p>
-        <ul style="padding-left: 1.25rem; line-height: 1.8;">
-          <li><a href="${isFR ? '/secteurs/riads-maisons-hotes' : '/en/industries/riads-boutique-hotels'}" style="color: #0F2D25;">${isFR ? "Riads et maisons d'hôtes" : "Riads and boutique stays"}</a></li>
-          <li><a href="${isFR ? '/secteurs/hotels-resorts' : '/en/industries/hotels-resorts'}" style="color: #0F2D25;">${isFR ? "Hôtels et complexes" : "Hotels and resorts"}</a></li>
-          <li><a href="${isFR ? '/secteurs/tour-operateurs' : '/en/industries/tour-operators'}" style="color: #0F2D25;">${isFR ? "Agences de voyage et excursions" : "Tour operators and excursions"}</a></li>
-          <li><a href="${isFR ? '/secteurs/restaurants-traiteurs' : '/en/industries/restaurants-catering'}" style="color: #0F2D25;">${isFR ? "Restaurants et traiteurs" : "Restaurants and catering"}</a></li>
-          <li><a href="${isFR ? '/secteurs/pme-entreprises' : '/en/industries/corporate-smes'}" style="color: #0F2D25;">${isFR ? "PME et cabinets B2B" : "SMEs and B2B firms"}</a></li>
-          <li><a href="${isFR ? '/zones/casablanca' : '/en/locations/casablanca'}" style="color: #0F2D25;">Casablanca</a> · <a href="${isFR ? '/zones/marrakech' : '/en/locations/marrakech'}" style="color: #0F2D25;">Marrakech</a> · <a href="${isFR ? '/zones/rabat' : '/en/locations/rabat'}" style="color: #0F2D25;">Rabat</a> · <a href="${isFR ? '/zones/agadir' : '/en/locations/agadir'}" style="color: #0F2D25;">Agadir</a></li>
-        </ul>
+        <p style="color: #4a5568; line-height: 1.6; margin-bottom: 0;">
+          ${isFR
+            ? "Vous restez propriétaire à 100 % du domaine, du code source et des comptes publicitaires, avec 0 MAD de frais d'ouverture et un préavis écrit de 15 jours."
+            : "You retain 100% ownership of your domain, source code, and ad accounts, with 0 MAD setup fees and 15 days written notice."}
+          <a href="${isFR ? '/tarifs' : '/en/pricing'}" style="color: #9E3018; font-weight: 600; margin-left: 0.4rem;">${isFR ? 'Consulter la grille tarifaire' : 'View full rate card'}</a>
+        </p>
       </section>
 
-      <section style="margin-bottom: 3rem; border-top: 1px solid #d0c8b8; padding-top: 2rem;">
-        <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">
-          ${isFR ? "Plans d'action types et tarifs fixes" : "Applied strategy blueprints and fixed pricing"}
-        </h2>
-        <p style="color: #2d3748; line-height: 1.6; margin-bottom: 1rem;">
-          ${isFR
-            ? "Création de site web dès 12 000 MAD (livré en 4 à 6 semaines), SEO et Google Maps à 4 000 MAD/mois, Google Ads à 4 000 MAD/mois, Meta Ads à 4 000 MAD/mois et TripAdvisor Ads à 3 000 MAD/mois. Propriété intégrale du code et préavis de 15 jours sur les suivis mensuels."
-            : "Website creation starting at 12,000 MAD (delivered in 4 to 6 weeks), SEO and Google Maps at 4,000 MAD/mo, Google Ads at 4,000 MAD/mo, Meta Ads at 4,000 MAD/mo, and TripAdvisor Ads at 3,000 MAD/mo. Full code ownership and 15 days notice on monthly retainers."}
-        </p>
-        <ul style="padding-left: 1.25rem; line-height: 1.8;">
-          <li><a href="${isFR ? '/realisations' : '/en/work'}" style="color: #0F2D25;">${isFR ? 'Voir tous les dossiers et plans d’action' : 'View all strategy blueprints'}</a></li>
-    `;
-    for (const study of caseStudies) {
-      const href = isFR ? `/realisations/${study.frSlug || study.slug}` : `/en/work/${study.slug}`;
-      const title = isFR ? study.frTopicName || study.topicName : study.topicName;
-      html += `<li><a href="${href}" style="color: #0F2D25;">${escapeHtml(title)}</a></li>`;
-    }
-    html += `
-        </ul>
-      </section>
-
-      <section style="margin-bottom: 3rem; border-top: 1px solid #d0c8b8; padding-top: 2rem;">
-        <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1rem; font-family: Georgia, serif;">
-          ${isFR ? 'Questions fréquentes' : 'Frequently asked questions'}
+      <section style="margin-bottom: 2.5rem; border-top: 1px solid #d0c8b8; padding-top: 1.75rem;">
+        <h2 style="color: #0F2D25; font-size: 1.75rem; margin-bottom: 1rem; font-family: Georgia, serif;">
+          ${isFR ? 'Questions pratiques' : 'Practical questions'}
         </h2>
         <div style="display: flex; flex-direction: column; gap: 1rem;">
           ${(isFR ? [
-            { q: "Comment aidez-vous un hôtel ou un riad à obtenir plus de réservations directes ?", a: "Nous mettons en place un site rapide (à partir de 12 000 MAD) relié directement à votre moteur de réservation, complété par une fiche Google Business Profile soignée et, selon vos besoins, des campagnes Google Ads (4 000 MAD/mois de gestion). Les voyageurs qui cherchent votre établissement ou votre quartier réservent ainsi sur votre site sans commission OTA." },
-            { q: "Quels délais prévoir pour la création du site et les résultats SEO ?", a: "Un site web complet est livré en 4 à 6 semaines. Les optimisations locales (vitesse mobile et fiche Google Maps) produisent généralement leurs premiers effets sous 30 à 45 jours, tandis que le positionnement organique sur des requêtes concurrentielles se construit sur 3 à 6 mois." },
-            { q: "Pouvez-vous connecter le site à mon logiciel hôtelier (PMS) actuel ?", a: "Oui. Nous raccordons votre site aux principaux PMS et moteurs de réservation utilisés au Maroc, notamment Cloudbeds, Mews, Little Hotelier, Sirvoy et Amenitiz, afin de synchroniser automatiquement vos disponibilités et vos tarifs." },
-            { q: "Faut-il privilégier Google Ads, Meta Ads ou TripAdvisor Ads ?", a: "Google Ads cible les personnes qui tapent déjà une recherche précise d'hôtel ou de prestataire au Maroc. Meta Ads (Instagram et Facebook) permet de présenter vos chambres ou vos services en image et de relancer les visiteurs du site. TripAdvisor Ads renforce votre visibilité auprès des voyageurs qui comparent les avis avant de réserver." },
-            { q: "Qui paie le budget publicitaire et à qui appartiennent les comptes ?", a: "Vos campagnes sont créées directement sur vos propres comptes Google, Meta ou TripAdvisor. Vous réglez le budget média directement aux plateformes par carte bancaire, et nos honoraires fixes couvrent uniquement le paramétrage et le pilotage mensuel." },
-            { q: "Où êtes-vous situés et comment se passe le suivi ?", a: "Notre agence est située au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc, et nous accompagnons des clients à Casablanca, Marrakech, Rabat et Agadir. Les points d'avancement se font sur place ou en visioconférence avec un rapport mensuel lisible." }
+            { q: "En combien de temps voit-on les effets du référencement local sur Google ?", a: "Les corrections techniques et la mise à jour de votre fiche Google Maps produisent généralement leurs premiers effets sous 30 à 45 jours sur les recherches de proximité. Pour des mots-clés hôteliers ou B2B très disputés, le travail éditorial porte ses fruits progressivement sur 3 à 6 mois." },
+            { q: "Devez-vous remplacer notre logiciel hôtelier (PMS) actuel ?", a: "Non. Nous conservons votre outil actuel et connectons le nouveau site à votre moteur de réservation existant (Cloudbeds, Mews, Little Hotelier, Sirvoy ou Amenitiz) afin que vos disponibilités et vos tarifs restent synchronisés." },
+            { q: "Comment choisir entre Google Ads, Instagram et TripAdvisor ?", a: "Google Ads s'adresse aux personnes qui cherchent déjà un hôtel, une excursion ou un prestataire dans une ville précise. Instagram et Facebook (Meta Ads) servent surtout à montrer vos lieux en image et à relancer les visiteurs récents de votre site. TripAdvisor Ads convient aux hébergements qui veulent apparaître en tête des listes comparatives de leur ville." },
+            { q: "Comment se règle le budget publicitaire chaque mois ?", a: "Toutes les campagnes sont ouvertes à votre nom sur vos propres comptes Google, Meta ou TripAdvisor. Vous réglez vos dépenses de diffusion directement aux plateformes par carte bancaire, tandis que notre forfait fixe rémunère uniquement le paramétrage et le suivi." }
           ] : [
-            { q: "How do you help Moroccan riads and hotels get more direct bookings?", a: "We build a fast official website (starting at 12,000 MAD) connected directly to your booking engine, pair it with an optimized Google Business Profile, and run targeted Google Search campaigns (4,000 MAD/month management fee) when immediate demand capture is needed. Guests searching for your property or neighborhood book on your site with zero OTA commission." },
-            { q: "What timelines should we expect for website launch and SEO results?", a: "A complete website launches in 4 to 6 weeks. Local improvements on Google Maps and mobile page speed typically appear within 30 to 45 days, while organic search rankings for competitive hospitality keywords build steadily over 3 to 6 months." },
-            { q: "Can you connect the website to my existing hotel PMS?", a: "Yes. We connect your website directly to widely used Property Management Systems and booking engines including Cloudbeds, Mews, Little Hotelier, Sirvoy, and Amenitiz so room availability and rates stay synchronized." },
-            { q: "Should we start with Google Ads, Meta Ads, or TripAdvisor Ads?", a: "Google Ads captures travelers or B2B buyers already searching for a specific location or service in Morocco. Meta Ads (Instagram and Facebook) works well for visual discovery and retargeting past website visitors. TripAdvisor Ads places your property at the top of city comparison lists while travelers read reviews." },
-            { q: "How is ad spend billed and who owns the ad accounts?", a: "All campaigns run inside your own Google, Meta, or TripAdvisor accounts. You pay media spend directly to the platforms via your company card, while our flat monthly retainer covers campaign setup, keyword filtering, and ongoing management." },
-            { q: "Where is Urunk based and how do we collaborate?", a: "Our office is at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco, and we work with properties and businesses in Casablanca, Marrakech, Rabat, and Agadir. We meet in person or over Google Meet and share straightforward monthly progress reports." }
+            { q: "How long does local SEO take to show results on Google?", a: "Technical fixes and Google Maps updates usually show initial movement on neighborhood searches within 30 to 45 days. Ranking on competitive city-wide hotel or B2B keywords builds progressively over 3 to 6 months." },
+            { q: "Do we need to replace our existing hotel PMS software?", a: "No. We keep your current setup and connect the new website directly to your existing booking engine (Cloudbeds, Mews, Little Hotelier, Sirvoy, or Amenitiz) so availability and room rates stay synchronized." },
+            { q: "How should we choose between Google Ads, Instagram, and TripAdvisor?", a: "Google Ads reaches people actively searching for a hotel, tour, or service in a specific Moroccan city. Instagram and Facebook (Meta Ads) showcase your property visually and retarget recent website visitors. TripAdvisor Ads suits properties wanting top placement on city comparison lists." },
+            { q: "How is monthly ad spend billed?", a: "All campaigns run under your own Google, Meta, or TripAdvisor accounts. You pay media spend directly to the platforms by company card, while our flat monthly fee covers setup and ongoing management." }
           ]).map(item => `
             <div style="padding-bottom: 1rem; border-bottom: 1px solid #e2e8f0;">
               <h3 style="color: #0F2D25; font-size: 1.05rem; margin-top: 0; margin-bottom: 0.4rem; font-family: Georgia, serif;">${escapeHtml(item.q)}</h3>
@@ -2997,25 +2966,25 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       <footer style="margin-top: 4rem; padding: 2rem; border-top: 1px solid #e2e8f0; font-size: 0.9rem; color: #718096; max-width: 1100px; margin-left: auto; margin-right: auto; font-family: sans-serif;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
           <div>
-            <h4 style="color: #0F2D25; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">URUNK</h4>
-            <p style="font-size: 0.85rem; color: #4a5568; line-height: 1.5; margin-bottom: 0.5rem;">${isFR ? "Agence spécialisée en création web, SEO et publicité digitale au Maroc." : "Specialized web design, SEO and digital marketing agency in Morocco."}</p>
+            <p style="color: #0F2D25; font-weight: 700; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">Urunk</p>
+            <p style="font-size: 0.85rem; color: #4a5568; line-height: 1.5; margin-bottom: 0.5rem;">${isFR ? "Agence de création de sites web, référencement local et campagnes publicitaires au Maroc." : "Web design, local SEO, and paid search agency in Morocco."}</p>
             <p style="font-size: 0.82rem; color: #4a5568; line-height: 1.5; margin: 0;">${isFR ? "3 Rue El Kadi Lass, Maarif, Casablanca, Maroc" : "3 Rue El Kadi Lass, Maarif, Casablanca, Morocco"}<br />+212 668-802096 &middot; contact@urunk.com</p>
           </div>
           <div>
-            <h4 style="color: #0F2D25; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Secteurs' : 'Industries'}</h4>
+            <p style="color: #0F2D25; font-weight: 700; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Secteurs' : 'Industries'}</p>
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-              <li><a href="${isFR ? '/secteurs/hotels-resorts' : '/en/industries/hotels-resorts'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Hôtels & Resorts' : 'Hotels & Resorts'}</a></li>
-              <li><a href="${isFR ? '/secteurs/riads-maisons-hotes' : '/en/industries/riads-boutique-hotels'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Riads & Maisons d\'Hôtes' : 'Riads & Boutique Stays'}</a></li>
-              <li><a href="${isFR ? '/secteurs/tour-operateurs' : '/en/industries/tour-operators'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Tour-Opérateurs' : 'Tour Operators'}</a></li>
-              <li><a href="${isFR ? '/secteurs/restaurants-traiteurs' : '/en/industries/restaurants-catering'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Restaurants & Traiteurs' : 'Restaurants & Catering'}</a></li>
-              <li><a href="${isFR ? '/secteurs/pme-entreprises' : '/en/industries/corporate-smes'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'PME & Entreprises B2B' : 'Corporate & SMEs'}</a></li>
+              <li><a href="${isFR ? '/secteurs/hotels-resorts' : '/en/industries/hotels-resorts'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Hôtels et complexes' : 'Hotels & resorts'}</a></li>
+              <li><a href="${isFR ? '/secteurs/riads-maisons-hotes' : '/en/industries/riads-boutique-hotels'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Riads et maisons d\'hôtes' : 'Riads & guesthouses'}</a></li>
+              <li><a href="${isFR ? '/secteurs/tour-operateurs' : '/en/industries/tour-operators'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Tour-opérateurs' : 'Tour operators'}</a></li>
+              <li><a href="${isFR ? '/secteurs/restaurants-traiteurs' : '/en/industries/restaurants-catering'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Restaurants et traiteurs' : 'Restaurants & catering'}</a></li>
+              <li><a href="${isFR ? '/secteurs/pme-entreprises' : '/en/industries/corporate-smes'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'PME et entreprises B2B' : 'Corporate & SMEs'}</a></li>
             </ul>
           </div>
           <div>
-            <h4 style="color: #0F2D25; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Zones' : 'Locations'}</h4>
+            <p style="color: #0F2D25; font-weight: 700; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Villes au Maroc' : 'Locations'}</p>
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-              <li><a href="${isFR ? '/zones' : '/en/locations'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Toutes les zones' : 'All Locations'}</a></li>
-              <li><a href="${isFR ? '/zones/maroc' : '/en/locations/morocco'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Maroc (Hub)' : 'Morocco Hub'}</a></li>
+              <li><a href="${isFR ? '/zones' : '/en/locations'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Toutes les zones' : 'All locations'}</a></li>
+              <li><a href="${isFR ? '/zones/maroc' : '/en/locations/morocco'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Maroc' : 'Morocco'}</a></li>
               <li><a href="${isFR ? '/zones/casablanca' : '/en/locations/casablanca'}" style="color: #4a5568; text-decoration: none;">Casablanca</a></li>
               <li><a href="${isFR ? '/zones/marrakech' : '/en/locations/marrakech'}" style="color: #4a5568; text-decoration: none;">Marrakech</a></li>
               <li><a href="${isFR ? '/zones/rabat' : '/en/locations/rabat'}" style="color: #4a5568; text-decoration: none;">Rabat</a></li>
@@ -3023,14 +2992,15 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             </ul>
           </div>
           <div>
-            <h4 style="color: #0F2D25; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Navigation' : 'Navigation'}</h4>
+            <p style="color: #0F2D25; font-weight: 700; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Navigation' : 'Navigation'}</p>
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
-              <li><a href="${isFR ? '/plan-du-site' : '/en/sitemap'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Plan du Site' : 'Sitemap'}</a></li>
-              <li><a href="${isFR ? '/creation-site-web' : '/en/services/website-design'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Création Web' : 'Website Design'}</a></li>
+              <li><a href="${isFR ? '/plan-du-site' : '/en/sitemap'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Plan du site' : 'Sitemap'}</a></li>
+              <li><a href="${isFR ? '/creation-site-web' : '/en/services/website-design'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Création de site web' : 'Website design'}</a></li>
+              <li><a href="${isFR ? '/agence-web-casablanca' : '/en/web-design-casablanca'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Agence web Casablanca' : 'Web design Casablanca'}</a></li>
               <li><a href="${isFR ? '/blog' : '/en/blog'}" style="color: #4a5568; text-decoration: none;">Blog</a></li>
-              <li><a href="${isFR ? '/realisations' : '/en/work'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Réalisations' : 'Work'}</a></li>
-              <li><a href="${isFR ? '/politique-de-confidentialite' : '/en/privacy-policy'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Confidentialité' : 'Privacy'}</a></li>
-              <li><a href="${isFR ? '/conditions-generales' : '/en/terms-of-service'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Conditions Générales' : 'Terms of Service'}</a></li>
+              <li><a href="${isFR ? '/realisations' : '/en/work'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Dossiers métiers' : 'Project dossiers'}</a></li>
+              <li><a href="${isFR ? '/politique-de-confidentialite' : '/en/privacy-policy'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Confidentialité' : 'Privacy policy'}</a></li>
+              <li><a href="${isFR ? '/conditions-generales' : '/en/terms-of-service'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Conditions générales' : 'Terms of service'}</a></li>
             </ul>
           </div>
         </div>
@@ -3630,19 +3600,15 @@ function prerender() {
 
       if (isHomepage) {
         faqItems = page.lang === 'fr' ? [
-          { q: "Comment aidez-vous un hôtel ou un riad à obtenir plus de réservations directes ?", a: "Nous mettons en place un site rapide (à partir de 12 000 MAD) relié directement à votre moteur de réservation, complété par une fiche Google Business Profile soignée et, selon vos besoins, des campagnes Google Ads (4 000 MAD/mois de gestion). Les voyageurs qui cherchent votre établissement ou votre quartier réservent ainsi sur votre site sans commission OTA." },
-          { q: "Quels délais prévoir pour la création du site et les résultats SEO ?", a: "Un site web complet est livré en 4 à 6 semaines. Les optimisations locales (vitesse mobile et fiche Google Maps) produisent généralement leurs premiers effets sous 30 à 45 jours, tandis que le positionnement organique sur des requêtes concurrentielles se construit sur 3 à 6 mois." },
-          { q: "Pouvez-vous connecter le site à mon logiciel hôtelier (PMS) actuel ?", a: "Oui. Nous raccordons votre site aux principaux PMS et moteurs de réservation utilisés au Maroc, notamment Cloudbeds, Mews, Little Hotelier, Sirvoy et Amenitiz, afin de synchroniser automatiquement vos disponibilités et vos tarifs." },
-          { q: "Faut-il privilégier Google Ads, Meta Ads ou TripAdvisor Ads ?", a: "Google Ads cible les personnes qui tapent déjà une recherche précise d'hôtel ou de prestataire au Maroc. Meta Ads (Instagram et Facebook) permet de présenter vos chambres ou vos services en image et de relancer les visiteurs du site. TripAdvisor Ads renforce votre visibilité auprès des voyageurs qui comparent les avis avant de réserver." },
-          { q: "Qui paie le budget publicitaire et à qui appartiennent les comptes ?", a: "Vos campagnes sont créées directement sur vos propres comptes Google, Meta ou TripAdvisor. Vous réglez le budget média directement aux plateformes par carte bancaire, et nos honoraires fixes couvrent uniquement le paramétrage et le pilotage mensuel." },
-          { q: "Où êtes-vous situés et comment se passe le suivi ?", a: "Notre agence est située au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc, et nous accompagnons des clients à Casablanca, Marrakech, Rabat et Agadir. Les points d'avancement se font sur place ou en visioconférence avec un rapport mensuel lisible." }
+          { q: "En combien de temps voit-on les effets du référencement local sur Google ?", a: "Les corrections techniques et la mise à jour de votre fiche Google Maps produisent généralement leurs premiers effets sous 30 à 45 jours sur les recherches de proximité. Pour des mots-clés hôteliers ou B2B très disputés, le travail éditorial porte ses fruits progressivement sur 3 à 6 mois." },
+          { q: "Devez-vous remplacer notre logiciel hôtelier (PMS) actuel ?", a: "Non. Nous conservons votre outil actuel et connectons le nouveau site à votre moteur de réservation existant (Cloudbeds, Mews, Little Hotelier, Sirvoy ou Amenitiz) afin que vos disponibilités et vos tarifs restent synchronisés." },
+          { q: "Comment choisir entre Google Ads, Instagram et TripAdvisor ?", a: "Google Ads s'adresse aux personnes qui cherchent déjà un hôtel, une excursion ou un prestataire dans une ville précise. Instagram et Facebook (Meta Ads) servent surtout à montrer vos lieux en image et à relancer les visiteurs récents de votre site. TripAdvisor Ads convient aux hébergements qui veulent apparaître en tête des listes comparatives de leur ville." },
+          { q: "Comment se règle le budget publicitaire chaque mois ?", a: "Toutes les campagnes sont ouvertes à votre nom sur vos propres comptes Google, Meta ou TripAdvisor. Vous réglez vos dépenses de diffusion directement aux plateformes par carte bancaire, tandis que notre forfait fixe rémunère uniquement le paramétrage et le suivi." }
         ] : [
-          { q: "How do you help Moroccan riads and hotels get more direct bookings?", a: "We build a fast official website (starting at 12,000 MAD) connected directly to your booking engine, pair it with an optimized Google Business Profile, and run targeted Google Search campaigns (4,000 MAD/month management fee) when immediate demand capture is needed. Guests searching for your property or neighborhood book on your site with zero OTA commission." },
-          { q: "What timelines should we expect for website launch and SEO results?", a: "A complete website launches in 4 to 6 weeks. Local improvements on Google Maps and mobile page speed typically appear within 30 to 45 days, while organic search rankings for competitive hospitality keywords build steadily over 3 to 6 months." },
-          { q: "Can you connect the website to my existing hotel PMS?", a: "Yes. We connect your website directly to widely used Property Management Systems and booking engines including Cloudbeds, Mews, Little Hotelier, Sirvoy, and Amenitiz so room availability and rates stay synchronized." },
-          { q: "Should we start with Google Ads, Meta Ads, or TripAdvisor Ads?", a: "Google Ads captures travelers or B2B buyers already searching for a specific location or service in Morocco. Meta Ads (Instagram and Facebook) works well for visual discovery and retargeting past website visitors. TripAdvisor Ads places your property at the top of city comparison lists while travelers read reviews." },
-          { q: "How is ad spend billed and who owns the ad accounts?", a: "All campaigns run inside your own Google, Meta, or TripAdvisor accounts. You pay media spend directly to the platforms via your company card, while our flat monthly retainer covers campaign setup, keyword filtering, and ongoing management." },
-          { q: "Where is Urunk based and how do we collaborate?", a: "Our office is at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco, and we work with properties and businesses in Casablanca, Marrakech, Rabat, and Agadir. We meet in person or over Google Meet and share straightforward monthly progress reports." }
+          { q: "How long does local SEO take to show results on Google?", a: "Technical fixes and Google Maps updates usually show initial movement on neighborhood searches within 30 to 45 days. Ranking on competitive city-wide hotel or B2B keywords builds progressively over 3 to 6 months." },
+          { q: "Do we need to replace our existing hotel PMS software?", a: "No. We keep your current setup and connect the new website directly to your existing booking engine (Cloudbeds, Mews, Little Hotelier, Sirvoy, or Amenitiz) so availability and room rates stay synchronized." },
+          { q: "How should we choose between Google Ads, Instagram, and TripAdvisor?", a: "Google Ads reaches people actively searching for a hotel, tour, or service in a specific Moroccan city. Instagram and Facebook (Meta Ads) showcase your property visually and retarget recent website visitors. TripAdvisor Ads suits properties wanting top placement on city comparison lists." },
+          { q: "How is monthly ad spend billed?", a: "All campaigns run under your own Google, Meta, or TripAdvisor accounts. You pay media spend directly to the platforms by company card, while our flat monthly fee covers setup and ongoing management." }
         ];
       } else {
         const faqItemsEN = [
