@@ -4,300 +4,231 @@ import { Check, ArrowRight } from 'lucide-react';
 import { trackEvent } from '../../../utils/analytics';
 
 export default function PricingSectionFR() {
+  const monthlyOffers = [
+    {
+      id: 'pricing-card-seo-fr',
+      name: 'SEO et Google Maps',
+      price: '4 000 MAD',
+      euro: 'env. 370 € / mois',
+      href: '/agence-seo-maroc',
+      cta: "Détails de l'offre SEO",
+      track: 'SEO & Référencement',
+      items: [
+        'Optimisation de votre fiche Google Business Profile et Google Maps',
+        'Ciblage des recherches locales en français et en anglais',
+        'Corrections techniques, balisage et cohérence des coordonnées',
+        'Compte rendu mensuel sur vos positions et demandes reçues'
+      ]
+    },
+    {
+      id: 'pricing-card-google-ads-fr',
+      name: 'Google Ads',
+      price: '4 000 MAD',
+      euro: 'env. 370 € / mois',
+      href: '/google-ads-maroc',
+      cta: 'Détails Google Ads',
+      track: 'Google Ads',
+      items: [
+        'Campagnes Search sur les requêtes directes de séjour ou de service',
+        'Annonces orientées vers vos réservations directes ou devis',
+        'Filtrage des mots-clés hors cible pour préserver votre budget',
+        'Suivi mensuel des conversions et du coût par demande'
+      ]
+    },
+    {
+      id: 'pricing-card-meta-ads-fr',
+      name: 'Meta Ads',
+      price: '4 000 MAD',
+      euro: 'env. 370 € / mois',
+      href: '/services/gestion-publicites-meta',
+      cta: 'Détails Meta Ads',
+      track: 'Meta Ads',
+      items: [
+        'Campagnes Instagram et Facebook vers votre site ou WhatsApp',
+        'Relance des visiteurs ayant consulté vos chambres ou tarifs',
+        'Ciblage géographique des voyageurs par pays émetteurs',
+        'Tests réguliers des visuels et ajustement hebdomadaire'
+      ]
+    },
+    {
+      id: 'pricing-card-tripadvisor-ads-fr',
+      name: 'TripAdvisor Ads',
+      price: '3 000 MAD',
+      euro: 'env. 280 € / mois',
+      href: '/services/tripadvisor-ads',
+      cta: 'Détails TripAdvisor Ads',
+      track: 'TripAdvisor Ads',
+      items: [
+        'Emplacements sponsorisés en tête de liste dans votre ville',
+        'Mise à jour complète de la fiche établissement et des photos',
+        'Méthode simple de collecte d’avis auprès des clients sur place',
+        'Plafonnement strict des enchères selon votre budget mensuel'
+      ]
+    }
+  ];
+
   return (
-    <section className="py-20 md:py-28 px-6 bg-white" id="pricing-section-fr">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
-            Tarification Transparente
-          </span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-primary">Forfaits Clairs & Tarifs Fixes</h2>
-          <p className="text-lg text-primary/75 max-w-2xl font-light">
-            Aucun frais de gestion caché ni supplément imprévu. Chaque forfait comprend des directives claires et des livrables contractuels.
+    <section className="py-20 md:py-28 px-6 bg-white border-t border-primary/10" id="pricing-section-fr">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-3xl mb-14">
+          <p className="text-sm font-medium text-accent mb-3">
+            Tarifs et conditions contractuelles
+          </p>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-primary">
+            Forfaits à prix fixes, sans commission sur vos ventes
+          </h2>
+          <p className="text-base md:text-lg text-primary/75 leading-relaxed">
+            Nos tarifs sont affichés clairement en dirhams marocains. Chaque prestation fait l'objet d'un devis écrit précisant le périmètre exact et le calendrier de livraison.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12" id="pricing-cards-grid-fr">
-          {/* Création de Site Web - Full Width inside the grid */}
-          <div className="md:col-span-2 lg:col-span-4 bg-bg-light border border-primary/10 rounded-3xl p-8 md:p-10 shadow-sm hover:border-accent/30 transition-all flex flex-col md:flex-row gap-8 items-center relative" id="pricing-card-web-fr">
-            <div className="flex-1 space-y-4">
-              <div className="sticky top-20 md:relative md:top-0 bg-bg-light/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none z-10 py-4 -mx-8 px-8 md:p-0 border-b border-primary/5 md:border-b-0">
-                <span className="bg-accent/10 text-accent font-bold text-xs px-3 py-1 rounded-full inline-block mb-2">Forfait Web Principal</span>
-                <h3 className="text-3xl font-serif font-bold text-primary">Création de Site Web</h3>
-              </div>
-              <div className="pt-4 md:pt-0 space-y-4">
-                <p className="text-accent font-bold text-2xl">
-                  À partir de 12 000 MAD <span className="text-xs font-normal text-primary/85">(approx. 1 100 €)</span>
-                  <span className="block text-xs font-normal text-primary/85 mt-1">Devis fixe unique (MAD : Dirham Marocain)</span>
-                </p>
-                <p className="text-sm text-primary/75 font-light leading-relaxed">
-                  Un site WordPress moderne et responsive conçu pour votre hôtel, riad ou agence de services. Inclut un design visuel sur mesure, une optimisation de la vitesse mobile, des formulaires de réservation directe et un référencement SEO de base.
-                </p>
-                <Link 
-                  to="/contact" 
-                  onClick={() => trackEvent('pricing_view', { package: 'Création de Site Web' })}
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-sm w-full sm:w-auto justify-center"
-                  id="web-quote-btn-fr"
-                >
-                  <span>Demander un Devis Web</span>
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex-1 w-full bg-white p-6 rounded-2xl border border-primary/10 space-y-3 text-sm">
-              <div className="flex items-center gap-2"><Check size={16} className="text-accent shrink-0" /> Conception WordPress personnalisée axée sur la conversion</div>
-              <div className="flex items-center gap-2"><Check size={16} className="text-accent shrink-0" /> Optimisation mobile avancée pour d'excellents Core Web Vitals</div>
-              <div className="flex items-center gap-2"><Check size={16} className="text-accent shrink-0" /> Intégration de formulaires de contact directs & boutons WhatsApp</div>
-              <div className="flex items-center gap-2"><Check size={16} className="text-accent shrink-0" /> Configuration SEO On-Page de base & balisage Schema.org hôtelier</div>
-              <div className="flex items-center gap-2"><Check size={16} className="text-accent shrink-0" /> Accès d'administration complet pour modifier librement vos contenus</div>
-            </div>
-          </div>
-
-          {/* SEO & Référencement Local Package */}
-          <div className="bg-white border border-border-subtle rounded-3xl p-6 lg:p-5 xl:p-6 shadow-[0_4px_20px_rgba(15,45,37,0.03)] hover:shadow-xl hover:border-accent/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative group" id="pricing-card-seo-fr">
-            <div className="flex flex-col flex-1">
-              <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-3 w-fit">
-                Référencement Naturel
-              </span>
-              <h3 className="font-serif font-bold text-xl lg:text-[1.35rem] text-primary mb-2 min-h-[3.25rem] flex items-center leading-tight">
-                SEO &amp; Référencement
-              </h3>
-              <div className="pt-1 pb-4 mb-5 border-b border-primary/10 min-h-[4.25rem] flex flex-col justify-end">
-                <div className="text-accent font-bold text-2xl tracking-tight leading-none mb-1">
-                  4 000 MAD <span className="text-xs font-normal text-primary/85">/mois</span>
-                </div>
-                <span className="block text-xs font-medium text-primary/80">approx. 370 €/mois · Sans engagement</span>
-              </div>
-              <ul className="space-y-3.5 text-xs text-primary/80 font-normal mb-8 leading-relaxed flex-1">
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Optimisation Google Business Profile &amp; fiches Google Maps</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Recherche approfondie &amp; ciblage de mots-clés d'intention locale</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Création de citations locales &amp; audits de cohérence d'adresses</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Rapports mensuels transparents sur vos positions &amp; trafic</span>
-                </li>
-              </ul>
-            </div>
-            <Link 
-              to="/agence-seo-maroc" 
-              onClick={() => trackEvent('pricing_view', { package: 'SEO & Référencement' })}
-              className="w-full py-3 px-4 rounded-xl bg-accent/10 hover:bg-accent text-accent hover:text-white font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-accent/20 hover:border-accent mt-auto shadow-sm group-hover:shadow-md active:scale-[0.99]"
-            >
-              <span>Découvrir l'Offre SEO</span>
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </div>
-
-          {/* Google Ads */}
-          <div className="bg-white border border-border-subtle rounded-3xl p-6 lg:p-5 xl:p-6 shadow-[0_4px_20px_rgba(15,45,37,0.03)] hover:shadow-xl hover:border-accent/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative group" id="pricing-card-google-ads-fr">
-            <div className="flex flex-col flex-1">
-              <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-3 w-fit">
-                Acquisition Immédiate
-              </span>
-              <h3 className="font-serif font-bold text-xl lg:text-[1.35rem] text-primary mb-2 min-h-[3.25rem] flex items-center leading-tight">
-                Google Ads
-              </h3>
-              <div className="pt-1 pb-4 mb-5 border-b border-primary/10 min-h-[4.25rem] flex flex-col justify-end">
-                <div className="text-accent font-bold text-2xl tracking-tight leading-none mb-1">
-                  4 000 MAD <span className="text-xs font-normal text-primary/85">/mois</span>
-                </div>
-                <span className="block text-xs font-medium text-primary/80">approx. 370 €/mois · Sans engagement</span>
-              </div>
-              <ul className="space-y-3.5 text-xs text-primary/80 font-normal mb-8 leading-relaxed flex-1">
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Ciblage de mots-clés d'intention forte (« hôtel à Marrakech »)</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Rédaction d'annonces de recherche axées sur la réservation directe</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Listes de mots-clés négatifs pour éliminer le trafic hors cible</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Suivi mensuel transparent du retour sur investissement publicitaire</span>
-                </li>
-              </ul>
-            </div>
-            <Link 
-              to="/google-ads-maroc" 
-              onClick={() => trackEvent('pricing_view', { package: 'Google Ads' })}
-              className="w-full py-3 px-4 rounded-xl bg-accent/10 hover:bg-accent text-accent hover:text-white font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-accent/20 hover:border-accent mt-auto shadow-sm group-hover:shadow-md active:scale-[0.99]"
-            >
-              <span>Détails Google Ads</span>
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </div>
-
-          {/* Meta Ads */}
-          <div className="bg-white border border-border-subtle rounded-3xl p-6 lg:p-5 xl:p-6 shadow-[0_4px_20px_rgba(15,45,37,0.03)] hover:shadow-xl hover:border-accent/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative group" id="pricing-card-meta-ads-fr">
-            <div className="flex flex-col flex-1">
-              <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-3 w-fit">
-                Réseaux Sociaux
-              </span>
-              <h3 className="font-serif font-bold text-xl lg:text-[1.35rem] text-primary mb-2 min-h-[3.25rem] flex items-center leading-tight">
-                Meta Ads
-              </h3>
-              <div className="pt-1 pb-4 mb-5 border-b border-primary/10 min-h-[4.25rem] flex flex-col justify-end">
-                <div className="text-accent font-bold text-2xl tracking-tight leading-none mb-1">
-                  4 000 MAD <span className="text-xs font-normal text-primary/85">/mois</span>
-                </div>
-                <span className="block text-xs font-medium text-primary/80">approx. 370 €/mois · Sans engagement</span>
-              </div>
-              <ul className="space-y-3.5 text-xs text-primary/80 font-normal mb-8 leading-relaxed flex-1">
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Conception de campagnes visuelles Instagram Reels &amp; Facebook</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Campagnes de retargeting pour convertir les visiteurs de votre site</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Ciblage fin par centre d'intérêt, pouvoir d'achat &amp; pays émetteurs</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">A/B testing continu des visuels et optimisations hebdomadaires</span>
-                </li>
-              </ul>
-            </div>
-            <Link 
-              to="/services/gestion-publicites-meta" 
-              onClick={() => trackEvent('pricing_view', { package: 'Meta Ads' })}
-              className="w-full py-3 px-4 rounded-xl bg-accent/10 hover:bg-accent text-accent hover:text-white font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-accent/20 hover:border-accent mt-auto shadow-sm group-hover:shadow-md active:scale-[0.99]"
-            >
-              <span>Détails Meta Ads</span>
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </div>
-
-          {/* TripAdvisor Ads */}
-          <div className="bg-white border border-border-subtle rounded-3xl p-6 lg:p-5 xl:p-6 shadow-[0_4px_20px_rgba(15,45,37,0.03)] hover:shadow-xl hover:border-accent/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative group" id="pricing-card-tripadvisor-ads-fr">
-            <div className="flex flex-col flex-1">
-              <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-3 w-fit">
-                Notoriété &amp; Avis
-              </span>
-              <h3 className="font-serif font-bold text-xl lg:text-[1.35rem] text-primary mb-2 min-h-[3.25rem] flex items-center leading-tight">
-                TripAdvisor Ads
-              </h3>
-              <div className="pt-1 pb-4 mb-5 border-b border-primary/10 min-h-[4.25rem] flex flex-col justify-end">
-                <div className="text-accent font-bold text-2xl tracking-tight leading-none mb-1">
-                  3 000 MAD <span className="text-xs font-normal text-primary/85">/mois</span>
-                </div>
-                <span className="block text-xs font-medium text-primary/80">approx. 280 €/mois · Sans engagement</span>
-              </div>
-              <ul className="space-y-3.5 text-xs text-primary/80 font-normal mb-8 leading-relaxed flex-1">
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Positionnement sponsorisé en tête des classements de votre ville</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Optimisation complète de la fiche établissement (photos, descriptions)</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Mise en place de stratégies de collecte d'avis clients positifs</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-4 h-4 rounded-full bg-accent/10 text-accent flex items-center justify-center shrink-0 mt-0.5">
-                    <Check size={11} className="stroke-[2.5]" />
-                  </div>
-                  <span className="leading-snug">Gestion rigoureuse du budget d'enchères pour maximiser le ROI</span>
-                </li>
-              </ul>
-            </div>
-            <Link 
-              to="/services/tripadvisor-ads" 
-              onClick={() => trackEvent('pricing_view', { package: 'TripAdvisor Ads' })}
-              className="w-full py-3 px-4 rounded-xl bg-accent/10 hover:bg-accent text-accent hover:text-white font-bold text-xs transition-all duration-200 flex items-center justify-center gap-2 border border-accent/20 hover:border-accent mt-auto shadow-sm group-hover:shadow-md active:scale-[0.99]"
-            >
-              <span>Détails TripAdvisor Ads</span>
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </div>
-        </div>
-
-        {/* Bundle Highlight */}
-        <div className="bg-primary text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 shadow-lg relative overflow-hidden mb-16">
-          <div className="space-y-4 max-w-2xl">
-            <span className="bg-accent text-white text-[10px] font-bold tracking-widest px-3 py-1 rounded-full uppercase">
-              Meilleur Rapport Qualité-Prix
-            </span>
-            <h3 className="text-3xl font-serif font-bold text-white">Pack Site Web + Optimisation de Recherche</h3>
-            <p className="text-white/80 text-sm font-light leading-relaxed">
-              Associez un site internet haute performance avec une stratégie active de référencement. Idéal pour les riads, hôtels et entreprises marocaines souhaitant accroître rapidement leur part de marché de proximité.
+        {/* Offre principale : Création de site web */}
+        <div
+          className="bg-bg-light border border-border-subtle rounded-2xl p-7 md:p-10 mb-6 grid lg:grid-cols-12 gap-8 items-center"
+          id="pricing-card-web-fr"
+        >
+          <div className="lg:col-span-6 space-y-4">
+            <p className="text-xs font-semibold text-accent">
+              Projet livré clé en main en 4 à 6 semaines
             </p>
-            <p className="text-xs text-yellow-400 font-medium bg-white/10 px-4 py-2 rounded-xl inline-block border border-white/10">
-              Capacité d'accueil limitée. Nous n'acceptons qu'un petit nombre de nouveaux projets par mois pour garantir un niveau de qualité optimal.
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary">
+              Création de site web hôtelier ou PME
+            </h3>
+            <div className="pt-1">
+              <p className="text-2xl md:text-3xl font-bold text-primary">
+                À partir de 12 000 MAD{' '}
+                <span className="text-sm font-normal text-primary/70">(env. 1 100 €, tarif fixe unique)</span>
+              </p>
+            </div>
+            <p className="text-sm text-primary/80 leading-relaxed">
+              Conception complète d'un site rapide sur mobile pour votre riad, hôtel ou entreprise, préparé pour recevoir des réservations directes ou des demandes de devis dès sa mise en ligne.
             </p>
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <Link
+                to="/contact"
+                onClick={() => trackEvent('pricing_view', { package: 'Création de Site Web' })}
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-xl font-semibold text-sm transition-colors"
+                id="web-quote-btn-fr"
+              >
+                <span>Demander un devis site web</span>
+                <ArrowRight size={16} />
+              </Link>
+              <Link
+                to="/services/bundle-site-ads"
+                className="text-sm font-semibold text-primary hover:text-accent underline underline-offset-4 transition-colors"
+              >
+                Voir aussi le pack Site web + Publicité
+              </Link>
+            </div>
           </div>
-          
-          <Link 
-            to="/contact" 
-            onClick={() => trackEvent('pricing_view', { package: 'Bundle' })}
-            className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-xl font-bold text-sm shrink-0 transition-colors shadow-md"
-          >
-            Demander un Devis Pack
-          </Link>
-        </div>
 
-        {/* Explicit Pricing & Terms Disclaimer */}
-        <div className="p-6 bg-bg-light border border-primary/10 rounded-2xl text-xs text-primary/75 space-y-2 leading-relaxed">
-          <p className="font-bold text-primary">Conditions Importantes et Avertissements Tarifaires :</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Les frais de gestion n'incluent pas le budget publicitaire, sauf indication contraire dans votre contrat.</li>
-            <li>Votre budget publicitaire est payé directement à Google, Meta ou TripAdvisor via la facturation de votre propre compte.</li>
-            <li>Les projets web nécessitent un devis détaillé, un contrat écrit et un cahier des charges validé avant de commencer.</li>
-            <li>Les contrats de gestion de campagnes publicitaires peuvent être mis en pause ou résiliés à tout moment avec un préavis écrit de 15 jours.</li>
-            <li>Le pack Site Web + Canal publicitaire convient aux entreprises ayant besoin d'une nouvelle plateforme web ET d'un trafic qualifié immédiat.</li>
+          <ul className="lg:col-span-6 bg-white p-6 rounded-xl border border-primary/10 space-y-3 text-sm text-primary/85">
+            <li className="flex items-start gap-2.5">
+              <Check size={16} className="text-accent shrink-0 mt-0.5" />
+              <span>Design sur mesure bilingue (français et anglais) pensé pour la lecture sur téléphone</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Check size={16} className="text-accent shrink-0 mt-0.5" />
+              <span>Connexion à votre moteur de réservation (Cloudbeds, Mews, Sirvoy, Little Hotelier) ou WhatsApp</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Check size={16} className="text-accent shrink-0 mt-0.5" />
+              <span>Images compressées AVIF/WebP et pages légères pour un chargement rapide sur réseau mobile</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <Check size={16} className="text-accent shrink-0 mt-0.5" />
+              <span>Structure SEO propre, balisage Schema.org et accès administrateur complet à la livraison</span>
+            </li>
           </ul>
+        </div>
+
+        {/* Grille comparative des 4 accompagnements mensuels */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16" id="pricing-cards-grid-fr">
+          {monthlyOffers.map((offer) => (
+            <div
+              key={offer.id}
+              id={offer.id}
+              className="bg-white border border-border-subtle rounded-2xl p-6 flex flex-col justify-between hover:border-accent/40 transition-colors"
+            >
+              <div>
+                <h3 className="font-serif font-bold text-xl text-primary mb-3">
+                  {offer.name}
+                </h3>
+                <div className="pb-4 mb-5 border-b border-primary/10">
+                  <p className="text-2xl font-bold text-accent leading-none mb-1">
+                    {offer.price} <span className="text-xs font-normal text-primary/75">/ mois</span>
+                  </p>
+                  <span className="text-xs text-primary/65">{offer.euro} · Sans engagement</span>
+                </div>
+                <ul className="space-y-3 text-xs text-primary/80 leading-relaxed mb-6">
+                  {offer.items.map((line, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <Check size={14} className="text-accent shrink-0 mt-0.5" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Link
+                to={offer.href}
+                onClick={() => trackEvent('pricing_view', { package: offer.track })}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:text-accent-hover pt-3 border-t border-primary/10"
+              >
+                <span>{offer.cta}</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        {/* Section unique regroupant les engagements et conditions contractuelles */}
+        <div className="pt-12 border-t border-primary/15" id="contractual-terms-fr">
+          <div className="max-w-2xl mb-8">
+            <h3 className="text-2xl font-serif font-bold text-primary mb-2">
+              Nos engagements contractuels
+            </h3>
+            <p className="text-sm text-primary/75 leading-relaxed">
+              Quatre règles simples inscrites dans nos contrats pour protéger votre trésorerie et votre indépendance technique.
+            </p>
+          </div>
+
+          <dl className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="border-t border-primary/15 pt-4">
+              <dt className="font-serif font-bold text-base text-primary mb-2">
+                Propriété intégrale à 100 %
+              </dt>
+              <dd className="text-sm text-primary/75 leading-relaxed">
+                Vous êtes l'unique titulaire du nom de domaine, du code source, de l'hébergement et des comptes publicitaires. Aucun loyer logiciel.
+              </dd>
+            </div>
+
+            <div className="border-t border-primary/15 pt-4">
+              <dt className="font-serif font-bold text-base text-primary mb-2">
+                Préavis simple de 15 jours
+              </dt>
+              <dd className="text-sm text-primary/75 leading-relaxed">
+                Nos forfaits mensuels de SEO et de gestion publicitaire n'imposent aucune durée minimale. Vous pouvez les arrêter avec 15 jours de préavis écrit.
+              </dd>
+            </div>
+
+            <div className="border-t border-primary/15 pt-4">
+              <dt className="font-serif font-bold text-base text-primary mb-2">
+                0 DH de frais d'ouverture
+              </dt>
+              <dd className="text-sm text-primary/75 leading-relaxed">
+                Aucun frais caché de mise en route. Pour les annonces, votre budget média est payé directement à Google, Meta ou TripAdvisor depuis votre compte.
+              </dd>
+            </div>
+
+            <div className="border-t border-primary/15 pt-4">
+              <dt className="font-serif font-bold text-base text-primary mb-2">
+                Délais et suivi sur 90 jours écrits
+              </dt>
+              <dd className="text-sm text-primary/75 leading-relaxed">
+                La date de mise en ligne (4 à 6 semaines) et les indicateurs suivis sur les 90 premiers jours sont fixés par écrit dans votre devis avant tout démarrage.
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
     </section>

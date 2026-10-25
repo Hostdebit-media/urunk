@@ -1,46 +1,35 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { trackEvent } from '../../../utils/analytics';
 
 export default function FaqSectionFR() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqItems = [
     {
-      q: "Comment aidez-vous les riads et hôtels marocains à réduire les commissions des OTA ?",
-      a: "Nous concevons des sites internet haut de gamme et ultra-rapides (dès 12 000 MAD / ≈1 100 €) connectés directement à votre PMS (Cloudbeds, Mews, etc.). Associés à des campagnes Google Ads ciblées (4 000 MAD/mois / ≈370 €/mois de frais de gestion) et du référencement local, nous interceptons les voyageurs avant qu'ils ne réservent sur les plateformes tierces, réduisant la dépendance aux OTA et augmentant vos réservations directes."
+      q: "Comment aidez-vous un hôtel ou un riad à obtenir plus de réservations directes ?",
+      a: "Nous mettons en place un site rapide (à partir de 12 000 MAD) relié directement à votre moteur de réservation, complété par une fiche Google Business Profile soignée et, selon vos besoins, des campagnes Google Ads (4 000 MAD/mois de gestion). Les voyageurs qui cherchent votre établissement ou votre quartier réservent ainsi sur votre site sans commission OTA."
     },
     {
-      q: "Combien de temps faut-il pour qu'une stratégie SEO porte ses fruits ?",
-      a: "Les optimisations techniques de base, l'accélération de la vitesse mobile et le paramétrage Google Business Profile génèrent des résultats visibles sur Google Maps sous 30 à 45 jours. Pour les mots-clés hôteliers très compétitifs (ex: 'riad de luxe marrakech'), l'autorité organique complète s'établit sur un cycle de 4 à 6 semaines d'implémentation suivi de 3 à 6 mois de montée en puissance."
+      q: "Quels délais prévoir pour la création du site et les résultats SEO ?",
+      a: "Un site web complet est livré en 4 à 6 semaines. Les optimisations locales (vitesse mobile et fiche Google Maps) produisent généralement leurs premiers effets sous 30 à 45 jours, tandis que le positionnement organique sur des requêtes concurrentielles se construit sur 3 à 6 mois."
     },
     {
-      q: "Qu'est-ce qui est inclus dans l'offre de création de site web ?",
-      a: "Chaque projet (12 000 MAD / ≈1 100 € investissement fixe) comprend : design UX sur-mesure de standing, développement performance Jamstack/React (vitesse de chargement optimale), architecture bilingue (français, anglais), raccordement API de votre moteur de réservation et configuration SEO technique intégrale. Livraison sous 4 à 6 semaines, avec garantie de performance sous 90 jours soumise aux [CONDITIONS_GARANTIE]."
+      q: "Pouvez-vous connecter le site à mon logiciel hôtelier (PMS) actuel ?",
+      a: "Oui. Nous raccordons votre site aux principaux PMS et moteurs de réservation utilisés au Maroc, notamment Cloudbeds, Mews, Little Hotelier, Sirvoy et Amenitiz, afin de synchroniser automatiquement vos disponibilités et vos tarifs."
     },
     {
-      q: "Quel levier est le plus efficace : Google Ads ou Meta Ads ?",
-      a: "Google Ads (frais de gestion à 4 000 MAD/mois / ≈370 €/mois) capte les voyageurs ayant une intention d'achat immédiate pour une destination marocaine spécifique. Meta Ads (Instagram/Facebook) excelle dans la mise en valeur visuelle de l'architecture et de l'expérience de votre établissement auprès de cibles qualifiées en Europe ou Amérique du Nord, optimisant le coût d'acquisition de vos réservations."
+      q: "Faut-il privilégier Google Ads, Meta Ads ou TripAdvisor Ads ?",
+      a: "Google Ads cible les personnes qui tapent déjà une recherche précise d'hôtel ou de prestataire au Maroc. Meta Ads (Instagram et Facebook) permet de présenter vos chambres ou vos services en image et de relancer les visiteurs du site. TripAdvisor Ads renforce votre visibilité auprès des voyageurs qui comparent les avis avant de réserver."
     },
     {
-      q: "Pouvez-vous connecter le site web à mon PMS existant ?",
-      a: "Oui, nous intégrons sans couture les moteurs de réservation directe avec les principaux PMS du marché (Cloudbeds, Mews, Little Hotelier, Sirvoy, Opera, etc.) via des API sécurisées. Cela garantit la synchronisation en temps réel de vos tarifs et de vos disponibilités."
+      q: "Qui paie le budget publicitaire et à qui appartiennent les comptes ?",
+      a: "Vos campagnes sont créées directement sur vos propres comptes Google, Meta ou TripAdvisor. Vous réglez le budget média directement aux plateformes par carte bancaire, et nos honoraires fixes couvrent uniquement le paramétrage et le pilotage mensuel."
     },
     {
-      q: "Où êtes-vous basés et comment collaborez-vous avec vos clients ?",
-      a: "Urunk est basée au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc, avec une présence opérationnelle dédiée auprès des hôteliers à Marrakech, Rabat et Agadir. Nous collaborons à distance via des points réguliers sur Google Meet et proposons des contrats mensuels flexibles sans engagement abusif avec un préavis de résiliation de 15 jours."
-    },
-    {
-      q: "Y a-t-il des frais de configuration pour les campagnes Google, Meta ou TripAdvisor ?",
-      a: "Non, aucun frais de dossier de départ n'est facturé pour nos prestations standard de prise en main mensuelle de vos comptes publicitaires."
-    },
-    {
-      q: "Proposez-vous des contrats à engagement de durée minimale ?",
-      a: "Non. Tous nos services récurrents d'optimisation SEO ou de gestion de campagnes publicitaires sont facturés sans engagement forcé à long terme."
-    },
-    {
-      q: "Y a-t-il des frais de licence récurrents pour notre site web ?",
-      a: "Non. Nous concevons vos sites web sous des technologies ouvertes dont vous êtes propriétaire à 100 %. Vous ne payez aucun abonnement logiciel de notre part."
+      q: "Où êtes-vous situés et comment se passe le suivi ?",
+      a: "Notre agence est située au 3 Rue El Kadi Lass, Maarif, Casablanca, Maroc, et nous accompagnons des clients à Casablanca, Marrakech, Rabat et Agadir. Les points d'avancement se font sur place ou en visioconférence avec un rapport mensuel lisible."
     }
   ];
 
@@ -58,40 +47,51 @@ export default function FaqSectionFR() {
   };
 
   return (
-    <section className="py-20 md:py-28 px-6" id="faq-section-fr-element">
+    <section className="py-20 md:py-24 px-6 bg-bg-light border-t border-primary/10" id="faq-section-fr-element">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12 text-center">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
-            Réponses Claires
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
-            Questions fréquentes sur le SEO, les sites web et les commissions OTA
-          </h2>
-          <p className="text-base md:text-lg text-primary/75 max-w-3xl mx-auto font-light leading-relaxed">
-            Cette foire aux questions rassemble les réponses pratiques sur le référencement naturel, la création de sites internet pour l'hôtellerie au Maroc et la réduction des commissions prélevées par les plateformes de réservation en ligne. Les réponses détaillent les coûts, les délais de livraison et le fonctionnement opérationnel.
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+        <div className="lg:col-span-4">
+          <p className="text-sm font-medium text-accent mb-3">
+            Questions fréquentes
           </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+            Réponses pratiques avant de démarrer
+          </h2>
+          <p className="text-sm text-primary/75 leading-relaxed mb-6">
+            Délais, connexion PMS, fonctionnement des budgets publicitaires et suivi au quotidien.
+          </p>
+          <Link
+            to="/faq"
+            className="text-sm font-semibold text-accent hover:underline"
+          >
+            Consulter toutes les questions fréquentes
+          </Link>
         </div>
 
-        <div className="space-y-4">
+        <div className="lg:col-span-8 divide-y divide-primary/15 border-y border-primary/15">
           {faqItems.map((item, idx) => (
-            <div key={idx} className="bg-white border border-primary/10 rounded-2xl overflow-hidden transition-colors">
+            <div key={idx}>
               <button
+                type="button"
                 onClick={() => {
                   const isOpening = openFaq !== idx;
                   setOpenFaq(isOpening ? idx : null);
                   if (isOpening) trackEvent('faq_expand', { question: item.q });
                 }}
-                className="w-full text-left p-6 font-serif font-bold text-lg text-primary flex justify-between items-center gap-4 hover:text-accent transition-colors"
+                aria-expanded={openFaq === idx}
+                className="w-full text-left py-5 font-serif font-bold text-lg text-primary flex justify-between items-center gap-4 hover:text-accent transition-colors cursor-pointer"
               >
                 <span>{item.q}</span>
-                <ChevronDown size={20} className={`shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-accent' : ''}`} />
+                <ChevronDown
+                  size={20}
+                  className={`shrink-0 transition-transform duration-200 ${openFaq === idx ? 'rotate-180 text-accent' : 'text-primary/60'}`}
+                />
               </button>
               {openFaq === idx && (
-                <div className="px-6 pb-6 text-sm text-primary/75 font-light leading-relaxed border-t border-primary/5 pt-4">
+                <div className="pb-5 text-sm text-primary/80 leading-relaxed pr-6">
                   {item.a}
                 </div>
               )}

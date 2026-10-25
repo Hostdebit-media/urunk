@@ -1,122 +1,158 @@
 import React from 'react';
-import { Target, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import OptimizedImage from '../../OptimizedImage';
 
 export default function SectorsAndHubsFR() {
   const sectors = [
     {
-      title: "Hôtels & Complexes",
-      desc: "Nous concevons des plateformes de réservation directe connectées à votre PMS pour capter et convertir l'audience en séjours sans commission d'intermédiaire."
+      title: "Riads et maisons d'hôtes",
+      href: "/secteurs/riads-maisons-hotes",
+      desc: "Sites bilingues connectés à votre planning de chambres et référencement sur Google Maps pour recevoir plus de réservations directes."
     },
     {
-      title: "Riads de Luxe",
-      desc: "Experts de la Médina de Marrakech, nous optimisons votre SEO local et fiches de cartes Google pour vous connecter directement aux voyageurs internationaux."
+      title: "Hôtels et complexes",
+      href: "/secteurs/hotels-resorts",
+      desc: "Intégration de moteurs PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier) et campagnes Google Ads sur les recherches de séjours."
     },
     {
-      title: "Agences de Voyage & Excursions",
-      desc: "Des tunnels de conversion fluides et du référencement naturel ciblé par destination pour transformer la recherche organique en ventes directes."
+      title: "Agences de voyage et excursions",
+      href: "/secteurs/tour-operateurs",
+      desc: "Pages d'itinéraires rapides sur mobile et prise de contact directe sur WhatsApp sans passer par les revendeurs à commission."
     },
     {
-      title: "Restaurants & Traiteurs",
-      desc: "Référencement Maps de proximité, visibilité locale et stratégies d'acquisition ciblées pour attirer les clients en salle et générer des leads qualifiés."
+      title: "Restaurants et traiteurs",
+      href: "/secteurs/restaurants-traiteurs",
+      desc: "Fiches locales Google Business Profile pour le service en salle et pages de demande de devis pour les événements d'entreprise."
     },
     {
-      title: "PME & Entreprises de Services",
-      desc: "Des sites professionnels rapides, du référencement naturel d'autorité locale et des campagnes de lead gen conçues pour votre force commerciale."
+      title: "PME et cabinets B2B",
+      href: "/secteurs/pme-entreprises",
+      desc: "Sites professionnels clairs, référencement local par métier et campagnes de recherche Google orientées demandes de devis."
     }
   ];
 
-  const hubs = [
+  const cities = [
     {
       city: "Casablanca",
-      desc: "Acquisition de prospects B2B, création de portails d'entreprises, référencement local et marketing pour la restauration haut de gamme."
+      href: "/zones/casablanca",
+      meta: "Siège : 3 Rue El Kadi Lass, Maarif",
+      desc: "Accompagnement des PME, cabinets, traiteurs corporate et hôtels d'affaires sur le Grand Casablanca."
     },
     {
       city: "Marrakech",
-      desc: "Positionnement local dans la Médina, visibilité Google Maps prioritaire et tunnels de réservation directe pour riads d'exception."
+      href: "/zones/marrakech",
+      meta: "Médina, Guéliz et Palmeraie",
+      desc: "Sites de réservations directes, fiches Google Maps et campagnes internationales pour riads, villas et maisons d'hôtes."
     },
     {
       city: "Rabat",
-      desc: "Sites web institutionnels, image de marque d'autorité, communication touristique et visibilité de recherche pour administrations et PME."
+      href: "/zones/rabat",
+      meta: "Agdal, Hay Riad et Hassan",
+      desc: "Sites institutionnels, visibilité locale sur Google et acquisition de demandes qualifiées pour entreprises et hôtels."
     },
     {
       city: "Agadir",
-      desc: "SEO de destination ciblé, acquisition de clientèles internationales de loisirs pour resorts balnéaires et surf camps haut de gamme."
-    },
-    {
-      city: "Maroc & Global",
-      desc: "Optimisation de recherche multi-régionale et stratégies d'acquisition multilingues pour attirer les voyageurs mondiaux vers les marques nationales."
+      href: "/zones/agadir",
+      meta: "Zone balnéaire et Taghazout",
+      desc: "Référencement touristique multilingue et campagnes saisonnières pour hôtels, résidences et surf camps."
     }
   ];
 
   return (
-    <section className="py-24 bg-bg border-t border-primary/10 relative overflow-hidden" id="sectors-hubs-section-fr">
+    <section className="py-20 md:py-28 bg-bg-alt border-t border-primary/10" id="sectors-hubs-section-fr">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-bold tracking-wider uppercase mb-6 border border-accent/20">
-            Secteurs & Zones
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
-            Secteurs Cibles & Hubs d'Intervention
-          </h2>
-          <p className="text-lg text-primary/70 max-w-2xl mx-auto font-light">
-            Une expertise sectorielle de pointe alliée à une présence géographique stratégique au Maroc.
-          </p>
-        </div>
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          {/* Colonne gauche : présentation + photographie réelle */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <p className="text-sm font-medium text-accent mb-3">
+                Secteurs et implantation au Maroc
+              </p>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-5 leading-tight">
+                Établissements accompagnés et villes d'intervention
+              </h2>
+              <p className="text-base text-primary/80 leading-relaxed">
+                Depuis notre bureau de Casablanca (Maarif), nous travaillons avec les établissements touristiques et les PME à travers le Maroc. Le travail s'adapte à la réalité commerciale de chaque ville : demandes de devis B2B à Casablanca et Rabat, réservations directes de nuitées et d'excursions à Marrakech et Agadir.
+              </p>
+            </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
-          {/* Column 1: Sectors */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-accent/10 text-accent rounded-xl flex items-center justify-center">
-                <Target size={20} />
+            <figure className="rounded-2xl overflow-hidden border border-primary/10">
+              <div className="aspect-[4/3] lg:aspect-[4/5] w-full">
+                <OptimizedImage
+                  src="/images/optimized/moroccan-riad-architecture-800.jpg"
+                  imageName="moroccan-riad-architecture"
+                  alt="Patio d'un riad marocain traditionnel avec arches et zelliges"
+                  width={600}
+                  height={750}
+                  priority={true}
+                  loading="eager"
+                  className="w-full h-full"
+                  imgClassName="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 460px"
+                />
               </div>
-              <h3 className="text-2xl font-serif font-bold text-primary">À Qui Nous Nous Adressons</h3>
-            </div>
-            <div className="space-y-4">
-              {sectors.map((sect, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white border border-primary/5 shadow-xs hover:border-accent/20 transition-all">
-                  <h4 className="text-lg font-serif font-bold text-primary mb-2">{sect.title}</h4>
-                  <p className="text-sm text-primary/70 font-light leading-relaxed">{sect.desc}</p>
-                </div>
-              ))}
-            </div>
+              <figcaption className="px-4 py-3 bg-white/80 text-xs text-primary/70 border-t border-primary/10">
+                Architecture de riad au Maroc : valoriser l'établissement sur son propre site avant les annuaires tiers.
+              </figcaption>
+            </figure>
           </div>
 
-          {/* Column 2: Hubs */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-accent/10 text-accent rounded-xl flex items-center justify-center">
-                <MapPin size={20} />
+          {/* Colonne droite : listes éditoriales unifiées sans empilement de cartes */}
+          <div className="lg:col-span-7 space-y-12">
+            <div>
+              <h3 className="text-xl font-serif font-bold text-primary pb-3 border-b border-primary/20">
+                Par activité
+              </h3>
+              <div className="divide-y divide-primary/10 border-b border-primary/10">
+                {sectors.map((sect) => (
+                  <Link
+                    key={sect.href}
+                    to={sect.href}
+                    className="group py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-6 hover:bg-white/50 -mx-3 px-3 rounded-lg transition-colors"
+                  >
+                    <div className="sm:w-56 shrink-0 flex items-center gap-1.5 font-serif font-bold text-base text-primary group-hover:text-accent transition-colors">
+                      <span>{sect.title}</span>
+                      <ArrowUpRight size={15} className="text-accent opacity-75 group-hover:opacity-100 shrink-0" />
+                    </div>
+                    <p className="text-sm text-primary/75 leading-relaxed flex-1">
+                      {sect.desc}
+                    </p>
+                  </Link>
+                ))}
               </div>
-              <h3 className="text-2xl font-serif font-bold text-primary">Zones d'Intervention</h3>
             </div>
-            <div className="space-y-4">
-              {hubs.map((hub, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white border border-primary/5 shadow-xs hover:border-accent/20 transition-all">
-                  <h4 className="text-lg font-serif font-bold text-primary mb-2 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    {hub.city}
-                  </h4>
-                  <p className="text-sm text-primary/70 font-light leading-relaxed">{hub.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Column 3: Moody Moroccan Architecture Image */}
-          <div className="hidden lg:block h-full min-h-[450px] rounded-3xl overflow-hidden relative border border-primary/10 shadow-xs">
-            <OptimizedImage 
-              src="/images/optimized/moroccan-riad-architecture-800.jpg"
-              imageName="moroccan-riad-architecture"
-              alt="Détail architectural authentique d'un riad marocain avec zelliges et arches mauresques" 
-              width={600}
-              height={800}
-              loading="lazy"
-              className="absolute inset-0 w-full h-full"
-              imgClassName="object-cover filter brightness-[0.9] contrast-[1.05]"
-              sizes="(max-width: 1024px) 100vw, 400px"
-            />
+            <div>
+              <div className="flex items-baseline justify-between pb-3 border-b border-primary/20">
+                <h3 className="text-xl font-serif font-bold text-primary">
+                  Par ville au Maroc
+                </h3>
+                <Link to="/zones" className="text-xs font-semibold text-accent hover:underline">
+                  Voir toutes les zones
+                </Link>
+              </div>
+              <div className="divide-y divide-primary/10 border-b border-primary/10">
+                {cities.map((item) => (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="group py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-6 hover:bg-white/50 -mx-3 px-3 rounded-lg transition-colors"
+                  >
+                    <div className="sm:w-56 shrink-0">
+                      <span className="font-serif font-bold text-base text-primary group-hover:text-accent transition-colors inline-flex items-center gap-1.5">
+                        {item.city}
+                        <ArrowUpRight size={15} className="text-accent opacity-75 group-hover:opacity-100 shrink-0" />
+                      </span>
+                      <span className="block text-xs text-primary/60 mt-0.5">{item.meta}</span>
+                    </div>
+                    <p className="text-sm text-primary/75 leading-relaxed flex-1">
+                      {item.desc}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

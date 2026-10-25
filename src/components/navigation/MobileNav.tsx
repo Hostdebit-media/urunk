@@ -38,25 +38,21 @@ export default function MobileNav({ isOpen, onClose, isFrench }: MobileNavProps)
   const aboutLink = isFrench ? '/a-propos' : '/en/about';
   const aboutText = isFrench ? 'À Propos' : 'About Us';
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    <div 
-      className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${
-        isOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
-      }`}
-    >
+    <div className="fixed inset-0 z-50 lg:hidden">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-primary/40 backdrop-blur-xs transition-opacity" 
+        className="absolute inset-0 bg-primary/40 backdrop-blur-xs" 
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Slide-out Drawer Panel */}
-      <div 
-        className={`absolute top-0 right-0 bottom-0 w-[88vw] max-w-md bg-white shadow-2xl flex flex-col justify-between overflow-y-auto z-50 transition-transform duration-300 ease-out ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
+      <div className="absolute top-0 right-0 bottom-0 w-[88vw] max-w-md bg-white shadow-2xl flex flex-col justify-between overflow-y-auto z-50">
         <div className="p-6">
           {/* Drawer Top Header */}
           <div className="flex items-center justify-between pb-6 border-b border-primary/10">

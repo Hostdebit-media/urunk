@@ -10,7 +10,7 @@ interface FooterNavProps {
 export default function FooterNav({ isFrench }: FooterNavProps) {
   const homeLink = isFrench ? '/' : '/en';
   const contactLink = isFrench ? '/contact' : '/en/contact';
-  const ctaText = isFrench ? 'Demandez un Audit SEO Gratuit' : 'Get a Free SEO Audit';
+  const ctaText = isFrench ? 'Demander un audit gratuit' : 'Request a free audit';
 
   return (
     <footer className="print:hidden bg-bg-alt border-t border-primary/10 pt-16 pb-28 md:pb-12 px-6 md:px-12 mt-auto">
@@ -25,8 +25,8 @@ export default function FooterNav({ isFrench }: FooterNavProps) {
             </Link>
             <p className="text-sm text-primary/80 max-w-sm leading-relaxed">
               {isFrench 
-                ? "Agence spécialisée en création web, SEO et publicité digitale pour entreprises, hôtels, riads et voyagistes au Maroc. Augmentez vos réservations directes." 
-                : "Specialized web design, SEO and digital marketing agency for Moroccan businesses, hotels, riads, and tour operators. Maximize direct revenue."}
+                ? "Agence web, SEO et publicité digitale basée à Casablanca pour les hôtels, riads, voyagistes et PME au Maroc. Développez vos réservations directes et demandes de devis." 
+                : "Web design, SEO, and paid media agency in Casablanca for hotels, riads, tour operators, and SMEs across Morocco. Grow your direct bookings and quote inquiries."}
             </p>
             <div className="pt-1 text-xs font-semibold text-primary/80 space-y-2">
               <div className="flex items-center gap-2">

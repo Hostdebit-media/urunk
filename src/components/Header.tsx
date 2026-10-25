@@ -37,7 +37,7 @@ export default function Header() {
   }, [isMobileMenuOpen]);
 
   const contactLink = isFrench ? '/contact' : '/en/contact';
-  const ctaText = isFrench ? 'Demander un Audit Gratuit' : 'Request a Free Audit';
+  const ctaText = isFrench ? 'Demander un audit gratuit' : 'Request a free audit';
 
   return (
     <>

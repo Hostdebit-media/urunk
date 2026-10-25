@@ -1,97 +1,97 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { trackEvent } from '../../utils/analytics';
 
 export default function FaqSection() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const faqItems = [
     {
-      q: "How do you help Moroccan riads and hotels reduce OTA commissions?",
-      a: "We build high-performance, ultra-fast direct booking websites (starting at 12,000 MAD / ≈1,100 €) integrated with your Property Management System. Combined with targeted Google Search campaigns (4,000 MAD/month / ≈370 €/month management retainer) and local SEO, we intercept travelers before they book on third-party channels, reducing dependency and increasing your direct bookings."
+      q: 'How do you help Moroccan riads and hotels get more direct bookings?',
+      a: 'We build a fast official website (starting at 12,000 MAD) connected directly to your booking engine, pair it with an optimized Google Business Profile, and run targeted Google Search campaigns (4,000 MAD/month management fee) when immediate demand capture is needed. Guests searching for your property or neighborhood book on your site with zero OTA commission.'
     },
     {
-      q: "How long does it take for an SEO strategy to show results?",
-      a: "Technical SEO fixes, page speed optimization, and Google Business Profile updates yield visible local search improvements within 30 to 45 days. Organic authority for competitive search keywords (such as 'luxury riad Marrakech') typically matures over a 4 to 6 week implementation period followed by 3 to 6 months of ongoing growth."
+      q: 'What timelines should we expect for website launch and SEO results?',
+      a: 'A complete website launches in 4 to 6 weeks. Local improvements on Google Maps and mobile page speed typically appear within 30 to 45 days, while organic search rankings for competitive hospitality keywords build steadily over 3 to 6 months.'
     },
     {
-      q: "What is included in your website creation package?",
-      a: "Every project (12,000 MAD / ≈1,100 € fixed investment) includes custom luxury user experience design, rapid React performance engineering, bilingual structure (English, French), native booking engine API integration, and complete technical SEO. We deliver in 4 to 6 weeks, backed by our 90-day growth guarantee subject to [CONDITIONS_GARANTIE]."
+      q: 'Can you connect the website to my existing hotel PMS?',
+      a: 'Yes. We connect your website directly to widely used Property Management Systems and booking engines including Cloudbeds, Mews, Little Hotelier, Sirvoy, and Amenitiz so room availability and rates stay synchronized.'
     },
     {
-      q: "Which advertising channel is more effective: Google Ads or Meta Ads?",
-      a: "Google Ads (managed at 4,000 MAD/month / ≈370 €/month) capture high-intent travelers actively searching for specific Moroccan destinations. Meta Ads (Instagram and Facebook) excel at showcasing room architecture and amenities to qualified audiences in Europe and North America, optimizing your direct inquiry acquisition costs."
+      q: 'Should we start with Google Ads, Meta Ads, or TripAdvisor Ads?',
+      a: 'Google Ads captures travelers or B2B buyers already searching for a specific location or service in Morocco. Meta Ads (Instagram and Facebook) works well for visual discovery and retargeting past website visitors. TripAdvisor Ads places your property at the top of city comparison lists while travelers read reviews.'
     },
     {
-      q: "Can you connect the website to my existing PMS?",
-      a: "Yes, we seamlessly integrate direct booking engines with leading Property Management Systems including Cloudbeds, Mews, Little Hotelier, Sirvoy, and Opera via secure API connections. This ensures real-time rate synchronization and availability."
+      q: 'How is ad spend billed and who owns the ad accounts?',
+      a: 'All campaigns run inside your own Google, Meta, or TripAdvisor accounts. You pay media spend directly to the platforms via your company card, while our flat monthly retainer covers campaign setup, keyword filtering, and ongoing management.'
     },
     {
-      q: "Where is Urunk located and how do you work with clients?",
-      a: "Urunk is headquartered at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco, with active hospitality coverage in Marrakech, Rabat, and Agadir. We collaborate via remote consultations on Google Meet and offer flexible monthly agreements with a 15-day notice policy."
-    },
-    {
-      q: "Are there setup fees for Google, Meta, or TripAdvisor campaigns?",
-      a: "No, we charge zero setup fees for standard onboarding of your monthly advertising accounts."
-    },
-    {
-      q: "Do you require long-term contracts?",
-      a: "No. All our recurring SEO and ad management services are billed on a monthly basis without long-term commitments."
-    },
-    {
-      q: "Are there recurring license fees for our website?",
-      a: "No. We build websites using open-source platforms that you own 100%. There are no recurring software fees or monthly licensing costs from our end."
+      q: 'Where is Urunk based and how do we collaborate?',
+      a: 'Our office is at 3 Rue El Kadi Lass, Maarif, Casablanca, Morocco, and we work with properties and businesses in Casablanca, Marrakech, Rabat, and Agadir. We meet in person or over Google Meet and share straightforward monthly progress reports.'
     }
   ];
 
   const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
-      "@type": "Question",
-      "name": item.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.a
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
       }
     }))
   };
 
   return (
-    <section className="py-20 md:py-28 px-6" id="faq-section-en-element">
+    <section className="py-20 md:py-24 px-6 bg-bg-light border-t border-primary/10" id="faq-section-en-element">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12 text-center">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-4">
-            Clear Answers
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-primary mb-6">
-            Frequently Asked Questions About SEO, Websites, and OTA Commissions
-          </h2>
-          <p className="text-base md:text-lg text-primary/75 max-w-3xl mx-auto font-light leading-relaxed">
-            This frequently asked questions section provides factual details regarding search engine optimization, hospitality web design in Morocco, and lowering commission costs from online travel agents. Answers cover typical investment budgets, implementation timelines, property management software integration, and contractual terms without long-term lock-in or hidden licensing fees.
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
+        <div className="lg:col-span-4">
+          <p className="text-sm font-medium text-accent mb-3">
+            Frequently asked questions
           </p>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-4">
+            Practical answers before you start
+          </h2>
+          <p className="text-sm text-primary/75 leading-relaxed mb-6">
+            Delivery timelines, PMS integrations, ad account billing, and day-to-day collaboration.
+          </p>
+          <Link
+            to="/en/faq"
+            className="text-sm font-semibold text-accent hover:underline"
+          >
+            View all frequently asked questions
+          </Link>
         </div>
 
-        <div className="space-y-4">
+        <div className="lg:col-span-8 divide-y divide-primary/15 border-y border-primary/15">
           {faqItems.map((item, idx) => (
-            <div key={idx} className="bg-white border border-primary/10 rounded-2xl overflow-hidden transition-colors">
+            <div key={idx}>
               <button
+                type="button"
                 onClick={() => {
                   const isOpening = openFaq !== idx;
                   setOpenFaq(isOpening ? idx : null);
                   if (isOpening) trackEvent('faq_expand', { question: item.q });
                 }}
-                className="w-full text-left p-6 font-serif font-bold text-lg text-primary flex justify-between items-center gap-4 hover:text-accent transition-colors"
+                aria-expanded={openFaq === idx}
+                className="w-full text-left py-5 font-serif font-bold text-lg text-primary flex justify-between items-center gap-4 hover:text-accent transition-colors cursor-pointer"
               >
                 <span>{item.q}</span>
-                <ChevronDown size={20} className={`shrink-0 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-accent' : ''}`} />
+                <ChevronDown
+                  size={20}
+                  className={`shrink-0 transition-transform duration-200 ${openFaq === idx ? 'rotate-180 text-accent' : 'text-primary/60'}`}
+                />
               </button>
               {openFaq === idx && (
-                <div className="px-6 pb-6 text-sm text-primary/75 font-light leading-relaxed border-t border-primary/5 pt-4">
+                <div className="pb-5 text-sm text-primary/80 leading-relaxed pr-6">
                   {item.a}
                 </div>
               )}
