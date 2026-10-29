@@ -7,52 +7,52 @@ import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
+export default function MetaAds() {
+  const faqs = [
+    { q: "Do Meta Ads really drive direct bookings for hotels and riads?", a: "Yes—when paired with conversion tracking and search brand defense. While Google captures travelers actively typing hotel queries, Instagram and Facebook inspire international guests with vertical video and retarget visitors who checked dates on your PMS without completing checkout." },
+    { q: "What is a realistic starting budget for Meta Ads in Morocco?", a: "For single-channel retargeting and seasonal offers, we recommend 3,000 to 6,000 MAD/month in media spend paid directly to Meta, alongside our 4,000 MAD/month flat management fee (0% ad-spend commission). For combined Google + Meta hotel budgets, see our Hotel Digital Marketing guide." },
+    { q: "Do you handle creative formatting and ad copy?", a: "Yes, structuring vertical Reels/Stories edits from your property's visual assets and writing bilingual conversion copy are included in our monthly management retainer." }
+  ];
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Meta Ads for Hotels",
-    "description": "Targeted Facebook and Instagram advertising campaigns to build brand awareness and drive bookings.",
+    "name": "Meta Ads (Instagram & Facebook) for Hotels and Riads",
+    "serviceType": "Meta Ads Management for Hospitality",
+    "description": "Targeted Facebook and Instagram ad funnels for Moroccan hotels and riads starting at 4,000 MAD/mo flat fee (0% commission on ad spend).",
     "provider": {
       "@type": "Organization",
-      "name": "Urunk"
+      "name": "Urunk",
+      "url": "https://urunk.com"
     },
     "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Morocco"
-      },
-      {
-        "@type": "Country",
-        "name": "Worldwide"
-      }
+      { "@type": "Country", "name": "Morocco" },
+      { "@type": "Country", "name": "Worldwide" }
     ],
-    "url": "https://urunk.com/en/services/meta-ads"
+    "url": "https://urunk.com/en/services/meta-ads",
+    "offers": {
+      "@type": "Offer",
+      "price": "4000",
+      "priceCurrency": "MAD"
+    }
   };
 
-export default function MetaAds() {
-  const schema = {
+  const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Meta Ads Management",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
-    },
-    "description": "Professional Facebook and Instagram Ads management for hotels, riads, and hospitality brands to drive brand awareness and direct bookings."
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
   };
-
-  const faqs = [
-    { q: "Do Meta Ads really work for hotels?", a: "Yes. While Google captures people actively searching, Facebook and Instagram are incredible for inspiring travelers, promoting special packages, and retargeting people who visited your site but didn't book." },
-    { q: "What is a good budget for Meta Ads?", a: "We generally recommend starting with 3,000 - 5,000 MAD per month in ad spend to effectively test creatives, build custom audiences, and drive meaningful retargeting campaigns." },
-    { q: "Do you create the graphics and videos?", a: "Yes, we handle the ad creative (graphics, light video edits from your assets, and copywriting) as part of our monthly management fee." }
-  ];
 
   return (
     <div className="w-full">
       <SEO 
-        title="Meta Ads for Hotels and Riads | Urunk" 
-        description="Visual Facebook and Instagram advertising targeting international travelers and retargeting engaged website visitors for hotels." 
-        schema={[schema, serviceSchema]}
+        title="Meta Ads for Hotels & Riads Morocco | Urunk" 
+        description="Instagram and Facebook advertising for Moroccan hotels and riads: dynamic PMS retargeting and flat-fee management from 4,000 MAD/mo." 
+        schema={[serviceSchema, faqSchema]}
       />
       
       {/* Hero & AI Answer Block */}
@@ -68,7 +68,10 @@ export default function MetaAds() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong>What we do:</strong> Urunk provides specialized Meta (Facebook & Instagram) Ads management. We build visually stunning campaigns to showcase your property, promote special offers, and deploy aggressive retargeting to bring back users who abandoned your booking engine.
+              <strong>What we do:</strong> Urunk manages Meta (Facebook &amp; Instagram) funnels for Moroccan hotels and riads from 4,000 MAD/month flat fee. Comparing <strong>combined Google Ads + Meta Ads management and minimum monthly budgets</strong>? Explore our{" "}
+              <Link to="/en/hotel-digital-marketing" className="underline text-accent-soft hover:text-white font-semibold">
+                Hotel Google &amp; Meta Ads Morocco guide
+              </Link>.
             </Callout>
           </div>
           <Link to="/en/contact" className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">

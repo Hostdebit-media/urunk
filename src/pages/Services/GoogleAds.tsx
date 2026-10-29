@@ -7,52 +7,52 @@ import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
+export default function GoogleAds() {
+  const faqs = [
+    { q: "What is a realistic starting budget for Google Ads in Morocco?", a: "For a single riad or small hotel in Morocco running Search & Brand Protection, we recommend a minimum Google media spend of 3,500 to 6,000 MAD per month (paid directly to Google) plus our 4,000 MAD/month flat management fee. For combined Google Ads + Meta Ads hotel budgets, see our Hotel Digital Marketing guide." },
+    { q: "How do you track direct booking ROI?", a: "We configure Google Tag Manager and GA4 cross-domain tracking on your PMS booking engine, phone click events, and WhatsApp inquiries so you see exact cost-per-booking and direct room revenue—not vanity impressions." },
+    { q: "Am I locked into a long-term contract?", a: "No. Our ad management operates month-to-month with 100% client ownership of the Google Ads account and a simple 15-day cancellation notice." }
+  ];
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Google Ads for Hotels",
-    "description": "Data-driven Google Ads management to capture high-intent travelers searching for accommodation in your area.",
+    "name": "Google Ads Management for Hotels & Businesses in Morocco",
+    "serviceType": "Google Ads Management",
+    "description": "Data-driven Google Search, Brand Defense, and Hotel Ads management in Morocco starting at 4,000 MAD/mo flat fee (0% ad-spend commission).",
     "provider": {
       "@type": "Organization",
-      "name": "Urunk"
+      "name": "Urunk",
+      "url": "https://urunk.com"
     },
     "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Morocco"
-      },
-      {
-        "@type": "Country",
-        "name": "Worldwide"
-      }
+      { "@type": "Country", "name": "Morocco" },
+      { "@type": "Country", "name": "Worldwide" }
     ],
-    "url": "https://urunk.com/en/services/google-ads"
+    "url": "https://urunk.com/en/services/google-ads",
+    "offers": {
+      "@type": "Offer",
+      "price": "4000",
+      "priceCurrency": "MAD"
+    }
   };
 
-export default function GoogleAds() {
-  const schema = {
+  const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Google Ads Management",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
-    },
-    "description": "Professional Google Ads management for hotels, riads, and tour operators to drive direct bookings."
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
   };
-
-  const faqs = [
-    { q: "What is a good budget for Google Ads?", a: "For a single riad or small hotel in Morocco, we recommend starting with a minimum ad spend of 3,000 - 5,000 MAD per month. This provides enough data to optimize campaigns effectively." },
-    { q: "How do you track success?", a: "We implement rigorous conversion tracking. We don't just report on 'clicks' or 'impressions'. We track actual booking engine transactions, form submissions, and direct WhatsApp clicks so you know exactly what your cost-per-acquisition is." },
-    { q: "Am I locked into a long contract?", a: "No. Our ad management operates on a month-to-month basis. We believe in earning your business through performance. You can cancel anytime with 15 days' notice." }
-  ];
 
   return (
     <div className="w-full">
       <SEO 
         title="Google Ads Management for Hotels & Riads | Urunk" 
-        description="Capture high-intent searches with professional Google Ads management for hotels, riads, and tour operators. Lower your cost-per-booking today." 
-        schema={[schema, serviceSchema]}
+        description="Capture high-intent searches with Google Ads management in Morocco from 4,000 MAD/mo flat fee (0% commission on ad spend). GA4 & PMS revenue tracking." 
+        schema={[serviceSchema, faqSchema]}
       />
       
       {/* Hero & AI Answer Block */}
@@ -68,7 +68,10 @@ export default function GoogleAds() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong>What we do:</strong> Urunk provides specialized Google Ads management for hospitality businesses. We target high-intent search queries (e.g., "riad with pool Marrakech") to intercept travelers before they go to OTAs, actively lowering your cost-per-booking and maximizing ROI.
+              <strong>What we do:</strong> Urunk provides specialized Google Ads management for Moroccan hospitality businesses from 4,000 MAD/month flat fee (0% markup on media spend). Looking for combined <strong>Google Ads + Meta Ads hotel management and minimum monthly budget benchmarks</strong>? Read our{" "}
+              <Link to="/en/hotel-digital-marketing" className="underline text-accent-soft hover:text-white font-semibold">
+                Hotel Google Ads &amp; Meta Ads Morocco guide
+              </Link>.
             </Callout>
           </div>
           <Link to="/en/contact" className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2">

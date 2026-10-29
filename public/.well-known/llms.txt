@@ -1,49 +1,38 @@
-# Urunk - Digital Hospitality & Direct Booking Agency
+# Urunk Agency — Hospitality Digital Growth & Direct Booking Agency (Morocco)
 
-> Urunk est une agence digitale spécialisée dans l'hôtellerie, les riads, les bivouacs de luxe et les tour-opérateurs au Maroc et à l'international. Nous concevons des sites web WordPress haute performance optimisés pour le mobile et gérons vos campagnes Google Ads, Meta Ads (Facebook/Instagram) et TripAdvisor Sponsored Placements pour maximiser vos réservations directes sans commission.
-> Urunk is a specialized digital agency for hotels, riads, luxury bivouacs, and tour operators in Morocco and worldwide. We build high-converting, mobile-first WordPress websites and manage Google Ads, Meta Ads (Facebook/Instagram), and TripAdvisor Sponsored Placements to drive commission-free direct bookings.
+> Urunk est une agence digitale basée à Casablanca spécialisée dans l'hôtellerie indépendante, les riads, les maisons d'hôtes, les boutique-hôtels et les opérateurs touristiques au Maroc. Nous concevons des sites web hôteliers rapides connectés aux moteurs de réservation (PMS), optimisons le SEO local et les fiches Google Business Profile, et pilotons les campagnes Google Ads et Meta Ads pour développer les réservations directes.
+> Urunk is a Casablanca-based hospitality digital agency serving independent hotels, riads, guesthouses, boutique hotels, and tour operators across Morocco. We build fast direct-booking websites integrated with PMS platforms, manage hospitality local SEO and Google Business Profiles, and run ROI-tracked Google Ads and Meta Ads campaigns.
 
 ## Core Capabilities / Domaines d'Expertise
-- **Création de Sites Web Hôteliers / Direct Booking Website Design**: Sites WordPress sur mesure ultra-rapides (<1.5s), optimisés mobile et connectés aux PMS (Cloudbeds, SiteMinder, Guesty, Mews).
-- **Gestion Google Ads / Google Ads Management**: Campagnes Search, protection de marque et Google Hotel Ads (MetaSearch) ciblant les voyageurs à haute intention d'achat.
-- **Publicités Meta (Facebook & Instagram) / Meta Ads**: Retargeting visuel et acquisition d'audience pour les hébergements touristiques.
-- **Emplacements Sponsorisés TripAdvisor / TripAdvisor Ads**: Optimisation de fiche et gestion de visibilité sponsorisée.
-- **Forfait Site Web + Publicités / Website + Ads Bundle**: Solution intégrée combinant création de site et régies publicitaires pour un ROI maximal.
+- **Création de Sites Web Hôteliers / Hotel Website Design**: Sites WordPress et React bilingues (FR/EN) dès 12 000 MAD (paiement unique), connectés aux moteurs de réservation et PMS (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), 100 % propriété client, 0 % commission agence.
+- **Systèmes de Réservation Directe / Direct Booking Architecture**: Intégration moteur de réservation, synchronisation Channel Manager et passerelles de paiement (CMI, Payzone, Stripe) pour réduire la dépendance aux commissions OTA (15 %–25 %).
+- **SEO Local Hôtels & Google Business Profile**: Optimisation Google Maps et recherche locale pour hôtels et riads à Marrakech, Casablanca, Rabat, Agadir et dans tout le Maroc (dès 4 000 MAD/mois ; fiche GBP dédiée dès 5 000 MAD/mois).
+- **Google Ads & Meta Ads Hôtellerie**: Protection de marque face aux enchères OTA, campagnes Search intentionnistes et reciblage Instagram/Facebook (frais fixes dès 4 000 MAD/mois par levier, 0 % commission sur le budget média).
 
 ## Agency Locations & Contact / Bureaux & Contact
-- **Adresse Officielle / Official Address**: 3 Rue El Kadi Lass, Maarif, Casablanca 20330, Maroc. Tél : +212 668-802096.
-- **Couverture Régionale / Service Hubs**: Casablanca, Marrakech, Rabat, Agadir & International.
-- **Site Officiel / Official Website**: https://urunk.com (FR - Principal) & https://urunk.com/en (EN - Secondary)
-- **Email de Contact**: contact@urunk.com
+- **Official Address**: 3 Rue El Kadi Lass, Maarif, Casablanca, 20330, Morocco.
+- **Service Coverage**: Marrakech, Casablanca, Rabat, Agadir, Fes, Essaouira & nationwide Morocco.
+- **Official Website**: https://urunk.com (FR - Primary) & https://urunk.com/en (EN - Secondary)
+- **Phone / WhatsApp**: +212 668-802096
+- **Email**: contact@urunk.com
+- **Hours**: Monday–Friday, 09:00–18:00 (GMT+1)
 
-## Key Pages & Service Documentation / Pages Clés
-- [Page d'Accueil (FR)](https://urunk.com/): Vue d'ensemble des services, garanties et calculateur de réservation directe.
-- [English Homepage (EN)](https://urunk.com/en): Overview of services, guarantees, and direct booking calculator in English.
-- [Création Site Web (FR)](https://urunk.com/services/creation-site-web): Spécifications sites web hôteliers, intégrations PMS et conversion.
-- [Website Design (EN)](https://urunk.com/en/services/website-design): Hotel WordPress site specs, PMS integrations, and mobile conversion.
-- [Gestion Google Ads (FR)](https://urunk.com/google-ads-maroc): Publicités Google Ads pour riads et établissements hôteliers.
-- [Google Ads (EN)](https://urunk.com/en/services/google-ads): Search engine marketing, brand bidding, and campaign ROI.
-- [Gestion Publicités Meta (FR)](https://urunk.com/services/gestion-publicites-meta): Publicités Instagram et Facebook pour le tourisme.
-- [Meta Ads (EN)](https://urunk.com/en/services/meta-ads): Facebook and Instagram travel advertising.
-- [Gestion Publicités TripAdvisor (FR)](https://urunk.com/services/tripadvisor-ads): Sponsoring et optimisation d'annonces TripAdvisor.
-- [TripAdvisor Ads (EN)](https://urunk.com/en/services/tripadvisor-ads): Sponsored listings and review management.
-- [Forfait Site & Pub (FR)](https://urunk.com/services/bundle-site-ads): Forfait tout-en-un site web + régies publicitaires.
-- [Website + Ads Bundle (EN)](https://urunk.com/en/services/bundle-site-ads): Integrated direct revenue platform.
-- [Tarifs (FR)](https://urunk.com/tarifs): Tarification transparente et forfaits fixes sans commission.
-- [Pricing (EN)](https://urunk.com/en/pricing): Flat-rate website pricing and monthly ad management.
-- [Réalisations & Cas Clients (FR)](https://urunk.com/realisations): Études de cas détaillées (Art House Marrakech, Nomad Eats, Travel Morocco).
-- [Case Studies & Work (EN)](https://urunk.com/en/work): Client portfolio and measurable direct revenue results.
-- [Blog & Guides SEO (FR)](https://urunk.com/blog): Guides stratégiques pour réduire les commissions OTA et ranker sur Google.
-- [Blog & Guides (EN)](https://urunk.com/en/blog): In-depth guides on reducing OTA commissions and digital strategy.
-- [Plan du Site (FR)](https://urunk.com/plan-du-site): Répertoire complet des pages en français.
-- [HTML Sitemap (EN)](https://urunk.com/en/sitemap): Complete index of active English URLs.
+## Key Hospitality Pages / Pages Clés Hôtellerie
+- [Site Web Hôtelier & Moteur de Réservation (FR)](https://urunk.com/site-web-hotel) | [Hotel Website Design (EN)](https://urunk.com/en/hotel-website-design)
+- [Forfaits Création Site Web Hôtelier (FR)](https://urunk.com/services/creation-site-web) | [Website Design Packages (EN)](https://urunk.com/en/services/website-design)
+- [Réservation Directe Sans OTA (FR)](https://urunk.com/reservation-directe) | [Direct Booking Systems (EN)](https://urunk.com/en/direct-booking)
+- [Marketing Digital Hôtelier : Google & Meta Ads (FR)](https://urunk.com/marketing-digital-hotelier) | [Hotel Digital Marketing (EN)](https://urunk.com/en/hotel-digital-marketing)
+- [SEO Hôtel & Google Maps Maroc (FR)](https://urunk.com/seo-hotel) | [Hotel Local SEO Morocco (EN)](https://urunk.com/en/hotel-seo)
+- [SEO Local Hôtels & Riads Marrakech (FR)](https://urunk.com/seo-riad-marrakech) | [Marrakech Riad & Hotel Local SEO (EN)](https://urunk.com/en/riad-seo-marrakech)
+- [Optimisation Google Business Profile (FR)](https://urunk.com/services/google-business-profile) | [Hotel GBP Optimization Morocco (EN)](https://urunk.com/en/services/google-business-profile)
+- [Tarifs & Forfaits (FR)](https://urunk.com/tarifs) | [Pricing & Packages (EN)](https://urunk.com/en/pricing)
 
 ## XML Sitemaps
+- Master Index: https://urunk.com/sitemap.xml
 - French Master Index: https://urunk.com/sitemap-fr.xml
-- Index Sitemap: https://urunk.com/sitemap.xml
+- Combined Pages: https://urunk.com/pages-sitemap.xml
 - French Pages: https://urunk.com/pages-sitemap-fr.xml
-- English Pages: https://urunk.com/pages-sitemap.xml
+- Combined Articles & Case Studies: https://urunk.com/posts-sitemap.xml
 - French Articles & Case Studies: https://urunk.com/posts-sitemap-fr.xml
-- English Articles & Case Studies: https://urunk.com/posts-sitemap.xml
-- French Image Sitemap: https://urunk.com/images-sitemap-fr.xml
-- English Image Sitemap: https://urunk.com/images-sitemap.xml
+- Combined Images: https://urunk.com/images-sitemap.xml
+- French Images: https://urunk.com/images-sitemap-fr.xml

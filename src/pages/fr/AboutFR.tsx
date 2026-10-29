@@ -1,18 +1,24 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Users, Target, Shield, ArrowRight, CheckCircle2, Building, Globe, Zap, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
 
 export default function AboutFR() {
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'À Propos d’Urunk | Agence Digitale Hôtelière au Maroc',
+    url: 'https://urunk.com/a-propos',
+    description: 'Découvrez Urunk, agence digitale basée à Casablanca dédiée aux hôtels et riads au Maroc : sites web de réservation directe, SEO local et campagnes Ads.'
+  };
+
   return (
     <div className="w-full bg-bg text-primary" id="about-page-fr">
-      <Helmet>
-        <title>À Propos | Agence Marketing Digital Hôtelier | Urunk</title>
-        <meta name="description" content="Découvrez Urunk, l'agence de croissance digitale dédiée aux hôtels et riads au Maroc : ingénierie web rapide, SEO local et réservations sans commission." />
-        <link rel="canonical" href="https://urunk.com/a-propos" />
-        <link rel="alternate" hrefLang="en" href="https://urunk.com/en/about" />
-        <link rel="alternate" hrefLang="fr" href="https://urunk.com/a-propos" />
-      </Helmet>
+      <SEO
+        title="À Propos d'Urunk | Agence Digitale Hôtelière Maroc"
+        description="Découvrez Urunk, agence basée à Casablanca dédiée aux hôtels et riads au Maroc : sites web avec réservation directe, SEO local et campagnes Ads."
+        schema={aboutSchema}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative bg-primary text-white" id="about-hero-fr">
@@ -215,16 +221,16 @@ export default function AboutFR() {
               </p>
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="bg-white p-5 rounded-2xl border border-primary/10 text-center">
-                  <span className="text-3xl font-serif font-bold text-accent block">+40%</span>
-                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Booster de Réservations Directes</span>
+                  <span className="text-3xl font-serif font-bold text-accent block tabular-nums">15%–25%</span>
+                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Commission OTA Économisée en Direct</span>
                 </div>
                 <div className="bg-white p-5 rounded-2xl border border-primary/10 text-center">
-                  <span className="text-3xl font-serif font-bold text-accent block">-35%</span>
-                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Baisse du Coût par Demande</span>
+                  <span className="text-3xl font-serif font-bold text-accent block tabular-nums">0%</span>
+                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Marge Agence sur Budget Média</span>
                 </div>
               </div>
               <p className="text-xs text-primary/60 font-light leading-relaxed">
-                En contournant les commissions OTA de 15 % à 25 %, notre approche spécialisée garantit un retour sur investissement rapide et durable pour les établissements indépendants au Maroc.
+                En réduisant la part des séjours soumis aux commissions OTA de 15 % à 25 % et en facturant des forfaits fixes sans commission sur vos budgets publicitaires, notre infrastructure renforce durablement la marge nette des établissements indépendants au Maroc.
               </p>
             </div>
           </div>

@@ -305,7 +305,7 @@ export default function GoogleAdsMarocFR() {
                   <Check size={14} className="text-accent" /> Sans engagement forcé (préavis 15 jours)
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Check size={14} className="text-accent" /> Garantie de performance 90 jours
+                  <Check size={14} className="text-accent" /> Suivi des conversions GA4, WhatsApp &amp; PMS
                 </span>
               </div>
             </div>
@@ -443,7 +443,7 @@ export default function GoogleAdsMarocFR() {
                     <td className="py-4 px-5 font-semibold text-primary">Engagement contractuel</td>
                     <td className="py-4 px-5 text-primary/75">—</td>
                     <td className="py-4 px-5 text-primary/75 tabular-nums">Engagement rigide 6 à 12 mois</td>
-                    <td className="py-4 px-5 font-semibold text-primary tabular-nums">Liberté mensuelle (préavis 15 jours) + garantie 90 jours</td>
+                    <td className="py-4 px-5 font-semibold text-primary tabular-nums">Liberté mensuelle (préavis écrit 15 jours, sans pénalité)</td>
                   </tr>
                 </tbody>
               </table>
@@ -478,7 +478,7 @@ export default function GoogleAdsMarocFR() {
                     {item.num}
                   </span>
                   <span className="text-xs font-medium text-primary/60">
-                    Google Ads Certifié
+                    Tracking GA4 &amp; GTM
                   </span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-primary mb-2 leading-snug">
@@ -749,6 +749,12 @@ export default function GoogleAdsMarocFR() {
                 <li>
                   <Link to="/services/gestion-publicites-meta" className="text-primary hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-primary/5">
                     <span>Publicité Meta Ads (Instagram &amp; Facebook)</span>
+                    <ArrowRight size={14} className="text-accent shrink-0" />
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/marketing-digital-hotelier" className="text-primary hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-primary/5">
+                    <span>Google Ads &amp; Meta Ads Hôtels (Budgets &amp; ROI)</span>
                     <ArrowRight size={14} className="text-accent shrink-0" />
                   </Link>
                 </li>

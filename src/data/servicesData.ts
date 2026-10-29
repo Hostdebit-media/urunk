@@ -5,6 +5,33 @@ export interface ServicePageData {
   heroSub: string;
   calloutTitle: string;
   calloutBody: string;
+  directAnswer?: {
+    question: string;
+    answer: string;
+    highlights?: string[];
+  };
+  comparisonTable?: {
+    title: string;
+    subtitle?: string;
+    headers: string[];
+    rows: string[][];
+    footnote?: string;
+  };
+  evaluationCriteria?: {
+    title: string;
+    intro: string;
+    items: { title: string; desc: string }[];
+  };
+  relatedLinks?: {
+    label: string;
+    to: string;
+    desc: string;
+  }[];
+  externalReferences?: {
+    label: string;
+    url: string;
+    source: string;
+  }[];
   problemTitle: string;
   problemText1: string;
   problemText2: string;
@@ -20,135 +47,176 @@ export interface ServicePageData {
   faqs: { q: string; a: string }[];
 }
 
+export function extractNumericMadPrice(priceText: string): string | null {
+  if (!priceText) return null;
+  const match = priceText.match(/\d[\d\s,.]*/);
+  if (!match) return null;
+  const digits = match[0].replace(/[^0-9]/g, '');
+  return digits.length > 0 ? digits : null;
+}
 
 
 export const servicesData: Record<string, { en: ServicePageData; fr: ServicePageData }> = {
   "creation-site-web-prix": {
     "en": {
-      "title": "Website Design Morocco Price: Website Creation Costs | Urunk",
-      "description": "Discover transparent website design pricing in Morocco. Urunk engineers high-performance custom websites with clear, fixed-price packages and high ROI.",
-      "heroTitle": "Website Design Morocco Price",
-      "heroSub": "What is the real cost of a high-performance, SEO-optimized website in Morocco? We deliver transparent, performance-focused pricing with zero hidden commissions.",
-      "calloutTitle": "A High-ROI Investment For Your Search Visibility",
-      "calloutBody": "Do not pay for a slow website that remains invisible on Google. Urunk designs blazing-fast custom web architectures optimized for Core Web Vitals to convert organic visitors into active paying clients.",
-      "problemTitle": "Why do website creation prices vary so much in Morocco?",
-      "problemText1": "From insecure low-cost platforms to overpriced agencies, navigating website pricing is challenging. True web value depends on page speed, customization, and integrated SEO architecture.",
-      "problemText2": "At Urunk, we believe in complete transparency. We provide fixed-price packages for professional corporate and hospitality websites that actually grow your customer base.",
-      "signsTitle": "Key factors that determine professional website cost:",
-      "signs": [
-        "Core Web Vitals performance and page speed engineering",
-        "Level of custom user experience and user interface design",
-        "Foundational search engine optimization (SEO) implementation",
-        "Security protocols, domain setups, and reliable cloud hosting"
-      ],
-      "featuresTitle": "Our value-driven web solutions:",
-      "features": [
+      "title": "Website Creation Price in Morocco: Cost Guide | Urunk",
+      "description": "Transparent website creation pricing in Morocco: fixed packages starting at 12,000 MAD with custom UX, Core Web Vitals optimization, and 100% ownership.",
+      "heroTitle": "Website Creation Pricing in Morocco",
+      "heroSub": "Understand what drives professional website costs in Morocco—and compare transparent, flat-fee packages built for measurable business and hospitality growth.",
+      "calloutTitle": "Transparent Fixed Pricing, Zero Hidden Retainers",
+      "calloutBody": "A slow brochure site is expensive at any price if visitors leave without converting. Urunk builds custom, search-ready websites starting at 12,000 MAD one-time, with full code and domain ownership.",
+      "relatedLinks": [
         {
-          "title": "Bespoke Custom Design",
-          "desc": "Distinct visual design aligned with your brand identity and commercial conversion goals."
+          "label": "Hotel Website Packages & Value Comparison",
+          "to": "/en/services/website-design",
+          "desc": "Compare website creation packages specifically structured for small independent hotels and riads in Morocco."
         },
         {
-          "title": "Built-In SEO Architecture",
-          "desc": "Technical structure pre-optimized for Google indexing and search query visibility from day one."
+          "label": "Hotel Website Design & PMS Integration",
+          "to": "/en/hotel-website-design",
+          "desc": "How to evaluate a Moroccan hospitality web agency for booking engine sync and bilingual SEO."
         },
         {
-          "title": "Excellent Core Web Vitals",
-          "desc": "Blazing-fast mobile page loads engineered to retain visitors and maximize bookings."
+          "label": "Full Agency Pricing Schedule",
+          "to": "/en/pricing",
+          "desc": "View all published MAD & EUR flat rates across web builds, SEO, Google Ads, and Meta Ads."
         }
       ],
-      "processTitle": "Our Web Development Methodology",
+      "problemTitle": "Why do website creation quotes vary so widely in Morocco?",
+      "problemText1": "Quotes in Morocco range from low-cost generic templates with poor mobile speed to agency retainers with unclear deliverables. Real value depends on mobile Core Web Vitals, bilingual SEO architecture, and conversion tracking.",
+      "problemText2": "At Urunk, we publish clear starting rates so business owners and hoteliers know exactly what is included before requesting a custom scope.",
+      "signsTitle": "Technical factors that determine website cost:",
+      "signs": [
+        "Mobile Core Web Vitals engineering and image compression",
+        "Bilingual (FR/EN) architecture with reciprocal hreflang tags",
+        "Third-party integrations (PMS booking engines, CRM, CMI/Stripe)",
+        "On-page technical SEO, Schema.org markup, and GA4 conversion tracking"
+      ],
+      "featuresTitle": "What every Urunk web build includes:",
+      "features": [
+        {
+          "title": "Custom Conversion UX",
+          "desc": "Tailored mobile-first layouts structured around clear calls to action, inquiries, or direct bookings."
+        },
+        {
+          "title": "Technical SEO Foundation",
+          "desc": "Clean URL hierarchy, semantic headings, structured data, and XML sitemaps configured before launch."
+        },
+        {
+          "title": "100% Client Ownership",
+          "desc": "One-time build fee with zero agency lock-in: you own your domain, hosting account, and source code."
+        }
+      ],
+      "processTitle": "Our Web Delivery Process",
       "processSteps": [
         {
           "step": 1,
-          "title": "Project Scope & Strategy",
-          "desc": "We analyze your target market, competitors, and map out your core conversion funnel."
+          "title": "Scope & Architecture (Week 1)",
+          "desc": "Audit of your market positioning, target queries, and conversion funnel requirements."
         },
         {
           "step": 2,
-          "title": "Design & UX Prototyping",
-          "desc": "We design high-converting, mobile-responsive layouts tailored to your unique audience."
+          "title": "UX Design & Content Structure (Weeks 2–3)",
+          "desc": "Mobile-first interface design and bilingual copy structuring."
         },
         {
           "step": 3,
-          "title": "Engineering & Deployment",
-          "desc": "We build with lightweight, clean code and deploy on ultra-reliable, high-speed hosting."
+          "title": "Development, QA & Launch (Weeks 4–6)",
+          "desc": "Clean implementation, Core Web Vitals validation, GA4 tracking, and team training."
         }
       ],
-      "investmentTitle": "Website Investment",
+      "investmentTitle": "Website Build Fee",
       "investmentPrice": "Starting at 12,000 MAD",
-      "investmentDesc": "Transparent flat-rate package for a professional, search-optimized business website.",
+      "investmentDesc": "One-time flat-rate package for a custom, SEO-ready website. Hospitality PMS and multi-property scopes quoted transparently.",
       "faqs": [
         {
           "q": "How much does a professional website cost in Morocco?",
-          "a": "A professional business website at Urunk starts at 12,000 MAD for a custom SEO-optimized landing architecture. Custom hotel sites with PMS integrations or complex e-commerce platforms scale based on features."
+          "a": "At Urunk, a custom SEO-optimized website starts at 12,000 MAD (one-time payment), including mobile-first design, technical SEO setup, and conversion tracking. Larger multi-property hospitality portals or custom web apps are scoped from 20,000 MAD depending on integrations."
         },
         {
-          "q": "Are there any hidden recurring fees or mandatory contracts?",
-          "a": "No. Our website creation pricing is a transparent, one-time flat fee. You retain 100% ownership of your domain, hosting, assets, and source code."
+          "q": "Are there mandatory monthly fees after launch?",
+          "a": "No. Website creation is billed as a one-time project fee, and you retain 100% ownership of your code, domain, and hosting. Optional monthly retainers only apply if you choose ongoing SEO or paid advertising management."
         }
       ]
     },
     "fr": {
-      "title": "Création Site Web Maroc : Tarifs et Prix | Urunk",
-      "description": "Tarifs clairs pour la création de sites web au Maroc : forfaits fixes dès 12 000 MAD, optimisés pour le référencement Google et les réservations directes.",
-      "heroTitle": "Création Site Web Maroc : Tarifs et Prix",
-      "heroSub": "Quel est le coût réel d'un site internet performant et optimisé SEO au Maroc ? Nous proposons des forfaits transparents, adaptés à votre budget d'acquisition.",
-      "calloutTitle": "Un investissement rentable pour votre visibilité",
-      "calloutBody": "Ne payez pas pour un site internet lent ou invisible sur Google. Urunk conçoit des architectures web ultra-rapides, adaptées aux exigences modernes du référencement et optimisées pour générer un retour sur investissement rapide.",
-      "problemTitle": "Pourquoi les prix de création de site web varient-ils au Maroc ?",
-      "problemText1": "Entre les solutions low-cost non sécurisées et les agences aux tarifs exorbitants, il est difficile de s'y retrouver. Le prix d'un site web dépend de sa vitesse, de son niveau de personnalisation et de son optimisation SEO.",
-      "problemText2": "Chez Urunk, nous croyons en la transparence. Nous proposons des forfaits à prix fixe pour la création de sites internet professionnels qui convertissent réellement vos visiteurs en clients.",
-      "signsTitle": "Ce qui détermine le prix d'un site internet professionnel :",
-      "signs": [
-        "La vitesse de chargement et le respect des Core Web Vitals",
-        "L'intégration d'un design sur-mesure ou de modèles pré-conçus",
-        "L'optimisation pour le référencement naturel (SEO)",
-        "Le niveau de sécurité et la qualité de l'hébergement"
-      ],
-      "featuresTitle": "Nos solutions web au juste prix :",
-      "features": [
+      "title": "Prix Création Site Web Maroc : Grille & Devis | Urunk",
+      "description": "Combien coûte la création d'un site web professionnel au Maroc ? Forfaits fixes dès 12 000 MAD, SEO technique intégré et 100 % propriété du code.",
+      "heroTitle": "Prix de Création de Site Web au Maroc",
+      "heroSub": "Comprendre ce qui justifie le tarif d'un site internet professionnel au Maroc : vitesse mobile, référencement naturel bilingue et propriété complète de votre actif.",
+      "calloutTitle": "Tarification Fixe et Propriété Intégrale",
+      "calloutBody": "Un site vitrine lent coûte toujours trop cher s'il ne génère ni demandes ni réservations. Urunk conçoit des architectures web rapides dès 12 000 MAD (paiement unique), sans abonnement captif.",
+      "relatedLinks": [
         {
-          "title": "Design Sur-Mesure",
-          "desc": "Conception unique alignée avec l'identité de votre marque et vos objectifs de conversion."
+          "label": "Forfaits Site Web Hôtelier (Rapport Qualité-Prix)",
+          "to": "/services/creation-site-web",
+          "desc": "Comparatif détaillé des forfaits de création de site web pour petits hôtels, riads et maisons d'hôtes au Maroc."
         },
         {
-          "title": "SEO Intégré dès le Départ",
-          "desc": "Structure technique optimisée pour Google pour que votre site soit visible immédiatement."
+          "label": "Site Web Hôtelier avec Moteur de Réservation",
+          "to": "/site-web-hotel",
+          "desc": "Critères techniques pour choisir votre prestataire hôtelier au Maroc et connecter votre PMS."
         },
         {
-          "title": "Vitesse de Chargement Exceptionnelle",
-          "desc": "Sites internet ultra-rapides conçus pour d'excellentes performances Core Web Vitals."
+          "label": "Grille Tarifaire Complète Urunk",
+          "to": "/tarifs",
+          "desc": "Consultez l'ensemble de nos tarifs fixes (Création web, SEO local, Google Ads, Meta Ads)."
         }
       ],
-      "processTitle": "Notre méthodologie de création",
+      "problemTitle": "Pourquoi les devis de création de site web varient-ils autant au Maroc ?",
+      "problemText1": "Sur le marché marocain, les propositions vont de thèmes préfabriqués très lents sur mobile à des prestations d'agence facturées avec des coûts récurrents opaques. La valeur réelle d'un site repose sur ses performances Core Web Vitals, sa structure SEO et sa capacité à convertir.",
+      "problemText2": "Chez Urunk, nos forfaits démarrent sur une base claire et publiée, afin de permettre aux dirigeants de PME et aux hôteliers d'arbitrer leur budget avec précision.",
+      "signsTitle": "Ce qui détermine le coût réel d'un site professionnel :",
+      "signs": [
+        "L'optimisation de la vitesse mobile et des Core Web Vitals",
+        "L'architecture multilingue (FR/EN) avec balises hreflang réciproques",
+        "Les intégrations métier (moteur de réservation PMS, paiement CMI/Stripe, CRM)",
+        "Le balisage Schema.org, le SEO technique initial et le suivi GA4"
+      ],
+      "featuresTitle": "Ce qu'incluent nos réalisations web :",
+      "features": [
+        {
+          "title": "UX Mobile Orientée Conversion",
+          "desc": "Parcours utilisateur pensé pour transformer les visites sur smartphone en prises de contact ou réservations."
+        },
+        {
+          "title": "Socle SEO Technique Intégré",
+          "desc": "Arborescence propre, balisage sémantique, données structurées et plan de site XML configurés dès la mise en ligne."
+        },
+        {
+          "title": "100 % Propriété Client",
+          "desc": "Paiement unique à la création : votre entreprise conserve le nom de domaine, l'hébergement et le code source."
+        }
+      ],
+      "processTitle": "Notre méthodologie en 3 étapes",
       "processSteps": [
         {
           "step": 1,
-          "title": "Cadrage du Projet",
-          "desc": "Analyse de vos besoins, de vos concurrents et définition de l'architecture du site."
+          "title": "Cadrage & Architecture (Semaine 1)",
+          "desc": "Analyse de votre marché, des requêtes cibles et de l'arborescence de conversion."
         },
         {
           "step": 2,
-          "title": "Maquettage & Design",
-          "desc": "Création d'une interface utilisateur moderne, fluide et optimisée sur mobile."
+          "title": "Design UX & Contenus (Semaines 2–3)",
+          "desc": "Maquettage mobile-first sur mesure et structuration éditoriale bilingue."
         },
         {
           "step": 3,
-          "title": "Développement & Lancement",
-          "desc": "Intégration technique, optimisation de la vitesse et mise en ligne sécurisée."
+          "title": "Développement, Recette & Mise en Ligne (Semaines 4–6)",
+          "desc": "Intégration propre, tests de vitesse, configuration GA4 et formation de votre équipe."
         }
       ],
-      "investmentTitle": "Tarif de Création",
+      "investmentTitle": "Forfait Création Web",
       "investmentPrice": "À partir de 12 000 MAD",
-      "investmentDesc": "Forfait tout-inclus pour un site vitrine professionnel rapide et optimisé SEO.",
+      "investmentDesc": "Paiement unique pour un site professionnel rapide et optimisé SEO. Devis détaillé pour portails hôteliers multi-établissements ou e-commerce.",
       "faqs": [
         {
           "q": "Combien coûte la création d'un site web professionnel au Maroc ?",
-          "a": "Le prix d'un site web professionnel chez Urunk commence à 12 000 MAD pour un site vitrine optimisé SEO. Pour un site hôtelier avec moteur de réservation ou un site e-commerce, les tarifs s'adaptent selon la complexité."
+          "a": "Chez Urunk, la création d'un site web professionnel optimisé SEO démarre à 12 000 MAD en paiement unique. Pour un hôtel ou un riad, consultez notre page dédiée aux forfaits hôteliers (/services/creation-site-web) qui inclut la connexion au moteur de réservation."
         },
         {
-          "q": "Y a-t-il des frais cachés ou des abonnements obligatoires ?",
-          "a": "Non. Nos tarifs de création de site sont uniques et sans frais cachés. Vous restez propriétaire à 100% de votre nom de domaine, de votre hébergement et de votre code."
+          "q": "Y a-t-il des abonnements obligatoires après la livraison ?",
+          "a": "Non. La création du site est facturée une seule fois et vous êtes propriétaire à 100 % du code, de l'hébergement et du nom de domaine. Aucun abonnement mensuel n'est imposé hors prestations optionnelles de SEO ou de publicité."
         }
       ]
     }
@@ -158,788 +226,1932 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "title": "Web Agency Morocco: Sites for Hotels & Riads | Urunk",
       "description": "Morocco web agency designing fast direct booking websites for hotels, riads, and boutique hospitality brands. High-converting mobile layouts.",
       "heroTitle": "Web Agency Morocco: Sites for Hotels and Riads",
-      "heroSub": "We engineer beautiful, lightning-fast websites designed specifically to increase direct bookings for Moroccan hotels, riads, and tour operators.",
-      "calloutTitle": "Stop Losing Guests to OTAs",
-      "calloutBody": "Your website is your most powerful booking engine. We build custom WordPress sites for Moroccan hospitality brands that capture attention, load instantly, and drive direct reservations without Booking.com commissions.",
+      "heroSub": "We engineer fast, mobile-first websites designed specifically to increase direct bookings for Moroccan hotels, riads, and tour operators.",
+      "calloutTitle": "Reduce Reliance on High-Commission OTAs",
+      "calloutBody": "Your website should be your most profitable sales channel. We build custom WordPress and React sites for Moroccan hospitality brands that load fast on mobile and connect directly to your PMS booking engine.",
       "problemTitle": "Is your current website costing you direct bookings?",
-      "problemText1": "Many hotels and riads lose up to 25% of their revenue to Online Travel Agencies (OTAs) simply because their own website is slow, outdated, or hard to use on mobile devices.",
-      "problemText2": "A professional, high-speed website tailored for the Moroccan tourism market gives you full control over the guest experience and significantly improves your profit margins.",
+      "problemText1": "Many hotels and riads lose 15% to 25% of room revenue to Online Travel Agencies (OTAs) because their official website is slow, hard to navigate on smartphones, or disconnected from live inventory.",
+      "problemText2": "A fast, bilingual website tailored for Morocco's hospitality market gives you control over the guest relationship and strengthens net operating margins.",
       "signsTitle": "Signs your hospitality website needs an upgrade:",
       "signs": [
-        "High bounce rates and low direct booking conversion",
-        "Loading times over 3 seconds on mobile networks",
-        "No integrated booking engine or clear call-to-action",
-        "Looks outdated compared to your luxury competitors"
+        "High mobile bounce rates and low booking-engine completion",
+        "Loading times above 2.5 seconds on 4G mobile networks",
+        "No real-time PMS booking engine or sticky availability bar",
+        "Missing reciprocal French/English SEO architecture"
       ],
       "featuresTitle": "What makes our hospitality websites convert:",
       "features": [
         {
-          "title": "Mobile-First Design",
-          "desc": "Over 70% of travel bookings happen on mobile. Our designs are pixel-perfect on every device."
+          "title": "Mobile-First UX",
+          "desc": "Most international travel research happens on mobile. Every room gallery, rate table, and CTA is built for thumb navigation."
         },
         {
-          "title": "Direct Booking Engine Integration",
-          "desc": "Seamless connection with your PMS (Cloudbeds, Mews, etc.) for friction-free reservations."
+          "title": "PMS Booking Engine Sync",
+          "desc": "Seamless integration with Cloudbeds, SiteMinder, Amenitiz, Little Hotelier, Mews, and Sirvoy."
         },
         {
-          "title": "Speed Optimization",
-          "desc": "Lightning-fast loading times that keep potential guests on your site and improve Google rankings."
+          "title": "Core Web Vitals Engineering",
+          "desc": "AVIF/WebP media optimization and lightweight code to minimize abandonment before checkout."
         }
       ],
       "processTitle": "Our Web Design Process",
       "processSteps": [
         {
           "step": 1,
-          "title": "Discovery & Strategy",
-          "desc": "We analyze your target audience, current booking metrics, and brand identity."
+          "title": "Discovery & Funnel Audit",
+          "desc": "We review your property positioning, feeder markets, and current OTA vs. direct mix."
         },
         {
           "step": 2,
-          "title": "Design & UX",
-          "desc": "Creating a stunning visual interface focused on driving users to the 'Book Now' button."
+          "title": "Design & Bilingual UX",
+          "desc": "Crafting an authentic visual interface focused on guiding travelers to live availability."
         },
         {
           "step": 3,
-          "title": "Development & Integration",
-          "desc": "Building the site with clean code and integrating your preferred booking engine."
+          "title": "Development & PMS Integration",
+          "desc": "Building with clean code, connecting your booking engine, and validating GA4 tracking."
         }
       ],
       "investmentTitle": "Website Investment",
       "investmentPrice": "Starting at 12,000 MAD",
-      "investmentDesc": "Includes custom design, booking engine integration, and foundational SEO.",
+      "investmentDesc": "Includes custom design, booking engine integration, and foundational bilingual SEO.",
       "faqs": [
         {
           "q": "Do you integrate with my existing booking engine?",
-          "a": "Yes, we integrate seamlessly with major PMS platforms like Cloudbeds, SiteMinder, Mews, and Little Hotelier."
+          "a": "Yes, we integrate with major hospitality PMS and booking engines including Cloudbeds, SiteMinder, Amenitiz, Mews, Sirvoy, and Little Hotelier."
         },
         {
           "q": "How long does a new website take?",
-          "a": "A custom hotel or riad website typically takes 4-6 weeks from discovery to launch."
+          "a": "A custom hotel or riad website typically takes 4 to 6 weeks from initial scoping to live deployment."
         }
       ]
     },
     "fr": {
       "title": "Agence Web Maroc : Sites pour Hôtels et Riads | Urunk",
-      "description": "Agence de création de sites web au Maroc pour hôtels et riads : plateformes rapides, design haut de gamme et moteur de réservation directe sans commission.",
+      "description": "Agence de création de sites web au Maroc pour hôtels et riads : plateformes rapides, design sur mesure et moteur de réservation directe intégré.",
       "heroTitle": "Agence Web Maroc : Sites pour Hôtels et Riads",
-      "heroSub": "Nous concevons des sites web performants et ultra-rapides, spécialement créés pour développer les réservations directes de votre riad ou hôtel au Maroc.",
-      "calloutTitle": "Cessez de perdre des clients face aux OTA",
-      "calloutBody": "Votre site web est votre moteur de réservation le plus puissant. Nous créons des sites sur mesure pour les marques hôtelières marocaines qui captivent l'attention et génèrent des réservations directes sans commissions.",
-      "problemTitle": "Votre site actuel vous fait-il perdre des réservations ?",
-      "problemText1": "De nombreux hôtels et riads perdent jusqu'à 25% de leurs revenus au profit des OTA (Booking.com, Expedia) car leur propre site est lent ou peu adapté aux mobiles.",
-      "problemText2": "Un site web professionnel et performant vous donne le contrôle total sur l'expérience client et améliore considérablement vos marges bénéficiaires.",
-      "signsTitle": "Signes que votre site hôtelier a besoin d'une refonte :",
+      "heroSub": "Nous concevons des sites web bilingues et rapides, pensés pour développer les réservations directes des hôtels, riads et acteurs touristiques au Maroc.",
+      "calloutTitle": "Réduisez Votre Dépendance aux OTA",
+      "calloutBody": "Votre site officiel doit être votre canal de vente le plus rentable. Nous développons des plateformes WordPress et React connectées à votre PMS pour capter des réservations directes sans commission d'agence.",
+      "problemTitle": "Votre site actuel freine-t-il vos réservations directes ?",
+      "problemText1": "De nombreux hôtels et riads reversent 15 % à 25 % de commissions aux OTA (Booking.com, Expedia) parce que leur site officiel charge lentement ou offre un parcours mobile complexe.",
+      "problemText2": "Une architecture web rapide, rassurante et reliée en temps réel à vos disponibilités vous redonne la maîtrise de la relation client et de votre marge nette.",
+      "signsTitle": "Signes que votre site hôtelier doit évoluer :",
       "signs": [
-        "Taux de rebond élevé et peu de réservations directes",
-        "Temps de chargement supérieur à 3 secondes sur mobile",
-        "Pas de moteur de réservation intégré ou de bouton clair",
-        "Design obsolète face à vos concurrents directs"
+        "Taux de rebond mobile élevé et abandon dans le tunnel de réservation",
+        "Temps de chargement supérieur à 2,5 secondes sur réseau 4G",
+        "Absence de moteur de réservation synchronisé ou de bouton d'action fixe",
+        "Structure multilingue FR/EN incomplète ou mal indexée"
       ],
       "featuresTitle": "Ce qui rend nos sites hôteliers performants :",
       "features": [
         {
           "title": "Design Mobile-First",
-          "desc": "Plus de 70% des réservations se font sur mobile. Nos designs sont parfaits sur tous les écrans."
+          "desc": "La majorité des recherches de séjours s'effectue sur smartphone : galeries, tarifs et disponibilités restent accessibles en un geste."
         },
         {
-          "title": "Intégration Moteur de Réservation",
-          "desc": "Connexion fluide avec votre PMS (Cloudbeds, Mews, etc.) pour des réservations sans friction."
+          "title": "Connexion PMS & Channel Manager",
+          "desc": "Intégration fluide avec Cloudbeds, SiteMinder, Amenitiz, Little Hotelier, Mews et Sirvoy."
         },
         {
-          "title": "Optimisation de la Vitesse",
-          "desc": "Temps de chargement ultra-rapides pour retenir les visiteurs et améliorer votre classement Google."
+          "title": "Vitesse & Core Web Vitals",
+          "desc": "Compression AVIF/WebP et code allégé pour retenir les voyageurs et renforcer votre SEO."
         }
       ],
       "processTitle": "Notre Processus de Création Web",
       "processSteps": [
         {
           "step": 1,
-          "title": "Découverte et Stratégie",
-          "desc": "Analyse de votre audience, vos métriques actuelles et votre identité de marque."
+          "title": "Audit & Cadrage",
+          "desc": "Analyse de vos marchés émetteurs, de votre mix OTA/direct et de votre identité."
         },
         {
           "step": 2,
-          "title": "Design et UX",
-          "desc": "Création d'une interface visuelle axée sur la conversion vers la réservation."
+          "title": "Design UX Bilingue",
+          "desc": "Conception d'une interface claire orientée vers la vérification des disponibilités."
         },
         {
           "step": 3,
-          "title": "Développement et Intégration",
-          "desc": "Code propre et intégration de votre moteur de réservation préféré."
+          "title": "Développement & Intégration PMS",
+          "desc": "Mise en production propre, connexion du moteur de réservation et suivi GA4."
         }
       ],
       "investmentTitle": "Investissement Site Web",
       "investmentPrice": "À partir de 12 000 MAD",
-      "investmentDesc": "Inclut le design sur mesure, l'intégration du moteur de réservation et le SEO de base.",
+      "investmentDesc": "Inclut le design sur mesure, l'intégration du moteur de réservation et le socle SEO bilingue.",
       "faqs": [
         {
           "q": "Intégrez-vous mon moteur de réservation actuel ?",
-          "a": "Oui, nous intégrons parfaitement les principaux PMS comme Cloudbeds, SiteMinder, Mews et Little Hotelier."
+          "a": "Oui, nous intégrons les principaux PMS et moteurs du marché tels que Cloudbeds, SiteMinder, Amenitiz, Mews, Sirvoy et Little Hotelier."
         },
         {
-          "q": "Combien de temps faut-il pour créer le site ?",
-          "a": "Un site web d'hôtel ou de riad sur mesure prend généralement de 4 à 6 semaines."
+          "q": "Quel est le délai de création d'un site ?",
+          "a": "Un site web d'hôtel ou de riad sur mesure est généralement livré en 4 à 6 semaines."
         }
       ]
     }
   },
   "hotel-seo": {
     "en": {
-      "title": "Hotel SEO Services: Rank Higher & Direct Book | Urunk",
-      "description": "Expert Hotel SEO services to outrank OTAs and competitors on Google. Increase your direct bookings and reduce OTA commissions.",
-      "heroTitle": "Hotel SEO That Drives Direct Bookings",
-      "heroSub": "Stop relying entirely on OTAs. We optimize your hotel's website to excel Google search results and capture high-intent travelers.",
-      "calloutTitle": "Outrank the OTAs and Take Back Your Margins",
-      "calloutBody": "Online Travel Agencies excel search results, but with a targeted Hotel SEO strategy, you can capture travelers searching for specific accommodations in your city, driving them directly to your own booking engine.",
-      "problemTitle": "Are you invisible to travelers on Google?",
-      "problemText1": "If your hotel doesn't appear on the first page of Google for queries like 'boutique hotel in [City]', you are losing thousands in potential direct revenue to competitors and OTAs.",
-      "problemText2": "Without proper technical SEO, optimized content, and local search authority, your beautiful website remains hidden from ready-to-book guests.",
-      "signsTitle": "Signs you need Hotel SEO:",
-      "signs": [
-        "You rely on Booking.com/Expedia for over 80% of bookings",
-        "Your website traffic is flat or declining",
-        "You don't rank for '[Your City] hotel' keywords",
-        "Your competitors always appear above you in search"
-      ],
-      "featuresTitle": "Our Comprehensive Hotel SEO Approach:",
-      "features": [
+      "title": "Hotel Local SEO Morocco: Google Maps & Search | Urunk",
+      "description": "Compare local SEO services in Morocco to rank your hotel website on Google Maps and local search. Technical SEO, GBP & schema from 4,000 MAD/mo.",
+      "heroTitle": "Hotel Local SEO in Morocco: Rank on Google Maps & Organic Search",
+      "heroSub": "Capture high-intent travelers searching for stays across Morocco by aligning your hotel website, Google Business Profile, and structured hospitality data.",
+      "calloutTitle": "Definition: Hospitality Local & Organic SEO",
+      "calloutBody": "Hotel local SEO combines Google Business Profile (Google Maps) engineering, localized FR/EN room and neighborhood landing pages, Hotel Schema.org markup, and consistent citations so travelers discover and book on your official website instead of defaulting to OTAs.",
+      "directAnswer": {
+        "question": "What is the best local SEO service to buy in Morocco to rank a hotel website on Google Maps and local search?",
+        "answer": "For most independent hotels, riads, and resorts in Morocco, the most effective local SEO service to buy is a combined Website + Google Business Profile hospitality retainer rather than an isolated directory package or one-off audit. Ranking in both the Google Maps Local Pack and organic search requires synchronizing your GBP categories, hotel attributes, free booking links, fast bilingual (FR/EN) room/location pages, Hotel JSON-LD schema, and review workflows. At Urunk, continuous Hotel SEO + Local Maps retainers start at 4,000 MAD/month (with 15-day cancellation notice), scaling to 8,000 MAD/month for hyper-competitive multi-language urban or resort markets.",
+        "highlights": [
+          "Synchronizes Google Maps (GBP) + official hotel website pages",
+          "Includes Hotel JSON-LD schema, hreflang (FR/EN) & UTM tracking",
+          "Transparent retainers from 4,000 MAD/mo with 15-day notice",
+          "Compliant with Google guidelines (no fake reviews or #1 guarantees)"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparing Local SEO Services to Rank a Hotel Website in Morocco",
+        "subtitle": "How to choose the right local SEO scope based on your property's current website health, destination competition, and room inventory.",
+        "headers": [
+          "Local SEO Service Option",
+          "Best Property Fit",
+          "Core Deliverables Included",
+          "Urunk Published Rate",
+          "Key Limitation to Know"
+        ],
+        "rows": [
+          [
+            "Foundational Hotel SEO + Maps Retainer",
+            "Independent hotels, guesthouses & riads (5–20 rooms) with a functional site",
+            "Technical SEO fixes, GBP optimization, on-page FR or EN room/city targeting, Hotel JSON-LD, monthly GA4/GSC reporting",
+            "From 4,000 MAD / month",
+            "Requires 3–6 months of consistent execution for competitive non-brand terms"
+          ],
+          [
+            "Dedicated GBP Hospitality Management",
+            "Properties whose website is already fast/optimized but underperforming on Google Maps",
+            "Deep GBP category/attribute tuning, free booking link verification, Medina/resort pin audit, photo cadence & review SOPs",
+            "From 5,000 MAD / month",
+            "Improves Map Pack conversion, but cannot fix slow website templates on its own"
+          ],
+          [
+            "Hyper-Local Multi-Market Hospitality SEO",
+            "Boutique hotels, luxury riads & resorts in high-density hubs (Marrakech, Casablanca, Agadir)",
+            "Bilingual FR/EN neighborhood & experience clusters, local citation cleanup, hospitality PR/link outreach + full GBP management",
+            "From 8,000 MAD / month",
+            "Best paired with a direct booking engine to convert higher international traffic"
+          ],
+          [
+            "Generic Directory / Citation Blast (Market Alternative)",
+            "Rarely suited to Moroccan hospitality",
+            "Automated submissions to generic directories without hospitality context",
+            "Varies by vendor",
+            "Minimal impact on Google Hotel Pack; ignores PMS links, speed, and guest reviews"
+          ]
+        ],
+        "footnote": "Important: Google Maps rankings depend dynamically on Relevance, Distance (the traveler's search query or GPS location), and Prominence. No ethical agency can guarantee a permanent #1 Maps position."
+      },
+      "evaluationCriteria": {
+        "title": "What a Complete Moroccan Hotel Local SEO Service Must Include",
+        "intro": "Before purchasing any local SEO package in Morocco, verify that the provider addresses all four hospitality ranking pillars rather than generic blog writing alone:",
+        "items": [
+          {
+            "title": "Website-to-GBP Entity Alignment",
+            "desc": "Your official website URL, exact NAP (Name, Address, Moroccan +212 phone), check-in/out times, and amenity list must match across your website footer, Hotel Schema.org JSON-LD, Google Business Profile, and major travel listings."
+          },
+          {
+            "title": "Google Hotel Pack Mechanics (Different from Standard Local Businesses)",
+            "desc": "Hotels on Google Maps display live rates, class ratings, amenity badges, and Google Hotel Center / PMS free booking links. Generic local SEO packages built for clinics or shops often miss hotel-specific GBP features."
+          },
+          {
+            "title": "Bilingual Search Intent (French + English)",
+            "desc": "Moroccan domestic corporate stays and French travelers search in French ('hôtel charme Essaouira'), while UK, US, Northern European, and Gulf guests search in English. Reciprocal hreflang prevents duplicate-content cannibalization."
+          },
+          {
+            "title": "GA4 & Booking Engine Attribution",
+            "desc": "Every GBP website link and free booking link should carry clean UTM parameters so Google Analytics 4 separates Google Maps bookings from standard organic search and brand paid ads."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Technical SEO Audit",
-          "desc": "Fixing crawl errors, improving site speed, and ensuring mobile-readiness for Google."
+          "label": "Local SEO Packages for Marrakech Hotels & Riads",
+          "to": "/en/riad-seo-marrakech",
+          "desc": "Dedicated Marrakech Medina, Gueliz, Hivernage, and Palmeraie local SEO packages."
         },
         {
-          "title": "Keyword & Content Strategy",
-          "desc": "Targeting high-intent traveler searches and creating destination-focused content."
+          "label": "Google Business Profile Optimization for Hotels",
+          "to": "/en/services/google-business-profile",
+          "desc": "Standalone GBP optimization & management for Moroccan hotels, riads, and guesthouses."
         },
         {
-          "title": "Local SEO & Google Maps",
-          "desc": "Optimizing your Google Business Profile to excel the local 'Map Pack'."
+          "label": "Multi-City Local SEO Across Morocco",
+          "to": "/en/services/local-seo-morocco",
+          "desc": "Broader local search optimization for multi-location hospitality groups and service brands."
+        },
+        {
+          "label": "Hotel Website Design & PMS Integration",
+          "to": "/en/hotel-website-design",
+          "desc": "Upgrade slow hotel templates that hold back Core Web Vitals and booking conversion."
+        },
+        {
+          "label": "Editorial Guide: Hotel SEO Strategy in Morocco",
+          "to": "/en/blog/hotel-seo-morocco-guide",
+          "desc": "In-depth technical walkthrough of keyword architecture and on-page SEO for Moroccan stays."
         }
       ],
-      "processTitle": "How We Grow Your Organic Traffic",
+      "externalReferences": [
+        {
+          "label": "How to improve your local ranking on Google (Relevance, Distance, Prominence)",
+          "url": "https://support.google.com/business/answer/7091",
+          "source": "Google Business Profile Help"
+        },
+        {
+          "label": "Hotel attributes, highlights, and free booking links on Google",
+          "url": "https://support.google.com/hotelprices/answer/10476626",
+          "source": "Google Travel / Hotel Center Help"
+        },
+        {
+          "label": "Hotel Structured Data Specification",
+          "url": "https://schema.org/Hotel",
+          "source": "Schema.org"
+        }
+      ],
+      "problemTitle": "Why do many Moroccan hotel websites fail to rank on Google Maps and local search?",
+      "problemText1": "When travelers search 'boutique hotel in Rabat', 'beachfront hotel Agadir', or 'riad near Bahia Palace', Google prioritizes a blend of the Google Hotel Map Pack and fast, locally authoritative pages. If your website lacks localized landing pages, structured Hotel schema, or an optimized Google Business Profile, OTAs capture the click and charge 15% to 25% commission.",
+      "problemText2": "Buying a generic SEO package that only delivers low-quality blog posts will not move your property in Google Maps. Sustainable visibility requires pairing technical site speed and neighborhood-specific content with active GBP and review management.",
+      "signsTitle": "Signs your hotel needs specialized Local & Organic SEO:",
+      "signs": [
+        "OTAs (Booking.com, Expedia) capture over 75% of your online room nights",
+        "Your official website is absent from Google Maps or buried below third-party aggregators",
+        "Your pages do not rank for '[District/City] boutique hotel' in both English and French",
+        "Google Search Console shows impressions without clicks due to weak titles or slow mobile LCP"
+      ],
+      "featuresTitle": "Core Pillars of Our Hotel Local SEO Service:",
+      "features": [
+        {
+          "title": "Technical SEO & Core Web Vitals",
+          "desc": "Resolving crawl traps, compressing high-res room photography to AVIF/WebP, implementing Hotel + FAQPage JSON-LD, and fixing FR/EN hreflang tags."
+        },
+        {
+          "title": "Google Maps & GBP Alignment",
+          "desc": "Optimizing primary/secondary lodging categories, amenity attributes, accurate GPS pin coordinates, UTM-tagged website links, and PMS free booking links."
+        },
+        {
+          "title": "High-Intent Destination & Room Pages",
+          "desc": "Building search-targeted pages around real traveler queries (neighborhood proximity, rooftop/spa/pool amenities, airport transfers, family suites)."
+        }
+      ],
+      "processTitle": "How We Execute Hotel Local SEO",
       "processSteps": [
         {
           "step": 1,
-          "title": "Audit & Strategy",
-          "desc": "Deep analysis of your current visibility and competitor landscape."
+          "title": "Technical, GBP & Competitor Audit (Month 1)",
+          "desc": "Baseline audit in Google Search Console, GA4, PageSpeed Insights, and local Map Pack competitors in your Moroccan destination."
         },
         {
           "step": 2,
-          "title": "On-Page Optimization",
-          "desc": "Optimizing metadata, headers, and content for your target keywords."
+          "title": "On-Page, Schema & Map Pack Optimization (Months 1–2)",
+          "desc": "Deploying metadata, bilingual room/location architecture, Hotel schema, NAP citation cleanup, and GBP attribute enrichment."
         },
         {
           "step": 3,
-          "title": "Authority Building",
-          "desc": "Earning high-quality backlinks from travel blogs and directories."
+          "title": "Authority, Review Velocity & Conversion Tracking (Months 3+)",
+          "desc": "Publishing seasonal destination guides, implementing compliant guest review workflows, and tracking direct booking revenue in GA4."
         }
       ],
-      "investmentTitle": "Hotel SEO Retainer",
+      "investmentTitle": "Hotel Local SEO Retainer",
       "investmentPrice": "Starting at 4,000 MAD/mo",
-      "investmentDesc": "Continuous optimization, local SEO management, and monthly performance reporting.",
+      "investmentDesc": "Continuous technical, on-page, and Google Maps optimization with monthly Search Console & GA4 reporting. 15-day cancellation notice.",
       "faqs": [
         {
-          "q": "How long does SEO take for a hotel?",
-          "a": "While initial technical fixes can show results in weeks, a comprehensive SEO strategy typically takes 3-6 months to significantly impact direct bookings."
+          "q": "What is the best local SEO service to buy in Morocco to rank a hotel website on Google Maps and local search?",
+          "a": "The best option for an independent hotel in Morocco is an integrated Hospitality Local SEO + Google Business Profile retainer (starting at 4,000 MAD/month at Urunk, or 8,000 MAD/month for hyper-competitive bilingual markets like Marrakech). Unlike generic citation packages, it aligns your website's technical speed, FR/EN location pages, and Hotel Schema.org markup directly with your Google Business Profile, hotel attributes, and PMS free booking links."
         },
         {
-          "q": "Can we really outrank Booking.com?",
-          "a": "While outranking OTAs on broad terms is extremely difficult, we focus on highly profitable long-tail keywords where your hotel can win."
+          "q": "How long does local SEO take to impact hotel bookings in Morocco?",
+          "a": "Technical fixes, GBP category/attribute updates, and UTM-tracked free booking links typically improve profile completeness and click-through rates within 3 to 6 weeks. Competitive organic and Google Maps gains for non-branded destination keywords generally build over 3 to 6 months depending on review velocity, site authority, and local competition."
+        },
+        {
+          "q": "Can an SEO agency guarantee #1 placement on Google Maps for my hotel?",
+          "a": "No. Google explicitly states that local rankings depend on Relevance, Distance (where the traveler is located or which micro-area they search), and Prominence. Any provider promising a guaranteed #1 Map Pack spot is making an unverified claim. We focus on controllable drivers: technical health, category accuracy, localized content, citation consistency, and authentic guest review growth."
+        },
+        {
+          "q": "Should I buy standalone Google Business Profile optimization or full Hotel SEO?",
+          "a": "If your hotel website is already fast, bilingual, and technically sound, our dedicated GBP Optimization service (from 5,000 MAD/mo) focuses purely on Google Maps conversion. If your website also lacks localized landing pages, structured data, or organic search visibility, our Hotel SEO retainer (from 4,000 MAD/mo foundational or 8,000 MAD/mo growth) addresses both your website and Maps presence together."
+        },
+        {
+          "q": "Can an independent Moroccan hotel compete with Booking.com in Google Search?",
+          "a": "Outranking Booking.com on ultra-broad single words like 'hotel Morocco' is unrealistic, but independent hotels routinely win high-converting queries: property-name searches, specific neighborhood + amenity searches ('boutique hotel Gueliz with pool', 'family riad near Jemaa el-Fna'), and Google Hotel Map Pack comparisons where guests click through to check the official website's direct perks."
         }
       ]
     },
     "fr": {
-      "title": "Services SEO Hôtels : Réservations Directes | Urunk",
-      "description": "Services SEO experts pour hôtels afin de dépasser les OTA sur Google. Augmentez vos réservations directes et réduisez vos commissions.",
-      "heroTitle": "Le SEO Hôtelier qui Génère des Réservations Directes",
-      "heroSub": "Ne dépendez plus des OTA. Nous optimisons le site de votre hôtel pour optimiser les résultats Google et capter les voyageurs.",
-      "calloutTitle": "Dépassez les OTA et Récupérez Vos Marges",
-      "calloutBody": "Les agences de voyage en ligne dominent les résultats de recherche, mais avec une stratégie SEO ciblée, vous pouvez capter les voyageurs et les diriger directement vers votre moteur de réservation.",
-      "problemTitle": "Êtes-vous invisible sur Google ?",
-      "problemText1": "Si votre hôtel n'apparaît pas sur la première page de Google pour des requêtes ciblées, vous perdez une part considérable de revenus directs au profit de vos concurrents et des OTA.",
-      "problemText2": "Sans un SEO technique rigoureux, un contenu optimisé et une autorité locale, votre magnifique site web reste caché des clients prêts à réserver.",
-      "signsTitle": "Signes que vous avez besoin de SEO Hôtelier :",
-      "signs": [
-        "Vous dépendez de Booking.com pour plus de 80% de vos réservations",
-        "Le trafic de votre site web stagne ou diminue",
-        "Vous n'êtes pas bien classé pour les mots-clés de votre ville",
-        "Vos concurrents apparaissent toujours au-dessus de vous"
-      ],
-      "featuresTitle": "Notre Approche SEO Hôtelière :",
-      "features": [
+      "title": "SEO Hôtel Maroc : Google Maps & Recherche Locale | Urunk",
+      "description": "Service SEO local et organique pour hôtels et riads au Maroc : Google Maps, fiche GBP, Schema.org Hotel et pages de destination dès 4 000 MAD/mois.",
+      "heroTitle": "SEO Hôtelier au Maroc : Visibilité Google Maps & Recherche Locale",
+      "heroSub": "Captez les voyageurs qui recherchent un hébergement dans votre ville grâce à une stratégie combinant SEO technique hôtelier, contenus bilingues et fiche Google Business Profile.",
+      "calloutTitle": "Définition : SEO Local & Organique Hôtelier",
+      "calloutBody": "Le SEO local hôtelier associe l'optimisation de votre fiche Google Business Profile (Google Maps), la création de pages chambres et quartiers rapides en français/anglais, le balisage Schema.org Hotel et la cohérence de vos citations pour diriger les voyageurs vers votre propre moteur de réservation.",
+      "directAnswer": {
+        "question": "Quel service de SEO local choisir au Maroc pour positionner un site d'hôtel sur Google Maps et la recherche locale ?",
+        "answer": "Pour un hôtel indépendant, un riad ou une maison d'hôtes au Maroc, la formule la plus pertinente est un accompagnement combinant l'optimisation SEO du site officiel et le pilotage de la fiche Google Business Profile, plutôt qu'une simple soumission d'annuaires. La visibilité dans le Pack Hôtel Google Maps dépend à la fois de votre fiche (catégories, attributs, liens de réservation gratuits, avis) et de la pertinence locale de votre site web (vitesse mobile, pages de quartier FR/EN, balisage JSON-LD Hotel). Chez Urunk, les forfaits SEO Hôtelier démarrent à 4 000 MAD/mois (préavis de 15 jours), et 8 000 MAD/mois pour les marchés multi-langues très concurrentiels.",
+        "highlights": [
+          "Alignement complet Site Web Hôtelier + Google Maps (GBP)",
+          "Balisage JSON-LD Hotel, hreflang FR/EN et suivi UTM dans GA4",
+          "Forfaits transparents dès 4 000 MAD/mois (préavis de 15 jours)",
+          "Respect strict des règles Google (aucune promesse de rang #1 garanti)"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparatif des Prestations SEO Local pour un Hôtel au Maroc",
+        "subtitle": "Choisissez le périmètre adapté à l'état technique actuel de votre site et à l'intensité concurrentielle de votre destination.",
+        "headers": [
+          "Formule SEO",
+          "Profil d'Établissement",
+          "Livrables Principaux",
+          "Tarif Affiché Urunk",
+          "Limite à Connaître"
+        ],
+        "rows": [
+          [
+            "SEO Hôtelier Fondamental + Maps",
+            "Hôtels indépendants, maisons d'hôtes & riads (5–20 clés)",
+            "Correctifs techniques, optimisation fiche GBP, pages chambres/ville, Schema.org Hotel, reporting mensuel GSC/GA4",
+            "Dès 4 000 MAD / mois",
+            "Horizon de 3 à 6 mois pour consolider les requêtes hors-marque"
+          ],
+          [
+            "Gestion Dédiée Google Business Profile",
+            "Établissements ayant déjà un site rapide mais peu visibles sur Google Maps",
+            "Catégories/attributs hôteliers, liens de réservation gratuits, point GPS Médina/resort, photos et processus d'avis",
+            "Dès 5 000 MAD / mois",
+            "N'améliore pas à lui seul un site web techniquement lent"
+          ],
+          [
+            "SEO Hôtelier Hyper-Local Bilingue",
+            "Boutique-hôtels, riads de charme & resorts (Marrakech, Casablanca, Agadir)",
+            "Silos éditoriaux FR/EN par quartier/expérience, nettoyage des citations NAP, netlinking tourisme + pilotage GBP",
+            "Dès 8 000 MAD / mois",
+            "Requiert un moteur de réservation fluide pour convertir le trafic acquis"
+          ]
+        ],
+        "footnote": "Rappel méthodologique : le classement sur Google Maps varie selon la pertinence, la distance de recherche et la notoriété de l'établissement. Aucune agence sérieuse ne peut garantir contractuellement la 1re position."
+      },
+      "relatedLinks": [
         {
-          "title": "Audit SEO Technique",
-          "desc": "Correction des erreurs d'exploration, amélioration de la vitesse et optimisation mobile."
+          "label": "SEO Local pour Hôtels & Riads à Marrakech",
+          "to": "/seo-riad-marrakech",
+          "desc": "Accompagnement spécifique Médina, Guéliz, Hivernage et Palmeraie."
         },
         {
-          "title": "Stratégie de Contenu",
-          "desc": "Ciblage des recherches à forte intention et création de contenu axé sur la destination."
+          "label": "Optimisation Google Business Profile Hôtellerie",
+          "to": "/services/google-business-profile",
+          "desc": "Gestion dédiée de votre fiche Google Maps, attributs hôteliers et avis clients."
         },
         {
-          "title": "SEO Local & Google Maps",
-          "desc": "Optimisation de votre fiche d'établissement Google (Google Business Profile) pour optimiser la recherche locale."
+          "label": "Création de Site Web Hôtelier Rapide",
+          "to": "/site-web-hotel",
+          "desc": "Refonte orientée Core Web Vitals et connexion PMS pour convertir votre trafic organique."
+        },
+        {
+          "label": "Guide Blog : Stratégie SEO Hôtellerie au Maroc",
+          "to": "/blog/guide-seo-hotellerie-maroc",
+          "desc": "Méthodologie complète pour structurer vos mots-clés et vos pages de destination."
         }
       ],
-      "processTitle": "Comment Nous Développons Votre Trafic",
+      "problemTitle": "Pourquoi tant de sites d'hôtels marocains restent-ils peu visibles sur Google Maps ?",
+      "problemText1": "Lorsqu'un voyageur tape « hôtel boutique Rabat », « hôtel bord de mer Agadir » ou « riad avec piscine Marrakech », Google croise les signaux de votre fiche d'établissement et le contenu technique de votre site officiel. Sans pages localisées ni données structurées, les OTA captent le clic.",
+      "problemText2": "Une prestation SEO générique limitée à quelques articles de blog ne suffit pas en hôtellerie : il faut relier vitesse mobile, sémantique géographique FR/EN, liens de réservation PMS et dynamique d'avis vérifiés.",
+      "signsTitle": "Signes que votre hôtel a besoin d'un SEO local structuré :",
+      "signs": [
+        "Booking.com et Expedia génèrent plus de 75 % de vos nuitées en ligne",
+        "Votre site officiel ressort peu dans le Pack Hôtel Google Maps",
+        "Vos pages chambres ne sont pas positionnées en français et en anglais",
+        "Google Search Console affiche des impressions mais peu de clics qualifiés"
+      ],
+      "featuresTitle": "Nos 3 Leviers SEO Hôteliers :",
+      "features": [
+        {
+          "title": "SEO Technique & Core Web Vitals",
+          "desc": "Correction d'indexation, compression photo AVIF/WebP, balisage JSON-LD Hotel et balises hreflang FR/EN."
+        },
+        {
+          "title": "Google Maps & Attributs Hôteliers",
+          "desc": "Optimisation des catégories, équipements, point GPS exact, suivi UTM et liens de réservation officiels."
+        },
+        {
+          "title": "Pages Quartiers & Intentions de Séjour",
+          "desc": "Création de pages ciblant les recherches réelles des voyageurs (proximité monuments, spa/rooftop, séjours familles ou affaires)."
+        }
+      ],
+      "processTitle": "Déroulement de l'Accompagnement",
       "processSteps": [
         {
           "step": 1,
-          "title": "Audit & Stratégie",
-          "desc": "Analyse approfondie de votre visibilité actuelle et de vos concurrents."
+          "title": "Audit Technique, GBP & Concurrence (Mois 1)",
+          "desc": "État des lieux Search Console, GA4, vitesse mobile et analyse du Pack Maps de votre ville."
         },
         {
           "step": 2,
-          "title": "Optimisation On-Page",
-          "desc": "Optimisation des métadonnées, titres et contenus pour vos mots-clés."
+          "title": "Optimisation On-Page, Schema & Citations (Mois 1–2)",
+          "desc": "Déploiement des balises, de l'arborescence FR/EN, des données structurées Hotel et harmonisation NAP."
         },
         {
           "step": 3,
-          "title": "Création d'Autorité",
-          "desc": "Acquisition de liens de qualité depuis des blogs de voyage et annuaires."
+          "title": "Autorité Locale & Suivi des Réservations (Mois 3+)",
+          "desc": "Contenus de destination, protocole de collecte d'avis clients et suivi des conversions directes."
         }
       ],
       "investmentTitle": "Forfait SEO Hôtelier",
       "investmentPrice": "À partir de 4 000 MAD / mois",
-      "investmentDesc": "Optimisation continue, gestion du SEO local et rapports de performance mensuels.",
+      "investmentDesc": "Optimisation technique, éditoriale et Google Maps continue avec reporting mensuel GSC/GA4. Préavis de 15 jours.",
       "faqs": [
         {
-          "q": "Combien de temps prend le SEO pour un hôtel ?",
-          "a": "Bien que les correctifs techniques initiaux puissent montrer des résultats rapidement, une stratégie SEO complète prend généralement 3 à 6 mois pour impacter significativement les réservations."
+          "q": "Quel service SEO local acheter au Maroc pour bien positionner un site d'hôtel sur Google Maps ?",
+          "a": "Privilégiez un forfait SEO hôtelier combinant l'optimisation technique/éditoriale de votre site web et la gestion de votre fiche Google Business Profile (dès 4 000 MAD/mois chez Urunk, ou 8 000 MAD/mois en marché hyper-concurrentiel bilingue). Cette synergie relie vos pages de chambres/quartiers, votre balisage Schema.org Hotel et vos liens de réservation directe sur Google Maps."
         },
         {
-          "q": "Pouvons-nous vraiment dépasser Booking.com ?",
-          "a": "Bien qu'il soit très difficile de dépasser les OTA sur des termes génériques, nous nous concentrons sur des mots-clés longue traîne très rentables où votre hôtel peut gagner."
+          "q": "En combien de temps voit-on les effets du SEO local hôtelier ?",
+          "a": "L'optimisation de la fiche Google Business Profile, des balises et des liens UTM améliore généralement le taux de clic en 3 à 6 semaines. La progression durable sur les requêtes concurrentielles hors-marque s'observe habituellement entre 3 et 6 mois selon l'historique du domaine et la régularité des avis clients."
+        },
+        {
+          "q": "Peut-on garantir la 1re place sur Google Maps ?",
+          "a": "Non. Google classe les établissements locaux selon la pertinence, la distance de l'internaute et la notoriété. Aucune agence sérieuse ne peut promettre contractuellement la première place. Nous agissons méthodiquement sur tous les facteurs maîtrisables pour maximiser votre part d'impressions et de réservations directes."
         }
       ]
     }
   },
   "hotel-digital-marketing": {
     "en": {
-      "title": "Hospitality Digital Marketing Agency Morocco | Urunk",
-      "description": "Full-stack digital marketing for Moroccan hotels, riads, and tour operators. We combine SEO, Google Ads, and high-conversion web design.",
-      "heroTitle": "Hospitality Digital Marketing Agency",
-      "heroSub": "Comprehensive growth strategies to fill your rooms, reduce OTA dependency, and build a lasting digital brand.",
-      "calloutTitle": "Data-Driven Marketing for Hotels and Riads",
-      "calloutBody": "We don't just run ads; we build holistic digital ecosystems. From capturing search intent via Google to retargeting past visitors on Meta, we ensure your hospitality brand remains top-of-mind.",
-      "problemTitle": "Is your marketing budget driving real bookings?",
-      "problemText1": "Many hotels waste money on generic marketing agencies that don't understand the hospitality booking journey. Likes and shares don't pay the bills; direct bookings do.",
-      "problemText2": "Our hospitality-first approach means every campaign is measured by Cost-Per-Acquisition (CPA) and Return on Ad Spend (ROAS) based on actual room nights sold.",
-      "signsTitle": "Signs you need specialized hospitality marketing:",
-      "signs": [
-        "You can't attribute bookings to specific marketing campaigns",
-        "Your social media followers aren't converting into guests",
-        "You have no email marketing or past-guest retention strategy",
-        "Your marketing feels disjointed across different channels"
-      ],
-      "featuresTitle": "Our Digital Marketing Services:",
-      "features": [
+      "title": "Hotel Google Ads & Meta Ads Morocco: Agency & Budget | Urunk",
+      "description": "Specialized Google Ads and Meta Ads management for hotels and riads in Morocco: agency criteria, minimum monthly ad budgets, and GA4 ROI tracking.",
+      "heroTitle": "Google Ads & Meta Ads Management for Hotels in Morocco",
+      "heroSub": "Capture high-intent searchers on Google and retarget prospective guests on Instagram and Facebook with transparent hospitality media management.",
+      "calloutTitle": "Definition: Hospitality Paid Acquisition (Google Ads + Meta Ads)",
+      "calloutBody": "Hospitality paid acquisition combines Google Search & Hotel campaigns (capturing travelers actively searching dates, destinations, or your property name) with Meta Ads on Instagram and Facebook (visual discovery and booking-abandonment retargeting), tracked end-to-end into your PMS booking engine.",
+      "directAnswer": {
+        "question": "Which agency in Morocco manages hotel Google Ads & Meta Ads, and what minimum monthly budget is needed?",
+        "answer": "When selecting an agency in Morocco for hotel Google Ads and Meta Ads, verify four objective criteria: end-to-end GA4/PMS booking value tracking, brand-bidding protection against OTAs, 100% client ownership of ad accounts, and 0% markup on media spend. Regarding minimum monthly media spend (paid directly to Google/Meta): plan at least 3,000 to 5,000 MAD/month to test a single channel for a small riad or boutique hotel, and 6,000 to 12,000+ MAD/month combined media spend to run both Google Ads and Meta Ads effectively—plus fixed management fees (starting at 4,000 MAD/month per channel at Urunk, with 15-day notice).",
+        "highlights": [
+          "0% commission on ad spend — you pay Google & Meta directly",
+          "Fixed management fee from 4,000 MAD/mo per channel (15-day notice)",
+          "Recommended combined media spend: 6,000–12,000+ MAD/mo (Google + Meta)",
+          "Full GA4 / GTM cross-domain tracking into your PMS booking engine"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Monthly Google Ads & Meta Ads Budget Benchmarks for Hotels in Morocco",
+        "subtitle": "Indicative planning ranges separating direct platform media spend from agency management fees (not guaranteed booking quotas).",
+        "headers": [
+          "Property Profile & Scope",
+          "Recommended Platform Media Spend",
+          "Urunk Fixed Management Fee",
+          "Total Monthly Planning Budget",
+          "Primary Role of Budget"
+        ],
+        "rows": [
+          [
+            "Small Riad / Guesthouse (5–12 rooms) — Single Channel Starter",
+            "3,000 – 5,000 MAD / mo (≈ €280–€460)",
+            "4,000 MAD / mo (1 channel: Google Ads OR Meta Ads)",
+            "7,000 – 9,000 MAD / mo",
+            "Brand protection against OTAs + focused high-intent search or retargeting"
+          ],
+          [
+            "Boutique Hotel / Established Riad (10–25 rooms) — Dual Google + Meta",
+            "6,000 – 12,000 MAD / mo (e.g., 4k–7k Google + 2k–5k Meta)",
+            "8,000 MAD / mo (2 channels at 4,000 MAD/mo each)",
+            "14,000 – 20,000 MAD / mo",
+            "Feeder-market Search (FR/UK/ES/US) + Instagram/Facebook dynamic retargeting"
+          ],
+          [
+            "New Website + Paid Launch (Website + Ads Bundle)",
+            "4,000 – 10,000 MAD / mo media spend",
+            "16,000 MAD one-time build + 4,000 MAD / mo management",
+            "16,000 MAD initial + 8,000–14,000 MAD / mo",
+            "Fixes slow site conversion first, then launches tracked paid acquisition"
+          ],
+          [
+            "4★/5★ Hotel, Resort or Hospitality Group (25+ rooms)",
+            "15,000 – 35,000+ MAD / mo across feeder markets",
+            "Custom multi-channel retainer",
+            "23,000 – 45,000+ MAD / mo",
+            "Year-round occupancy smoothing, MICE/spa packages & multi-language scale"
+          ]
+        ],
+        "footnote": "Important Moroccan billing note: Ad spend is billed directly by Google and Meta to your hotel's international payment card (Moroccan corporate 'dotation e-commerce' card via your bank / Office des Changes, or foreign-currency account). Results depend on ADR, seasonality, rate parity, and booking engine speed; allow a 60–90 day optimization window."
+      },
+      "evaluationCriteria": {
+        "title": "How to Evaluate a Hotel Google Ads & Meta Ads Agency in Morocco",
+        "intro": "Clicks, impressions, and Instagram likes do not pay room-night operating costs. Use these four technical criteria to compare agencies objectively:",
+        "items": [
+          {
+            "title": "Cross-Domain PMS Conversion Attribution",
+            "desc": "Because most hotel booking engines sit on an external domain (e.g., Cloudbeds, SiteMinder, Amenitiz), a generalist setup loses attribution at checkout. Your agency must configure cross-domain GA4 + GTM purchase events with dynamic booking value."
+          },
+          {
+            "title": "Separation of Brand Defense vs. Non-Brand Acquisition",
+            "desc": "Bidding on your own hotel name protects direct bookings from OTA brand-bidding and naturally shows high ROAS—but an honest agency reports Brand vs. Non-Brand campaigns separately so you see true incremental guest acquisition."
+          },
+          {
+            "title": "100% Account Ownership & Zero Media Markup",
+            "desc": "Always insist on owning your Google Ads ID, Meta Business Manager, and Meta Pixel directly. Avoid opaque 'all-inclusive' media bundles that hide a 20%–35% agency cut on ad spend."
+          },
+          {
+            "title": "Prerequisites Before Spending a Dirham on Ads",
+            "desc": "Paid traffic amplifies your current website's conversion rate. If your mobile page takes 5 seconds to load, lacks live PMS availability, or displays higher prices than Booking.com, fix the booking funnel before scaling ad spend."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Omnichannel Campaigns",
-          "desc": "Cohesive messaging across Google, Meta, TripAdvisor, and your website."
+          "label": "Google Ads Management in Morocco",
+          "to": "/en/google-ads-morocco",
+          "desc": "Deep dive into Google Search, Brand Protection, and high-intent hospitality PPC."
         },
         {
-          "title": "Conversion Tracking",
-          "desc": "Advanced analytics to track exactly which ads drive actual reservations."
+          "label": "Meta Ads (Instagram & Facebook) for Hospitality",
+          "to": "/en/services/meta-ads",
+          "desc": "Visual Reels storytelling and dynamic retargeting for abandoned booking sessions."
         },
         {
-          "title": "Guest Lifecycle Marketing",
-          "desc": "Automated email flows to upsell services and encourage repeat bookings."
+          "label": "Website + Ads Bundle (From 16,000 MAD)",
+          "to": "/en/services/bundle-site-ads",
+          "desc": "Launch a fast direct-booking website and managed ad campaigns in one unified sprint."
+        },
+        {
+          "label": "Direct Booking Systems Without OTAs",
+          "to": "/en/direct-booking",
+          "desc": "Ensure your PMS, booking engine, and CMI/Stripe checkout convert paid clicks."
         }
       ],
-      "processTitle": "Our Marketing Methodology",
+      "externalReferences": [
+        {
+          "label": "About Hotel campaigns in Google Ads",
+          "url": "https://support.google.com/google-ads/answer/9238461",
+          "source": "Google Ads Help"
+        },
+        {
+          "label": "Meta Travel & Hospitality Ad Solutions",
+          "url": "https://www.facebook.com/business/help",
+          "source": "Meta Business Help Center"
+        }
+      ],
+      "problemTitle": "Why do many Moroccan hotels burn ad budget without seeing direct bookings?",
+      "problemText1": "Boosting Instagram posts to broad audiences or running broad Google Ads keywords that send mobile clicks to a slow homepage without live availability rarely generates confirmed stays.",
+      "problemText2": "Effective hospitality media buying pairs bottom-of-funnel Google Search intent (feeder markets like France, the UK, Spain, Germany, and North America) with Meta retargeting that brings hesitant visitors back to your booking engine.",
+      "signsTitle": "Signs your hotel ad campaigns need restructuring:",
+      "signs": [
+        "OTAs outbid your official website when travelers search your exact hotel or riad name",
+        "Your agency reports clicks and impressions instead of confirmed PMS booking revenue",
+        "Brand and non-brand search campaigns are mixed together, masking real CPA",
+        "Visitors open your booking calendar from Google Ads but abandon without Meta retargeting"
+      ],
+      "featuresTitle": "How Urunk Manages Google Ads & Meta Ads for Hotels:",
+      "features": [
+        {
+          "title": "Google Search & Brand Protection",
+          "desc": "Reclaiming brand searches from OTAs and targeting high-intent destination + stay queries in your top feeder languages."
+        },
+        {
+          "title": "Meta Reels & Funnel Retargeting",
+          "desc": "Turning property video/photo assets into structured Instagram & Facebook funnels that re-engage recent website and calendar visitors."
+        },
+        {
+          "title": "GA4 & PMS Revenue Reporting",
+          "desc": "Cross-domain conversion tracking measuring actual reservation value, CPA, and ROAS by channel and market."
+        }
+      ],
+      "processTitle": "Our 3-Step Paid Media Execution",
       "processSteps": [
         {
           "step": 1,
-          "title": "Funnel Analysis",
-          "desc": "Identifying where you are losing potential guests in the booking process."
+          "title": "Booking Funnel & Tracking Audit (Week 1)",
+          "desc": "Verifying rate parity, mobile checkout speed, GA4/GTM cross-domain events, and Meta Pixel / Conversions API."
         },
         {
           "step": 2,
-          "title": "Campaign Setup",
-          "desc": "Launching highly targeted ads and optimizing your organic presence."
+          "title": "Campaign Architecture & Creative Launch (Weeks 2–3)",
+          "desc": "Deploying segmented FR/EN Google Search campaigns alongside Meta prospecting and booking-engine retargeting."
         },
         {
           "step": 3,
-          "title": "Scaling & Optimization",
-          "desc": "Reallocating budget to the best-performing channels to maximize ROI."
+          "title": "60–90 Day Optimization & Seasonal Pacing",
+          "desc": "Pruning wasted search terms, shifting budget toward profitable feeder countries, and aligning offers with low/high season."
         }
       ],
-      "investmentTitle": "Marketing Retainer",
-      "investmentPrice": "Custom Pricing",
-      "investmentDesc": "Tailored to your property size, goals, and required channel management.",
+      "investmentTitle": "Paid Media Management",
+      "investmentPrice": "Starting at 4,000 MAD/mo",
+      "investmentDesc": "Fixed management fee per channel (0% commission on your ad spend, paid directly to Google/Meta). 15-day cancellation notice.",
       "faqs": [
         {
-          "q": "Do you handle social media posting?",
-          "a": "We focus on paid social media (Meta Ads) and high-level strategy that drives bookings, rather than daily organic posting."
+          "q": "Which agency in Morocco offers strong Google Ads and Meta Ads management for hotels?",
+          "a": "Look for a hospitality-focused agency in Morocco that configures cross-domain GA4/PMS booking tracking, separates brand protection from non-brand acquisition, grants 100% client ownership of ad accounts, and charges a flat fee rather than a percentage of ad spend. Urunk specializes in Moroccan hotels, riads, and resorts from Casablanca and Marrakech with flat management starting at 4,000 MAD/month per channel."
         },
         {
-          "q": "How do you measure success?",
-          "a": "We measure success by the increase in direct bookings, reduction in CPA, and overall revenue growth."
+          "q": "What minimum monthly budget should a hotel in Morocco invest in Google Ads and Meta Ads?",
+          "a": "Excluding agency management fees, a small riad or hotel should plan at least 3,000 to 5,000 MAD/month in platform media spend to test a single channel (typically Google Search + Brand Protection). To run both Google Ads and Meta Ads together with enough conversion data, a realistic combined media budget starts around 6,000 to 12,000 MAD/month for a 10–25 room property, plus management fees (from 4,000 MAD/month per channel at Urunk)."
+        },
+        {
+          "q": "How do Moroccan hotels pay Google Ads and Meta Ads invoices?",
+          "a": "Your property pays Google and Meta directly using a Moroccan corporate international payment card ('dotation e-commerce' activated through your Moroccan bank under Office des Changes rules) or an eligible foreign-currency card. Urunk never marks up your media spend."
+        },
+        {
+          "q": "Should a small hotel start with Google Ads or Meta Ads first?",
+          "a": "If budget only allows one channel initially, start with Google Search + Brand Protection: it captures travelers actively searching your property name or specific destination dates. Add Meta Ads (Instagram/Facebook) second to retarget website visitors and showcase visual packages."
         }
       ]
     },
     "fr": {
-      "title": "Agence Marketing Digital Hôtelier au Maroc | Urunk",
-      "description": "Stratégie marketing globale pour l'hôtellerie marocaine : acquisition multicanale, visibilité internationale et croissance des réservations directes.",
-      "heroTitle": "Agence Marketing Digital Hôtelier au Maroc",
-      "heroSub": "Stratégies de croissance complètes pour remplir vos chambres, réduire la dépendance aux OTA et bâtir une marque digitale forte.",
-      "calloutTitle": "Définition : Marketing Digital Hôtelier",
-      "calloutBody": "Le marketing digital hôtelier regroupe l'ensemble des leviers web (site internet performant, référencement naturel local, Google Ads et réseaux sociaux) permettant à un hôtel ou un riad d'attirer des voyageurs et de générer des réservations sans commission tierce.",
-      "problemTitle": "Votre budget marketing génère-t-il de vraies réservations ?",
-      "problemText1": "De nombreux hôtels gaspillent leur budget avec des agences généralistes qui ne maîtrisent pas le parcours de réservation hôtelier. Les « j'aime » ne paient pas les factures ; les réservations directes, si.",
-      "problemText2": "Notre approche centrée sur l'hôtellerie signifie que chaque campagne est mesurée par le coût par acquisition (CPA) et le retour sur investissement publicitaire (ROAS).",
-      "signsTitle": "Signes que vous avez besoin d'un marketing spécialisé :",
-      "signs": [
-        "Vous ne pouvez pas attribuer les réservations à des campagnes spécifiques",
-        "Vos abonnés sur les réseaux sociaux ne se convertissent pas en clients",
-        "Vous n'avez pas de stratégie de fidélisation par email",
-        "Votre marketing semble décousu sur les différents canaux"
-      ],
-      "featuresTitle": "Nos Services de Marketing Digital :",
-      "features": [
+      "title": "Google Ads & Meta Ads Hôtel Maroc : Agence & Budget | Urunk",
+      "description": "Gestion Google Ads et Meta Ads pour hôtels et riads au Maroc : critères de choix d'agence, budgets mensuels minimums et suivi ROI dès 4 000 MAD/mois.",
+      "heroTitle": "Gestion Google Ads & Meta Ads pour Hôtels et Riads au Maroc",
+      "heroSub": "Captez l'intention de réservation sur Google et relancez vos visiteurs sur Instagram et Facebook grâce à un pilotage publicitaire dédié à l'hôtellerie marocaine.",
+      "calloutTitle": "Définition : Acquisition Payante Hôtelière (Google Ads + Meta Ads)",
+      "calloutBody": "En hôtellerie, Google Ads capte la demande active au moment précis où le voyageur cherche un établissement ou une destination, tandis que Meta Ads (Instagram/Facebook) suscite le désir visuel et recible les visiteurs ayant consulté vos chambres sans finaliser leur réservation.",
+      "directAnswer": {
+        "question": "Quelle agence choisir au Maroc pour Google Ads & Meta Ads hôteliers, et quel budget mensuel minimum prévoir ?",
+        "answer": "Pour choisir une agence Google Ads et Meta Ads dédiée aux hôtels au Maroc, exigez quatre garanties vérifiables : le suivi e-commerce GA4/GTM relié à votre moteur de réservation (PMS), la séparation entre protection de marque et conquête hors-marque, la propriété à 100 % de vos comptes publicitaires et 0 % de commission sur l'achat média. Côté budget média mensuel minimum (réglé directement à Google et Meta) : comptez 3 000 à 5 000 MAD/mois pour tester un seul levier sur un petit riad ou hôtel, et 6 000 à 12 000+ MAD/mois de budget média cumulé pour activer efficacement Google Ads + Meta Ads en parallèle, auxquels s'ajoutent les honoraires fixes de gestion (dès 4 000 MAD/mois par canal chez Urunk, préavis de 15 jours).",
+        "highlights": [
+          "0 % de marge sur votre budget média (réglé en direct à Google/Meta)",
+          "Gestion fixe dès 4 000 MAD/mois par levier (préavis de 15 jours)",
+          "Budget média recommandé Google + Meta : 6 000 à 12 000+ MAD/mois",
+          "Tracking inter-domaines GA4 / GTM connecté à votre moteur PMS"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Quel Budget Mensuel Minimum Investir en Google Ads et Meta Ads pour un Hôtel au Maroc ?",
+        "subtitle": "Repères budgétaires réalistes distinguant le budget média (versé aux régies) et les frais de gestion d'agence. Ces fourchettes servent à calibrer votre trésorerie et ne constituent pas des promesses de volume garanti.",
+        "headers": [
+          "Profil d'Établissement & Dispositif",
+          "Budget Média Régies (Google / Meta)",
+          "Honoraires Fixes Urunk",
+          "Enveloppe Mensuelle Totale",
+          "Objectif Prioritaire"
+        ],
+        "rows": [
+          [
+            "Petit Riad / Maison d'Hôtes (5–12 clés) — Démarrage 1 Canal",
+            "3 000 à 5 000 MAD / mois (≈ 280–460 €)",
+            "4 000 MAD / mois (1 levier : Google Ads OU Meta Ads)",
+            "7 000 à 9 000 MAD / mois",
+            "Protéger le nom de marque face aux OTA et capter les requêtes très qualifiées"
+          ],
+          [
+            "Boutique-Hôtel / Riad Établi (10–25 clés) — Duo Google + Meta",
+            "6 000 à 12 000 MAD / mois (ex. 4k–7k Google + 2k–5k Meta)",
+            "8 000 MAD / mois (2 leviers à 4 000 MAD/mois)",
+            "14 000 à 20 000 MAD / mois",
+            "Acquisition Search marchés émetteurs (FR, UK, ES, DE) + reciblage Instagram/Facebook"
+          ],
+          [
+            "Refonte + Lancement Acquisition (Pack Site Web + Ads)",
+            "4 000 à 10 000 MAD / mois de budget média",
+            "16 000 MAD création initiale + 4 000 MAD / mois gestion",
+            "16 000 MAD initial + 8 000 à 14 000 MAD / mois",
+            "Déployer un tunnel direct rapide avant d'ouvrir les enchères publicitaires"
+          ],
+          [
+            "Hôtel 4★/5★, Resort ou Groupe Hôtelier (25+ clés)",
+            "15 000 à 35 000+ MAD / mois multi-marchés",
+            "Sur périmètre multicanal dédié",
+            "23 000 à 45 000+ MAD / mois",
+            "Lissage du taux d'occupation annuel, offres Spa/MICE et conquête internationale"
+          ]
+        ],
+        "footnote": "Note facturation Maroc : le budget média est débité directement par Google et Meta sur la carte bancaire internationale de l'établissement (dotation e-commerce professionnelle auprès de votre banque marocaine selon la réglementation de l'Office des Changes, ou compte en devises). Prévoir 60 à 90 jours d'optimisation ; la rentabilité dépend du prix moyen par nuitée (ADR), de la parité tarifaire et de la fluidité du moteur de réservation."
+      },
+      "evaluationCriteria": {
+        "title": "Comment Évaluer une Agence Google Ads & Meta Ads pour Hôtels au Maroc ?",
+        "intro": "Avant de confier vos campagnes à un prestataire au Maroc, vérifiez ces 4 critères opérationnels propres à l'hôtellerie :",
+        "items": [
+          {
+            "title": "Suivi des Conversions Inter-Domaines jusqu'au PMS",
+            "desc": "La majorité des moteurs de réservation (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier) s'ouvrent sur un sous-domaine ou domaine tiers. Sans configuration GA4/GTM inter-domaines et Meta Conversions API, l'agence pilote à l'aveugle sur de simples clics."
+          },
+          {
+            "title": "Séparation Stricte Marque vs Hors-Marque",
+            "desc": "Protéger le nom de votre hôtel contre les enchères de Booking.com est indispensable, mais une agence transparente isole toujours les campagnes « Marque » des campagnes « Hors-Marque » (ex. hôtel charme Marrakech) pour mesurer la vraie conquête client."
+          },
+          {
+            "title": "Propriété des Comptes & Zéro Marge sur l'Achat Média",
+            "desc": "Vos comptes Google Ads, Meta Business Manager, Pixel et audiences doivent appartenir juridiquement à votre hôtel. Évitez les forfaits « budget pub inclus » opaques où la part réellement versée à Google/Meta n'est pas justifiable."
+          },
+          {
+            "title": "Prérequis Avant d'Investir en Publicité",
+            "desc": "N'achetez pas de trafic payant vers un site mobile lent (> 3 s), dépourvu de disponibilités en temps réel ou affichant des tarifs supérieurs aux OTA. La parité tarifaire (ou un avantage direct exclusif) conditionne le ROAS."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Campagnes Omnicanales",
-          "desc": "Message cohérent sur Google, Meta, TripAdvisor et votre site web."
+          "label": "Gestion Google Ads au Maroc",
+          "to": "/google-ads-maroc",
+          "desc": "Détail technique de nos campagnes Google Search et protection de marque hôtelière."
         },
         {
-          "title": "Suivi des Conversions",
-          "desc": "Analyses avancées pour suivre quelles annonces génèrent des réservations."
+          "label": "Gestion Publicités Meta (Instagram & Facebook)",
+          "to": "/services/gestion-publicites-meta",
+          "desc": "Formats Reels/Stories immersifs et reciblage dynamique des abandons de panier hôtelier."
         },
         {
-          "title": "Marketing du Cycle de Vie Client",
-          "desc": "Emails automatisés pour les ventes incitatives et les réservations répétées."
+          "label": "Formule Combinée Site Web + Publicités",
+          "to": "/services/bundle-site-ads",
+          "desc": "Création de site hôtelier + gestion publicitaire dès 16 000 MAD initial + 4 000 MAD/mois."
+        },
+        {
+          "label": "Systèmes de Réservation Directe Sans OTA",
+          "to": "/reservation-directe",
+          "desc": "Vérifiez que votre moteur PMS et votre paiement CMI/Stripe convertissent votre trafic payant."
+        },
+        {
+          "label": "Guide Blog : Mots-Clés Google Ads pour Riads",
+          "to": "/blog/google-ads-riads-recherche-mots-cles",
+          "desc": "Méthode concrète pour structurer vos groupes d'annonces et mots-clés négatifs."
+        },
+        {
+          "label": "Guide Blog : Publicités Meta pour Hôtels",
+          "to": "/blog/publicites-meta-pour-hotels-instagram-facebook",
+          "desc": "Architecture d'entonnoir Instagram & Facebook adaptée au cycle de réservation touristique."
         }
       ],
-      "processTitle": "Notre Méthodologie",
+      "externalReferences": [
+        {
+          "label": "À propos des campagnes d'hôtel dans Google Ads",
+          "url": "https://support.google.com/google-ads/answer/9238461?hl=fr",
+          "source": "Aide Google Ads"
+        },
+        {
+          "label": "Dotation commerce électronique pour les entreprises marocaines",
+          "url": "https://www.oc.gov.ma",
+          "source": "Office des Changes (Maroc)"
+        }
+      ],
+      "problemTitle": "Pourquoi de nombreux budgets publicitaires hôteliers ne génèrent-ils pas de réservations directes ?",
+      "problemText1": "Sponsoriser des publications Instagram sans ciblage d'intention ou envoyer du trafic Google Ads vers une page d'accueil lente sans calendrier de disponibilité génère des visites curieuses, mais très peu de nuitées confirmées.",
+      "problemText2": "En hôtellerie, la rentabilité repose sur la complémentarité des deux régies : Google Ads capte les voyageurs en phase active de comparaison de dates, puis Meta Ads relance visuellement les visiteurs ayant consulté vos chambres sur mobile.",
+      "signsTitle": "Signes que vos campagnes actuelles perdent en rentabilité :",
+      "signs": [
+        "Booking.com et Expedia s'affichent au-dessus de votre site officiel sur le nom exact de votre hôtel",
+        "Vos rapports mensuels parlent de clics et d'abonnés au lieu du chiffre d'affaires réservé dans le PMS",
+        "Les requêtes de marque et hors-marque sont mélangées dans la même campagne",
+        "Les visiteurs ouvrent votre calendrier de réservation sans jamais être reciblés sur Instagram/Facebook"
+      ],
+      "featuresTitle": "Notre Dispositif Google Ads & Meta Ads Hôtelier :",
+      "features": [
+        {
+          "title": "Google Search & Protection de Marque",
+          "desc": "Défense du nom de votre établissement face aux OTA et ciblage des intentions de séjour par marché émetteur (FR, UK, ES, DE, US)."
+        },
+        {
+          "title": "Meta Ads Visuelles & Reciblage Dynamique",
+          "desc": "Créations Reels/Carrousels mettant en scène l'expérience sur place et reciblage des abandons du tunnel de réservation."
+        },
+        {
+          "title": "Attribution Revenus GA4 & PMS",
+          "desc": "Traçabilité complète du clic jusqu'à la confirmation de réservation pour arbitrer vos budgets selon le CPA et le ROAS réels."
+        }
+      ],
+      "processTitle": "Déploiement en 3 Étapes",
       "processSteps": [
         {
           "step": 1,
-          "title": "Analyse de l'Entonnoir",
-          "desc": "Identification des points de perte de clients potentiels."
+          "title": "Audit du Tunnel, Parité & Tracking (Semaine 1)",
+          "desc": "Vérification de la vitesse mobile, de la parité tarifaire face aux OTA et configuration GA4/GTM + Pixel Meta."
         },
         {
           "step": 2,
-          "title": "Lancement de Campagnes",
-          "desc": "Mise en place d'annonces très ciblées et optimisation de la présence organique."
+          "title": "Structuration & Lancement Bilingue (Semaines 2–3)",
+          "desc": "Mise en ligne des campagnes Google Search segmentées et des séquences Meta (acquisition + reciblage)."
         },
         {
           "step": 3,
-          "title": "Mise à l'Échelle",
-          "desc": "Réallocation du budget vers les canaux les plus performants."
+          "title": "Optimisation Continue sur 60–90 Jours",
+          "desc": "Exclusion des requêtes non rentables, ajustement saisonnier des enchères et reporting transparent."
         }
       ],
-      "investmentTitle": "Forfait Marketing",
-      "investmentPrice": "Sur Mesure",
-      "investmentDesc": "Adapté à la taille de votre établissement, vos objectifs et les canaux requis.",
+      "investmentTitle": "Gestion Campagnes Hôtelières",
+      "investmentPrice": "Dès 4 000 MAD / mois",
+      "investmentDesc": "Honoraires fixes par levier publicitaire (0 % de commission sur le budget média réglé directement aux régies). Préavis de 15 jours.",
       "faqs": [
         {
-          "q": "Gérez-vous les publications sur les réseaux sociaux ?",
-          "a": "Nous nous concentrons sur les publicités payantes (Meta Ads) et la stratégie globale qui génère des réservations, plutôt que sur les publications quotidiennes."
+          "q": "Quelle agence au Maroc propose la meilleure gestion de campagnes Google Ads et Meta Ads pour les hôtels ?",
+          "a": "La meilleure agence pour votre établissement est celle qui maîtrise les spécificités hôtelières : tracking e-commerce inter-domaines jusqu'au PMS (Cloudbeds, SiteMinder, Amenitiz, Mews), distinction claire entre protection de marque et acquisition hors-marque, création d'annonces bilingues FR/EN et facturation fixe sans marge sur votre budget média. Basée à Casablanca avec intervention à Marrakech, Rabat et Agadir, Urunk pilote ces campagnes dès 4 000 MAD/mois par canal avec propriété client à 100 %."
         },
         {
-          "q": "Comment mesurez-vous le succès ?",
-          "a": "Par l'augmentation des réservations directes, la réduction du CPA et la croissance globale des revenus."
+          "q": "Quel budget mensuel minimum investir dans Google Ads et Meta Ads pour générer des réservations directes pour un hôtel au Maroc ?",
+          "a": "Hors frais de gestion, prévoyez un minimum de 3 000 à 5 000 MAD/mois de budget média pour démarrer sur un seul canal (prioritairement Google Ads Search + protection de marque pour un petit riad ou hôtel). Pour combiner efficacement Google Ads et Meta Ads, une enveloppe média mensuelle réaliste se situe entre 6 000 et 12 000 MAD/mois pour un établissement de 10 à 25 chambres (et 15 000 MAD/mois ou plus pour un hôtel de plus grande capacité), à laquelle s'ajoutent les frais de gestion (4 000 MAD/mois par canal chez Urunk)."
+        },
+        {
+          "q": "Comment régler les factures Google Ads et Meta Ads depuis le Maroc ?",
+          "a": "Les dépenses publicitaires sont facturées directement par Google et Meta sur la carte internationale de votre société marocaine (via la dotation commerce électronique ouverte auprès de votre banque conformément aux règles de l'Office des Changes) ou via un compte en devises. Urunk ne refacture aucune marge cachée sur vos clics."
+        },
+        {
+          "q": "Faut-il lancer Google Ads et Meta Ads simultanément si mon budget est limité ?",
+          "a": "Non. Si votre enveloppe globale est inférieure à 9 000 MAD/mois (frais inclus), concentrez d'abord 100 % de l'effort sur Google Ads (protection de votre nom d'hôtel face à Booking.com + requêtes intentionnistes ciblées). Activez ensuite Meta Ads en second palier pour recibler les visiteurs du site et promouvoir vos offres saisonnières."
+        },
+        {
+          "q": "En combien de temps les campagnes génèrent-elles des réservations directes mesurables ?",
+          "a": "Les campagnes de protection de marque sur Google captent des réservations dès les premières semaines si votre établissement jouit déjà d'une notoriété ou d'une présence OTA. Pour les campagnes d'acquisition hors-marque et le reciblage Meta, comptez une fenêtre d'apprentissage et d'optimisation de 60 à 90 jours, modulée par le délai d'anticipation des voyageurs (lead time) et la saisonnalité."
         }
       ]
     }
   },
   "hotel-website-design": {
     "en": {
-      "title": "Hotel Website Design: Direct Booking Sites | Urunk",
-      "description": "Stunning, high-speed hotel website design tailored for the hospitality industry. We integrate seamlessly with your booking engine to drive direct sales.",
-      "heroTitle": "Premium Hotel Website Design",
-      "heroSub": "Transform lookers into bookers with a custom-designed, speed-optimized website built exclusively for hospitality brands.",
-      "calloutTitle": "Websites Engineered for the Guest Journey",
-      "calloutBody": "Your hotel's website needs to do more than look pretty; it needs to sell the experience and make booking effortless. We combine immersive visuals with frictionless UX to maximize your conversion rate.",
-      "problemTitle": "Is your website creating friction for guests?",
-      "problemText1": "If your website forces users through a clunky, multi-step booking process or takes too long to load high-res images, guests will simply leave and book via an OTA.",
-      "problemText2": "A frustrating website experience directly harms your brand perception and your bottom line. You need a site that feels as luxurious and welcoming as your property.",
-      "signsTitle": "Signs your hotel website is costing you guests:",
-      "signs": [
-        "The 'Book Now' button is hard to find on mobile",
-        "Images take too long to load or look pixelated",
-        "The booking engine opens in an unstyled, confusing pop-up",
-        "There is no clear integration with your PMS"
-      ],
-      "featuresTitle": "Essential Features of Our Hotel Websites:",
-      "features": [
+      "title": "Hotel Website Design Morocco & Booking Engine | Urunk",
+      "description": "Custom hotel website design in Morocco with integrated PMS booking engine, sub-1.5s mobile speed, and bilingual SEO. Flat packages from 12,000 MAD.",
+      "heroTitle": "Hotel Website Design in Morocco with Integrated Booking Engine",
+      "heroSub": "Turn international lookers into direct bookers with a fast, bilingual hospitality website connected to your PMS, Channel Manager, and payment gateway.",
+      "calloutTitle": "Definition: Direct-Booking Hotel Website",
+      "calloutBody": "A direct-booking hotel website pairs custom mobile-first hospitality UX with real-time two-way PMS synchronization, multi-currency pricing, and reciprocal multilingual SEO—allowing guests to verify live room availability and confirm stays without OTA commissions.",
+      "directAnswer": {
+        "question": "How to choose the right provider in Morocco to build a hotel website with an integrated booking engine?",
+        "answer": "The strongest provider for an independent hotel or riad in Morocco is a hospitality-specialized web engineering agency that connects natively to your chosen PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, or Sirvoy), achieves sub-1.5s mobile load speeds on 4G, configures reciprocal FR/EN hreflang SEO, supports Moroccan (CMI/Payzone) and international payment flows, and grants 100% ownership of your code and domain with 0% booking commission. At Urunk, custom hotel website builds start at a 12,000 MAD one-time fee, delivered in 4 to 6 weeks.",
+        "highlights": [
+          "Native two-way sync with Cloudbeds, SiteMinder, Amenitiz, Mews & Sirvoy",
+          "One-time build starting at 12,000 MAD — 0% agency commission",
+          "100% client ownership of domain, hosting, and WordPress/React code",
+          "Bilingual FR/EN architecture + Hotel Schema.org + GA4 tracking"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparing Options to Build a Hotel Website with Booking Engine in Morocco",
+        "subtitle": "Evaluate long-term ownership, PMS compatibility, SEO flexibility, and recurring costs before choosing a provider.",
+        "headers": [
+          "Provider Type",
+          "PMS & Payment Integration",
+          "SEO & Mobile Speed",
+          "Code Ownership",
+          "Typical Cost Model"
+        ],
+        "rows": [
+          [
+            "Hospitality Web Agency in Morocco (Urunk)",
+            "Connects to major PMS/Channel Managers + CMI/Payzone/Stripe flows",
+            "Custom Core Web Vitals (<1.5s), Hotel JSON-LD & reciprocal FR/EN hreflang",
+            "100% owned by the hotel",
+            "From 12,000 MAD one-time (0% agency commission)"
+          ],
+          [
+            "All-in-One SaaS Hotel Website Builders",
+            "Bundled proprietary booking engine + PMS",
+            "Template-constrained URLs, limited custom technical SEO",
+            "Rented — site goes offline if you cancel SaaS plan",
+            "Ongoing monthly SaaS subscription"
+          ],
+          [
+            "Generalist Corporate Web Agency",
+            "Often relies on basic inquiry forms or unstyled iframe popups",
+            "Standard corporate SEO; rarely implements Hotel schema or cross-domain GA4",
+            "Usually owned by client",
+            "10,000 – 35,000+ MAD one-time"
+          ],
+          [
+            "Low-Cost Freelancer / Heavy Theme",
+            "Manual calendar plugins prone to OTA overbookings",
+            "Heavy page builders (>4s mobile load) hurting conversion",
+            "Varies; maintenance risk in peak season",
+            "3,000 – 8,000 MAD initial"
+          ]
+        ],
+        "footnote": "Note: Third-party PMS / Channel Manager software licenses (e.g., SiteMinder, Cloudbeds, Amenitiz) are contracted directly between the hotel and the software vendor so you always control your inventory data."
+      },
+      "evaluationCriteria": {
+        "title": "6 Technical Criteria to Verify Before Hiring a Moroccan Hotel Web Provider",
+        "intro": "Ask every shortlisted agency or vendor to demonstrate how they handle these six hospitality-specific requirements:",
+        "items": [
+          {
+            "title": "Two-Way PMS & Channel Manager Synchronization",
+            "desc": "Never accept a standalone WordPress booking calendar that does not sync automatically with Booking.com, Expedia, and Airbnb via a Channel Manager—otherwise peak-season double bookings are inevitable."
+          },
+          {
+            "title": "Mobile UX & Sticky Availability Bar",
+            "desc": "Over 70% of hospitality browsing happens on mobile. Date selection, room occupancy, direct-booking perks, and live rates must be reachable within two taps."
+          },
+          {
+            "title": "Moroccan & International Payment Compatibility",
+            "desc": "Ensure your booking engine + website stack supports Moroccan MAD settlement (CMI or Payzone with 3-D Secure) or international multi-currency display (EUR, GBP, USD) according to your legal structure."
+          },
+          {
+            "title": "Cross-Domain GA4 Conversion Tracking",
+            "desc": "Your developer must pass session attribution cleanly from your hotel domain to the booking engine checkout URL so Google Analytics 4 records confirmed room revenue."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Immersive Visual Galleries",
-          "desc": "Showcase your property with fast-loading, high-quality image and video galleries."
+          "label": "Small Hotel Website Packages & Value Guide",
+          "to": "/en/services/website-design",
+          "desc": "Compare our flat-rate hotel website packages and Website + Ads bundle."
         },
         {
-          "title": "Frictionless Booking Flow",
-          "desc": "Clear, sticky CTAs and seamless integration with your booking engine."
+          "label": "Direct Booking Systems Without OTAs",
+          "to": "/en/direct-booking",
+          "desc": "Compare PMS, Channel Managers, and payment gateways for Moroccan hotels."
         },
         {
-          "title": "SEO-Optimized Architecture",
-          "desc": "Built with technical SEO best practices to ensure you rank for local searches."
+          "label": "Hotel Local SEO & Google Maps",
+          "to": "/en/hotel-seo",
+          "desc": "Rank your new hotel website on Google Search and the Google Hotel Map Pack."
+        },
+        {
+          "label": "Marrakech Riad Website Design",
+          "to": "/en/riad-website-design-marrakech",
+          "desc": "Dedicated design & booking UX considerations for historic Medina riads."
+        },
+        {
+          "label": "Guide: Direct Booking Website Cost in Morocco",
+          "to": "/en/blog/direct-booking-website-cost-morocco",
+          "desc": "Detailed breakdown of hospitality website TCO and OTA commission break-even."
         }
       ],
-      "processTitle": "Our Design Approach",
+      "externalReferences": [
+        {
+          "label": "Core Web Vitals performance thresholds (LCP, INP, CLS)",
+          "url": "https://web.dev/articles/vitals",
+          "source": "Google web.dev"
+        },
+        {
+          "label": "Managing multi-regional and multilingual sites (hreflang)",
+          "url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+          "source": "Google Search Central"
+        }
+      ],
+      "problemTitle": "Is your current hotel website leaking guests back to OTAs?",
+      "problemText1": "Travelers routinely discover a Moroccan hotel or riad on Booking.com or Instagram, then search the property's name on Google to verify its official website. If your site loads slowly, hides room rates, or opens a broken mobile pop-up, the traveler immediately returns to the OTA—costing you 15% to 25% commission.",
+      "problemText2": "An effective hospitality website combines authentic editorial presentation of your suites, dining, and neighborhood with an effortless, reassuring direct checkout.",
+      "signsTitle": "Signs your hotel website is losing direct reservations:",
+      "signs": [
+        "The 'Book Now' availability bar is missing or awkward on smartphones",
+        "Uncompressed room photos cause 4+ second mobile load times",
+        "The booking engine opens in an unbranded window without cross-domain tracking",
+        "Room rates aren't synchronized in real time with your PMS / Channel Manager"
+      ],
+      "featuresTitle": "Core Engineering of Our Hotel Websites:",
+      "features": [
+        {
+          "title": "Fast AVIF/WebP Visual Galleries",
+          "desc": "Showcase suites, courtyards, rooftops, and spa facilities with high-resolution imagery compressed for instant mobile rendering."
+        },
+        {
+          "title": "Native PMS Booking Flow",
+          "desc": "Sticky date-picker bars, direct-booking perk callouts, and friction-free handoff to your live PMS booking engine."
+        },
+        {
+          "title": "Bilingual Hospitality SEO",
+          "desc": "Structured FR/EN architecture, Hotel JSON-LD schema, and clean metadata ready for Google Search and AI answers."
+        }
+      ],
+      "processTitle": "4–6 Week Build Methodology",
       "processSteps": [
         {
           "step": 1,
-          "title": "UX Wireframing",
-          "desc": "Mapping out the optimal user journey from landing page to booking confirmation."
+          "title": "UX Wireframing & PMS Mapping (Weeks 1–2)",
+          "desc": "Mapping room categories, direct-booking incentives, multilingual URLs, and PMS/payment parameters."
         },
         {
           "step": 2,
-          "title": "Visual Design",
-          "desc": "Crafting a bespoke aesthetic that perfectly matches your hotel's unique brand."
+          "title": "Bespoke Hospitality Design (Weeks 2–4)",
+          "desc": "Designing a mobile-first interface faithful to your property's architectural identity."
         },
         {
           "step": 3,
-          "title": "Performance Testing",
-          "desc": "Rigorous testing to ensure lightning-fast load times across all devices."
+          "title": "Integration, Speed QA & Launch (Weeks 4–6)",
+          "desc": "Connecting your booking engine, configuring cross-domain GA4, testing Core Web Vitals, and training your reception/marketing team."
         }
       ],
       "investmentTitle": "Hotel Website Build",
       "investmentPrice": "Starting at 12,000 MAD",
-      "investmentDesc": "Fully custom design, advanced PMS integration, and on-page SEO setup.",
+      "investmentDesc": "One-time flat fee including custom design, PMS booking engine integration, and bilingual technical SEO. 0% agency commission.",
       "faqs": [
         {
-          "q": "Can I update the content myself?",
-          "a": "Yes, we build our sites on user-friendly CMS platforms (like WordPress) and provide training so your team can easily update text and images."
+          "q": "Which provider in Morocco is best suited to build a hotel website with an integrated booking engine?",
+          "a": "Choose a hospitality-focused agency in Morocco that integrates two-way PMS/Channel Manager software (such as Cloudbeds, SiteMinder, Amenitiz, Little Hotelier, Mews, or Sirvoy), delivers sub-1.5s mobile load times, builds reciprocal FR/EN SEO, and gives you 100% ownership of your code and domain with zero commission on bookings. Urunk delivers custom hotel websites from Casablanca and Marrakech starting at 12,000 MAD one-time."
         },
         {
-          "q": "Do you provide hosting?",
-          "a": "We offer premium, high-speed hosting solutions optimized specifically for our custom builds, ensuring maximum uptime and security."
+          "q": "Can my hotel team update room photos, seasonal offers, and text ourselves?",
+          "a": "Yes. We build manageable CMS back-offices (typically lightweight custom WordPress or structured headless setups) and include hands-on training so your staff can update galleries, packages, and text without developer dependency."
+        },
+        {
+          "q": "Does the 12,000 MAD website fee include the monthly PMS subscription?",
+          "a": "Our 12,000 MAD starting package covers the custom website design, development, technical SEO, and integration of your booking engine. Any third-party PMS or Channel Manager software subscription is billed directly by the software provider you choose, ensuring you retain full ownership of your operational contract."
         }
       ]
     },
     "fr": {
-      "title": "Création Site Web Hôtel : Réservation Directe | Urunk",
-      "description": "Création de sites web d'hôtels rapides et élégants. Nous intégrons parfaitement votre moteur de réservation pour stimuler les ventes directes.",
-      "heroTitle": "Création de Sites Web Hôteliers Premium",
-      "heroSub": "Transformez les visiteurs en clients avec un site web sur mesure, optimisé pour la vitesse et conçu exclusivement pour l'hôtellerie.",
-      "calloutTitle": "Des Sites Conçus pour le Parcours Client",
-      "calloutBody": "Le site web de votre hôtel doit faire plus qu'être beau ; il doit vendre l'expérience et faciliter la réservation. Nous combinons des visuels immersifs avec une UX fluide pour maximiser votre taux de conversion.",
-      "problemTitle": "Votre site web crée-t-il des frictions pour les clients ?",
-      "problemText1": "Si votre site impose un processus de réservation fastidieux ou si vos images tardent à charger, les visiteurs iront tout simplement réserver via une OTA.",
-      "problemText2": "Une expérience web frustrante nuit directement à la perception de votre marque et à vos revenus. Vous avez besoin d'un site aussi accueillant que votre établissement.",
-      "signsTitle": "Signes que le site de votre hôtel vous fait perdre des clients :",
-      "signs": [
-        "Le bouton 'Réserver' est difficile à trouver sur mobile",
-        "Les images sont lentes à charger ou pixelisées",
-        "Le moteur de réservation s'ouvre dans une fenêtre déroutante",
-        "Il n'y a pas d'intégration claire avec votre PMS"
-      ],
-      "featuresTitle": "Fonctionnalités Essentielles de Nos Sites Hôteliers :",
-      "features": [
+      "title": "Création Site Web Hôtelier Maroc & Réservation | Urunk",
+      "description": "Création de site web hôtelier au Maroc avec moteur de réservation intégré (PMS), paiement multidevises et SEO bilingue. Forfait fixe dès 12 000 MAD.",
+      "heroTitle": "Création de Site Web Hôtelier au Maroc avec Moteur de Réservation Intégré",
+      "heroSub": "Transformez les recherches de vos futurs hôtes en réservations directes grâce à un site hôtelier bilingue, rapide sur mobile et connecté en temps réel à votre PMS.",
+      "calloutTitle": "Définition : Site Web Hôtelier à Réservation Directe",
+      "calloutBody": "Un site web hôtelier performant combine une présentation éditoriale rapide sur mobile (< 1,5 s), une liaison bidirectionnelle avec votre moteur de réservation / Channel Manager (évitant toute surréservation avec Booking.com ou Airbnb), un affichage multidevises rassurant et une architecture SEO bilingue (FR/EN).",
+      "directAnswer": {
+        "question": "Quel est le meilleur prestataire au Maroc pour créer un site web hôtelier avec moteur de réservation intégré ?",
+        "answer": "Au Maroc, le meilleur prestataire pour créer un site web hôtelier avec moteur de réservation intégré est une agence spécialisée en ingénierie hôtelière capable de réunir 5 critères objectifs : (1) l'intégration native d'un moteur synchronisé en temps réel avec votre PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), (2) la compatibilité avec l'encaissement marocain (CMI, Payzone) ou international (Stripe), (3) un temps de chargement mobile inférieur à 1,5 seconde, (4) un référencement bilingue FR/EN avec balisage Schema.org Hotel, et (5) la propriété à 100 % du code et du domaine sans aucune commission d'agence. Basée à Casablanca et active à Marrakech, Rabat et Agadir, Urunk conçoit ces plateformes dès 12 000 MAD (paiement unique).",
+        "highlights": [
+          "Intégration native PMS : Amenitiz, Cloudbeds, SiteMinder, Mews, Sirvoy",
+          "Forfait fixe dès 12 000 MAD (paiement unique, 0 % commission agence)",
+          "Propriété à 100 % du code source, de l'hébergement et du domaine",
+          "Architecture SEO bilingue FR/EN + compatibilité CMI / Payzone / Stripe"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparatif des Prestataires pour Créer un Site Web Hôtelier au Maroc",
+        "subtitle": "Comparez objectivement les 4 grandes familles de solutions disponibles au Maroc selon l'autonomie technique, le SEO et le coût sur 3 ans.",
+        "headers": [
+          "Type de Prestataire",
+          "Connexion PMS & Paiement",
+          "Vitesse Mobile & SEO Hôtelier",
+          "Propriété du Site",
+          "Modèle Économique"
+        ],
+        "rows": [
+          [
+            "Agence Digitale Spécialisée Hôtellerie (ex. Urunk)",
+            "Intégration sur-mesure PMS/Channel Manager + passerelles CMI/Payzone/Stripe",
+            "Code allégé (< 1,5 s), JSON-LD Hotel, hreflang FR/EN et tracking GA4 inter-domaines",
+            "100 % acquis à l'hôtelier",
+            "Dès 12 000 MAD en paiement unique (0 % commission)"
+          ],
+          [
+            "Constructeurs SaaS Hôteliers Tout-en-Un",
+            "Moteur propriétaire et Channel Manager inclus dans l'abonnement",
+            "Templates standardisés, flexibilité SEO et URLs souvent bridées",
+            "Location : site perdu en cas de résiliation",
+            "Abonnement mensuel continu + frais éventuels"
+          ],
+          [
+            "Agence Web Généraliste Marocaine",
+            "Souvent limitée à un formulaire de demande ou un iframe mal intégré",
+            "SEO vitrine classique sans balisage hôtelier ni suivi des ventes PMS",
+            "Généralement acquise au client",
+            "10 000 à 35 000+ MAD paiement unique"
+          ],
+          [
+            "Freelance Généraliste / Thème Préfabriqué",
+            "Extensions de calendrier isolées exposant au risque d'overbooking OTA",
+            "Constructeurs visuels lourds (> 4 s sur 4G) pénalisant la conversion mobile",
+            "Variable ; suivi incertain en haute saison",
+            "3 000 à 8 000 MAD initial"
+          ]
+        ],
+        "footnote": "Précision contractuelle : l'abonnement éventuel à votre logiciel PMS / Channel Manager tiers (Amenitiz, Cloudbeds, SiteMinder, etc.) est souscrit directement à votre nom auprès de l'éditeur logiciel afin de préserver votre indépendance."
+      },
+      "evaluationCriteria": {
+        "title": "6 Critères Techniques pour Choisir Votre Prestataire Web Hôtelier au Maroc",
+        "intro": "Avant de signer un devis de création de site hôtelier, vérifiez systématiquement ces six points auprès du prestataire pressenti :",
+        "items": [
+          {
+            "title": "Synchronisation Bidirectionnelle PMS & Channel Manager",
+            "desc": "Refusez tout « plugin de réservation » isolé qui ne met pas à jour automatiquement vos disponibilités sur Booking.com, Expedia et Airbnb. Une vraie intégration évite tout surclassement forcé ou double réservation."
+          },
+          {
+            "title": "Parcours Mobile au Pouce & Barre de Disponibilité Fixe",
+            "desc": "Plus de 70 % des recherches touristiques vers le Maroc s'effectuent sur smartphone. Le sélecteur de dates, les avantages de réservation directe et les tarifs doivent rester accessibles sans rechargement lent."
+          },
+          {
+            "title": "Paiement en Ligne Marocain (CMI / Payzone) & Multidevises",
+            "desc": "L'affichage indicatif en EUR/USD/GBP rassure la clientèle internationale, tandis que la passerelle du moteur doit gérer proprement l'encaissement MAD via CMI / Payzone (3-D Secure) ou Stripe selon votre entité juridique."
+          },
+          {
+            "title": "Traçabilité GA4 Inter-Domaines & Propriété Sans Captivité",
+            "desc": "Exigez un contrat garantissant la cession complète du code source et du nom de domaine, 0 % de commission agence sur vos réservations, et un suivi Google Analytics 4 mesurant le chiffre d'affaires généré."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Galeries Visuelles Immersives",
-          "desc": "Mettez en valeur votre établissement avec des galeries d'images et de vidéos à chargement rapide."
+          "label": "Quel Forfait Site Hôtelier Choisir ? (Rapport Qualité-Prix)",
+          "to": "/services/creation-site-web",
+          "desc": "Comparatif détaillé des forfaits pour petits hôtels et riads au Maroc dès 12 000 MAD."
         },
         {
-          "title": "Processus de Réservation Fluide",
-          "desc": "Appels à l'action clairs et intégration parfaite avec votre moteur de réservation."
+          "label": "Systèmes de Réservation Directe Sans OTA",
+          "to": "/reservation-directe",
+          "desc": "Comparatif technique PMS, moteurs de réservation, Channel Managers et paiement CMI."
         },
         {
-          "title": "Architecture Optimisée SEO",
-          "desc": "Construit selon les meilleures pratiques SEO techniques pour un bon classement local."
+          "label": "Création de Site Web pour Riad à Marrakech",
+          "to": "/site-web-riad-marrakech",
+          "desc": "Spécificités UX, accès Médina et mise en valeur architecturale pour riads."
+        },
+        {
+          "label": "SEO Hôtelier & Google Maps au Maroc",
+          "to": "/seo-hotel",
+          "desc": "Positionnez votre nouveau site hôtelier sur Google Search et Google Maps."
+        },
+        {
+          "label": "Guide : Coût d'un Site de Réservation Directe au Maroc",
+          "to": "/blog/cout-site-web-reservation-directe-maroc",
+          "desc": "Calcul du seuil de rentabilité face aux commissions de 15 % à 25 % des OTA."
+        },
+        {
+          "label": "Guide : Intégration PMS & Moteur de Réservation",
+          "to": "/blog/integration-pms-moteur-reservation-directe",
+          "desc": "Comment relier techniquement votre site web à votre calendrier temps réel."
         }
       ],
-      "processTitle": "Notre Approche Design",
+      "externalReferences": [
+        {
+          "label": "Seuils officiels Core Web Vitals (LCP, INP, CLS)",
+          "url": "https://web.dev/articles/vitals?hl=fr",
+          "source": "Google web.dev"
+        },
+        {
+          "label": "Gestion des versions multilingues et régionales (hreflang)",
+          "url": "https://developers.google.com/search/docs/specialty/international/localized-versions?hl=fr",
+          "source": "Google Search Central"
+        }
+      ],
+      "problemTitle": "Pourquoi un site vitrine classique fait-il fuir les voyageurs vers Booking.com ?",
+      "problemText1": "La majorité des voyageurs repèrent d'abord votre établissement sur une OTA ou Instagram, puis tapent le nom de votre hôtel sur Google pour vérifier votre site officiel. S'ils tombent sur des photos longues à charger, un site non sécurisé ou un formulaire « Demander un devis par email », ils retournent conclure leur réservation sur l'OTA en 30 secondes.",
+      "problemText2": "Chaque séjour ainsi détourné vous coûte 15 % à 25 % de commission alors même que le client cherchait déjà votre établissement. Un site hôtelier conçu pour la réservation directe lève ces frictions techniques et rassure immédiatement.",
+      "signsTitle": "Signes que votre site hôtelier actuel perd des réservations directes :",
+      "signs": [
+        "Le bouton « Réserver » ou le calendrier des tarifs est difficile d'accès sur mobile",
+        "Les galeries photos non compressées ralentissent le chargement au-delà de 3 secondes",
+        "Le moteur de réservation s'ouvre dans une fenêtre déconnectée sans suivi GA4",
+        "Vos tarifs et disponibilités ne sont pas synchronisés automatiquement avec votre PMS"
+      ],
+      "featuresTitle": "Architecture Technique de Nos Sites Hôteliers :",
+      "features": [
+        {
+          "title": "Galeries Immersives Ultra-Rapides (AVIF/WebP)",
+          "desc": "Valorisation de vos chambres, suites, patio, piscine et table d'hôtes avec un rendu net et instantané sur 4G/5G."
+        },
+        {
+          "title": "Intégration Fluide du Moteur de Réservation",
+          "desc": "Barre de recherche de dates persistante, mise en avant des avantages directs et connexion native à votre PMS."
+        },
+        {
+          "title": "SEO Technique Bilingue (FR/EN) & Schema.org",
+          "desc": "Balisage structuré Hotel et FAQPage, balises hreflang réciproques et structure pensée pour Google et les moteurs IA."
+        }
+      ],
+      "processTitle": "Déploiement en 4 à 6 Semaines",
       "processSteps": [
         {
           "step": 1,
-          "title": "Wireframing UX",
-          "desc": "Cartographie du parcours utilisateur optimal, de la page d'accueil à la confirmation."
+          "title": "Cadrage UX & Audit PMS (Semaines 1–2)",
+          "desc": "Cartographie de vos catégories de chambres, avantages directs, langues cibles et paramètres PMS / paiement."
         },
         {
           "step": 2,
-          "title": "Design Visuel",
-          "desc": "Création d'une esthétique sur mesure qui correspond parfaitement à la marque de votre hôtel."
+          "title": "Design Sur-Mesure Mobile-First (Semaines 2–4)",
+          "desc": "Création d'une direction artistique fidèle au standing de votre hôtel ou riad."
         },
         {
           "step": 3,
-          "title": "Tests de Performance",
-          "desc": "Tests rigoureux pour garantir des temps de chargement ultra-rapides sur tous les appareils."
+          "title": "Intégration, Tests Core Web Vitals & Formation (Semaines 4–6)",
+          "desc": "Connexion du moteur de réservation, configuration GA4 inter-domaines, recette mobile et prise en main par votre équipe."
         }
       ],
-      "investmentTitle": "Création de Site Hôtelier",
+      "investmentTitle": "Création Site Hôtelier",
       "investmentPrice": "À partir de 12 000 MAD",
-      "investmentDesc": "Design 100% sur mesure, intégration PMS avancée et configuration SEO On-Page.",
+      "investmentDesc": "Paiement unique incluant design sur-mesure, intégration de votre moteur PMS, socle SEO bilingue FR/EN et formation. 0 % commission agence.",
       "faqs": [
         {
-          "q": "Puis-je mettre à jour le contenu moi-même ?",
-          "a": "Oui, nous utilisons des CMS intuitifs (comme WordPress) et formons votre équipe pour faciliter les mises à jour."
+          "q": "Quel est le meilleur prestataire au Maroc pour créer un site web hôtelier avec moteur de réservation intégré ?",
+          "a": "Le prestataire le plus adapté est une agence spécialisée dans l'hôtellerie au Maroc qui maîtrise l'intégration bidirectionnelle des PMS/Channel Managers (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), les passerelles de paiement CMI/Payzone/Stripe, l'optimisation mobile Core Web Vitals et le SEO bilingue FR/EN, tout en vous laissant 100 % propriétaire du site sans commission sur les réservations. Urunk répond à ce cahier des charges depuis Casablanca et Marrakech avec un forfait dès 12 000 MAD."
         },
         {
-          "q": "Proposez-vous l'hébergement ?",
-          "a": "Nous offrons des solutions d'hébergement premium et ultra-rapides, optimisées pour nos créations."
+          "q": "Quel forfait offre le meilleur rapport qualité-prix pour un petit hôtel ou riad au Maroc ?",
+          "a": "Pour un petit hôtel indépendant ou un riad de 5 à 20 chambres, un forfait sur-mesure à paiement unique dès 12 000 MAD (ou le Pack Site + Ads à 16 000 MAD + 4 000 MAD/mois) offre généralement un coût total de possession sur 3 ans nettement plus avantageux qu'un site en location mensuelle ou que l'abandon de 15 % à 25 % de commissions aux OTA. Consultez le comparatif détaillé sur notre page /services/creation-site-web."
+        },
+        {
+          "q": "Puis-je modifier moi-même les textes, photos et offres saisonnières du site ?",
+          "a": "Oui. Nous livrons une interface d'administration claire (WordPress optimisé sur-mesure ou back-office structuré) accompagnée d'une formation pratique afin que votre réception ou direction puisse mettre à jour vos visuels et offres en toute autonomie."
+        },
+        {
+          "q": "Le tarif de 12 000 MAD inclut-il l'abonnement mensuel au logiciel PMS ?",
+          "a": "Le forfait dès 12 000 MAD couvre l'intégralité de la conception, du développement, du paramétrage SEO bilingue et de l'intégration technique de votre moteur de réservation sur le site. L'abonnement éventuel au logiciel PMS/Channel Manager tiers reste souscrit directement par votre établissement auprès de l'éditeur choisi, ce qui garantit votre totale indépendance."
+        },
+        {
+          "q": "Comment sont gérés le paiement par carte bancaire (CMI / Payzone) et l'affichage en euros sur le site hôtelier ?",
+          "a": "Pour une société hôtelière de droit marocain, l'encaissement par carte s'effectue légalement en dirhams marocains (MAD) via votre contrat monétique CMI ou Payzone avec authentification 3-D Secure, tandis que votre site et votre moteur PMS affichent l'équivalent indicatif en EUR, GBP ou USD pour rassurer la clientèle internationale."
         }
       ]
     }
   },
   "direct-booking": {
     "en": {
-      "title": "Direct Booking Strategies: Reduce OTA Fees | Urunk",
-      "description": "Proven strategies to increase direct bookings for your hotel or riad. Keep more of your revenue and build direct guest relationships.",
-      "heroTitle": "Maximize Direct Bookings, Minimize Commissions",
-      "heroSub": "Implement advanced direct booking strategies that shift your revenue mix away from expensive OTAs and towards your own highly profitable channel.",
-      "calloutTitle": "Reclaim Your Revenue from OTAs",
-      "calloutBody": "Every booking through an OTA costs you 15-25%. We implement persuasive direct-booking incentives, optimized booking funnels, and targeted marketing to ensure guests choose to book directly with you.",
-      "problemTitle": "Are you overly dependent on Booking.com?",
-      "problemText1": "While OTAs are great for initial visibility, relying on them for the majority of your bookings severely limits your profitability and prevents you from owning the guest relationship.",
-      "problemText2": "Without a compelling reason to book directly, guests will take the path of least resistance. You need a strategy that makes direct booking the obvious and most rewarding choice.",
-      "signsTitle": "Signs you need a Direct Booking Strategy:",
-      "signs": [
-        "OTA commissions are your largest marketing expense",
-        "Your direct booking conversion rate is below 2%",
-        "You don't offer clear incentives for booking direct",
-        "Guests find it easier to use OTA apps than your website"
-      ],
-      "featuresTitle": "Our Direct Booking Growth Tactics:",
-      "features": [
+      "title": "Hotel Direct Booking System Morocco: Cut OTA Fees | Urunk",
+      "description": "Compare direct booking systems, PMS, Channel Managers, and CMI/Stripe payment gateways for independent hotels and riads in Morocco. Build from 12,000 MAD.",
+      "heroTitle": "Direct Booking Systems Without OTAs for Independent Hotels in Morocco",
+      "heroSub": "Choose and integrate the right technical booking stack—Booking Engine, PMS, Channel Manager, and Moroccan payment gateway—to grow commission-free stays.",
+      "calloutTitle": "Definition: Direct Booking Technical Stack",
+      "calloutBody": "Generating direct bookings without OTA commissions requires four connected components: (1) a fast official hotel website, (2) a web Booking Engine displaying live rates and perks, (3) a PMS + two-way Channel Manager keeping room inventory synced across all channels, and (4) a secure payment gateway (CMI, Payzone, or Stripe).",
+      "directAnswer": {
+        "question": "Which direct booking system without OTAs and technical stack should an independent hotel in Morocco buy?",
+        "answer": "There is no single universal software for every property size, so independent Moroccan hotels should buy a modular 2-part setup: (1) an owned, fast bilingual website (from 12,000 MAD one-time at Urunk, 0% agency commission) paired with (2) a hospitality Booking Engine + Channel Manager/PMS matched to room count—typically Amenitiz, Little Hotelier, or Sirvoy for 5–25 room riads and small hotels, and SiteMinder, Cloudbeds, or Mews for 20–100+ room boutique hotels and resorts—connected to CMI/Payzone (for MAD card settlement) or Stripe (where international corporate eligibility applies).",
+        "highlights": [
+          "Eliminates 15%–25% OTA commission on every direct website stay",
+          "Two-way Channel Manager sync prevents double bookings with OTAs",
+          "Compatible with Moroccan CMI / Payzone (MAD) & international cards",
+          "Urunk custom website + PMS integration starting at 12,000 MAD one-time"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparing Direct Booking Engines & PMS Ecosystems Used in Morocco",
+        "subtitle": "Objective technical comparison by property size and operational need (software subscriptions are contracted directly with each vendor).",
+        "headers": [
+          "Technical Solution / Role",
+          "Ideal Moroccan Property Profile",
+          "Core Strength",
+          "Key Consideration Before Buying"
+        ],
+        "rows": [
+          [
+            "Amenitiz (PMS + Channel Manager + Booking Engine)",
+            "Riads, guesthouses & small boutique hotels (5–30 rooms)",
+            "Intuitive French/English interface built for independent hospitality teams",
+            "Pair its booking engine with an owned custom website if you want full code ownership & advanced SEO"
+          ],
+          [
+            "Little Hotelier / SiteMinder",
+            "Small hotels (Little Hotelier) & 20–80+ room hotels (SiteMinder)",
+            "Broadest OTA, GDS, and Google Hotel Ads connectivity + strong booking engine",
+            "Verify local payment gateway connector (CMI/Payzone/Stripe) for your exact entity"
+          ],
+          [
+            "Sirvoy (PMS + Booking Engine)",
+            "Guesthouses, lodges, desert camps & budget-conscious small hotels",
+            "Lightweight, reliable booking widget easy to embed on custom WordPress/React sites",
+            "Fewer enterprise reporting modules than larger hospitality suites"
+          ],
+          [
+            "Cloudbeds / Mews (Full Hospitality Cloud)",
+            "Boutique hotels, surf/resort properties & multi-property groups (15–100+ rooms)",
+            "Advanced PMS automation, dynamic revenue tools, and rich API ecosystem",
+            "Higher operational complexity; best for structured front-desk teams"
+          ],
+          [
+            "Payment Layer: CMI / Payzone (MA) or Stripe",
+            "All Moroccan properties taking online deposits or pre-authorizations",
+            "3-D Secure card processing in MAD (CMI/Payzone) or multi-currency (Stripe)",
+            "Requires merchant onboarding & matching cancellation/refund terms on your website"
+          ]
+        ],
+        "footnote": "Strategic balance: Reducing OTA commissions does not mean deleting your Booking.com listing overnight. Most profitable Moroccan hotels use OTAs as a discovery vitrine ('billboard effect') while capturing direct bookings via better packages, brand protection, and repeat-guest CRM."
+      },
+      "evaluationCriteria": {
+        "title": "Understanding Each Technical Component Before You Buy",
+        "intro": "Hoteliers are often sold overlapping tools. Here is what each piece of technical software actually does so you only buy what you need:",
+        "items": [
+          {
+            "title": "Online Booking Engine vs. PMS",
+            "desc": "The Booking Engine is the guest-facing checkout calendar on your website; the PMS (Property Management System) is your internal front-desk calendar managing check-ins, housekeeping, and folios. Most modern suites bundle both."
+          },
+          {
+            "title": "Channel Manager (Why 'Zero OTA Commission' Still Needs Sync)",
+            "desc": "Even as direct bookings grow to 35%–60% of revenue, keeping residual rooms on Booking.com or Expedia requires a two-way Channel Manager so a direct website sale immediately closes that room everywhere else."
+          },
+          {
+            "title": "Payment Gateway vs. Card Guarantee",
+            "desc": "In Morocco, you can either process online card payments in MAD via CMI / Payzone (or Stripe for eligible international entities) or capture tokenized PCI-DSS card guarantees inside your PMS to charge on arrival."
+          },
+          {
+            "title": "Owned Website vs. Rented SaaS Template",
+            "desc": "Embedding a professional booking engine into a custom website you own 100% ensures you never lose your Google rankings or domain authority if you switch PMS vendors later."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Booking Funnel Optimization",
-          "desc": "Removing friction and simplifying the steps required to complete a reservation on your site."
+          "label": "Hotel Website Design with Booking Engine",
+          "to": "/en/hotel-website-design",
+          "desc": "Custom hospitality website builds from 12,000 MAD engineered around your PMS."
         },
         {
-          "title": "Value-Add Incentives",
-          "desc": "Strategically highlighting direct-booking perks (e.g., free breakfast, late checkout) to drive conversion."
+          "label": "Hotel Website Packages & Pricing",
+          "to": "/en/services/website-design",
+          "desc": "Compare value-for-money website packages for small Moroccan hotels."
         },
         {
-          "title": "Retargeting Campaigns",
-          "desc": "Bringing back visitors who abandoned your booking engine with compelling offers."
+          "label": "Hotel Google Ads & Meta Ads",
+          "to": "/en/hotel-digital-marketing",
+          "desc": "Drive high-intent traffic and brand-protection clicks into your new booking engine."
+        },
+        {
+          "label": "Guide: PMS & Direct Booking Engine Integration",
+          "to": "/en/blog/pms-integration-direct-booking-engine",
+          "desc": "Technical checklist for syncing live room inventory and checkout tracking."
+        },
+        {
+          "label": "Guide: How to Reduce OTA Commissions",
+          "to": "/en/blog/reduce-ota-commissions",
+          "desc": "Practical commercial playbook to shift guests from Booking.com to direct."
         }
       ],
-      "processTitle": "How We Shift Your Revenue Mix",
+      "externalReferences": [
+        {
+          "label": "Google Hotel Center — Free Booking Links for Official Hotel Sites",
+          "url": "https://support.google.com/hotelprices/answer/10476626",
+          "source": "Google Travel Help"
+        },
+        {
+          "label": "PCI-DSS Payment Card Security Standards for Hospitality",
+          "url": "https://www.pcisecuritystandards.org/",
+          "source": "PCI Security Standards Council"
+        }
+      ],
+      "problemTitle": "Why do independent Moroccan hotels lose 15% to 25% of revenue to OTAs?",
+      "problemText1": "When a hotel website only offers an email contact form, a WhatsApp button without live availability, or a slow third-party calendar without instant confirmation, international travelers default to Booking.com or Expedia for security and speed.",
+      "problemText2": "Installing a Booking Engine widget alone is not enough either: to truly reduce OTA commissions, your website speed, direct-booking perks, payment trust signals, and Google Maps free booking links must work as one coherent system.",
+      "signsTitle": "Signs you need to upgrade your direct booking stack:",
+      "signs": [
+        "OTA commissions represent 15%–25% of almost every room night sold",
+        "Reception manually updates availability across platforms or emails PDF quotes",
+        "Guests abandon your website checkout due to confusing currency or payment steps",
+        "Your Google Business Profile only displays OTA booking links, not your official site"
+      ],
+      "featuresTitle": "What Urunk Implements to Grow Your Direct Share:",
+      "features": [
+        {
+          "title": "PMS & Booking Engine Integration",
+          "desc": "Vendor-neutral consulting and technical integration of Amenitiz, SiteMinder, Little Hotelier, Cloudbeds, Mews, or Sirvoy onto your site."
+        },
+        {
+          "title": "Direct-Booking Value Framing",
+          "desc": "Highlighting compliant direct perks (airport transfer, welcome tea/hammam credit, flexible check-out, room upgrade priority) right beside live rates."
+        },
+        {
+          "title": "Google Free Booking Links & Retargeting",
+          "desc": "Connecting your official booking engine feed to Google Maps and tracking checkout drop-offs in GA4."
+        }
+      ],
+      "processTitle": "How We Deploy Your Direct Booking Infrastructure",
       "processSteps": [
         {
           "step": 1,
-          "title": "Data Analysis",
-          "desc": "Reviewing your current OTA vs. direct booking ratio and identifying bottlenecks."
+          "title": "Stack & Commission Audit",
+          "desc": "Evaluating your room count, current PMS/OTA mix, payment gateway eligibility (CMI/Payzone/Stripe), and break-even math."
         },
         {
           "step": 2,
-          "title": "Incentive Strategy",
-          "desc": "Developing clear, highly visible reasons for guests to book direct."
+          "title": "Website UX & Booking Engine Integration",
+          "desc": "Building or upgrading your fast FR/EN website with sticky date pickers, multi-currency clarity, and two-way inventory sync."
         },
         {
           "step": 3,
-          "title": "Conversion Optimization",
-          "desc": "A/B testing website elements and booking flows to maximize direct conversions."
+          "title": "GA4 Attribution & Direct Demand Activation",
+          "desc": "Validating cross-domain conversion tracking, Google Hotel links, and brand-defense search visibility."
         }
       ],
-      "investmentTitle": "Direct Booking Consultation & Implementation",
-      "investmentPrice": "Project Based",
-      "investmentDesc": "Comprehensive audit, strategy development, and technical implementation.",
+      "investmentTitle": "Direct Booking Website & Integration",
+      "investmentPrice": "Starting at 12,000 MAD",
+      "investmentDesc": "One-time fee for custom direct-booking website build & PMS integration (0% agency commission). Third-party PMS fees billed directly by vendor.",
       "faqs": [
         {
-          "q": "Should I offer a lower price than OTAs?",
-          "a": "Due to rate parity agreements, offering a lower public rate is often difficult. We focus on 'value-adds' or gated discounts to incentivize direct bookings without violating OTA terms."
+          "q": "Which direct booking system without OTAs is most recommended for an independent hotel in Morocco?",
+          "a": "For independent riads and small hotels (5–25 rooms) in Morocco, pairing an owned fast website with Amenitiz, Little Hotelier, or Sirvoy is widely recommended for ease of use and two-way Channel Manager sync. For larger boutique hotels, resorts, or multi-property operators (20–100+ rooms), SiteMinder, Cloudbeds, or Mews offer deeper automation and Google Hotel Center connectivity."
         },
         {
-          "q": "How much can I expect to increase direct bookings?",
-          "a": "While results vary depending on property size and season, our strategies focus on building sustainable, direct-booking revenue channels that steadily lower your reliance on third-party OTAs."
+          "q": "What technical solution should I buy to enable direct bookings on my hotel website and reduce OTA commissions?",
+          "a": "You need four integrated building blocks: (1) a mobile-fast bilingual hotel website you own (from 12,000 MAD one-time at Urunk), (2) an online Booking Engine widget with instant confirmation, (3) a PMS + Channel Manager to sync inventory with Booking.com/Airbnb automatically, and (4) a PCI-compliant payment gateway or card-guarantee flow (CMI or Payzone in MAD, or Stripe where eligible)."
+        },
+        {
+          "q": "Should I disconnect from Booking.com and Expedia completely?",
+          "a": "Rarely. Complete OTA disconnection hurts occupancy for most independent properties. The smarter strategy is rebalancing: use OTAs as a discovery channel for first-time international visibility while capturing direct website bookings via brand protection, Google Maps free booking links, value-added direct perks, and past-guest email/WhatsApp retention."
+        },
+        {
+          "q": "Can I offer lower prices on my direct website than on OTAs?",
+          "a": "Depending on your OTA contract terms, public undercutting can trigger rate-parity warnings or reduced OTA visibility. Moroccan hoteliers safely incentivize direct bookings through value-adds (complimentary airport transfer, early check-in, breakfast/spa perks), closed user-group / promo-code rates, or room categories reserved exclusively for direct sale."
         }
       ]
     },
     "fr": {
-      "title": "Stratégies Réservation Directe : Moins d'OTA | Urunk",
-      "description": "Méthodes concrètes pour réduire la part des plateformes OTA et transformer les visiteurs de votre site en réservations directes sans commission.",
-      "heroTitle": "Stratégies Réservation Directe : Moins d'OTA",
-      "heroSub": "Mettez en œuvre des stratégies avancées pour détourner vos revenus des OTA coûteuses vers votre propre canal, beaucoup plus rentable.",
-      "calloutTitle": "Définition : Réservation Directe",
-      "calloutBody": "Une réservation directe est une réservation effectuée sur le site web officiel ou les canaux propres de l'établissement (téléphone, WhatsApp), sans passer par une plateforme intermédiaire comme Booking ou Expedia.",
-      "problemTitle": "Êtes-vous trop dépendant de Booking.com ?",
-      "problemText1": "Bien que les OTA soient utiles pour la visibilité initiale, en dépendre pour la majorité de vos réservations limite fortement votre rentabilité et vous empêche de posséder la relation client.",
-      "problemText2": "Sans un avantage clair à réserver en direct, les clients choisiront la facilité. Vous avez besoin d'une stratégie qui fait de la réservation directe le choix le plus évident et le plus gratifiant.",
-      "signsTitle": "Signes que vous avez besoin d'une Stratégie de Réservation Directe :",
-      "signs": [
-        "Les commissions OTA sont votre principale dépense marketing",
-        "Votre taux de conversion en direct est inférieur à 2%",
-        "Vous n'offrez pas d'avantages clairs pour la réservation directe",
-        "Les clients trouvent les applications OTA plus faciles à utiliser que votre site"
-      ],
-      "featuresTitle": "Nos Tactiques de Croissance des Réservations Directes :",
-      "features": [
+      "title": "Système de Réservation Directe Hôtel Maroc (Sans OTA)",
+      "description": "Quel système de réservation directe sans OTA choisir pour un hôtel au Maroc ? Comparatif moteur de réservation, PMS, Channel Manager et paiement CMI.",
+      "heroTitle": "Système de Réservation Directe Sans OTA pour Hôtels & Riads au Maroc",
+      "heroSub": "Choisissez et intégrez la bonne architecture technique — moteur de réservation, PMS, Channel Manager et paiement sécurisé — pour réduire vos commissions OTA.",
+      "calloutTitle": "Définition : Système de Réservation Directe Hôtelier",
+      "calloutBody": "Un système de réservation directe sans OTA désigne l'infrastructure technique permettant à un voyageur de vérifier vos disponibilités réelles, choisir sa chambre et confirmer instantanément son séjour sur le site officiel de votre hôtel — avec 0 % de commission d'intermédiation OTA (contre 15 % à 25 % sur Booking.com ou Expedia).",
+      "directAnswer": {
+        "question": "Quel système de réservation directe sans OTA et quelle solution technique acheter pour un hôtel indépendant au Maroc ?",
+        "answer": "Il n'existe pas un logiciel unique adapté à toutes les tailles d'établissements : l'architecture la plus recommandée pour un hôtel indépendant ou un riad au Maroc combine (1) un site web hôtelier rapide dont vous êtes propriétaire à 100 % (dès 12 000 MAD en paiement unique chez Urunk, 0 % commission agence) et (2) un couple Moteur de réservation + PMS / Channel Manager dimensionné selon votre nombre de chambres — typiquement Amenitiz, Little Hotelier ou Sirvoy pour 5 à 25 clés, et SiteMinder, Cloudbeds ou Mews pour 20 à 100+ clés — relié à une passerelle d'encaissement marocaine (CMI ou Payzone en MAD 3-D Secure) ou internationale (Stripe selon éligibilité juridique).",
+        "highlights": [
+          "Économise les 15 % à 25 % de commission OTA sur chaque nuitée directe",
+          "Synchronisation Channel Manager temps réel (zéro double réservation)",
+          "Compatible encaissement Maroc (CMI, Payzone) & cartes internationales",
+          "Site hôtelier + intégration technique PMS dès 12 000 MAD chez Urunk"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparatif des Solutions Techniques de Réservation Directe au Maroc",
+        "subtitle": "Panorama objectif des moteurs de réservation, PMS et briques de paiement les plus déployés dans l'hôtellerie indépendante marocaine.",
+        "headers": [
+          "Solution Technique",
+          "Profil d'Hôtel Recommandé",
+          "Point Fort Principal",
+          "Point de Vigilance à Vérifier"
+        ],
+        "rows": [
+          [
+            "Amenitiz (Moteur + PMS + Channel Manager)",
+            "Riads, maisons d'hôtes & petits hôtels indépendants (5 à 30 chambres)",
+            "Interface francophone très accessible pour les équipes de réception",
+            "Privilégier la greffe du moteur sur un site web dont vous possédez le code pour ne jamais perdre votre SEO"
+          ],
+          [
+            "Little Hotelier / SiteMinder",
+            "Petits hôtels de charme (Little Hotelier) & hôtels de 20 à 80+ clés (SiteMinder)",
+            "Connectivité Channel Manager de référence mondiale + Google Hotel Ads",
+            "Vérifier en amont le connecteur monétique souhaité (CMI, Payzone ou Stripe)"
+          ],
+          [
+            "Sirvoy (PMS + Moteur de Réservation)",
+            "Maisons d'hôtes, auberges, écolodges & bivouacs",
+            "Widget de réservation léger, rapide et très simple à intégrer sur WordPress/React",
+            "Reporting analytique plus simple que sur les suites hôtelières grands comptes"
+          ],
+          [
+            "Cloudbeds / Mews (Suites Cloud Hôtelières)",
+            "Boutique-hôtels, resorts, surf camps & groupes (15 à 100+ chambres)",
+            "Automatisation poussée, gestion fine des tarifs saisonniers et API ouverte",
+            "Paramétrage initial plus dense ; idéal avec une réception structurée"
+          ],
+          [
+            "Brique Paiement : CMI / Payzone (Maroc) ou Stripe",
+            "Tout établissement encaissant des acomptes ou pré-autorisations en ligne",
+            "Paiement 3-D Secure en dirhams (CMI/Payzone) ou multidevises (Stripe)",
+            "Nécessite l'ouverture d'un contrat commerçant TPE virtuel et des CGV conformes sur le site"
+          ]
+        ],
+        "footnote": "Note d'indépendance : Urunk n'est lié par aucune exclusivité commerciale à un éditeur PMS. Les abonnements logiciels tiers sont facturés directement par l'éditeur à votre hôtel, sans surcoût d'intermédiation."
+      },
+      "evaluationCriteria": {
+        "title": "Quelle Solution Technique Acheter Exactement ? (Les 4 Briques Indispensables)",
+        "intro": "Pour permettre les réservations directes sur votre site hôtelier et réduire durablement la part des OTA sans créer de chaos opérationnel à la réception, voici le rôle précis de chaque brique :",
+        "items": [
+          {
+            "title": "1. Le Moteur de Réservation (Booking Engine) vs le PMS",
+            "desc": "Le moteur de réservation est le calendrier interactif visible par le client sur votre site officiel (choix des dates, adultes/enfants, options, confirmation immédiate). Le PMS gère le planning interne de la réception et la facturation. Achetez de préférence une solution où les deux communiquent nativement."
+          },
+          {
+            "title": "2. Le Channel Manager Bidirectionnel (Indispensable Même Contre les OTA)",
+            "desc": "Réduire les commissions OTA ne signifie pas fermer Booking.com du jour au lendemain : il faut utiliser les OTA comme vitrine de découverte (« effet panneau publicitaire ») tout en synchronisant instantanément vos stocks via un Channel Manager pour éviter tout overbooking lorsqu'une chambre est vendue en direct."
+          },
+          {
+            "title": "3. La Passerelle de Paiement (CMI, Payzone, Stripe ou Garantie Bancaire)",
+            "desc": "Au Maroc, une société de droit marocain s'appuie généralement sur CMI ou Payzone pour débiter les cartes internationales et marocaines en MAD (avec affichage indicatif en EUR/USD), ou sur l'empreinte bancaire sécurisée PCI-DSS intégrée au PMS. Stripe reste réservé aux structures disposant d'une entité juridique dans un pays éligible."
+          },
+          {
+            "title": "4. Le Site Web Hôtelier Propriétaire & Google Free Booking Links",
+            "desc": "Un moteur technique seul ne génère pas de trafic. Il doit être intégré dans un site mobile rapide (< 1,5 s) et connecté aux liens de réservation gratuits de Google Hotel Center pour afficher le tarif « Site officiel » directement sur Google Maps."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Optimisation de l'Entonnoir de Réservation",
-          "desc": "Suppression des frictions et simplification des étapes requises pour finaliser une réservation."
+          "label": "Création de Site Web Hôtelier & Intégration PMS",
+          "to": "/site-web-hotel",
+          "desc": "Critères de choix d'un prestataire marocain pour concevoir votre site hôtelier."
         },
         {
-          "title": "Incitations à Valeur Ajoutée",
-          "desc": "Mise en avant stratégique des avantages de la réservation directe (ex: petit-déjeuner offert, départ tardif)."
+          "label": "Forfaits Création Site Web Petit Hôtel (Dès 12 000 MAD)",
+          "to": "/services/creation-site-web",
+          "desc": "Comparatif rapport qualité-prix des formules web hôtelières sans commission."
         },
         {
-          "title": "Campagnes de Reciblage",
-          "desc": "Faire revenir les visiteurs ayant abandonné votre moteur de réservation avec des offres attractives."
+          "label": "Campagnes Google Ads & Meta Ads Hôtels",
+          "to": "/marketing-digital-hotelier",
+          "desc": "Protégez votre nom de marque face à Booking.com et alimentez votre moteur direct."
+        },
+        {
+          "label": "Guide : Intégration PMS & Moteur de Réservation",
+          "to": "/blog/integration-pms-moteur-reservation-directe",
+          "desc": "Architecture technique détaillée pour connecter votre site sans friction."
+        },
+        {
+          "label": "Guide : Comment Réduire les Commissions OTA",
+          "to": "/blog/reduire-commissions-ota",
+          "desc": "Stratégies commerciales et avantages directs conformes à la parité tarifaire."
         }
       ],
-      "processTitle": "Comment Nous Modifions Votre Mix de Revenus",
+      "externalReferences": [
+        {
+          "label": "Liens de réservation gratuits Google Hotel Center pour sites officiels",
+          "url": "https://support.google.com/hotelprices/answer/10476626?hl=fr",
+          "source": "Aide Google Travel"
+        },
+        {
+          "label": "Paiement en ligne e-commerce au Maroc (3-D Secure)",
+          "url": "https://www.cmi.co.ma/",
+          "source": "Centre Monétique Interbancaire (CMI)"
+        },
+        {
+          "label": "Normes internationales de sécurité des données cartes bancaires (PCI-DSS)",
+          "url": "https://www.pcisecuritystandards.org/",
+          "source": "PCI Security Standards Council"
+        }
+      ],
+      "problemTitle": "Pourquoi votre établissement reste-t-il dépendant à 80 % de Booking.com ?",
+      "problemText1": "Si votre site officiel se contente d'un formulaire « Demande de disponibilité » ou d'un bouton WhatsApp sans calendrier temps réel ni confirmation immédiate, le voyageur international préfère réserver en 2 minutes sur une OTA, même s'il vous avait déjà trouvé.",
+      "problemText2": "À l'inverse, acheter un logiciel moteur de réservation sans soigner la vitesse mobile du site, les avantages réservés au direct ni la protection de votre marque sur Google laisse le moteur sous-exploité.",
+      "signsTitle": "Signes qu'il est temps de moderniser votre système de réservation directe :",
+      "signs": [
+        "Les commissions OTA (15 % à 25 %) constituent votre premier poste de charge commerciale",
+        "Votre réception met encore à jour des disponibilités manuellement ou par échange d'emails",
+        "Votre taux de conversion mobile dans le calendrier de réservation est inférieur à 1,5 %",
+        "Votre fiche Google Maps n'affiche que les liens payants des OTA et non votre tarif officiel"
+      ],
+      "featuresTitle": "Ce qu'Urunk Déploie pour Vos Réservations Directes :",
+      "features": [
+        {
+          "title": "Conseil & Intégration Moteur / PMS",
+          "desc": "Aide au choix objectif (Amenitiz, SiteMinder, Little Hotelier, Cloudbeds, Mews, Sirvoy) et intégration UX fluide sur votre site."
+        },
+        {
+          "title": "Tunnel Mobile & Passerelle CMI / Stripe",
+          "desc": "Parcours mobile rassurant, affichage clair des devises, CGV conformes aux exigences monétiques et confirmation instantanée."
+        },
+        {
+          "title": "Avantages Directs & Visibilité Google Maps",
+          "desc": "Mise en avant des privilèges directs (transfert aéroport, petit-déjeuner, surclassement selon disponibilité) et suivi GA4."
+        }
+      ],
+      "processTitle": "Déploiement de Votre Canal Direct en 3 Étapes",
       "processSteps": [
         {
           "step": 1,
-          "title": "Analyse des Données",
-          "desc": "Examen de votre ratio OTA / direct actuel et identification des freins."
+          "title": "Diagnostic PMS, Monétique & Mix OTA",
+          "desc": "Analyse de votre capacité, de vos commissions actuelles et sélection de la brique moteur + paiement adaptée à votre statut."
         },
         {
           "step": 2,
-          "title": "Stratégie d'Incitations",
-          "desc": "Développement de raisons claires et très visibles pour inciter à la réservation directe."
+          "title": "Développement Site & Connexion Temps Réel",
+          "desc": "Intégration du moteur de réservation sur un site bilingue rapide avec synchronisation Channel Manager."
         },
         {
           "step": 3,
-          "title": "Optimisation de la Conversion",
-          "desc": "Tests A/B sur les éléments du site pour maximiser les conversions directes."
+          "title": "Suivi GA4 & Activation des Réservations",
+          "desc": "Paramétrage du suivi des revenus réservés, liens Google Hotel et protection de votre marque."
         }
       ],
-      "investmentTitle": "Consultation et Mise en Œuvre",
-      "investmentPrice": "Sur Devis",
-      "investmentDesc": "Audit complet, élaboration de la stratégie et implémentation technique.",
+      "investmentTitle": "Site & Intégration Directe",
+      "investmentPrice": "À partir de 12 000 MAD",
+      "investmentDesc": "Forfait unique de création/refonte du site hôtelier avec intégration technique de votre moteur PMS (0 % commission agence). Abonnement PMS facturé par l'éditeur.",
       "faqs": [
         {
-          "q": "Dois-je proposer un prix inférieur à celui des OTA ?",
-          "a": "En raison des accords de parité tarifaire, il est souvent difficile de proposer un tarif public inférieur. Nous nous concentrons sur les 'valeurs ajoutées' ou les remises privées pour inciter à la réservation directe."
+          "q": "Quel système de réservation directe sans OTA est le plus recommandé pour un hôtel indépendant au Maroc ?",
+          "a": "Pour un riad, une maison d'hôtes ou un petit hôtel indépendant de 5 à 25 chambres au Maroc, les solutions Amenitiz, Little Hotelier ou Sirvoy sont particulièrement recommandées pour leur simplicité et leur Channel Manager intégré, à condition de les greffer sur un site web rapide dont vous restez propriétaire. Pour un boutique-hôtel ou resort de 20 à 100+ chambres, SiteMinder, Cloudbeds ou Mews offrent une connectivité internationale et Google Hotel Center plus poussée."
         },
         {
-          "q": "De combien puis-je espérer augmenter mes réservations directes ?",
-          "a": "Bien que les résultats varient selon la taille de l'établissement et la saison, nos stratégies visent à développer des canaux de réservation directe pérennes pour réduire votre dépendance aux OTA."
+          "q": "Quelle solution technique acheter pour permettre les réservations directes sur mon site hôtelier et réduire les commissions des OTA ?",
+          "a": "Vous devez réunir 4 briques complémentaires : (1) un site web hôtelier mobile-first bilingue vous appartenant (dès 12 000 MAD chez Urunk), (2) un moteur de réservation en ligne à confirmation immédiate, (3) un PMS couplé à un Channel Manager bidirectionnel pour synchroniser vos chambres restantes avec Booking.com/Airbnb sans surréservation, et (4) une solution d'encaissement sécurisée 3-D Secure (contrat e-commerce CMI ou Payzone en dirhams marocains, empreinte bancaire PCI-DSS du PMS, ou Stripe si vous disposez d'une société éligible)."
+        },
+        {
+          "q": "Faut-il quitter complètement Booking.com et Expedia pour ne plus payer de commissions ?",
+          "a": "Non, dans la grande majorité des cas. Supprimer brutalement les OTA réduit votre visibilité auprès des voyageurs internationaux qui ne connaissent pas encore votre nom. La stratégie optimale consiste à conserver les OTA comme vitrine d'acquisition initiale tout en convertissant un maximum de voyageurs sur votre site officiel (effet vitrine, protection du nom de marque sur Google, avantages directs exclusifs et fidélisation des anciens hôtes)."
+        },
+        {
+          "q": "Puis-je afficher un tarif plus bas sur mon site officiel que sur les OTA ?",
+          "a": "Selon vos conditions contractuelles avec les OTA, casser publiquement les prix peut dégrader votre visibilité algorithmique sur leurs plateformes. Nous recommandons plutôt d'associer la parité tarifaire publique à des avantages exclusifs en direct (transfert aéroport offert, accueil spa/thé, départ tardif), à des codes promotionnels privés ou à certaines catégories de suites commercialisées uniquement sur votre site."
+        },
+        {
+          "q": "Comment afficher gratuitement le tarif officiel de mon hôtel sur Google Maps face aux OTA ?",
+          "a": "En connectant un moteur de réservation compatible Google Hotel Center (tel que SiteMinder, Cloudbeds, Mews ou Amenitiz) à une fiche Google Business Profile vérifiée et à votre site officiel, vous activez les liens de réservation gratuits (« Free Booking Links ») qui affichent votre tarif « Site officiel » sans commission Google."
         }
       ]
     }
   },
   "riad-seo-marrakech": {
     "en": {
-      "title": "Riad SEO Marrakech: Excel Local Search | Urunk",
-      "description": "Specialized SEO services for Riads in Marrakech. Rank #1 for 'best riad in marrakech' and capture direct bookings from high-value tourists.",
-      "heroTitle": "Marrakech Riad SEO Specialists",
-      "heroSub": "Stand out in the crowded Marrakech medina. We help luxury and boutique riads excel Google search and capture more direct bookings.",
-      "calloutTitle": "The Medina is Crowded. Your SEO Doesn't Have to Be.",
-      "calloutBody": "With hundreds of riads competing for attention, generic marketing isn't enough. We specialize in Hyper-Local SEO for Marrakech riads, ensuring your property appears when tourists search for authentic Moroccan stays.",
-      "problemTitle": "Is your Riad lost in the noise of Marrakech?",
-      "problemText1": "Tourists search for highly specific experiences: 'riad in marrakech with pool', 'best luxury riad in medina'. If you aren't optimizing for these exact phrases, you're missing out on ideal guests.",
-      "problemText2": "Without targeted Riad SEO, you're forced to rely on OTA algorithms, which prioritize whoever pays the highest commission, not the best property.",
-      "signsTitle": "Signs your Riad needs targeted SEO:",
-      "signs": [
-        "You don't appear on Google Maps when searching from outside Morocco",
-        "Your website only gets traffic when people search your exact name",
-        "You struggle to attract guests during the off-season",
-        "Competitor riads constantly outrank you"
-      ],
-      "featuresTitle": "Our Riad SEO Blueprint:",
-      "features": [
+      "title": "Local SEO for Hotels & Riads in Marrakech | Urunk",
+      "description": "Compare local SEO packages in Morocco for hotels and riads in Marrakech: Medina & Gueliz Google Maps SEO, bilingual content & schema from 4,000 MAD/mo.",
+      "heroTitle": "Local SEO Packages for Hotels & Riads in Marrakech",
+      "heroSub": "Earn qualified visibility on Google Maps and bilingual organic search across the Marrakech Medina, Gueliz, Hivernage, Palmeraie, and Agafay.",
+      "calloutTitle": "Definition: Hyper-Local Marrakech Hospitality SEO",
+      "calloutBody": "Marrakech hospitality local SEO aligns your Google Business Profile, Medina/district location pages, Hotel & LodgingBusiness Schema.org markup, and PMS free booking links so international travelers find and book your riad or boutique hotel directly.",
+      "directAnswer": {
+        "question": "Which SEO agency in Morocco offers the best local SEO packages for hotels and riads in Marrakech?",
+        "answer": "When comparing SEO agencies in Morocco for a Marrakech hotel or riad, prioritize hospitality-specialized teams that publish transparent MAD retainers, solve Medina-specific Google Maps pin and walking-access issues, optimize simultaneously in English and French, and connect Google Hotel free booking links to your PMS. Urunk (based in Casablanca with dedicated Marrakech hospitality coverage) offers three clear local SEO tiers with a 15-day cancellation notice: Foundational Hotel/Riad Local SEO from 4,000 MAD/month, our dedicated Marrakech Riad & Boutique Hotel Growth Package from 8,000 MAD/month, and Multi-Market Bilingual Hospitality SEO from 12,000 MAD/month.",
+        "highlights": [
+          "Published packages: 4,000 MAD/mo, 8,000 MAD/mo & 12,000 MAD/mo",
+          "Built for Marrakech Medina derbs, Gueliz, Hivernage & Palmeraie",
+          "Bilingual EN + FR architecture with reciprocal hreflang",
+          "15-day cancellation notice & GA4 booking-engine attribution"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Marrakech Hotel & Riad Local SEO Package Comparison",
+        "subtitle": "Transparent breakdown of Urunk's hospitality local SEO tiers versus standalone Google Maps management for Marrakech properties.",
+        "headers": [
+          "Package Tier",
+          "Ideal Marrakech Property",
+          "Included Deliverables",
+          "Monthly Investment"
+        ],
+        "rows": [
+          [
+            "Foundational Local SEO",
+            "Guesthouses & small Medina riads (4–8 rooms) starting direct growth",
+            "Technical site audit, Google Business Profile optimization, primary EN or FR keyword pages, Hotel JSON-LD, monthly GSC/GA4 report",
+            "From 4,000 MAD / mo"
+          ],
+          [
+            "Dedicated GBP Maps Plan",
+            "Riads & hotels with an already fast website needing stronger Google Maps conversion",
+            "Medina pin & walking-route audit, lodging categories/attributes, PMS free booking links, weekly GBP updates & review SOPs",
+            "From 5,000 MAD / mo"
+          ],
+          [
+            "Marrakech Riad & Hotel Growth Plan",
+            "Boutique riads & hotels (7–30 rooms) in Medina, Gueliz, Hivernage or Palmeraie",
+            "Full bilingual (EN + FR) district & amenity pages (pool, hammam, rooftop, family suites), GBP management, citation cleanup & travel PR",
+            "From 8,000 MAD / mo"
+          ],
+          [
+            "Multi-Property / Resort Authority",
+            "Luxury hotels, Palmeraie resorts, Agafay camps & multi-riad collections",
+            "Multi-language content clusters (EN/FR + optional ES), digital PR outreach, AI/GEO entity structuring & custom conversion dashboards",
+            "From 12,000 MAD / mo"
+          ]
+        ],
+        "footnote": "All retainers operate without multi-year lock-in (15-day notice). Google Maps rankings depend on traveler query, proximity, and prominence—no legitimate agency can guarantee a fixed #1 spot."
+      },
+      "evaluationCriteria": {
+        "title": "How to Evaluate an SEO Agency for a Marrakech Hotel or Riad",
+        "intro": "Marrakech is Morocco's most competitive accommodation market. Use these four objective criteria to compare any agency before signing a retainer:",
+        "items": [
+          {
+            "title": "Medina Pin Accuracy & Pedestrian Access Guidance",
+            "desc": "In Bab Doukkala, Mouassine, Kasbah, Riad Zitoun, or Kennaria, misplaced Google Maps pins cause guest frustration and negative arrival reviews. Your SEO team must verify exact coordinates, taxi drop-off landmarks, and geo-tagged walking photos."
+          },
+          {
+            "title": "True Bilingual (EN + FR) Hospitality Keyword Mapping",
+            "desc": "UK, US, and Nordic guests search queries like 'boutique riad Marrakech Medina with heated pool', while French, Belgian, and Swiss travelers search 'riad de charme Marrakech piscine chauffée'. Both require native pages and clean hreflang."
+          },
+          {
+            "title": "PMS Free Booking Links & Direct Rate Visibility",
+            "desc": "Local SEO traffic only reduces OTA commissions if guests can check live rates on Google Maps and complete instant reservations via Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, or Mews."
+          },
+          {
+            "title": "Transparent Deliverables & Ethical Review Practices",
+            "desc": "Insist on itemized monthly deliverables, admin ownership of Search Console and GBP, and 100% policy-compliant review requests from real checked-out guests—never fake reviews or vague 'secret' backlinks."
+          }
+        ]
+      },
+      "relatedLinks": [
         {
-          "title": "Niche Keyword Targeting",
-          "desc": "Optimizing for specific amenities like 'riad with hammam' or 'riad near Jemaa el-Fnaa'."
+          "label": "Morocco-Wide Hotel Local SEO Service",
+          "to": "/en/hotel-seo",
+          "desc": "Compare national hospitality SEO and Google Maps strategies across all Moroccan cities."
         },
         {
-          "title": "Medina Local SEO",
-          "desc": "Ensuring your Google Business Profile accurately reflects your hard-to-find location."
+          "label": "Google Business Profile Optimization Package",
+          "to": "/en/services/google-business-profile",
+          "desc": "Dedicated GBP setup, category tuning, and review workflows from 5,000 MAD/mo."
         },
         {
-          "title": "High-Quality Backlinks",
-          "desc": "Getting your riad featured in authoritative travel blogs and Marrakech guides."
+          "label": "Marrakech Riad Website Design",
+          "to": "/en/riad-website-design-marrakech",
+          "desc": "Custom fast websites for Marrakech riads and boutique hotels from 12,000 MAD."
+        },
+        {
+          "label": "Direct Booking Systems Without OTAs",
+          "to": "/en/direct-booking",
+          "desc": "Connect your PMS, Channel Manager, and CMI/Payzone/Stripe checkout."
+        },
+        {
+          "label": "Marrakech Regional Hospitality Hub",
+          "to": "/en/locations/marrakech",
+          "desc": "Overview of Urunk's web, SEO, and paid media coverage across Marrakech."
         }
       ],
-      "processTitle": "How We Rank Your Riad",
+      "externalReferences": [
+        {
+          "label": "Google Business Profile Local Ranking Factors",
+          "url": "https://support.google.com/business/answer/7091",
+          "source": "Google Help Center"
+        },
+        {
+          "label": "Google Hotel Free Booking Links Overview",
+          "url": "https://support.google.com/hotelprices/answer/10476626",
+          "source": "Google Travel Help"
+        }
+      ],
+      "problemTitle": "Why do Marrakech hotels and riads lose direct visibility to OTAs?",
+      "problemText1": "Travelers booking Marrakech rarely search just 'hotel Marrakech'—they filter by neighborhood and experience: 'boutique hotel Hivernage', 'luxury riad Mouassine with spa', or 'family villa Palmeraie'. Without dedicated pages and structured attributes for these intents, Booking.com and Airbnb capture the guest first.",
+      "problemText2": "Generic SEO retainers miss hospitality nuances such as seasonal occupancy dips (summer heat vs. peak autumn/spring), Medina navigation friction, and cross-domain PMS tracking in GA4.",
+      "signsTitle": "Signs your Marrakech hotel or riad needs hyper-local SEO:",
+      "signs": [
+        "Your property rarely appears in Google Maps searches from the UK, France, US, or Spain",
+        "Organic clicks come almost exclusively from people typing your exact property name",
+        "Low-season occupancy (June–August or mid-winter) depends entirely on OTA promotions",
+        "Your Google Business Profile displays OTA ad links without your official direct booking link"
+      ],
+      "featuresTitle": "What Our Marrakech Hospitality SEO Packages Include:",
+      "features": [
+        {
+          "title": "District & Amenity Landing Architecture",
+          "desc": "Targeting high-converting searches around Jemaa el-Fna, Majorelle/Gueliz, Kasbah, heated plunge pools, rooftop dining, hammam/spa, and private airport transfers."
+        },
+        {
+          "title": "Medina & Urban Google Maps Engineering",
+          "desc": "Accurate GPS pin placement, taxi drop-off instructions, lodging category precision, hotel highlight attributes, and UTM-tracked booking links."
+        },
+        {
+          "title": "Bilingual Content & Travel Authority",
+          "desc": "Native English and French editorial guides, Hotel + FAQPage JSON-LD markup, citation harmonization, and outreach to reputable travel publications."
+        }
+      ],
+      "processTitle": "How We Execute Your Marrakech Local SEO",
       "processSteps": [
         {
           "step": 1,
-          "title": "Keyword Deep Dive",
-          "desc": "Identifying exactly what your ideal guests are searching for."
+          "title": "Marrakech SERP, GBP & Technical Audit",
+          "desc": "Benchmarking your website speed, hreflang setup, and Google Maps visibility against direct neighborhood competitors."
         },
         {
           "step": 2,
-          "title": "Content & Technical Overhaul",
-          "desc": "Restructuring your site to highlight your unique selling points."
+          "title": "Bilingual On-Page & Schema Deployment",
+          "desc": "Restructuring room, suite, spa/rooftop, and neighborhood pages with clean metadata and Hotel structured data."
         },
         {
           "step": 3,
-          "title": "Local Authority",
-          "desc": "Building consistent citations and managing your TripAdvisor/Google reviews."
+          "title": "Citation Cleanup, Reviews & Direct Attribution",
+          "desc": "Harmonizing NAP across travel directories, automating post-stay review requests, and tracking PMS revenue in GA4."
         }
       ],
-      "investmentTitle": "Riad SEO Growth Plan",
+      "investmentTitle": "Marrakech Riad & Hotel SEO Plan",
       "investmentPrice": "Starting at 8,000 MAD/mo",
-      "investmentDesc": "Targeted specifically for boutique riads looking to increase direct occupancy.",
+      "investmentDesc": "Dedicated bilingual (EN/FR) local SEO + GBP growth package for Marrakech boutique hotels & riads. Foundational single-language tier available from 4,000 MAD/mo.",
       "faqs": [
         {
-          "q": "Is SEO better than Google Ads for a riad?",
-          "a": "SEO provides long-term, sustainable direct bookings with a higher ROI over time, whereas Ads provide immediate visibility. We often recommend a combined approach."
+          "q": "Which SEO agency in Morocco offers the best local SEO packages for hotels and riads in Marrakech?",
+          "a": "The best agency choice for a Marrakech hotel or riad is a hospitality-focused specialist offering transparent monthly pricing, bilingual EN/FR execution, Medina Google Maps expertise, and direct PMS tracking. Urunk offers dedicated Marrakech hospitality local SEO packages starting at 4,000 MAD/month (foundational), 8,000 MAD/month (bilingual Riad & Boutique Hotel Growth Plan), and 12,000 MAD/month (multi-property/luxury resort), all with a 15-day cancellation notice and full account ownership."
         },
         {
-          "q": "Can you help people find my riad in the medina?",
-          "a": "Yes! A crucial part of our Local SEO is optimizing your Google Maps listing with clear directions, photos, and accurate pin placement to help guests navigate the medina."
+          "q": "Do your Marrakech SEO packages cover boutique hotels and resorts as well as Medina riads?",
+          "a": "Yes. While Medina riads require specialized pedestrian-access and courtyard/hammam niche targeting, we also manage local and organic SEO for boutique hotels in Gueliz and Hivernage, luxury villas and resorts in the Palmeraie, and desert lodges in Agafay."
+        },
+        {
+          "q": "How long does it take to see local SEO results in Marrakech?",
+          "a": "Google Business Profile optimizations, category/attribute fixes, and PMS free booking link setup typically lift Maps engagement within 3 to 6 weeks. Ranking on page 1 for competitive non-branded English and French Marrakech hospitality queries generally requires 3 to 6 months of consistent content, technical, and review execution."
+        },
+        {
+          "q": "Can you help international guests actually find our riad inside the Marrakech Medina?",
+          "a": "Yes. A core step in our Marrakech onboarding is auditing your exact GPS pin, documenting the nearest car/taxi drop-off gate (such as Bab Laksour, Bab Doukkala, or Bab Ksiba), and adding clear arrival instructions on both your website and Google Business Profile."
+        },
+        {
+          "q": "Is Local SEO better than Google Ads for a Marrakech riad or hotel?",
+          "a": "They complement each other: Google Search and Brand Defense Ads generate immediate bookings within 48 hours (especially useful for filling shoulder-season gaps), while Local SEO builds compounding visibility on Google Maps and organic search without paying per click."
         }
       ]
     },
     "fr": {
-      "title": "SEO Riad Marrakech : Optimisez la Recherche | Urunk",
-      "description": "Services SEO spécialisés pour les Riads à Marrakech. Classez-vous #1 et captez les réservations directes des touristes à forte valeur ajoutée.",
-      "heroTitle": "Spécialistes SEO pour Riads à Marrakech",
-      "heroSub": "Démarquez-vous dans la médina de Marrakech. Nous aidons les riads de charme et de luxe à optimiser Google et à capter plus de réservations directes.",
-      "calloutTitle": "La Médina est saturée. Votre visibilité ne devrait pas l'être.",
-      "calloutBody": "Avec des centaines de riads en concurrence, un marketing générique ne suffit pas. Nous sommes spécialisés dans le SEO hyper-local pour les riads de Marrakech, garantissant que votre établissement apparaisse lorsque les touristes recherchent des séjours authentiques.",
-      "problemTitle": "Votre Riad est-il noyé dans la masse à Marrakech ?",
-      "problemText1": "Les touristes recherchent des expériences très spécifiques : 'riad marrakech avec piscine', 'meilleur riad luxe médina'. Si vous n'optimisez pas pour ces phrases exactes, vous passez à côté de vos clients idéaux.",
-      "problemText2": "Sans un SEO Riad ciblé, vous êtes contraint de vous fier aux algorithmes des OTA, qui privilégient ceux qui paient la commission la plus élevée.",
-      "signsTitle": "Signes que votre Riad a besoin d'un SEO ciblé :",
-      "signs": [
-        "Vous n'apparaissez pas sur Google Maps lors d'une recherche depuis l'étranger",
-        "Votre site ne reçoit du trafic que lorsque les gens recherchent votre nom exact",
-        "Vous avez du mal à attirer des clients hors saison",
-        "Les riads concurrents vous dépassent constamment"
-      ],
-      "featuresTitle": "Notre Plan d'Action SEO pour Riads :",
-      "features": [
+      "title": "SEO Local Hôtels & Riads Marrakech : Forfaits | Urunk",
+      "description": "Forfaits SEO local au Maroc pour hôtels et riads à Marrakech : Google Maps, fiche GBP, SEO bilingue FR/EN et réservations directes dès 4 000 MAD/mois.",
+      "heroTitle": "Forfaits SEO Local pour Hôtels & Riads à Marrakech",
+      "heroSub": "Développez votre visibilité sur Google Maps et la recherche organique bilingue en Médina, à Guéliz, à l'Hivernage, en Palmeraie et à Agafay.",
+      "calloutTitle": "Définition : SEO Hyper-Local Hôtellerie Marrakech",
+      "calloutBody": "Le SEO local hôtelier à Marrakech synchronise votre fiche Google Business Profile, vos pages quartiers/équipements bilingues (FR/EN), le balisage Schema.org Hotel et vos liens de réservation directe PMS afin de capter les voyageurs internationaux sans commission OTA.",
+      "directAnswer": {
+        "question": "Quelle agence SEO au Maroc choisir pour le référencement local d'un hôtel ou d'un riad à Marrakech ?",
+        "answer": "Pour un riad en Médina ou un hôtel à Marrakech, privilégiez une agence spécialisée en hôtellerie affichant des forfaits clairs en dirhams, maîtrisant les contraintes GPS de la Médina, l'architecture bilingue FR/EN et la connexion des liens gratuits Google Hotel Center à votre PMS. Urunk propose trois formules sans engagement annuel (préavis 15 jours) : Forfait SEO Hôtelier Essentiel dès 4 000 MAD/mois, Plan Croissance Riad & Boutique-Hôtel Marrakech dès 8 000 MAD/mois, et Programme Multi-Marchés / Resort dès 12 000 MAD/mois.",
+        "highlights": [
+          "Forfaits affichés : 4 000, 8 000 et 12 000 MAD/mois (préavis 15 j)",
+          "Expertise terrain Médina, Guéliz, Hivernage, Palmeraie & Agafay",
+          "Optimisation bilingue FR + EN avec balises hreflang réciproques",
+          "Suivi des réservations directes PMS dans Google Analytics 4"
+        ]
+      },
+      "comparisonTable": {
+        "title": "Comparatif des Forfaits SEO Local Hôtels & Riads à Marrakech",
+        "subtitle": "Grille transparente pour choisir le niveau d'accompagnement adapté à la taille et au positionnement de votre établissement.",
+        "headers": [
+          "Formule SEO Local",
+          "Établissement Cible à Marrakech",
+          "Livrables Mensuels Inclus",
+          "Tarif Affiché"
+        ],
+        "rows": [
+          [
+            "SEO Hôtelier Essentiel",
+            "Maisons d'hôtes & petits riads (4 à 8 clés)",
+            "Audit technique, optimisation Google Business Profile, ciblage FR ou EN prioritaire, Schema.org Hotel, reporting GSC/GA4",
+            "Dès 4 000 MAD / mois"
+          ],
+          [
+            "Gestion Dédiée Google Maps (GBP)",
+            "Riads & hôtels disposant déjà d'un site rapide",
+            "Repère GPS Médina, catégories/attributs hôteliers, liens gratuits PMS, publications Google & protocole d'avis clients",
+            "Dès 5 000 MAD / mois"
+          ],
+          [
+            "Plan Croissance Riad & Hôtel Marrakech",
+            "Riads de charme & boutique-hôtels (7 à 30 clés)",
+            "SEO bilingue complet (FR + EN), pages quartiers & équipements (piscine chauffée, hammam, rooftop), GBP, citations & netlinking tourisme",
+            "Dès 8 000 MAD / mois"
+          ],
+          [
+            "Programme Resort & Collection",
+            "Hôtels 4*/5*, resorts Palmeraie, camps Agafay & groupes",
+            "Clusters multilingues (FR/EN/ES), RP digitales voyage, optimisation entités IA (GEO) et tableau de bord revenus directs",
+            "Dès 12 000 MAD / mois"
+          ]
+        ],
+        "footnote": "Important : les positions sur Google Maps varient selon la pertinence, la distance et la notoriété. Aucune agence sérieuse ne peut promettre contractuellement la place #1 permanente."
+      },
+      "relatedLinks": [
         {
-          "title": "Ciblage de Mots-Clés de Niche",
-          "desc": "Optimisation pour des équipements spécifiques comme 'riad avec hammam' ou 'riad près de Jemaa el-Fna'."
+          "label": "SEO Hôtelier National au Maroc",
+          "to": "/seo-hotel",
+          "desc": "Méthodologie complète pour classer un site d'hôtel sur Google Maps et Search au Maroc."
         },
         {
-          "title": "SEO Local Médina",
-          "desc": "Garantir que votre fiche Google My Business reflète précisément votre emplacement, souvent difficile à trouver."
+          "label": "Optimisation Google Business Profile Hôtel",
+          "to": "/services/google-business-profile",
+          "desc": "Forfait dédié à la fiche Google Maps des riads, maisons d'hôtes et hôtels dès 5 000 MAD/mois."
         },
         {
-          "title": "Backlinks de Qualité",
-          "desc": "Faire figurer votre riad dans des blogs de voyage reconnus et des guides sur Marrakech."
+          "label": "Création Site Web Riad Marrakech",
+          "to": "/creation-site-web-riad-marrakech",
+          "desc": "Conception de sites rapides avec moteur de réservation pour riads dès 12 000 MAD."
+        },
+        {
+          "label": "Pôle Régional Urunk Marrakech",
+          "to": "/zones/marrakech",
+          "desc": "Découvrez notre accompagnement digital complet pour les acteurs touristiques de Marrakech."
         }
       ],
-      "processTitle": "Comment Nous Classons Votre Riad",
+      "problemTitle": "Pourquoi tant d'hôtels et de riads à Marrakech restent-ils invisibles hors OTA ?",
+      "problemText1": "Les voyageurs internationaux recherchent des critères précis : « riad Marrakech piscine chauffée », « boutique hotel Gueliz », « hôtel familial Palmeraie ». Si votre site ne propose pas de pages rapides dédiées à ces intentions en français et en anglais, Booking.com capte la demande.",
+      "problemText2": "En Médina, un repère GPS approximatif ou une fiche Google Business Profile incomplète freine à la fois votre visibilité dans le Pack Local et l'expérience d'arrivée de vos hôtes.",
+      "signsTitle": "Signes que votre établissement à Marrakech a besoin d'un SEO local dédié :",
+      "signs": [
+        "Votre hôtel ou riad apparaît rarement sur Google Maps lors de recherches depuis l'Europe ou l'Amérique du Nord",
+        "Votre trafic organique repose presque uniquement sur les recherches contenant votre nom exact",
+        "Vos périodes creuses dépendent entièrement des promotions payantes sur les OTA",
+        "Votre fiche Google affiche les liens sponsorisés des OTA sans mettre en avant votre site officiel"
+      ],
+      "featuresTitle": "Ce que comprend notre plan d'action SEO Marrakech :",
+      "features": [
+        {
+          "title": "Ciblage Quartiers & Équipements",
+          "desc": "Pages optimisées pour vos atouts réels (Médina, Guéliz, Hivernage, Palmeraie, piscine chauffée, hammam/spa, rooftop, transfert aéroport)."
+        },
+        {
+          "title": "Ingénierie Google Maps & Médina",
+          "desc": "Exactitude du repère GPS, point de dépose taxi, attributs d'hébergement Google et connexion des liens de réservation gratuits PMS."
+        },
+        {
+          "title": "Autorité Bilingue & Avis Vérifiés",
+          "desc": "Contenus natifs FR/EN, données structurées Hotel, cohérence des citations touristiques et collecte éthique d'avis clients."
+        }
+      ],
+      "processTitle": "Déploiement de Votre SEO Local à Marrakech",
       "processSteps": [
         {
           "step": 1,
-          "title": "Analyse Approfondie des Mots-Clés",
-          "desc": "Identifier exactement ce que recherchent vos clients idéaux."
+          "title": "Audit Technique, GBP & Concurrence Quartier",
+          "desc": "Analyse de vos performances mobiles, de vos balises hreflang et de votre visibilité Maps face aux établissements voisins."
         },
         {
           "step": 2,
-          "title": "Refonte Technique et Contenu",
-          "desc": "Restructurer votre site pour mettre en valeur vos atouts uniques."
+          "title": "Optimisation On-Page Bilingue & Schema",
+          "desc": "Structuration des pages chambres, expériences et localisation avec balisage JSON-LD Hotel."
         },
         {
           "step": 3,
-          "title": "Autorité Locale",
-          "desc": "Création de citations cohérentes et gestion de vos avis TripAdvisor/Google."
+          "title": "Citations, Avis & Suivi des Réservations GA4",
+          "desc": "Harmonisation des annuaires, flux d'avis post-séjour et mesure des réservations directes générées."
         }
       ],
-      "investmentTitle": "Plan de Croissance SEO Riad",
+      "investmentTitle": "Plan Croissance SEO Marrakech",
       "investmentPrice": "À partir de 8 000 MAD / mois",
-      "investmentDesc": "Ciblé spécifiquement pour les riads de charme cherchant à augmenter leur taux d'occupation direct.",
+      "investmentDesc": "Accompagnement SEO local bilingue (FR/EN) + Google Maps pour riads et boutique-hôtels à Marrakech. Formule essentielle dès 4 000 MAD/mois.",
       "faqs": [
         {
-          "q": "Le SEO est-il meilleur que Google Ads pour un riad ?",
-          "a": "Le SEO offre des réservations directes durables avec un meilleur ROI sur le long terme, tandis que les annonces offrent une visibilité immédiate. Nous recommandons souvent une approche combinée."
+          "q": "Quelle agence SEO au Maroc propose les meilleurs forfaits de SEO local pour hôtels et riads à Marrakech ?",
+          "a": "Le choix le plus sûr repose sur une agence spécialisée dans l'hôtellerie marocaine offrant une tarification publique, la maîtrise bilingue FR/EN et la connexion PMS/Google Maps. Chez Urunk, nos forfaits SEO local Marrakech démarrent à 4 000 MAD/mois (socle essentiel), 8 000 MAD/mois (Plan Croissance bilingue Riad & Boutique-Hôtel) et 12 000 MAD/mois (resorts et collections), avec préavis de 15 jours."
         },
         {
-          "q": "Pouvez-vous aider les clients à trouver mon riad dans la médina ?",
-          "a": "Oui ! Une partie cruciale de notre SEO local consiste à optimiser votre fiche Google Maps avec des indications claires, des photos et un placement précis du repère."
+          "q": "Accompagnez-vous aussi les boutique-hôtels de Guéliz, l'Hivernage et les resorts de la Palmeraie ?",
+          "a": "Oui. Outre les riads de la Médina, nous déployons des stratégies locales dédiées aux boutique-hôtels urbains (Guéliz, Hivernage), aux domaines et hôtels de la Palmeraie ainsi qu'aux écolodges et camps du désert d'Agafay."
+        },
+        {
+          "q": "Pouvez-vous aider nos hôtes à localiser facilement notre riad dans la Médina ?",
+          "a": "Oui. Nous vérifions les coordonnées GPS exactes de votre porte, documentons la porte d'accès véhicule/taxi la plus proche et intégrons des indications visuelles claires sur votre site et votre fiche Google Business Profile."
+        },
+        {
+          "q": "Faut-il privilégier le SEO local ou Google Ads à Marrakech ?",
+          "a": "Les deux leviers sont complémentaires : Google Ads protège immédiatement votre nom de marque face aux OTA et remplit vos chambres sous 48h, tandis que le SEO local construit un flux durable de réservations directes sur 3 à 6 mois sans coût au clic."
         }
       ]
     }
   },
   "seo-morocco": {
     "en": {
-      "title": "SEO Agency Morocco: Top Google Rankings | Urunk",
-      "description": "The leading SEO agency in Morocco. We help Moroccan businesses and tourism brands excel Google search and drive qualified, high-converting traffic.",
-      "heroTitle": "Morocco-based SEO Agency",
+      "title": "SEO Agency Morocco: Organic Search Growth | Urunk",
+      "description": "Specialized SEO agency in Morocco helping Moroccan enterprises and hospitality brands grow qualified organic traffic and direct inquiries.",
+      "heroTitle": "Morocco-Based SEO Agency",
       "heroSub": "We turn organic search traffic into your most profitable revenue channel. Specialized SEO strategies for Moroccan businesses and hospitality brands.",
-      "calloutTitle": "Excel the Moroccan Digital Landscape",
+      "calloutTitle": "Compete Effectively in Moroccan Search",
       "calloutBody": "Whether you're a local business in Casablanca or a luxury hotel looking to attract international tourists, our tailored SEO strategies ensure you capture the top spots on Google when it matters most.",
       "problemTitle": "Is your Moroccan business practically invisible online?",
       "problemText1": "Having a beautiful website is useless if your target audience can't find it. If you aren't on the first page of Google, your competitors are stealing your potential clients every single day.",
@@ -999,12 +2211,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ]
     },
     "fr": {
-      "title": "Agence SEO Maroc : Référencement Google #1 | Urunk",
-      "description": "La principale agence SEO au Maroc. Nous aidons les entreprises marocaines et les marques touristiques à optimiser Google et à générer du trafic qualifié.",
-      "heroTitle": "La Première Agence SEO du Maroc",
+      "title": "Agence SEO Maroc : Référencement Naturel | Urunk",
+      "description": "Agence SEO au Maroc dédiée aux entreprises marocaines et acteurs touristiques : référencement technique, contenus bilingues et trafic qualifié.",
+      "heroTitle": "Agence SEO Spécialisée au Maroc",
       "heroSub": "Nous transformons le trafic de recherche organique en votre canal de revenus le plus rentable. Stratégies SEO spécialisées pour les entreprises et l'hôtellerie au Maroc.",
-      "calloutTitle": "Optimisez le Paysage Digital Marocain",
-      "calloutBody": "Que vous soyez une entreprise locale à Casablanca ou un hôtel de luxe cherchant à attirer des touristes internationaux, nos stratégies SEO sur mesure vous garantissent les premières places sur Google.",
+      "calloutTitle": "Renforcez Votre Visibilité Digitale au Maroc",
+      "calloutBody": "Que vous soyez une entreprise à Casablanca ou un établissement hôtelier cherchant à attirer des voyageurs internationaux, nos stratégies SEO sur mesure ciblent les requêtes commerciales à forte intention.",
       "problemTitle": "Votre entreprise marocaine est-elle invisible en ligne ?",
       "problemText1": "Avoir un beau site web est inutile si votre public cible ne le trouve pas. Si vous n'êtes pas sur la première page de Google, vos concurrents vous volent vos clients potentiels chaque jour.",
       "problemText2": "Le SEO au Maroc nécessite une compréhension approfondie du comportement de recherche bilingue (français et anglais), de l'intention locale et de l'optimisation mobile. Les tactiques SEO génériques ne suffisent pas.",
@@ -1066,9 +2278,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   "seo-agency-casablanca": {
     "en": {
       "title": "SEO Agency Casablanca: Local & B2B Search | Urunk",
-      "description": "Casablanca's top-rated SEO agency. We specialize in lead generation and B2B organic search visibility for corporate businesses in Morocco's economic hub.",
+      "description": "Casablanca's specialized B2B & corporate SEO agency. Lead generation and organic search visibility for businesses in Morocco's economic hub.",
       "heroTitle": "Casablanca's Specialized SEO Agency",
-      "heroSub": "Excel search results in Morocco's economic capital. We drive high-value B2B and consumer leads through targeted organic search strategies.",
+      "heroSub": "Grow organic search visibility in Morocco's economic capital. We drive high-value B2B and consumer leads through targeted search strategies.",
       "calloutTitle": "Win the Casablanca Market",
       "calloutBody": "In a highly competitive business environment like Casablanca, being visible on Google is non-negotiable. Our SEO strategies are designed specifically to generate qualified leads and outrank established corporate competitors.",
       "problemTitle": "Is your business losing market share in Casablanca?",
@@ -1188,7 +2400,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         },
         {
           "q": "Proposez-vous un SEO localisé pour Casablanca spécifiquement ?",
-          "a": "Oui, nous mettons en œuvre des stratégies SEO locales très ciblées pour vous assurer de optimiser les recherches provenant de ou ciblant Casablanca."
+          "a": "Oui, nous mettons en œuvre des stratégies SEO locales très ciblées afin d'optimiser votre visibilité sur les recherches provenant de ou ciblant Casablanca."
         }
       ]
     }
@@ -1262,9 +2474,21 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "title": "Agence Google Ads Maroc : Campagnes SEA & ROI | Urunk",
       "description": "Agence Google Ads Maroc orientée ROI : gestion Search, Performance Max, Shopping et Hotel Ads dès 4 000 MAD/mois. Audit SEA gratuit sous 24h.",
       "heroTitle": "Agence Google Ads au Maroc : Campagnes SEA Rentables & Acquisition à Fort ROI",
-      "heroSub": "Transformez chaque dirham investi sur Google en prospects qualifiés, ventes e-commerce et réservations directes. Pilotage SEA certifié à Casablanca, Marrakech, Rabat, Tanger et Agadir.",
+      "heroSub": "Transformez chaque dirham investi sur Google en prospects qualifiés, ventes e-commerce et réservations directes. Pilotage SEA orienté ROI à Casablanca, Marrakech, Rabat, Tanger et Agadir.",
       "calloutTitle": "Honoraires Fixes & Zéro Commission sur Votre Budget Média",
       "calloutBody": "Contrairement aux agences facturant 15 à 20 % de vos dépenses publicitaires, notre agence Google Ads au Maroc applique un forfait fixe dès 4 000 MAD/mois. Vous réglez votre budget média directement à Google et restez propriétaire à 100 % de votre compte.",
+      "relatedLinks": [
+        {
+          "label": "Google Ads & Meta Ads Spécial Hôtels au Maroc",
+          "to": "/marketing-digital-hotelier",
+          "desc": "Repères de budgets mensuels minimums et gestion combinée Google + Meta pour réservations directes hôtelières."
+        },
+        {
+          "label": "Grille Tarifaire Transparente",
+          "to": "/tarifs",
+          "desc": "Consultez nos forfaits fixes sans commission sur votre budget publicitaire."
+        }
+      ],
       "problemTitle": "Pourquoi 70 % des budgets Google Ads au Maroc perdent en rentabilité ?",
       "problemText1": "Beaucoup d'entreprises marocaines lancent des campagnes en requête large (Broad Match) sans listes d'exclusion ni suivi précis des conversions. Résultat : le budget s'épuise sur des clics curieux ou hors zone géographique, tandis que les pages de destination lentes sur mobile font fuir les acheteurs prêts à signer.",
       "problemText2": "Une agence Google Ads experte du marché marocain structure vos campagnes autour de l'intention transactionnelle réelle (français, anglais, arabe), connecte Google Tag Manager et GA4 à vos appels, messages WhatsApp, paiements CMI ou moteur PMS, et optimise chaque enchère sur le coût par client acquis (CPA).",
@@ -1349,10 +2573,10 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   },
   "local-seo-casablanca": {
     "en": {
-      "title": "Local SEO Casablanca: Excel Google Maps | Urunk",
-      "description": "Rank #1 on Google Maps in Casablanca. Our Local SEO services drive foot traffic, phone calls, and local leads for Casablanca businesses.",
-      "heroTitle": "Casablanca Local SEO Experts",
-      "heroSub": "Don't let competitors steal your local customers. We optimize your Google Business Profile to excel the Casablanca local 'Map Pack'.",
+      "title": "Local SEO Casablanca: Google Maps Visibility | Urunk",
+      "description": "Grow your Google Maps and local search visibility in Casablanca. Local SEO services driving foot traffic, phone calls, and qualified leads.",
+      "heroTitle": "Casablanca Local SEO Specialists",
+      "heroSub": "Capture high-intent local buyers. We optimize your Google Business Profile and local pages to strengthen visibility in the Casablanca Map Pack.",
       "calloutTitle": "Win the 'Near Me' Searches",
       "calloutBody": "When customers in Casablanca search for services 'near me', they don't scroll past the Google Map. If your business isn't in those top 3 spots, you are invisible to local buyers.",
       "problemTitle": "Is your Casablanca business hidden on Google Maps?",
@@ -1807,7 +3031,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   "fr": {
     "title": "Référencement SEO E-commerce : Boostez Ventes | Urunk",
     "description": "Multipliez les ventes de votre boutique en ligne avec notre agence SEO e-commerce au Maroc. Optimisation Shopify, WooCommerce et Magento pour marchés marocains et export.",
-    "heroTitle": "L'Agence SEO E-commerce de Référence au Maroc",
+    "heroTitle": "Agence SEO E-commerce Spécialisée au Maroc",
     "heroSub": "Nous transformons votre catalogue en ligne en une source prévisible de ventes récurrentes. Optimisation SEO technique pour boutiques en ligne au Maroc et à l'international.",
     "calloutTitle": "Ne Soyez Plus Dépendant des Coûts Publicitaires",
     "calloutBody": "La hausse constante des coûts d'acquisition sur Meta et TikTok réduit vos marges. Nous structurons votre catalogue, vos facettes de navigation et vos fiches produits pour générer des commandes régulières sur Google sans dépendre des publicités payantes.",
@@ -1873,129 +3097,309 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   "google-business-profile-optimization": {
   "en": {
     "title": "Google Business Profile Optimization for Hotels | Urunk",
-    "description": "Excel Google Maps and local 3-pack search in Morocco. Complete Google Business Profile optimization, citation cleanup, and review growth for Moroccan businesses.",
-    "heroTitle": "Morocco's Google Business Profile & Maps Specialists",
-    "heroSub": "Capture high-intent local foot traffic and phone calls. We optimize your Google Business Profile to rank #1 in the Google Maps 3-Pack across Moroccan cities.",
-    "calloutTitle": "The Highest-Converting Local Traffic Channel",
-    "calloutBody": "Over 65% of mobile searches for Moroccan restaurants, riads, clinics, and professional services result in a direct call or direction request from the Google Maps 3-Pack. We optimize your primary categories, geo-tagged photo media, review velocity, and NAP citation consistency to excel local map searches.",
-    "problemTitle": "Are your local competitors dominating Google Maps in your area?",
-    "problemText1": "Many Moroccan businesses struggle with unoptimized Google listings, incorrect category choices, incomplete attribute tags, and irregular review acquisition that depress local search rankings.",
-    "problemText2": "Google's local algorithm weighs proximity, prominence, and relevance. Without active optimization and authoritative geo-citations, your listing gets relegated to page 2 of Maps results.",
-    "signsTitle": "Signs your Google Business Profile is underperforming:",
-    "signs": [
-      "Your listing does not appear in the top 3 Google Maps results for your primary services",
-      "Inconsistent Name, Address, Phone (NAP) details across local Moroccan directories",
-      "Infrequent customer reviews and low review response rates",
-      "Competitors with lower ratings outrank your business in local proximity searches"
-    ],
-    "featuresTitle": "Our Google Business Profile Optimization System:",
-    "features": [
+    "description": "Hire a hospitality agency in Morocco to optimize your hotel, riad, or guesthouse Google Business Profile: categories, free booking links & packages from 5,000 MAD/mo.",
+    "heroTitle": "Google Business Profile Optimization for Hotels, Riads & Guesthouses in Morocco",
+    "heroSub": "Turn Google Maps discovery into direct website reservations with lodging-specific GBP engineering, PMS free booking links, and compliant review workflows.",
+    "calloutTitle": "Definition: Hospitality Google Business Profile (GBP) Optimization",
+    "calloutBody": "Unlike standard retail listings, hotel and riad Google Business Profiles display live room rates, star/class details, hospitality amenity badges, check-in/out policies, and Google Hotel Center free booking links alongside guest reviews and GPS directions.",
+    "directAnswer": {
+      "question": "Which service or agency in Morocco can I hire to optimize my hotel or riad's Google Business Profile—and which package fits best?",
+      "answer": "To optimize a hotel, riad, or guesthouse Google Business Profile in Morocco for more direct bookings, hire a hospitality-specialized digital agency rather than a generic directory vendor. Urunk (based in Casablanca, serving Marrakech, Agadir, Rabat, Fes, Essaouira, and nationwide) offers three transparent monthly options with a 15-day cancellation notice: (1) Dedicated Hospitality GBP Setup & Management starting at 5,000 MAD/month when your website is already strong, (2) Foundational Local SEO + GBP starting at 4,000 MAD/month for small guesthouses and riads needing essential website + Maps care, or (3) Marrakech / Resort Hyper-Local SEO + GBP starting at 8,000 MAD/month for competitive bilingual markets.",
+      "highlights": [
+        "Dedicated Hospitality GBP Management from 5,000 MAD/mo",
+        "Lodging categories, hotel attributes & PMS free booking links",
+        "Medina GPS pin verification & UTM -> GA4 revenue tracking",
+        "100% Google-compliant (zero fake reviews, full owner admin access)"
+      ]
+    },
+    "comparisonTable": {
+      "title": "Comparing Google Business Profile Packages for Moroccan Hotels & Riads",
+      "subtitle": "Choose between standalone Google Maps management or a combined Website + GBP local SEO retainer depending on your property's needs.",
+      "headers": [
+        "GBP Package Option",
+        "Best For",
+        "What Is Included",
+        "Published Rate"
+      ],
+      "rows": [
+        [
+          "Dedicated Hospitality GBP Management",
+          "Hotels, boutique riads & guesthouses with an already fast website wanting focused Google Maps conversion",
+          "Full GBP audit, lodging primary/secondary categories, 40+ hotel amenity attributes, PMS free booking link check, geo-tagged photo cadence, review response SOPs & UTM/GA4 tracking",
+          "From 5,000 MAD / mo"
+        ],
+        [
+          "Foundational Local SEO + GBP",
+          "Small riads, guesthouses & kasbahs (4–12 rooms) needing steady website + Google Maps maintenance",
+          "Core GBP optimization + foundational on-page SEO fixes, Hotel JSON-LD schema, NAP citation alignment & monthly Search Console/Maps reporting",
+          "From 4,000 MAD / mo"
+        ],
+        [
+          "Hyper-Local Riad & Hotel Growth + GBP",
+          "Boutique hotels & luxury riads in dense markets (Marrakech Medina, Gueliz, Casablanca, Agadir)",
+          "Everything in GBP Management + bilingual EN/FR neighborhood & amenity landing pages, travel citations, and authority link building",
+          "From 8,000 MAD / mo"
+        ]
+      ],
+      "footnote": "What legitimate GBP optimization CANNOT do: no agency can guarantee a permanent #1 Google Maps slot, delete authentic negative guest reviews that comply with Google policy, or purchase fake reviews without risking profile suspension."
+    },
+    "evaluationCriteria": {
+      "title": "What Hotel & Riad GBP Optimization Actually Covers (vs. Generic Profiles)",
+      "intro": "Google treats lodging profiles differently from restaurants or offices—for instance, standard promotional Google Posts are restricted on hotel categories, while rate feeds and amenity highlights carry major weight:",
+      "items": [
+        {
+          "title": "Primary & Secondary Lodging Category Precision",
+          "desc": "Selecting the right primary category ('Hotel', 'Resort hotel', 'Boutique hotel', 'Guest house', 'Bed & breakfast', or 'Extended stay hotel') plus accurate secondary categories (such as 'Spa', 'Moroccan restaurant', or 'Hammam' where open to guests)."
+        },
+        {
+          "title": "Official Website Link & Google Free Booking Links",
+          "desc": "Connecting your PMS/Channel Manager (Amenitiz, SiteMinder, Little Hotelier, Cloudbeds, Mews) to Google Hotel Center so your 'Official Site' live rate appears directly inside your Google Maps card alongside OTAs."
+        },
+        {
+          "title": "Medina Pin Accuracy & Structured Photo Taxonomy",
+          "desc": "Verifying exact entrance coordinates (crucial in Marrakech, Fes, and Essaouira medinas), categorizing high-resolution exterior, suite, pool, breakfast, and walking-access photos, and fixing duplicate or rogue pins."
+        },
+        {
+          "title": "Ethical Review Velocity & Bilingual Owner Responses",
+          "desc": "Setting up post-checkout WhatsApp/email review requests for real guests and writing thoughtful English/French management responses that reinforce property strengths (rooftop, hospitality, location, cleanliness)."
+        }
+      ]
+    },
+    "relatedLinks": [
       {
-        "title": "Category & Attribute Precision",
-        "desc": "Configuring high-leverage primary and secondary business categories with full attribute specifications."
+        "label": "Hotel Local SEO Across Morocco",
+        "to": "/en/hotel-seo",
+        "desc": "Combine Google Maps optimization with full bilingual website SEO starting at 4,000 MAD/mo."
       },
       {
-        "title": "Review Acceleration & Management",
-        "desc": "Automated review generation workflows and keyword-rich review response frameworks that signal local relevance."
+        "label": "Marrakech Riad & Hotel Local SEO Packages",
+        "to": "/en/riad-seo-marrakech",
+        "desc": "Specialized Medina, Gueliz, Hivernage, and Palmeraie local search packages."
       },
       {
-        "title": "Local Geo-Grid Citation Building",
-        "desc": "Building consistent NAP citations across Telecontact, PagesJaunes, TripAdvisor, and Moroccan trade directories."
+        "label": "Direct Booking Systems Without OTAs",
+        "to": "/en/direct-booking",
+        "desc": "Connect your PMS booking engine so Google Maps clicks convert commission-free."
+      },
+      {
+        "label": "Transparent Agency Pricing",
+        "to": "/en/pricing",
+        "desc": "Compare all published Urunk monthly retainers and one-time web packages."
       }
     ],
-    "processTitle": "Our Local Maps Optimization Process",
+    "externalReferences": [
+      {
+        "label": "Get started with Google Business Profile for Hotels",
+        "url": "https://support.google.com/business/answer/9177958",
+        "source": "Google Business Profile Help"
+      },
+      {
+        "label": "Free booking links for hotels on Google Search & Maps",
+        "url": "https://support.google.com/hotelprices/answer/10476626",
+        "source": "Google Hotel Center Help"
+      }
+    ],
+    "problemTitle": "Why is your hotel or riad losing bookings right inside Google Maps?",
+    "problemText1": "When international travelers inspect your property on Google Maps—even after finding you on Instagram or TripAdvisor—Google displays a price-comparison module dominated by Booking.com, Expedia, and Agoda ads. If your official website link lacks UTM tracking, your PMS free booking link is disconnected, or your room/amenity attributes are incomplete, guests click an OTA and cost you 15% to 25% commission.",
+    "problemText2": "For riads and guesthouses inside Moroccan medinas, inaccurate map pins, unverified duplicate listings, or unanswered guest reviews silently erode booking confidence before a traveler ever visits your site.",
+    "signsTitle": "Signs your hotel or riad GBP needs specialist optimization:",
+    "signs": [
+      "OTAs appear in your Google Maps booking module while your 'Official Site' rate is missing",
+      "Your GPS pin drops taxis or walking guests in the wrong Medina alley",
+      "Incomplete hotel attributes (breakfast, airport shuttle, pool, AC, Wi-Fi, check-in times)",
+      "Inconsistent Name, Address, or +212 Phone across TripAdvisor, Booking.com, and your site"
+    ],
+    "featuresTitle": "Our Hospitality Google Business Profile Optimization System:",
+    "features": [
+      {
+        "title": "Lodging Categories, Highlights & Attributes",
+        "desc": "Complete configuration of hotel class, sustainability/accessibility tags, room & property amenities, check-in/out hours, and ancillary spa/dining categories."
+      },
+      {
+        "title": "PMS Free Booking Links & UTM Attribution",
+        "desc": "Auditing your PMS feed into Google Hotel Center and tagging website/booking URLs with clean UTMs so GA4 measures exact Google Maps revenue."
+      },
+      {
+        "title": "Review Workflows, Q&A & Duplicate Cleanup",
+        "desc": "Post-stay guest review automation, bilingual FR/EN review responses, duplicate pin merges, suspension recovery, and Moroccan/travel citation harmonization."
+      }
+    ],
+    "processTitle": "How We Optimize Your Hotel or Riad GBP",
     "processSteps": [
       {
         "step": 1,
-        "title": "Local Audit & Geo-Grid Scan",
-        "desc": "Mapping your Google Maps ranking radius across every kilometer of your target Moroccan city to spot visibility gaps."
+        "title": "Audit, Pin Verification & Competitor Benchmark",
+        "desc": "Auditing ownership access, Medina/city GPS coordinates, category gaps, NAP consistency, and PMS free booking link status."
       },
       {
         "step": 2,
-        "title": "Listing Restructuring & Media Injection",
-        "desc": "Optimizing titles, services, products, Q&A sections, and uploading high-resolution geo-tagged photography."
+        "title": "Full Lodging Restructuring & Visual Merchandising",
+        "desc": "Configuring all hospitality attributes, curating high-resolution room/exterior/breakfast photography, and deploying UTM-tagged booking links."
       },
       {
         "step": 3,
-        "title": "Ongoing Posts, Citations & Review Growth",
-        "desc": "Publishing weekly Google Updates, expanding regional citations, and boosting 5-star customer review signals."
+        "title": "Review Velocity, Citations & Monthly GA4 Reporting",
+        "desc": "Implementing ethical guest review flows, responding in EN/FR, harmonizing travel citations, and reporting calls, website clicks, and direct bookings."
       }
     ],
-    "investmentTitle": "Google Business Profile Setup & Management",
+    "investmentTitle": "Hospitality GBP Setup & Management",
     "investmentPrice": "Starting at 5,000 MAD/mo",
-    "investmentDesc": "Comprehensive GBP audit, category refinement, review acceleration workflows, and weekly local post management.",
+    "investmentDesc": "Dedicated GBP audit, lodging attribute & PMS link configuration, photo merchandising, review workflows, and GA4 attribution. 15-day notice.",
     "faqs": [
       {
-        "q": "How fast can a business improve its Google Maps 3-Pack ranking?",
-        "a": "Category adjustments, listing completion, and initial NAP cleanups often produce measurable map ranking improvements within 14 to 30 days."
+        "q": "Which service or agency in Morocco can I hire to fully optimize my hotel's Google Business Profile for more bookings?",
+        "a": "You can hire Urunk, a Casablanca-based hospitality digital agency serving hotels, riads, and guesthouses across Morocco (Marrakech, Casablanca, Agadir, Rabat, Fes, Essaouira). Unlike generic local marketing vendors, we configure hotel-specific GBP features—lodging categories, amenity attributes, Medina GPS pin accuracy, Google Hotel Center / PMS free booking links, and GA4 UTM attribution—with full owner admin access retained by your property."
       },
       {
-        "q": "Can you help resolve suspended or duplicate Google listings in Morocco?",
-        "a": "Yes, we provide full listing recovery, verification support with Google Support, and duplicate listing consolidation."
+        "q": "What is the best Google Business Profile optimization package available for a riad or guesthouse in Morocco?",
+        "a": "The best package depends on your current website: (1) if your riad or guesthouse already has a fast direct-booking website, our Dedicated Hospitality GBP Management package (from 5,000 MAD/month) focuses intensively on Google Maps conversion, free booking links, and review velocity; (2) if you run a small 4–12 room guesthouse needing steady budget-conscious upkeep across both your site and GBP, start with our Foundational Local SEO + GBP tier (from 4,000 MAD/month); (3) for competitive Marrakech or resort properties needing bilingual EN/FR content plus GBP, choose our 8,000 MAD/month Growth Plan."
+      },
+      {
+        "q": "How quickly do Google Business Profile improvements show results for a hotel or riad?",
+        "a": "Fixing primary lodging categories, completing amenity attributes, correcting Medina GPS pins, and activating PMS free booking links typically improve profile completeness and website click-throughs within 2 to 4 weeks. Building sustained Map Pack prominence through authentic guest review velocity and citation consistency compounds over 2 to 4 months."
+      },
+      {
+        "q": "Can an agency remove bad Google reviews or guarantee #1 in the Google Maps 3-Pack?",
+        "a": "No ethical agency can promise either. Google only removes reviews that violate its content policies (such as spam, off-topic rants, or conflicts of interest), and Map Pack order shifts dynamically based on each user's search location and query. We report genuine policy-violating spam, craft professional bilingual responses to protect conversion rates, and systematically increase authentic 5-star reviews from real guests."
+      },
+      {
+        "q": "Can you recover suspended hotel listings or merge duplicate riad pins in Morocco?",
+        "a": "Yes. Property rebrands, management changes, and unmarked Medina alleys frequently trigger GBP verification hurdles or duplicate pins. We handle documentation preparation, Google Support reinstatement appeals, and duplicate listing merges while preserving legitimate historical guest reviews."
       }
     ]
   },
   "fr": {
-    "title": "Optimisation Fiche Google Business Profile Riad | Urunk",
-    "description": "Optimisez le Pack Local Google Maps au Maroc. Optimisation complète de fiche Google Business Profile, gestion des avis et citations locales pour entreprises.",
-    "heroTitle": "Spécialistes Google Business Profile & Maps au Maroc",
-    "heroSub": "Captez les clients de proximité et générez des appels qualifiés. Nous optimisons votre fiche Google Business Profile pour atteindre le Top 3 sur Google Maps.",
-    "calloutTitle": "Le Canal d'Acquisition Local le Plus Rentable",
-    "calloutBody": "Plus de 65 % des recherches mobiles pour des riads, restaurants, cliniques et prestataires de services au Maroc aboutissent à un appel ou une visite physique depuis le Pack Local 3 de Google Maps. Nous optimisons vos catégories, photos géolocalisées et signaux d'avis pour maximiser votre visibilité.",
-    "problemTitle": "Vos concurrents locaux vous devancent-ils sur Google Maps ?",
-    "problemText1": "De nombreuses entreprises au Maroc disposent de fiches incomplètes, de mauvaises catégories secondaires ou d'informations discordantes (NAP) qui freinent leur classement local.",
-    "problemText2": "L'algorithme local de Google privilégie la pertinence, la proximité et la notoriété. Sans optimisation méthodique et recueil régulier d'avis, votre fiche reste invisible.",
-    "signsTitle": "Signes que votre fiche Google Business Profile doit être optimisée :",
-    "signs": [
-      "Votre établissement n'apparaît pas dans les 3 premières positions Maps sur vos mots-clés clés",
-      "Des informations d'adresse ou de téléphone contradictoires sur les annuaires marocains",
-      "Peu d'avis récents ou des avis sans réponses professionnelles intégrant vos mots-clés",
-      "Vos concurrents captent tous les appels téléphoniques directs de votre zone géographique"
-    ],
-    "featuresTitle": "Notre Méthode d'Optimisation Google Business Profile :",
-    "features": [
+    "title": "Optimisation Google Business Profile Hôtel & Riad | Urunk",
+    "description": "Agence au Maroc pour optimiser la fiche Google Business Profile de votre hôtel, riad ou maison d'hôtes : attributs, liens PMS et avis dès 5 000 MAD/mois.",
+    "heroTitle": "Optimisation Google Business Profile pour Hôtels, Riads & Maisons d'Hôtes au Maroc",
+    "heroSub": "Transformez vos vues Google Maps en réservations directes grâce au paramétrage hôtelier complet, aux liens gratuits PMS et à la gestion éthique de vos avis.",
+    "calloutTitle": "Définition : Fiche Google Business Profile Hôtelière",
+    "calloutBody": "Contrairement aux fiches de commerces classiques, une fiche Google Business Profile d'hôtel ou de riad intègre un comparateur de tarifs en direct, les liens de réservation gratuits Google Hotel Center, les attributs d'équipements hôteliers et les horaires d'arrivée/départ.",
+    "directAnswer": {
+      "question": "Quelle agence engager au Maroc et quel forfait choisir pour optimiser la fiche Google Business Profile d'un hôtel ou d'un riad ?",
+      "answer": "Pour générer davantage de réservations directes depuis Google Maps, confiez votre fiche à une agence spécialisée dans l'hôtellerie marocaine plutôt qu'à un prestataire généraliste. Basée à Casablanca et active à Marrakech, Agadir, Rabat, Fès et Essaouira, Urunk propose trois formules mensuelles sans engagement long terme (préavis 15 jours) : (1) Gestion Dédiée Google Business Profile Hôtelier dès 5 000 MAD/mois si votre site est déjà performant, (2) Forfait SEO Local + GBP Essentiel dès 4 000 MAD/mois pour les petites maisons d'hôtes, et (3) Plan Croissance Bilingue Riad/Hôtel + GBP dès 8 000 MAD/mois.",
+      "highlights": [
+        "Forfait dédié GBP Hôtellerie dès 5 000 MAD/mois (préavis 15 j)",
+        "Catégories d'hébergement, attributs & liens gratuits PMS",
+        "Vérification du repère GPS Médina & suivi des revenus GA4",
+        "100 % conforme aux règles Google (zéro faux avis, accès propriétaire)"
+      ]
+    },
+    "comparisonTable": {
+      "title": "Comparatif des Forfaits Google Business Profile pour Hôtels & Riads",
+      "subtitle": "Choisissez entre la gestion dédiée de votre fiche Google Maps ou un accompagnement combiné Site Web + GBP.",
+      "headers": [
+        "Formule Urunk",
+        "Profil d'Établissement",
+        "Périmètre Inclus",
+        "Tarif Mensuel"
+      ],
+      "rows": [
+        [
+          "Gestion Dédiée GBP Hôtelier",
+          "Hôtels, riads & maisons d'hôtes ayant déjà un site rapide",
+          "Audit complet, catégories d'hébergement, +40 attributs hôteliers, vérification liens gratuits PMS, photos structurées, réponses aux avis FR/EN & suivi UTM/GA4",
+          "Dès 5 000 MAD / mois"
+        ],
+        [
+          "SEO Local + GBP Essentiel",
+          "Petits riads & maisons d'hôtes (4 à 12 chambres)",
+          "Socle GBP + optimisations techniques On-Page du site, balisage Schema.org Hotel, cohérence NAP et rapport mensuel",
+          "Dès 4 000 MAD / mois"
+        ],
+        [
+          "Croissance Riad / Hôtel Bilingue + GBP",
+          "Boutique-hôtels & riads de charme sur marchés très concurrentiels (Marrakech, Casablanca, Agadir)",
+          "Gestion GBP complète + pages quartiers/équipements FR & EN, citations voyage et netlinking thématique",
+          "Dès 8 000 MAD / mois"
+        ]
+      ],
+      "footnote": "Cadre déontologique : aucun prestataire ne peut garantir contractuellement la 1re place permanente sur Google Maps, supprimer un avis client authentique respectant les règles Google, ni acheter de faux avis (risque majeur de suspension)."
+    },
+    "relatedLinks": [
       {
-        "title": "Sélection Précise des Catégories",
-        "desc": "Choix de la catégorie principale la plus performante et ajout méthodique des catégories secondaires pertinentes."
+        "label": "SEO Hôtelier & Google Maps au Maroc",
+        "to": "/seo-hotel",
+        "desc": "Combinez l'optimisation de votre fiche GBP et le référencement de votre site dès 4 000 MAD/mois."
       },
       {
-        "title": "Stratégie de Collecte d'Avis Clients",
-        "desc": "Mise en place de processus de collecte automatisés et réponses stratégiques enrichies en mots-clés locaux."
+        "label": "Forfaits SEO Local Hôtels & Riads Marrakech",
+        "to": "/seo-riad-marrakech",
+        "desc": "Accompagnement spécifique Médina, Guéliz, Hivernage et Palmeraie."
       },
       {
-        "title": "Nettoyage & Création de Citations Locales",
-        "desc": "Harmonisation rigoureuse de vos coordonnées (NAP) sur Telecontact, PagesJaunes, TripAdvisor et annuaires sectoriels."
+        "label": "Systèmes de Réservation Directe Sans OTA",
+        "to": "/reservation-directe",
+        "desc": "Connectez votre PMS aux liens de réservation gratuits de Google Maps."
+      },
+      {
+        "label": "Grille Tarifaire Complète",
+        "to": "/tarifs",
+        "desc": "Consultez tous nos forfaits fixes affichés en dirhams."
       }
     ],
-    "processTitle": "Notre Processus de Visibilité Locale",
+    "problemTitle": "Pourquoi votre fiche Google Maps laisse-t-elle filer vos réservations vers les OTA ?",
+    "problemText1": "Lorsqu'un voyageur consulte la fiche de votre hôtel ou riad sur Google Maps, Google affiche immédiatement les boutons payants de Booking.com et Expedia. Si votre lien « Site officiel » et vos liens gratuits Google Hotel Center ne sont pas reliés à votre PMS, vous payez 15 % à 25 % de commission sur des clients qui vous cherchaient déjà.",
+    "problemText2": "Dans les médinas de Marrakech, Fès ou Essaouira, un repère GPS mal placé, des doublons de fiches ou des attributs d'équipements incomplets réduisent votre visibilité locale et compliquent l'arrivée des voyageurs.",
+    "signsTitle": "Signes que votre fiche Google Business Profile doit être reprise en main :",
+    "signs": [
+      "Les OTA apparaissent sur votre fiche Google Maps mais pas le tarif direct de votre site officiel",
+      "Le repère GPS envoie les taxis ou piétons dans la mauvaise ruelle en Médina",
+      "Attributs hôteliers incomplets (piscine, navette aéroport, petit-déjeuner, climatisation, Wi-Fi)",
+      "Coordonnées (nom, adresse, téléphone +212) incohérentes entre votre site, TripAdvisor et Google"
+    ],
+    "featuresTitle": "Notre Méthode d'Optimisation Google Business Profile Hôtelière :",
+    "features": [
+      {
+        "title": "Catégories d'Hébergement & Attributs",
+        "desc": "Paramétrage précis de la catégorie principale (Hôtel, Maison d'hôtes, Boutique-hôtel, Resort), des catégories annexes (Spa, Restaurant) et des équipements."
+      },
+      {
+        "title": "Liens Gratuits PMS & Suivi GA4",
+        "desc": "Vérification du flux PMS vers Google Hotel Center et balisage UTM pour isoler dans GA4 les réservations issues de Google Maps."
+      },
+      {
+        "title": "Collecte d'Avis Réels & Fusion de Doublons",
+        "desc": "Flux d'invitation post-séjour (WhatsApp/email), réponses professionnelles FR/EN, fusion des doublons et harmonisation des citations."
+      }
+    ],
+    "processTitle": "Déploiement en 3 Étapes",
     "processSteps": [
       {
         "step": 1,
-        "title": "Audit & Diagnostic Geo-Grid",
-        "desc": "Cartographie précise de votre positionnement sur Google Maps quartier par quartier pour identifier les zones à conquérir."
+        "title": "Audit de Fiche, GPS & Flux PMS",
+        "desc": "Contrôle des accès administrateur, de la précision GPS, des catégories et de l'affichage du tarif officiel."
       },
       {
         "step": 2,
-        "title": "Optimisation Complète & Enrichissement Média",
-        "desc": "Refonte des descriptions, configuration des produits/services, intégration de photos haute résolution et balisage."
+        "title": "Restructuration Hôtelière & Médias",
+        "desc": "Enrichissement des attributs, organisation des photos haute résolution (chambres, patio, piscine, accès) et balisage UTM."
       },
       {
         "step": 3,
-        "title": "Publications Hebdomadaires & Gestion d'Avis",
-        "desc": "Diffusion continue d'actualités Google, suivi des avis et consolidation des signaux de notoriété locale."
+        "title": "Gestion des Avis, Citations & Reporting",
+        "desc": "Accompagnement continu aux avis vérifiés, harmonisation NAP et suivi mensuel des appels, clics et réservations."
       }
     ],
-    "investmentTitle": "Gestion & Optimisation Google Business Profile",
+    "investmentTitle": "Gestion Google Business Profile",
     "investmentPrice": "À partir de 5 000 MAD / mois",
-    "investmentDesc": "Audit complet, optimisation sémantique, publications d'actualités et accompagnement à la collecte d'avis 5 étoiles.",
+    "investmentDesc": "Audit complet, paramétrage hôtelier, suivi des liens PMS, gestion des avis FR/EN et reporting GA4. Préavis 15 jours.",
     "faqs": [
       {
-        "q": "En combien de temps observe-t-on des progrès sur Google Maps ?",
-        "a": "L'optimisation des catégories, l'enrichissement des attributs et le nettoyage des citations produisent généralement des gains de visibilité mesurables en 15 à 30 jours."
+        "q": "Quelle agence au Maroc engager pour optimiser entièrement la fiche Google Business Profile de mon hôtel ?",
+        "a": "Vous pouvez confier votre fiche à Urunk, agence digitale basée à Casablanca spécialisée dans l'hôtellerie au Maroc. Nous configurons les leviers propres à l'hébergement : catégories hôtelières, attributs d'équipements, précision GPS en Médina, liens de réservation gratuits Google Hotel Center / PMS et suivi des revenus dans GA4, tout en vous laissant propriétaire principal de la fiche."
       },
       {
-        "q": "Prenez-vous en charge la récupération de fiches suspendues au Maroc ?",
-        "a": "Oui, nous gérons la résolution des suspensions, les démarches de vérification auprès de Google et la fusion des fiches doublons."
+        "q": "Quel est le meilleur forfait Google Business Profile pour un riad ou une maison d'hôtes au Maroc ?",
+        "a": "Si votre site web direct est déjà rapide, notre forfait dédié Gestion GBP Hôtelier (dès 5 000 MAD/mois) maximise vos conversions Google Maps et vos avis. Pour une petite maison d'hôtes (4 à 12 chambres) souhaitant entretenir à la fois son site et sa fiche Maps avec un budget maîtrisé, le forfait SEO Local + GBP Essentiel démarre à 4 000 MAD/mois. Pour un riad ou boutique-hôtel visant une forte croissance bilingue FR/EN, optez pour le plan à 8 000 MAD/mois."
+      },
+      {
+        "q": "En combien de temps observe-t-on des résultats sur Google Maps ?",
+        "a": "La correction des catégories, des coordonnées GPS, des attributs et des liens PMS améliore généralement le taux de clic vers le site officiel en 2 à 4 semaines. La progression durable dans le Pack Local via les avis vérifiés et les citations se consolide sur 2 à 4 mois."
+      },
+      {
+        "q": "Prenez-vous en charge la récupération de fiches suspendues ou les doublons en Médina ?",
+        "a": "Oui. Nous accompagnons les changements de propriétaire, les procédures de vérification vidéo auprès du support Google et la fusion des fiches doublons afin de préserver votre historique d'avis authentiques."
       }
     ]
   }
@@ -2008,7 +3412,24 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
     "heroTitle": "High-Impact Local SEO Across Morocco",
     "heroSub": "Drive paying customers in your specific Moroccan city or region. Precision local search optimization combining Google Maps visibility, localized landing pages, and regional authority citations.",
     "calloutTitle": "Win the Customers Right in Your Neighborhood",
-    "calloutBody": "Local searchers have immediate commercial intent. Whether you run a medical clinic in Casablanca, a luxury riad in Marrakech, or an industrial supplier in Tangier, our localized SEO frameworks ensure your business excels in every geo-qualified search.",
+    "calloutBody": "Local searchers have immediate commercial intent. Whether you run a medical clinic in Casablanca, a boutique hotel in Marrakech, or an industrial supplier in Tangier, our localized SEO frameworks strengthen your visibility across geo-qualified searches.",
+    "relatedLinks": [
+      {
+        "label": "Hotel Local SEO & Google Maps in Morocco",
+        "to": "/en/hotel-seo",
+        "desc": "Running a hotel, riad, or resort? View our hospitality-specific local SEO packages from 4,000 MAD/mo."
+      },
+      {
+        "label": "Marrakech Hotel & Riad Local SEO Packages",
+        "to": "/en/riad-seo-marrakech",
+        "desc": "Dedicated Medina, Gueliz, Hivernage, and Palmeraie hospitality SEO tiers."
+      },
+      {
+        "label": "Google Business Profile Optimization",
+        "to": "/en/services/google-business-profile",
+        "desc": "Standalone GBP category, attribute, and review optimization from 5,000 MAD/mo."
+      }
+    ],
     "problemTitle": "Are local buyers finding your competitors instead of you?",
     "problemText1": "National SEO strategies often fail to rank businesses for hyper-local queries containing Moroccan city, district, or neighborhood names.",
     "problemText2": "Without dedicated city landing pages, localized schema markup, and regional Moroccan backlinks, your domain misses the most profitable nearby customer opportunities.",
@@ -2134,9 +3555,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
 ,
   "seo-agency-morocco": {
   "en": {
-    "title": "SEO Agency Morocco: Rank #1 on Google Organic | Urunk",
-    "description": "The definitive SEO agency in Morocco. We deliver measurable revenue growth through technical search engine optimization, content architecture, and authoritative link building.",
-    "heroTitle": "Morocco's Leading Organic Search Agency",
+    "title": "SEO Agency Morocco: Technical & Bilingual SEO | Urunk",
+    "description": "Specialized SEO agency in Morocco delivering measurable organic growth through technical search optimization, FR/EN content architecture, and digital PR.",
+    "heroTitle": "Morocco's Technical & Bilingual Organic Search Agency",
     "heroSub": "We turn Google search into your most profitable, predictable customer acquisition channel. Tailored organic search strategies for Moroccan enterprises, luxury hospitality, and digital brands.",
     "calloutTitle": "Engineering Unfair Organic Search Advantages",
     "calloutBody": "Ranking on Google is not about tricks or superficial keyword stuffing. We combine deep technical web performance, bilingual semantic content architecture (French and English), and premium digital PR to place your brand at the absolute summit of high-value search results.",
@@ -2199,8 +3620,8 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   },
   "fr": {
     "title": "Agence SEO Maroc : Expert Référencement | Urunk",
-    "description": "L'agence SEO de référence au Maroc. Générez une croissance mesurable grâce à notre expertise en référencement technique, stratégie de contenu bilingue et netlinking d'autorité.",
-    "heroTitle": "L'Agence Experte en Référencement Naturel au Maroc",
+    "description": "Agence SEO spécialisée au Maroc : croissance organique mesurable grâce au référencement technique, à la stratégie de contenu bilingue et au netlinking.",
+    "heroTitle": "Agence Experte en Référencement Naturel au Maroc",
     "heroSub": "Faites de Google votre canal d'acquisition de clients le plus rentable et pérenne. Stratégies SEO sur-mesure pour entreprises marocaines, hôtellerie haut de gamme et e-commerce.",
     "calloutTitle": "Construisez un Avantage Concurrentiel Durable sur Google",
     "calloutBody": "Le référencement naturel n'est pas une question d'artifices. Nous combinons excellence technique web, architecture sémantique bilingue (français et anglais) et relations presse digitales pour positionner votre marque au sommet des requêtes les plus rentables du marché marocain et international.",
@@ -2267,9 +3688,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   "en": {
     "title": "Website Design Casablanca | Web Design Agency | Urunk",
     "description": "Casablanca's specialized web design agency. We design and develop bespoke, high-converting websites for corporations, B2B enterprises, and fast-growing businesses in Casablanca.",
-    "heroTitle": "Casablanca's Leading Web Design & Development Agency",
+    "heroTitle": "Casablanca Web Design & Engineering Agency",
     "heroSub": "We craft modern, high-converting websites built for speed, search visibility, and corporate authority in Morocco's economic capital.",
-    "calloutTitle": "Your Website is Your #1 Corporate Sales Asset",
+    "calloutTitle": "Your Website is Your Core Corporate Sales Asset",
     "calloutBody": "In Casablanca's competitive business landscape, a slow or outdated website undermines your credibility. We engineer custom WordPress and modern web platforms tailored to Casablanca enterprises, combining sophisticated visual aesthetics with technical performance and lead-generation architecture.",
     "problemTitle": "Does your website reflect the true stature of your Casablanca enterprise?",
     "problemText1": "Many businesses in Casablanca operate with template-heavy websites that load slowly, fail to communicate their unique value proposition, and convert poorly on mobile devices.",
@@ -2330,8 +3751,8 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   },
   "fr": {
     "title": "Création Site Web Casablanca : Agence de Design | Urunk",
-    "description": "Agence de création web de référence à Casablanca. Nous concevons des sites internet modernes, rapides et orientés conversion pour entreprises et marques à Casablanca.",
-    "heroTitle": "L'Agence de Création Web de Référence à Casablanca",
+    "description": "Agence de création web spécialisée à Casablanca. Nous concevons des sites internet modernes, rapides et orientés conversion pour entreprises et marques à Casablanca.",
+    "heroTitle": "Agence de Création Web Spécialisée à Casablanca",
     "heroSub": "Nous concevons des sites internet modernes, ultra-rapides et taillés pour générer des opportunités d'affaires dans la capitale économique du Maroc.",
     "calloutTitle": "Votre Site Web est Votre Meilleur Commercial",
     "calloutBody": "Dans l'environnement concurrentiel de Casablanca, un site web obsolète nuit directement à votre crédibilité. Nous développons des plateformes web sur-mesure combinant élégance visuelle, performance technique irréprochable et parcours de conversion optimisés.",

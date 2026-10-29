@@ -5,52 +5,52 @@ import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
+export default function Bundle() {
+  const faqs = [
+    { q: "Why is bundling website creation and ad management better value?", a: "Traffic sent to a slow or disconnected website wastes ad spend, while a great website without initial demand takes months to ramp up. Handling your PMS website build, GA4 cross-domain tracking, and paid launch under one team eliminates attribution gaps and lowers upfront setup cost." },
+    { q: "Which ad channel is included in the 16,000 MAD + 4,000 MAD/mo bundle?", a: "You choose one primary paid channel—Google Ads, Meta Ads, or TripAdvisor Sponsored Placements—based on your property's goals (media spend paid directly to the ad platform with 0% markup). Multi-channel Google + Meta management can also be scoped." },
+    { q: "How quickly can we launch?", a: "The custom website and PMS integration take 4 to 6 weeks. We build your ad campaigns and conversion tracking in parallel so qualified traffic goes live the day your new website launches." }
+  ];
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Website Design & Ads Bundle",
-    "description": "Comprehensive digital marketing package combining a high-converting website with targeted ad campaigns.",
+    "name": "Hotel Website + Paid Ads Bundle in Morocco",
+    "serviceType": "Website Design & Ads Bundle for Hospitality",
+    "description": "Combined direct-booking package in Morocco: custom hotel website with PMS sync + paid ad management starting at 16,000 MAD initial + 4,000 MAD/mo.",
     "provider": {
       "@type": "Organization",
-      "name": "Urunk"
+      "name": "Urunk",
+      "url": "https://urunk.com"
     },
     "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Morocco"
-      },
-      {
-        "@type": "Country",
-        "name": "Worldwide"
-      }
+      { "@type": "Country", "name": "Morocco" },
+      { "@type": "Country", "name": "Worldwide" }
     ],
-    "url": "https://urunk.com/en/services/bundle-site-ads"
+    "url": "https://urunk.com/en/services/bundle-site-ads",
+    "offers": {
+      "@type": "Offer",
+      "price": "16000",
+      "priceCurrency": "MAD"
+    }
   };
 
-export default function Bundle() {
-  const schema = {
+  const faqSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Website and Ads Bundle",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
-    },
-    "description": "Complete direct-booking engine bundle including custom WordPress website and ad management."
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
   };
-
-  const faqs = [
-    { q: "Why is bundling website and ads better?", a: "Traffic sent to a poorly converting website wastes your ad budget. A beautiful website with no traffic generates zero bookings. By handling both, we ensure a seamless, high-converting funnel from the first click to the final booking confirmation." },
-    { q: "Which ad channel should I choose?", a: "We usually recommend Google Ads for properties looking to capture immediate, high-intent searches (e.g., 'hotel in Casablanca'). We recommend TripAdvisor for properties that have exceptional reviews but struggle with organic visibility on the platform." },
-    { q: "How quickly can we launch?", a: "The website build takes roughly 3 to 5 weeks. We structure the ad campaigns concurrently so that the moment the new site goes live, we flip the switch on the traffic, resulting in immediate impact." }
-  ];
 
   return (
     <div className="w-full">
       <SEO 
-        title="Hotel Website + Ads Bundle | Urunk" 
-        description="Combined package pairing a high-speed hotel website with targeted search ads to maximize direct booking return on investment." 
-        schema={[schema, serviceSchema]}
+        title="Hotel Website + Ads Bundle Morocco | Urunk" 
+        description="Combined direct-booking website + paid ads package for Moroccan hotels & riads: from 16,000 MAD initial + 4,000 MAD/mo with 100% asset ownership." 
+        schema={[serviceSchema, faqSchema]}
       />
       
       {/* Hero & AI Answer Block */}
@@ -164,11 +164,11 @@ export default function Bundle() {
           </div>
           <div className="bg-primary text-white p-10 rounded-2xl shadow-md flex flex-col justify-center items-center text-center relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl">LIMITED CAPACITY</div>
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">Bundle Pricing</span>
-            <h3 className="text-2xl font-bold mb-2">Custom Quote Required</h3>
-            <p className="text-white/80 text-sm mb-6">Because every property's needs are different, we provide a unified, tailored quote for the entire project.</p>
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-accent-soft text-sm font-medium mb-6">Published Bundle Pricing</span>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-2 tabular-nums">From 16,000 MAD + 4,000 MAD/mo</h3>
+            <p className="text-white/80 text-sm mb-6">Includes custom direct-booking website build (16,000 MAD initial) + monthly management of 1 paid ad channel (4,000 MAD/mo, excl. media spend).</p>
             <div className="bg-white/10 p-4 rounded-xl mb-8 w-full">
-              <p className="text-sm text-accent font-medium">Only 3 new bundle clients accepted per month to ensure quality.</p>
+              <p className="text-sm text-white/90 font-medium">100% website &amp; ad-account ownership · 15-day notice on ad management.</p>
             </div>
             <Link to="/en/contact" className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-xl font-medium transition-colors">Check Availability</Link>
           </div>

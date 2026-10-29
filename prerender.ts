@@ -1,12 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { servicesData } from './src/data/servicesData';
+import { servicesData, extractNumericMadPrice } from './src/data/servicesData';
 import { blogPostsEN } from './src/data/blogPostsEN';
 import { blogPostsFR } from './src/data/blogPostsFR';
 import { caseStudies } from './src/data/caseStudies';
 import { industriesData } from './src/data/industriesData';
 import { locationsData } from './src/data/locationsData';
-import { getEquivalentRoute } from './src/data/slugMappings';
+import { getEquivalentRoute, hasReciprocalTranslation } from './src/data/slugMappings';
 import {
   matrixRelations,
   findMatrixRelation,
@@ -149,8 +149,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/a-propos',
     lang: 'fr',
-    title: 'À Propos d\'Urunk : Agence Marketing | Urunk',
-    description: 'Découvrez les développeurs et experts SEO qui conçoivent des moteurs de réservation directe performants pour les riads haut de gamme.'
+    title: 'À Propos d\'Urunk : Agence Web & SEO Hôtelier Maroc | Urunk',
+    description: 'Découvrez l\'équipe d\'ingénieurs web et stratèges SEO d\'Urunk à Casablanca et Marrakech dédiée aux réservations directes des hôtels et riads.'
   },
   {
     path: '/tarifs',
@@ -167,8 +167,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/services/creation-site-web',
     lang: 'fr',
-    title: 'Création Site Internet Hôtel : Haute Conversion | Urunk',
-    description: 'Votre site actuel est trop lent ? Nous créons des sites WordPress sur mesure, performants sur mobile et connectés à votre PMS hôtelier.'
+    title: 'Forfait Création Site Web Hôtel Maroc dès 12 000 MAD | Urunk',
+    description: 'Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix au Maroc ? Site clé en main dès 12 000 MAD, 0 % commission OTA.'
   },
   {
     path: '/creation-site-web',
@@ -269,14 +269,14 @@ const staticPages: PageMetadata[] = [
   {
     path: '/services/bundle-site-ads',
     lang: 'fr',
-    title: 'Pack site web + publicité pour hôtels | Urunk',
-    description: 'Pack tout-en-un site web hôtelier sous React et campagnes Google Ads au Maroc. Réduisez vos commissions OTA avec une solution d\'acquisition complète.'
+    title: 'Pack Site Web + Google Ads Hôtels Maroc | Urunk',
+    description: 'Pack complet création de site web hôtelier (16 000 MAD) et gestion Google Ads (4 000 MAD/mois) livré en 4 à 6 semaines sans commission OTA.'
   },
   {
     path: '/services/ai-seo-optimization',
     lang: 'fr',
-    title: 'Optimisation SEO via l\'IA : Contenu Sémantique | Urunk',
-    description: 'Optimisez les moteurs de recherche modernes. Nous exploitons l\'intelligence artificielle avancée pour optimiser et scaler votre contenu SEO.'
+    title: 'Optimisation SEO & Visibilité IA (GEO / AEO) | Urunk',
+    description: 'Améliorez votre présence sur Google et les réponses IA (AI Overviews, ChatGPT, Perplexity) grâce au contenu structuré et au balisage Schema.org.'
   },
   {
     path: '/services/wordpress-seo',
@@ -293,8 +293,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/services/google-business-profile',
     lang: 'fr',
-    title: 'Optimisation Fiche Google Business Profile Riads | Urunk',
-    description: 'Optimisez le pack local Google Maps. Optimisation complète de votre fiche Google My Business pour générer des appels et réservations directes.'
+    title: 'Optimisation Google Business Profile Hôtel & Riad | Urunk',
+    description: 'Forfait complet d\'optimisation Google Business Profile et Google Maps pour hôtels, riads et maisons d\'hôtes au Maroc dès 5 000 MAD/mois.'
   },
   {
     path: '/services/local-seo-morocco',
@@ -451,32 +451,32 @@ const staticPages: PageMetadata[] = [
   {
     path: '/en/services/website-design',
     lang: 'en',
-    title: 'Hotel Website Design & Booking Engine Services | Urunk',
-    description: 'Your hotel website should be your highest-producing reservation channel. We build bespoke hotel websites designed to maximize direct guest acquisition.'
+    title: 'Hotel Website Packages Morocco: From 12,000 MAD | Urunk',
+    description: 'Compare custom hotel website packages in Morocco starting at 12,000 MAD one-time. Sub-1.5s mobile UX, PMS sync, 100% ownership & 0% OTA commission.'
   },
   {
     path: '/en/web-design-casablanca',
     lang: 'en',
     title: 'Website Design Agency Casablanca | Web Design Urunk',
-    description: 'Need a stunning, high-performing website? We design and build bespoke, responsive websites for Moroccan hospitality and tourism brands in Casablanca.'
+    description: 'Need a high-performing website? We design and build bespoke, responsive websites for Moroccan hospitality and B2B brands in Casablanca.'
   },
   {
     path: '/en/seo-agency-morocco',
     lang: 'en',
-    title: 'SEO Agency Morocco: Outrank OTAs on Google | Urunk',
-    description: 'Tired of losing organic traffic to Booking.com? Our professional SEO agency in Morocco builds sustainable organic search visibility for luxury stays.'
+    title: 'SEO Agency Morocco: Organic & Local Search | Urunk',
+    description: 'Tired of losing organic traffic to OTAs? Our SEO agency in Morocco builds sustainable organic and Google Maps visibility for hotels and SMEs.'
   },
   {
     path: '/en/services/google-ads',
     lang: 'en',
     title: 'Google Ads Management for Riads & Hotels | Urunk',
-    description: 'Stop losing money on generic clicks. Our high-intent Google Ads PPC search campaigns drive qualified guests directly to your booking engine.'
+    description: 'Stop losing budget on broad clicks. High-intent Google Search and Hotel Ads management in Morocco from 4,000 MAD/mo with 0% ad-spend markup.'
   },
   {
     path: '/en/services/meta-ads',
     lang: 'en',
     title: 'Hotel Meta Ads: Facebook & Instagram Ads | Urunk',
-    description: 'Capture travelers where they find inspiration. We build high-converting Facebook and Instagram visual campaigns for luxury riads and boutique stays.'
+    description: 'Visual Instagram and Facebook retargeting campaigns for Moroccan hotels and riads from 4,000 MAD/mo to turn social discovery into direct bookings.'
   },
   {
     path: '/en/services/tripadvisor-ads',
@@ -487,32 +487,32 @@ const staticPages: PageMetadata[] = [
   {
     path: '/en/services/bundle-site-ads',
     lang: 'en',
-    title: 'Hotel Website and Ads Bundle: Fast Site & PPC | Urunk',
-    description: 'The ultimate direct-booking system. Get a custom high-speed WordPress website, SEO optimization, and managed Google Ads in one high-ROI bundle.'
+    title: 'Hotel Website & Google Ads Bundle Morocco | Urunk',
+    description: 'Complete direct-booking website and Google Ads bundle in Morocco (16,000 MAD setup + 4,000 MAD/mo) delivered in 4–6 weeks with 0% OTA commission.'
   },
   {
     path: '/en/services/ai-seo-optimization',
     lang: 'en',
-    title: 'AI SEO Services: Scale Quality Search Traffic | Urunk',
-    description: 'Excel modern AI search engines. We leverage advanced artificial intelligence to optimize and scale high-performance semantic search content.'
+    title: 'AI SEO & Answer Engine Optimization Morocco | Urunk',
+    description: 'Improve visibility across Google Search, AI Overviews, ChatGPT, and Perplexity with structured semantic content and Schema.org markup.'
   },
   {
     path: '/en/services/wordpress-seo',
     lang: 'en',
     title: 'WordPress SEO Services: Search Optimization | Urunk',
-    description: 'Is your WordPress site underperforming? Our specialist search team fixes technical errors, optimizes speed, and secures front-page rankings.'
+    description: 'Is your WordPress site underperforming? Our specialist search team fixes technical errors, optimizes Core Web Vitals speed, and grows organic traffic.'
   },
   {
     path: '/en/services/ecommerce-seo',
     lang: 'en',
     title: 'Ecommerce SEO Services: Boost Store Sales | Urunk',
-    description: 'Boost your online shop profits. We optimize product listings, categories, and site architecture to scale organic sales for Moroccan e-commerce brands.'
+    description: 'Boost your online shop revenue. We optimize product listings, categories, and technical architecture to grow organic sales for Moroccan e-commerce brands.'
   },
   {
     path: '/en/services/google-business-profile',
     lang: 'en',
-    title: 'Google Business Profile Optimization for Hotels | Urunk',
-    description: 'Outrank competitors on Google Maps. We optimize and manage your local maps listing to drive continuous phone calls, directions, and direct bookings.'
+    title: 'Hotel Google Business Profile Optimization Morocco | Urunk',
+    description: 'Hire a specialist agency in Morocco to optimize your hotel or riad Google Business Profile from 5,000 MAD/mo: Maps SEO, official booking links & reviews.'
   },
   {
     path: '/en/services/local-seo-morocco',
@@ -590,7 +590,7 @@ const staticPages: PageMetadata[] = [
 
 // Mapping service routes to serviceData keys
 const serviceRouteMapping: { key: string, enPath: string, frPath: string }[] = [
-  { key: 'creation-site-web-prix', enPath: '/en/services/website-design', frPath: '/creation-site-web' },
+  { key: 'creation-site-web-prix', enPath: '', frPath: '/creation-site-web' },
   { key: 'google-ads-morocco', enPath: '/en/services/google-ads', frPath: '/google-ads-maroc' },
   { key: 'meta-ads', enPath: '/en/services/meta-ads', frPath: '/services/gestion-publicites-meta' },
   { key: 'tripadvisor-ads', enPath: '/en/services/tripadvisor-ads', frPath: '/services/tripadvisor-ads' },
@@ -634,7 +634,7 @@ const customBlogTitlesEN: Record<string, string> = {
   "get-more-5-star-reviews": "How to Get More 5-Star Reviews for Your Hotel",
   "case-study-roundup-success": "Direct Booking Case Study Roundup",
   "meta-ads-for-hotels-instagram-facebook": "Meta Ads for Hotels: Instagram & Facebook Guide",
-  "hotel-seo-morocco-guide": "Hotel SEO Strategy for Morocco: Rank #1",
+  "hotel-seo-morocco-guide": "Hotel SEO Strategy for Morocco: Direct Bookings",
   "pms-integration-direct-booking-engine": "Best PMS for Direct Booking Engine",
   "email-marketing-automation-for-hotels": "Hotel Email Marketing Automation Guide",
   "desert-camp-marketing-strategy": "Marketing Strategy for Desert Camps",
@@ -673,15 +673,15 @@ const customBlogTitlesFR: Record<string, string> = {
 const customServiceTitles: Record<string, { en: string; fr: string }> = {
   "web-design-morocco": {
     en: "Website Design Morocco: Hotel Web Design | Urunk",
-    fr: "Création Site Web Maroc : Agence Digitale Riad | Urunk"
+    fr: "Agence Web Maroc : Sites pour Hôtels et Riads | Urunk"
   },
   "web-design-casablanca": {
     en: "Website Design Casablanca | Web Design Agency | Urunk",
     fr: "Création Site Web Casablanca : Agence de Design | Urunk"
   },
   "seo-agency-morocco": {
-    en: "SEO Agency Morocco: Rank #1 on Google Organic | Urunk",
-    fr: "Agence SEO Maroc : Expert Référencement Naturel | Urunk"
+    en: "SEO Agency Morocco: Organic & Local Search | Urunk",
+    fr: "Agence SEO Maroc : Référencement Naturel & Local | Urunk"
   },
   "seo-agency-casablanca": {
     en: "SEO Agency Casablanca: Local SEO & Web Traffic | Urunk",
@@ -692,8 +692,8 @@ const customServiceTitles: Record<string, { en: string; fr: string }> = {
     fr: "Référencement Local Maroc : Visibilité Maps | Urunk"
   },
   "google-business-profile-optimization": {
-    en: "Google Business Profile Optimization for Hotels | Urunk",
-    fr: "Optimisation Fiche Google Business Profile Riad | Urunk"
+    en: "Hotel Google Business Profile Optimization Morocco | Urunk",
+    fr: "Optimisation Google Business Profile Hôtel & Riad | Urunk"
   },
   "google-ads": {
     en: "Google Ads Management for Riads & Hotels | Urunk",
@@ -1012,12 +1012,23 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
     `;
     const seenServiceHrefs = new Set<string>();
+    const customWebHref = isFR ? '/services/creation-site-web' : '/en/services/website-design';
+    seenServiceHrefs.add(customWebHref);
+    html += `
+      <div style="padding: 2rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
+        <h2 style="margin: 0 0 0.75rem 0; font-size: 1.6rem; font-family: Georgia, serif;"><a href="${customWebHref}" style="color: #0F2D25; text-decoration: none;">${isFR ? 'Forfait Création Site Web Hôtelier (dès 12 000 MAD)' : 'Hotel Website Design Packages (from 12,000 MAD)'}</a></h2>
+        <p style="margin: 0 0 1.25rem 0; color: #4a5568; font-size: 1rem; line-height: 1.6;">${isFR ? 'Sites web hôteliers sur mesure livrés en 4 à 6 semaines avec moteur PMS connecté, 100 % propriété du code et 0 % commission OTA.' : 'Custom hotel and riad websites delivered in 4–6 weeks with PMS booking sync, 100% code ownership, and 0% OTA commission.'}</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="${customWebHref}" style="color: #D46E55; font-weight: bold; text-decoration: underline;">${isFR ? 'Comparer les forfaits' : 'Compare Website Packages'} &rarr;</a>
+        </div>
+      </div>
+    `;
     for (const mapping of serviceRouteMapping) {
       const sData = servicesData[mapping.key];
       if (sData) {
         const item = isFR ? sData.fr : sData.en;
         const href = isFR ? mapping.frPath : mapping.enPath;
-        if (seenServiceHrefs.has(href)) continue;
+        if (!href || seenServiceHrefs.has(href)) continue;
         seenServiceHrefs.add(href);
         html += `
           <div style="padding: 2rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #ffffff;">
@@ -1321,6 +1332,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               <li><a href="/creation-site-web" style="color: #0F2D25; text-decoration: underline;">Création de Site Web &amp; Landing Pages Rapides</a></li>
               <li><a href="/services/bundle-site-ads" style="color: #0F2D25; text-decoration: underline;">Pack Complet Site Web + Campagnes Google Ads</a></li>
               <li><a href="/services/gestion-publicites-meta" style="color: #0F2D25; text-decoration: underline;">Publicités Meta Ads (Instagram &amp; Facebook)</a></li>
+              <li><a href="/marketing-digital-hotelier" style="color: #0F2D25; text-decoration: underline;">Google Ads &amp; Meta Ads Hôtels (Budgets &amp; ROI)</a></li>
               <li><a href="/reservation-directe" style="color: #0F2D25; text-decoration: underline;">Stratégie de Réservation Directe Hôtelière</a></li>
             </ul>
           </div>
@@ -1414,34 +1426,103 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       'Targeted campaign setup engineered to bypass 15–25% OTA commission fees',
       'High-speed landing page architecture built for maximum conversion',
       'Seamless PMS and booking engine API connections',
-      'Dedicated monthly account optimization backed by our 90-day guarantee'
+      'Dedicated monthly account optimization with 15-day cancellation notice'
     ];
     const defaultDeliverablesFR = [
       'Audit stratégique personnalisé évaluant les fuites de réservations directes',
       'Configuration de campagne conçue pour contourner les commissions OTA de 15–25%',
       'Architecture de page d\'atterrissage haute vitesse optimisée pour la conversion',
       'Connexions API fluides avec votre moteur de réservation et PMS',
-      'Optimisation mensuelle dédiée couverte par notre garantie de 90 jours'
+      'Optimisation mensuelle dédiée sans engagement de durée (préavis 15 jours)'
     ];
 
     const delivs = (deliverablesMap[serviceMapping.key] && deliverablesMap[serviceMapping.key][isFR ? 'fr' : 'en']) || (isFR ? defaultDeliverablesFR : defaultDeliverablesEN);
 
     const fitMap: Record<string, { en: string; fr: string }> = {
       'hotel-website-design': {
-        en: 'Best for 10–50 room boutique riads, luxury desert camps, and independent resorts currently losing 15–25% of room revenue to Booking.com or Airbnb due to a slow, outdated website.',
-        fr: 'Idéal pour les riads de 10 à 50 chambres, camps de luxe dans le désert et hôtels indépendants perdant 15 à 25% de chiffre d\'affaires en commissions OTA.'
+        en: 'Best for independent boutique hotels, Medina riads, desert camps, and guesthouses across Morocco aiming to bypass 15%–25% OTA commissions with a fast, PMS-connected official website.',
+        fr: 'Idéal pour les hôtels indépendants, riads de médina, maisons d\'hôtes et camps de charme au Maroc souhaitant réduire les commissions OTA de 15 à 25 % grâce à un site officiel rapide relié à leur PMS.'
       },
       'google-ads-morocco': {
-        en: 'Best for established luxury properties in Marrakech, Casablanca, or Agadir looking to capture travelers actively searching for "luxury riad Marrakech" or "best hotel Casablanca".',
-        fr: 'Parfait pour les établissements d\'exception à Marrakech, Casablanca ou Agadir souhaitant capter les voyageurs recherchant activement un séjour sur Google.'
+        en: 'Best for established properties and SMEs in Marrakech, Casablanca, Rabat, or Agadir looking to capture high-intent Google Search and Hotel Ads demand.',
+        fr: 'Parfait pour les établissements hôteliers et PME à Marrakech, Casablanca, Rabat ou Agadir souhaitant capter les recherches actives sur Google.'
       },
       'hotel-digital-marketing': {
-        en: 'Best for visual luxury properties, wellness retreats, and boutique stays aiming to build a strong brand presence and retarget high-intent travelers on Instagram and Facebook.',
-        fr: 'Recommandé pour les établissements de prestige, retraits bien-être et riads de charme souhaitant engager les voyageurs visuels sur Instagram et Facebook.'
+        en: 'Best for independent hotels, riads, and resorts combining Google Search/Hotel Ads with Instagram & Facebook retargeting to generate direct bookings.',
+        fr: 'Recommandé pour les hôtels, riads et resorts combinant Google Search / Hotel Ads et reciblage Meta Ads (Instagram & Facebook) pour générer des réservations directes.'
       }
     };
 
     const propertyFit = (fitMap[serviceMapping.key] && fitMap[serviceMapping.key][isFR ? 'fr' : 'en']) || (isFR ? 'Idéal pour les hôtels indépendants et riads au Maroc souhaitant développer leurs réservations directes et réduire leur dépendance aux intermédiaires.' : 'Best for independent hotels, boutique riads, and tourism operators across Morocco aiming to build commission-free direct booking channels.');
+
+    const directAnswerHtml = item.directAnswer ? `
+      <section style="background: #ffffff; border: 1px solid #d0c8b8; border-left: 4px solid #0F2D25; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+        <h2 style="color: #0F2D25; font-size: 1.35rem; margin: 0 0 0.65rem 0; font-family: Georgia, serif;">${escapeHtml(item.directAnswer.question)}</h2>
+        <p style="margin: 0 0 0.75rem 0; color: #2d3748; line-height: 1.7;">${escapeHtml(item.directAnswer.answer)}</p>
+        ${item.directAnswer.highlights && item.directAnswer.highlights.length > 0 ? `
+          <ul style="padding-left: 1.25rem; margin: 0; color: #4a5568; line-height: 1.6;">
+            ${item.directAnswer.highlights.map(h => `<li>${escapeHtml(h)}</li>`).join('')}
+          </ul>
+        ` : ''}
+      </section>
+    ` : '';
+
+    const comparisonTableHtml = item.comparisonTable ? `
+      <section style="margin-bottom: 3rem;">
+        <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 0.65rem; font-family: Georgia, serif;">${escapeHtml(item.comparisonTable.title)}</h2>
+        ${item.comparisonTable.subtitle ? `<p style="color: #4a5568; margin-top: 0; margin-bottom: 1.25rem; line-height: 1.65;">${escapeHtml(item.comparisonTable.subtitle)}</p>` : ''}
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; background: #ffffff; border: 1px solid #e2e8f0; font-size: 0.92rem;">
+            <thead>
+              <tr style="background: #0F2D25; color: #ffffff; text-align: left;">
+                ${item.comparisonTable.headers.map(col => `<th style="padding: 0.75rem 0.9rem; border: 1px solid #0F2D25;">${escapeHtml(col)}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${item.comparisonTable.rows.map((row, rIdx) => `
+                <tr style="background: ${rIdx % 2 === 1 ? '#FAF8F5' : '#ffffff'}; border-bottom: 1px solid #e2e8f0;">
+                  ${row.map((cell, cIdx) => `<td style="padding: 0.75rem 0.9rem; border: 1px solid #e2e8f0; ${cIdx === 0 ? 'font-weight: bold; color: #0F2D25;' : 'color: #4a5568;'}">${escapeHtml(cell)}</td>`).join('')}
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+        ${item.comparisonTable.footnote ? `<p style="font-size: 0.85rem; color: #718096; margin-top: 0.75rem; line-height: 1.55;">${escapeHtml(item.comparisonTable.footnote)}</p>` : ''}
+      </section>
+    ` : '';
+
+    const evaluationCriteriaHtml = item.evaluationCriteria ? `
+      <section style="margin-bottom: 3rem; background: #FAF8F5; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <h2 style="color: #0F2D25; font-size: 1.75rem; margin-top: 0; margin-bottom: 0.65rem; font-family: Georgia, serif;">${escapeHtml(item.evaluationCriteria.title)}</h2>
+        ${item.evaluationCriteria.intro ? `<p style="color: #4a5568; margin-top: 0; margin-bottom: 1.25rem; line-height: 1.65;">${escapeHtml(item.evaluationCriteria.intro)}</p>` : ''}
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+          ${item.evaluationCriteria.items.map(crit => `
+            <div style="padding: 1.25rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px;">
+              <h3 style="color: #0F2D25; font-size: 1.1rem; margin: 0 0 0.45rem 0;">${escapeHtml(crit.title)}</h3>
+              <p style="margin: 0; color: #4a5568; font-size: 0.92rem; line-height: 1.6;">${escapeHtml(crit.desc)}</p>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    ` : '';
+
+    const relatedLinksHtml = item.relatedLinks && item.relatedLinks.length > 0 ? `
+      <section style="margin-bottom: 2.5rem;">
+        <h2 style="color: #0F2D25; font-size: 1.6rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Guides & Services Complémentaires' : 'Related Guides & Services'}</h2>
+        <ul style="padding-left: 1.25rem; line-height: 1.8; color: #4a5568;">
+          ${item.relatedLinks.map(rl => `<li><a href="${rl.to}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${escapeHtml(rl.label)}</a>${rl.desc ? ` — ${escapeHtml(rl.desc)}` : ''}</li>`).join('')}
+        </ul>
+      </section>
+    ` : '';
+
+    const externalRefsHtml = item.externalReferences && item.externalReferences.length > 0 ? `
+      <section style="margin-bottom: 2.5rem; font-size: 0.9rem; color: #4a5568;">
+        <h3 style="color: #0F2D25; font-size: 1.15rem; margin-bottom: 0.5rem;">${isFR ? 'Documentation & Sources Officielles' : 'Official Documentation & Industry References'}</h3>
+        <ul style="padding-left: 1.25rem; line-height: 1.7;">
+          ${item.externalReferences.map(ref => `<li><a href="${ref.url}" rel="noopener noreferrer" target="_blank" style="color: #9E3018; text-decoration: underline;">${escapeHtml(ref.label)}</a> (${escapeHtml(ref.source)})</li>`).join('')}
+        </ul>
+      </section>
+    ` : '';
 
     html += `
       <div>
@@ -1451,6 +1532,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">
             ${escapeHtml(item.heroSub)}
           </p>
+          ${directAnswerHtml}
           <aside style="background: #FAF8F5; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem;">
             <strong style="color: #0F2D25; font-size: 1.05rem;">${escapeHtml(item.calloutTitle)}:</strong>
             <p style="margin: 0.5rem 0 0 0; color: #4a5568;">${escapeHtml(item.calloutBody)}</p>
@@ -1513,6 +1595,10 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </a>
         </section>
 
+        ${comparisonTableHtml}
+        ${evaluationCriteriaHtml}
+        ${relatedLinksHtml}
+
         ${renderMatrixLinksHtml(
           getMatrixLinksForService(serviceMapping.key, lang),
           isFR
@@ -1534,6 +1620,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             `).join('')}
           </div>
         </section>
+        ${externalRefsHtml}
       </div>
     `;
   } else if (page.path.startsWith('/blog/') || page.path.startsWith('/en/blog/')) {
@@ -1786,8 +1873,8 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             <div style="background: #f8fafc; border-left: 4px solid #0F2D25; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 1.25rem;">
               <p style="margin: 0; color: #2d3748; line-height: 1.65;">
                 <strong>Urunk Agency</strong> ${isFR
-                  ? "déploie des architectures numériques de pointe pour les acteurs de ce secteur au Maroc (Casablanca, Marrakech, Rabat, Agadir). Nos équipes conçoivent des sites web ultra-rapides synchronisés avec vos systèmes métiers et pilotent des campagnes Google Ads et SEO d'autorité générant plus de 40 % de requêtes directes sans commission d'intermédiaire. Forfaits création dès 12 000 MAD, gestion marketing dès 4 000 MAD/mois."
-                  : "engineers high-performance web systems and direct-booking channels for this sector across Morocco and international feeder markets. We build speed-optimized platforms seamlessly integrated with industry booking engines, driving a 40%+ increase in direct revenue while bypassing steep OTA commissions. Web design starts at 12,000 MAD, performance ad management at 4,000 MAD/mo."}
+                  ? "déploie des architectures numériques rapides pour les acteurs de ce secteur au Maroc (Casablanca, Marrakech, Rabat, Agadir). Nos équipes conçoivent des sites web synchronisés avec vos systèmes métiers et pilotent des campagnes Google Ads et SEO local pour développer vos demandes et réservations directes en réduisant les commissions d'intermédiaires de 15 % à 25 %. Forfaits création dès 12 000 MAD, gestion marketing dès 4 000 MAD/mois."
+                  : "engineers high-performance web systems and direct-booking channels for this sector across Morocco and international feeder markets. We build speed-optimized platforms integrated with industry booking engines to grow direct inquiries and reservations while bypassing 15%–25% OTA commissions. Web design starts at 12,000 MAD, performance ad management at 4,000 MAD/mo."}
               </p>
             </div>
             <aside style="background: #FAF8F5; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0;">
@@ -1977,99 +2064,107 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         </div>
       `;
     }
-  } else if (page.path === '/services/creation-site-web') {
-    // COMMERCIAL WEBSITE CREATION SERVICE PAGE (/services/creation-site-web)
+  } else if (page.path === '/services/creation-site-web' || page.path === '/en/services/website-design') {
+    // COMMERCIAL WEBSITE CREATION PACKAGE PAGE (/services/creation-site-web & /en/services/website-design — A2 Primary)
     html += `
       <div>
         <header style="margin-bottom: 2.5rem;">
-          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;"><a href="/" style="color: #718096; text-decoration: none;">Accueil</a> &gt; <a href="/services" style="color: #718096; text-decoration: none;">Services</a> &gt; Création de Site Web Sur-Mesure</p>
-          <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">Création de Site Web Sur-Mesure au Maroc : Vitesse, SEO & Conversion Directe</h1>
-          <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.65; margin-bottom: 1.5rem;">
-            Nous concevons des plateformes web ultra-rapides en React et WordPress optimisé pour les hôtels, riads, restaurants et PME marocaines souhaitant transformer leur trafic mobile en réservations et prospects directs sans commission.
+          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;"><a href="${isFR ? '/' : '/en'}" style="color: #718096; text-decoration: none;">${isFR ? 'Accueil' : 'Home'}</a> &gt; <a href="${isFR ? '/services' : '/en/services'}" style="color: #718096; text-decoration: none;">Services</a> &gt; ${isFR ? 'Forfait Création Site Web Hôtelier' : 'Hotel Website Design Packages'}</p>
+          <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${isFR ? 'Forfaits de Création de Site Web Hôtelier au Maroc : Meilleur Rapport Qualité-Prix dès 12 000 MAD' : 'Hotel Website Design Packages in Morocco: Best Value Starting at 12,000 MAD'}</h1>
+          <p style="font-size: 1.15rem; color: #4a5568; line-height: 1.65; margin-bottom: 1.5rem;">
+            ${isFR
+              ? "Comparez les forfaits de création de site web hôtelier pour petits hôtels, riads et maisons d'hôtes au Maroc : site bilingue rapide livré en 4 à 6 semaines, moteur PMS connecté, 100 % propriété du code et 0 % commission OTA."
+              : "Compare custom hotel website packages for small hotels, boutique riads, and guesthouses across Morocco: fast bilingual builds delivered in 4–6 weeks, PMS booking integration, 100% ownership, and 0% OTA commission."}
           </p>
-          <aside style="background: #FAF8F5; border-left: 4px solid #D46E55; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0;">
-            <strong style="color: #0F2D25;">Investissement Clé en Main dès 12 000 MAD (≈ 1 100 €) :</strong>
-            <p style="margin: 0.4rem 0 0 0; color: #4a5568; line-height: 1.6;">Livraison complète en 4 à 6 semaines, propriété intellectuelle à 100 %, zéro frais de licence mensuel et garantie contractuelle de performance sous 90 jours.</p>
-          </aside>
+          <section style="background: #ffffff; border: 1px solid #d0c8b8; border-left: 4px solid #0F2D25; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+            <h2 style="color: #0F2D25; font-size: 1.35rem; margin: 0 0 0.65rem 0; font-family: Georgia, serif;">
+              ${isFR
+                ? "Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix pour un petit hôtel au Maroc ?"
+                : "Which hotel website design package offers the best value for money for a small hotel in Morocco?"}
+            </h2>
+            <p style="margin: 0; color: #2d3748; line-height: 1.7;">
+              ${isFR
+                ? "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 5 à 25 chambres au Maroc, le meilleur rapport qualité-prix repose sur un forfait à paiement unique (dès 12 000 MAD chez Urunk) avec 100 % de propriété du code source et du nom de domaine, temps de chargement mobile inférieur à 1,5 seconde, architecture bilingue FR/EN et connexion native à votre moteur PMS existant sans aucune commission prélevée par l'agence."
+                : "For an independent small hotel, riad, or guesthouse of 5 to 25 rooms in Morocco, the strongest 3-year value comes from a one-time fixed build (starting at 12,000 MAD at Urunk) with 100% source-code and domain ownership, sub-1.5s mobile load speed, bilingual FR/EN architecture, and native PMS booking integration with zero agency commission."}
+            </p>
+          </section>
         </header>
 
         <section style="margin-bottom: 2.75rem;">
-          <h2 style="color: #0F2D25; font-size: 1.85rem; margin-bottom: 1rem; font-family: Georgia, serif;">Pourquoi les Sites Web Classiques Freinent Votre Chiffre d'Affaires au Maroc</h2>
-          <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
-            Plus de 82 % des recherches touristiques et commerciales au Maroc s'effectuent désormais sur smartphone. Pourtant, la majorité des établissements hôteliers de Marrakech ou Agadir et des entreprises de services à Casablanca utilisent encore des thèmes préfabriqués surchargés qui mettent plus de 5 secondes à s'afficher sur réseau 4G. Chaque seconde supplémentaire de chargement entraîne une chute mesurable du taux de conversion : l'internaute quitte la page et réserve sur Booking.com (vous coûtant 18 % à 25 % de commission) ou contacte un concurrent mieux positionné sur Google.
-          </p>
-          <p style="color: #4a5568; line-height: 1.75; margin-bottom: 0;">
-            Chez Urunk, notre pôle d'ingénierie web traite votre site internet comme votre actif commercial le plus rentable. Nous éliminons les extensions superflues, structurons chaque page autour de l'intention de recherche Google (balisage Schema.org natif, hiérarchie Hn sémantique, Core Web Vitals dans le vert) et intégrons un parcours de conversion sans friction connecté directement à votre moteur de réservation PMS ou à votre CRM commercial.
-          </p>
-        </section>
-
-        <section style="margin-bottom: 2.75rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem;">
-          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1.25rem; font-family: Georgia, serif;">Architecture Technique & Livrables Inclus dans Chaque Projet</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem;">
-            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">01. Design UX Mobile-First Sur-Mesure</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Maquettes éditoriales haute couture valorisant votre identité visuelle, vos chambres ou vos offres B2B avec appels à l'action persistants sur mobile.</p>
-            </div>
-            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">02. Performance Core Web Vitals (&lt; 1,5s)</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Compression d'images WebP/AVIF nouvelle génération, pré-rendu statique ultra-léger et distribution CDN mondiale pour un affichage quasi instantané.</p>
-            </div>
-            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">03. Intégration PMS, CMI & WhatsApp</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Connexion fluide avec Cloudbeds, Mews, SiteMinder, Amenitiz, passerelles de paiement marocaines CMI/PayZone et qualification directe via WhatsApp Business.</p>
-            </div>
-            <div style="padding: 1.25rem; background: #FAF8F5; border-radius: 8px;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">04. Fondations SEO Bilingues & IA</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Architecture multilingue native (français, anglais, espagnol) avec balises hreflang réciproques, données structurées JSON-LD et suivi analytique GA4 complet.</p>
-            </div>
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">
+            ${isFR ? 'Comparatif des Forfaits Site Web Hôtelier & Coût Total sur 3 Ans (TCO)' : 'Small-Hotel Website Packages & 3-Year Total Cost Comparison'}
+          </h2>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; background: #ffffff; border: 1px solid #e2e8f0; font-size: 0.92rem;">
+              <thead>
+                <tr style="background: #0F2D25; color: #ffffff; text-align: left;">
+                  <th style="padding: 0.75rem 0.9rem;">${isFR ? 'Formule / Modèle' : 'Package / Model'}</th>
+                  <th style="padding: 0.75rem 0.9rem;">${isFR ? 'Investissement Initial' : 'Upfront Cost'}</th>
+                  <th style="padding: 0.75rem 0.9rem;">${isFR ? 'Redevance Site / Commission' : 'Monthly Fee / Commission'}</th>
+                  <th style="padding: 0.75rem 0.9rem;">${isFR ? 'Propriété & PMS' : 'Ownership & PMS'}</th>
+                  <th style="padding: 0.75rem 0.9rem;">${isFR ? 'Coût Agence sur 3 Ans' : '3-Year Web Cost'}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Forfait Essentiel Hôtel & Riad (Urunk)' : 'Essential Small-Hotel Package (Urunk)'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">12 000 MAD</td>
+                  <td style="padding: 0.75rem 0.9rem;">0 MAD/mois · 0 % commission</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · PMS + WhatsApp + SEO FR/EN' : '100% owned · PMS + WhatsApp + FR/EN SEO'}</td>
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold;">12 000 MAD (+ hébergement/PMS directs)</td>
+                </tr>
+                <tr style="background: #FAF8F5; border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Pack Croissance Site + Google Ads (Urunk)' : 'Growth Bundle Site + Google Ads (Urunk)'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">16 000 MAD</td>
+                  <td style="padding: 0.75rem 0.9rem;">4 000 MAD/mois (Ads, préavis 15j)</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · Site + Google Search/Hotel Ads' : '100% owned · Site + Google Search/Hotel Ads'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '16 000 MAD création + mois Ads actifs' : '16,000 MAD build + active Ads months'}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Architecture Sur-Mesure Boutique / Resort' : 'Bespoke Multi-Property / Boutique Build'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? 'Dès 20 000 MAD (sur devis)' : 'From 20,000 MAD (custom quote)'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">0 MAD/mois · 0 % commission</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · Multilingue étendu + Spa/Resto' : '100% owned · Multi-language + Spa/Dining flows'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '20 000+ MAD une seule fois' : '20,000+ MAD one-time'}</td>
+                </tr>
+                <tr style="background: #FAF8F5; border-bottom: 1px solid #e2e8f0;">
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Constructeur SaaS Hôtelier en Location' : 'Rented SaaS Hotel Website Builder'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">0 – 5 000 MAD</td>
+                  <td style="padding: 0.75rem 0.9rem;">600 – 1 800 MAD/mois (+ frais transaction)</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? 'Site loué (perdu à la résiliation)' : 'Rented template (lost if canceled)'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">21 600 – 64 800+ MAD</td>
+                </tr>
+                <tr>
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Dépendance OTA (Booking.com / Expedia)' : 'OTA Status Quo (Booking.com / Expedia)'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">0 MAD</td>
+                  <td style="padding: 0.75rem 0.9rem;">15 % – 25 % / réservation</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? 'Aucune propriété audience' : 'Zero guest data ownership'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? 'Des centaines de milliers de MAD cédés' : 'Hundreds of thousands of MAD lost'}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 
-        <section style="margin-bottom: 2.75rem;">
-          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">Méthodologie de Déploiement en 4 à 6 Semaines</h2>
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaine 1 : Audit Sémantique & Architecture de Conversion</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Analyse des requêtes Google de votre marché à Casablanca, Marrakech, Rabat ou Agadir, cartographie de l'arborescence SEO et wireframes orientés réservation directe.</p>
-            </div>
-            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaines 2 à 3 : Direction Artistique & Rédaction Persuasive</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Création de l'interface sur-mesure, optimisation photographique et rédaction de contenus bilingues calibrés pour convaincre vos futurs hôtes et décideurs.</p>
-            </div>
-            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaines 4 à 5 : Développement Front-End & Connexions API</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Intégration du code propre, branchement du moteur de réservation ou des formulaires CRM, tests rigoureux sur iOS et Android et validation PageSpeed.</p>
-            </div>
-            <div style="padding: 1.25rem; border-left: 3px solid #0F2D25; background: #FAF8F5;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.35rem 0;">Semaine 6 : Mise en Production, Indexation Google & Formation</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.6;">Déploiement sécurisé SSL, soumission des sitemaps sur Google Search Console, transfert intégral des accès administrateurs et formation de votre équipe.</p>
-            </div>
-          </div>
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Guides & Services Hôteliers Associés' : 'Related Hospitality Services & Guides'}</h2>
+          <ul style="padding-left: 1.25rem; line-height: 1.8; color: #4a5568;">
+            <li><a href="${isFR ? '/site-web-hotel' : '/en/hotel-website-design'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Création de site web hôtelier avec moteur de réservation intégré' : 'Hotel website design with integrated booking engine'}</a></li>
+            <li><a href="${isFR ? '/reservation-directe' : '/en/direct-booking'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Systèmes de réservation directe sans OTA (PMS & CMI)' : 'Direct booking systems without OTAs (PMS & CMI)'}</a></li>
+            <li><a href="${isFR ? '/marketing-digital-hotelier' : '/en/hotel-digital-marketing'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Campagnes Google Ads & Meta Ads pour hôtels au Maroc' : 'Google Ads & Meta Ads management for hotels in Morocco'}</a></li>
+            <li><a href="${isFR ? '/tarifs' : '/en/pricing'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Grille complète des tarifs Urunk en dirhams (MAD)' : 'Complete Urunk pricing rate card in MAD'}</a></li>
+          </ul>
         </section>
 
         ${renderMatrixLinksHtml(
-          getMatrixLinksForService('website-design', 'fr'),
-          'Création de Sites Web & Réservation Directe par Ville au Maroc',
-          'Consultez nos feuilles de route dédiées à Marrakech, Casablanca, Agadir et Rabat pour les hôtels, riads et entreprises.'
+          getMatrixLinksForService('hotel-website-design', lang),
+          isFR ? 'Création de Sites Web & Réservation Directe par Ville au Maroc' : 'Hotel Website Design & Direct Booking by Moroccan City',
+          isFR ? 'Consultez nos feuilles de route dédiées à Marrakech, Casablanca, Agadir et Rabat.' : 'Explore dedicated regional playbooks across Marrakech, Casablanca, Agadir, and Rabat.'
         )}
 
-        <section style="margin-bottom: 2.5rem;">
-          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">Questions Fréquentes — Création de Site Web au Maroc</h2>
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">Sommes-nous propriétaires à 100 % du site web livré ?</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.65;">Oui, intégralement. Dès la livraison finale, le nom de domaine, le code source, les visuels et l'ensemble des comptes analytiques vous appartiennent sans aucune redevance mensuelle obligatoire envers Urunk.</p>
-            </div>
-            <div style="padding: 1.25rem; border: 1px solid #e2e8f0; border-radius: 10px; background: #ffffff;">
-              <h3 style="color: #0F2D25; font-size: 1.15rem; margin: 0 0 0.5rem 0;">En combien de temps l'investissement de 12 000 MAD est-il rentabilisé ?</h3>
-              <p style="margin: 0; color: #4a5568; line-height: 1.65;">Pour un riad ou un hôtel facturant 1 500 MAD la nuitée, économiser 20 % de commission Booking.com sur à peine 40 nuitées directes rembourse intégralement le coût de création du site internet.</p>
-            </div>
-          </div>
-        </section>
-
         <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="/contact" style="background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
-            Demander un Devis & Audit Gratuit
+          <a href="${isFR ? '/contact' : '/en/contact'}" style="background: #D46E55; color: white; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
+            ${isFR ? 'Demander un Devis & Audit Gratuit' : 'Request a Free Quote & Website Audit'}
           </a>
         </div>
       </div>
@@ -2107,7 +2202,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               <li><strong>${isFR ? 'Site Web Sur-Mesure (12 000 MAD / ≈ 1 100 €)' : 'Custom Direct Booking Website (12,000 MAD / ≈ €1,100)'}</strong> — ${isFR ? 'Livré clé en main sous 4 à 6 semaines, vitesse mobile optimale, raccordement PMS (Cloudbeds, Mews, SiteMinder) et 0 % de commission d\'intermédiaire.' : 'Engineered for sub-second mobile performance, integrated directly with Cloudbeds, Mews, or SiteMinder, and delivered turnkey in 4–6 weeks with zero commission fees.'}</li>
               <li><strong>${isFR ? 'Gestion Publicitaire & SEO (4 000 MAD/mois Google/Meta/SEO, 3 000 MAD/mois TripAdvisor)' : 'Targeted Ad & SEO Retainers (4,000 MAD/mo Google/Meta/SEO, 3,000 MAD/mo TripAdvisor)'}</strong> — ${isFR ? 'Campagnes haute intention ciblant les marchés émetteurs européens, britanniques et nord-américains ainsi que les décideurs locaux au Maroc.' : 'High-intent multilingual search and paid social marketing capturing travelers in France, the UK, Germany, and North America alongside domestic Moroccan buyers.'}</li>
               <li><strong>${isFR ? 'Zéro Engagement Forcé & Préavis de 15 Jours' : 'Zero Lock-In Contracts & 15-Day Flexibility'}</strong> — ${isFR ? 'Nous fidélisons nos partenaires par la performance réelle de leurs réservations directes, jamais par des clauses d\'engagement rigides.' : 'We earn client retention month after month through verifiable revenue performance rather than restrictive annual agency retainers.'}</li>
-              <li><strong>${isFR ? 'Garantie Contractuelle de 90 Jours' : 'Contractual 90-Day Performance Guarantee'}</strong> — ${isFR ? 'Si les jalons de performance définis ne sont pas atteints sous 90 jours, nous poursuivons l\'optimisation sans frais de gestion additionnels.' : 'If agreed direct channel milestones are not met within 90 days of launch, we continue optimizing your campaigns with zero additional management fees.'}</li>
+              <li><strong>${isFR ? 'Suivi Transparent des Conversions (GA4, GTM & PMS)' : 'Transparent Conversion Attribution (GA4, GTM & PMS)'}</strong> — ${isFR ? 'Chaque réservation directe, appel téléphonique, clic WhatsApp et formulaire est tracé clairement dans vos propres tableaux de bord.' : 'Every direct booking, phone call, WhatsApp inquiry, and form submission is tracked transparently inside your own analytics accounts.'}</li>
             </ul>
           </section>
 
@@ -2167,25 +2262,25 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'SEO & Référencement Local' : 'SEO & Local Search'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 4 000 MAD/mois (approx. 370 €/mois)' : 'Starting at 4,000 MAD/mo (approx. €370/mo)'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0;">${isFR ? 'Accompagnement continu' : 'Ongoing'}</td>
-                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Visibilité Google Maps Top 3' : 'Google Maps 3-Pack Visibility'}</td>
+                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Visibilité Google Maps & recherche locale' : 'Google Maps & Local Search Visibility'}</td>
                 </tr>
                 <tr style="background: #ffffff;">
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'Gestion Google Ads' : 'Google Ads Management'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 4 000 MAD/mois (approx. 370 €/mois)' : 'Starting at 4,000 MAD/mo (approx. €370/mo)'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0;">${isFR ? 'Configuration immédiate' : 'Immediate Setup'}</td>
-                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Trafic direct qualifié' : 'High-Intent Guest Traffic'}</td>
+                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Trafic direct haute intention (0 % marge média)' : 'High-Intent Guest Traffic (0% Ad Markup)'}</td>
                 </tr>
                 <tr style="background: #f7fafc;">
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'Gestion Meta Ads' : 'Meta Ads Management'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 4 000 MAD/mois (approx. 370 €/mois)' : 'Starting at 4,000 MAD/mo (approx. €370/mo)'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0;">${isFR ? 'Configuration immédiate' : 'Immediate Setup'}</td>
-                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? '-35 % de coût par demande' : '-35% Cost Per Inquiry'}</td>
+                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Reciblage visuel Instagram & Facebook' : 'Instagram & Facebook Visual Retargeting'}</td>
                 </tr>
                 <tr style="background: #ffffff;">
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; font-weight: bold;">${isFR ? 'Gestion TripAdvisor Ads' : 'TripAdvisor Ads Management'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #D46E55; font-weight: bold;">${isFR ? 'À partir de 3 000 MAD/mois (approx. 280 €/mois)' : 'Starting at 3,000 MAD/mo (approx. €280/mo)'}</td>
                   <td style="padding: 0.85rem; border: 1px solid #e2e8f0;">${isFR ? 'Configuration immédiate' : 'Immediate Setup'}</td>
-                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? '+40 % de réservations directes' : '+40% Direct Bookings'}</td>
+                  <td style="padding: 0.85rem; border: 1px solid #e2e8f0; color: #38a169; font-weight: bold;">${isFR ? 'Redirection directe vers votre site officiel' : 'Direct Clicks to Your Official Website'}</td>
                 </tr>
               </tbody>
             </table>
@@ -2196,8 +2291,8 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               </h2>
               <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
                 ${isFR
-                  ? "Un riad ou hôtel-boutique de 12 chambres affichant un tarif moyen de 1 600 MAD par nuitée et un taux d'occupation de 70 % génère plus de 4,9 millions MAD de chiffre d'affaires annuel. Si 65 % de ces nuitées proviennent de Booking.com ou Expedia à 20 % de commission moyenne, l'établissement reverse plus de 630 000 MAD par an aux plateformes tierces. En transférant seulement 25 % à 40 % de ce volume vers votre propre moteur de réservation directe grâce à un site rapide (12 000 MAD une seule fois) et un pilotage SEO/Ads mensuel (4 000 MAD/mois), l'économie nette annuelle dépasse largement l'investissement initial dès les premières semaines."
-                  : "Consider a 12-room Marrakech riad or boutique hotel averaging 1,600 MAD per night at 70% occupancy—generating roughly 4.9 million MAD in annual room revenue. When 65% of those nights come through Booking.com or Expedia at a 20% blended commission, the property loses over 630,000 MAD every single year in intermediary fees. Shifting just 25% to 40% of that volume onto your own commission-free booking engine via a one-time 12,000 MAD website and a 4,000 MAD/month search acquisition retainer pays back the entire build within weeks and compounds net profit year-round."}
+                  ? "Un riad ou hôtel-boutique de 12 chambres affichant un tarif moyen de 1 600 MAD par nuitée et un taux d'occupation de 70 % génère plus de 4,9 millions MAD de chiffre d'affaires annuel. Si 65 % de ces nuitées proviennent de Booking.com ou Expedia à 20 % de commission moyenne, l'établissement reverse plus de 630 000 MAD par an aux plateformes tierces. En transférant progressivement une part de ce volume vers votre propre moteur de réservation directe grâce à un site rapide (12 000 MAD une seule fois) et un pilotage SEO/Ads mensuel (4 000 MAD/mois), l'économie de commissions dépasse rapidement l'investissement initial."
+                  : "Consider a 12-room Marrakech riad or boutique hotel averaging 1,600 MAD per night at 70% occupancy—generating roughly 4.9 million MAD in annual room revenue. When 65% of those nights come through Booking.com or Expedia at a 20% blended commission, the property loses over 630,000 MAD every single year in intermediary fees. Shifting a share of that volume onto your own commission-free booking engine via a one-time 12,000 MAD website and a 4,000 MAD/month search acquisition retainer compounds net margin year-round."}
               </p>
               <p style="color: #4a5568; line-height: 1.75; margin: 0;">
                 ${isFR
@@ -2207,9 +2302,9 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             </section>
 
             <div style="background: #FAF8F5; border: 2px solid #0F2D25; border-radius: 12px; padding: 2rem; margin-top: 2rem;">
-              <h3 style="color: #0F2D25; font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; font-family: Georgia, serif;">${isFR ? 'Engagez-vous en Toute Sérénité : Garantie de 90 Jours' : 'Backed by Our Contractual 90-Day Guarantee'}</h3>
+              <h3 style="color: #0F2D25; font-size: 1.5rem; margin-top: 0; margin-bottom: 0.5rem; font-family: Georgia, serif;">${isFR ? 'Liberté Contractuelle & Propriété à 100 %' : 'Month-to-Month Flexibility & 100% Ownership'}</h3>
               <p style="color: #4a5568; line-height: 1.65; margin-bottom: 0;">
-                ${isFR ? 'Tous nos contrats d\'accompagnement direct sont couverts par une garantie de performance de 90 jours. Si les objectifs convenus lors de l\'audit initial ne sont pas atteints dans les 90 jours suivant le lancement, nos équipes maintiennent l\'optimisation de vos campagnes sans facturer d\'honoraires supplémentaires.' : 'Every website build (12,000 MAD) and monthly ad management program (3,000 MAD to 4,000 MAD/mo) is backed by our strict 90-day direct revenue guarantee: if agreed launch benchmarks are not met within 90 days, we continue optimizing at zero management fee until achieved.'}
+                ${isFR ? 'Tous nos suivis mensuels fonctionnent sans durée minimale forcée (résiliables avec 15 jours de préavis écrit) et vous conservez dès le premier jour 100 % de la propriété de votre domaine, code source et comptes publicitaires.' : 'All monthly SEO and paid media retainers operate month-to-month with 15 days written notice, and you retain 100% ownership of your domain, source code, analytics, and ad accounts from day one.'}
               </p>
             </div>
           </section>
@@ -2234,13 +2329,13 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             </h2>
             <p style="color: #4a5568; line-height: 1.75; margin-bottom: 1rem;">
               ${isFR
-                ? "Le paysage numérique marocain exige des stratégies d'acquisition calibrées selon les réalités économiques et saisonnières de chaque ville. Des riads historiques de la Médina de Marrakech aux sièges d'entreprises de Casablanca, en passant par l'écosystème institutionnel de Rabat et les complexes balnéaires d'Agadir et Taghazout, les requêtes formulées sur Google et Google Maps diffèrent radicalement. Urunk déploie un maillage national combinant référencement local avancé, optimisation du Pack Local Google Maps Top 3 et ingénierie web ultra-rapide dès 12 000 MAD."
-                : "Morocco's digital economy demands localized search strategies calibrated to the distinct commercial and seasonal dynamics of each city. From historic Medina riads in Marrakech and corporate headquarters in Casablanca to institutional consultancies in Rabat and Atlantic surf resorts in Agadir and Taghazout, buyer search behavior varies sharply by region. Urunk operates a nationwide growth network combining hyper-local SEO, Google Maps 3-Pack positioning, and sub-second web engineering starting at 12,000 MAD."}
+                ? "Le paysage numérique marocain exige des stratégies d'acquisition calibrées selon les réalités économiques et saisonnières de chaque ville. Des riads historiques de la Médina de Marrakech aux sièges d'entreprises de Casablanca, en passant par l'écosystème institutionnel de Rabat et les complexes balnéaires d'Agadir et Taghazout, les requêtes formulées sur Google et Google Maps diffèrent radicalement. Urunk déploie un maillage national combinant référencement local avancé, optimisation Google Business Profile et ingénierie web ultra-rapide dès 12 000 MAD."
+                : "Morocco's digital economy demands localized search strategies calibrated to the distinct commercial and seasonal dynamics of each city. From historic Medina riads in Marrakech and corporate headquarters in Casablanca to institutional consultancies in Rabat and Atlantic surf resorts in Agadir and Taghazout, buyer search behavior varies sharply by region. Urunk operates a nationwide growth network combining hyper-local SEO, Google Business Profile optimization, and sub-second web engineering starting at 12,000 MAD."}
             </p>
             <p style="color: #4a5568; line-height: 1.75; margin: 0;">
               ${isFR
                 ? "Grâce à nos implantations opérationnelles à Marrakech et Casablanca, nous maîtrisons le référencement multilingue (français, anglais, arabe, espagnol) indispensable pour capter simultanément les décideurs B2B nationaux et les voyageurs européens ou nord-américains à haute valeur ajoutée, réduisant de 15 % à 25 % les frais de commission versés aux plateformes intermédiaires."
-                : "Operating on-the-ground hubs in Marrakech and Casablanca allows our team to execute native multilingual search campaigns (English, French, Spanish, Arabic) that capture both domestic B2B decision-makers and high-spending European and North American travelers—helping hospitality clients bypass 15% to 25% OTA commissions and lift direct bookings by +40%."}
+                : "Operating on-the-ground hubs in Marrakech and Casablanca allows our team to execute native multilingual search campaigns (English, French, Spanish, Arabic) that capture both domestic B2B decision-makers and high-spending European and North American travelers—helping hospitality clients bypass 15% to 25% OTA commissions and grow direct bookings."}
             </p>
           </section>
 
@@ -3054,14 +3149,14 @@ function prerender() {
   const baseTemplate = rawViteTemplate
     .replace(/<title[^>]*>.*?<\/title>\s*/gi, '')
     .replace(/<meta[^>]*name="description"[^>]*>\s*/gi, '')
-    .replace(/<link rel="canonical"[\s\S]*?\/>\s*/gi, '')
-    .replace(/<link rel="alternate"[\s\S]*?\/>\s*/gi, '')
-    .replace(/<meta\s+property="og:[^"]*"[\s\S]*?\/>\s*/gi, '')
-    .replace(/<meta\s+name="twitter:[^"]*"[\s\S]*?\/>\s*/gi, '')
+    .replace(/<link[^>]*rel="canonical"[^>]*>\s*/gi, '')
+    .replace(/<link[^>]*rel="alternate"[^>]*hreflang[^>]*>\s*/gi, '')
+    .replace(/<meta[^>]*property="og:[^"]*"[^>]*>\s*/gi, '')
+    .replace(/<meta[^>]*name="twitter:[^"]*"[^>]*>\s*/gi, '')
     .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/gi, '')
     .replace(/<meta[^>]*name="robots"[^>]*>\s*/gi, '')
-    .replace(/<!-- Open Graph Tags -->\s*/gi, '')
-    .replace(/<!-- Twitter Card Tags -->\s*/gi, '');
+    .replace(/<!-- Open Graph (?:Tags|Metadata) -->\s*/gi, '')
+    .replace(/<!-- Twitter Card (?:Tags|Metadata) -->\s*/gi, '');
   const allPages: PageMetadata[] = [...staticPages];
 
   // 2. Add dynamic service pages (skip if path already exists in staticPages)
@@ -3069,7 +3164,7 @@ function prerender() {
     const data = servicesData[mapping.key];
     if (data) {
       const customTitle = customServiceTitles[mapping.key];
-      if (!allPages.some(p => p.path === mapping.enPath)) {
+      if (mapping.enPath && !allPages.some(p => p.path === mapping.enPath)) {
         allPages.push({
           path: mapping.enPath,
           lang: 'en',
@@ -3077,7 +3172,7 @@ function prerender() {
           description: data.en.description
         });
       }
-      if (!allPages.some(p => p.path === mapping.frPath)) {
+      if (mapping.frPath && !allPages.some(p => p.path === mapping.frPath)) {
         allPages.push({
           path: mapping.frPath,
           lang: 'fr',
@@ -3256,6 +3351,9 @@ function prerender() {
 
     // Perform replacements
     let renderedHtml = baseTemplate;
+    if (page.path !== '/' && page.path !== '/en') {
+      renderedHtml = renderedHtml.replace(/<!-- Preload LCP Hero Image[^\n]*\n\s*<link[^>]*moroccan-riad-architecture[^>]*>\s*/i, '');
+    }
 
     // A. Replace Lang tag
     renderedHtml = renderedHtml.replace('<html lang="en">', `<html lang="${page.lang}">`);
@@ -3315,30 +3413,36 @@ function prerender() {
       ? `\n    <meta property="article:published_time" content="${articlePublishedIso}" />\n    <meta property="article:modified_time" content="${articleModifiedIso}" />\n    <meta property="article:author" content="J.Mellal" />`
       : '';
 
+    const hasRecip = !isNoIndexPage && hasReciprocalTranslation(page.path);
+    const hreflangTags = isNoIndexPage
+      ? ''
+      : hasRecip
+        ? `\n    <link rel="alternate" data-static-seo="true" hreflang="fr" href="${frHref}" />\n    <link rel="alternate" data-static-seo="true" hreflang="en" href="${enHref}" />\n    <link rel="alternate" data-static-seo="true" hreflang="x-default" href="${frHref}" />`
+        : `\n    <link rel="alternate" data-static-seo="true" hreflang="${page.lang}" href="${canonicalUrl}" />${page.lang === 'fr' ? `\n    <link rel="alternate" data-static-seo="true" hreflang="x-default" href="${canonicalUrl}" />` : ''}`;
+    const ogAlternateTag = hasRecip
+      ? `\n    <meta property="og:locale:alternate" data-rh="true" content="${page.lang === 'fr' ? 'en_US' : 'fr_FR'}" />`
+      : '';
+
     let headTags = `
-    <link rel="canonical" href="${canonicalUrl}" />
-    <link rel="alternate" hreflang="fr" href="${frHref}" />
-    <link rel="alternate" hreflang="en" href="${enHref}" />
-    <link rel="alternate" hreflang="x-default" href="${frHref}" />
-    <meta name="robots" content="${isNoIndexPage ? 'noindex, follow' : 'index, follow, max-image-preview:large'}" />
+    <link rel="canonical" data-static-seo="true" href="${canonicalUrl}" />${hreflangTags}
+    <meta name="robots" data-rh="true" content="${isNoIndexPage ? 'noindex, follow' : 'index, follow, max-image-preview:large'}" />
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="${escapeHtml(pageTitle)}" />
-    <meta property="og:description" content="${escapeHtml(pageDesc)}" />
-    <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:type" content="${(isBlogPost || isCaseStudy) ? 'article' : 'website'}" />${articleOgTags}
-    <meta property="og:image" content="${ogImageUrl}" />
+    <meta property="og:title" data-rh="true" content="${escapeHtml(pageTitle)}" />
+    <meta property="og:description" data-rh="true" content="${escapeHtml(pageDesc)}" />
+    <meta property="og:url" data-rh="true" content="${canonicalUrl}" />
+    <meta property="og:type" data-rh="true" content="${(isBlogPost || isCaseStudy) ? 'article' : 'website'}" />${articleOgTags}
+    <meta property="og:image" data-rh="true" content="${ogImageUrl}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Urunk" />
-    <meta property="og:locale" content="${page.lang === 'fr' ? 'fr_FR' : 'en_US'}" />
-    <meta property="og:locale:alternate" content="${page.lang === 'fr' ? 'en_US' : 'fr_FR'}" />
+    <meta property="og:site_name" data-rh="true" content="Urunk" />
+    <meta property="og:locale" data-rh="true" content="${page.lang === 'fr' ? 'fr_FR' : 'en_US'}" />${ogAlternateTag}
 
     <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(pageTitle)}" />
-    <meta name="twitter:description" content="${escapeHtml(pageDesc)}" />
-    <meta name="twitter:image" content="${ogImageUrl}" />
+    <meta name="twitter:card" data-rh="true" content="summary_large_image" />
+    <meta name="twitter:title" data-rh="true" content="${escapeHtml(pageTitle)}" />
+    <meta name="twitter:description" data-rh="true" content="${escapeHtml(pageDesc)}" />
+    <meta name="twitter:image" data-rh="true" content="${ogImageUrl}" />
     `;
 
     // JSON-LD Schemas Construction
@@ -3429,8 +3533,17 @@ function prerender() {
       } else if (page.path.includes("tripadvisor-ads")) {
          schemaDesc = page.lang === "fr" ? "Gestion TripAdvisor Ads à 3 000 MAD/mois (env. 280 €/mois), sans engagement de durée, pour générer des réservations directes." : "TripAdvisor Ads management at 3,000 MAD/mo (approx. €280/mo), month-to-month with 15 days notice, to generate direct bookings.";
       } else if (page.path.includes("bundle")) {
-         schemaDesc = page.lang === "fr" ? "Pack comprenant la création de site web dès 12 000 MAD (livré en 4 à 6 semaines) et le pilotage mensuel de campagnes dès 4 000 MAD/mois." : "Package combining custom 12,000 MAD website creation (delivered in 4 to 6 weeks) and monthly campaign management starting at 4,000 MAD/mo.";
+         schemaDesc = page.lang === "fr" ? "Pack comprenant la création de site web hôtelier (16 000 MAD, livré en 4 à 6 semaines) et le pilotage mensuel de campagnes Google Ads (4 000 MAD/mois)." : "Package combining custom hotel website creation (16,000 MAD, delivered in 4 to 6 weeks) and monthly Google Ads campaign management (4,000 MAD/mo).";
       }
+
+      const srvEntryForSchema = matchedServiceMapping && servicesData[matchedServiceMapping.key]
+        ? servicesData[matchedServiceMapping.key][page.lang]
+        : undefined;
+      const numericServicePrice = page.path.includes('bundle')
+        ? '16000'
+        : (page.path === '/services/creation-site-web' || page.path === '/en/services/website-design')
+          ? '12000'
+          : (srvEntryForSchema ? extractNumericMadPrice(srvEntryForSchema.investmentPrice) : null);
 
       if (page.path === '/google-ads-maroc') {
         schemas.push({
@@ -3480,46 +3593,98 @@ function prerender() {
         schemas.push({
           "@context": "https://schema.org",
           "@type": "Service",
+          "@id": `${canonicalUrl}#service`,
           "name": pageTitle,
+          "description": schemaDesc,
           "provider": {
             "@type": "ProfessionalService",
             "name": "Urunk",
             "url": "https://urunk.com"
           },
           "areaServed": "Morocco",
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": `${pageTitle} Offers`,
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": pageTitle,
-                  "description": schemaDesc
+          ...(numericServicePrice
+            ? {
+                "offers": {
+                  "@type": "Offer",
+                  "price": numericServicePrice,
+                  "priceCurrency": "MAD",
+                  "url": canonicalUrl
                 }
               }
-            ]
-          }
+            : {
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": `${pageTitle} Offers`,
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": pageTitle,
+                        "description": schemaDesc
+                      }
+                    }
+                  ]
+                }
+              })
         });
       }
 
-      if (matchedServiceMapping && servicesData[matchedServiceMapping.key]) {
-        const srvEntry = servicesData[matchedServiceMapping.key][page.lang];
-        if (srvEntry && srvEntry.faqs && srvEntry.faqs.length > 0) {
-          schemas.push({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": srvEntry.faqs.map(f => ({
-              "@type": "Question",
-              "name": f.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": f.a
+      if (srvEntryForSchema && srvEntryForSchema.faqs && srvEntryForSchema.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": srvEntryForSchema.faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        });
+      } else if (page.path === '/services/creation-site-web' || page.path === '/en/services/website-design') {
+        const webFaqs = page.lang === 'fr'
+          ? [
+              {
+                q: "Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix pour un petit hôtel au Maroc ?",
+                a: "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 5 à 25 chambres au Maroc, un forfait clé en main à paiement unique dès 12 000 MAD avec 100 % de propriété du code et du domaine, vitesse mobile inférieure à 1,5s, version bilingue FR/EN et intégration PMS sans commission offre le coût total sur 3 ans le plus avantageux."
+              },
+              {
+                q: "En combien de réservations directes un forfait à 12 000 MAD est-il rentabilisé ?",
+                a: "À titre d'illustration, pour un hôtel ou riad facturant 1 500 MAD la nuitée et cédant habituellement 20 % de commission OTA (300 MAD par nuitée), 40 nuitées directes transférées sur votre site officiel compensent intégralement l'investissement initial de 12 000 MAD."
+              },
+              {
+                q: "Sommes-nous propriétaires à 100 % du site web, du nom de domaine et du code source ?",
+                a: "Oui, intégralement. Dès la livraison finale, le nom de domaine, le code source, les contenus et les comptes analytiques vous appartiennent sans redevance mensuelle obligatoire envers Urunk."
               }
-            }))
-          });
-        }
+            ]
+          : [
+              {
+                q: "Which hotel website design package offers the best value for money for a small hotel in Morocco?",
+                a: "For an independent small hotel, riad, or guesthouse of 5 to 25 rooms in Morocco, a one-time 12,000 MAD turnkey package with 100% source-code and domain ownership, sub-1.5s mobile load speed, bilingual FR/EN architecture, and commission-free PMS booking integration delivers the lowest 3-year total cost of ownership."
+              },
+              {
+                q: "How many direct room nights pay back a 12,000 MAD website build?",
+                a: "As an illustrative benchmark, if your property averages 1,500 MAD per night and saves a 20% OTA commission (300 MAD per room night), shifting 40 room nights onto your official website recovers the 12,000 MAD build cost."
+              },
+              {
+                q: "Do we own 100% of our website code, domain, and content?",
+                a: "Yes. Upon completion, 100% of the domain, custom code, imagery, and analytics belong to your property with zero mandatory monthly web licensing fees."
+              }
+            ];
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": webFaqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        });
       }
     }
 

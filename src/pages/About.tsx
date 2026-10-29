@@ -1,18 +1,24 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Users, Target, Shield, ArrowRight, CheckCircle2, Building, Globe, Zap, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 export default function About() {
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Urunk | Hospitality Digital Growth Agency in Morocco',
+    url: 'https://urunk.com/en/about',
+    description: 'Meet Urunk, the Casablanca-based digital growth agency built for Moroccan hotels, riads, and guesthouses: direct-booking websites, local SEO, and paid media.'
+  };
+
   return (
     <div className="w-full bg-bg text-primary" id="about-page">
-      <Helmet>
-        <title>About Urunk | Hospitality Digital Marketing Agency</title>
-        <meta name="description" content="Meet Urunk, the digital growth agency built for Moroccan hotels and riads. We turn organic search traffic into commission-free direct guest bookings." />
-        <link rel="canonical" href="https://urunk.com/en/about" />
-        <link rel="alternate" hrefLang="en" href="https://urunk.com/en/about" />
-        <link rel="alternate" hrefLang="fr" href="https://urunk.com/a-propos" />
-      </Helmet>
+      <SEO
+        title="About Urunk | Hospitality Digital Agency Morocco"
+        description="Meet Urunk, the Casablanca-based digital agency built for Moroccan hotels and riads: fast direct-booking websites, local SEO, GBP, and paid media."
+        schema={aboutSchema}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative bg-primary text-white" id="about-hero">
@@ -70,7 +76,7 @@ export default function About() {
             <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-sm" id="phil-card-3">
               <Shield className="text-accent mb-4" size={32} />
               <h3 className="text-xl font-bold text-primary mb-2">Sovereign Performance First</h3>
-              <p className="text-primary/70 text-sm leading-relaxed">We build lightning-fast web assets powered by cutting-edge frontend stacks that Google's core Web Vitals algorithms rank #1 and that prospective guests find frictionless to navigate and book on.</p>
+              <p className="text-primary/70 text-sm leading-relaxed">We build fast, mobile-first web assets engineered to pass Google's Core Web Vitals benchmarks so prospective guests can compare rooms, verify availability, and book without friction.</p>
             </div>
           </div>
         </div>
@@ -215,16 +221,16 @@ export default function About() {
               </p>
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="bg-white p-5 rounded-2xl border border-primary/10 text-center">
-                  <span className="text-3xl font-serif font-bold text-accent block">+40%</span>
-                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Direct Bookings Boost</span>
+                  <span className="text-3xl font-serif font-bold text-accent block tabular-nums">15%–25%</span>
+                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">OTA Commission Saved Direct</span>
                 </div>
                 <div className="bg-white p-5 rounded-2xl border border-primary/10 text-center">
-                  <span className="text-3xl font-serif font-bold text-accent block">-35%</span>
-                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Lower Cost Per Inquiry</span>
+                  <span className="text-3xl font-serif font-bold text-accent block tabular-nums">0%</span>
+                  <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">Agency Fee on Ad Spend</span>
                 </div>
               </div>
               <p className="text-xs text-primary/60 font-light leading-relaxed">
-                By bypassing OTA commissions of 15% to 25%, our specialized approach delivers an immediate, compound return on investment for independent Moroccan properties.
+                By reducing reliance on 15% to 25% OTA commissions and charging transparent flat fees with zero ad-spend markup, our hospitality infrastructure strengthens net operating margins for independent Moroccan properties.
               </p>
             </div>
           </div>

@@ -1,52 +1,44 @@
-# Urunk Agency — Hospitality Marketing & Web Design Agency
+# Urunk Agency — Hospitality Digital Growth & Direct Booking Infrastructure (Morocco)
 
-> Urunk Agency est l'agence digitale de référence au Maroc spécialisée dans la création de sites web hôteliers haute performance, le SEO local et la gestion de campagnes publicitaires (Google Ads, Meta Ads, TripAdvisor). Notre mission : maximiser les réservations directes des hôtels de luxe, riads, maisons d'hôtes et voyagistes pour supprimer leur dépendance aux commissions des agences de voyage en ligne (OTAs telles que Booking.com et Expedia). Siège à Casablanca (3 Rue El Kadi Lass, Maarif) et couverture à Marrakech, Rabat et Agadir.
+> Urunk Agency est une agence digitale et d'ingénierie web basée à Casablanca (3 Rue El Kadi Lass, Maarif, 20330, Maroc) spécialisée dans les hôtels indépendants, riads, maisons d'hôtes, boutique-hôtels et opérateurs touristiques au Maroc (Marrakech, Casablanca, Rabat, Agadir). L'agence conçoit des sites web hôteliers bilingues (FR/EN) connectés aux moteurs de réservation et PMS, déploie des stratégies de référencement local (SEO & Google Business Profile) et pilote des campagnes Google Ads, Meta Ads et TripAdvisor orientées vers la réservation directe sans commission d'agence.
 
 ## Pages Principales & Stratégiques (Français)
-- [Accueil — Urunk Agency](https://urunk.com/): Présentation de l'agence, proposition de valeur pour l'hôtellerie, intégrations PMS et avis clients.
-- [Services Marketing & Web](https://urunk.com/services): Vue d'ensemble de nos forfaits d'acquisition, création de sites web et référencement.
-- [Grille Tarifaire Transparente](https://urunk.com/tarifs): Tarifs détaillés dès 12 000 MAD pour les sites web, et forfaits publicitaires dès 3 000 MAD/mois.
-- [Études de Cas & Réalisations](https://urunk.com/realisations): Projets livrés pour riads de luxe, maisons d'hôtes et opérateurs touristiques au Maroc.
-- [À Propos d'Urunk Agency](https://urunk.com/a-propos): Notre histoire, notre équipe, méthodologie axée sur le ROI et adresses physiques.
-- [Blog & Guides Hôteliers](https://urunk.com/blog): Articles stratégiques sur la réduction des commissions Booking.com, le SEO hôtelier et le marketing digital.
-- [Foire Aux Questions (FAQ)](https://urunk.com/faq): Réponses détaillées sur les délais, technologies (WordPress, React), PMS compatibles et garanties.
-- [Contact & Demande de Devis](https://urunk.com/contact): Formulaire de consultation en 24h, coordonnées directes (téléphone, WhatsApp, email) et accès aux bureaux.
+- [Accueil — Urunk Agency](https://urunk.com/): Proposition de valeur hôtelière, intégrations PMS, méthodologie et calculateur d'économies sur commissions OTA.
+- [Services Marketing & Web](https://urunk.com/services): Catalogue complet des offres web, SEO local et acquisition payante.
+- [Grille Tarifaire Transparente](https://urunk.com/tarifs): Forfaits fixes affichés : sites web hôteliers dès 12 000 MAD (paiement unique), gestion Google Ads ou Meta Ads dès 4 000 MAD/mois, SEO dès 4 000 MAD/mois, TripAdvisor Ads dès 3 000 MAD/mois, Pack Site + Ads dès 16 000 MAD + 4 000 MAD/mois.
+- [Études de Cas & Réalisations](https://urunk.com/realisations): Projets documentés pour acteurs du tourisme, de l'hôtellerie et de l'événementiel au Maroc.
+- [À Propos d'Urunk Agency](https://urunk.com/a-propos): Équipe, méthodologie en 4 à 6 semaines, propriété à 100 % des actifs clients et présence au Maroc.
+- [Blog & Guides Hôteliers](https://urunk.com/blog): Guides pratiques sur la réduction des commissions OTA, l'intégration PMS, le SEO hôtelier et les budgets publicitaires.
+- [Foire Aux Questions (FAQ)](https://urunk.com/faq): Réponses détaillées sur les délais, technologies (WordPress, React), PMS compatibles et modalités sans engagement long terme (préavis 15 jours).
+- [Contact & Demande d'Audit](https://urunk.com/contact): Coordonnées directes (téléphone, WhatsApp, email) et formulaire de diagnostic.
 
-## Services Spécialisés
-- [Création de Sites Web Hôteliers](https://urunk.com/services/creation-site-web): Sites internet rapides, responsive, multilingues, connectés aux moteurs de réservation et PMS (Cloudbeds, SiteMinder, Guesty).
-- [Gestion Campagnes Google Ads Hôtels](https://urunk.com/google-ads-maroc): Campagnes Search et Google Hotel Ads ciblées sur les voyageurs à forte intention d'achat.
-- [Publicités Meta Ads (Instagram & Facebook)](https://urunk.com/services/gestion-publicites-meta): Campagnes visuelles percutantes (Reels, Stories) et reciblage dynamique des visiteurs qualifiés.
-- [Sponsorisation & Gestion TripAdvisor](https://urunk.com/services/tripadvisor-ads): Optimisation des fiches d'établissement, gestion des avis et annonces sponsorisées TripAdvisor.
-- [Formule Hybride Site Web + Publicité](https://urunk.com/services/bundle-site-ads): Solution tout-en-un combinant refonte de site web et gestion d'acquisition continue.
-- [Audit & Optimisation AI SEO / GEO](https://urunk.com/services/ai-seo-optimization): Optimisation pour les moteurs génératifs et LLMs (ChatGPT, Perplexity, Google Gemini).
-- [Référencement SEO WordPress](https://urunk.com/services/wordpress-seo): Optimisation technique, sémantique et vitesse pour sites WordPress hôteliers.
-- [Fiche Google Business Profile & SEO Local](https://urunk.com/services/google-business-profile): Dominez le pack local Google Maps à Casablanca, Marrakech et dans tout le Maroc.
+## Solutions Hôtelières & Réponses Clés (Français)
+- [Création de Site Web Hôtelier avec Moteur de Réservation Intégré](https://urunk.com/site-web-hotel): Critères de sélection d'un prestataire hôtelier au Maroc, connexion PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy) et SEO bilingue.
+- [Forfaits Création de Site Web Hôtelier & Rapport Qualité-Prix](https://urunk.com/services/creation-site-web): Comparatif des forfaits pour petits hôtels et riads au Maroc (dès 12 000 MAD, 0 % commission agence, propriété complète du code).
+- [Système de Réservation Directe Sans OTA pour Hôtels](https://urunk.com/reservation-directe): Architecture technique complète (moteur de réservation, PMS, Channel Manager, paiement CMI/Payzone/Stripe) pour réduire les commissions de 15 % à 25 % des OTA.
+- [Marketing Digital Hôtelier : Google Ads & Meta Ads au Maroc](https://urunk.com/marketing-digital-hotelier): Critères de choix d'agence et repères de budgets mensuels minimums (média + gestion) pour générer des réservations directes.
+- [SEO Hôtelier au Maroc](https://urunk.com/seo-hotel): Référencement organique et Google Maps pour hôtels indépendants et resorts.
+- [SEO Local pour Hôtels & Riads à Marrakech](https://urunk.com/seo-riad-marrakech): Visibilité locale Google Maps et recherche organique pour hébergements à Marrakech (Médina, Guéliz, Hivernage, Palmeraie).
+- [Optimisation Google Business Profile Hôtels & Riads](https://urunk.com/services/google-business-profile): Paramétrage hôtelier, attributs, liens de réservation officiels, géolocalisation Médina et gestion des avis.
+- [Gestion Google Ads Maroc](https://urunk.com/google-ads-maroc): Protection de marque hôtelière, Search intentionniste et suivi des conversions GA4/GTM.
+- [Gestion Publicités Meta (Instagram & Facebook)](https://urunk.com/services/gestion-publicites-meta): Acquisition visuelle et reciblage dynamique des visiteurs du moteur de réservation.
+- [Formule Site Web + Publicité](https://urunk.com/services/bundle-site-ads): Déploiement combiné site hôtelier + campagnes dès 16 000 MAD initial + 4 000 MAD/mois.
 
-## Secteurs d'Activité
-- [Riads & Maisons d'Hôtes](https://urunk.com/secteurs/riads-maisons-hotes): Solutions sur-mesure pour les hébergements de charme dans les Médinas de Marrakech, Fès et Essaouira.
-- [Hôtels & Resorts](https://urunk.com/secteurs/hotels-resorts): Écosystèmes digitaux pour hôtels de luxe, resorts balnéaires et complexes hôteliers indépendants.
-- [Tour-Opérateurs & Agences de Voyage](https://urunk.com/secteurs/tour-operateurs): Plateformes d'excursions, circuits au Maroc et réservation d'activités en ligne.
-- [Restaurants & Traiteurs](https://urunk.com/secteurs/restaurants-traiteurs): Menus digitaux interactifs, référencement géolocalisé et réservations de tables directes.
-- [PME & Entreprises Locales](https://urunk.com/secteurs/pme-entreprises): Sites vitrines modernes et stratégies d'acquisition B2B au Maroc.
+## International Pages & Hospitality Solutions (English)
+- [English Homepage](https://urunk.com/en): Direct booking infrastructure, local SEO, and paid media for Moroccan hotels and riads.
+- [Hotel Website Design in Morocco](https://urunk.com/en/hotel-website-design): Custom bilingual hospitality websites with two-way PMS booking engine integration.
+- [Website Design Packages & Pricing](https://urunk.com/en/services/website-design): Value-for-money website packages starting at 12,000 MAD one-time.
+- [Local SEO Packages for Hotels & Riads in Marrakech](https://urunk.com/en/riad-seo-marrakech): Hyper-local Google Maps and organic search packages for Marrakech riads and boutique hotels.
+- [Hotel SEO & Google Maps Ranking Service in Morocco](https://urunk.com/en/hotel-seo): Local and organic hospitality SEO across Morocco starting at 4,000 MAD/mo.
+- [Google Business Profile Optimization for Hotels & Riads](https://urunk.com/en/services/google-business-profile): Hospitality GBP optimization packages, free booking links, Medina pin accuracy, and review workflows.
+- [Hotel Digital Marketing: Google Ads & Meta Ads Morocco](https://urunk.com/en/hotel-digital-marketing): Paid media management and minimum monthly ad budget benchmarks for Moroccan hotels.
+- [Direct Booking Systems Without OTAs](https://urunk.com/en/direct-booking): Technical booking engine, PMS, Channel Manager, and Moroccan payment gateway integration.
+- [Transparent Pricing in English](https://urunk.com/en/pricing): Published MAD/EUR flat fees with 15-day cancellation notice on retainers.
+- [Case Studies & Portfolio](https://urunk.com/en/work): Documented hospitality and tourism digital projects in Morocco.
 
-## Zones Géographiques & Pôles Régionaux
-- [Agence Web & SEO Casablanca](https://urunk.com/zones/casablanca): Siège au 3 Rue El Kadi Lass, Maarif, Casablanca, au cœur économique du Royaume.
-- [Agence Web & SEO Marrakech](https://urunk.com/zones/marrakech): Pôle régional dédié à l'écosystème hôtelier et aux riads de Marrakech.
-- [Agence Web & SEO Rabat](https://urunk.com/zones/rabat): Services digitaux pour la capitale administrative et le tourisme culturel.
-- [Agence Web & SEO Agadir](https://urunk.com/zones/agadir): Stratégies d'acquisition pour les resorts côtiers et le tourisme balnéaire.
-- [Agence Web Maroc (National)](https://urunk.com/zones/maroc): Couverture complète sur tout le territoire marocain et projets internationaux.
-
-## International Pages (English Version)
-- [English Homepage](https://urunk.com/en): Direct booking growth and luxury hospitality web design in Morocco.
-- [English Services](https://urunk.com/en/services): Full digital marketing and web design service catalog.
-- [Transparent Pricing in English](https://urunk.com/en/pricing): Fixed-rate packages in MAD and EUR.
-- [Case Studies & Portfolio](https://urunk.com/en/work): Verified direct-booking performance results for boutique hotels.
-- [About Urunk Agency](https://urunk.com/en/about): Agency background, leadership, and operational offices in Morocco.
-- [Contact Urunk Agency (EN)](https://urunk.com/en/contact): International consultation inquiries and quote requests.
-
-## Coordonnées Officielles
+## Coordonnées Officielles / Official Contact
 - **Adresse officielle** : 3 Rue El Kadi Lass, Maarif, Casablanca, 20330, Maroc.
-- **Zones d'intervention** : Casablanca, Marrakech, Rabat, Agadir et international.
-- **Téléphone / WhatsApp** : [+212 668-802096](tel:+212668802096)
-- **Email officiel** : [contact@urunk.com](mailto:contact@urunk.com)
-- **Horaires d'ouverture** : Lundi au Vendredi, 09h00 - 18h30 (GMT+1)
+- **Zones d'intervention** : Marrakech, Casablanca, Rabat, Agadir, Fès, Essaouira et tout le Maroc.
+- **Téléphone / WhatsApp** : +212 668-802096
+- **Email officiel** : contact@urunk.com
+- **Horaires d'ouverture** : Lundi au Vendredi, 09h00 - 18h00 (GMT+1)

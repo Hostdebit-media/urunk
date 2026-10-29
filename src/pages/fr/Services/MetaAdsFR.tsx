@@ -7,53 +7,61 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function MetaAdsFR() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Gestion Meta Ads",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
+  const faqs = [
+    {
+      q: "Quel budget publicitaire prévoir sur Meta Ads pour un hôtel ou un riad au Maroc ?",
+      a: "Pour un riad ou un petit hôtel utilisant Meta Ads en reciblage et acquisition ciblée, prévoyez un budget média de départ de 3 000 à 6 000 MAD/mois payé directement à Meta, en complément de nos honoraires fixes dès 4 000 MAD/mois (0 % de commission sur votre budget média). Pour un plan combiné Google Ads + Meta Ads, consultez notre page dédiée au Marketing Digital Hôtelier.",
     },
-    "description": "Gestion publicitaire sur Facebook et Instagram pour l'hôtellerie."
-  };
+    {
+      q: "Quelle est la différence entre booster une publication et piloter le Meta Ads Manager ?",
+      a: "Le bouton « Booster la publication » optimise les mentions J'aime sans suivi du tunnel de réservation. Notre gestion sur Meta Ads Manager s'appuie sur le Pixel Meta, l'API Conversions (CAPI) et votre moteur PMS pour recibler les visiteurs ayant consulté vos chambres sans finaliser leur séjour.",
+    },
+    {
+      q: "Restons-nous propriétaires de notre Business Manager et de nos données d'audience ?",
+      a: "Oui, à 100 %. Nous intervenons via un accès partenaire sécurisé sur votre Meta Business Manager sans jamais détenir vos identifiants personnels, avec un préavis simple de 15 jours.",
+    },
+  ];
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Meta Ads pour Hôtels",
-    "description": "Campagnes ciblées sur Facebook et Instagram pour hôtels et riads.",
-    "provider": {
+    name: "Gestion Publicités Meta Ads (Instagram & Facebook) pour Hôtels",
+    serviceType: "Meta Ads pour Hôtels et Riads",
+    description:
+      "Campagnes Instagram et Facebook orientées réservations directes pour hôtels et riads au Maroc dès 4 000 MAD/mois d'honoraires fixes (0 % commission média).",
+    provider: {
       "@type": "Organization",
-      "name": "Urunk"
+      name: "Urunk",
+      url: "https://urunk.com",
     },
-    "areaServed": [
+    areaServed: [
       { "@type": "Country", "name": "Morocco" },
-      { "@type": "Country", "name": "Worldwide" }
+      { "@type": "Country", "name": "Worldwide" },
     ],
-    "url": "https://urunk.com/services/gestion-publicites-meta"
+    url: "https://urunk.com/services/gestion-publicites-meta",
+    offers: {
+      "@type": "Offer",
+      price: "4000",
+      priceCurrency: "MAD",
+    },
   };
-  const faqs = [
-    {
-      q: "Combien devrais-je dépenser pour mes publicités Meta Ads ?",
-      a: "Nous recommandons un budget publicitaire minimum de 3 000 à 5 000 MAD par mois (payé directement à Meta). Cela nous permet d'alimenter l'algorithme et de tester efficacement plusieurs audiences et visuels.",
-    },
-    {
-      q: "Quelle est la différence entre booster une publication et créer des campagnes Meta Ads ?",
-      a: "Booster une publication génère principalement des j'aime et des commentaires superficiels. Notre gestion de campagnes utilise le Meta Ads Manager pour cibler des voyageurs intentionnels et déployer du retargeting dynamique qui génère de vraies réservations.",
-    },
-    {
-      q: "Avez-vous besoin de l'accès à ma page Facebook et mon compte Instagram ?",
-      a: "Oui, nous vous guidons étape par étape pour nous accorder un accès partenaire sécurisé via le Meta Business Manager, sans jamais avoir besoin de vos mots de passe personnels.",
-    },
-  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
 
   return (
     <div className="w-full">
       <SEO
-        title="Publicité Meta Ads pour hôtels et riads | Urunk"
-        description="Campagnes visuelles sur Facebook et Instagram ciblant les voyageurs internationaux et reciblant les visiteurs indécis."
-        schema={[schema, serviceSchema]}
+        title="Publicité Meta Ads Hôtels & Riads Maroc | Urunk"
+        description="Gestion de campagnes Instagram et Facebook pour hôtels et riads au Maroc : acquisition visuelle, reciblage PMS et honoraires fixes dès 4 000 MAD/mois."
+        schema={[serviceSchema, faqSchema]}
       />
 
       {/* Hero Section */}
@@ -73,12 +81,10 @@ export default function MetaAdsFR() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong className="text-accent font-semibold">Ce que nous faisons :</strong> Urunk propose une gestion
-              spécialisée des publicités Meta (Facebook & Instagram). Nous créons
-              des campagnes visuelles captivantes pour valoriser votre
-              établissement, promouvoir vos offres spéciales et recibler
-              efficacement les utilisateurs ayant quitté votre moteur de
-              réservation.
+              <strong className="text-accent font-semibold">Ce que nous faisons :</strong> Urunk pilote vos campagnes Meta (Facebook &amp; Instagram) dès 4 000 MAD/mois d'honoraires fixes (0 % de marge sur votre budget média). Vous cherchez un <strong>dispositif combiné Google Ads + Meta Ads et les budgets mensuels minimums recommandés pour un hôtel au Maroc</strong> ? Consultez notre guide{" "}
+              <Link to="/marketing-digital-hotelier" className="underline text-accent-soft hover:text-white font-semibold">
+                Gestion Google Ads &amp; Meta Ads pour Hôtels au Maroc
+              </Link>.
             </Callout>
           </div>
           <Link

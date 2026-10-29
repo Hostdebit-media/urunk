@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { getEquivalentRoute } from '../data/slugMappings';
+import { getEquivalentRoute, hasReciprocalTranslation } from '../data/slugMappings';
 import { useLocation } from 'react-router-dom';
 import { buildProfessionalServiceSchema, buildBreadcrumbListSchema } from './SEO/StructuredData';
 
@@ -60,6 +60,7 @@ export default function SEO({ title, description, image, schema, noindex, type }
   }
 
   const alternatePath = getEquivalentRoute(currentPath);
+  const isReciprocal = hasReciprocalTranslation(currentPath);
   
   const enPath = isFrench ? alternatePath : currentPath;
   const frPath = isFrench ? currentPath : alternatePath;
@@ -189,10 +190,11 @@ export default function SEO({ title, description, image, schema, noindex, type }
   const enUrl = `${siteUrl}${enPath === '/' ? '' : enPath}${pageParam}`;
   const frUrl = `${siteUrl}${frPath === '/' ? '' : frPath}${pageParam}`;
 
-  // Update HTML lang attribute
+  // Update HTML lang attribute and remove static pre-hydration canonical/hreflang placeholders outside React's tree
   React.useEffect(() => {
     document.documentElement.lang = currentLang;
-  }, [currentLang]);
+    document.querySelectorAll('[data-static-seo="true"]').forEach((el) => el.remove());
+  }, [currentLang, currentUrl]);
 
   return (
     <Helmet>
@@ -217,9 +219,11 @@ export default function SEO({ title, description, image, schema, noindex, type }
       
       {/* Canonical and Hreflang */}
       <link rel="canonical" href={currentUrl} />
-      <link rel="alternate" hrefLang="fr" href={frUrl} />
-      <link rel="alternate" hrefLang="en" href={enUrl} />
-      <link rel="alternate" hrefLang="x-default" href={frUrl} />
+      {isReciprocal && <link rel="alternate" hrefLang="fr" href={frUrl} />}
+      {isReciprocal && <link rel="alternate" hrefLang="en" href={enUrl} />}
+      {isReciprocal && <link rel="alternate" hrefLang="x-default" href={frUrl} />}
+      {!isReciprocal && <link rel="alternate" hrefLang={currentLang} href={currentUrl} />}
+      {!isReciprocal && isFrench && <link rel="alternate" hrefLang="x-default" href={currentUrl} />}
       
       {finalSchema.length > 0 && (
         <script 

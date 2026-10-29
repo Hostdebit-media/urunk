@@ -23,8 +23,7 @@ const CORE_PAGES = [
   { fr: '/conditions-generales', en: '/en/terms-of-service', changefreq: 'yearly', priority: '0.3' },
   { fr: '/plan-du-site', en: '/en/sitemap', changefreq: 'monthly', priority: '0.4' },
   
-  // Core Services
-  { fr: '/creation-site-web', en: '/en/services/website-design', changefreq: 'monthly', priority: '0.9' },
+  // Core Services (strictly 1-to-1 reciprocal FR <-> EN pairs)
   { fr: '/services/creation-site-web', en: '/en/services/website-design', changefreq: 'monthly', priority: '0.9' },
   { fr: '/agence-web-maroc', en: '/en/web-design-morocco', changefreq: 'monthly', priority: '0.9' },
   { fr: '/agence-web-casablanca', en: '/en/web-design-casablanca', changefreq: 'monthly', priority: '0.9' },
@@ -63,6 +62,11 @@ const CORE_PAGES = [
   { fr: '/zones/marrakech', en: '/en/locations/marrakech', changefreq: 'monthly', priority: '0.8' },
   { fr: '/zones/rabat', en: '/en/locations/rabat', changefreq: 'monthly', priority: '0.8' },
   { fr: '/zones/agadir', en: '/en/locations/agadir', changefreq: 'monthly', priority: '0.8' }
+];
+
+// French-only standalone landing pages (emitted with self-referencing fr + x-default hreflang only)
+const FR_ONLY_PAGES = [
+  { fr: '/creation-site-web', changefreq: 'monthly', priority: '0.8' }
 ];
 
 function escapeXml(unsafe: string): string {
@@ -108,6 +112,21 @@ function generatePagesSitemap() {
       xml += `  <url>\n`;
       xml += `    <loc>${enUrl}</loc>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  for (const page of FR_ONLY_PAGES) {
+    const frUrl = `${BASE_URL}${page.fr}`;
+    if (!seenUrls.has(frUrl)) {
+      seenUrls.add(frUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
       xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
@@ -171,6 +190,21 @@ function generateFrenchPagesSitemap() {
       xml += `    <loc>${frUrl}</loc>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  for (const page of FR_ONLY_PAGES) {
+    const frUrl = `${BASE_URL}${page.fr}`;
+    if (!seenUrls.has(frUrl)) {
+      seenUrls.add(frUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
       xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
       xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
@@ -326,7 +360,8 @@ function generateFrenchPostsSitemap() {
     const enSlug = blogSlugMapFRtoEN[frSlug];
 
     const frUrl = `${BASE_URL}/blog/${frSlug}`;
-    const enUrl = enSlug ? `${BASE_URL}/en/blog/${enSlug}` : null;
+    const hasEn = !!enSlug && blogPostsEN.some(p => p.slug === enSlug);
+    const enUrl = hasEn ? `${BASE_URL}/en/blog/${enSlug}` : null;
 
     xml += `  <url>\n`;
     xml += `    <loc>${frUrl}</loc>\n`;

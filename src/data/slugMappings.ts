@@ -116,7 +116,7 @@ export const routeMap: Record<string, string> = {
   '/en/about': '/a-propos',
   '/en/pricing': '/tarifs',
   '/en/services': '/services',
-  '/en/services/website-design': '/creation-site-web',
+  '/en/services/website-design': '/services/creation-site-web',
   '/en/web-design-morocco': '/agence-web-maroc',
   '/en/web-design-casablanca': '/agence-web-casablanca',
   '/en/seo-agency-morocco': '/agence-seo-maroc',
@@ -189,11 +189,11 @@ export function getEquivalentRoute(pathname: string): string {
   // Blog dynamic post routing
   if (cleanPath.startsWith('/en/blog/')) {
     const slug = cleanPath.slice(9);
-    return '/blog/' + getFRBlogSlug(slug);
+    return blogSlugMap[slug] ? '/blog/' + blogSlugMap[slug] : '/blog';
   }
   if (cleanPath.startsWith('/blog/')) {
     const slug = cleanPath.slice(6);
-    return '/en/blog/' + getENBlogSlug(slug);
+    return blogSlugMapFRtoEN[slug] ? '/en/blog/' + blogSlugMapFRtoEN[slug] : '/en/blog';
   }
 
   // Work / Case studies dynamic routing
@@ -251,4 +251,19 @@ export function getEquivalentRoute(pathname: string): string {
   } else {
     return cleanPath === '/' ? '/en' : '/en' + cleanPath;
   }
+}
+
+export function normalizeRoutePath(pathname: string): string {
+  if (!pathname) return '/';
+  const withoutQueryOrHash = pathname.split(/[?#]/)[0] || '/';
+  if (withoutQueryOrHash === '/') return '/';
+  return withoutQueryOrHash.replace(/\/+$/, '') || '/';
+}
+
+export function hasReciprocalTranslation(pathname: string): boolean {
+  const cleanPath = normalizeRoutePath(pathname);
+  const alt = normalizeRoutePath(getEquivalentRoute(cleanPath));
+  if (!alt || alt === cleanPath) return false;
+  const back = normalizeRoutePath(getEquivalentRoute(alt));
+  return back === cleanPath;
 }

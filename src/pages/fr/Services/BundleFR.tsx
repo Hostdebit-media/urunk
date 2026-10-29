@@ -5,53 +5,61 @@ import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function BundleFR() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Site Web & Publicité pour Hôtels",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
-    },
-    "description": "Solution complète : Site WordPress sur-mesure et 3 mois de gestion publicitaire incluse."
-  };
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Forfait Site Web et Publicité",
-    "description": "L'offre complète pour les hôtels : conception de site web performant et gestion de trafic qualifié pour lancer vos réservations directes.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk"
-    },
-    "areaServed": [
-      { "@type": "Country", "name": "Morocco" },
-      { "@type": "Country", "name": "Worldwide" }
-    ],
-    "url": "https://urunk.com/services/bundle-site-ads"
-  };
   const faqs = [
     {
-      q: "Combien de temps prend le déploiement du pack complet ?",
-      a: "Le délai moyen est de 3 à 4 semaines. Pendant que l'équipe technique développe le site web, nos spécialistes préparent l'architecture des campagnes publicitaires et la configuration du suivi de conversion pour un lancement simultané.",
+      q: "Combien de temps prend le déploiement du pack Site Web + Publicité ?",
+      a: "Le déploiement complet prend 4 à 6 semaines : pendant que nos ingénieurs développent votre site hôtelier bilingue et raccordent votre moteur PMS, notre pôle SEA/Social prépare vos campagnes et le suivi GA4/GTM pour activer le trafic dès la mise en ligne.",
     },
     {
-      q: "Puis-je choisir entre Google Ads et TripAdvisor Ads pour la partie publicité ?",
-      a: "Oui ! Selon le profil de votre établissement et vos canaux d'acquisition prioritaires, nous configurons soit des campagnes Google Ads ciblées, soit des emplacements sponsorisés TripAdvisor.",
+      q: "Quel canal publicitaire est inclus dans le forfait à 16 000 MAD + 4 000 MAD/mois ?",
+      a: "La formule inclut la création complète du site hôtelier (à tarif préférentiel dans le pack) et le pilotage mensuel d'un levier publicitaire prioritaire au choix (Google Ads, Meta Ads ou TripAdvisor Ads), hors budget média payé directement à la régie.",
     },
     {
       q: "Pourquoi le pack offre-t-il un meilleur rapport qualité-prix qu'un achat séparé ?",
-      a: "En confiant le site web et la gestion des publicités à la même agence, vous gagnez du temps, éliminez les problèmes d'intégration technique et bénéficiez d'un tarif préférentiel réuni dans une seule stratégie d'acquisition.",
+      a: "En alignant conception du site, connexion PMS, Google Tag Manager et campagnes publicitaires sous une même équipe, vous éliminez les pertes de tracking entre prestataires et réduisez votre coût initial par rapport à deux missions séparées.",
     },
   ];
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Pack Site Web Hôtelier + Publicité au Maroc",
+    serviceType: "Forfait Site Web et Acquisition Publicitaire pour Hôtels",
+    description:
+      "Formule combinée pour hôtels et riads au Maroc : création de site web avec moteur de réservation + gestion publicitaire dès 16 000 MAD initial + 4 000 MAD/mois.",
+    provider: {
+      "@type": "Organization",
+      name: "Urunk",
+      url: "https://urunk.com",
+    },
+    areaServed: [
+      { "@type": "Country", "name": "Morocco" },
+      { "@type": "Country", "name": "Worldwide" },
+    ],
+    url: "https://urunk.com/services/bundle-site-ads",
+    offers: {
+      "@type": "Offer",
+      price: "16000",
+      priceCurrency: "MAD",
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
 
   return (
     <div className="w-full">
       <SEO
-        title="Pack site web + publicité pour hôtels | Urunk"
-        description="Offre combinée associant un site web hôtelier ultra-rapide et des campagnes publicitaires ciblées pour maximiser le retour sur investissement."
-        schema={[schema, serviceSchema]}
+        title="Pack Site Web + Publicité Hôtel Maroc | Urunk"
+        description="Offre combinée site web hôtelier + gestion publicitaire (Google, Meta ou TripAdvisor) dès 16 000 MAD initial + 4 000 MAD/mois pour réservations directes."
+        schema={[serviceSchema, faqSchema]}
       />
 
       {/* Hero Section */}
@@ -251,17 +259,15 @@ export default function BundleFR() {
               DISPONIBILITÉ LIMITÉE
             </div>
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-accent-soft text-sm font-medium mb-6">
-              Tarif du Pack
+              Tarif Affiché du Pack
             </span>
-            <h3 className="text-2xl font-bold mb-2">Devis Sur-Mesure</h3>
+            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-2 tabular-nums">Dès 16 000 MAD + 4 000 MAD/mois</h3>
             <p className="text-white/80 text-sm mb-6">
-              Chaque établissement ayant des besoins spécifiques, nous
-              établissons une proposition ajustée pour l'ensemble du projet.
+              Création complète du site hôtelier (16 000 MAD initial) + gestion mensuelle d'un canal Ads (4 000 MAD/mois, hors budget média payé à la régie).
             </p>
             <div className="bg-white/10 p-4 rounded-xl mb-8 w-full">
               <p className="text-sm text-white/90 font-medium">
-                Seulement 3 nouveaux packs pris en charge par mois pour garantir
-                un niveau de qualité optimal.
+                100 % propriété du site &amp; préavis simple de 15 jours sur le suivi publicitaire.
               </p>
             </div>
             <Link
