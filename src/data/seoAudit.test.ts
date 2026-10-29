@@ -93,7 +93,137 @@ test('all ServiceLandingPage-backed tracked question entries contain complete GE
   }
 });
 
-test('servicesData contains zero unverified #1 ranking guarantees', () => {
+test('servicesData contains zero unverified #1 ranking guarantees, 20k custom-tier contradictions, or unverified Spanish SEO claims', () => {
   const serialized = JSON.stringify(servicesData);
   assert.equal(/rank #1|#1 ranking|première place garantie|numéro 1 garanti/i.test(serialized), false);
+  const hospitalityWebKeys = ['hotel-website-design', 'creation-site-web-prix', 'riad-website-design-marrakech', 'direct-booking'];
+  for (const k of hospitalityWebKeys) {
+    assert.equal(/20,000 MAD|20 000 MAD/i.test(JSON.stringify(servicesData[k])), false, `Unexpected 20k MAD in ${k}`);
+  }
+  assert.equal(/optional ES|FR\/EN\/ES/i.test(serialized), false);
 });
+
+test('all relatedLinks across servicesData resolve to valid declared routes in App.tsx or blog/case-study slugs', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const appTsx = fs.readFileSync(path.resolve('src/App.tsx'), 'utf8');
+
+  const staticRoutes = new Set<string>(['/']);
+  const frBlockMatch = appTsx.match(/<Route path="\/" element=\{<Layout \/>\}>([\s\S]*?)<\/Route>\s*\{\/\* English Routes/);
+  const enBlockMatch = appTsx.match(/<Route path="en" element=\{<Layout \/>\}>([\s\S]*?)<\/Route>\s*\{\/\* Aliases/);
+  assert.ok(frBlockMatch && enBlockMatch, 'Failed to parse FR/EN route blocks in App.tsx');
+
+  for (const m of frBlockMatch[1].matchAll(/<Route\s+path="([^":*]+)"/g)) {
+    staticRoutes.add(`/${m[1]}`);
+  }
+  staticRoutes.add('/en');
+  for (const m of enBlockMatch[1].matchAll(/<Route\s+path="([^":*]+)"/g)) {
+    staticRoutes.add(`/en/${m[1]}`);
+  }
+
+  const { blogPostsEN } = await import('./blogPosts');
+  const { blogPostsFR } = await import('./blogPostsFR');
+  const { caseStudies } = await import('./caseStudies');
+  for (const p of blogPostsFR) staticRoutes.add(`/blog/${p.slug}`);
+  for (const p of blogPostsEN) staticRoutes.add(`/en/blog/${p.slug}`);
+  for (const s of caseStudies) {
+    staticRoutes.add(`/en/work/${s.slug}`);
+    staticRoutes.add(`/realisations/${s.frSlug || s.slug}`);
+  }
+
+  for (const [serviceKey, locales] of Object.entries(servicesData)) {
+    for (const lang of ['en', 'fr'] as const) {
+      const links = locales[lang]?.relatedLinks ?? [];
+      for (const link of links) {
+        assert.ok(
+          staticRoutes.has(link.to),
+          `Broken relatedLinks target "${link.to}" in servicesData.${serviceKey}.${lang}`
+        );
+      }
+    }
+  }
+});
+
+test('prerendered dist/ HTML files for all 7 target URLs have 1 canonical, reciprocal hreflang, valid deduplicated JSON-LD, and visible FAQ parity', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  if (!fs.existsSync(path.resolve('dist/index.html'))) {
+    return;
+  }
+
+  const targetPages = [
+    { route: '/', file: 'dist/index.html', lang: 'fr', pair: 'https://urunk.com/en' },
+    { route: '/en', file: 'dist/en/index.html', lang: 'en', pair: 'https://urunk.com/' },
+    { route: '/site-web-hotel', file: 'dist/site-web-hotel/index.html', lang: 'fr', pair: 'https://urunk.com/en/hotel-website-design' },
+    { route: '/services/creation-site-web', file: 'dist/services/creation-site-web/index.html', lang: 'fr', pair: 'https://urunk.com/en/services/website-design' },
+    { route: '/marketing-digital-hotelier', file: 'dist/marketing-digital-hotelier/index.html', lang: 'fr', pair: 'https://urunk.com/en/hotel-digital-marketing' },
+    { route: '/reservation-directe', file: 'dist/reservation-directe/index.html', lang: 'fr', pair: 'https://urunk.com/en/direct-booking' },
+    { route: '/en/riad-seo-marrakech', file: 'dist/en/riad-seo-marrakech/index.html', lang: 'en', pair: 'https://urunk.com/seo-riad-marrakech' },
+    { route: '/en/hotel-seo', file: 'dist/en/hotel-seo/index.html', lang: 'en', pair: 'https://urunk.com/seo-hotel' },
+    { route: '/en/services/google-business-profile', file: 'dist/en/services/google-business-profile/index.html', lang: 'en', pair: 'https://urunk.com/services/google-business-profile' },
+  ];
+
+  const seenTitles = new Set<string>();
+  const seenDescs = new Set<string>();
+
+  for (const item of targetPages) {
+    const fullPath = path.resolve(item.file);
+    assert.ok(fs.existsSync(fullPath), `Missing prerendered HTML at ${item.file}`);
+    const html = fs.readFileSync(fullPath, 'utf8');
+
+    assert.ok(html.includes(`<html lang="${item.lang}">`), `Wrong html lang in ${item.file}`);
+
+    const titleMatches = [...html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>/gi)];
+    assert.equal(titleMatches.length, 1, `Expected 1 <title> in ${item.file}, found ${titleMatches.length}`);
+    const titleText = titleMatches[0][1].trim();
+    assert.ok(!seenTitles.has(titleText), `Duplicate <title> across target pages: ${titleText}`);
+    seenTitles.add(titleText);
+
+    const descMatches = [...html.matchAll(/<meta\s+name="description"[^>]*content="([^"]*)"/gi)];
+    assert.equal(descMatches.length, 1, `Expected 1 meta description in ${item.file}, found ${descMatches.length}`);
+    const descText = descMatches[0][1].trim();
+    assert.ok(!seenDescs.has(descText), `Duplicate meta description across target pages: ${descText}`);
+    seenDescs.add(descText);
+
+    const canonicalMatches = [...html.matchAll(/<link\s+rel="canonical"[^>]*href="([^"]*)"/gi)];
+    assert.equal(canonicalMatches.length, 1, `Expected 1 canonical in ${item.file}, found ${canonicalMatches.length}`);
+    const expectedCanonical = item.route === '/' ? 'https://urunk.com/' : `https://urunk.com${item.route}`;
+    assert.equal(canonicalMatches[0][1], expectedCanonical);
+
+    assert.ok(html.includes(`href="${item.pair}"`), `Missing reciprocal hreflang link to ${item.pair} in ${item.file}`);
+
+    const ldScripts = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
+    assert.equal(ldScripts.length, 1, `Expected exactly 1 static JSON-LD script block in ${item.file}, found ${ldScripts.length}`);
+
+    const parsed = JSON.parse(ldScripts[0][1]);
+    const nodes = Array.isArray(parsed) ? parsed : [parsed];
+    const typeCounts = new Map<string, number>();
+    for (const node of nodes) {
+      const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+      for (const t of types) {
+        typeCounts.set(t, (typeCounts.get(t) || 0) + 1);
+      }
+      if (node['@type'] === 'FAQPage' && Array.isArray(node.mainEntity)) {
+        const bodyHtml = html.slice(html.indexOf('<body'));
+        for (const qNode of node.mainEntity) {
+          const escapedQ = String(qNode.name)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+          assert.ok(
+            bodyHtml.includes(qNode.name) || bodyHtml.includes(escapedQ),
+            `FAQPage question missing from visible static body in ${item.file}: "${qNode.name}"`
+          );
+        }
+      }
+    }
+
+    for (const singletonType of ['Service', 'FAQPage', 'BreadcrumbList', 'WebSite', 'Organization']) {
+      const count = typeCounts.get(singletonType) || 0;
+      assert.ok(count <= 1, `Duplicate ${singletonType} JSON-LD (${count}) in ${item.file}`);
+    }
+  }
+});
+

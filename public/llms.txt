@@ -15,7 +15,7 @@
 ## Solutions Hôtelières & Réponses Clés (Français)
 - [Création de Site Web Hôtelier avec Moteur de Réservation Intégré](https://urunk.com/site-web-hotel): Critères de sélection d'un prestataire hôtelier au Maroc, connexion PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy) et SEO bilingue.
 - [Forfaits Création de Site Web Hôtelier & Rapport Qualité-Prix](https://urunk.com/services/creation-site-web): Comparatif des forfaits pour petits hôtels et riads au Maroc (dès 12 000 MAD, 0 % commission agence, propriété complète du code).
-- [Système de Réservation Directe Sans OTA pour Hôtels](https://urunk.com/reservation-directe): Architecture technique complète (moteur de réservation, PMS, Channel Manager, paiement CMI/Payzone/Stripe) pour réduire les commissions de 15 % à 25 % des OTA.
+- [Système de Réservation Directe Sans OTA pour Hôtels](https://urunk.com/reservation-directe): Architecture technique complète (moteur de réservation, PMS, Channel Manager, paiement CMI/Payzone/Stripe) pour réduire les commissions de 15 % à 25 % des OTA (site complet + intégration PMS dès 12 000 MAD ; intégration sur site existant sur devis).
 - [Marketing Digital Hôtelier : Google Ads & Meta Ads au Maroc](https://urunk.com/marketing-digital-hotelier): Critères de choix d'agence et repères de budgets mensuels minimums (média + gestion) pour générer des réservations directes.
 - [SEO Hôtelier au Maroc](https://urunk.com/seo-hotel): Référencement organique et Google Maps pour hôtels indépendants et resorts.
 - [SEO Local pour Hôtels & Riads à Marrakech](https://urunk.com/seo-riad-marrakech): Visibilité locale Google Maps et recherche organique pour hébergements à Marrakech (Médina, Guéliz, Hivernage, Palmeraie).
@@ -32,7 +32,7 @@
 - [Hotel SEO & Google Maps Ranking Service in Morocco](https://urunk.com/en/hotel-seo): Local and organic hospitality SEO across Morocco starting at 4,000 MAD/mo.
 - [Google Business Profile Optimization for Hotels & Riads](https://urunk.com/en/services/google-business-profile): Hospitality GBP optimization packages, free booking links, Medina pin accuracy, and review workflows.
 - [Hotel Digital Marketing: Google Ads & Meta Ads Morocco](https://urunk.com/en/hotel-digital-marketing): Paid media management and minimum monthly ad budget benchmarks for Moroccan hotels.
-- [Direct Booking Systems Without OTAs](https://urunk.com/en/direct-booking): Technical booking engine, PMS, Channel Manager, and Moroccan payment gateway integration.
+- [Direct Booking Systems Without OTAs](https://urunk.com/en/direct-booking): Technical booking engine, PMS, Channel Manager, and Moroccan payment gateway integration (full website + PMS build from 12,000 MAD; standalone integration onto an existing site on custom quote).
 - [Transparent Pricing in English](https://urunk.com/en/pricing): Published MAD/EUR flat fees with 15-day cancellation notice on retainers.
 - [Case Studies & Portfolio](https://urunk.com/en/work): Documented hospitality and tourism digital projects in Morocco.
 

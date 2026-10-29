@@ -5,7 +5,7 @@
 
 ## Core Capabilities / Domaines d'Expertise
 - **Création de Sites Web Hôteliers / Hotel Website Design**: Sites WordPress et React bilingues (FR/EN) dès 12 000 MAD (paiement unique), connectés aux moteurs de réservation et PMS (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), 100 % propriété client, 0 % commission agence.
-- **Systèmes de Réservation Directe / Direct Booking Architecture**: Intégration moteur de réservation, synchronisation Channel Manager et passerelles de paiement (CMI, Payzone, Stripe) pour réduire la dépendance aux commissions OTA (15 %–25 %).
+- **Systèmes de Réservation Directe / Direct Booking Architecture**: Intégration moteur de réservation, synchronisation Channel Manager et passerelles de paiement (CMI, Payzone, Stripe) pour réduire la dépendance aux commissions OTA de 15 %–25 % (site complet + intégration PMS dès 12 000 MAD ; greffe sur site existant sur devis).
 - **SEO Local Hôtels & Google Business Profile**: Optimisation Google Maps et recherche locale pour hôtels et riads à Marrakech, Casablanca, Rabat, Agadir et dans tout le Maroc (dès 4 000 MAD/mois ; fiche GBP dédiée dès 5 000 MAD/mois).
 - **Google Ads & Meta Ads Hôtellerie**: Protection de marque face aux enchères OTA, campagnes Search intentionnistes et reciblage Instagram/Facebook (frais fixes dès 4 000 MAD/mois par levier, 0 % commission sur le budget média).
 

@@ -131,7 +131,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "faqs": [
         {
           "q": "How much does a professional website cost in Morocco?",
-          "a": "At Urunk, a custom SEO-optimized website starts at 12,000 MAD (one-time payment), including mobile-first design, technical SEO setup, and conversion tracking. Larger multi-property hospitality portals or custom web apps are scoped from 20,000 MAD depending on integrations."
+          "a": "At Urunk, a custom SEO-optimized website starts at 12,000 MAD (one-time payment), including mobile-first design, technical SEO setup, and conversion tracking. Larger multi-property hospitality portals or custom web apps are scoped from 25,000 MAD depending on integrations."
         },
         {
           "q": "Are there mandatory monthly fees after launch?",
@@ -421,7 +421,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           },
           {
             "title": "Google Hotel Pack Mechanics (Different from Standard Local Businesses)",
-            "desc": "Hotels on Google Maps display live rates, class ratings, amenity badges, and Google Hotel Center / PMS free booking links. Generic local SEO packages built for clinics or shops often miss hotel-specific GBP features."
+            "desc": "Hotels on Google Maps display live rates, class ratings, amenity badges, and Google Hotel Center free booking links (requiring a participating connectivity partner PMS/Channel Manager). Generic local SEO packages built for clinics or shops often miss hotel-specific GBP features."
           },
           {
             "title": "Bilingual Search Intent (French + English)",
@@ -555,7 +555,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "calloutBody": "Le SEO local hôtelier associe l'optimisation de votre fiche Google Business Profile (Google Maps), la création de pages chambres et quartiers rapides en français/anglais, le balisage Schema.org Hotel et la cohérence de vos citations pour diriger les voyageurs vers votre propre moteur de réservation.",
       "directAnswer": {
         "question": "Quel service de SEO local choisir au Maroc pour positionner un site d'hôtel sur Google Maps et la recherche locale ?",
-        "answer": "Pour un hôtel indépendant, un riad ou une maison d'hôtes au Maroc, la formule la plus pertinente est un accompagnement combinant l'optimisation SEO du site officiel et le pilotage de la fiche Google Business Profile, plutôt qu'une simple soumission d'annuaires. La visibilité dans le Pack Hôtel Google Maps dépend à la fois de votre fiche (catégories, attributs, liens de réservation gratuits, avis) et de la pertinence locale de votre site web (vitesse mobile, pages de quartier FR/EN, balisage JSON-LD Hotel). Chez Urunk, les forfaits SEO Hôtelier démarrent à 4 000 MAD/mois (préavis de 15 jours), et 8 000 MAD/mois pour les marchés multi-langues très concurrentiels.",
+        "answer": "Pour un hôtel indépendant, un riad ou une maison d'hôtes au Maroc, la formule la plus pertinente est un accompagnement combinant l'optimisation SEO du site officiel et le pilotage de la fiche Google Business Profile, plutôt qu'une simple soumission d'annuaires. La visibilité dans le Pack Hôtel Google Maps dépend à la fois de votre fiche (catégories, attributs, liens de réservation gratuits via un PMS partenaire Google Hotel Center, avis) et de la pertinence locale de votre site web (vitesse mobile, pages de quartier FR/EN, balisage JSON-LD Hotel). Chez Urunk, les forfaits SEO Hôtelier démarrent à 4 000 MAD/mois (préavis de 15 jours), et 8 000 MAD/mois pour les marchés multi-langues très concurrentiels.",
         "highlights": [
           "Alignement complet Site Web Hôtelier + Google Maps (GBP)",
           "Balisage JSON-LD Hotel, hreflang FR/EN et suivi UTM dans GA4",
@@ -1061,14 +1061,14 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   "hotel-website-design": {
     "en": {
       "title": "Hotel Website Design Morocco & Booking Engine | Urunk",
-      "description": "Custom hotel website design in Morocco with integrated PMS booking engine, sub-1.5s mobile speed, and bilingual SEO. Flat packages from 12,000 MAD.",
+      "description": "Custom hotel website design in Morocco with integrated PMS booking engine, fast mobile UX, and bilingual SEO. Flat packages from 12,000 MAD.",
       "heroTitle": "Hotel Website Design in Morocco with Integrated Booking Engine",
       "heroSub": "Turn international lookers into direct bookers with a fast, bilingual hospitality website connected to your PMS, Channel Manager, and payment gateway.",
       "calloutTitle": "Definition: Direct-Booking Hotel Website",
       "calloutBody": "A direct-booking hotel website pairs custom mobile-first hospitality UX with real-time two-way PMS synchronization, multi-currency pricing, and reciprocal multilingual SEO—allowing guests to verify live room availability and confirm stays without OTA commissions.",
       "directAnswer": {
         "question": "How to choose the right provider in Morocco to build a hotel website with an integrated booking engine?",
-        "answer": "The strongest provider for an independent hotel or riad in Morocco is a hospitality-specialized web engineering agency that connects natively to your chosen PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, or Sirvoy), achieves sub-1.5s mobile load speeds on 4G, configures reciprocal FR/EN hreflang SEO, supports Moroccan (CMI/Payzone) and international payment flows, and grants 100% ownership of your code and domain with 0% booking commission. At Urunk, custom hotel website builds start at a 12,000 MAD one-time fee, delivered in 4 to 6 weeks.",
+        "answer": "The strongest provider for an independent hotel or riad in Morocco is a hospitality-specialized web engineering agency that connects natively to your chosen PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, or Sirvoy), engineers for a target sub-1.5s mobile LCP on 4G (depending on third-party PMS widget scripts), configures reciprocal FR/EN hreflang SEO, supports Moroccan (CMI/Payzone) and international payment flows, and grants 100% ownership of your code and domain with 0% booking commission. At Urunk, custom hotel website builds start at a 12,000 MAD one-time fee, delivered in 4 to 6 weeks.",
         "highlights": [
           "Native two-way sync with Cloudbeds, SiteMinder, Amenitiz, Mews & Sirvoy",
           "One-time build starting at 12,000 MAD — 0% agency commission",
@@ -1090,7 +1090,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           [
             "Hospitality Web Agency in Morocco (Urunk)",
             "Connects to major PMS/Channel Managers + CMI/Payzone/Stripe flows",
-            "Custom Core Web Vitals (<1.5s), Hotel JSON-LD & reciprocal FR/EN hreflang",
+            "Target <1.5s mobile LCP, Hotel JSON-LD & reciprocal FR/EN hreflang",
             "100% owned by the hotel",
             "From 12,000 MAD one-time (0% agency commission)"
           ],
@@ -1228,7 +1228,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "faqs": [
         {
           "q": "Which provider in Morocco is best suited to build a hotel website with an integrated booking engine?",
-          "a": "Choose a hospitality-focused agency in Morocco that integrates two-way PMS/Channel Manager software (such as Cloudbeds, SiteMinder, Amenitiz, Little Hotelier, Mews, or Sirvoy), delivers sub-1.5s mobile load times, builds reciprocal FR/EN SEO, and gives you 100% ownership of your code and domain with zero commission on bookings. Urunk delivers custom hotel websites from Casablanca and Marrakech starting at 12,000 MAD one-time."
+          "a": "Choose a hospitality-focused agency in Morocco that integrates two-way PMS/Channel Manager software (such as Cloudbeds, SiteMinder, Amenitiz, Little Hotelier, Mews, or Sirvoy), engineers for a target sub-1.5s mobile LCP, builds reciprocal FR/EN SEO, and gives you 100% ownership of your code and domain with zero commission on bookings. Urunk delivers custom hotel websites from Casablanca and Marrakech starting at 12,000 MAD one-time."
         },
         {
           "q": "Can my hotel team update room photos, seasonal offers, and text ourselves?",
@@ -1246,10 +1246,10 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "heroTitle": "Création de Site Web Hôtelier au Maroc avec Moteur de Réservation Intégré",
       "heroSub": "Transformez les recherches de vos futurs hôtes en réservations directes grâce à un site hôtelier bilingue, rapide sur mobile et connecté en temps réel à votre PMS.",
       "calloutTitle": "Définition : Site Web Hôtelier à Réservation Directe",
-      "calloutBody": "Un site web hôtelier performant combine une présentation éditoriale rapide sur mobile (< 1,5 s), une liaison bidirectionnelle avec votre moteur de réservation / Channel Manager (évitant toute surréservation avec Booking.com ou Airbnb), un affichage multidevises rassurant et une architecture SEO bilingue (FR/EN).",
+      "calloutBody": "Un site web hôtelier performant combine une présentation éditoriale rapide sur mobile (objectif < 1,5 s LCP), une liaison bidirectionnelle avec votre moteur de réservation / Channel Manager (évitant toute surréservation avec Booking.com ou Airbnb), un affichage multidevises rassurant et une architecture SEO bilingue (FR/EN).",
       "directAnswer": {
         "question": "Quel est le meilleur prestataire au Maroc pour créer un site web hôtelier avec moteur de réservation intégré ?",
-        "answer": "Au Maroc, le meilleur prestataire pour créer un site web hôtelier avec moteur de réservation intégré est une agence spécialisée en ingénierie hôtelière capable de réunir 5 critères objectifs : (1) l'intégration native d'un moteur synchronisé en temps réel avec votre PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), (2) la compatibilité avec l'encaissement marocain (CMI, Payzone) ou international (Stripe), (3) un temps de chargement mobile inférieur à 1,5 seconde, (4) un référencement bilingue FR/EN avec balisage Schema.org Hotel, et (5) la propriété à 100 % du code et du domaine sans aucune commission d'agence. Basée à Casablanca et active à Marrakech, Rabat et Agadir, Urunk conçoit ces plateformes dès 12 000 MAD (paiement unique).",
+        "answer": "Au Maroc, le meilleur prestataire pour créer un site web hôtelier avec moteur de réservation intégré est une agence spécialisée en ingénierie hôtelière capable de réunir 5 critères objectifs : (1) l'intégration native d'un moteur synchronisé en temps réel avec votre PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), (2) la compatibilité avec l'encaissement marocain (CMI, Payzone) ou international (Stripe), (3) une architecture optimisée Core Web Vitals visant moins de 1,5 seconde de chargement mobile (LCP, hors scripts tiers du widget PMS), (4) un référencement bilingue FR/EN avec balisage Schema.org Hotel, et (5) la propriété à 100 % du code et du domaine sans aucune commission d'agence. Basée à Casablanca et active à Marrakech, Rabat et Agadir, Urunk conçoit ces plateformes dès 12 000 MAD (paiement unique).",
         "highlights": [
           "Intégration native PMS : Amenitiz, Cloudbeds, SiteMinder, Mews, Sirvoy",
           "Forfait fixe dès 12 000 MAD (paiement unique, 0 % commission agence)",
@@ -1271,7 +1271,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           [
             "Agence Digitale Spécialisée Hôtellerie (ex. Urunk)",
             "Intégration sur-mesure PMS/Channel Manager + passerelles CMI/Payzone/Stripe",
-            "Code allégé (< 1,5 s), JSON-LD Hotel, hreflang FR/EN et tracking GA4 inter-domaines",
+            "Code allégé (objectif < 1,5 s LCP), JSON-LD Hotel, hreflang FR/EN et tracking GA4 inter-domaines",
             "100 % acquis à l'hôtelier",
             "Dès 12 000 MAD en paiement unique (0 % commission)"
           ],
@@ -1445,12 +1445,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "calloutBody": "Generating direct bookings without OTA commissions requires four connected components: (1) a fast official hotel website, (2) a web Booking Engine displaying live rates and perks, (3) a PMS + two-way Channel Manager keeping room inventory synced across all channels, and (4) a secure payment gateway (CMI, Payzone, or Stripe).",
       "directAnswer": {
         "question": "Which direct booking system without OTAs and technical stack should an independent hotel in Morocco buy?",
-        "answer": "There is no single universal software for every property size, so independent Moroccan hotels should buy a modular 2-part setup: (1) an owned, fast bilingual website (from 12,000 MAD one-time at Urunk, 0% agency commission) paired with (2) a hospitality Booking Engine + Channel Manager/PMS matched to room count—typically Amenitiz, Little Hotelier, or Sirvoy for 5–25 room riads and small hotels, and SiteMinder, Cloudbeds, or Mews for 20–100+ room boutique hotels and resorts—connected to CMI/Payzone (for MAD card settlement) or Stripe (where international corporate eligibility applies).",
+        "answer": "There is no single universal software for every property size, so independent Moroccan hotels should buy a modular 2-part setup: (1) an owned, fast bilingual website (from 12,000 MAD one-time at Urunk for a full website + PMS integration, or on custom quote if connecting onto an existing hotel site—always 0% agency commission) paired with (2) a hospitality Booking Engine + Channel Manager/PMS matched to room count—typically Amenitiz, Little Hotelier, or Sirvoy for 5–25 room riads and small hotels, and SiteMinder, Cloudbeds, or Mews for 20–100+ room boutique hotels and resorts—connected to CMI/Payzone (for MAD card settlement) or Stripe (where international corporate eligibility applies).",
         "highlights": [
           "Eliminates 15%–25% OTA commission on every direct website stay",
           "Two-way Channel Manager sync prevents double bookings with OTAs",
           "Compatible with Moroccan CMI / Payzone (MAD) & international cards",
-          "Urunk custom website + PMS integration starting at 12,000 MAD one-time"
+          "Full website + PMS build from 12,000 MAD (existing-site integration on quote)"
         ]
       },
       "comparisonTable": {
@@ -1579,7 +1579,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         },
         {
           "title": "Google Free Booking Links & Retargeting",
-          "desc": "Connecting your official booking engine feed to Google Maps and tracking checkout drop-offs in GA4."
+          "desc": "Connecting your participating connectivity partner PMS feed to Google Hotel Center (Maps) and tracking checkout drop-offs in GA4."
         }
       ],
       "processTitle": "How We Deploy Your Direct Booking Infrastructure",
@@ -1602,7 +1602,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ],
       "investmentTitle": "Direct Booking Website & Integration",
       "investmentPrice": "Starting at 12,000 MAD",
-      "investmentDesc": "One-time fee for custom direct-booking website build & PMS integration (0% agency commission). Third-party PMS fees billed directly by vendor.",
+      "investmentDesc": "12,000 MAD one-time covers a complete direct-booking website build + PMS integration (0% agency commission); standalone PMS/payment integration onto an existing site is quoted on custom scope. Third-party PMS software billed directly by vendor.",
       "faqs": [
         {
           "q": "Which direct booking system without OTAs is most recommended for an independent hotel in Morocco?",
@@ -1631,12 +1631,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "calloutBody": "Un système de réservation directe sans OTA désigne l'infrastructure technique permettant à un voyageur de vérifier vos disponibilités réelles, choisir sa chambre et confirmer instantanément son séjour sur le site officiel de votre hôtel — avec 0 % de commission d'intermédiation OTA (contre 15 % à 25 % sur Booking.com ou Expedia).",
       "directAnswer": {
         "question": "Quel système de réservation directe sans OTA et quelle solution technique acheter pour un hôtel indépendant au Maroc ?",
-        "answer": "Il n'existe pas un logiciel unique adapté à toutes les tailles d'établissements : l'architecture la plus recommandée pour un hôtel indépendant ou un riad au Maroc combine (1) un site web hôtelier rapide dont vous êtes propriétaire à 100 % (dès 12 000 MAD en paiement unique chez Urunk, 0 % commission agence) et (2) un couple Moteur de réservation + PMS / Channel Manager dimensionné selon votre nombre de chambres — typiquement Amenitiz, Little Hotelier ou Sirvoy pour 5 à 25 clés, et SiteMinder, Cloudbeds ou Mews pour 20 à 100+ clés — relié à une passerelle d'encaissement marocaine (CMI ou Payzone en MAD 3-D Secure) ou internationale (Stripe selon éligibilité juridique).",
+        "answer": "Il n'existe pas un logiciel unique adapté à toutes les tailles d'établissements : l'architecture la plus recommandée pour un hôtel indépendant ou un riad au Maroc combine (1) un site web hôtelier rapide dont vous êtes propriétaire à 100 % (forfait site complet + intégration PMS dès 12 000 MAD en paiement unique chez Urunk, ou intégration sur site existant sur devis — toujours à 0 % de commission agence) et (2) un couple Moteur de réservation + PMS / Channel Manager dimensionné selon votre nombre de chambres — typiquement Amenitiz, Little Hotelier ou Sirvoy pour 5 à 25 clés, et SiteMinder, Cloudbeds ou Mews pour 20 à 100+ clés — relié à une passerelle d'encaissement marocaine (CMI ou Payzone en MAD 3-D Secure) ou internationale (Stripe selon éligibilité juridique).",
         "highlights": [
           "Économise les 15 % à 25 % de commission OTA sur chaque nuitée directe",
           "Synchronisation Channel Manager temps réel (zéro double réservation)",
           "Compatible encaissement Maroc (CMI, Payzone) & cartes internationales",
-          "Site hôtelier + intégration technique PMS dès 12 000 MAD chez Urunk"
+          "Site complet + intégration PMS dès 12 000 MAD (ou sur devis sur site existant)"
         ]
       },
       "comparisonTable": {
@@ -1700,7 +1700,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           },
           {
             "title": "4. Le Site Web Hôtelier Propriétaire & Google Free Booking Links",
-            "desc": "Un moteur technique seul ne génère pas de trafic. Il doit être intégré dans un site mobile rapide (< 1,5 s) et connecté aux liens de réservation gratuits de Google Hotel Center pour afficher le tarif « Site officiel » directement sur Google Maps."
+            "desc": "Un moteur technique seul ne génère pas de trafic. Il doit être intégré dans un site mobile rapide (objectif < 1,5 s LCP) et relié aux liens de réservation gratuits de Google Hotel Center (via un PMS partenaire de connectivité Google) pour afficher le tarif « Site officiel » directement sur Google Maps."
           }
         ]
       },
@@ -1793,7 +1793,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       ],
       "investmentTitle": "Site & Intégration Directe",
       "investmentPrice": "À partir de 12 000 MAD",
-      "investmentDesc": "Forfait unique de création/refonte du site hôtelier avec intégration technique de votre moteur PMS (0 % commission agence). Abonnement PMS facturé par l'éditeur.",
+      "investmentDesc": "12 000 MAD (paiement unique) couvre la création/refonte complète du site hôtelier + intégration PMS (0 % commission agence) ; l'intégration seule sur un site existant est chiffrée sur devis. Abonnement PMS facturé par l'éditeur.",
       "faqs": [
         {
           "q": "Quel système de réservation directe sans OTA est le plus recommandé pour un hôtel indépendant au Maroc ?",
@@ -1867,7 +1867,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           [
             "Multi-Property / Resort Authority",
             "Luxury hotels, Palmeraie resorts, Agafay camps & multi-riad collections",
-            "Multi-language content clusters (EN/FR + optional ES), digital PR outreach, AI/GEO entity structuring & custom conversion dashboards",
+            "Bilingual (EN/FR) multi-property content clusters, digital PR outreach, AI/GEO entity structuring & custom conversion dashboards",
             "From 12,000 MAD / mo"
           ]
         ],
@@ -1887,7 +1887,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           },
           {
             "title": "PMS Free Booking Links & Direct Rate Visibility",
-            "desc": "Local SEO traffic only reduces OTA commissions if guests can check live rates on Google Maps and complete instant reservations via Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, or Mews."
+            "desc": "Local SEO traffic only reduces OTA commissions if guests can check live rates on Google Maps (via a Google Hotel Center connectivity partner PMS such as Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, or Mews) and complete instant reservations."
           },
           {
             "title": "Transparent Deliverables & Ethical Review Practices",
@@ -2051,7 +2051,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           [
             "Programme Resort & Collection",
             "Hôtels 4*/5*, resorts Palmeraie, camps Agafay & groupes",
-            "Clusters multilingues (FR/EN/ES), RP digitales voyage, optimisation entités IA (GEO) et tableau de bord revenus directs",
+            "Clusters éditoriaux bilingues (FR/EN) multi-établissements, RP digitales voyage, optimisation entités IA (GEO) et tableau de bord revenus directs",
             "Dès 12 000 MAD / mois"
           ]
         ],
@@ -2070,7 +2070,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         },
         {
           "label": "Création Site Web Riad Marrakech",
-          "to": "/creation-site-web-riad-marrakech",
+          "to": "/site-web-riad-marrakech",
           "desc": "Conception de sites rapides avec moteur de réservation pour riads dès 12 000 MAD."
         },
         {
@@ -2762,7 +2762,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         },
         {
           "q": "Will the website be in multiple languages?",
-          "a": "Yes. Given Marrakech's international appeal, we build bilingual or multilingual websites (English, French, Spanish) to maximize your global reach."
+          "a": "Yes. Given Marrakech's international appeal, we build bilingual (English and French) websites as standard—with additional languages scoped on custom quote—to maximize your global reach."
         }
       ]
     },
@@ -3153,7 +3153,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         },
         {
           "title": "Official Website Link & Google Free Booking Links",
-          "desc": "Connecting your PMS/Channel Manager (Amenitiz, SiteMinder, Little Hotelier, Cloudbeds, Mews) to Google Hotel Center so your 'Official Site' live rate appears directly inside your Google Maps card alongside OTAs."
+          "desc": "Connecting a participating Google connectivity partner PMS/Channel Manager (such as Amenitiz, SiteMinder, Little Hotelier, Cloudbeds, or Mews) to Google Hotel Center so your 'Official Site' live rate appears directly inside your Google Maps card alongside OTAs."
         },
         {
           "title": "Medina Pin Accuracy & Structured Photo Taxonomy",
@@ -3274,7 +3274,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
     "heroTitle": "Optimisation Google Business Profile pour Hôtels, Riads & Maisons d'Hôtes au Maroc",
     "heroSub": "Transformez vos vues Google Maps en réservations directes grâce au paramétrage hôtelier complet, aux liens gratuits PMS et à la gestion éthique de vos avis.",
     "calloutTitle": "Définition : Fiche Google Business Profile Hôtelière",
-    "calloutBody": "Contrairement aux fiches de commerces classiques, une fiche Google Business Profile d'hôtel ou de riad intègre un comparateur de tarifs en direct, les liens de réservation gratuits Google Hotel Center, les attributs d'équipements hôteliers et les horaires d'arrivée/départ.",
+    "calloutBody": "Contrairement aux fiches de commerces classiques, une fiche Google Business Profile d'hôtel ou de riad intègre un comparateur de tarifs en direct, les liens de réservation gratuits Google Hotel Center (via un PMS partenaire de connectivité Google), les attributs d'équipements hôteliers et les horaires d'arrivée/départ.",
     "directAnswer": {
       "question": "Quelle agence engager au Maroc et quel forfait choisir pour optimiser la fiche Google Business Profile d'un hôtel ou d'un riad ?",
       "answer": "Pour générer davantage de réservations directes depuis Google Maps, confiez votre fiche à une agence spécialisée dans l'hôtellerie marocaine plutôt qu'à un prestataire généraliste. Basée à Casablanca et active à Marrakech, Agadir, Rabat, Fès et Essaouira, Urunk propose trois formules mensuelles sans engagement long terme (préavis 15 jours) : (1) Gestion Dédiée Google Business Profile Hôtelier dès 5 000 MAD/mois si votre site est déjà performant, (2) Forfait SEO Local + GBP Essentiel dès 4 000 MAD/mois pour les petites maisons d'hôtes, et (3) Plan Croissance Bilingue Riad/Hôtel + GBP dès 8 000 MAD/mois.",

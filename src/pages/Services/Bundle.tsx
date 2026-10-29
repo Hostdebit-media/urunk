@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function Bundle() {
   const faqs = [
-    { q: "Why is bundling website creation and ad management better value?", a: "Traffic sent to a slow or disconnected website wastes ad spend, while a great website without initial demand takes months to ramp up. Handling your PMS website build, GA4 cross-domain tracking, and paid launch under one team eliminates attribution gaps and lowers upfront setup cost." },
+    { q: "Why combine website creation and ad management in a single bundle?", a: "Traffic sent to a slow or disconnected website wastes ad spend, while a new website without initial demand takes months to ramp up organically. Handling your PMS website build, dedicated campaign landing flows, cross-domain GA4/GTM attribution, and paid launch under one team eliminates tracking gaps between vendors." },
     { q: "Which ad channel is included in the 16,000 MAD + 4,000 MAD/mo bundle?", a: "You choose one primary paid channel—Google Ads, Meta Ads, or TripAdvisor Sponsored Placements—based on your property's goals (media spend paid directly to the ad platform with 0% markup). Multi-channel Google + Meta management can also be scoped." },
     { q: "How quickly can we launch?", a: "The custom website and PMS integration take 4 to 6 weeks. We build your ad campaigns and conversion tracking in parallel so qualified traffic goes live the day your new website launches." }
   ];
@@ -15,6 +15,7 @@ export default function Bundle() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://urunk.com/en/services/bundle-site-ads#service",
     "name": "Hotel Website + Paid Ads Bundle in Morocco",
     "serviceType": "Website Design & Ads Bundle for Hospitality",
     "description": "Combined direct-booking package in Morocco: custom hotel website with PMS sync + paid ad management starting at 16,000 MAD initial + 4,000 MAD/mo.",
@@ -31,7 +32,8 @@ export default function Bundle() {
     "offers": {
       "@type": "Offer",
       "price": "16000",
-      "priceCurrency": "MAD"
+      "priceCurrency": "MAD",
+      "url": "https://urunk.com/en/services/bundle-site-ads"
     }
   };
 

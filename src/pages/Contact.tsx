@@ -1,8 +1,18 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import { trackEvent } from '../utils/analytics';
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://urunk.com/en/contact#contactpage",
+  "url": "https://urunk.com/en/contact",
+  "name": "Contact Urunk Digital Agency",
+  "description": "Contact Urunk's hospitality digital growth team for direct booking websites, SEO, and Google Ads management in Morocco.",
+  "mainEntity": { "@id": "https://urunk.com/#service" }
+};
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,6 +46,17 @@ export default function Contact() {
       return;
     }
 
+    // Validation (before setting rate-limit lock)
+    if (!formData.name.trim() || !formData.email.trim() || !formData.property.trim()) {
+      setErrorMsg('Please fill out all required fields.');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setErrorMsg('Please enter a valid email address.');
+      return;
+    }
+
     // Rate limiting check
     const lastSubmit = localStorage.getItem('form_last_submit');
     const now = Date.now();
@@ -44,12 +65,6 @@ export default function Contact() {
       return;
     }
     localStorage.setItem('form_last_submit', now.toString());
-
-    // Validation
-    if (!formData.name.trim() || !formData.email.trim() || !formData.property.trim()) {
-      setErrorMsg('Please fill out all required fields.');
-      return;
-    }
 
     setIsSubmitting(true);
     trackEvent('quote_form_submit', {
@@ -70,11 +85,14 @@ export default function Contact() {
       if (response.ok) {
         setSubmitted(true);
       } else {
-        // Fallback standard submit if AJAX failed
-        form.submit();
+        setErrorMsg(
+          'Our form relay service is temporarily unreachable. Please message us directly on WhatsApp (+212 668-802096) or email contact@urunk.com.'
+        );
       }
     } catch {
-      form.submit();
+      setErrorMsg(
+        'Our form relay service is temporarily unreachable. Please message us directly on WhatsApp (+212 668-802096) or email contact@urunk.com.'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -82,61 +100,11 @@ export default function Contact() {
 
   return (
     <div className="w-full bg-bg text-primary">
-      <Helmet>
-        <title>Contact Urunk | Request Your Free Hotel & Riad SEO Audit</title>
-        <meta name="description" content="Contact Urunk's hospitality digital growth team in Morocco. Get a free direct booking audit, custom website proposal, or SEO strategy consultation today." />
-        <link rel="canonical" href="https://urunk.com/en/contact" />
-        <link rel="alternate" hrefLang="en" href="https://urunk.com/en/contact" />
-        <link rel="alternate" hrefLang="fr" href="https://urunk.com/contact" />
-        <meta property="og:title" content="Contact Urunk | Request Your Free Hotel & Riad SEO Audit" />
-        <meta property="og:description" content="Contact Urunk's hospitality digital growth team in Morocco. Get a free direct booking audit, custom website proposal, or SEO strategy consultation today." />
-        <meta property="og:url" content="https://urunk.com/en/contact" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://urunk.com/og-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "@id": "https://urunk.com/en/contact#webpage",
-            "url": "https://urunk.com/en/contact",
-            "name": "Contact Urunk Digital Agency",
-            "description": "Contact Urunk's hospitality digital growth team for direct booking websites, SEO, and Google Ads management in Morocco.",
-            "mainEntity": {
-              "@type": "LocalBusiness",
-              "name": "Urunk Digital Agency",
-              "image": "https://urunk.com/logo.png",
-              "telephone": "+212668802096",
-              "email": "contact@urunk.com",
-              "priceRange": "$$$",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "3 Rue El Kadi Lass, Maarif",
-                "addressLocality": "Casablanca",
-                "addressRegion": "Casablanca-Settat",
-                "postalCode": "20330",
-                "addressCountry": "MA"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 33.5855,
-                "longitude": -7.6365
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              "sameAs": [
-                "https://facebook.com/urunk",
-                "https://instagram.com/urunk",
-                "https://linkedin.com/company/urunk"
-              ]
-            }
-          })}
-        </script>
-      </Helmet>
+      <SEO
+        title="Contact Our Search Experts: Get Your Free Audit | Urunk"
+        description="Ready to stop losing OTA commissions? Contact our team for a free website performance, speed, and local SEO diagnostic audit today."
+        schema={contactPageSchema}
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 bg-primary text-white relative">
@@ -210,7 +178,7 @@ export default function Contact() {
                   <div>
                     <span className="text-xs text-primary/60 uppercase tracking-wider font-semibold">Business Hours</span>
                     <p className="text-sm font-medium text-primary">
-                      Monday – Friday: 9:00 AM – 7:00 PM (GMT+1)
+                      Monday – Friday: 9:00 AM – 6:00 PM (GMT+1)
                     </p>
                   </div>
                 </div>
@@ -441,7 +409,7 @@ export default function Contact() {
               </p>
               <div className="space-y-3 text-xs text-white/90 font-light">
                 <p className="flex items-center gap-2"><CheckCircle2 className="text-yellow-400" size={16} /> <strong>Response Guarantee:</strong> All business inquiries receive a response within 24 business hours.</p>
-                <p className="flex items-center gap-2"><CheckCircle2 className="text-yellow-400" size={16} /> <strong>Working Hours:</strong> Monday through Friday, 9:00 AM – 7:00 PM (GMT+1).</p>
+                <p className="flex items-center gap-2"><CheckCircle2 className="text-yellow-400" size={16} /> <strong>Working Hours:</strong> Monday through Friday, 9:00 AM – 6:00 PM (GMT+1).</p>
                 <p className="flex items-center gap-2"><CheckCircle2 className="text-yellow-400" size={16} /> <strong>Languages Spoken:</strong> Fluent Commercial English, French, and Moroccan Arabic.</p>
               </div>
             </div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
 
-const routeMappings: Record<string, { en: string; fr: string }> = {
+export const routeMappings: Record<string, { en: string; fr: string }> = {
   'services': { en: 'Services', fr: 'Services' },
   'website-design': { en: 'Website Design', fr: 'Création Site Web' },
+  'creation-site-web': { en: 'Website Design', fr: 'Création Site Web' },
   'web-design-morocco': { en: 'Web Design Morocco', fr: 'Agence Web Maroc' },
   'agence-web-maroc': { en: 'Web Design Morocco', fr: 'Agence Web Maroc' },
   'web-design-casablanca': { en: 'Web Design Casablanca', fr: 'Agence Web Casablanca' },
@@ -39,6 +39,7 @@ const routeMappings: Record<string, { en: string; fr: string }> = {
   'tripadvisor-ads': { en: 'Tripadvisor Ads', fr: 'TripAdvisor Ads' },
   'gestion-publicites-tripadvisor': { en: 'Tripadvisor Ads', fr: 'Gestion TripAdvisor Ads' },
   'bundle': { en: 'Website + Ads Bundle', fr: 'Pack Site Web + Pub' },
+  'bundle-site-ads': { en: 'Website + Ads Bundle', fr: 'Pack Site Web + Pub' },
   'site-web-et-publicite': { en: 'Website + Ads Bundle', fr: 'Pack Site Web + Pub' },
   'ai-seo-optimization': { en: 'AI Search Optimization', fr: 'Optimisation SEO IA' },
   'wordpress-seo': { en: 'WordPress SEO', fr: 'SEO WordPress' },
@@ -108,83 +109,40 @@ export default function Breadcrumbs() {
     return '/' + pathnames.slice(0, index + 1).join('/');
   };
 
-  const domain = 'https://urunk.com';
-  const homeUrl = isFrench ? domain : `${domain}/en`;
-
-  const breadcrumbListItems = [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": isFrench ? "Accueil" : "Home",
-      "item": homeUrl
-    }
-  ];
-
-  let position = 2;
-  const filteredSegments = pathnames.filter(seg => seg !== 'en');
-
-  filteredSegments.forEach((segment, idx) => {
-    const originalIndex = !isFrench ? idx + 1 : idx;
-    const routePath = domain + buildPath(originalIndex);
-    const mappedName = routeMappings[segment];
-    const label = mappedName ? (isFrench ? mappedName.fr : mappedName.en) : formatSlug(segment);
-
-    breadcrumbListItems.push({
-      "@type": "ListItem",
-      "position": position++,
-      "name": label,
-      "item": routePath
-    });
-  });
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbListItems
-  };
-
   return (
-    <>
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-      </Helmet>
+    <nav className="w-full overflow-hidden text-xs md:text-sm text-primary/80 font-medium px-4 sm:px-6 md:px-12 max-w-7xl mx-auto py-2.5 md:py-3.5 print:hidden" aria-label="Breadcrumb">
+      <ol className="flex items-center space-x-1 md:space-x-2 overflow-x-auto whitespace-nowrap scrollbar-none py-1 max-w-full">
+        <li className="inline-flex items-center">
+          <Link to={isFrench ? '/' : '/en'} className="inline-flex items-center py-1 hover:text-accent transition-colors">
+            <Home size={14} className="mr-1.5 shrink-0" />
+            <span>{isFrench ? 'Accueil' : 'Home'}</span>
+          </Link>
+        </li>
 
-      <nav className="w-full overflow-hidden text-xs md:text-sm text-primary/80 font-medium px-4 sm:px-6 md:px-12 max-w-7xl mx-auto py-2.5 md:py-3.5 print:hidden" aria-label="Breadcrumb">
-        <ol className="flex items-center space-x-1 md:space-x-2 overflow-x-auto whitespace-nowrap scrollbar-none py-1 max-w-full">
-          <li className="inline-flex items-center">
-            <Link to={isFrench ? '/' : '/en'} className="inline-flex items-center py-1 hover:text-accent transition-colors">
-              <Home size={14} className="mr-1.5 shrink-0" />
-              <span>{isFrench ? 'Accueil' : 'Home'}</span>
-            </Link>
-          </li>
+        {pathnames.map((segment, index) => {
+          if (segment === 'en') return null;
 
-          {pathnames.map((segment, index) => {
-            if (segment === 'en') return null;
+          const routePath = buildPath(index);
+          const isLast = index === pathnames.length - 1;
+          const mappedName = routeMappings[segment];
+          const label = mappedName ? (isFrench ? mappedName.fr : mappedName.en) : formatSlug(segment);
 
-            const routePath = buildPath(index);
-            const isLast = index === pathnames.length - 1;
-            const mappedName = routeMappings[segment];
-            let label = mappedName ? (isFrench ? mappedName.fr : mappedName.en) : formatSlug(segment);
-
-            return (
-              <li key={routePath} className="flex items-center">
-                <ChevronRight size={14} className="text-primary/40 mx-1 shrink-0" />
-                {isLast ? (
-                  <span className="text-primary font-semibold truncate max-w-[200px] md:max-w-xs" aria-current="page">
-                    {label}
-                  </span>
-                ) : (
-                  <Link to={routePath} className="hover:text-accent transition-colors truncate max-w-[150px] md:max-w-none py-1">
-                    {label}
-                  </Link>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      </nav>
-    </>
+          return (
+            <li key={routePath} className="flex items-center">
+              <ChevronRight size={14} className="text-primary/40 mx-1 shrink-0" />
+              {isLast ? (
+                <span className="text-primary font-semibold truncate max-w-[200px] md:max-w-xs" aria-current="page">
+                  {label}
+                </span>
+              ) : (
+                <Link to={routePath} className="hover:text-accent transition-colors truncate max-w-[150px] md:max-w-none py-1">
+                  {label}
+                </Link>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

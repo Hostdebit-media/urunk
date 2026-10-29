@@ -30,13 +30,18 @@ export default function WebsiteDesignFR() {
     },
     {
       q: "Le forfait inclut-il le référencement bilingue (français et anglais) pour la clientèle internationale ?",
-      a: "Oui. Nos sites hôteliers intègrent une structure bilingue propre (FR/EN, extensible à l'espagnol ou l'allemand sur devis) avec balises hreflang réciproques, données structurées Schema.org Hotel et compression d'images AVIF/WebP pour charger rapidement sur les réseaux 4G/5G des voyageurs.",
+      a: "Oui. Nos sites hôteliers intègrent une structure bilingue propre (FR/EN, extensible à d'autres langues sur devis) avec balises hreflang réciproques, données structurées Schema.org Hotel et compression d'images AVIF/WebP pour charger rapidement sur les réseaux 4G/5G des voyageurs.",
+    },
+    {
+      q: "En combien de réservations directes un forfait à 12 000 MAD est-il rentabilisé ?",
+      a: "À titre d'exemple illustratif (non garanti, variable selon votre tarif moyen et votre taux d'occupation), pour un hôtel ou riad facturant 1 500 MAD la nuitée et économisant 20 % de commission OTA (soit 300 MAD par nuitée), 40 nuitées transférées en réservation directe sur votre site officiel compensent l'investissement initial de 12 000 MAD.",
     },
   ];
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://urunk.com/services/creation-site-web#service",
     name: "Forfaits de création de site web hôtelier au Maroc",
     serviceType: "Création de sites web pour hôtels, riads et maisons d'hôtes",
     description:
@@ -55,6 +60,7 @@ export default function WebsiteDesignFR() {
       "@type": "Offer",
       price: "12000",
       priceCurrency: "MAD",
+      url: "https://urunk.com/services/creation-site-web",
     },
   };
 
@@ -89,9 +95,9 @@ export default function WebsiteDesignFR() {
     {
       name: "Architecture Sur-Mesure / Multi-Établissements",
       fit: "Boutique-hôtels 30+ clés, resorts, groupes ou portails sur mesure",
-      cost: "Dès 20 000 MAD (devis fixe selon périmètre)",
+      cost: "Dès 25 000 MAD (devis fixe selon périmètre)",
       ownership: "100 % propriétaire (WordPress sur mesure ou React)",
-      verdict: "Conçu pour catalogues complexes, spa/restauration & multilingue étendu",
+      verdict: "Conçu pour catalogues complexes, spa/restauration & multilingue sur devis",
     },
     {
       name: "Constructeurs SaaS Hôteliers en Location",
@@ -454,7 +460,7 @@ export default function WebsiteDesignFR() {
         kicker="Ingénierie Web par Ville"
         title="Création de Sites Web & Réservation Directe par Ville au Maroc"
         subtitle="Consultez nos feuilles de route dédiées à Marrakech, Casablanca, Agadir et Rabat pour les hôtels, riads et entreprises."
-        links={getMatrixLinksForService("website-design", "fr")}
+        links={getMatrixLinksForService("hotel-website-design", "fr")}
         isFrench={true}
         bgVariant="white"
       />

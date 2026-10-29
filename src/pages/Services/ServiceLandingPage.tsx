@@ -38,10 +38,15 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
   };
 
   const numericPrice = extractNumericMadPrice(data.investmentPrice);
+  const isMonthlyPrice = /\/\s*(?:mo|mois)|par mois|per month/i.test(data.investmentPrice);
+  const cleanPath = location.pathname.endsWith('/') && location.pathname.length > 1
+    ? location.pathname.slice(0, -1)
+    : location.pathname;
 
   const schemaMarkup: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `https://urunk.com${cleanPath}#service`,
     "name": data.heroTitle,
     "serviceType": data.heroTitle,
     "description": data.description,
@@ -65,7 +70,18 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
           "offers": {
             "@type": "Offer",
             "price": numericPrice,
-            "priceCurrency": "MAD"
+            "priceCurrency": "MAD",
+            "url": `https://urunk.com${cleanPath}`,
+            ...(isMonthlyPrice
+              ? {
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": numericPrice,
+                    "priceCurrency": "MAD",
+                    "unitText": "MONTH"
+                  }
+                }
+              : {})
           }
         }
       : {})

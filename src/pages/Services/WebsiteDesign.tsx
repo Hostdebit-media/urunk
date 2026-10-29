@@ -30,13 +30,18 @@ export default function WebsiteDesign() {
     },
     {
       q: "Does the package include bilingual English and French SEO?",
-      a: "Yes. Every hospitality build includes clean English/French URL architecture, reciprocal hreflang tags, Hotel Schema.org JSON-LD markup, and AVIF/WebP media optimization for fast mobile loading across international 4G/5G networks.",
+      a: "Yes. Every hospitality build includes clean English/French URL architecture (with additional languages available on custom quote), reciprocal hreflang tags, Hotel Schema.org JSON-LD markup, and AVIF/WebP media optimization for fast mobile loading across international 4G/5G networks.",
+    },
+    {
+      q: "How many direct room nights pay back a 12,000 MAD website build?",
+      a: "As an illustrative example (not a guaranteed outcome, since results depend on ADR and occupancy), if your property averages 1,500 MAD per night and saves a 20% OTA commission (300 MAD per room night), shifting 40 room nights onto your official website recovers the 12,000 MAD build cost.",
     },
   ];
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://urunk.com/en/services/website-design#service",
     "name": "Hotel Website Creation Packages in Morocco",
     "serviceType": "Website Design & PMS Integration for Hotels and Riads",
     "description": "Transparent hotel and riad website packages in Morocco starting at 12,000 MAD one-time: mobile-first UX, PMS booking engine sync, bilingual SEO, and 0% agency commission.",
@@ -53,7 +58,8 @@ export default function WebsiteDesign() {
     "offers": {
       "@type": "Offer",
       "price": "12000",
-      "priceCurrency": "MAD"
+      "priceCurrency": "MAD",
+      "url": "https://urunk.com/en/services/website-design"
     }
   };
 
@@ -88,9 +94,9 @@ export default function WebsiteDesign() {
     {
       name: "Bespoke / Multi-Property Architecture",
       fit: "30+ room boutique hotels, resorts, groups & custom portals",
-      cost: "From 20,000 MAD (fixed quote based on scope)",
+      cost: "From 25,000 MAD (fixed quote based on scope)",
       ownership: "100% client-owned (custom WordPress or React)",
-      verdict: "Tailored for dining/spa outlets & 3+ language setups"
+      verdict: "Tailored for dining/spa outlets & custom multi-language scope"
     },
     {
       name: "Rented SaaS Website Builders",
@@ -434,7 +440,7 @@ export default function WebsiteDesign() {
         kicker="Regional Web Engineering"
         title="Specialized Web Design & Direct Booking Hubs Across Morocco"
         subtitle="Explore our city-specific web engineering and direct booking roadmaps across Marrakech, Casablanca, Agadir, and Rabat."
-        links={getMatrixLinksForService('website-design', 'en')}
+        links={getMatrixLinksForService('hotel-website-design', 'en')}
         isFrench={false}
         bgVariant="white"
       />

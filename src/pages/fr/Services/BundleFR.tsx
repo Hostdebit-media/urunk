@@ -12,17 +12,18 @@ export default function BundleFR() {
     },
     {
       q: "Quel canal publicitaire est inclus dans le forfait à 16 000 MAD + 4 000 MAD/mois ?",
-      a: "La formule inclut la création complète du site hôtelier (à tarif préférentiel dans le pack) et le pilotage mensuel d'un levier publicitaire prioritaire au choix (Google Ads, Meta Ads ou TripAdvisor Ads), hors budget média payé directement à la régie.",
+      a: "La formule réunit la création complète du site hôtelier, l'architecture des pages d'atterrissage publicitaires, le suivi GA4/GTM inter-domaines et le pilotage mensuel d'un levier publicitaire prioritaire au choix (Google Ads, Meta Ads ou TripAdvisor Ads), hors budget média payé directement à la régie.",
     },
     {
-      q: "Pourquoi le pack offre-t-il un meilleur rapport qualité-prix qu'un achat séparé ?",
-      a: "En alignant conception du site, connexion PMS, Google Tag Manager et campagnes publicitaires sous une même équipe, vous éliminez les pertes de tracking entre prestataires et réduisez votre coût initial par rapport à deux missions séparées.",
+      q: "Pourquoi regrouper création du site et campagnes publicitaires sous une même équipe ?",
+      a: "En alignant conception du site, connexion PMS, Google Tag Manager et campagnes publicitaires sous un interlocuteur unique, vous éliminez les pertes d'attribution entre prestataires et activez un trafic qualifié dès le jour de la mise en ligne.",
     },
   ];
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://urunk.com/services/bundle-site-ads#service",
     name: "Pack Site Web Hôtelier + Publicité au Maroc",
     serviceType: "Forfait Site Web et Acquisition Publicitaire pour Hôtels",
     description:
@@ -41,6 +42,7 @@ export default function BundleFR() {
       "@type": "Offer",
       price: "16000",
       priceCurrency: "MAD",
+      url: "https://urunk.com/services/bundle-site-ads",
     },
   };
 

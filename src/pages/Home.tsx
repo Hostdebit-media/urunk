@@ -1,96 +1,50 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import ImageWithSkeleton from '../components/ImageWithSkeleton';
 import OptimizedImage from '../components/OptimizedImage';
 import PricingSection from '../components/Home/PricingSection';
 import FaqSection from '../components/Home/FaqSection';
 import BottomFormSection from '../components/Home/BottomFormSection';
 
+const homeServiceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Design for Hotels, Riads, and SMEs",
+    "provider": { "@id": "https://urunk.com/#service" },
+    "areaServed": "MA",
+    "offers": {
+      "@type": "Offer",
+      "price": "12000",
+      "priceCurrency": "MAD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Local SEO and Google Maps Optimization Morocco",
+    "provider": { "@id": "https://urunk.com/#service" },
+    "areaServed": "MA"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Google Ads Campaign Management Morocco",
+    "provider": { "@id": "https://urunk.com/#service" },
+    "areaServed": "MA"
+  }
+];
+
 export default function Home() {
   return (
     <div className="w-full">
-      <Helmet>
-        <title>Morocco Web & SEO Agency for Hotels & Riads | Urunk EN</title>
-        <meta
-          name="description"
-          content="Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking websites, Google Ads, and local SEO in Casablanca and Marrakech. Free audit."
-        />
-        <link rel="canonical" href="https://urunk.com/en" />
-        <link rel="alternate" hrefLang="en" href="https://urunk.com/en" />
-        <link rel="alternate" hrefLang="fr" href="https://urunk.com/" />
-        <link rel="alternate" hrefLang="x-default" href="https://urunk.com/" />
-        <script type="application/ld+json">
-          {`
-            [
-              {
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "@id": "https://urunk.com/en/#organization",
-                "name": "Urunk",
-                "url": "https://urunk.com/en",
-                "logo": "https://urunk.com/logo.png",
-                "sameAs": [
-                  "https://linkedin.com/company/urunk",
-                  "https://facebook.com/urunk",
-                  "https://instagram.com/urunk"
-                ]
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "@id": "https://urunk.com/en/#localbusiness",
-                "name": "Urunk",
-                "url": "https://urunk.com/en",
-                "telephone": "+212668802096",
-                "email": "contact@urunk.com",
-                "priceRange": "3000 MAD - 12000 MAD",
-                "areaServed": "MA",
-                "address": {
-                  "@type": "PostalAddress",
-                  "streetAddress": "3 Rue El Kadi Lass, Maarif",
-                  "addressLocality": "Casablanca",
-                  "addressRegion": "Casablanca-Settat",
-                  "postalCode": "20330",
-                  "addressCountry": "MA"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": 33.5855,
-                  "longitude": -7.6365
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Website Design for Hotels, Riads, and SMEs",
-                "provider": { "@id": "https://urunk.com/en/#organization" },
-                "areaServed": "MA",
-                "offers": {
-                  "@type": "Offer",
-                  "price": "12000",
-                  "priceCurrency": "MAD"
-                }
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Local SEO and Google Maps Optimization Morocco",
-                "provider": { "@id": "https://urunk.com/en/#organization" },
-                "areaServed": "MA"
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "name": "Google Ads Campaign Management Morocco",
-                "provider": { "@id": "https://urunk.com/en/#organization" },
-                "areaServed": "MA"
-              }
-            ]
-          `}
-        </script>
-      </Helmet>
+      <SEO
+        title="Morocco Web & SEO Agency for Hotels & Riads | Urunk EN"
+        description="Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking websites, Google Ads, and local SEO in Casablanca and Marrakech. Free audit."
+        schema={homeServiceSchemas}
+      />
 
       {/* 1. Core Promise + Annotated Delivered Page Preview */}
       <section className="pt-12 pb-16 md:pt-18 md:pb-22 px-6 bg-bg-light" id="hero-section">

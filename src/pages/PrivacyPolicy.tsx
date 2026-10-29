@@ -1,16 +1,14 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Shield, Lock, FileText, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function PrivacyPolicy() {
   return (
     <div className="w-full bg-bg text-primary pb-24">
-      <Helmet>
-        <title>Privacy Policy | Data Protection & GDPR Compliance | Urunk</title>
-        <meta name="description" content="Read Urunk's Privacy Policy to understand how we collect, protect, and handle data for our website visitors, hospitality clients, and partners." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://urunk.com/en/privacy-policy" />
-      </Helmet>
+      <SEO
+        title="Privacy Policy & Data Protection Notice | Urunk"
+        description="Read the privacy policy for Urunk Agency, detailing how we collect, store, protect, and use user information on our website."
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 bg-primary text-white relative">

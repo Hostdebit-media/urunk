@@ -1,16 +1,14 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Shield, FileText, CheckCircle2, Scale } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function TermsOfService() {
   return (
     <div className="w-full bg-bg text-primary pb-24">
-      <Helmet>
-        <title>Terms of Service | Agency Client Agreements | Urunk</title>
-        <meta name="description" content="Read Urunk's Terms of Service governing digital marketing agency partnerships, website design deliverables, SEO agreements, and client responsibilities." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://urunk.com/en/terms-of-service" />
-      </Helmet>
+      <SEO
+        title="Terms of Service & Client Agreement | Urunk"
+        description="Read the terms of service for Urunk Agency, outlining client expectations, billing cycles, and web design service agreements."
+      />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6 bg-primary text-white relative">

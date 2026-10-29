@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { getEquivalentRoute, hasReciprocalTranslation } from '../data/slugMappings';
 import { useLocation } from 'react-router-dom';
 import { buildProfessionalServiceSchema, buildBreadcrumbListSchema } from './SEO/StructuredData';
+import { routeMappings } from './Breadcrumbs';
 
 interface SEOProps {
   title: string;
@@ -29,29 +30,43 @@ export default function SEO({ title, description, image, schema, noindex, type }
   const ogType = type || (isArticleRoute ? 'article' : 'website');
   const pathSegments = currentPath.split('/').filter(Boolean);
 
-  const breadcrumbsList = pathSegments.map((segment, index) => {
-    const url = `${siteUrl}/${pathSegments.slice(0, index + 1).join('/')}`;
-    let name = segment.replace(/-/g, ' ');
-    name = name.charAt(0).toUpperCase() + name.slice(1);
-    return {
-      name: name,
-      url: url,
-      position: index + 2
-    };
-  });
-  
-  // Add Home as first breadcrumb
-  breadcrumbsList.unshift({
-    name: isFrench ? "Accueil" : "Home",
-    url: siteUrl + (isFrench ? "" : "/en"),
-    position: 1
-  });
+  const contentSegments = isFrench ? pathSegments : pathSegments.slice(1);
+  const breadcrumbsList = [
+    {
+      name: isFrench ? "Accueil" : "Home",
+      url: isFrench ? `${siteUrl}/` : `${siteUrl}/en`,
+      position: 1
+    },
+    ...contentSegments.map((segment, index) => {
+      const originalEnd = isFrench ? index + 1 : index + 2;
+      const url = `${siteUrl}/${pathSegments.slice(0, originalEnd).join('/')}`;
+      const mapped = routeMappings[segment];
+      const fallbackName = segment
+        .split('-')
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
+      return {
+        name: mapped ? (isFrench ? mapped.fr : mapped.en) : fallbackName,
+        url,
+        position: index + 2
+      };
+    })
+  ];
 
   const breadcrumbSchema = buildBreadcrumbListSchema(breadcrumbsList);
   const agencySchema = buildProfessionalServiceSchema(undefined, currentLang);
 
   const finalSchema: object[] = [agencySchema];
-  if (currentPath !== '/' && currentPath !== '/en') {
+  if (currentPath === '/' || currentPath === '/en') {
+    finalSchema.unshift({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": `${siteUrl}/`,
+      "name": "Urunk Agency",
+      "inLanguage": ["fr-MA", "en-US"]
+    });
+  } else {
     finalSchema.push(breadcrumbSchema);
   }
   if (schema) {
@@ -186,9 +201,9 @@ export default function SEO({ title, description, image, schema, noindex, type }
 
   // Canonical URLs and alternate language links (strictly preserve page parameters, but canonicalize sorting/filters)
   const pageParam = pageNum ? `?page=${pageNum}` : '';
-  const currentUrl = `${siteUrl}${currentPath === '/' ? '' : currentPath}${pageParam}`;
-  const enUrl = `${siteUrl}${enPath === '/' ? '' : enPath}${pageParam}`;
-  const frUrl = `${siteUrl}${frPath === '/' ? '' : frPath}${pageParam}`;
+  const currentUrl = `${siteUrl}${currentPath === '/' ? '/' : currentPath}${pageParam}`;
+  const enUrl = `${siteUrl}${enPath === '/' ? '/' : enPath}${pageParam}`;
+  const frUrl = `${siteUrl}${frPath === '/' ? '/' : frPath}${pageParam}`;
 
   // Update HTML lang attribute and remove static pre-hydration canonical/hreflang placeholders outside React's tree
   React.useEffect(() => {

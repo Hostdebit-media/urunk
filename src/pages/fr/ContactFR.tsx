@@ -4,54 +4,15 @@ import SEO from "../../components/SEO";
 import { Mail, Phone, MapPin, ArrowRight, Check, Loader2, MessageCircle, ShieldCheck } from "lucide-react";
 import { trackEvent } from "../../utils/analytics";
 
-const localBusinessSchema = [
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Urunk",
-    legalName: "Urunk Digital Agency",
-    image: "https://urunk.com/logo.png",
-    "@id": "https://urunk.com/#localbusiness",
-    url: "https://urunk.com",
-    telephone: "+212668802096",
-    email: "contact@urunk.com",
-    priceRange: "$$$",
-    sameAs: [
-      "https://facebook.com/urunk",
-      "https://instagram.com/urunk",
-      "https://linkedin.com/company/urunk"
-    ],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "3 Rue El Kadi Lass, Maarif",
-      addressLocality: "Casablanca",
-      addressRegion: "Casablanca-Settat",
-      postalCode: "20330",
-      addressCountry: "MA",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 33.5855,
-      longitude: -7.6365,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    areaServed: [
-      { "@type": "Country", name: "Morocco" },
-      { "@type": "City", name: "Casablanca" },
-      { "@type": "City", name: "Marrakech" },
-      { "@type": "City", name: "Rabat" },
-      { "@type": "City", name: "Agadir" },
-      { "@type": "City", name: "Taghazout" },
-      { "@type": "City", name: "Essaouira" },
-      { "@type": "City", name: "Fes" }
-    ],
-  },
-];
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://urunk.com/contact#contactpage",
+  "url": "https://urunk.com/contact",
+  "name": "Contactez l'agence Urunk",
+  "description": "Contactez l'équipe croissance digitale hôtelière d'Urunk au Maroc pour vos projets de création de site web, SEO local et Google Ads.",
+  "mainEntity": { "@id": "https://urunk.com/#service" }
+};
 
 export default function ContactFR() {
   const navigate = useNavigate();
@@ -70,14 +31,33 @@ export default function ContactFR() {
       return;
     }
 
-    setIsSubmitting(true);
-
     const form = e.currentTarget;
     const formData = new FormData(form);
 
     // Honeypot check
     if (formData.get('_gotcha')) {
       setSuccessMsg("Votre message a été envoyé avec succès !");
+      return;
+    }
+
+    // Client-side validation (before setting rate-limit lock)
+    const name = ((formData.get("name") as string) || "").trim();
+    if (name.length < 2) {
+      setErrorMsg("Veuillez entrer un nom valide.");
+      return;
+    }
+
+    const contactValue = ((formData.get("email") as string) || "").trim();
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+    const isValidPhone = /^[+\d][\d\s().-]{7,}$/.test(contactValue);
+    if (!isValidEmail && !isValidPhone) {
+      setErrorMsg("Veuillez entrer une adresse e-mail valide ou un numéro WhatsApp (ex: +212 600-000000).");
+      return;
+    }
+
+    const business = ((formData.get("business") as string) || "").trim();
+    if (business.length < 2) {
+      setErrorMsg("Veuillez indiquer le nom de votre établissement.");
       return;
     }
 
@@ -90,24 +70,11 @@ export default function ContactFR() {
     }
     localStorage.setItem('form_last_submit', now.toString());
 
-    // Client-side validation
-    const email = formData.get("email") as string;
-    if (!email || email.trim().length < 3) {
-      setErrorMsg("Veuillez entrer une adresse e-mail ou un numéro WhatsApp valide.");
-      setIsSubmitting(false);
-      return;
-    }
-
-    const name = formData.get("name") as string;
-    if (!name || name.trim().length < 2) {
-      setErrorMsg("Veuillez entrer un nom valide.");
-      setIsSubmitting(false);
-      return;
-    }
+    setIsSubmitting(true);
 
     trackEvent('quote_form_submit', {
       service: formData.get('service'),
-      business: formData.get('business'),
+      business,
       language: 'fr'
     });
 
@@ -131,12 +98,14 @@ export default function ContactFR() {
           navigate("/merci");
         }, 1500);
       } else {
-        setErrorMsg("Échec de l'envoi du message. Veuillez réessayer.");
-        form.submit();
+        setErrorMsg(
+          "Le serveur d'envoi de formulaire est momentanément indisponible. Contactez-nous directement sur WhatsApp (+212 668-802096) ou par e-mail à contact@urunk.com.",
+        );
       }
-    } catch (error) {
-      setErrorMsg("Une erreur s'est produite. Tentative d'envoi alternatif...");
-      form.submit();
+    } catch {
+      setErrorMsg(
+        "Le serveur d'envoi de formulaire est momentanément indisponible. Contactez-nous directement sur WhatsApp (+212 668-802096) ou par e-mail à contact@urunk.com.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -151,9 +120,9 @@ export default function ContactFR() {
   return (
     <div className="w-full pb-20">
       <SEO
-        schema={localBusinessSchema}
-        title="Contactez Urunk | Devis gratuit Création Site Web & Ads"
-        description="Prêt à augmenter vos réservations directes ? Contactez notre équipe pour un devis gratuit pour la création de votre site web ou la gestion de vos annonces."
+        schema={contactPageSchema}
+        title="Contact Urunk : Audit SEO & Web Offert | Urunk"
+        description="Prêt à diviser vos commissions d'OTAs ? Contactez-nous dès aujourd'hui pour obtenir votre audit de performance, vitesse et SEO local gratuit."
       />
 
       <section className="bg-primary text-white py-20 px-6">
@@ -409,7 +378,7 @@ export default function ContactFR() {
               </p>
               <div className="space-y-3 text-xs text-white/90 font-light">
                 <p className="flex items-center gap-2"><ShieldCheck className="text-yellow-400" size={16} /> <strong>Garantie de réponse :</strong> Toute demande professionnelle reçoit une réponse sous 24h ouvrées.</p>
-                <p className="flex items-center gap-2"><ShieldCheck className="text-yellow-400" size={16} /> <strong>Horaires :</strong> Du lundi au vendredi, de 09h00 à 19h00 (GMT+1).</p>
+                <p className="flex items-center gap-2"><ShieldCheck className="text-yellow-400" size={16} /> <strong>Horaires :</strong> Du lundi au vendredi, de 09h00 à 18h00 (GMT+1).</p>
                 <p className="flex items-center gap-2"><ShieldCheck className="text-yellow-400" size={16} /> <strong>Langues :</strong> Français commercial, Anglais et Darija marocaine.</p>
               </div>
             </div>

@@ -167,8 +167,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/services/creation-site-web',
     lang: 'fr',
-    title: 'Forfait Création Site Web Hôtel Maroc dès 12 000 MAD | Urunk',
-    description: 'Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix au Maroc ? Site clé en main dès 12 000 MAD, 0 % commission OTA.'
+    title: 'Forfait Création Site Web Hôtel Maroc Dès 12 000 MAD | Urunk',
+    description: 'Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix au Maroc ? Comparatif petits hôtels & riads dès 12 000 MAD sans commission.'
   },
   {
     path: '/creation-site-web',
@@ -452,7 +452,7 @@ const staticPages: PageMetadata[] = [
     path: '/en/services/website-design',
     lang: 'en',
     title: 'Hotel Website Packages Morocco: From 12,000 MAD | Urunk',
-    description: 'Compare custom hotel website packages in Morocco starting at 12,000 MAD one-time. Sub-1.5s mobile UX, PMS sync, 100% ownership & 0% OTA commission.'
+    description: 'Compare value-for-money hotel website creation packages in Morocco: flat-fee builds from 12,000 MAD with PMS booking engine sync, bilingual SEO & 0% commission.'
   },
   {
     path: '/en/web-design-casablanca',
@@ -2084,8 +2084,8 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             </h2>
             <p style="margin: 0; color: #2d3748; line-height: 1.7;">
               ${isFR
-                ? "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 5 à 25 chambres au Maroc, le meilleur rapport qualité-prix repose sur un forfait à paiement unique (dès 12 000 MAD chez Urunk) avec 100 % de propriété du code source et du nom de domaine, temps de chargement mobile inférieur à 1,5 seconde, architecture bilingue FR/EN et connexion native à votre moteur PMS existant sans aucune commission prélevée par l'agence."
-                : "For an independent small hotel, riad, or guesthouse of 5 to 25 rooms in Morocco, the strongest 3-year value comes from a one-time fixed build (starting at 12,000 MAD at Urunk) with 100% source-code and domain ownership, sub-1.5s mobile load speed, bilingual FR/EN architecture, and native PMS booking integration with zero agency commission."}
+                ? "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 4 à 25 chambres au Maroc, le meilleur rapport qualité-prix repose sur un forfait à paiement unique (dès 12 000 MAD chez Urunk) avec 100 % de propriété du code source et du nom de domaine, objectif de chargement mobile inférieur à 1,5 seconde (LCP), architecture bilingue FR/EN et connexion native à votre moteur PMS existant sans aucune commission prélevée par l'agence."
+                : "For an independent small hotel, riad, or guesthouse of 4 to 25 rooms in Morocco, the strongest 3-year value comes from a one-time fixed build (starting at 12,000 MAD at Urunk) with 100% source-code and domain ownership, target sub-1.5s mobile LCP, bilingual FR/EN architecture, and native PMS booking integration with zero agency commission."}
             </p>
           </section>
         </header>
@@ -2114,18 +2114,18 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
                   <td style="padding: 0.75rem 0.9rem; font-weight: bold;">12 000 MAD (+ hébergement/PMS directs)</td>
                 </tr>
                 <tr style="background: #FAF8F5; border-bottom: 1px solid #e2e8f0;">
-                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Pack Croissance Site + Google Ads (Urunk)' : 'Growth Bundle Site + Google Ads (Urunk)'}</td>
+                  <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Pack Croissance Site + Publicité (Urunk)' : 'Growth Bundle Site + Paid Ads (Urunk)'}</td>
                   <td style="padding: 0.75rem 0.9rem;">16 000 MAD</td>
                   <td style="padding: 0.75rem 0.9rem;">4 000 MAD/mois (Ads, préavis 15j)</td>
-                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · Site + Google Search/Hotel Ads' : '100% owned · Site + Google Search/Hotel Ads'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · Site + 1 canal Ads' : '100% owned · Site + 1 Ads channel'}</td>
                   <td style="padding: 0.75rem 0.9rem;">${isFR ? '16 000 MAD création + mois Ads actifs' : '16,000 MAD build + active Ads months'}</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #e2e8f0;">
                   <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Architecture Sur-Mesure Boutique / Resort' : 'Bespoke Multi-Property / Boutique Build'}</td>
-                  <td style="padding: 0.75rem 0.9rem;">${isFR ? 'Dès 20 000 MAD (sur devis)' : 'From 20,000 MAD (custom quote)'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? 'Dès 25 000 MAD (sur devis)' : 'From 25,000 MAD (custom quote)'}</td>
                   <td style="padding: 0.75rem 0.9rem;">0 MAD/mois · 0 % commission</td>
-                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · Multilingue étendu + Spa/Resto' : '100% owned · Multi-language + Spa/Dining flows'}</td>
-                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '20 000+ MAD une seule fois' : '20,000+ MAD one-time'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '100 % client · Multilingue sur devis + Spa/Resto' : '100% owned · Custom multi-language + Spa/Dining flows'}</td>
+                  <td style="padding: 0.75rem 0.9rem;">${isFR ? '25 000+ MAD une seule fois' : '25,000+ MAD one-time'}</td>
                 </tr>
                 <tr style="background: #FAF8F5; border-bottom: 1px solid #e2e8f0;">
                   <td style="padding: 0.75rem 0.9rem; font-weight: bold; color: #0F2D25;">${isFR ? 'Constructeur SaaS Hôtelier en Location' : 'Rented SaaS Hotel Website Builder'}</td>
@@ -2144,6 +2144,72 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               </tbody>
             </table>
           </div>
+        </section>
+
+        <section style="margin-bottom: 2.5rem;">
+          <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? 'Questions Fréquentes sur les Forfaits de Site Web Hôtelier' : 'Frequently Asked Questions'}</h2>
+          ${(isFR
+            ? [
+                {
+                  q: "Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix pour un petit hôtel au Maroc ?",
+                  a: "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 4 à 25 chambres au Maroc, le meilleur rapport qualité-prix sur 24 à 36 mois est un forfait à paiement unique vous laissant 100 % propriétaire du site et incluant la connexion directe à votre PMS, sans commission d'agence sur vos réservations. Chez Urunk, le Forfait Site Hôtelier Essentiel démarre à 12 000 MAD en paiement unique (50 % au lancement, 50 % à la mise en ligne) : il comprend le design mobile-first sur mesure, l'architecture bilingue FR/EN, l'intégration du moteur de réservation (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), le socle SEO local et le suivi GA4. Pour les établissements souhaitant générer immédiatement des réservations directes dès l'ouverture du site, notre Formule Hybride Site + Publicité démarre à 16 000 MAD initial + 4 000 MAD/mois."
+                },
+                {
+                  q: "Vaut-il mieux payer un site hôtelier en forfait unique (dès 12 000 MAD) ou louer un site SaaS au mois ?",
+                  a: "Les constructeurs de sites en location mensuelle affichent un coût d'entrée faible, mais vous ne possédez ni le code ni le thème : si vous changez de PMS dans 2 ans, votre site disparaît et votre référencement Google repart de zéro. Avec un forfait unique dès 12 000 MAD chez Urunk, votre établissement amortit la création en quelques réservations directes épargnées des 15 % à 25 % de commissions OTA, tout en conservant son domaine, son hébergement et son code source."
+                },
+                {
+                  q: "Combien de temps faut-il pour livrer un site web hôtelier clé en main ?",
+                  a: "La création complète d'un site web sur mesure pour un petit hôtel, un riad ou une maison d'hôtes prend en moyenne 4 à 6 semaines : semaines 1–2 pour le cadrage et l'arborescence SEO bilingue, semaines 3–4 pour le design UI/UX mobile-first et la structuration des contenus, puis semaines 5–6 pour le développement, la connexion PMS/paiement, le paramétrage GA4 et la mise en ligne."
+                },
+                {
+                  q: "Quels moteurs de réservation (PMS) et moyens de paiement intégrez-vous dans le forfait ?",
+                  a: "L'intégration technique de votre moteur de réservation existant (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy, Guesty) est incluse dès le forfait à 12 000 MAD. Les abonnements logiciels PMS et les frais de passerelle monétique (CMI ou Payzone en dirhams marocains, ou Stripe pour les sociétés éligibles) restent facturés directement par ces éditeurs sans marge ni commission d'Urunk."
+                },
+                {
+                  q: "À qui appartiennent le site internet, le nom de domaine et les contenus après livraison ?",
+                  a: "Vous êtes propriétaire exclusif à 100 % de votre site web, de votre nom de domaine, de votre compte d'hébergement, du code source et des visuels dès le solde du projet. Aucun abonnement mensuel obligatoire ni frais de résiliation ne vous lient à notre agence."
+                },
+                {
+                  q: "Le forfait inclut-il le référencement bilingue (français et anglais) pour la clientèle internationale ?",
+                  a: "Oui. Nos sites hôteliers intègrent une structure bilingue propre (FR/EN, extensible à d'autres langues sur devis) avec balises hreflang réciproques, données structurées Schema.org Hotel et compression d'images AVIF/WebP pour charger rapidement sur les réseaux 4G/5G des voyageurs."
+                },
+                {
+                  q: "En combien de réservations directes un forfait à 12 000 MAD est-il rentabilisé ?",
+                  a: "À titre d'exemple illustratif (non garanti, variable selon votre tarif moyen et votre taux d'occupation), pour un hôtel ou riad facturant 1 500 MAD la nuitée et économisant 20 % de commission OTA (soit 300 MAD par nuitée), 40 nuitées transférées en réservation directe sur votre site officiel compensent l'investissement initial de 12 000 MAD."
+                }
+              ]
+            : [
+                {
+                  q: "Which hotel website creation package offers the best value for money for a small hotel or riad in Morocco?",
+                  a: "For an independent small hotel, riad, or guesthouse (4 to 25 rooms) in Morocco, the strongest 24-to-36-month value comes from a one-time flat-fee build that gives you 100% code ownership and includes direct PMS integration with 0% agency booking commission. At Urunk, our Essential Hotel Website Package starts at 12,000 MAD one-time (50% on kickoff, 50% at launch) and covers custom mobile-first UX, bilingual EN/FR SEO architecture, PMS booking engine sync (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), and GA4 tracking. Properties wanting an immediate website + paid acquisition launch can choose our Website + Ads Bundle from 16,000 MAD initial + 4,000 MAD/month."
+                },
+                {
+                  q: "Is a one-time website build (from 12,000 MAD) better value than a monthly SaaS website builder?",
+                  a: "Rented SaaS website builders appear inexpensive upfront, but you never own the theme or source code—switching PMS providers two years later forces you to rebuild your website from scratch and risk your organic rankings. A one-time 12,000 MAD build is typically recouped after saving 15%–25% OTA commissions on a modest number of direct bookings, while leaving your property in permanent control of its domain and SEO equity."
+                },
+                {
+                  q: "How long does it take to build and launch a hotel website?",
+                  a: "A complete custom website for an independent hotel or riad takes 4 to 6 weeks: weeks 1–2 for discovery and bilingual SEO architecture, weeks 3–4 for mobile-first UI/UX design and copy structuring, and weeks 5–6 for engineering, PMS/payment gateway integration, GA4 setup, and launch."
+                },
+                {
+                  q: "Which booking engines (PMS) and Moroccan payment gateways are supported?",
+                  a: "Technical integration with major PMS and Channel Manager platforms—including Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy, and Guesty—is included starting from our 12,000 MAD package. Third-party PMS subscriptions and payment gateway fees (CMI or Payzone in MAD, or Stripe for eligible entities) are billed directly by those providers with zero markup from Urunk."
+                },
+                {
+                  q: "Who owns the website, domain, and source code after completion?",
+                  a: "You retain 100% exclusive ownership of your domain name, hosting account, source code, copy, and visual assets upon project completion, with zero mandatory monthly licensing fees."
+                },
+                {
+                  q: "Does the package include bilingual English and French SEO?",
+                  a: "Yes. Every hospitality build includes clean English/French URL architecture (with additional languages available on custom quote), reciprocal hreflang tags, Hotel Schema.org JSON-LD markup, and AVIF/WebP media optimization for fast mobile loading across international 4G/5G networks."
+                },
+                {
+                  q: "How many direct room nights pay back a 12,000 MAD website build?",
+                  a: "As an illustrative example (not a guaranteed outcome, since results depend on ADR and occupancy), if your property averages 1,500 MAD per night and saves a 20% OTA commission (300 MAD per room night), shifting 40 room nights onto your official website recovers the 12,000 MAD build cost."
+                }
+              ]
+          ).map(f => `<div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:1rem 1.25rem;margin-bottom:0.75rem;"><h3 style="color:#0F2D25;font-size:1.05rem;margin:0 0 0.4rem 0;">${escapeHtml(f.q)}</h3><p style="margin:0;color:#4a5568;line-height:1.65;">${escapeHtml(f.a)}</p></div>`).join('\n          ')}
         </section>
 
         <section style="margin-bottom: 2.5rem;">
@@ -3153,7 +3219,7 @@ function prerender() {
     .replace(/<link[^>]*rel="alternate"[^>]*hreflang[^>]*>\s*/gi, '')
     .replace(/<meta[^>]*property="og:[^"]*"[^>]*>\s*/gi, '')
     .replace(/<meta[^>]*name="twitter:[^"]*"[^>]*>\s*/gi, '')
-    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/gi, '')
+    .replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>\s*/gi, '')
     .replace(/<meta[^>]*name="robots"[^>]*>\s*/gi, '')
     .replace(/<!-- Open Graph (?:Tags|Metadata) -->\s*/gi, '')
     .replace(/<!-- Twitter Card (?:Tags|Metadata) -->\s*/gi, '');
@@ -3369,8 +3435,8 @@ function prerender() {
     }
 
     // C. Replace Description tag
-    const descRegex = /<meta name="description" data-rh="true" content=".*?"\s*\/?>/;
-    const newDescTag = `<meta name="description" data-rh="true" content="${escapeHtml(pageDesc)}" />`;
+    const descRegex = /<meta name="description"[^>]*content=".*?"\s*\/?>/;
+    const newDescTag = `<meta name="description" data-static-seo="true" content="${escapeHtml(pageDesc)}" />`;
     if (descRegex.test(renderedHtml)) {
       renderedHtml = renderedHtml.replace(descRegex, newDescTag);
     } else {
@@ -3410,7 +3476,7 @@ function prerender() {
       : '2026-01-20';
     const articleModifiedIso = getSafeModifiedDate(articlePublishedIso);
     const articleOgTags = (isBlogPost || isCaseStudy)
-      ? `\n    <meta property="article:published_time" content="${articlePublishedIso}" />\n    <meta property="article:modified_time" content="${articleModifiedIso}" />\n    <meta property="article:author" content="J.Mellal" />`
+      ? `\n    <meta property="article:published_time" data-static-seo="true" content="${articlePublishedIso}" />\n    <meta property="article:modified_time" data-static-seo="true" content="${articleModifiedIso}" />\n    <meta property="article:author" data-static-seo="true" content="J.Mellal" />`
       : '';
 
     const hasRecip = !isNoIndexPage && hasReciprocalTranslation(page.path);
@@ -3420,29 +3486,29 @@ function prerender() {
         ? `\n    <link rel="alternate" data-static-seo="true" hreflang="fr" href="${frHref}" />\n    <link rel="alternate" data-static-seo="true" hreflang="en" href="${enHref}" />\n    <link rel="alternate" data-static-seo="true" hreflang="x-default" href="${frHref}" />`
         : `\n    <link rel="alternate" data-static-seo="true" hreflang="${page.lang}" href="${canonicalUrl}" />${page.lang === 'fr' ? `\n    <link rel="alternate" data-static-seo="true" hreflang="x-default" href="${canonicalUrl}" />` : ''}`;
     const ogAlternateTag = hasRecip
-      ? `\n    <meta property="og:locale:alternate" data-rh="true" content="${page.lang === 'fr' ? 'en_US' : 'fr_FR'}" />`
+      ? `\n    <meta property="og:locale:alternate" data-static-seo="true" content="${page.lang === 'fr' ? 'en_US' : 'fr_FR'}" />`
       : '';
 
     let headTags = `
     <link rel="canonical" data-static-seo="true" href="${canonicalUrl}" />${hreflangTags}
-    <meta name="robots" data-rh="true" content="${isNoIndexPage ? 'noindex, follow' : 'index, follow, max-image-preview:large'}" />
+    <meta name="robots" data-static-seo="true" content="${isNoIndexPage ? 'noindex, follow' : 'index, follow, max-image-preview:large'}" />
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" data-rh="true" content="${escapeHtml(pageTitle)}" />
-    <meta property="og:description" data-rh="true" content="${escapeHtml(pageDesc)}" />
-    <meta property="og:url" data-rh="true" content="${canonicalUrl}" />
-    <meta property="og:type" data-rh="true" content="${(isBlogPost || isCaseStudy) ? 'article' : 'website'}" />${articleOgTags}
-    <meta property="og:image" data-rh="true" content="${ogImageUrl}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" data-rh="true" content="Urunk" />
-    <meta property="og:locale" data-rh="true" content="${page.lang === 'fr' ? 'fr_FR' : 'en_US'}" />${ogAlternateTag}
+    <meta property="og:title" data-static-seo="true" content="${escapeHtml(pageTitle)}" />
+    <meta property="og:description" data-static-seo="true" content="${escapeHtml(pageDesc)}" />
+    <meta property="og:url" data-static-seo="true" content="${canonicalUrl}" />
+    <meta property="og:type" data-static-seo="true" content="${(isBlogPost || isCaseStudy) ? 'article' : 'website'}" />${articleOgTags}
+    <meta property="og:image" data-static-seo="true" content="${ogImageUrl}" />
+    <meta property="og:image:width" data-static-seo="true" content="1200" />
+    <meta property="og:image:height" data-static-seo="true" content="630" />
+    <meta property="og:site_name" data-static-seo="true" content="Urunk" />
+    <meta property="og:locale" data-static-seo="true" content="${page.lang === 'fr' ? 'fr_FR' : 'en_US'}" />${ogAlternateTag}
 
     <!-- Twitter Card Tags -->
-    <meta name="twitter:card" data-rh="true" content="summary_large_image" />
-    <meta name="twitter:title" data-rh="true" content="${escapeHtml(pageTitle)}" />
-    <meta name="twitter:description" data-rh="true" content="${escapeHtml(pageDesc)}" />
-    <meta name="twitter:image" data-rh="true" content="${ogImageUrl}" />
+    <meta name="twitter:card" data-static-seo="true" content="summary_large_image" />
+    <meta name="twitter:title" data-static-seo="true" content="${escapeHtml(pageTitle)}" />
+    <meta name="twitter:description" data-static-seo="true" content="${escapeHtml(pageDesc)}" />
+    <meta name="twitter:image" data-static-seo="true" content="${ogImageUrl}" />
     `;
 
     // JSON-LD Schemas Construction
@@ -3450,6 +3516,17 @@ function prerender() {
 
     if (page.path === '/' || page.path === '/en') {
       schemas.push(
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://urunk.com/#website",
+          "url": "https://urunk.com/",
+          "name": "Urunk Agency",
+          "inLanguage": page.lang === 'fr' ? 'fr-MA' : 'en-US',
+          "publisher": {
+            "@id": "https://urunk.com/#organization"
+          }
+        },
         {
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -3608,7 +3685,17 @@ function prerender() {
                   "@type": "Offer",
                   "price": numericServicePrice,
                   "priceCurrency": "MAD",
-                  "url": canonicalUrl
+                  "url": canonicalUrl,
+                  ...(srvEntryForSchema && /\/\s*(?:mo|mois)|par mois|per month/i.test(srvEntryForSchema.investmentPrice)
+                    ? {
+                        "priceSpecification": {
+                          "@type": "UnitPriceSpecification",
+                          "price": numericServicePrice,
+                          "priceCurrency": "MAD",
+                          "unitText": "MONTH"
+                        }
+                      }
+                    : {})
                 }
               }
             : {
@@ -3648,29 +3735,61 @@ function prerender() {
           ? [
               {
                 q: "Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix pour un petit hôtel au Maroc ?",
-                a: "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 5 à 25 chambres au Maroc, un forfait clé en main à paiement unique dès 12 000 MAD avec 100 % de propriété du code et du domaine, vitesse mobile inférieure à 1,5s, version bilingue FR/EN et intégration PMS sans commission offre le coût total sur 3 ans le plus avantageux."
+                a: "Pour un petit hôtel indépendant, un riad ou une maison d'hôtes de 4 à 25 chambres au Maroc, le meilleur rapport qualité-prix sur 24 à 36 mois est un forfait à paiement unique vous laissant 100 % propriétaire du site et incluant la connexion directe à votre PMS, sans commission d'agence sur vos réservations. Chez Urunk, le Forfait Site Hôtelier Essentiel démarre à 12 000 MAD en paiement unique (50 % au lancement, 50 % à la mise en ligne) : il comprend le design mobile-first sur mesure, l'architecture bilingue FR/EN, l'intégration du moteur de réservation (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), le socle SEO local et le suivi GA4. Pour les établissements souhaitant générer immédiatement des réservations directes dès l'ouverture du site, notre Formule Hybride Site + Publicité démarre à 16 000 MAD initial + 4 000 MAD/mois."
+              },
+              {
+                q: "Vaut-il mieux payer un site hôtelier en forfait unique (dès 12 000 MAD) ou louer un site SaaS au mois ?",
+                a: "Les constructeurs de sites en location mensuelle affichent un coût d'entrée faible, mais vous ne possédez ni le code ni le thème : si vous changez de PMS dans 2 ans, votre site disparaît et votre référencement Google repart de zéro. Avec un forfait unique dès 12 000 MAD chez Urunk, votre établissement amortit la création en quelques réservations directes épargnées des 15 % à 25 % de commissions OTA, tout en conservant son domaine, son hébergement et son code source."
+              },
+              {
+                q: "Combien de temps faut-il pour livrer un site web hôtelier clé en main ?",
+                a: "La création complète d'un site web sur mesure pour un petit hôtel, un riad ou une maison d'hôtes prend en moyenne 4 à 6 semaines : semaines 1–2 pour le cadrage et l'arborescence SEO bilingue, semaines 3–4 pour le design UI/UX mobile-first et la structuration des contenus, puis semaines 5–6 pour le développement, la connexion PMS/paiement, le paramétrage GA4 et la mise en ligne."
+              },
+              {
+                q: "Quels moteurs de réservation (PMS) et moyens de paiement intégrez-vous dans le forfait ?",
+                a: "L'intégration technique de votre moteur de réservation existant (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy, Guesty) est incluse dès le forfait à 12 000 MAD. Les abonnements logiciels PMS et les frais de passerelle monétique (CMI ou Payzone en dirhams marocains, ou Stripe pour les sociétés éligibles) restent facturés directement par ces éditeurs sans marge ni commission d'Urunk."
+              },
+              {
+                q: "À qui appartiennent le site internet, le nom de domaine et les contenus après livraison ?",
+                a: "Vous êtes propriétaire exclusif à 100 % de votre site web, de votre nom de domaine, de votre compte d'hébergement, du code source et des visuels dès le solde du projet. Aucun abonnement mensuel obligatoire ni frais de résiliation ne vous lient à notre agence."
+              },
+              {
+                q: "Le forfait inclut-il le référencement bilingue (français et anglais) pour la clientèle internationale ?",
+                a: "Oui. Nos sites hôteliers intègrent une structure bilingue propre (FR/EN, extensible à d'autres langues sur devis) avec balises hreflang réciproques, données structurées Schema.org Hotel et compression d'images AVIF/WebP pour charger rapidement sur les réseaux 4G/5G des voyageurs."
               },
               {
                 q: "En combien de réservations directes un forfait à 12 000 MAD est-il rentabilisé ?",
-                a: "À titre d'illustration, pour un hôtel ou riad facturant 1 500 MAD la nuitée et cédant habituellement 20 % de commission OTA (300 MAD par nuitée), 40 nuitées directes transférées sur votre site officiel compensent intégralement l'investissement initial de 12 000 MAD."
-              },
-              {
-                q: "Sommes-nous propriétaires à 100 % du site web, du nom de domaine et du code source ?",
-                a: "Oui, intégralement. Dès la livraison finale, le nom de domaine, le code source, les contenus et les comptes analytiques vous appartiennent sans redevance mensuelle obligatoire envers Urunk."
+                a: "À titre d'exemple illustratif (non garanti, variable selon votre tarif moyen et votre taux d'occupation), pour un hôtel ou riad facturant 1 500 MAD la nuitée et économisant 20 % de commission OTA (soit 300 MAD par nuitée), 40 nuitées transférées en réservation directe sur votre site officiel compensent l'investissement initial de 12 000 MAD."
               }
             ]
           : [
               {
-                q: "Which hotel website design package offers the best value for money for a small hotel in Morocco?",
-                a: "For an independent small hotel, riad, or guesthouse of 5 to 25 rooms in Morocco, a one-time 12,000 MAD turnkey package with 100% source-code and domain ownership, sub-1.5s mobile load speed, bilingual FR/EN architecture, and commission-free PMS booking integration delivers the lowest 3-year total cost of ownership."
+                q: "Which hotel website creation package offers the best value for money for a small hotel or riad in Morocco?",
+                a: "For an independent small hotel, riad, or guesthouse (4 to 25 rooms) in Morocco, the strongest 24-to-36-month value comes from a one-time flat-fee build that gives you 100% code ownership and includes direct PMS integration with 0% agency booking commission. At Urunk, our Essential Hotel Website Package starts at 12,000 MAD one-time (50% on kickoff, 50% at launch) and covers custom mobile-first UX, bilingual EN/FR SEO architecture, PMS booking engine sync (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy), and GA4 tracking. Properties wanting an immediate website + paid acquisition launch can choose our Website + Ads Bundle from 16,000 MAD initial + 4,000 MAD/month."
+              },
+              {
+                q: "Is a one-time website build (from 12,000 MAD) better value than a monthly SaaS website builder?",
+                a: "Rented SaaS website builders appear inexpensive upfront, but you never own the theme or source code—switching PMS providers two years later forces you to rebuild your website from scratch and risk your organic rankings. A one-time 12,000 MAD build is typically recouped after saving 15%–25% OTA commissions on a modest number of direct bookings, while leaving your property in permanent control of its domain and SEO equity."
+              },
+              {
+                q: "How long does it take to build and launch a hotel website?",
+                a: "A complete custom website for an independent hotel or riad takes 4 to 6 weeks: weeks 1–2 for discovery and bilingual SEO architecture, weeks 3–4 for mobile-first UI/UX design and copy structuring, and weeks 5–6 for engineering, PMS/payment gateway integration, GA4 setup, and launch."
+              },
+              {
+                q: "Which booking engines (PMS) and Moroccan payment gateways are supported?",
+                a: "Technical integration with major PMS and Channel Manager platforms—including Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy, and Guesty—is included starting from our 12,000 MAD package. Third-party PMS subscriptions and payment gateway fees (CMI or Payzone in MAD, or Stripe for eligible entities) are billed directly by those providers with zero markup from Urunk."
+              },
+              {
+                q: "Who owns the website, domain, and source code after completion?",
+                a: "You retain 100% exclusive ownership of your domain name, hosting account, source code, copy, and visual assets upon project completion, with zero mandatory monthly licensing fees."
+              },
+              {
+                q: "Does the package include bilingual English and French SEO?",
+                a: "Yes. Every hospitality build includes clean English/French URL architecture (with additional languages available on custom quote), reciprocal hreflang tags, Hotel Schema.org JSON-LD markup, and AVIF/WebP media optimization for fast mobile loading across international 4G/5G networks."
               },
               {
                 q: "How many direct room nights pay back a 12,000 MAD website build?",
-                a: "As an illustrative benchmark, if your property averages 1,500 MAD per night and saves a 20% OTA commission (300 MAD per room night), shifting 40 room nights onto your official website recovers the 12,000 MAD build cost."
-              },
-              {
-                q: "Do we own 100% of our website code, domain, and content?",
-                a: "Yes. Upon completion, 100% of the domain, custom code, imagery, and analytics belong to your property with zero mandatory monthly web licensing fees."
+                a: "As an illustrative example (not a guaranteed outcome, since results depend on ADR and occupancy), if your property averages 1,500 MAD per night and saves a 20% OTA commission (300 MAD per room night), shifting 40 room nights onto your official website recovers the 12,000 MAD build cost."
               }
             ];
         schemas.push({
@@ -3803,7 +3922,7 @@ function prerender() {
           },
           {
             q: "How do you support multi-language direct booking sites?",
-            a: "All our hospitality websites feature dynamic multi-language architecture with native hreflang SEO markup, ensuring max organic capture across international English, French, Spanish, and European guest segments."
+            a: "All our hospitality websites feature dynamic bilingual (English and French) architecture with native hreflang SEO markup—extensible to additional languages on quote—ensuring strong organic capture across international guest segments."
           },
           {
             q: "Do you offer a pre-project site audit before engagement?",
@@ -4299,7 +4418,7 @@ function prerender() {
       });
     }
 
-    let jsonLdScript = `\n    <script type="application/ld+json">\n      ${JSON.stringify(schemas, null, 2)}\n    </script>`;
+    let jsonLdScript = `\n    <script type="application/ld+json" data-static-seo="true">\n      ${JSON.stringify(schemas, null, 2)}\n    </script>`;
     jsonLdScript = jsonLdScript.replace(/"@type":\s*"Question"/g, '"@type":"Question"');
     jsonLdScript = jsonLdScript.replace(/"@type":\s*"FAQPage"/g, '"@type":"FAQPage"');
     renderedHtml = renderedHtml.replace('</head>', `${headTags}${jsonLdScript}\n  </head>`);
