@@ -4,7 +4,9 @@
  * Security Headers, and Accurate 404 Status Responses.
  */
 
-interface Env {
+import { handleContactRequest, type ContactEnv } from "./src/server/contactApi";
+
+interface Env extends ContactEnv {
   ASSETS: {
     fetch: (request: Request | string) => Promise<Response>;
   };
@@ -12,7 +14,7 @@ interface Env {
 
 const SECURITY_HEADERS: Record<string, string> = {
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.cloudflareinsights.com https://cloudflareinsights.com https://*.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;",
+    "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.cloudflareinsights.com https://cloudflareinsights.com https://*.cloudflare.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';",
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
   "X-Frame-Options": "DENY",
   "X-Content-Type-Options": "nosniff",
@@ -57,6 +59,17 @@ export default {
       request.headers.get("cf-connecting-ip") ||
       request.headers.get("x-forwarded-for") ||
       "unknown";
+
+    // Server-side lead capture API endpoint (/api/contact)
+    if (pathname === "/api/contact" || pathname === "/api/contact/") {
+      const apiRes = await handleContactRequest(request, env, { clientIp: ip });
+      const apiHeaders = new Headers(apiRes.headers);
+      applySecurityHeaders(apiHeaders);
+      return new Response(apiRes.body, {
+        status: apiRes.status,
+        headers: apiHeaders
+      });
+    }
 
     // Handle non-GET/HEAD methods (e.g. bots probing POST/PUT/OPTIONS to static routes)
     if (method !== "GET" && method !== "HEAD") {

@@ -1,24 +1,50 @@
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Loader2, Mail, MessageCircle } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { trackEvent } from '../../../utils/analytics';
+import { submitContactLead } from '../../../utils/contactClient';
 
 export default function BottomFormSectionFR() {
+  const navigate = useNavigate();
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState('');
   const [formError, setFormError] = useState('');
+  const [showDirectFallback, setShowDirectFallback] = useState(false);
+
+  const whatsappUrl = `https://wa.me/212668802096?text=${encodeURIComponent("Bonjour Urunk, je souhaite demander un audit gratuit pour mon établissement.")}`;
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError('');
+    setShowDirectFallback(false);
     setFormSuccess('');
+
+    if (!privacyAgreed) {
+      setFormError('Veuillez accepter la politique de confidentialité pour continuer.');
+      return;
+    }
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const gotcha = formData.get('_gotcha');
-    if (gotcha) {
-      setFormSuccess('Merci ! Votre demande a bien été envoyée.');
+    const name = ((formData.get('name') as string) || '').trim();
+    const contactValue = ((formData.get('contact') as string) || '').trim();
+    const establishmentType = ((formData.get('establishment_type') as string) || '').trim();
+
+    if (name.length < 2) {
+      setFormError('Veuillez indiquer votre nom et celui de votre établissement.');
+      return;
+    }
+
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+    const isValidPhone = /^[+\d][\d\s().-]{7,24}$/.test(contactValue) && contactValue.replace(/\D/g, '').length >= 8;
+    if (!isValidEmail && !isValidPhone) {
+      setFormError('Veuillez saisir une adresse e-mail valide ou un numéro WhatsApp (ex: +212 600-000000).');
+      return;
+    }
+
+    if (!establishmentType) {
+      setFormError('Veuillez sélectionner votre activité principale.');
       return;
     }
 
@@ -29,35 +55,30 @@ export default function BottomFormSectionFR() {
       return;
     }
 
-    if (!privacyAgreed) {
-      setFormError('Veuillez accepter la politique de confidentialité pour continuer.');
-      return;
-    }
-
-    localStorage.setItem('form_last_submit', now.toString());
     setFormSubmitting(true);
+    trackEvent('quote_form_submit', { source: 'homepage_bottom_form', service: establishmentType });
 
-    trackEvent('quote_form_submit', { source: 'homepage_bottom_form', service: formData.get('establishment_type') });
+    const result = await submitContactLead({
+      lang: 'fr',
+      source: 'home_audit_fr',
+      name,
+      contact: contactValue,
+      service: establishmentType,
+      privacyAccepted: privacyAgreed,
+      _gotcha: ((formData.get('_gotcha') as string) || '').trim()
+    });
 
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/contact@urunk.com', {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' }
-      });
+    setFormSubmitting(false);
 
-      if (res.ok) {
-        setFormSuccess('Merci ! Votre demande a été envoyée. Redirection en cours...');
-        setTimeout(() => {
-          window.location.href = '/merci';
-        }, 1200);
-      } else {
-        form.submit();
-      }
-    } catch {
-      form.submit();
-    } finally {
-      setFormSubmitting(false);
+    if (result.ok) {
+      localStorage.setItem('form_last_submit', Date.now().toString());
+      setFormSuccess('Merci ! Votre demande a bien été transmise. Redirection en cours...');
+      setTimeout(() => {
+        navigate('/merci');
+      }, 1200);
+    } else {
+      setFormError(result.userMessage);
+      setShowDirectFallback(result.showDirectFallback);
     }
   };
 
@@ -97,8 +118,7 @@ export default function BottomFormSectionFR() {
 
         <div className="lg:col-span-6 w-full">
           <form
-            action="https://formsubmit.co/contact@urunk.com"
-            method="POST"
+            noValidate
             onSubmit={handleFormSubmit}
             className="bg-white rounded-xl p-6 sm:p-8 text-primary"
           >
@@ -107,8 +127,26 @@ export default function BottomFormSectionFR() {
             </h3>
 
             {formError && (
-              <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-700 rounded-lg text-xs font-medium">
-                {formError}
+              <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-700 rounded-lg border border-red-200 text-xs font-medium space-y-2">
+                <p>{formError}</p>
+                {showDirectFallback && (
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 bg-[#25D366] text-white px-2.5 py-1.5 rounded-md font-bold hover:bg-[#1ebd5a] transition-colors"
+                    >
+                      <MessageCircle size={13} /> WhatsApp
+                    </a>
+                    <a
+                      href="mailto:contact@urunk.com"
+                      className="inline-flex items-center gap-1 bg-primary text-white px-2.5 py-1.5 rounded-md font-bold hover:bg-primary/90 transition-colors"
+                    >
+                      <Mail size={13} /> contact@urunk.com
+                    </a>
+                  </div>
+                )}
               </div>
             )}
             {formSuccess && (
@@ -185,8 +223,17 @@ export default function BottomFormSectionFR() {
                   disabled={formSubmitting}
                   className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-lg font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                 >
-                  <span>Envoyer ma demande d'audit</span>
-                  <ArrowRight size={16} />
+                  {formSubmitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      <span>Envoi en cours...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Envoyer ma demande d'audit</span>
+                      <ArrowRight size={16} />
+                    </>
+                  )}
                 </button>
               </div>
             </div>

@@ -10,6 +10,7 @@ import { getEquivalentRoute, hasReciprocalTranslation } from './src/data/slugMap
 import {
   matrixRelations,
   findMatrixRelation,
+  isCuratedMatrixPath,
   getAllLiveMatrixLinks,
   getMatrixLinksForLocation,
   getMatrixLinksForIndustry,
@@ -3449,7 +3450,15 @@ function prerender() {
     const enHref = enPath === '/' ? `${BASE_URL}/en` : `${BASE_URL}${enPath}`;
     const frHref = frPath === '/' ? `${BASE_URL}/` : `${BASE_URL}${frPath}`;
 
-    const isNoIndexPage = page.path === '/en/thank-you' || page.path === '/merci' || page.path === '/404';
+    const isExpertiseRoute =
+      page.path.startsWith('/expertise/') || page.path.startsWith('/en/expertise/');
+    const isUncuratedExpertiseRoute =
+      isExpertiseRoute && !isCuratedMatrixPath(page.path);
+    const isNoIndexPage =
+      page.path === '/en/thank-you' ||
+      page.path === '/merci' ||
+      page.path === '/404' ||
+      isUncuratedExpertiseRoute;
     const isBlogPost = page.path.startsWith('/blog/') || page.path.startsWith('/en/blog/');
     const isCaseStudy = page.path.startsWith('/realisations/') || page.path.startsWith('/en/work/');
     const matchedServiceMapping = serviceRouteMapping.find(m => page.lang === 'fr' ? m.frPath === page.path : m.enPath === page.path);

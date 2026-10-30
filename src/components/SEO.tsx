@@ -234,11 +234,11 @@ export default function SEO({ title, description, image, schema, noindex, type }
       
       {/* Canonical and Hreflang */}
       <link rel="canonical" href={currentUrl} />
-      {isReciprocal && <link rel="alternate" hrefLang="fr" href={frUrl} />}
-      {isReciprocal && <link rel="alternate" hrefLang="en" href={enUrl} />}
-      {isReciprocal && <link rel="alternate" hrefLang="x-default" href={frUrl} />}
-      {!isReciprocal && <link rel="alternate" hrefLang={currentLang} href={currentUrl} />}
-      {!isReciprocal && isFrench && <link rel="alternate" hrefLang="x-default" href={currentUrl} />}
+      {!noindex && isReciprocal && <link rel="alternate" hrefLang="fr" href={frUrl} />}
+      {!noindex && isReciprocal && <link rel="alternate" hrefLang="en" href={enUrl} />}
+      {!noindex && isReciprocal && <link rel="alternate" hrefLang="x-default" href={frUrl} />}
+      {!noindex && !isReciprocal && <link rel="alternate" hrefLang={currentLang} href={currentUrl} />}
+      {!noindex && !isReciprocal && isFrench && <link rel="alternate" hrefLang="x-default" href={currentUrl} />}
       
       {finalSchema.length > 0 && (
         <script 

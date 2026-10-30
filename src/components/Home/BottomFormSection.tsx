@@ -1,24 +1,50 @@
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Loader2, Mail, MessageCircle } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { trackEvent } from '../../utils/analytics';
+import { submitContactLead } from '../../utils/contactClient';
 
 export default function BottomFormSection() {
+  const navigate = useNavigate();
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formSuccess, setFormSuccess] = useState('');
   const [formError, setFormError] = useState('');
+  const [showDirectFallback, setShowDirectFallback] = useState(false);
+
+  const whatsappUrl = `https://wa.me/212668802096?text=${encodeURIComponent("Hello Urunk, I would like to request a free audit for my property.")}`;
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormError('');
+    setShowDirectFallback(false);
     setFormSuccess('');
+
+    if (!privacyAgreed) {
+      setFormError('Please agree to the privacy policy to continue.');
+      return;
+    }
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const gotcha = formData.get('_gotcha');
-    if (gotcha) {
-      setFormSuccess('Thank you! Your request has been sent.');
+    const name = ((formData.get('name') as string) || '').trim();
+    const contactValue = ((formData.get('contact') as string) || '').trim();
+    const establishmentType = ((formData.get('establishment_type') as string) || '').trim();
+
+    if (name.length < 2) {
+      setFormError('Please enter your name and property or company name.');
+      return;
+    }
+
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+    const isValidPhone = /^[+\d][\d\s().-]{7,24}$/.test(contactValue) && contactValue.replace(/\D/g, '').length >= 8;
+    if (!isValidEmail && !isValidPhone) {
+      setFormError('Please enter a valid email address or WhatsApp number (e.g. +212 600-000000).');
+      return;
+    }
+
+    if (!establishmentType) {
+      setFormError('Please select your business type.');
       return;
     }
 
@@ -29,35 +55,30 @@ export default function BottomFormSection() {
       return;
     }
 
-    if (!privacyAgreed) {
-      setFormError('Please agree to the privacy policy to continue.');
-      return;
-    }
-
-    localStorage.setItem('form_last_submit', now.toString());
     setFormSubmitting(true);
+    trackEvent('quote_form_submit', { source: 'homepage_bottom_form_en', service: establishmentType });
 
-    trackEvent('quote_form_submit', { source: 'homepage_bottom_form_en', service: formData.get('establishment_type') });
+    const result = await submitContactLead({
+      lang: 'en',
+      source: 'home_audit_en',
+      name,
+      contact: contactValue,
+      service: establishmentType,
+      privacyAccepted: privacyAgreed,
+      _gotcha: ((formData.get('_gotcha') as string) || '').trim()
+    });
 
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/contact@urunk.com', {
-        method: 'POST',
-        body: formData,
-        headers: { Accept: 'application/json' }
-      });
+    setFormSubmitting(false);
 
-      if (res.ok) {
-        setFormSuccess('Thank you! Your request has been sent. Redirecting...');
-        setTimeout(() => {
-          window.location.href = '/en/thank-you';
-        }, 1200);
-      } else {
-        form.submit();
-      }
-    } catch {
-      form.submit();
-    } finally {
-      setFormSubmitting(false);
+    if (result.ok) {
+      localStorage.setItem('form_last_submit', Date.now().toString());
+      setFormSuccess('Thank you! Your request has been received. Redirecting...');
+      setTimeout(() => {
+        navigate('/en/thank-you');
+      }, 1200);
+    } else {
+      setFormError(result.userMessage);
+      setShowDirectFallback(result.showDirectFallback);
     }
   };
 
@@ -97,8 +118,7 @@ export default function BottomFormSection() {
 
         <div className="lg:col-span-6 w-full">
           <form
-            action="https://formsubmit.co/contact@urunk.com"
-            method="POST"
+            noValidate
             onSubmit={handleFormSubmit}
             className="bg-white rounded-xl p-6 sm:p-8 text-primary"
           >
@@ -107,8 +127,26 @@ export default function BottomFormSection() {
             </h3>
 
             {formError && (
-              <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-700 rounded-lg text-xs font-medium">
-                {formError}
+              <div role="alert" aria-live="polite" className="mb-4 p-3 bg-red-50 text-red-700 rounded-lg border border-red-200 text-xs font-medium space-y-2">
+                <p>{formError}</p>
+                {showDirectFallback && (
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 bg-[#25D366] text-white px-2.5 py-1.5 rounded-md font-bold hover:bg-[#1ebd5a] transition-colors"
+                    >
+                      <MessageCircle size={13} /> WhatsApp
+                    </a>
+                    <a
+                      href="mailto:contact@urunk.com"
+                      className="inline-flex items-center gap-1 bg-primary text-white px-2.5 py-1.5 rounded-md font-bold hover:bg-primary/90 transition-colors"
+                    >
+                      <Mail size={13} /> contact@urunk.com
+                    </a>
+                  </div>
+                )}
               </div>
             )}
             {formSuccess && (
@@ -185,8 +223,17 @@ export default function BottomFormSection() {
                   disabled={formSubmitting}
                   className="w-full bg-accent hover:bg-accent-hover text-white py-3 rounded-lg font-semibold text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                 >
-                  <span>Send audit request</span>
-                  <ArrowRight size={16} />
+                  {formSubmitting ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send audit request</span>
+                      <ArrowRight size={16} />
+                    </>
+                  )}
                 </button>
               </div>
             </div>

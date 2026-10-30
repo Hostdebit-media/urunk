@@ -227,3 +227,151 @@ test('prerendered dist/ HTML files for all 7 target URLs have 1 canonical, recip
   }
 });
 
+test('isCuratedMatrixPath allows strictly the 38 curated live 2-segment routes and excludes all 96 uncurated 3-segment routes', async () => {
+  const { matrixRelations, isCuratedMatrixPath } = await import('./matrixRelations');
+
+  const liveRelations = matrixRelations.filter((r) => r.status === 'live');
+  assert.equal(liveRelations.length, 19);
+
+  for (const rel of liveRelations) {
+    const frPath = `/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
+    const enPath = `/en/expertise/${rel.slugs.en.service}/${rel.slugs.en.target}`;
+    assert.equal(isCuratedMatrixPath(frPath), true, `Expected curated FR path ${frPath} to be indexable`);
+    assert.equal(isCuratedMatrixPath(`${frPath}/`), true);
+    assert.equal(isCuratedMatrixPath(enPath), true, `Expected curated EN path ${enPath} to be indexable`);
+  }
+
+  const locs = ['marrakech', 'casablanca', 'agadir', 'rabat'];
+  const inds = ['hotels-resorts', 'riads-boutique-hotels', 'restaurants-catering'];
+  const srvs = ['hotel-seo', 'hotel-website-design', 'google-ads-morocco', 'direct-booking'];
+
+  let uncuratedCount = 0;
+  for (const loc of locs) {
+    for (const ind of inds) {
+      for (const srv of srvs) {
+        assert.equal(isCuratedMatrixPath(`/expertise/${loc}/${ind}/${srv}`), false);
+        assert.equal(isCuratedMatrixPath(`/en/expertise/${loc}/${ind}/${srv}`), false);
+        uncuratedCount += 2;
+      }
+    }
+  }
+  assert.equal(uncuratedCount, 96);
+  assert.equal(isCuratedMatrixPath('/expertise/hotel-seo/marrakech'), false);
+});
+
+test('zero references to deprecated formsubmit.co remain in application code, Worker, or CSP headers', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+
+  function collectFiles(dir: string): string[] {
+    const out: string[] = [];
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        out.push(...collectFiles(full));
+      } else if (/\.(?:ts|tsx|js|html|css|jsonc?)$/.test(entry.name) && !entry.name.endsWith('.test.ts')) {
+        out.push(full);
+      }
+    }
+    return out;
+  }
+
+  const filesToScan = [
+    ...collectFiles(path.resolve('src')),
+    path.resolve('worker.ts'),
+    path.resolve('public/_headers'),
+    path.resolve('index.html'),
+  ];
+
+  for (const file of filesToScan) {
+    const content = fs.readFileSync(file, 'utf8');
+    assert.equal(
+      content.toLowerCase().includes('formsubmit.co'),
+      false,
+      `Found leftover formsubmit.co reference in ${file}`
+    );
+  }
+});
+
+test('post-build dist/ enforces index,follow on all 38 curated matrix routes and noindex,follow without hreflang or sitemap entries on all 96 uncurated 3-segment routes', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  if (!fs.existsSync(path.resolve('dist/index.html'))) {
+    return;
+  }
+
+  const { matrixRelations } = await import('./matrixRelations');
+  const pagesSitemap = fs.readFileSync(path.resolve('public/pages-sitemap.xml'), 'utf8');
+  const pagesSitemapFr = fs.readFileSync(path.resolve('public/pages-sitemap-fr.xml'), 'utf8');
+  const postsSitemap = fs.readFileSync(path.resolve('public/posts-sitemap.xml'), 'utf8');
+
+  // 1. Verify all 38 curated live 2-segment routes
+  for (const rel of matrixRelations.filter((r) => r.status === 'live')) {
+    const frRoute = `/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
+    const enRoute = `/en/expertise/${rel.slugs.en.service}/${rel.slugs.en.target}`;
+
+    for (const route of [frRoute, enRoute]) {
+      const htmlPath = path.resolve(`dist${route}/index.html`);
+      assert.ok(fs.existsSync(htmlPath), `Missing prerendered curated route: ${htmlPath}`);
+      const html = fs.readFileSync(htmlPath, 'utf8');
+      assert.ok(
+        html.includes('content="index, follow, max-image-preview:large"'),
+        `Curated route ${route} should be index, follow`
+      );
+      assert.ok(
+        html.includes('hreflang="fr"') && html.includes('hreflang="en"'),
+        `Curated route ${route} should retain reciprocal hreflang`
+      );
+      assert.ok(
+        pagesSitemap.includes(`<loc>https://urunk.com${route}</loc>`),
+        `Curated route ${route} missing from pages-sitemap.xml`
+      );
+    }
+  }
+
+  // 2. Verify all 96 uncurated 3-segment routes
+  const locs = ['marrakech', 'casablanca', 'agadir', 'rabat'];
+  const inds = ['hotels-resorts', 'riads-boutique-hotels', 'restaurants-catering'];
+  const srvs = ['hotel-seo', 'hotel-website-design', 'google-ads-morocco', 'direct-booking'];
+
+  let verifiedUncurated = 0;
+  for (const loc of locs) {
+    for (const ind of inds) {
+      for (const srv of srvs) {
+        for (const route of [`/expertise/${loc}/${ind}/${srv}`, `/en/expertise/${loc}/${ind}/${srv}`]) {
+          const htmlPath = path.resolve(`dist${route}/index.html`);
+          assert.ok(fs.existsSync(htmlPath), `Missing prerendered 3-segment route: ${htmlPath}`);
+          const html = fs.readFileSync(htmlPath, 'utf8');
+          assert.ok(
+            html.includes('<meta name="robots" data-static-seo="true" content="noindex, follow" />'),
+            `Uncurated route ${route} must emit noindex, follow`
+          );
+          assert.equal(
+            html.includes('hreflang='),
+            false,
+            `Uncurated noindex route ${route} must not emit hreflang tags`
+          );
+          assert.equal(
+            pagesSitemap.includes(`https://urunk.com${route}`),
+            false,
+            `Uncurated route ${route} must not appear in pages-sitemap.xml`
+          );
+          assert.equal(
+            pagesSitemapFr.includes(`https://urunk.com${route}`),
+            false,
+            `Uncurated route ${route} must not appear in pages-sitemap-fr.xml`
+          );
+          assert.equal(
+            postsSitemap.includes(`https://urunk.com${route}`),
+            false,
+            `Uncurated route ${route} must not appear in posts-sitemap.xml`
+          );
+          verifiedUncurated++;
+        }
+      }
+    }
+  }
+  assert.equal(verifiedUncurated, 96);
+});
+
+

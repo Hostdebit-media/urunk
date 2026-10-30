@@ -319,6 +319,24 @@ export function findLiveMatrixRelation(
   return relation?.status === 'live' ? relation : undefined;
 }
 
+export function isCuratedMatrixPath(pathname: string): boolean {
+  const withoutQuery = pathname.split(/[?#]/)[0] || '/';
+  const cleanPath =
+    withoutQuery.endsWith('/') && withoutQuery.length > 1
+      ? withoutQuery.slice(0, -1)
+      : withoutQuery;
+
+  for (const rel of matrixRelations) {
+    if (rel.status !== 'live') continue;
+    const frPath = `/expertise/${rel.slugs.fr.service}/${rel.slugs.fr.target}`;
+    const enPath = `/en/expertise/${rel.slugs.en.service}/${rel.slugs.en.target}`;
+    if (cleanPath === frPath || cleanPath === enPath) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export interface MatrixLinkItem {
   id: string;
   path: string;

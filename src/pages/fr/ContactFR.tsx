@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import SEO from "../../components/SEO";
 import { Mail, Phone, MapPin, ArrowRight, Check, Loader2, MessageCircle, ShieldCheck } from "lucide-react";
 import { trackEvent } from "../../utils/analytics";
+import { submitContactLead } from "../../utils/contactClient";
 
 const contactPageSchema = {
   "@context": "https://schema.org",
@@ -18,12 +19,16 @@ export default function ContactFR() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [showDirectFallback, setShowDirectFallback] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
+
+  const whatsappUrl = `https://wa.me/212668802096?text=${encodeURIComponent("Bonjour Urunk, je souhaite obtenir un devis gratuit pour mon entreprise touristique.")}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMsg("");
+    setShowDirectFallback(false);
     setSuccessMsg("");
 
     if (!privacyAgreed) {
@@ -34,22 +39,15 @@ export default function ContactFR() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Honeypot check
-    if (formData.get('_gotcha')) {
-      setSuccessMsg("Votre message a été envoyé avec succès !");
-      return;
-    }
-
-    // Client-side validation (before setting rate-limit lock)
     const name = ((formData.get("name") as string) || "").trim();
     if (name.length < 2) {
-      setErrorMsg("Veuillez entrer un nom valide.");
+      setErrorMsg("Veuillez entrer votre nom complet (au moins 2 caractères).");
       return;
     }
 
     const contactValue = ((formData.get("email") as string) || "").trim();
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
-    const isValidPhone = /^[+\d][\d\s().-]{7,}$/.test(contactValue);
+    const isValidPhone = /^[+\d][\d\s().-]{7,24}$/.test(contactValue) && contactValue.replace(/\D/g, "").length >= 8;
     if (!isValidEmail && !isValidPhone) {
       setErrorMsg("Veuillez entrer une adresse e-mail valide ou un numéro WhatsApp (ex: +212 600-000000).");
       return;
@@ -61,61 +59,58 @@ export default function ContactFR() {
       return;
     }
 
-    // Rate limiting check
-    const lastSubmit = localStorage.getItem('form_last_submit');
-    const now = Date.now();
-    if (lastSubmit && now - parseInt(lastSubmit, 10) < 10000) {
-      setErrorMsg('Veuillez patienter quelques secondes avant de soumettre à nouveau.');
+    const service = ((formData.get("service") as string) || "").trim();
+    if (!service) {
+      setErrorMsg("Veuillez sélectionner le service souhaité.");
       return;
     }
-    localStorage.setItem('form_last_submit', now.toString());
+
+    const message = ((formData.get("message") as string) || "").trim();
+    if (message.length > 3000) {
+      setErrorMsg("Votre message dépasse la limite autorisée (3 000 caractères maximum).");
+      return;
+    }
+
+    const lastSubmit = localStorage.getItem("form_last_submit");
+    const now = Date.now();
+    if (lastSubmit && now - parseInt(lastSubmit, 10) < 10000) {
+      setErrorMsg("Veuillez patienter quelques secondes avant de soumettre à nouveau.");
+      return;
+    }
 
     setIsSubmitting(true);
 
-    trackEvent('quote_form_submit', {
-      service: formData.get('service'),
+    trackEvent("quote_form_submit", {
+      service,
       business,
-      language: 'fr'
+      language: "fr"
     });
 
-    try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/contact@urunk.com",
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        },
-      );
+    const result = await submitContactLead({
+      lang: "fr",
+      source: "contact_page_fr",
+      name,
+      contact: contactValue,
+      business,
+      service,
+      message,
+      privacyAccepted: privacyAgreed,
+      _gotcha: ((formData.get("_gotcha") as string) || "").trim()
+    });
 
-      if (response.ok) {
-        setSuccessMsg(
-          "Votre message a été envoyé avec succès ! Redirection...",
-        );
-        setTimeout(() => {
-          navigate("/merci");
-        }, 1500);
-      } else {
-        setErrorMsg(
-          "Le serveur d'envoi de formulaire est momentanément indisponible. Contactez-nous directement sur WhatsApp (+212 668-802096) ou par e-mail à contact@urunk.com.",
-        );
-      }
-    } catch {
-      setErrorMsg(
-        "Le serveur d'envoi de formulaire est momentanément indisponible. Contactez-nous directement sur WhatsApp (+212 668-802096) ou par e-mail à contact@urunk.com.",
-      );
-    } finally {
-      setIsSubmitting(false);
+    setIsSubmitting(false);
+
+    if (result.ok) {
+      localStorage.setItem("form_last_submit", Date.now().toString());
+      setSuccessMsg("Votre demande a bien été transmise à notre équipe ! Redirection...");
+      setTimeout(() => {
+        navigate("/merci");
+      }, 1200);
+    } else {
+      setErrorMsg(result.userMessage);
+      setShowDirectFallback(result.showDirectFallback);
     }
   };
-
-  const nextUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/merci`
-      : "https://urunk.com/merci";
-  const whatsappUrl = `https://wa.me/212668802096?text=${encodeURIComponent("Bonjour Urunk, je souhaite obtenir un devis gratuit pour mon entreprise touristique.")}`;
 
   return (
     <div className="w-full pb-20">
@@ -190,23 +185,11 @@ export default function ContactFR() {
 
           <div className="flex-1">
             <form
-              action="https://formsubmit.co/contact@urunk.com"
-              method="POST"
+              noValidate
               onSubmit={handleSubmit}
               className="bg-white rounded-2xl p-8 md:p-10 text-primary shadow-md"
             >
               <h2 className="text-2xl font-serif font-bold mb-6">Obtenir mon <span className="text-accent italic font-semibold">devis gratuit</span></h2>
-
-              {errorMsg && (
-                <div role="alert" aria-live="polite" className="mb-6 p-4 bg-red-50 text-red-600 rounded-xl border border-red-100 text-sm font-medium">
-                  {errorMsg}
-                </div>
-              )}
-              {successMsg && (
-                <div role="status" aria-live="polite" className="mb-6 p-4 bg-green-50 text-green-700 rounded-xl border border-green-100 text-sm font-medium">
-                  {successMsg}
-                </div>
-              )}
 
               <div className="space-y-5">
                 <div>
@@ -294,15 +277,34 @@ export default function ContactFR() {
                   </label>
                 </div>
 
-                {/* FormSubmit specific hidden inputs */}
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value="Nouveau Prospect Urunk (contact@urunk.com)"
-                />
-                <input type="hidden" name="_template" value="box" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value={nextUrl} />
+                {errorMsg && (
+                  <div role="alert" aria-live="polite" className="p-4 bg-red-50 text-red-700 rounded-xl border border-red-200 text-sm font-medium space-y-2">
+                    <p>{errorMsg}</p>
+                    {showDirectFallback && (
+                      <div className="flex flex-wrap gap-3 pt-1 text-xs">
+                        <a
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 bg-[#25D366] text-white px-3 py-1.5 rounded-lg font-bold hover:bg-[#1ebd5a] transition-colors"
+                        >
+                          <MessageCircle size={14} /> WhatsApp (+212 668-802096)
+                        </a>
+                        <a
+                          href="mailto:contact@urunk.com"
+                          className="inline-flex items-center gap-1.5 bg-primary text-white px-3 py-1.5 rounded-lg font-bold hover:bg-primary/90 transition-colors"
+                        >
+                          <Mail size={14} /> contact@urunk.com
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {successMsg && (
+                  <div role="status" aria-live="polite" className="p-4 bg-green-50 text-green-700 rounded-xl border border-green-100 text-sm font-medium">
+                    {successMsg}
+                  </div>
+                )}
 
                 <div className="pt-2">
                   <button

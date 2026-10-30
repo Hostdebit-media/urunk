@@ -19,6 +19,9 @@ _TO_REVIEW/
 # Environment variables and secrets
 .env*
 !.env.example
+.dev.vars
+.dev.vars.*
+.playwright-cli/
 
 # Logs
 *.log

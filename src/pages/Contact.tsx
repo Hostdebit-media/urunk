@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ShieldCheck, ArrowRight, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ShieldCheck, ArrowRight, Loader2, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import { trackEvent } from '../utils/analytics';
+import { submitContactLead } from '../utils/contactClient';
 
 const contactPageSchema = {
   "@context": "https://schema.org",
@@ -18,6 +19,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [showDirectFallback, setShowDirectFallback] = useState(false);
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -28,9 +30,12 @@ export default function Contact() {
     message: ''
   });
 
+  const whatsappUrl = `https://wa.me/212668802096?text=${encodeURIComponent("Hello Urunk, I would like a free audit and quote for my hospitality property.")}`;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrorMsg('');
+    setShowDirectFallback(false);
 
     if (!privacyAgreed) {
       setErrorMsg('Please agree to the privacy policy to submit your inquiry.');
@@ -40,31 +45,42 @@ export default function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Honeypot bot trap check
-    if (data.get('_gotcha')) {
-      setSubmitted(true);
-      return;
-    }
-
-    // Validation (before setting rate-limit lock)
-    if (!formData.name.trim() || !formData.email.trim() || !formData.property.trim()) {
-      setErrorMsg('Please fill out all required fields.');
+    if (formData.name.trim().length < 2) {
+      setErrorMsg('Please enter your full name (at least 2 characters).');
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      setErrorMsg('Please enter a valid email address.');
+      setErrorMsg('Please enter a valid professional email address.');
       return;
     }
 
-    // Rate limiting check
+    if (formData.property.trim().length < 2) {
+      setErrorMsg('Please enter your hotel, riad, or property name.');
+      return;
+    }
+
+    const trimmedPhone = formData.phone.trim();
+    if (
+      trimmedPhone &&
+      (!/^[+\d][\d\s().-]{7,24}$/.test(trimmedPhone) ||
+        trimmedPhone.replace(/\D/g, '').length < 8)
+    ) {
+      setErrorMsg('Please enter a valid phone or WhatsApp number (e.g. +212 600-000000).');
+      return;
+    }
+
+    if (formData.message.trim().length > 3000) {
+      setErrorMsg('Your message exceeds the maximum length (3,000 characters).');
+      return;
+    }
+
     const lastSubmit = localStorage.getItem('form_last_submit');
     const now = Date.now();
     if (lastSubmit && now - parseInt(lastSubmit, 10) < 10000) {
       setErrorMsg('Please wait a few seconds before submitting again.');
       return;
     }
-    localStorage.setItem('form_last_submit', now.toString());
 
     setIsSubmitting(true);
     trackEvent('quote_form_submit', {
@@ -73,28 +89,27 @@ export default function Contact() {
       language: 'en'
     });
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/contact@urunk.com', {
-        method: 'POST',
-        body: data,
-        headers: {
-          Accept: 'application/json'
-        }
-      });
+    const result = await submitContactLead({
+      lang: 'en',
+      source: 'contact_page_en',
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: trimmedPhone || undefined,
+      business: formData.property.trim(),
+      service: formData.service,
+      message: formData.message.trim(),
+      privacyAccepted: privacyAgreed,
+      _gotcha: ((data.get('_gotcha') as string) || '').trim()
+    });
 
-      if (response.ok) {
-        setSubmitted(true);
-      } else {
-        setErrorMsg(
-          'Our form relay service is temporarily unreachable. Please message us directly on WhatsApp (+212 668-802096) or email contact@urunk.com.'
-        );
-      }
-    } catch {
-      setErrorMsg(
-        'Our form relay service is temporarily unreachable. Please message us directly on WhatsApp (+212 668-802096) or email contact@urunk.com.'
-      );
-    } finally {
-      setIsSubmitting(false);
+    setIsSubmitting(false);
+
+    if (result.ok) {
+      localStorage.setItem('form_last_submit', Date.now().toString());
+      setSubmitted(true);
+    } else {
+      setErrorMsg(result.userMessage);
+      setShowDirectFallback(result.showDirectFallback);
     }
   };
 
@@ -215,19 +230,13 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form noValidate onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <h2 className="text-2xl font-serif font-bold text-primary mb-2">Request Your Strategy Session</h2>
                   <p className="text-primary/70 text-sm font-light">
                     Fill out the details below so we can tailor our initial analysis to your specific property type and goals.
                   </p>
                 </div>
-
-                {errorMsg && (
-                  <div role="alert" aria-live="polite" className="p-4 bg-red-50 text-red-600 rounded-xl border border-red-100 text-sm font-medium">
-                    {errorMsg}
-                  </div>
-                )}
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -336,6 +345,30 @@ export default function Contact() {
                     By submitting this form, you agree to our <Link to="/en/privacy-policy" className="underline text-accent">Privacy Policy</Link>.
                   </label>
                 </div>
+
+                {errorMsg && (
+                  <div role="alert" aria-live="polite" className="p-4 bg-red-50 text-red-700 rounded-xl border border-red-200 text-sm font-medium space-y-2">
+                    <p>{errorMsg}</p>
+                    {showDirectFallback && (
+                      <div className="flex flex-wrap gap-3 pt-1 text-xs">
+                        <a
+                          href={whatsappUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 bg-[#25D366] text-white px-3 py-1.5 rounded-lg font-bold hover:bg-[#1ebd5a] transition-colors"
+                        >
+                          <MessageCircle size={14} /> WhatsApp (+212 668-802096)
+                        </a>
+                        <a
+                          href="mailto:contact@urunk.com"
+                          className="inline-flex items-center gap-1.5 bg-primary text-white px-3 py-1.5 rounded-lg font-bold hover:bg-primary/90 transition-colors"
+                        >
+                          <Mail size={14} /> contact@urunk.com
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 <button
                   type="submit"

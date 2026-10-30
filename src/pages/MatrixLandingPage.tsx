@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, useLocation, Navigate, Link } from 'react-router-dom';
 import { locationsData, MarketStat, CityServiceFaqItem } from '../data/locationsData';
 import { industriesData } from '../data/industriesData';
 import { servicesData } from '../data/servicesData';
-import { matrixRelations, findMatrixRelation, MatrixRelation, getRelatedMatrixLinks } from '../data/matrixRelations';
+import { matrixRelations, findMatrixRelation, MatrixRelation, getRelatedMatrixLinks, isCuratedMatrixPath } from '../data/matrixRelations';
 import { buildMatrixMetadata } from '../data/matrixMetadata';
 import SEO from '../components/SEO';
 import RelatedExpertiseSection from '../components/RelatedExpertiseSection';
@@ -42,6 +42,7 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
     param2?: string;
   }>();
 
+  const location = useLocation();
   const isFrench = lang === 'fr';
 
   // 1. Dual Resolution: 2-tuple matrix relations OR 3-tuple legacy route
@@ -182,8 +183,9 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
   }));
   const faqSchema = buildFAQPageSchema(schemaFaqItems);
 
-  // Status gating & SEO indexation: planned pages receive noindex
+  // Status gating & SEO indexation: planned and uncurated 3-segment/fallback expertise pages receive noindex, follow
   const isPlanned = matchedRelation?.status === 'planned';
+  const shouldNoIndex = isPlanned || !isCuratedMatrixPath(location.pathname);
 
   const relatedExpertiseLinks = getRelatedMatrixLinks(
     {
@@ -202,7 +204,7 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
         title={metaPageTitle}
         description={metaDescription}
         schema={faqSchema}
-        noindex={isPlanned}
+        noindex={shouldNoIndex}
       />
       
       {/* Planned / Review Mode Top Bar */}

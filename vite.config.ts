@@ -1,11 +1,102 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig} from 'vite';
+import {defineConfig, loadEnv, type Plugin} from 'vite';
+import {handleContactRequest, type ContactEnv} from './src/server/contactApi';
 
-export default defineConfig(() => {
+function urunkContactApiDevPlugin(devEnv: ContactEnv): Plugin {
   return {
-    plugins: [react(), tailwindcss()],
+    name: 'urunk-contact-api-dev',
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        const rawUrl = req.url || '';
+        const pathname = rawUrl.split('?')[0];
+        if (pathname !== '/api/contact' && pathname !== '/api/contact/') {
+          next();
+          return;
+        }
+
+        try {
+          const host = req.headers.host || 'localhost:3000';
+          const forwardedProto = String(req.headers['x-forwarded-proto'] || 'http')
+            .split(',')[0]
+            .trim();
+          const forwardedHost = String(req.headers['x-forwarded-host'] || '')
+            .split(',')[0]
+            .trim();
+          const allowForwardedDevOrigin = forwardedHost
+            ? `${forwardedProto}://${forwardedHost}`
+            : undefined;
+
+          const headers = new Headers();
+          for (const [key, value] of Object.entries(req.headers)) {
+            if (Array.isArray(value)) {
+              headers.set(key, value.join(', '));
+            } else if (typeof value === 'string') {
+              headers.set(key, value);
+            }
+          }
+
+          const method = (req.method || 'GET').toUpperCase();
+          let bodyBytes: Uint8Array | undefined;
+
+          if (method !== 'GET' && method !== 'HEAD' && method !== 'OPTIONS') {
+            const chunks: Buffer[] = [];
+            let total = 0;
+            const cap = 16 * 1024 + 64; // allow exceeding 16KB slightly so handleContactRequest returns 413
+            await new Promise<void>((resolve, reject) => {
+              req.on('data', (chunk: Buffer) => {
+                if (total <= cap) {
+                  chunks.push(chunk);
+                  total += chunk.byteLength;
+                }
+              });
+              req.on('end', () => resolve());
+              req.on('error', (err) => reject(err));
+            });
+            bodyBytes = new Uint8Array(Buffer.concat(chunks));
+          }
+
+          const webReq = new Request(`http://${host}${rawUrl}`, {
+            method,
+            headers,
+            body: bodyBytes,
+          });
+
+          const clientIp =
+            String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1');
+
+          const webRes = await handleContactRequest(webReq, devEnv, {
+            clientIp,
+            allowForwardedDevOrigin,
+          });
+
+          res.statusCode = webRes.status;
+          webRes.headers.forEach((value, key) => {
+            res.setHeader(key, value);
+          });
+          const respText = await webRes.text();
+          res.end(respText);
+        } catch {
+          res.statusCode = 500;
+          res.setHeader('Content-Type', 'application/json; charset=utf-8');
+          res.end(JSON.stringify({ok: false, code: 'INTERNAL_ERROR'}));
+        }
+      });
+    },
+  };
+}
+
+export default defineConfig(({mode}) => {
+  const fileEnv = loadEnv(mode, process.cwd(), '');
+  const contactEnv: ContactEnv = {
+    RESEND_API_KEY: process.env.RESEND_API_KEY || fileEnv.RESEND_API_KEY,
+    CONTACT_TO_EMAIL: process.env.CONTACT_TO_EMAIL || fileEnv.CONTACT_TO_EMAIL,
+    CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL || fileEnv.CONTACT_FROM_EMAIL,
+    ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS || fileEnv.ALLOWED_ORIGINS,
+  };
+  return {
+    plugins: [urunkContactApiDevPlugin(contactEnv), react(), tailwindcss()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
