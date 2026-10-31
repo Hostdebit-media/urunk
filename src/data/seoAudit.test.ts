@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import path from 'node:path';
 import {
   normalizeRoutePath,
   getEquivalentRoute,
@@ -475,6 +477,87 @@ test('all indexable prerendered dist/ routes match XML sitemaps 1-to-1 and every
     assert.ok(sitemapUrls.has(url), `Indexable URL missing from XML sitemaps: ${url}`);
   }
 });
+
+test('dist/_redirects conforms strictly to Cloudflare _redirects specification with valid numeric status codes', () => {
+  const publicRedirectsPath = path.resolve('public/_redirects');
+  const distRedirectsPath = path.resolve('dist/_redirects');
+  assert.ok(fs.existsSync(publicRedirectsPath), 'public/_redirects must exist');
+  assert.ok(fs.existsSync(distRedirectsPath), 'dist/_redirects must exist after build');
+
+  const publicContent = fs.readFileSync(publicRedirectsPath, 'utf8');
+  const distContent = fs.readFileSync(distRedirectsPath, 'utf8');
+  assert.equal(distContent, publicContent, 'dist/_redirects must match public/_redirects');
+
+  const permittedStatuses = new Set([200, 301, 302, 303, 307, 308]);
+  const seenSources = new Set<string>();
+  let staticRules = 0;
+  let dynamicRules = 0;
+  let seenDynamicRule = false;
+
+  const lines = distContent.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    const lineNo = i + 1;
+    const trimmed = lines[i].trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+
+    assert.ok(trimmed.length <= 2000, `Line ${lineNo} exceeds Cloudflare 2000-char limit`);
+
+    const tokens = trimmed.replace(/\s+#.*$/, '').split(/\s+/);
+    assert.ok(
+      tokens.length === 2 || tokens.length === 3,
+      `Line ${lineNo} must have 2 or 3 tokens ("source destination [status]"), got ${tokens.length}: "${trimmed}"`
+    );
+
+    const [source, destination, rawStatus = '302'] = tokens;
+    assert.ok(source.startsWith('/'), `Line ${lineNo} source must start with "/": "${source}"`);
+    assert.ok(
+      destination.startsWith('/') || destination.startsWith('https://'),
+      `Line ${lineNo} destination must start with "/" or "https://": "${destination}"`
+    );
+    assert.notEqual(source, destination, `Line ${lineNo} redirects to itself: "${source}"`);
+    assert.equal(
+      source.includes(':splat'),
+      false,
+      `Line ${lineNo} source uses ":splat" instead of Cloudflare wildcard "*": "${source}"`
+    );
+
+    assert.match(
+      rawStatus,
+      /^\d+$/,
+      `Line ${lineNo} status "${rawStatus}" contains non-numeric characters (Netlify "!" is invalid on Cloudflare)`
+    );
+    const statusNum = Number(rawStatus);
+    assert.ok(
+      permittedStatuses.has(statusNum),
+      `Line ${lineNo} status ${statusNum} is not a valid Cloudflare status (200, 301, 302, 303, 307, 308)`
+    );
+
+    assert.equal(
+      seenSources.has(source),
+      false,
+      `Duplicate redirect source "${source}" at line ${lineNo}`
+    );
+    seenSources.add(source);
+
+    const isDynamic = /\*|:[A-Za-z]\w*/.test(source);
+    if (isDynamic) {
+      seenDynamicRule = true;
+      dynamicRules += 1;
+    } else {
+      assert.equal(
+        seenDynamicRule,
+        false,
+        `Static rule "${source}" at line ${lineNo} appears after a dynamic wildcard rule`
+      );
+      staticRules += 1;
+    }
+  }
+
+  assert.equal(seenSources.size, 190, `Expected all 190 redirect rules to be preserved, got ${seenSources.size}`);
+  assert.ok(staticRules <= 2000, `Exceeded Cloudflare 2000 static rules limit (${staticRules})`);
+  assert.ok(dynamicRules <= 100, `Exceeded Cloudflare 100 dynamic rules limit (${dynamicRules})`);
+});
+
 
 
 

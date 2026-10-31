@@ -1,225 +1,221 @@
 # ==============================================================================
-# Urunk URL Architecture 301 Redirect Rules (French Root / English /en/)
+# Urunk URL Architecture 301 Redirect Rules (Cloudflare Format: source dest status)
 # ==============================================================================
 
 # 0. Canonical Service Consolidation
-/services/gestion-google-ads /google-ads-maroc 301!
-/services/gestion-google-ads.html /google-ads-maroc 301!
-/en/seo-riad-marrakech /en/riad-seo-marrakech 301!
-/en/seo-riad-marrakech.html /en/riad-seo-marrakech 301!
-/en/services/meta-ads-management /en/services/meta-ads 301!
-/en/website-design /en/services/website-design 301!
+/services/gestion-google-ads /google-ads-maroc 301
+/services/gestion-google-ads.html /google-ads-maroc 301
+/en/seo-riad-marrakech /en/riad-seo-marrakech 301
+/en/seo-riad-marrakech.html /en/riad-seo-marrakech 301
+/en/services/meta-ads-management /en/services/meta-ads 301
+/en/website-design /en/services/website-design 301
 
-# 0. Direct .html Extension Single-Hop Normalization
-/fr/tarifs.html /tarifs 301!
-/tarifs.html /tarifs 301!
-/fr/pricing.html /tarifs 301!
-/pricing.html /en/pricing 301!
-/fr/a-propos.html /a-propos 301!
-/a-propos.html /a-propos 301!
-/fr/about.html /a-propos 301!
-/about.html /en/about 301!
-/fr/realisations.html /realisations 301!
-/realisations.html /realisations 301!
-/fr/work.html /realisations 301!
-/work.html /en/work 301!
-/fr/blog.html /blog 301!
-/blog.html /blog 301!
-/fr/faq.html /faq 301!
-/faq.html /faq 301!
-/fr/contact.html /contact 301!
-/contact.html /contact 301!
-/fr/services.html /services 301!
-/services.html /services 301!
-/fr/politique-de-confidentialite.html /politique-de-confidentialite 301!
-/politique-de-confidentialite.html /politique-de-confidentialite 301!
-/fr/conditions-generales.html /conditions-generales 301!
-/conditions-generales.html /conditions-generales 301!
-/fr/plan-du-site.html /plan-du-site 301!
-/plan-du-site.html /plan-du-site 301!
-/fr/sitemap.html /plan-du-site 301!
-/sitemap.html /plan-du-site 301!
-/fr/merci.html /merci 301!
-/merci.html /merci 301!
-/fr/thank-you.html /merci 301!
-/thank-you.html /en/thank-you 301!
-/fr/zones.html /zones 301!
-/zones.html /zones 301!
-/fr/locations.html /zones 301!
-/locations.html /zones 301!
-/en/locations.html /en/locations 301!
-/en/about.html /en/about 301!
-/en/pricing.html /en/pricing 301!
-/en/services.html /en/services 301!
-/en/work.html /en/work 301!
-/en/blog.html /en/blog 301!
-/en/faq.html /en/faq 301!
-/en/contact.html /en/contact 301!
-/en/privacy-policy.html /en/privacy-policy 301!
-/en/terms-of-service.html /en/terms-of-service 301!
-/en/sitemap.html /en/sitemap 301!
-/en/thank-you.html /en/thank-you 301!
+# 1. Direct .html Extension Single-Hop Normalization
+/fr/tarifs.html /tarifs 301
+/tarifs.html /tarifs 301
+/fr/pricing.html /tarifs 301
+/pricing.html /en/pricing 301
+/fr/a-propos.html /a-propos 301
+/a-propos.html /a-propos 301
+/fr/about.html /a-propos 301
+/about.html /en/about 301
+/fr/realisations.html /realisations 301
+/realisations.html /realisations 301
+/fr/work.html /realisations 301
+/work.html /en/work 301
+/fr/blog.html /blog 301
+/blog.html /blog 301
+/fr/faq.html /faq 301
+/faq.html /faq 301
+/fr/contact.html /contact 301
+/contact.html /contact 301
+/fr/services.html /services 301
+/services.html /services 301
+/fr/politique-de-confidentialite.html /politique-de-confidentialite 301
+/politique-de-confidentialite.html /politique-de-confidentialite 301
+/fr/conditions-generales.html /conditions-generales 301
+/conditions-generales.html /conditions-generales 301
+/fr/plan-du-site.html /plan-du-site 301
+/plan-du-site.html /plan-du-site 301
+/fr/sitemap.html /plan-du-site 301
+/sitemap.html /plan-du-site 301
+/fr/merci.html /merci 301
+/merci.html /merci 301
+/fr/thank-you.html /merci 301
+/thank-you.html /en/thank-you 301
+/fr/zones.html /zones 301
+/zones.html /zones 301
+/fr/locations.html /zones 301
+/locations.html /zones 301
+/en/locations.html /en/locations 301
+/en/about.html /en/about 301
+/en/pricing.html /en/pricing 301
+/en/services.html /en/services 301
+/en/work.html /en/work 301
+/en/blog.html /en/blog 301
+/en/faq.html /en/faq 301
+/en/contact.html /en/contact 301
+/en/privacy-policy.html /en/privacy-policy 301
+/en/terms-of-service.html /en/terms-of-service 301
+/en/sitemap.html /en/sitemap 301
+/en/thank-you.html /en/thank-you 301
 
-# 1. Root French Aliases & Legacy /fr/* Migration to Root
-/fr / 301!
-/fr/ / 301!
-/fr/tarifs /tarifs 301!
-/fr/tarifs/ /tarifs 301!
-/fr/a-propos /a-propos 301!
-/fr/a-propos/ /a-propos 301!
-/fr/realisations /realisations 301!
-/fr/realisations/ /realisations 301!
-/fr/blog /blog 301!
-/fr/blog/ /blog 301!
-/fr/faq /faq 301!
-/fr/faq/ /faq 301!
-/fr/contact /contact 301!
-/fr/contact/ /contact 301!
-/fr/politique-de-confidentialite /politique-de-confidentialite 301!
-/fr/politique-de-confidentialite/ /politique-de-confidentialite 301!
-/fr/conditions-generales /conditions-generales 301!
-/fr/conditions-generales/ /conditions-generales 301!
-/fr/plan-du-site /plan-du-site 301!
-/fr/plan-du-site/ /plan-du-site 301!
-/fr/merci /merci 301!
-/fr/merci/ /merci 301!
+# 2. Root French Aliases & Legacy /fr/* Migration to Root
+/fr / 301
+/fr/ / 301
+/fr/tarifs /tarifs 301
+/fr/tarifs/ /tarifs 301
+/fr/a-propos /a-propos 301
+/fr/a-propos/ /a-propos 301
+/fr/realisations /realisations 301
+/fr/realisations/ /realisations 301
+/fr/blog /blog 301
+/fr/blog/ /blog 301
+/fr/faq /faq 301
+/fr/faq/ /faq 301
+/fr/contact /contact 301
+/fr/contact/ /contact 301
+/fr/politique-de-confidentialite /politique-de-confidentialite 301
+/fr/politique-de-confidentialite/ /politique-de-confidentialite 301
+/fr/conditions-generales /conditions-generales 301
+/fr/conditions-generales/ /conditions-generales 301
+/fr/plan-du-site /plan-du-site 301
+/fr/plan-du-site/ /plan-du-site 301
+/fr/merci /merci 301
+/fr/merci/ /merci 301
 
-# 2. Legacy /fr/* Mirrored English Slugs -> Root French Canonical Slugs
-/fr/pricing /tarifs 301!
-/fr/pricing/ /tarifs 301!
-/fr/about /a-propos 301!
-/fr/about/ /a-propos 301!
-/fr/work /realisations 301!
-/fr/work/ /realisations 301!
-/fr/terms-of-service /conditions-generales 301!
-/fr/privacy-policy /politique-de-confidentialite 301!
-/fr/sitemap /plan-du-site 301!
-/fr/html-sitemap /plan-du-site 301!
-/fr/thank-you /merci 301!
+# 3. Legacy /fr/* Mirrored English Slugs -> Root French Canonical Slugs
+/fr/pricing /tarifs 301
+/fr/pricing/ /tarifs 301
+/fr/about /a-propos 301
+/fr/about/ /a-propos 301
+/fr/work /realisations 301
+/fr/work/ /realisations 301
+/fr/terms-of-service /conditions-generales 301
+/fr/privacy-policy /politique-de-confidentialite 301
+/fr/sitemap /plan-du-site 301
+/fr/html-sitemap /plan-du-site 301
+/fr/thank-you /merci 301
 
-# 3. Legacy /fr Core Services -> Root French Canonical
-/fr/agence-web-maroc /agence-web-maroc 301!
-/fr/agence-web-casablanca /agence-web-casablanca 301!
-/fr/agence-seo-maroc /agence-seo-maroc 301!
-/fr/agence-seo-casablanca /agence-seo-casablanca 301!
-/fr/seo-hotel /seo-hotel 301!
-/fr/marketing-digital-hotelier /marketing-digital-hotelier 301!
-/fr/site-web-hotel /site-web-hotel 301!
-/fr/reservation-directe /reservation-directe 301!
-/fr/google-ads-maroc /google-ads-maroc 301!
-/fr/referencement-local-casablanca /referencement-local-casablanca 301!
-/fr/seo-riad-marrakech /seo-riad-marrakech 301!
-/fr/site-web-riad-marrakech /site-web-riad-marrakech 301!
-/fr/creation-site-web /creation-site-web 301!
+# 4. Legacy /fr Core Services -> Root French Canonical
+/fr/agence-web-maroc /agence-web-maroc 301
+/fr/agence-web-casablanca /agence-web-casablanca 301
+/fr/agence-seo-maroc /agence-seo-maroc 301
+/fr/agence-seo-casablanca /agence-seo-casablanca 301
+/fr/seo-hotel /seo-hotel 301
+/fr/marketing-digital-hotelier /marketing-digital-hotelier 301
+/fr/site-web-hotel /site-web-hotel 301
+/fr/reservation-directe /reservation-directe 301
+/fr/google-ads-maroc /google-ads-maroc 301
+/fr/referencement-local-casablanca /referencement-local-casablanca 301
+/fr/seo-riad-marrakech /seo-riad-marrakech 301
+/fr/site-web-riad-marrakech /site-web-riad-marrakech 301
+/fr/creation-site-web /creation-site-web 301
 
-# 4. Legacy /fr/services/* -> Root French Services
-/fr/services/creation-site-web /services/creation-site-web 301!
-/fr/services/gestion-google-ads /google-ads-maroc 301!
-/fr/services/gestion-publicites-meta /services/gestion-publicites-meta 301!
-/fr/services/tripadvisor-ads /services/tripadvisor-ads 301!
-/fr/services/bundle /services/bundle-site-ads 301!
-/fr/services/bundle-site-ads /services/bundle-site-ads 301!
-/fr/services/ai-seo-optimization /services/ai-seo-optimization 301!
-/fr/services/wordpress-seo /services/wordpress-seo 301!
-/fr/services/ecommerce-seo /services/ecommerce-seo 301!
-/fr/services/google-business-profile /services/google-business-profile 301!
-/fr/services/local-seo-morocco /services/local-seo-morocco 301!
-/fr/services/website-design /services/creation-site-web 301!
-/fr/services/google-ads /google-ads-maroc 301!
-/fr/services/meta-ads /services/gestion-publicites-meta 301!
-/fr/services /services 301!
-/fr/services/ /services 301!
+# 5. Legacy /fr/services/* -> Root French Services
+/fr/services/creation-site-web /services/creation-site-web 301
+/fr/services/gestion-google-ads /google-ads-maroc 301
+/fr/services/gestion-publicites-meta /services/gestion-publicites-meta 301
+/fr/services/tripadvisor-ads /services/tripadvisor-ads 301
+/fr/services/bundle /services/bundle-site-ads 301
+/fr/services/bundle-site-ads /services/bundle-site-ads 301
+/fr/services/ai-seo-optimization /services/ai-seo-optimization 301
+/fr/services/wordpress-seo /services/wordpress-seo 301
+/fr/services/ecommerce-seo /services/ecommerce-seo 301
+/fr/services/google-business-profile /services/google-business-profile 301
+/fr/services/local-seo-morocco /services/local-seo-morocco 301
+/fr/services/website-design /services/creation-site-web 301
+/fr/services/google-ads /google-ads-maroc 301
+/fr/services/meta-ads /services/gestion-publicites-meta 301
+/fr/services /services 301
+/fr/services/ /services 301
 
-# 5. Legacy /fr Secteurs & Zones -> Root French
-/fr/secteurs/:splat /secteurs/:splat 301!
-/fr/industries/hotels-resorts /secteurs/hotels-resorts 301!
-/fr/industries/riads-boutique-hotels /secteurs/riads-maisons-hotes 301!
-/fr/industries/tour-operators /secteurs/tour-operateurs 301!
-/fr/industries/restaurants-catering /secteurs/restaurants-traiteurs 301!
-/fr/industries/corporate-smes /secteurs/pme-entreprises 301!
-/fr/industries/ecommerce /secteurs 301!
-
-/fr/zones /zones 301!
-/fr/zones/ /zones 301!
-/fr/zones/:splat /zones/:splat 301!
-/fr/locations /zones 301!
-/fr/locations/ /zones 301!
-/fr/locations/morocco /zones/maroc 301!
-/fr/locations/casablanca /zones/casablanca 301!
-/fr/locations/marrakech /zones/marrakech 301!
-/fr/locations/rabat /zones/rabat 301!
-/fr/locations/agadir /zones/agadir 301!
-
-# 6. Legacy /fr/realisations & /fr/blog -> Root French
-/fr/realisations/:splat /realisations/:splat 301!
-/fr/blog/:splat /blog/:splat 301!
+# 6. Legacy /fr Secteurs & Zones Static Rules -> Root French
+/fr/industries/hotels-resorts /secteurs/hotels-resorts 301
+/fr/industries/riads-boutique-hotels /secteurs/riads-maisons-hotes 301
+/fr/industries/tour-operators /secteurs/tour-operateurs 301
+/fr/industries/restaurants-catering /secteurs/restaurants-traiteurs 301
+/fr/industries/corporate-smes /secteurs/pme-entreprises 301
+/fr/industries/ecommerce /secteurs 301
+/fr/zones /zones 301
+/fr/zones/ /zones 301
+/fr/locations /zones 301
+/fr/locations/ /zones 301
+/fr/locations/morocco /zones/maroc 301
+/fr/locations/casablanca /zones/casablanca 301
+/fr/locations/marrakech /zones/marrakech 301
+/fr/locations/rabat /zones/rabat 301
+/fr/locations/agadir /zones/agadir 301
 
 # 7. Legacy English Root URLs -> Secondary /en/ Subfolder
-/about /en/about 301!
-/about/ /en/about 301!
-/pricing /en/pricing 301!
-/pricing/ /en/pricing 301!
-/work /en/work 301!
-/work/ /en/work 301!
-/terms-of-service /en/terms-of-service 301!
-/terms-of-service/ /en/terms-of-service 301!
-/privacy-policy /en/privacy-policy 301!
-/privacy-policy/ /en/privacy-policy 301!
-/sitemap /en/sitemap 301!
-/sitemap/ /en/sitemap 301!
-/thank-you /en/thank-you 301!
-/thank-you/ /en/thank-you 301!
+/about /en/about 301
+/about/ /en/about 301
+/pricing /en/pricing 301
+/pricing/ /en/pricing 301
+/work /en/work 301
+/work/ /en/work 301
+/terms-of-service /en/terms-of-service 301
+/terms-of-service/ /en/terms-of-service 301
+/privacy-policy /en/privacy-policy 301
+/privacy-policy/ /en/privacy-policy 301
+/sitemap /en/sitemap 301
+/sitemap/ /en/sitemap 301
+/thank-you /en/thank-you 301
+/thank-you/ /en/thank-you 301
 
 # 8. Legacy English Core Services & Landing Pages -> /en/
-/web-design-morocco /en/web-design-morocco 301!
-/web-design-casablanca /en/web-design-casablanca 301!
-/seo-morocco /en/seo-morocco 301!
-/seo-agency-morocco /en/seo-agency-morocco 301!
-/seo-agency-casablanca /en/seo-agency-casablanca 301!
-/hotel-seo /en/hotel-seo 301!
-/hotel-digital-marketing /en/hotel-digital-marketing 301!
-/hotel-website-design /en/hotel-website-design 301!
-/direct-booking /en/direct-booking 301!
-/google-ads-morocco /en/google-ads-morocco 301!
-/local-seo-casablanca /en/local-seo-casablanca 301!
-/riad-seo-marrakech /en/riad-seo-marrakech 301!
-/riad-website-design-marrakech /en/riad-website-design-marrakech 301!
+/web-design-morocco /en/web-design-morocco 301
+/web-design-casablanca /en/web-design-casablanca 301
+/seo-morocco /en/seo-morocco 301
+/seo-agency-morocco /en/seo-agency-morocco 301
+/seo-agency-casablanca /en/seo-agency-casablanca 301
+/hotel-seo /en/hotel-seo 301
+/hotel-digital-marketing /en/hotel-digital-marketing 301
+/hotel-website-design /en/hotel-website-design 301
+/direct-booking /en/direct-booking 301
+/google-ads-morocco /en/google-ads-morocco 301
+/local-seo-casablanca /en/local-seo-casablanca 301
+/riad-seo-marrakech /en/riad-seo-marrakech 301
+/riad-website-design-marrakech /en/riad-website-design-marrakech 301
 
 # 9. Legacy English Services Sub-pages -> /en/services/*
-/services/website-design /en/services/website-design 301!
-/services/google-ads /en/services/google-ads 301!
-/services/meta-ads /en/services/meta-ads 301!
-/services/bundle /services/bundle-site-ads 301!
+/services/website-design /en/services/website-design 301
+/services/google-ads /en/services/google-ads 301
+/services/meta-ads /en/services/meta-ads 301
+/services/bundle /services/bundle-site-ads 301
 
 # 10. Specific SEO URL Normalization 301 Redirects
-/blog/pages-atterrissage-haute-conversion-hotels /blog/landing-pages-hotels 301!
-/en/blog/high-converting-hotel-landing-pages /en/blog/landing-pages-hotels 301!
-/secteurs/ecommerce /secteurs/hotels-resorts 301!
-/en/industries/ecommerce /en/industries/hotels-resorts 301!
-/en/services/bundle /en/services/bundle-site-ads 301!
-
-# 10. Legacy English Industries & Locations -> /en/
-/industries/:splat /en/industries/:splat 301!
-/locations/:splat /en/locations/:splat 301!
-/work/:splat /en/work/:splat 301!
+/blog/pages-atterrissage-haute-conversion-hotels /blog/landing-pages-hotels 301
+/en/blog/high-converting-hotel-landing-pages /en/blog/landing-pages-hotels 301
+/secteurs/ecommerce /secteurs/hotels-resorts 301
+/en/industries/ecommerce /en/industries/hotels-resorts 301
+/en/services/bundle /en/services/bundle-site-ads 301
 
 # 11. Trailing Slash Normalization
-/en/ /en 301!
-/en/about/ /en/about 301!
-/en/pricing/ /en/pricing 301!
-/en/services/ /en/services 301!
-/en/work/ /en/work 301!
-/en/blog/ /en/blog 301!
-/en/faq/ /en/faq 301!
-/en/contact/ /en/contact 301!
-/tarifs/ /tarifs 301!
-/a-propos/ /a-propos 301!
-/realisations/ /realisations 301!
-/faq/ /faq 301!
-/contact/ /contact 301!
-/plan-du-site/ /plan-du-site 301!
-/conditions-generales/ /conditions-generales 301!
-/politique-de-confidentialite/ /politique-de-confidentialite 301!
+/en/ /en 301
+/en/about/ /en/about 301
+/en/pricing/ /en/pricing 301
+/en/services/ /en/services 301
+/en/work/ /en/work 301
+/en/blog/ /en/blog 301
+/en/faq/ /en/faq 301
+/en/contact/ /en/contact 301
+/tarifs/ /tarifs 301
+/a-propos/ /a-propos 301
+/realisations/ /realisations 301
+/faq/ /faq 301
+/contact/ /contact 301
+/plan-du-site/ /plan-du-site 301
+/conditions-generales/ /conditions-generales 301
+/politique-de-confidentialite/ /politique-de-confidentialite 301
 
-# 12. Fallback handled by Worker (404 status code)
+# 12. Dynamic Wildcard Splat Rules (Placed Last per Cloudflare Static Routing Spec)
+/fr/secteurs/* /secteurs/:splat 301
+/fr/zones/* /zones/:splat 301
+/fr/realisations/* /realisations/:splat 301
+/fr/blog/* /blog/:splat 301
+/industries/* /en/industries/:splat 301
+/locations/* /en/locations/:splat 301
+/work/* /en/work/:splat 301
 
+# 13. Fallback handled by Worker (404 status code)
