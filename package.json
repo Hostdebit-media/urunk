@@ -7,7 +7,7 @@
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "npx tsx generate-sitemaps.ts && vite build && npx tsx prerender.ts",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && npx wrangler@4 deploy -c wrangler.jsonc",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"
   },
