@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import SEO from "../../components/SEO";
-import { CheckCircle2, MessageCircle, ArrowRight, ShieldCheck, Clock } from "lucide-react";
+import { CheckCircle2, MessageCircle, ArrowRight, Clock } from "lucide-react";
 import { trackEvent } from "../../utils/analytics";
 
 export default function ThankYouFR() {
@@ -14,10 +13,7 @@ export default function ThankYouFR() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] py-16 px-6 max-w-3xl mx-auto">
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
-      <SEO title="Merci | Urunk" description="Votre demande de devis a été bien reçue." />
+      <SEO title="Merci | Urunk" description="Votre demande de devis a été bien reçue." noindex={true} />
       
       <div className="bg-green-50 text-accent p-4 rounded-full mb-6">
         <CheckCircle2 size={48} />

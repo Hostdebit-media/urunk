@@ -30,6 +30,154 @@ function applySecurityHeaders(headers: Headers) {
   }
 }
 
+const LEGACY_FR_REDIRECTS: Record<string, string> = {
+  "/fr": "/",
+  "/fr/pricing": "/tarifs",
+  "/fr/about": "/a-propos",
+  "/fr/work": "/realisations",
+  "/fr/terms-of-service": "/conditions-generales",
+  "/fr/privacy-policy": "/politique-de-confidentialite",
+  "/fr/sitemap": "/plan-du-site",
+  "/fr/html-sitemap": "/plan-du-site",
+  "/fr/thank-you": "/merci",
+  "/fr/services/website-design": "/services/creation-site-web",
+  "/fr/services/google-ads": "/google-ads-maroc",
+  "/fr/services/gestion-google-ads": "/google-ads-maroc",
+  "/fr/services/meta-ads": "/services/gestion-publicites-meta",
+  "/fr/services/bundle": "/services/bundle-site-ads",
+  "/fr/industries/hotels-resorts": "/secteurs/hotels-resorts",
+  "/fr/industries/riads-boutique-hotels": "/secteurs/riads-maisons-hotes",
+  "/fr/industries/tour-operators": "/secteurs/tour-operateurs",
+  "/fr/industries/restaurants-catering": "/secteurs/restaurants-traiteurs",
+  "/fr/industries/corporate-smes": "/secteurs/pme-entreprises",
+  "/fr/industries/ecommerce": "/secteurs/hotels-resorts",
+  "/fr/locations": "/zones",
+  "/fr/locations/morocco": "/zones/maroc",
+  "/fr/locations/casablanca": "/zones/casablanca",
+  "/fr/locations/marrakech": "/zones/marrakech",
+  "/fr/locations/rabat": "/zones/rabat",
+  "/fr/locations/agadir": "/zones/agadir"
+};
+
+const CANONICAL_REDIRECTS: Record<string, string> = {
+  "/services/gestion-google-ads": "/google-ads-maroc",
+  "/services/bundle": "/services/bundle-site-ads",
+  "/en/services/bundle": "/en/services/bundle-site-ads",
+  "/en/seo-riad-marrakech": "/en/riad-seo-marrakech",
+  "/en/services/meta-ads-management": "/en/services/meta-ads",
+  "/en/website-design": "/en/services/website-design",
+  "/blog/pages-atterrissage-haute-conversion-hotels": "/blog/landing-pages-hotels",
+  "/en/blog/high-converting-hotel-landing-pages": "/en/blog/landing-pages-hotels",
+  "/secteurs/ecommerce": "/secteurs/hotels-resorts",
+  "/en/industries/ecommerce": "/en/industries/hotels-resorts",
+  "/about": "/en/about",
+  "/pricing": "/en/pricing",
+  "/work": "/en/work",
+  "/locations": "/en/locations",
+  "/terms-of-service": "/en/terms-of-service",
+  "/privacy-policy": "/en/privacy-policy",
+  "/thank-you": "/en/thank-you",
+  "/web-design-morocco": "/en/web-design-morocco",
+  "/web-design-casablanca": "/en/web-design-casablanca",
+  "/seo-morocco": "/en/seo-morocco",
+  "/seo-agency-morocco": "/en/seo-agency-morocco",
+  "/seo-agency-casablanca": "/en/seo-agency-casablanca",
+  "/hotel-seo": "/en/hotel-seo",
+  "/hotel-digital-marketing": "/en/hotel-digital-marketing",
+  "/hotel-website-design": "/en/hotel-website-design",
+  "/direct-booking": "/en/direct-booking",
+  "/google-ads-morocco": "/en/google-ads-morocco",
+  "/local-seo-casablanca": "/en/local-seo-casablanca",
+  "/riad-seo-marrakech": "/en/riad-seo-marrakech",
+  "/riad-website-design-marrakech": "/en/riad-website-design-marrakech",
+  "/services/website-design": "/en/services/website-design",
+  "/services/google-ads": "/en/services/google-ads",
+  "/services/meta-ads": "/en/services/meta-ads",
+  "/sitemap": "/plan-du-site",
+  "/html-sitemap": "/plan-du-site",
+  "/en/html-sitemap": "/en/sitemap"
+};
+
+export function isWorkerStaticAssetPath(normalizedPathname: string): boolean {
+  return (
+    normalizedPathname.startsWith("/assets/") ||
+    normalizedPathname.startsWith("/images/") ||
+    normalizedPathname.startsWith("/icons/") ||
+    /\.(?:js|mjs|css|map|json|xml|txt|ico|svg|png|jpe?g|webp|avif|gif|woff2?|ttf|eot|webmanifest)$/i.test(
+      normalizedPathname
+    )
+  );
+}
+
+/**
+ * Resolves any non-canonical HTML path (trailing slash, .html suffix, legacy /fr/*,
+ * or legacy un-prefixed English path) to its final canonical destination in a single hop.
+ */
+export function resolveCanonicalRedirect(pathname: string): string | null {
+  const lower = pathname.toLowerCase();
+  if (
+    isWorkerStaticAssetPath(lower) ||
+    lower === "/404" ||
+    lower === "/404.html" ||
+    lower.startsWith("/api/")
+  ) {
+    return null;
+  }
+
+  let candidate = pathname;
+  let shouldRedirect = false;
+
+  // 1. Strip trailing slashes (except root "/")
+  if (candidate.length > 1 && candidate.endsWith("/")) {
+    candidate = candidate.replace(/\/+$/, "") || "/";
+    shouldRedirect = true;
+  }
+
+  // 2. Strip .html suffix (including /index.html -> / and /page.html -> /page)
+  const candidateLowerBeforeHtml = candidate.toLowerCase();
+  if (candidateLowerBeforeHtml === "/index.html") {
+    candidate = "/";
+    shouldRedirect = true;
+  } else if (candidateLowerBeforeHtml.endsWith("/index.html")) {
+    candidate = candidate.slice(0, -11) || "/";
+    shouldRedirect = true;
+  } else if (candidateLowerBeforeHtml.endsWith(".html")) {
+    candidate = candidate.slice(0, -5) || "/";
+    shouldRedirect = true;
+  }
+
+  // 3. Single-hop legacy /fr and /fr/* resolution to French canonical paths
+  const candidateLowerAfterHtml = candidate.toLowerCase();
+  if (LEGACY_FR_REDIRECTS[candidateLowerAfterHtml]) {
+    candidate = LEGACY_FR_REDIRECTS[candidateLowerAfterHtml];
+    shouldRedirect = true;
+  } else if (candidateLowerAfterHtml.startsWith("/fr/")) {
+    candidate = candidate.slice(3) || "/";
+    shouldRedirect = true;
+  }
+
+  // 4. Consolidated & legacy root canonical table + prefix splats
+  const candidateLowerFinal = candidate.toLowerCase();
+  if (CANONICAL_REDIRECTS[candidateLowerFinal]) {
+    candidate = CANONICAL_REDIRECTS[candidateLowerFinal];
+    shouldRedirect = true;
+  } else if (candidateLowerFinal.startsWith("/industries/")) {
+    candidate = `/en${candidate}`;
+    shouldRedirect = true;
+  } else if (candidateLowerFinal.startsWith("/locations/")) {
+    candidate = `/en${candidate}`;
+    shouldRedirect = true;
+  } else if (candidateLowerFinal.startsWith("/work/")) {
+    candidate = `/en${candidate}`;
+    shouldRedirect = true;
+  }
+
+  if (!shouldRedirect || candidate === pathname) {
+    return null;
+  }
+  return candidate;
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const startTime = Date.now();
@@ -99,85 +247,11 @@ export default {
 
     try {
       const normalizedPathname = pathname.toLowerCase();
-      const isStaticAssetPath =
-        normalizedPathname.startsWith("/assets/") ||
-        normalizedPathname.startsWith("/images/") ||
-        normalizedPathname.startsWith("/icons/") ||
-        /\.(?:js|mjs|css|map|json|xml|txt|ico|svg|png|jpe?g|webp|avif|gif|woff2?|ttf|eot|webmanifest)$/i.test(
-          normalizedPathname
-        );
 
-      // 1. Trailing slash normalization for HTML routes only (redirect /page/ -> /page, except root '/')
-      if (!isStaticAssetPath && pathname.length > 1 && pathname.endsWith("/")) {
-        const cleanPath = pathname.slice(0, -1);
-        const redirectUrl = new URL(cleanPath + search, url.origin);
-        const redirectHeaders = new Headers({
-          Location: redirectUrl.toString()
-        });
-        applySecurityHeaders(redirectHeaders);
-        return new Response(null, {
-          status: 301,
-          headers: redirectHeaders
-        });
-      }
-
-      // 2. Legacy /fr/ route handling (redirect /fr or /fr/path -> / or /path)
-      if (!isStaticAssetPath && (pathname === "/fr" || pathname.startsWith("/fr/"))) {
-        let targetPath = pathname === "/fr" || pathname === "/fr/" ? "/" : pathname.slice(3);
-        if (targetPath === "/services/gestion-google-ads") targetPath = "/google-ads-maroc";
-        if (targetPath === "/services/bundle") targetPath = "/services/bundle-site-ads";
-        const redirectUrl = new URL(targetPath + search, url.origin);
-        const redirectHeaders = new Headers({
-          Location: redirectUrl.toString()
-        });
-        applySecurityHeaders(redirectHeaders);
-        return new Response(null, {
-          status: 301,
-          headers: redirectHeaders
-        });
-      }
-
-      // 2b. Canonical 301 Redirects for consolidated & legacy URLs
-      const CANONICAL_REDIRECTS: Record<string, string> = {
-        "/services/gestion-google-ads": "/google-ads-maroc",
-        "/services/gestion-google-ads.html": "/google-ads-maroc",
-        "/services/bundle": "/services/bundle-site-ads",
-        "/en/services/bundle": "/en/services/bundle-site-ads",
-        "/en/seo-riad-marrakech": "/en/riad-seo-marrakech",
-        "/en/seo-riad-marrakech.html": "/en/riad-seo-marrakech",
-        "/en/services/meta-ads-management": "/en/services/meta-ads",
-        "/en/website-design": "/en/services/website-design",
-        "/secteurs/ecommerce": "/secteurs/hotels-resorts",
-        "/en/industries/ecommerce": "/en/industries/hotels-resorts",
-        "/about": "/en/about",
-        "/pricing": "/en/pricing",
-        "/work": "/en/work",
-        "/terms-of-service": "/en/terms-of-service",
-        "/privacy-policy": "/en/privacy-policy",
-        "/thank-you": "/en/thank-you",
-        "/web-design-morocco": "/en/web-design-morocco",
-        "/web-design-casablanca": "/en/web-design-casablanca",
-        "/seo-morocco": "/en/seo-morocco",
-        "/seo-agency-morocco": "/en/seo-agency-morocco",
-        "/seo-agency-casablanca": "/en/seo-agency-casablanca",
-        "/hotel-seo": "/en/hotel-seo",
-        "/hotel-digital-marketing": "/en/hotel-digital-marketing",
-        "/hotel-website-design": "/en/hotel-website-design",
-        "/direct-booking": "/en/direct-booking",
-        "/google-ads-morocco": "/en/google-ads-morocco",
-        "/local-seo-casablanca": "/en/local-seo-casablanca",
-        "/riad-seo-marrakech": "/en/riad-seo-marrakech",
-        "/riad-website-design-marrakech": "/en/riad-website-design-marrakech",
-        "/services/website-design": "/en/services/website-design",
-        "/services/google-ads": "/en/services/google-ads",
-        "/services/meta-ads": "/en/services/meta-ads",
-        "/sitemap": "/plan-du-site",
-        "/html-sitemap": "/plan-du-site",
-        "/en/html-sitemap": "/en/sitemap"
-      };
-
-      if (!isStaticAssetPath && CANONICAL_REDIRECTS[normalizedPathname]) {
-        const redirectUrl = new URL(CANONICAL_REDIRECTS[normalizedPathname] + search, url.origin);
+      // 1–2. Single-hop canonical 301 redirect resolution (.html, trailing slash, /fr/*, legacy English)
+      const redirectTarget = resolveCanonicalRedirect(pathname);
+      if (redirectTarget) {
+        const redirectUrl = new URL(redirectTarget + search, url.origin);
         const redirectHeaders = new Headers({
           Location: redirectUrl.toString()
         });

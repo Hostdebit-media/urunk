@@ -7,12 +7,25 @@ import { pricingCopyFR } from "../../data/copy/pricing.fr";
 
 export default function PricingFR() {
   const { seo, hero, callout, packages, faq, cta } = pricingCopyFR;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.items.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  };
 
   return (
     <div className="w-full">
       <SEO
         title={seo.title}
         description={seo.description}
+        schema={faqSchema}
       />
 
       {/* Hero & AI Answer Block */}

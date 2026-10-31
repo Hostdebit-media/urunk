@@ -103,6 +103,13 @@ function getLocalizedErrorMessage(
           : 'Too many recent attempts. Please wait a few minutes or message us directly on WhatsApp.',
         showDirectFallback: true,
       };
+    case 'DUPLICATE_SUBMISSION':
+      return {
+        userMessage: isFR
+          ? 'Cette demande vient déjà d’être envoyée. Merci de patienter pendant son traitement.'
+          : 'This inquiry was just submitted. Please wait while our team processes your request.',
+        showDirectFallback: false,
+      };
     case 'SPAM_DETECTED':
       return {
         userMessage: isFR
@@ -122,11 +129,19 @@ function getLocalizedErrorMessage(
   }
 }
 
+function createIdempotencyKey(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return `urunk-${crypto.randomUUID()}`;
+  }
+  return `urunk-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+}
+
 export async function submitContactLead(
   payload: ContactLeadSubmission
 ): Promise<ContactSubmitResult> {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), CLIENT_TIMEOUT_MS);
+  const idempotencyKey = createIdempotencyKey();
 
   try {
     const response = await fetch('/api/contact', {
@@ -134,6 +149,7 @@ export async function submitContactLead(
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        'X-Idempotency-Key': idempotencyKey,
       },
       body: JSON.stringify({
         ...payload,

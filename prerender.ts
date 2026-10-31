@@ -19,6 +19,8 @@ import {
   MatrixLinkItem
 } from './src/data/matrixRelations';
 import { buildMatrixMetadata } from './src/data/matrixMetadata';
+import { pricingCopyEN } from './src/data/copy/pricing.en';
+import { pricingCopyFR } from './src/data/copy/pricing.fr';
 
 interface PageMetadata {
   path: string;
@@ -2374,6 +2376,18 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
                 ${isFR ? 'Tous nos suivis mensuels fonctionnent sans durée minimale forcée (résiliables avec 15 jours de préavis écrit) et vous conservez dès le premier jour 100 % de la propriété de votre domaine, code source et comptes publicitaires.' : 'All monthly SEO and paid media retainers operate month-to-month with 15 days written notice, and you retain 100% ownership of your domain, source code, analytics, and ad accounts from day one.'}
               </p>
             </div>
+
+            <div style="margin-top: 2.5rem;">
+              <h2 style="color: #0F2D25; font-size: 1.65rem; margin-bottom: 1.25rem; font-family: Georgia, serif;">${escapeHtml(isFR ? pricingCopyFR.faq.title : pricingCopyEN.faq.title)}</h2>
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                ${(isFR ? pricingCopyFR.faq.items : pricingCopyEN.faq.items).map(f => `
+                  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem;">
+                    <h3 style="color: #0F2D25; font-size: 1.1rem; margin-top: 0; margin-bottom: 0.5rem;">${escapeHtml(f.q)}</h3>
+                    <p style="color: #4a5568; margin: 0; line-height: 1.6;">${escapeHtml(f.a)}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
           </section>
         </div>
       `;
@@ -2910,23 +2924,23 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       ] : [
         {
           q: "What is the cost and timeline for a hotel website?",
-          a: "A custom direct booking hotel website costs a fixed 12,000 MAD (approx. €1,100) with a turnkey delivery time of 4–6 weeks. The scope includes mobile-first engineering, full SEO schema, and seamless PMS engine integration."
+          a: "A custom direct booking hotel website starts at 12,000 MAD (approx. €1,100) with a turnkey delivery time of 4 to 6 weeks. The scope includes mobile-first engineering, full SEO schema, and PMS booking engine integration."
         },
         {
           q: "How much can we save on OTA commission fees?",
-          a: "OTAs charge between 15% and 25% commission per room booking. By capturing reservations through your own website, our clients achieve +40% direct bookings and -35% cost per inquiry."
+          a: "OTAs charge between 15% and 25% commission per room booking. By capturing reservations through your own website, our clients increase direct bookings and lower customer acquisition costs."
         },
         {
           q: "What are your ad campaign management packages?",
-          a: "Our monthly ad management packages are 4,000 MAD/mo (approx. €370/mo) for Google Ads, 4,000 MAD/mo (approx. €370/mo) for Meta Ads, and 3,000 MAD/mo (approx. €280/mo) for TripAdvisor Ads, backed by our 90-day guarantee."
+          a: "Our monthly ad management packages are 4,000 MAD/mo (approx. €370/mo) for Google Ads, 4,000 MAD/mo (approx. €370/mo) for Meta Ads, and 3,000 MAD/mo (approx. €280/mo) for TripAdvisor Ads, billed month-to-month with 15 days notice."
         },
         {
           q: "Which PMS engines and booking systems do you integrate?",
-          a: "We connect with all major hotel management systems including Cloudbeds, Mews, Amenitiz, BookingButton, and D-Edge to enable seamless direct guest bookings."
+          a: "We connect with major hotel management systems including Cloudbeds, Mews, Amenitiz, Little Hotelier, and Sirvoy to enable seamless direct bookings."
         },
         {
-          q: "How does the 90-day direct revenue guarantee work?",
-          a: "If your direct booking volume does not meet project target benchmarks within 90 days of live launch, we continue optimizing your channels with zero additional management fees until target benchmarks are reached."
+          q: "How are timelines and 90-day tracking milestones structured?",
+          a: "Every project starts with a written quote specifying the 4 to 6 week launch schedule and the initial 90-day tracking milestones so you have full clarity on deliverables and follow-up."
         },
         {
           q: "Do we retain full ownership of our website and ad accounts?",
@@ -2934,7 +2948,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         },
         {
           q: "How do you support multi-language direct booking sites?",
-          a: "All our hospitality websites feature dynamic multi-language architecture with native hreflang SEO markup, ensuring max organic capture across international English, French, Spanish, and European guest segments."
+          a: "All our hospitality websites feature dynamic bilingual (English and French) architecture with native hreflang SEO markup—extensible to additional languages on quote—ensuring strong organic capture across international guest segments."
         },
         {
           q: "Do you offer a pre-project site audit before engagement?",
@@ -3903,6 +3917,8 @@ function prerender() {
           { q: "How should we choose between Google Ads, Instagram, and TripAdvisor?", a: "Google Ads reaches people actively searching for a hotel, tour, or service in a specific Moroccan city. Instagram and Facebook (Meta Ads) showcase your property visually and retarget recent website visitors. TripAdvisor Ads suits properties wanting top placement on city comparison lists." },
           { q: "How is monthly ad spend billed?", a: "All campaigns run under your own Google, Meta, or TripAdvisor accounts. You pay media spend directly to the platforms by company card, while our flat monthly fee covers setup and ongoing management." }
         ];
+      } else if (page.path === '/tarifs' || page.path === '/en/pricing') {
+        faqItems = page.lang === 'fr' ? pricingCopyFR.faq.items : pricingCopyEN.faq.items;
       } else {
         const faqItemsEN = [
           {

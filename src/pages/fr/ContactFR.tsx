@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import SEO from "../../components/SEO";
 import { Mail, Phone, MapPin, ArrowRight, Check, Loader2, MessageCircle, ShieldCheck } from "lucide-react";
@@ -17,6 +17,7 @@ const contactPageSchema = {
 
 export default function ContactFR() {
   const navigate = useNavigate();
+  const submittingRef = useRef(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [showDirectFallback, setShowDirectFallback] = useState(false);
@@ -27,6 +28,7 @@ export default function ContactFR() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submittingRef.current) return;
     setErrorMsg("");
     setShowDirectFallback(false);
     setSuccessMsg("");
@@ -78,37 +80,41 @@ export default function ContactFR() {
       return;
     }
 
+    submittingRef.current = true;
     setIsSubmitting(true);
 
-    trackEvent("quote_form_submit", {
-      service,
-      business,
-      language: "fr"
-    });
+    try {
+      trackEvent("quote_form_submit", {
+        service,
+        business,
+        language: "fr"
+      });
 
-    const result = await submitContactLead({
-      lang: "fr",
-      source: "contact_page_fr",
-      name,
-      contact: contactValue,
-      business,
-      service,
-      message,
-      privacyAccepted: privacyAgreed,
-      _gotcha: ((formData.get("_gotcha") as string) || "").trim()
-    });
+      const result = await submitContactLead({
+        lang: "fr",
+        source: "contact_page_fr",
+        name,
+        contact: contactValue,
+        business,
+        service,
+        message,
+        privacyAccepted: privacyAgreed,
+        _gotcha: ((formData.get("_gotcha") as string) || "").trim()
+      });
 
-    setIsSubmitting(false);
-
-    if (result.ok) {
-      localStorage.setItem("form_last_submit", Date.now().toString());
-      setSuccessMsg("Votre demande a bien été transmise à notre équipe ! Redirection...");
-      setTimeout(() => {
-        navigate("/merci");
-      }, 1200);
-    } else {
-      setErrorMsg(result.userMessage);
-      setShowDirectFallback(result.showDirectFallback);
+      if (result.ok) {
+        localStorage.setItem("form_last_submit", Date.now().toString());
+        setSuccessMsg("Votre demande a bien été transmise à notre équipe ! Redirection...");
+        setTimeout(() => {
+          navigate("/merci");
+        }, 1200);
+      } else {
+        setErrorMsg(result.userMessage);
+        setShowDirectFallback(result.showDirectFallback);
+      }
+    } finally {
+      submittingRef.current = false;
+      setIsSubmitting(false);
     }
   };
 

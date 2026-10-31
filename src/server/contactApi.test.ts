@@ -302,3 +302,137 @@ test('successful Resend delivery sanitizes CRLF/HTML, sets reply_to, and logs ze
     console.error = origError;
   }
 });
+
+test('malformed or missing-id 200 OK upstream Resend response returns 502 and never falsely claims delivery', async () => {
+  resetContactRateLimitStore();
+
+  for (const badBody of ['not-json', '{}', JSON.stringify({ id: '   ' })]) {
+    const malformedFetch: typeof fetch = async () =>
+      new Response(badBody, { status: 200 });
+
+    const res = await handleContactRequest(
+      makeJsonRequest(VALID_PAYLOAD),
+      { RESEND_API_KEY: 're_valid_key' },
+      { clientIp: '203.0.113.88', fetchImpl: malformedFetch }
+    );
+    assert.equal(res.status, 502);
+    const json = (await res.json()) as { ok: boolean; code: string };
+    assert.equal(json.ok, false);
+    assert.equal(json.code, 'EMAIL_DELIVERY_FAILED');
+  }
+});
+
+test('X-Idempotency-Key and concurrent duplicate submissions block double-sends with 409 DUPLICATE_SUBMISSION', async () => {
+  resetContactRateLimitStore();
+
+  let resendCalls = 0;
+  let capturedIdempotency = '';
+  let capturedRecipients: unknown = null;
+
+  const mockFetch: typeof fetch = async (_input, init) => {
+    resendCalls += 1;
+    const hdrs = new Headers(init?.headers);
+    capturedIdempotency = hdrs.get('idempotency-key') || '';
+    const parsed = JSON.parse(String(init?.body || '{}')) as { to?: unknown };
+    capturedRecipients = parsed.to;
+    await new Promise((r) => setTimeout(r, 15));
+    return new Response(JSON.stringify({ id: `re_idemp_${resendCalls}` }), { status: 200 });
+  };
+
+  // 1. Concurrent identical requests (race condition)
+  const [r1, r2] = await Promise.all([
+    handleContactRequest(
+      makeJsonRequest(VALID_PAYLOAD),
+      {
+        RESEND_API_KEY: 're_valid_key',
+        CONTACT_TO_EMAIL: 'contact@urunk.com, ops@urunk.com',
+      },
+      { clientIp: '203.0.113.91', fetchImpl: mockFetch }
+    ),
+    handleContactRequest(
+      makeJsonRequest(VALID_PAYLOAD),
+      {
+        RESEND_API_KEY: 're_valid_key',
+        CONTACT_TO_EMAIL: 'contact@urunk.com, ops@urunk.com',
+      },
+      { clientIp: '203.0.113.91', fetchImpl: mockFetch }
+    ),
+  ]);
+
+  assert.equal(r1.status, 200);
+  assert.equal(r2.status, 409);
+  assert.equal(resendCalls, 1);
+  assert.deepEqual(capturedRecipients, ['contact@urunk.com', 'ops@urunk.com']);
+
+  // 2. Sequential replay with identical X-Idempotency-Key
+  const key = 'urunk-test-idempotency-key-001';
+  const firstKeyed = await handleContactRequest(
+    makeJsonRequest(VALID_PAYLOAD, { extraHeaders: { 'X-Idempotency-Key': key } }),
+    { RESEND_API_KEY: 're_valid_key' },
+    { clientIp: '203.0.113.92', fetchImpl: mockFetch }
+  );
+  assert.equal(firstKeyed.status, 200);
+  assert.equal(capturedIdempotency, key);
+
+  const replayKeyed = await handleContactRequest(
+    makeJsonRequest(VALID_PAYLOAD, { extraHeaders: { 'X-Idempotency-Key': key } }),
+    { RESEND_API_KEY: 're_valid_key' },
+    { clientIp: '203.0.113.92', fetchImpl: mockFetch }
+  );
+  assert.equal(replayKeyed.status, 409);
+  const replayJson = (await replayKeyed.json()) as { ok: boolean; code: string };
+  assert.equal(replayJson.code, 'DUPLICATE_SUBMISSION');
+  assert.equal(resendCalls, 2);
+});
+
+test('Cloudflare Workers Cache API enforces rate limits across fresh isolate memory stores', async () => {
+  const sharedPopCache = new Map<string, string>();
+  const mockEdgeCache = {
+    async match(req: Request | string) {
+      const k = typeof req === 'string' ? req : req.url;
+      const val = sharedPopCache.get(k);
+      return val ? new Response(val, { headers: { 'Content-Type': 'application/json' } }) : undefined;
+    },
+    async put(req: Request | string, res: Response) {
+      const k = typeof req === 'string' ? req : req.url;
+      sharedPopCache.set(k, await res.text());
+    },
+  };
+
+  const baseTime = 1_710_000_000_000;
+  const okFetch: typeof fetch = async () =>
+    new Response(JSON.stringify({ id: 're_pop_1' }), { status: 200 });
+
+  for (let i = 0; i < 5; i++) {
+    // Simulate cold isolate on every request by clearing in-memory store
+    resetContactRateLimitStore();
+    const res = await handleContactRequest(
+      makeJsonRequest(VALID_PAYLOAD),
+      { RESEND_API_KEY: 're_valid_key' },
+      {
+        clientIp: '198.51.100.200',
+        fetchImpl: okFetch,
+        now: baseTime + i * 1000,
+        edgeCache: mockEdgeCache,
+      }
+    );
+    assert.equal(res.status, 200);
+  }
+
+  // 6th request lands on a brand-new isolate (empty memory store), still blocked via PoP Cache API
+  resetContactRateLimitStore();
+  const sixth = await handleContactRequest(
+    makeJsonRequest(VALID_PAYLOAD),
+    { RESEND_API_KEY: 're_valid_key' },
+    {
+      clientIp: '198.51.100.200',
+      fetchImpl: okFetch,
+      now: baseTime + 6000,
+      edgeCache: mockEdgeCache,
+    }
+  );
+  assert.equal(sixth.status, 429);
+  const sixthBody = (await sixth.json()) as { ok: boolean; code: string };
+  assert.equal(sixthBody.code, 'RATE_LIMITED');
+});
+

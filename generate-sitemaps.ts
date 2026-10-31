@@ -69,6 +69,11 @@ const FR_ONLY_PAGES = [
   { fr: '/creation-site-web', changefreq: 'monthly', priority: '0.8' }
 ];
 
+// English-only standalone landing pages (emitted with self-referencing en hreflang only)
+const EN_ONLY_PAGES = [
+  { en: '/en/services/google-ads', changefreq: 'monthly', priority: '0.8' }
+];
+
 function escapeXml(unsafe: string): string {
   return unsafe.replace(/[<>&'"]/g, (c) => {
     switch (c) {
@@ -129,6 +134,20 @@ function generatePagesSitemap() {
       xml += `    <loc>${frUrl}</loc>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${frUrl}" />\n`;
+      xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
+      xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+      xml += `    <priority>${page.priority}</priority>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  for (const page of EN_ONLY_PAGES) {
+    const enUrl = `${BASE_URL}${page.en}`;
+    if (!seenUrls.has(enUrl)) {
+      seenUrls.add(enUrl);
+      xml += `  <url>\n`;
+      xml += `    <loc>${enUrl}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
       xml += `    <lastmod>${CURRENT_DATE}</lastmod>\n`;
       xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
       xml += `    <priority>${page.priority}</priority>\n`;

@@ -374,4 +374,107 @@ test('post-build dist/ enforces index,follow on all 38 curated matrix routes and
   assert.equal(verifiedUncurated, 96);
 });
 
+test('worker.ts resolveCanonicalRedirect performs single-hop 301s for .html URLs, legacy /fr/* slugs, and English root splats', async () => {
+  const { resolveCanonicalRedirect } = await import('../../worker');
+
+  // Canonical clean routes return null (served directly as 200)
+  assert.equal(resolveCanonicalRedirect('/'), null);
+  assert.equal(resolveCanonicalRedirect('/tarifs'), null);
+  assert.equal(resolveCanonicalRedirect('/en'), null);
+  assert.equal(resolveCanonicalRedirect('/en/contact'), null);
+  assert.equal(resolveCanonicalRedirect('/sitemap.xml'), null);
+  assert.equal(resolveCanonicalRedirect('/api/contact'), null);
+  assert.equal(resolveCanonicalRedirect('/404.html'), null);
+
+  // .html duplicate-content prevention (single hop)
+  assert.equal(resolveCanonicalRedirect('/index.html'), '/');
+  assert.equal(resolveCanonicalRedirect('/tarifs.html'), '/tarifs');
+  assert.equal(resolveCanonicalRedirect('/en/contact.html'), '/en/contact');
+  assert.equal(resolveCanonicalRedirect('/pricing.html'), '/en/pricing');
+  assert.equal(resolveCanonicalRedirect('/fr/pricing.html'), '/tarifs');
+
+  // Legacy /fr/* single-hop resolution to canonical French paths
+  assert.equal(resolveCanonicalRedirect('/fr'), '/');
+  assert.equal(resolveCanonicalRedirect('/fr/'), '/');
+  assert.equal(resolveCanonicalRedirect('/fr/pricing'), '/tarifs');
+  assert.equal(resolveCanonicalRedirect('/fr/pricing/'), '/tarifs');
+  assert.equal(resolveCanonicalRedirect('/fr/about'), '/a-propos');
+  assert.equal(resolveCanonicalRedirect('/fr/locations/marrakech'), '/zones/marrakech');
+  assert.equal(resolveCanonicalRedirect('/fr/industries/riads-boutique-hotels'), '/secteurs/riads-maisons-hotes');
+  assert.equal(resolveCanonicalRedirect('/fr/services/website-design'), '/services/creation-site-web');
+  assert.equal(resolveCanonicalRedirect('/fr/services/gestion-google-ads'), '/google-ads-maroc');
+
+  // Legacy English root & blog slug redirects
+  assert.equal(resolveCanonicalRedirect('/industries/hotels-resorts'), '/en/industries/hotels-resorts');
+  assert.equal(resolveCanonicalRedirect('/locations/marrakech'), '/en/locations/marrakech');
+  assert.equal(resolveCanonicalRedirect('/work/art-house-marrakech'), '/en/work/art-house-marrakech');
+  assert.equal(resolveCanonicalRedirect('/blog/pages-atterrissage-haute-conversion-hotels'), '/blog/landing-pages-hotels');
+  assert.equal(resolveCanonicalRedirect('/en/blog/high-converting-hotel-landing-pages'), '/en/blog/landing-pages-hotels');
+});
+
+test('all indexable prerendered dist/ routes match XML sitemaps 1-to-1 and every FAQPage JSON-LD matches visible body HTML', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  if (!fs.existsSync(path.resolve('dist/index.html'))) {
+    return;
+  }
+
+  function walkHtml(dir: string, out: string[] = []): string[] {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walkHtml(full, out);
+      else if (full.endsWith('/index.html') || full.endsWith('\\index.html') || path.relative('dist', full) === 'index.html') {
+        out.push(full);
+      }
+    }
+    return out;
+  }
+
+  const allIndexHtml = walkHtml(path.resolve('dist'));
+  const indexableUrls = new Set<string>();
+
+  for (const file of allIndexHtml) {
+    const rel = path.relative(path.resolve('dist'), file).replace(/\\/g, '/');
+    const route = rel === 'index.html' ? '/' : `/${rel.slice(0, -11)}`;
+    const html = fs.readFileSync(file, 'utf8');
+    const isNoindex = /name="robots"[^>]*noindex/i.test(html);
+    if (!isNoindex) {
+      indexableUrls.add(route === '/' ? 'https://urunk.com/' : `https://urunk.com${route}`);
+    }
+
+    // Verify every FAQPage JSON-LD question appears visibly in <body>
+    const body = html.slice(Math.max(0, html.indexOf('<body')))
+      .replace(/&#x27;|&#39;|&rsquo;|’/g, "'")
+      .replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"');
+    const ldScripts = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
+    for (const m of ldScripts) {
+      const parsed = JSON.parse(m[1]);
+      const nodes = Array.isArray(parsed) ? parsed : (parsed['@graph'] || [parsed]);
+      for (const n of nodes) {
+        if (n['@type'] === 'FAQPage' && Array.isArray(n.mainEntity)) {
+          for (const q of n.mainEntity) {
+            const normQ = String(q.name || '').replace(/’/g, "'");
+            assert.ok(body.includes(normQ), `Missing visible FAQ "${q.name}" in ${route}`);
+          }
+        }
+      }
+    }
+  }
+
+  const sitemapUrls = new Set<string>();
+  for (const sm of ['public/pages-sitemap.xml', 'public/posts-sitemap.xml']) {
+    const xml = fs.readFileSync(path.resolve(sm), 'utf8');
+    for (const m of xml.matchAll(/<loc>(https:\/\/urunk\.com[^<]*)<\/loc>/g)) {
+      sitemapUrls.add(m[1]);
+    }
+  }
+
+  assert.equal(indexableUrls.size, sitemapUrls.size, `Indexable URLs (${indexableUrls.size}) != Sitemap URLs (${sitemapUrls.size})`);
+  for (const url of indexableUrls) {
+    assert.ok(sitemapUrls.has(url), `Indexable URL missing from XML sitemaps: ${url}`);
+  }
+});
+
+
 

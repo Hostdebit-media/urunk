@@ -23,11 +23,17 @@ export interface ContactEnv {
   CONTACT_RATE_LIMITER?: ContactRateLimiterBinding;
 }
 
+export interface ContactEdgeCache {
+  match: (request: Request | string) => Promise<Response | undefined>;
+  put: (request: Request | string, response: Response) => Promise<void>;
+}
+
 export interface ContactHandlerOptions {
   clientIp?: string;
   fetchImpl?: typeof fetch;
   now?: number;
   allowForwardedDevOrigin?: string;
+  edgeCache?: ContactEdgeCache | null;
 }
 
 export type ContactFormSource =
@@ -62,28 +68,52 @@ const VALID_SOURCES = new Set<ContactFormSource>([
 ]);
 
 const rateLimitStore = new Map<string, RateLimitBucket>();
+const inFlightSubmissions = new Set<string>();
+const processedIdempotencyKeys = new Map<string, number>();
+const IDEMPOTENCY_TTL_MS = 10 * 60 * 1000;
 
 export function resetContactRateLimitStore(): void {
   rateLimitStore.clear();
+  inFlightSubmissions.clear();
+  processedIdempotencyKeys.clear();
+}
+
+function fnv1aHex(value: string): string {
+  let hash = 0x811c9dc5;
+  for (let i = 0; i < value.length; i++) {
+    hash ^= value.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193);
+  }
+  return (hash >>> 0).toString(16).padStart(8, '0');
 }
 
 function hashIpForRateLimit(rawIp: string): string {
   // Non-reversible 32-bit FNV-1a fingerprint so raw visitor IPs are not retained in memory or logs
   const normalized = (rawIp || 'unknown').split(',')[0].trim().toLowerCase();
-  let hash = 0x811c9dc5;
-  for (let i = 0; i < normalized.length; i++) {
-    hash ^= normalized.charCodeAt(i);
-    hash = Math.imul(hash, 0x01000193);
-  }
-  return `ip_${(hash >>> 0).toString(16).padStart(8, '0')}`;
+  return `ip_${fnv1aHex(normalized)}`;
 }
 
-function checkMemoryRateLimit(
+function resolveDefaultEdgeCache(override?: ContactEdgeCache | null): ContactEdgeCache | null {
+  if (override !== undefined) return override;
+  try {
+    const globalCaches = (globalThis as unknown as { caches?: { default?: ContactEdgeCache } }).caches;
+    if (globalCaches && globalCaches.default && typeof globalCaches.default.match === 'function') {
+      return globalCaches.default;
+    }
+  } catch {
+    // Cache API unavailable in Node / local dev runtime
+  }
+  return null;
+}
+
+async function checkRateLimitWithEdgeCache(
   ipHash: string,
-  now: number
-): { allowed: boolean; retryAfterSeconds: number } {
-  // Opportunistic pruning of expired buckets
+  now: number,
+  edgeCache: ContactEdgeCache | null
+): Promise<{ allowed: boolean; retryAfterSeconds: number }> {
   const cutoff = now - RATE_LIMIT_WINDOW_MS;
+
+  // Opportunistic pruning of expired isolate buckets
   for (const [key, bucket] of rateLimitStore.entries()) {
     const active = bucket.timestamps.filter((t) => t > cutoff);
     if (active.length === 0) {
@@ -93,27 +123,67 @@ function checkMemoryRateLimit(
     }
   }
 
-  const existing = rateLimitStore.get(ipHash);
-  const recent = existing ? existing.timestamps.filter((t) => t > cutoff) : [];
+  const memExisting = rateLimitStore.get(ipHash);
+  let mergedTimestamps = memExisting ? memExisting.timestamps.filter((t) => t > cutoff) : [];
 
-  if (recent.length >= RATE_LIMIT_MAX_REQUESTS) {
-    const oldestInWindow = recent[0];
+  const cacheKeyUrl = `https://rate-limit.urunk.internal/${ipHash}`;
+  if (edgeCache) {
+    try {
+      const cachedRes = await edgeCache.match(cacheKeyUrl);
+      if (cachedRes) {
+        const parsed = (await cachedRes.json()) as { timestamps?: unknown };
+        if (Array.isArray(parsed?.timestamps)) {
+          const validCached = parsed.timestamps.filter(
+            (t): t is number => typeof t === 'number' && Number.isFinite(t) && t > cutoff
+          );
+          const combined = Array.from(new Set([...mergedTimestamps, ...validCached])).sort(
+            (a, b) => a - b
+          );
+          mergedTimestamps = combined;
+        }
+      }
+    } catch {
+      // Fall back gracefully to isolate memory store
+    }
+  }
+
+  if (mergedTimestamps.length >= RATE_LIMIT_MAX_REQUESTS) {
+    const oldestInWindow = mergedTimestamps[0];
     const retryAfterMs = Math.max(1000, oldestInWindow + RATE_LIMIT_WINDOW_MS - now);
+    rateLimitStore.set(ipHash, { timestamps: mergedTimestamps });
     return {
       allowed: false,
       retryAfterSeconds: Math.ceil(retryAfterMs / 1000),
     };
   }
 
-  if (!existing && rateLimitStore.size >= MAX_RATE_LIMIT_KEYS) {
+  if (!memExisting && rateLimitStore.size >= MAX_RATE_LIMIT_KEYS) {
     const firstKey = rateLimitStore.keys().next().value;
     if (firstKey) {
       rateLimitStore.delete(firstKey);
     }
   }
 
-  recent.push(now);
-  rateLimitStore.set(ipHash, { timestamps: recent });
+  mergedTimestamps.push(now);
+  rateLimitStore.set(ipHash, { timestamps: mergedTimestamps });
+
+  if (edgeCache) {
+    try {
+      const ttlSeconds = Math.ceil(RATE_LIMIT_WINDOW_MS / 1000);
+      await edgeCache.put(
+        cacheKeyUrl,
+        new Response(JSON.stringify({ timestamps: mergedTimestamps }), {
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': `public, max-age=${ttlSeconds}`,
+          },
+        })
+      );
+    } catch {
+      // Non-fatal if Cache API write fails
+    }
+  }
+
   return { allowed: true, retryAfterSeconds: 0 };
 }
 
@@ -274,6 +344,7 @@ function logSafeContactEvent(
     source?: string;
     lang?: string;
     providerStatus?: number;
+    providerMessageId?: string;
     durationMs: number;
   }
 ): void {
@@ -344,7 +415,7 @@ export async function handleContactRequest(
       headers: {
         ...corsHeaders,
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Accept',
+        'Access-Control-Allow-Headers': 'Content-Type, Accept, X-Idempotency-Key',
         'Access-Control-Max-Age': '86400',
         'Cache-Control': 'no-store',
       },
@@ -407,7 +478,36 @@ export async function handleContactRequest(
     return jsonResponse(400, { ok: false, code: 'SPAM_DETECTED' }, corsHeaders);
   }
 
-  // 2. IP rate limiting (5 submissions / 10 minutes per anonymized IP hash)
+  // 1b. Client idempotency key duplicate guard (prevents double-send on retry/double-tap)
+  const rawIdempotencyHeader = stripControlChars(
+    request.headers.get('x-idempotency-key') || '',
+    false
+  )
+    .trim()
+    .slice(0, 128);
+  const clientIdempotencyKey = /^[a-zA-Z0-9._:-]{8,128}$/.test(rawIdempotencyHeader)
+    ? rawIdempotencyHeader
+    : '';
+
+  if (clientIdempotencyKey) {
+    for (const [k, ts] of processedIdempotencyKeys.entries()) {
+      if (startTime - ts > IDEMPOTENCY_TTL_MS) {
+        processedIdempotencyKeys.delete(k);
+      }
+    }
+    if (processedIdempotencyKeys.has(clientIdempotencyKey)) {
+      logSafeContactEvent('warn', {
+        status: 409,
+        code: 'DUPLICATE_SUBMISSION',
+        source,
+        lang,
+        durationMs: (options.now ?? Date.now()) - startTime,
+      });
+      return jsonResponse(409, { ok: false, code: 'DUPLICATE_SUBMISSION' }, corsHeaders);
+    }
+  }
+
+  // 2. IP rate limiting (5 submissions / 10 minutes per anonymized IP hash, PoP-cached on Workers)
   const rawIp =
     options.clientIp ||
     request.headers.get('cf-connecting-ip') ||
@@ -433,12 +533,13 @@ export async function handleContactRequest(
         );
       }
     } catch {
-      // Fall back to in-memory isolate rate limiter if optional binding errors
+      // Fall back to edge Cache API + isolate memory limiter if optional binding errors
     }
   }
 
-  const memLimit = checkMemoryRateLimit(ipHash, startTime);
-  if (!memLimit.allowed) {
+  const edgeCache = resolveDefaultEdgeCache(options.edgeCache);
+  const rateLimit = await checkRateLimitWithEdgeCache(ipHash, startTime, edgeCache);
+  if (!rateLimit.allowed) {
     logSafeContactEvent('warn', {
       status: 429,
       code: 'RATE_LIMITED',
@@ -449,7 +550,7 @@ export async function handleContactRequest(
     return jsonResponse(
       429,
       { ok: false, code: 'RATE_LIMITED' },
-      { ...corsHeaders, 'Retry-After': String(memLimit.retryAfterSeconds) }
+      { ...corsHeaders, 'Retry-After': String(rateLimit.retryAfterSeconds) }
     );
   }
 
@@ -562,9 +663,21 @@ export async function handleContactRequest(
       ? stripControlChars(data.pageUrl, false).trim().slice(0, 200)
       : '';
 
-  // 4. Verify server-side email provider secret exists before attempting delivery
+  // 4. Verify server-side email provider secret and recipient configuration before attempting delivery
   const resendApiKey = (env.RESEND_API_KEY || '').trim();
-  if (!resendApiKey) {
+  const recipientList = stripControlChars(
+    env.CONTACT_TO_EMAIL || 'contact@urunk.com',
+    false
+  )
+    .split(',')
+    .map((addr) => addr.trim())
+    .filter((addr) => isValidEmailAddress(addr));
+  const fromEmail = stripControlChars(
+    env.CONTACT_FROM_EMAIL || 'Urunk Website <leads@urunk.com>',
+    false
+  ).trim();
+
+  if (!resendApiKey || recipientList.length === 0 || !fromEmail) {
     logSafeContactEvent('warn', {
       status: 503,
       code: 'EMAIL_PROVIDER_UNCONFIGURED',
@@ -579,10 +692,20 @@ export async function handleContactRequest(
     );
   }
 
-  const toEmail = (env.CONTACT_TO_EMAIL || 'contact@urunk.com').trim();
-  const fromEmail = (
-    env.CONTACT_FROM_EMAIL || 'Urunk Website <leads@urunk.com>'
-  ).trim();
+  // Concurrent in-flight duplicate guard (prevents simultaneous double-POST race conditions)
+  const payloadFingerprint = `fp_${fnv1aHex(
+    `${ipHash}|${source}|${name.toLowerCase()}|${validEmail.toLowerCase()}|${validPhone}|${business.toLowerCase()}|${service.toLowerCase()}|${message}`
+  )}`;
+  if (inFlightSubmissions.has(payloadFingerprint)) {
+    logSafeContactEvent('warn', {
+      status: 409,
+      code: 'DUPLICATE_SUBMISSION',
+      source,
+      lang,
+      durationMs: (options.now ?? Date.now()) - startTime,
+    });
+    return jsonResponse(409, { ok: false, code: 'DUPLICATE_SUBMISSION' }, corsHeaders);
+  }
 
   const subjectLeadLabel = business ? `${business} (${name})` : name;
   const rawSubject = `[Urunk Lead · ${lang.toUpperCase()}] ${subjectLeadLabel} — ${service}`;
@@ -629,7 +752,7 @@ export async function handleContactRequest(
 
   const resendPayload: Record<string, unknown> = {
     from: fromEmail,
-    to: [toEmail],
+    to: recipientList,
     subject: safeSubject,
     text: textLines.join('\n'),
     html: htmlBody,
@@ -638,16 +761,22 @@ export async function handleContactRequest(
     resendPayload.reply_to = validEmail;
   }
 
+  const resendHeaders: Record<string, string> = {
+    Authorization: `Bearer ${resendApiKey}`,
+    'Content-Type': 'application/json',
+  };
+  if (clientIdempotencyKey) {
+    resendHeaders['Idempotency-Key'] = clientIdempotencyKey;
+  }
+
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), RESEND_TIMEOUT_MS);
+  inFlightSubmissions.add(payloadFingerprint);
 
   try {
     const providerRes = await fetchImpl(RESEND_ENDPOINT, {
       method: 'POST',
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        'Content-Type': 'application/json',
-      },
+      headers: resendHeaders,
       body: JSON.stringify(resendPayload),
       signal: controller.signal,
     });
@@ -668,9 +797,49 @@ export async function handleContactRequest(
       );
     }
 
+    let providerJson: unknown = null;
+    try {
+      providerJson = await providerRes.json();
+    } catch {
+      providerJson = null;
+    }
+
+    const messageId =
+      providerJson &&
+      typeof providerJson === 'object' &&
+      typeof (providerJson as { id?: unknown }).id === 'string'
+        ? (providerJson as { id: string }).id.trim()
+        : '';
+
+    if (!messageId) {
+      logSafeContactEvent('error', {
+        status: 502,
+        code: 'INVALID_PROVIDER_RESPONSE',
+        providerStatus: providerRes.status,
+        source,
+        lang,
+        durationMs: (options.now ?? Date.now()) - startTime,
+      });
+      return jsonResponse(
+        502,
+        { ok: false, code: 'EMAIL_DELIVERY_FAILED' },
+        corsHeaders
+      );
+    }
+
+    if (clientIdempotencyKey) {
+      if (processedIdempotencyKeys.size >= MAX_RATE_LIMIT_KEYS) {
+        const oldestKey = processedIdempotencyKeys.keys().next().value;
+        if (oldestKey) processedIdempotencyKeys.delete(oldestKey);
+      }
+      processedIdempotencyKeys.set(clientIdempotencyKey, startTime);
+    }
+
     logSafeContactEvent('info', {
       status: 200,
       code: 'DELIVERED',
+      providerStatus: providerRes.status,
+      providerMessageId: messageId.slice(0, 64),
       source,
       lang,
       durationMs: (options.now ?? Date.now()) - startTime,
@@ -690,6 +859,7 @@ export async function handleContactRequest(
       corsHeaders
     );
   } finally {
+    inFlightSubmissions.delete(payloadFingerprint);
     clearTimeout(timeoutId);
   }
 }

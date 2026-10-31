@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, ShieldCheck, ArrowRight, Loader2, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
@@ -16,6 +16,7 @@ const contactPageSchema = {
 };
 
 export default function Contact() {
+  const submittingRef = useRef(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -34,6 +35,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (submittingRef.current) return;
     setErrorMsg('');
     setShowDirectFallback(false);
 
@@ -82,34 +84,38 @@ export default function Contact() {
       return;
     }
 
+    submittingRef.current = true;
     setIsSubmitting(true);
-    trackEvent('quote_form_submit', {
-      service: formData.service,
-      property: formData.property,
-      language: 'en'
-    });
+    try {
+      trackEvent('quote_form_submit', {
+        service: formData.service,
+        property: formData.property,
+        language: 'en'
+      });
 
-    const result = await submitContactLead({
-      lang: 'en',
-      source: 'contact_page_en',
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      phone: trimmedPhone || undefined,
-      business: formData.property.trim(),
-      service: formData.service,
-      message: formData.message.trim(),
-      privacyAccepted: privacyAgreed,
-      _gotcha: ((data.get('_gotcha') as string) || '').trim()
-    });
+      const result = await submitContactLead({
+        lang: 'en',
+        source: 'contact_page_en',
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: trimmedPhone || undefined,
+        business: formData.property.trim(),
+        service: formData.service,
+        message: formData.message.trim(),
+        privacyAccepted: privacyAgreed,
+        _gotcha: ((data.get('_gotcha') as string) || '').trim()
+      });
 
-    setIsSubmitting(false);
-
-    if (result.ok) {
-      localStorage.setItem('form_last_submit', Date.now().toString());
-      setSubmitted(true);
-    } else {
-      setErrorMsg(result.userMessage);
-      setShowDirectFallback(result.showDirectFallback);
+      if (result.ok) {
+        localStorage.setItem('form_last_submit', Date.now().toString());
+        setSubmitted(true);
+      } else {
+        setErrorMsg(result.userMessage);
+        setShowDirectFallback(result.showDirectFallback);
+      }
+    } finally {
+      submittingRef.current = false;
+      setIsSubmitting(false);
     }
   };
 
