@@ -84,12 +84,6 @@ export default function ContactFR() {
     setIsSubmitting(true);
 
     try {
-      trackEvent("quote_form_submit", {
-        service,
-        business,
-        language: "fr"
-      });
-
       const result = await submitContactLead({
         lang: "fr",
         source: "contact_page_fr",
@@ -103,6 +97,11 @@ export default function ContactFR() {
       });
 
       if (result.ok) {
+        trackEvent("quote_form_submit", {
+          service,
+          business,
+          language: "fr"
+        });
         localStorage.setItem("form_last_submit", Date.now().toString());
         setSuccessMsg("Votre demande a bien été transmise à notre équipe ! Redirection...");
         setTimeout(() => {

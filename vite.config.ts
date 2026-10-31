@@ -24,9 +24,16 @@ function urunkContactApiDevPlugin(devEnv: ContactEnv): Plugin {
           const forwardedHost = String(req.headers['x-forwarded-host'] || '')
             .split(',')[0]
             .trim();
-          const allowForwardedDevOrigin = forwardedHost
-            ? `${forwardedProto}://${forwardedHost}`
-            : undefined;
+          const effectiveHost = forwardedHost || host;
+          const devOriginCandidates = [
+            `${forwardedProto}://${effectiveHost}`,
+            process.env.APP_URL || '',
+            process.env.SHARED_APP_URL || '',
+          ]
+            .map((v) => v.trim())
+            .filter(Boolean)
+            .join(',');
+          const allowForwardedDevOrigin = devOriginCandidates || undefined;
 
           const headers = new Headers();
           for (const [key, value] of Object.entries(req.headers)) {
@@ -57,7 +64,7 @@ function urunkContactApiDevPlugin(devEnv: ContactEnv): Plugin {
             bodyBytes = new Uint8Array(Buffer.concat(chunks));
           }
 
-          const webReq = new Request(`http://${host}${rawUrl}`, {
+          const webReq = new Request(`${forwardedProto}://${effectiveHost}${rawUrl}`, {
             method,
             headers,
             body: bodyBytes,
@@ -66,7 +73,15 @@ function urunkContactApiDevPlugin(devEnv: ContactEnv): Plugin {
           const clientIp =
             String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1');
 
-          const webRes = await handleContactRequest(webReq, devEnv, {
+          const liveDevEnv: ContactEnv = {
+            RESEND_API_KEY: process.env.RESEND_API_KEY || devEnv.RESEND_API_KEY,
+            CONTACT_TO_EMAIL: process.env.CONTACT_TO_EMAIL || devEnv.CONTACT_TO_EMAIL,
+            CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL || devEnv.CONTACT_FROM_EMAIL,
+            ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS || devEnv.ALLOWED_ORIGINS,
+            ALL_ALLOWED_ORIGINS: process.env.ALL_ALLOWED_ORIGINS || devEnv.ALL_ALLOWED_ORIGINS,
+          };
+
+          const webRes = await handleContactRequest(webReq, liveDevEnv, {
             clientIp,
             allowForwardedDevOrigin,
           });
@@ -94,6 +109,7 @@ export default defineConfig(({mode}) => {
     CONTACT_TO_EMAIL: process.env.CONTACT_TO_EMAIL || fileEnv.CONTACT_TO_EMAIL,
     CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL || fileEnv.CONTACT_FROM_EMAIL,
     ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS || fileEnv.ALLOWED_ORIGINS,
+    ALL_ALLOWED_ORIGINS: process.env.ALL_ALLOWED_ORIGINS || fileEnv.ALL_ALLOWED_ORIGINS,
   };
   return {
     plugins: [urunkContactApiDevPlugin(contactEnv), react(), tailwindcss()],

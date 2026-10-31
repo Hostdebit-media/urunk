@@ -5,8 +5,10 @@ import {
   resetContactRateLimitStore,
   isValidEmailAddress,
   isValidPhoneOrWhatsApp,
+  normalizeSenderAddress,
   type ContactEnv,
 } from './contactApi';
+import worker from '../../worker';
 
 const VALID_PAYLOAD = {
   lang: 'fr',
@@ -435,4 +437,115 @@ test('Cloudflare Workers Cache API enforces rate limits across fresh isolate mem
   const sixthBody = (await sixth.json()) as { ok: boolean; code: string };
   assert.equal(sixthBody.code, 'RATE_LIMITED');
 });
+
+test('normalizeSenderAddress and ALL_ALLOWED_ORIGINS handle quoted values, bare emails, and custom origins', async () => {
+  resetContactRateLimitStore();
+
+  assert.equal(
+    normalizeSenderAddress('"Urunk Website <leads@urunk.com>"'),
+    'Urunk Website <leads@urunk.com>'
+  );
+  assert.equal(
+    normalizeSenderAddress('leads@urunk.com'),
+    'Urunk Website <leads@urunk.com>'
+  );
+  assert.equal(
+    normalizeSenderAddress('Urunk Leads <leads@urunk.com>'),
+    'Urunk Leads <leads@urunk.com>'
+  );
+  assert.equal(normalizeSenderAddress('not-an-email'), '');
+
+  let capturedFrom = '';
+  const mockFetch: typeof fetch = async (_input, init) => {
+    const parsed = JSON.parse(String(init?.body || '{}')) as { from?: string };
+    capturedFrom = parsed.from || '';
+    return new Response(JSON.stringify({ id: 're_origin_test' }), { status: 200 });
+  };
+
+  const res = await handleContactRequest(
+    makeJsonRequest(VALID_PAYLOAD, { origin: 'https://staging.urunk.com' }),
+    {
+      RESEND_API_KEY: 're_valid_key',
+      CONTACT_FROM_EMAIL: 'leads@urunk.com',
+      ALL_ALLOWED_ORIGINS: 'https://urunk.com, https://staging.urunk.com',
+    },
+    { clientIp: '198.51.100.210', fetchImpl: mockFetch }
+  );
+
+  assert.equal(res.status, 200);
+  assert.equal(capturedFrom, 'Urunk Website <leads@urunk.com>');
+
+  const badFromRes = await handleContactRequest(
+    makeJsonRequest(VALID_PAYLOAD),
+    {
+      RESEND_API_KEY: 're_valid_key',
+      CONTACT_FROM_EMAIL: 'invalid-from-address',
+    },
+    { clientIp: '198.51.100.211', fetchImpl: mockFetch }
+  );
+  assert.equal(badFromRes.status, 503);
+});
+
+test('Cloudflare Worker never crashes when env.ASSETS is undefined and serves routes cleanly when bound', async () => {
+  resetContactRateLimitStore();
+
+  // 1. Missing ASSETS binding: must NOT throw "Cannot read properties of undefined (reading 'fetch')"
+  const missingAssetsRes = await worker.fetch(new Request('https://urunk.com/'), {});
+  assert.equal(missingAssetsRes.status, 503);
+  assert.ok(missingAssetsRes.headers.get('content-security-policy')?.includes("form-action 'self'"));
+
+  // OPTIONS /api/contact still succeeds (204) even if ASSETS is missing
+  const optionsRes = await worker.fetch(
+    new Request('https://urunk.com/api/contact', {
+      method: 'OPTIONS',
+      headers: { Origin: 'https://urunk.com' },
+    }),
+    {}
+  );
+  assert.equal(optionsRes.status, 204);
+
+  // 2. Bound ASSETS: serves /, /en, 301 redirects, and 404 accurately
+  const mockAssets = {
+    async fetch(req: Request | string) {
+      const u = new URL(typeof req === 'string' ? req : req.url);
+      if (u.pathname === '/' || u.pathname === '/index.html') {
+        return new Response('<!doctype html><html lang="fr"><body>Accueil</body></html>', {
+          status: 200,
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        });
+      }
+      if (u.pathname === '/en/index.html') {
+        return new Response('<!doctype html><html lang="en"><body>Home EN</body></html>', {
+          status: 200,
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        });
+      }
+      if (u.pathname === '/404.html') {
+        return new Response('<!doctype html><html><body>Not Found</body></html>', {
+          status: 200,
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        });
+      }
+      return new Response('Not Found', { status: 404 });
+    },
+  };
+
+  const homeRes = await worker.fetch(new Request('https://urunk.com/'), { ASSETS: mockAssets });
+  assert.equal(homeRes.status, 200);
+
+  const enRes = await worker.fetch(new Request('https://urunk.com/en'), { ASSETS: mockAssets });
+  assert.equal(enRes.status, 200);
+
+  const legacyRedirectRes = await worker.fetch(new Request('https://urunk.com/fr/pricing'), {
+    ASSETS: mockAssets,
+  });
+  assert.equal(legacyRedirectRes.status, 301);
+  assert.equal(legacyRedirectRes.headers.get('location'), 'https://urunk.com/tarifs');
+
+  const notFoundRes = await worker.fetch(new Request('https://urunk.com/non-existent-page'), {
+    ASSETS: mockAssets,
+  });
+  assert.equal(notFoundRes.status, 404);
+});
+
 

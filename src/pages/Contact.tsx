@@ -87,12 +87,6 @@ export default function Contact() {
     submittingRef.current = true;
     setIsSubmitting(true);
     try {
-      trackEvent('quote_form_submit', {
-        service: formData.service,
-        property: formData.property,
-        language: 'en'
-      });
-
       const result = await submitContactLead({
         lang: 'en',
         source: 'contact_page_en',
@@ -107,6 +101,11 @@ export default function Contact() {
       });
 
       if (result.ok) {
+        trackEvent('quote_form_submit', {
+          service: formData.service,
+          property: formData.property,
+          language: 'en'
+        });
         localStorage.setItem('form_last_submit', Date.now().toString());
         setSubmitted(true);
       } else {

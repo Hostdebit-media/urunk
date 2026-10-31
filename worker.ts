@@ -6,10 +6,12 @@
 
 import { handleContactRequest, type ContactEnv } from "./src/server/contactApi";
 
-interface Env extends ContactEnv {
-  ASSETS: {
-    fetch: (request: Request | string) => Promise<Response>;
-  };
+export interface WorkerAssetsBinding {
+  fetch: (request: Request | string) => Promise<Response>;
+}
+
+export interface Env extends ContactEnv {
+  ASSETS?: WorkerAssetsBinding;
 }
 
 const SECURITY_HEADERS: Record<string, string> = {
@@ -179,7 +181,7 @@ export function resolveCanonicalRedirect(pathname: string): string | null {
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env = {} as Env): Promise<Response> {
     const startTime = Date.now();
     let url: URL;
 
@@ -262,8 +264,40 @@ export default {
         });
       }
 
-      // 3. Attempt direct fetch from static assets
-      let assetResponse = await env.ASSETS.fetch(request);
+      // 3. Verify Cloudflare Static Assets binding (prevents TypeError on undefined env.ASSETS)
+      const assetsBinding = env?.ASSETS;
+      if (!assetsBinding || typeof assetsBinding.fetch !== "function") {
+        const durationMs = Date.now() - startTime;
+        console.error(
+          JSON.stringify({
+            level: "error",
+            code: "MISSING_ASSETS_BINDING",
+            timestamp: new Date().toISOString(),
+            method,
+            path: pathname,
+            status: 503,
+            ip,
+            userAgent,
+            durationMs,
+            msg: "Cloudflare Worker ASSETS binding is undefined. Deploy with wrangler.jsonc (npx wrangler deploy -c wrangler.jsonc)."
+          })
+        );
+        const missingBindingHeaders = new Headers();
+        applySecurityHeaders(missingBindingHeaders);
+        missingBindingHeaders.set("Content-Type", "text/html; charset=utf-8");
+        missingBindingHeaders.set("Cache-Control", "no-store, no-cache, must-revalidate");
+        return new Response(
+          `<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Maintenance | Urunk</title></head><body style="font-family:sans-serif;text-align:center;padding:4rem;"><h1>Service momentanément indisponible (503)</h1><p>Mise à jour technique en cours. Veuillez réessayer dans quelques instants.</p></body></html>`,
+          {
+            status: 503,
+            statusText: "Service Unavailable",
+            headers: missingBindingHeaders
+          }
+        );
+      }
+
+      // 3a. Attempt direct fetch from static assets
+      let assetResponse = await assetsBinding.fetch(request);
       let isFallbackEntryAsset = false;
 
       // 3b. Case-insensitive & deployment-skew resilience for /assets/* bundles
@@ -271,7 +305,7 @@ export default {
         // First try lowercase asset path in case crawler/proxy normalized casing
         if (pathname !== normalizedPathname) {
           const lowerAssetUrl = new URL(normalizedPathname + search, url.origin);
-          assetResponse = await env.ASSETS.fetch(new Request(lowerAssetUrl.toString(), request));
+          assetResponse = await assetsBinding.fetch(new Request(lowerAssetUrl.toString(), request));
         }
 
         // Next, if a stale HTML cache or delayed crawler render queue requests a previous
@@ -282,7 +316,7 @@ export default {
 
         if (assetResponse.status === 404 && (isEntryJsRequest || isEntryCssRequest)) {
           const manifestUrl = new URL("/assets/asset-manifest.json", url.origin);
-          const manifestRes = await env.ASSETS.fetch(new Request(manifestUrl.toString(), request));
+          const manifestRes = await assetsBinding.fetch(new Request(manifestUrl.toString(), request));
           if (manifestRes.status === 200) {
             const manifest = (await manifestRes.json()) as {
               entryJs?: string | null;
@@ -291,7 +325,7 @@ export default {
             const targetAssetPath = isEntryJsRequest ? manifest.entryJs : manifest.entryCss;
             if (targetAssetPath) {
               const fallbackUrl = new URL(targetAssetPath, url.origin);
-              const fallbackRes = await env.ASSETS.fetch(new Request(fallbackUrl.toString(), request));
+              const fallbackRes = await assetsBinding.fetch(new Request(fallbackUrl.toString(), request));
               if (fallbackRes.status === 200) {
                 assetResponse = fallbackRes;
                 isFallbackEntryAsset = true;
@@ -320,21 +354,21 @@ export default {
       if (assetResponse.status === 404 && !pathname.includes(".")) {
         // Try /path.html
         const htmlUrl = new URL(pathname + ".html" + search, url.origin);
-        assetResponse = await env.ASSETS.fetch(new Request(htmlUrl.toString(), request));
+        assetResponse = await assetsBinding.fetch(new Request(htmlUrl.toString(), request));
 
         // If still 404, try /path/index.html
         if (assetResponse.status === 404) {
           const indexUrl = new URL(pathname + "/index.html" + search, url.origin);
-          assetResponse = await env.ASSETS.fetch(new Request(indexUrl.toString(), request));
+          assetResponse = await assetsBinding.fetch(new Request(indexUrl.toString(), request));
         }
       }
 
       // 5. If STILL 404: Serve the bilingual 404 page with an authentic HTTP 404 status
       if (assetResponse.status === 404) {
         // Try /404 first, fallback to /404.html
-        let notFoundRes = await env.ASSETS.fetch(new Request(new URL("/404", url.origin).toString(), request));
+        let notFoundRes = await assetsBinding.fetch(new Request(new URL("/404", url.origin).toString(), request));
         if (notFoundRes.status !== 200) {
-          notFoundRes = await env.ASSETS.fetch(new Request(new URL("/404.html", url.origin).toString(), request));
+          notFoundRes = await assetsBinding.fetch(new Request(new URL("/404.html", url.origin).toString(), request));
         }
 
         const notFoundHeaders = new Headers(notFoundRes.headers);

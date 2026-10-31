@@ -20,6 +20,7 @@ export interface ContactEnv {
   CONTACT_TO_EMAIL?: string;
   CONTACT_FROM_EMAIL?: string;
   ALLOWED_ORIGINS?: string;
+  ALL_ALLOWED_ORIGINS?: string;
   CONTACT_RATE_LIMITER?: ContactRateLimiterBinding;
 }
 
@@ -225,6 +226,35 @@ function countLinks(text: string): number {
   return matches ? matches.length : 0;
 }
 
+export function normalizeSenderAddress(rawFrom?: string): string {
+  const cleaned = stripControlChars(
+    rawFrom || 'Urunk Website <leads@urunk.com>',
+    false
+  )
+    .trim()
+    .replace(/^["']+|["']+$/g, '')
+    .trim();
+
+  if (!cleaned) return '';
+
+  const bracketMatch = cleaned.match(/^(.*?)<([^<>]+)>$/);
+  if (bracketMatch) {
+    const rawDisplay = bracketMatch[1].trim().replace(/^["']+|["']+$/g, '').trim();
+    const emailPart = bracketMatch[2].trim();
+    if (!isValidEmailAddress(emailPart)) {
+      return '';
+    }
+    const display = rawDisplay || 'Urunk Website';
+    return `${display} <${emailPart}>`;
+  }
+
+  if (isValidEmailAddress(cleaned)) {
+    return `Urunk Website <${cleaned}>`;
+  }
+
+  return '';
+}
+
 function buildAllowedOrigins(
   requestUrl: URL,
   env: ContactEnv,
@@ -233,19 +263,29 @@ function buildAllowedOrigins(
   const allowed = new Set<string>(DEFAULT_PRODUCTION_ORIGINS);
   allowed.add(requestUrl.origin);
 
-  if (env.ALLOWED_ORIGINS) {
-    for (const raw of env.ALLOWED_ORIGINS.split(',')) {
-      const trimmed = raw.trim().replace(/\/+$/, '');
+  const configuredOriginLists = [env.ALLOWED_ORIGINS, env.ALL_ALLOWED_ORIGINS].filter(
+    (v): v is string => typeof v === 'string' && v.trim().length > 0
+  );
+  for (const listStr of configuredOriginLists) {
+    for (const raw of listStr.split(',')) {
+      const trimmed = raw
+        .trim()
+        .replace(/^["']+|["']+$/g, '')
+        .trim()
+        .replace(/\/+$/, '');
       if (trimmed) {
         allowed.add(trimmed);
       }
     }
   }
 
-  const isLocalHost =
-    requestUrl.hostname === 'localhost' || requestUrl.hostname === '127.0.0.1';
-  if (isLocalHost && allowForwardedDevOrigin) {
-    allowed.add(allowForwardedDevOrigin.replace(/\/+$/, ''));
+  if (allowForwardedDevOrigin) {
+    for (const raw of allowForwardedDevOrigin.split(',')) {
+      const trimmed = raw.trim().replace(/\/+$/, '');
+      if (trimmed) {
+        allowed.add(trimmed);
+      }
+    }
   }
 
   return allowed;
@@ -670,12 +710,9 @@ export async function handleContactRequest(
     false
   )
     .split(',')
-    .map((addr) => addr.trim())
+    .map((addr) => addr.trim().replace(/^["']+|["']+$/g, '').trim())
     .filter((addr) => isValidEmailAddress(addr));
-  const fromEmail = stripControlChars(
-    env.CONTACT_FROM_EMAIL || 'Urunk Website <leads@urunk.com>',
-    false
-  ).trim();
+  const fromEmail = normalizeSenderAddress(env.CONTACT_FROM_EMAIL);
 
   if (!resendApiKey || recipientList.length === 0 || !fromEmail) {
     logSafeContactEvent('warn', {

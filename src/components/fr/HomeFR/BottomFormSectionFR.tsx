@@ -60,8 +60,6 @@ export default function BottomFormSectionFR() {
     submittingRef.current = true;
     setFormSubmitting(true);
     try {
-      trackEvent('quote_form_submit', { source: 'homepage_bottom_form', service: establishmentType });
-
       const result = await submitContactLead({
         lang: 'fr',
         source: 'home_audit_fr',
@@ -73,6 +71,7 @@ export default function BottomFormSectionFR() {
       });
 
       if (result.ok) {
+        trackEvent('quote_form_submit', { source: 'homepage_bottom_form', service: establishmentType });
         localStorage.setItem('form_last_submit', Date.now().toString());
         setFormSuccess('Merci ! Votre demande a bien été transmise. Redirection en cours...');
         setTimeout(() => {
