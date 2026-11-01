@@ -39,6 +39,9 @@ export default function BlogFR() {
         "@type": "BlogPosting",
         headline: post.h1 || post.title,
         url: `https://urunk.com/blog/${post.slug}`,
+        image: post.image
+          ? (post.image.startsWith("http") ? post.image : `https://urunk.com${post.image}`)
+          : "https://urunk.com/og-image.jpg",
         datePublished: parseIsoDate(post.date),
         author: {
           "@type": "Person",

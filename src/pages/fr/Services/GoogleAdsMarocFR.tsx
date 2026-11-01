@@ -18,6 +18,7 @@ import {
   X
 } from 'lucide-react';
 import SEO from '../../../components/SEO';
+import { buildServiceProviderSchema } from '../../../components/SEO/StructuredData';
 import { servicesData } from '../../../data/servicesData';
 
 interface CampaignFormatItem {
@@ -187,21 +188,7 @@ export default function GoogleAdsMarocFR() {
     name: 'Agence Google Ads Maroc — Gestion de Campagnes SEA & PPC',
     serviceType: 'Gestion Google Ads (SEA / PPC)',
     description: data.description,
-    provider: {
-      '@type': 'ProfessionalService',
-      name: 'Urunk',
-      url: 'https://urunk.com',
-      email: 'contact@urunk.com',
-      telephone: '+212668802096',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '3 Rue El Kadi Lass, Maarif',
-        addressLocality: 'Casablanca',
-        addressRegion: 'Casablanca-Settat',
-        postalCode: '20330',
-        addressCountry: 'MA'
-      }
-    },
+    provider: buildServiceProviderSchema(),
     areaServed: [
       { '@type': 'Country', name: 'Maroc' },
       { '@type': 'City', name: 'Casablanca' },

@@ -8,6 +8,7 @@ import {
   hasReciprocalTranslation,
 } from './slugMappings';
 import { servicesData, extractNumericMadPrice } from './servicesData';
+import { blogPostsFR } from './blogPostsFR';
 
 test('extractNumericMadPrice extracts first MAD figure without concatenating secondary retainers', () => {
   assert.equal(extractNumericMadPrice('Starting at 12,000 MAD'), '12000');
@@ -671,6 +672,267 @@ test('/marketing-digital-hotelier and /en/hotel-digital-marketing satisfy primar
   assert.ok(gadsHtml.includes('href="/marketing-digital-hotelier"'), '/google-ads-maroc must link internally to /marketing-digital-hotelier');
 });
 
+test('/blog/creation-site-web-maroc-pour-hotels preserves full PDF content, hero image, FR-only hreflang, BlogPosting + FAQPage JSON-LD, and XML sitemaps', () => {
+  const post = blogPostsFR.find(p => p.slug === 'creation-site-web-maroc-pour-hotels');
+  assert.ok(post, 'Blog post creation-site-web-maroc-pour-hotels must exist in blogPostsFR');
+  assert.equal(blogPostsFR[0]?.slug, 'creation-site-web-maroc-pour-hotels', 'New blog post should be featured first on /blog');
+  assert.equal(post.h1, 'Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc');
+  assert.ok(post.seoTitle && post.seoTitle.length >= 30 && post.seoTitle.length <= 60, `seoTitle length (${post.seoTitle?.length}) must be 30-60`);
+  assert.ok(post.metaDescription.length >= 120 && post.metaDescription.length <= 158, `metaDescription length (${post.metaDescription.length}) must be 120-158`);
+  assert.equal(post.image, '/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg');
+  assert.equal(post.faqs?.length, 3, 'Post must expose all 3 FAQs from the PDF');
 
+  // Verify extracted hero image exists on disk and is non-empty
+  const imgDiskPath = path.resolve('public/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg');
+  assert.ok(fs.existsSync(imgDiskPath), 'Extracted hero image must exist in public/images/blog/fr/');
+  assert.ok(fs.statSync(imgDiskPath).size > 50_000, 'Extracted hero image must be a high-resolution JPEG');
 
+  // Verify PDF structural content: Cloudbeds vs Mews table, 8-point checklist, internal & external links
+  assert.match(post.content, /Points clés à retenir/);
+  assert.match(post.content, /Cloudbeds/);
+  assert.match(post.content, /Mews/);
+  assert.match(post.content, /Les 8 points à valider avant de signer avec une agence/);
+  assert.match(post.content, /Questions fréquentes/);
+  assert.match(post.content, /href="\/site-web-hotel"/);
+  assert.match(post.content, /href="\/reservation-directe"/);
+  assert.match(post.content, /href="\/services\/google-business-profile"/);
+  assert.match(post.content, /href="\/contact"/);
+  assert.match(post.content, /href="\/services\/creation-site-web"/);
+  assert.match(post.content, /developers\.google\.com\/search\/docs\/appearance\/core-web-vitals/);
+  assert.match(post.content, /official_gbp_best_practices_playbook_2026\.pdf/);
+  assert.match(post.content, /contrat-developpement-logiciel-clauses-indispensables/);
+
+  // Verify French-only routing & hreflang reciprocity helpers
+  assert.equal(hasReciprocalTranslation('/blog/creation-site-web-maroc-pour-hotels'), false);
+  assert.equal(getEquivalentRoute('/blog/creation-site-web-maroc-pour-hotels'), '/en/blog');
+
+  // Post-build prerendered HTML & XML sitemap checks
+  const htmlPath = path.resolve('dist/blog/creation-site-web-maroc-pour-hotels/index.html');
+  if (!fs.existsSync(htmlPath)) return;
+
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const rawTitle = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1].trim() || '';
+  const decodedTitle = rawTitle.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"');
+  assert.equal(decodedTitle, post.seoTitle);
+  assert.ok(html.includes('<link rel="canonical" data-static-seo="true" href="https://urunk.com/blog/creation-site-web-maroc-pour-hotels" />'));
+  assert.ok(html.includes('hreflang="fr" href="https://urunk.com/blog/creation-site-web-maroc-pour-hotels"'));
+  assert.ok(html.includes('hreflang="x-default" href="https://urunk.com/blog/creation-site-web-maroc-pour-hotels"'));
+  assert.ok(!html.includes('hreflang="en"'), 'FR-only blog post must not emit a false hreflang="en" alternate');
+  assert.ok(html.includes('property="og:image" data-static-seo="true" content="https://urunk.com/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg"'));
+
+  const schemas = JSON.parse(html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i)![1]);
+  const blogPosting = schemas.find((s: Record<string, unknown>) => s['@type'] === 'BlogPosting');
+  const faqPage = schemas.find((s: Record<string, unknown>) => s['@type'] === 'FAQPage');
+  const breadcrumb = schemas.find((s: Record<string, unknown>) => s['@type'] === 'BreadcrumbList');
+  assert.ok(blogPosting, 'Prerendered HTML must include BlogPosting JSON-LD');
+  assert.equal(blogPosting.headline, post.h1);
+  assert.equal(blogPosting.image, 'https://urunk.com/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg');
+  assert.equal(blogPosting.datePublished, '2026-11-01');
+  assert.ok(faqPage, 'Prerendered HTML must include FAQPage JSON-LD matching the 3 visible FAQs');
+  assert.equal(faqPage.mainEntity.length, 3);
+  assert.ok(breadcrumb, 'Prerendered HTML must include BreadcrumbList JSON-LD');
+
+  const postsSitemap = fs.readFileSync(path.resolve('public/posts-sitemap.xml'), 'utf8');
+  const postsSitemapFr = fs.readFileSync(path.resolve('public/posts-sitemap-fr.xml'), 'utf8');
+  const imagesSitemap = fs.readFileSync(path.resolve('public/images-sitemap.xml'), 'utf8');
+  const imagesSitemapFr = fs.readFileSync(path.resolve('public/images-sitemap-fr.xml'), 'utf8');
+  assert.ok(postsSitemap.includes('<loc>https://urunk.com/blog/creation-site-web-maroc-pour-hotels</loc>'));
+  assert.ok(postsSitemapFr.includes('<loc>https://urunk.com/blog/creation-site-web-maroc-pour-hotels</loc>'));
+  assert.ok(imagesSitemap.includes('<loc>https://urunk.com/blog/creation-site-web-maroc-pour-hotels</loc>'));
+  assert.ok(imagesSitemap.includes('<image:loc>https://urunk.com/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg</image:loc>'));
+  assert.ok(imagesSitemapFr.includes('<loc>https://urunk.com/blog/creation-site-web-maroc-pour-hotels</loc>'));
+  assert.ok(imagesSitemapFr.includes('<image:loc>https://urunk.com/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg</image:loc>'));
+
+  // Verify all 8 XML sitemaps exist in both public/ and dist/, match byte-for-byte, and contain zero double-escaped XML entities
+  const allXmlSitemaps = [
+    'sitemap.xml',
+    'sitemap-index.xml',
+    'sitemap-fr.xml',
+    'pages-sitemap.xml',
+    'pages-sitemap-fr.xml',
+    'posts-sitemap.xml',
+    'posts-sitemap-fr.xml',
+    'images-sitemap.xml',
+    'images-sitemap-fr.xml'
+  ];
+  for (const smFile of allXmlSitemaps) {
+    const pubXml = fs.readFileSync(path.resolve('public', smFile), 'utf8');
+    const distXml = fs.readFileSync(path.resolve('dist', smFile), 'utf8');
+    assert.equal(distXml, pubXml, `dist/${smFile} must match public/${smFile}`);
+    assert.equal(pubXml.includes('&amp;amp;'), false, `${smFile} must not contain double-escaped &amp;amp;`);
+  }
+
+  // Verify HTML sitemaps (/plan-du-site and /en/sitemap) include the new blog post, case studies, and core services
+  const htmlSitemapFr = fs.readFileSync(path.resolve('dist/plan-du-site/index.html'), 'utf8');
+  const htmlSitemapEn = fs.readFileSync(path.resolve('dist/en/sitemap/index.html'), 'utf8');
+  assert.ok(htmlSitemapFr.includes('href="/blog/creation-site-web-maroc-pour-hotels"'));
+  assert.ok(htmlSitemapFr.includes('href="/marketing-digital-hotelier"'));
+  assert.ok(htmlSitemapFr.includes('href="/realisations/art-house-marrakech"'));
+  assert.ok(htmlSitemapEn.includes('href="/en/hotel-digital-marketing"'));
+  assert.ok(htmlSitemapEn.includes('href="/en/services/google-ads"'));
+  assert.ok(htmlSitemapEn.includes('href="/en/work/art-house-marrakech"'));
+});
+
+test('all 37 reported crawl URLs and all 274 prerendered dist/ HTML routes emit valid Google Rich Results JSON-LD with required LocalBusiness address', async () => {
+  const { buildServiceProviderSchema, URUNK_POSTAL_ADDRESS } = await import('../components/SEO/StructuredData');
+
+  // 1. Fast unit check on canonical Service.provider builder
+  const provider = buildServiceProviderSchema();
+  assert.equal(provider['@type'], 'ProfessionalService');
+  assert.equal(provider.name, 'Urunk');
+  assert.equal(provider.url, 'https://urunk.com');
+  assert.equal(provider.image, 'https://urunk.com/logo.png');
+  assert.equal(provider.telephone, '+212668802096');
+  assert.equal(provider.priceRange, '$$$');
+  assert.deepEqual(provider.address, URUNK_POSTAL_ADDRESS);
+  assert.equal(provider.address['@type'], 'PostalAddress');
+  assert.equal(provider.address.streetAddress, '3 Rue El Kadi Lass, Maarif');
+  assert.equal(provider.address.addressLocality, 'Casablanca');
+  assert.equal(provider.address.postalCode, '20330');
+  assert.equal(provider.address.addressCountry, 'MA');
+
+  if (!fs.existsSync(path.resolve('dist/index.html'))) {
+    return;
+  }
+
+  // 2. All 37 URLs flagged in urunk.com_structured_data_that_contains_markup_errors_20261101.csv
+  const reportedPaths = [
+    '/agence-seo-casablanca',
+    '/agence-seo-maroc',
+    '/agence-web-casablanca',
+    '/agence-web-maroc',
+    '/creation-site-web',
+    '/en/google-ads-morocco',
+    '/en/pricing',
+    '/en/seo-agency-morocco',
+    '/en/services/website-design',
+    '/en/web-design-casablanca',
+    '/expertise/creation-site-web/casablanca',
+    '/expertise/creation-site-web/rabat',
+    '/expertise/google-ads/casablanca',
+    '/expertise/meta-ads/marrakech',
+    '/expertise/referencement-local/casablanca',
+    '/expertise/reservation-directe/agadir',
+    '/expertise/reservation-directe/riads-maisons-hotes',
+    '/expertise/seo-hotel/agadir',
+    '/expertise/seo-hotel/casablanca',
+    '/expertise/seo-hotel/hotels-resorts',
+    '/expertise/seo-hotel/marrakech',
+    '/expertise/seo-hotel/rabat',
+    '/expertise/seo-riad/marrakech',
+    '/expertise/site-web-hotel/marrakech',
+    '/expertise/site-web-riad/marrakech',
+    '/expertise/tripadvisor-ads/marrakech',
+    '/marketing-digital-hotelier',
+    '/referencement-local-casablanca',
+    '/services/ai-seo-optimization',
+    '/services/creation-site-web',
+    '/services/ecommerce-seo',
+    '/services/gestion-publicites-meta',
+    '/services/google-business-profile',
+    '/services/tripadvisor-ads',
+    '/services/wordpress-seo',
+    '/site-web-hotel',
+    '/tarifs'
+  ];
+  assert.equal(reportedPaths.length, 37);
+
+  const localBusinessSubtypes = new Set([
+    'LocalBusiness',
+    'ProfessionalService',
+    'DigitalMarketingAgency',
+    'MarketingAgency',
+    'Store',
+    'FinancialService',
+    'TravelAgency',
+    'Hotel',
+    'LodgingBusiness',
+    'Restaurant'
+  ]);
+
+  function validateJsonLdTree(node: unknown, routeLabel: string, jsonPath: string): number {
+    if (!node || typeof node !== 'object') return 0;
+    if (Array.isArray(node)) {
+      let count = 0;
+      node.forEach((child, idx) => {
+        count += validateJsonLdTree(child, routeLabel, `${jsonPath}[${idx}]`);
+      });
+      return count;
+    }
+
+    const obj = node as Record<string, unknown>;
+    const rawType = obj['@type'];
+    const types = Array.isArray(rawType) ? rawType : (typeof rawType === 'string' ? [rawType] : []);
+    let localBizCount = 0;
+
+    if (types.some(t => localBusinessSubtypes.has(String(t)))) {
+      localBizCount += 1;
+      assert.ok(typeof obj.name === 'string' && obj.name.length > 0, `Missing LocalBusiness name at ${routeLabel} ${jsonPath}`);
+      assert.ok(obj.address && typeof obj.address === 'object', `Missing required LocalBusiness address at ${routeLabel} ${jsonPath}`);
+      const addr = obj.address as Record<string, unknown>;
+      assert.equal(addr['@type'], 'PostalAddress', `Expected PostalAddress @type at ${routeLabel} ${jsonPath}`);
+      for (const reqField of ['streetAddress', 'addressLocality', 'addressRegion', 'postalCode', 'addressCountry']) {
+        assert.ok(
+          typeof addr[reqField] === 'string' && String(addr[reqField]).trim().length > 0,
+          `Missing PostalAddress.${reqField} at ${routeLabel} ${jsonPath}`
+        );
+      }
+      assert.ok(obj.image, `Missing recommended LocalBusiness image at ${routeLabel} ${jsonPath}`);
+      assert.ok(typeof obj.telephone === 'string' && obj.telephone.length > 0, `Missing recommended LocalBusiness telephone at ${routeLabel} ${jsonPath}`);
+      assert.ok(typeof obj.priceRange === 'string' && obj.priceRange.length > 0, `Missing recommended LocalBusiness priceRange at ${routeLabel} ${jsonPath}`);
+    }
+
+    if (types.includes('Article') || types.includes('BlogPosting')) {
+      assert.ok(typeof obj.headline === 'string' && obj.headline.length > 0, `Missing headline at ${routeLabel} ${jsonPath}`);
+      assert.ok(obj.image, `Missing Article/BlogPosting image at ${routeLabel} ${jsonPath}`);
+      assert.ok(typeof obj.datePublished === 'string' && obj.datePublished.length > 0, `Missing datePublished at ${routeLabel} ${jsonPath}`);
+      assert.ok(obj.author, `Missing author at ${routeLabel} ${jsonPath}`);
+    }
+
+    for (const [k, v] of Object.entries(obj)) {
+      if (k !== '@type' && v && typeof v === 'object') {
+        localBizCount += validateJsonLdTree(v, routeLabel, `${jsonPath}.${k}`);
+      }
+    }
+    return localBizCount;
+  }
+
+  for (const route of reportedPaths) {
+    const filePath = path.resolve(`dist${route}/index.html`);
+    assert.ok(fs.existsSync(filePath), `Missing prerendered HTML for reported URL ${route}`);
+    const html = fs.readFileSync(filePath, 'utf8');
+    const scripts = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
+    assert.ok(scripts.length >= 1, `Expected JSON-LD script in ${route}`);
+    let lbFound = 0;
+    scripts.forEach((m, idx) => {
+      lbFound += validateJsonLdTree(JSON.parse(m[1]), route, `script[${idx}]`);
+    });
+    assert.ok(lbFound >= 1, `Expected at least 1 validated LocalBusiness/ProfessionalService entity in ${route}`);
+  }
+
+  // 3. Exhaustive check across ALL 274 prerendered HTML routes in dist/
+  function collectDistIndexHtml(dir: string, out: string[] = []): string[] {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) collectDistIndexHtml(full, out);
+      else if (full.endsWith('/index.html') || full.endsWith('\\index.html') || path.relative(path.resolve('dist'), full) === 'index.html') {
+        out.push(full);
+      }
+    }
+    return out;
+  }
+
+  const allHtmlFiles = collectDistIndexHtml(path.resolve('dist'));
+  assert.ok(allHtmlFiles.length >= 274, `Expected >= 274 prerendered routes, got ${allHtmlFiles.length}`);
+
+  for (const filePath of allHtmlFiles) {
+    const rel = path.relative(path.resolve('dist'), filePath).replace(/\\/g, '/');
+    const route = rel === 'index.html' ? '/' : `/${rel.slice(0, -11)}`;
+    const html = fs.readFileSync(filePath, 'utf8');
+    const scripts = [...html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
+    scripts.forEach((m, idx) => {
+      validateJsonLdTree(JSON.parse(m[1]), route, `script[${idx}]`);
+    });
+  }
+});
 

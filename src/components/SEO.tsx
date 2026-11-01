@@ -56,6 +56,11 @@ export default function SEO({ title, description, image, schema, noindex, type }
   const breadcrumbSchema = buildBreadcrumbListSchema(breadcrumbsList);
   const agencySchema = buildProfessionalServiceSchema(undefined, currentLang);
 
+  const customSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+  const hasCustomBreadcrumb = customSchemas.some(
+    (s) => s && typeof s === 'object' && (s as Record<string, unknown>)['@type'] === 'BreadcrumbList'
+  );
+
   const finalSchema: object[] = [agencySchema];
   if (currentPath === '/' || currentPath === '/en') {
     finalSchema.unshift({
@@ -66,12 +71,11 @@ export default function SEO({ title, description, image, schema, noindex, type }
       "name": "Urunk Agency",
       "inLanguage": ["fr-MA", "en-US"]
     });
-  } else {
+  } else if (!hasCustomBreadcrumb) {
     finalSchema.push(breadcrumbSchema);
   }
-  if (schema) {
-    if (Array.isArray(schema)) finalSchema.push(...schema);
-    else finalSchema.push(schema);
+  if (customSchemas.length > 0) {
+    finalSchema.push(...customSchemas);
   }
 
   const alternatePath = getEquivalentRoute(currentPath);

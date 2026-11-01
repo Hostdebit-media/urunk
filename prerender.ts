@@ -21,7 +21,13 @@ import {
 import { buildMatrixMetadata } from './src/data/matrixMetadata';
 import { pricingCopyEN } from './src/data/copy/pricing.en';
 import { pricingCopyFR } from './src/data/copy/pricing.fr';
-import { buildProfessionalServiceSchema, buildBreadcrumbListSchema } from './src/components/SEO/StructuredData';
+import {
+  buildProfessionalServiceSchema,
+  buildBreadcrumbListSchema,
+  buildServiceProviderSchema,
+  URUNK_POSTAL_ADDRESS,
+  URUNK_GEO_COORDINATES
+} from './src/components/SEO/StructuredData';
 import { routeMappings } from './src/components/Breadcrumbs';
 
 interface PageMetadata {
@@ -672,7 +678,8 @@ const customBlogTitlesFR: Record<string, string> = {
   "automatisation-whatsapp-experience-client-hotel": "Automatisation WhatsApp pour Hôtels",
   "landing-pages-hotels": "Anatomie d'une Landing Page Hôtelière",
   "tarification-saisonniere-gestion-revenus": "Tarification Saisonnière & Revenue Management",
-  "rebranding-renovation-hotel-lancement-digital": "Rebranding & Relancement Digital Riad"
+  "rebranding-renovation-hotel-lancement-digital": "Rebranding & Relancement Digital Riad",
+  "creation-site-web-maroc-pour-hotels": "Création Site Web Maroc Hôtel & Riad : Guide"
 };
 
 const customServiceTitles: Record<string, { en: string; fr: string }> = {
@@ -2524,18 +2531,26 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       const posts = isFR ? blogPostsFR : blogPostsEN;
       const corePagesList = isFR ? [
         { name: 'Accueil Urunk', url: '/', desc: 'Portail principal de notre agence de croissance digitale et hôtelière au Maroc.' },
+        { name: 'Catalogue des Services', url: '/services', desc: 'Vue d\'ensemble de nos solutions web, SEO hôtelier et acquisition payante.' },
         { name: 'À Propos', url: '/a-propos', desc: 'Notre mission, nos hubs à Casablanca et Marrakech et notre méthodologie.' },
         { name: 'Tarifs & Formules', url: '/tarifs', desc: 'Grille tarifaire fixe transparente dès 12 000 MAD sans commission OTA.' },
         { name: 'Réalisations & Études de Cas', url: '/realisations', desc: 'Exemples concrets de stratégies SEO, Google Ads et réservation directe.' },
+        { name: 'Blog & Guides Hôteliers', url: '/blog', desc: 'Guides techniques sur la réservation directe, les PMS et le SEO local au Maroc.' },
         { name: 'Foire Aux Questions (FAQ)', url: '/faq', desc: 'Réponses sur les délais, la propriété du code, les PMS et la garantie 90 jours.' },
-        { name: 'Contact & Audit Gratuit', url: '/contact', desc: 'Demandez votre diagnostic digital complet livré sous 24 à 48 heures.' }
+        { name: 'Contact & Audit Gratuit', url: '/contact', desc: 'Demandez votre diagnostic digital complet livré sous 24 à 48 heures.' },
+        { name: 'Politique de Confidentialité', url: '/politique-de-confidentialite', desc: 'Protection des données personnelles conforme à la loi marocaine 09-08 et au RGPD.' },
+        { name: 'Conditions Générales (CGU)', url: '/conditions-generales', desc: 'Conditions contractuelles, propriété intellectuelle à 100 % et modalités de service.' }
       ] : [
         { name: 'Urunk Home', url: '/en', desc: 'Main portal for our Moroccan hospitality and B2B digital growth agency.' },
+        { name: 'All Services Overview', url: '/en/services', desc: 'Complete catalog of custom web engineering, hotel SEO, and paid media services.' },
         { name: 'About Urunk', url: '/en/about', desc: 'Our mission, Casablanca and Marrakech hubs, and engineering standards.' },
         { name: 'Pricing & Packages', url: '/en/pricing', desc: 'Transparent fixed-fee pricing from 12,000 MAD with zero OTA commissions.' },
         { name: 'Work & Case Studies', url: '/en/work', desc: 'Applied strategy blueprints across boutique riads, tour operators, and B2B.' },
+        { name: 'Blog & Hospitality Guides', url: '/en/blog', desc: 'Technical guides on direct booking funnels, PMS sync, and local SEO in Morocco.' },
         { name: 'Frequently Asked Questions', url: '/en/faq', desc: 'Direct answers on timelines, full code ownership, PMS sync, and 90-day guarantee.' },
-        { name: 'Contact & Free Audit', url: '/en/contact', desc: 'Request your complimentary 24–48 hour website and direct booking audit.' }
+        { name: 'Contact & Free Audit', url: '/en/contact', desc: 'Request your complimentary 24–48 hour website and direct booking audit.' },
+        { name: 'Privacy Policy', url: '/en/privacy-policy', desc: 'Data protection practices compliant with Moroccan Law 09-08 and GDPR.' },
+        { name: 'Terms of Service', url: '/en/terms-of-service', desc: 'Transparent client terms, 100% asset ownership, and retainer conditions.' }
       ];
       const sectors = isFR ? [
         { name: 'Hôtels & Resorts', url: '/secteurs/hotels-resorts' },
@@ -2631,8 +2646,8 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             </p>
             <p style="color: #4a5568; line-height: 1.75; margin: 0;">
               ${isFR
-                ? "Chaque page publiée en français dispose de son équivalent exact en anglais relié par un balisage hreflang réciproque. Pour identifier rapidement la solution adaptée à votre établissement, commencez par explorer le pôle géographique de votre ville, consultez les études de cas de votre secteur d'activité, puis demandez votre diagnostic gratuit sous 24 à 48 heures."
-                : "Every English page maintains a one-to-one French counterpart connected via reciprocal hreflang tags. To pinpoint the right growth strategy for your business, explore your city's regional hub, review applied case studies for your industry vertical, or jump straight to our transparent pricing and complimentary 24–48 hour channel diagnostic."}
+                ? "Les pages bilingues disposent d'un balisage hreflang réciproque strict entre le français et l'anglais, tandis que les guides dédiés à un marché spécifique utilisent un balisage auto-référent propre. Pour identifier rapidement la solution adaptée à votre établissement, commencez par explorer le pôle géographique de votre ville, consultez les études de cas de votre secteur d'activité, puis demandez votre diagnostic gratuit sous 24 à 48 heures."
+                : "Bilingual pages maintain strict reciprocal English-French hreflang annotations, while market-specific guides carry clean self-referencing hreflang tags. To pinpoint the right growth strategy for your business, explore your city's regional hub, review applied case studies for your industry vertical, or jump straight to our transparent pricing and complimentary 24–48 hour channel diagnostic."}
             </p>
           </section>
 
@@ -2697,11 +2712,23 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </section>
 
           <section style="margin-bottom: 3rem;">
+            <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Réalisations & Études de Cas Stratégiques' : 'Case Studies & Strategy Blueprints'}</h2>
+            <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
+              ${isFR
+                ? "Découvrez nos scénarios stratégiques appliqués aux tour-opérateurs, traiteurs événementiels B2B et expériences touristiques à Marrakech et au Maroc."
+                : "Explore applied digital growth blueprints across Moroccan tour operators, B2B event catering, and Marrakech hospitality experiences."}
+            </p>
+            <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
+              ${caseStudies.map(cs => `<li><a href="${isFR ? `/realisations/${cs.frSlug || cs.slug}` : `/en/work/${cs.slug}`}" style="color: #0F2D25; text-decoration: none; font-weight: 500;">${escapeHtml(isFR ? (cs.frTopicName || cs.frTitle) : (cs.topicName || cs.title))}</a></li>`).join('')}
+            </ul>
+          </section>
+
+          <section style="margin-bottom: 3rem;">
             <h2 style="color: #0F2D25; font-size: 1.8rem; border-bottom: 2px solid #D46E55; padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? 'Articles de Blog & Guides Stratégiques' : 'Blog Articles & Hospitality Research Guides'}</h2>
             <p style="color: #4a5568; margin-bottom: 1rem; line-height: 1.65;">
               ${isFR
-                ? "Notre bibliothèque éditoriale regroupe des guides approfondis sur la réduction des commissions Booking.com et Airbnb, le choix d'un PMS hôtelier, l'optimisation de la vitesse mobile et la rentabilité des campagnes Google et Meta Ads."
-                : "Our editorial library provides actionable, data-backed guides on reducing Booking.com and Airbnb commissions, selecting hotel PMS software, optimizing mobile Core Web Vitals, and scaling profitable Google and Meta ad funnels."}
+                ? "Notre bibliothèque éditoriale regroupe des guides approfondis sur la création de sites web hôteliers au Maroc, la réduction des commissions Booking.com et Expedia, le choix d'un PMS hôtelier, l'optimisation de la vitesse mobile et la rentabilité des campagnes Google et Meta Ads."
+                : "Our editorial library provides actionable, data-backed guides on reducing Booking.com and Expedia commissions, selecting hotel PMS software, optimizing mobile Core Web Vitals, and scaling profitable Google and Meta ad funnels."}
             </p>
             <ul style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; list-style: none; padding: 0;">
               ${posts.map(p => `<li><a href="${isFR ? '/blog/' : '/en/blog/'}${p.slug}" style="color: #0F2D25; text-decoration: none;">${escapeHtml(p.title)}</a></li>`).join('')}
@@ -3295,7 +3322,7 @@ function prerender() {
     allPages.push({
       path: `/en/blog/${post.slug}`,
       lang: 'en',
-      title: generateShortTitle(post.title, 'en', post.slug),
+      title: post.seoTitle || generateShortTitle(post.title, 'en', post.slug),
       description: post.metaDescription
     });
   }
@@ -3305,7 +3332,7 @@ function prerender() {
     allPages.push({
       path: `/blog/${post.slug}`,
       lang: 'fr',
-      title: generateShortTitle(post.title, 'fr', post.slug),
+      title: post.seoTitle || generateShortTitle(post.title, 'fr', post.slug),
       description: post.metaDescription
     });
   }
@@ -3506,13 +3533,14 @@ function prerender() {
     const isFaqPage = page.path === '/faq' || page.path === '/en/faq' || page.path === '/tarifs' || page.path === '/en/pricing';
     const isCalculatorPage = page.path.includes('calculator');
 
-    const ogImageUrl = `${BASE_URL}/og-image.jpg`;
-
     const matchedBlogPost = isBlogPost
       ? (page.lang === 'fr'
           ? blogPostsFR.find(p => p.slug === (page.path.split('/').pop() || ''))
           : blogPostsEN.find(p => p.slug === (page.path.split('/').pop() || '')))
       : undefined;
+    const ogImageUrl = matchedBlogPost?.image
+      ? (matchedBlogPost.image.startsWith('http') ? matchedBlogPost.image : `${BASE_URL}${matchedBlogPost.image}`)
+      : `${BASE_URL}/og-image.jpg`;
     const matchedCaseStudy = isCaseStudy
       ? caseStudies.find(s => {
           const slug = page.path.replace(/^\/(?:realisations|en\/work)\//, '');
@@ -3608,22 +3636,13 @@ function prerender() {
           "@id": "https://urunk.com/#localbusiness",
           "name": "Urunk",
           "url": "https://urunk.com",
+          "logo": "https://urunk.com/logo.png",
+          "image": "https://urunk.com/logo.png",
           "telephone": "+212668802096",
           "email": "contact@urunk.com",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "3 Rue El Kadi Lass, Maarif",
-            "addressLocality": "Casablanca",
-            "addressRegion": "Casablanca-Settat",
-            "postalCode": "20330",
-            "addressCountry": "MA"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 33.5855,
-            "longitude": -7.6365
-          },
+          "priceRange": "$$$",
+          "address": URUNK_POSTAL_ADDRESS,
+          "geo": URUNK_GEO_COORDINATES,
           "areaServed": [
             { "@type": "Country", "name": "Morocco" },
             { "@type": "City", "name": "Casablanca" },
@@ -3679,20 +3698,7 @@ function prerender() {
           "name": "Agence Google Ads Maroc — Gestion SEA & Acquisition Payante",
           "serviceType": "Agence Google Ads & Gestion SEA",
           "description": schemaDesc,
-          "provider": {
-            "@type": "ProfessionalService",
-            "name": "Urunk",
-            "url": "https://urunk.com",
-            "telephone": "+212668802096",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "3 Rue El Kadi Lass, Maarif",
-              "addressLocality": "Casablanca",
-              "addressRegion": "Casablanca-Settat",
-              "postalCode": "20330",
-              "addressCountry": "MA"
-            }
-          },
+          "provider": buildServiceProviderSchema(),
           "areaServed": [
             { "@type": "Country", "name": "Morocco" },
             { "@type": "City", "name": "Casablanca" },
@@ -3724,11 +3730,7 @@ function prerender() {
           "name": srvEntryForSchema.heroTitle,
           "serviceType": routeMappings['hotel-digital-marketing'][page.lang],
           "description": pageDesc,
-          "provider": {
-            "@type": "ProfessionalService",
-            "name": "Urunk",
-            "url": "https://urunk.com"
-          },
+          "provider": buildServiceProviderSchema(),
           "areaServed": [
             { "@type": "Country", "name": "Morocco" },
             { "@type": "Country", "name": "Worldwide" }
@@ -3757,11 +3759,7 @@ function prerender() {
           "@id": `${canonicalUrl}#service`,
           "name": pageTitle,
           "description": schemaDesc,
-          "provider": {
-            "@type": "ProfessionalService",
-            "name": "Urunk",
-            "url": "https://urunk.com"
-          },
+          "provider": buildServiceProviderSchema(),
           "areaServed": "Morocco",
           ...(numericServicePrice
             ? {
@@ -3897,11 +3895,7 @@ function prerender() {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": isFR ? "Tarifs et Packages Urunk" : "Urunk Pricing & Packages",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Urunk",
-          "url": "https://urunk.com"
-        },
+        "provider": buildServiceProviderSchema(),
         "areaServed": "Morocco",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -4078,6 +4072,20 @@ function prerender() {
           lang: page.lang
         })
       );
+      if (matchedBlogPost?.faqs && matchedBlogPost.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": matchedBlogPost.faqs.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.a
+            }
+          }))
+        });
+      }
     }
 
     if (isCaseStudy) {
@@ -4130,10 +4138,14 @@ function prerender() {
           "blogPost": hubPosts.slice(0, 10).map(p => {
             const pDate = parsePublishDate(p.date);
             const pUrl = `${BASE_URL}${page.lang === 'fr' ? '/blog/' : '/en/blog/'}${p.slug}`;
+            const pImg = p.image
+              ? (p.image.startsWith('http') ? p.image : `${BASE_URL}${p.image}`)
+              : `${BASE_URL}/og-image.jpg`;
             return {
               "@type": "BlogPosting",
               "headline": p.h1 || p.title,
               "url": pUrl,
+              "image": pImg,
               "datePublished": pDate,
               "dateModified": getSafeModifiedDate(pDate),
               "author": {
@@ -4233,16 +4245,12 @@ function prerender() {
           "@id": "https://urunk.com/#localbusiness",
           "name": "Urunk",
           "url": BASE_URL,
+          "image": `${BASE_URL}/logo.png`,
+          "priceRange": "$$$",
           "email": "contact@urunk.com",
           "telephone": "+212668802096",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "3 Rue El Kadi Lass, Maarif",
-            "addressLocality": "Casablanca",
-            "addressRegion": "Casablanca-Settat",
-            "postalCode": "20330",
-            "addressCountry": "MA"
-          }
+          "address": URUNK_POSTAL_ADDRESS,
+          "geo": URUNK_GEO_COORDINATES
         }
       });
     }
@@ -4334,11 +4342,7 @@ function prerender() {
         "@type": "Service",
         "name": matrixCtx.meta.pageHeading,
         "description": pageDesc,
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Urunk",
-          "url": "https://urunk.com"
-        },
+        "provider": buildServiceProviderSchema(),
         "areaServed": matrixCtx.meta.locationName
       });
 

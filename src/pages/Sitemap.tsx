@@ -12,11 +12,15 @@ import {
   HelpCircle, 
   Navigation,
   Info,
-  ExternalLink
+  BookOpen,
+  Award
 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { buildArticleSchema } from '../components/SEO/StructuredData';
 import { getAllLiveMatrixLinks } from '../data/matrixRelations';
+import { blogPostsFR } from '../data/blogPostsFR';
+import { blogPostsEN } from '../data/blogPostsEN';
+import { caseStudies } from '../data/caseStudies';
 
 interface SitemapLink {
   label: string;
@@ -49,6 +53,8 @@ export default function Sitemap() {
   const textIndustriesHeader = isFrench ? "Secteurs d'Activité" : "Industries We Serve";
   const textLocationsHeader = isFrench ? "Hubs Régionaux au Maroc" : "Locations We Serve";
   const textExpertiseHeader = isFrench ? "Expertises par Ville & Secteur" : "City & Sector Expertise";
+  const textCaseStudiesHeader = isFrench ? "Réalisations & Études de Cas" : "Case Studies & Strategy Blueprints";
+  const textBlogHeader = isFrench ? "Articles de Blog & Guides Hôteliers" : "Blog Articles & Strategic Guides";
   const textLegalHeader = isFrench ? "Utilitaires & Mentions Légales" : "Legal & Utilities";
 
   const textSearchLabel = isFrench ? "Rechercher une page ou un service" : "Search pages or services...";
@@ -69,39 +75,70 @@ export default function Sitemap() {
   // Define bilingual link mapping
   const coreLinks: SitemapLink[] = isFrench ? [
     { label: "Accueil", path: "/" },
+    { label: "Catalogue Complet des Services", path: "/services" },
     { label: "À Propos de Urunk", path: "/a-propos" },
     { label: "Tarifs & Formules d'Agence", path: "/tarifs" },
+    { label: "Réalisations & Études de Cas", path: "/realisations" },
+    { label: "Blog & Guides Hôteliers", path: "/blog" },
     { label: "Foire Aux Questions (FAQ)", path: "/faq" },
     { label: "Demander mon Audit Gratuit", path: "/contact" }
   ] : [
     { label: "Home", path: "/en" },
+    { label: "All Services Overview", path: "/en/services" },
     { label: "About Urunk", path: "/en/about" },
     { label: "Pricing & Packages", path: "/en/pricing" },
+    { label: "Work & Case Studies", path: "/en/work" },
+    { label: "Blog & Hospitality Guides", path: "/en/blog" },
     { label: "Frequently Asked Questions", path: "/en/faq" },
     { label: "Contact & Free Audit", path: "/en/contact" }
   ];
 
   const servicesLinks: SitemapLink[] = isFrench ? [
-    { label: "Création Site Web Maroc : Tarifs et Prix", path: "/creation-site-web" },
+    { label: "Marketing Digital Hôtelier au Maroc", path: "/marketing-digital-hotelier" },
+    { label: "Création de Site Web Hôtelier", path: "/site-web-hotel" },
     { label: "Création de Site Web Riad Marrakech", path: "/site-web-riad-marrakech" },
+    { label: "Forfaits Création de Site Web Hôtelier", path: "/services/creation-site-web" },
+    { label: "Création Site Web Maroc : Tarifs et Prix", path: "/creation-site-web" },
+    { label: "Agence Web Maroc : Hôtels & Riads", path: "/agence-web-maroc" },
+    { label: "Agence Web Casablanca : Création Sur Mesure", path: "/agence-web-casablanca" },
+    { label: "Stratégies Réservation Directe : Moins d'OTA", path: "/reservation-directe" },
+    { label: "SEO Hôtelier & Visibilité Google Maps", path: "/seo-hotel" },
+    { label: "SEO Local pour Riads à Marrakech", path: "/seo-riad-marrakech" },
+    { label: "Agence SEO Maroc : Référencement Naturel", path: "/agence-seo-maroc" },
+    { label: "Agence SEO Casablanca : Référencement & Maps", path: "/agence-seo-casablanca" },
+    { label: "Référencement Local Casablanca", path: "/referencement-local-casablanca" },
+    { label: "Référencement Naturel Local Maroc", path: "/services/local-seo-morocco" },
+    { label: "Optimisation de Fiche Google Business Profile", path: "/services/google-business-profile" },
     { label: "Agence Google Ads Maroc : Campagnes SEA & ROI", path: "/google-ads-maroc" },
     { label: "Publicité Meta Ads pour hôtels et riads", path: "/services/gestion-publicites-meta" },
     { label: "Publicité TripAdvisor pour hôtels au Maroc", path: "/services/tripadvisor-ads" },
     { label: "Pack site web + publicité pour hôtels", path: "/services/bundle-site-ads" },
-    { label: "Stratégies Réservation Directe : Moins d'OTA", path: "/reservation-directe" },
-    { label: "Référencement Naturel Local Maroc", path: "/services/local-seo-morocco" },
-    { label: "Optimisation de Fiche Google Business Profile", path: "/services/google-business-profile" },
-    { label: "Optimisation SEO WordPress & Technique", path: "/services/wordpress-seo" }
+    { label: "Optimisation SEO IA (GEO / AEO)", path: "/services/ai-seo-optimization" },
+    { label: "Optimisation SEO WordPress & Technique", path: "/services/wordpress-seo" },
+    { label: "Référencement SEO E-commerce Maroc", path: "/services/ecommerce-seo" }
   ] : [
-    { label: "Website Design Morocco: Pricing and Rates", path: "/en/services/website-design" },
+    { label: "Hotel Digital Marketing in Morocco", path: "/en/hotel-digital-marketing" },
+    { label: "Hotel Website Design Morocco", path: "/en/hotel-website-design" },
     { label: "Riad Website Design Marrakech", path: "/en/riad-website-design-marrakech" },
+    { label: "Website Design Morocco: Pricing and Rates", path: "/en/services/website-design" },
+    { label: "Web Design Agency Morocco", path: "/en/web-design-morocco" },
+    { label: "Web Design Agency Casablanca", path: "/en/web-design-casablanca" },
+    { label: "Direct Booking Strategy Without OTAs", path: "/en/direct-booking" },
+    { label: "Hotel SEO & Google Maps Visibility", path: "/en/hotel-seo" },
+    { label: "Riad Local SEO Marrakech", path: "/en/riad-seo-marrakech" },
+    { label: "SEO Agency Morocco: Organic & Local", path: "/en/seo-agency-morocco" },
+    { label: "SEO Agency Casablanca: Maps & Organic", path: "/en/seo-agency-casablanca" },
+    { label: "Local SEO Casablanca", path: "/en/local-seo-casablanca" },
+    { label: "Local Search Optimization Morocco", path: "/en/services/local-seo-morocco" },
+    { label: "Google Business Profile Optimization", path: "/en/services/google-business-profile" },
     { label: "Google Ads Management Morocco: Paid Campaigns", path: "/en/google-ads-morocco" },
+    { label: "Google Ads Management for Hotels & Riads", path: "/en/services/google-ads" },
     { label: "Meta Ads for Hotels and Riads", path: "/en/services/meta-ads" },
     { label: "TripAdvisor Ads Optimization", path: "/en/services/tripadvisor-ads" },
     { label: "Complete Hospitality Bundle (Site + Ads)", path: "/en/services/bundle-site-ads" },
-    { label: "Local Search Optimization Morocco", path: "/en/services/local-seo-morocco" },
-    { label: "Google Business Profile Optimization", path: "/en/services/google-business-profile" },
-    { label: "WordPress SEO & Speed Optimization", path: "/en/services/wordpress-seo" }
+    { label: "AI SEO & Answer Engine Optimization", path: "/en/services/ai-seo-optimization" },
+    { label: "WordPress SEO & Speed Optimization", path: "/en/services/wordpress-seo" },
+    { label: "Ecommerce SEO Services Morocco", path: "/en/services/ecommerce-seo" }
   ];
 
   const industriesLinks: SitemapLink[] = isFrench ? [
@@ -120,30 +157,39 @@ export default function Sitemap() {
 
   const locationsLinks: SitemapLink[] = isFrench ? [
     { label: "Index des Zones d'Intervention", path: "/zones" },
-    { label: "SEO & Web à l'Échelle Nationale (Maroc)", path: "/zones/maroc" },
+    { label: "Agence Web, SEO & Acquisition au Maroc", path: "/zones/maroc" },
     { label: "SEO Local & GBP à Casablanca", path: "/zones/casablanca" },
     { label: "SEO de Riad & Visibilité à Marrakech", path: "/zones/marrakech" },
     { label: "SEO Institutionnel & B2B à Rabat", path: "/zones/rabat" },
     { label: "SEO de Resort Balnéaire à Agadir", path: "/zones/agadir" }
   ] : [
     { label: "Index of Served Locations", path: "/en/locations" },
-    { label: "SEO & Web Across Morocco (National)", path: "/en/locations/morocco" },
+    { label: "Web Design, SEO & Acquisition Across Morocco", path: "/en/locations/morocco" },
     { label: "Local SEO & Web Casablanca Hub", path: "/en/locations/casablanca" },
     { label: "Riad SEO & Web Marrakech Hub", path: "/en/locations/marrakech" },
     { label: "B2B SEO & Corporate Web Rabat Hub", path: "/en/locations/rabat" },
     { label: "Beach Resort & Surf SEO Agadir Hub", path: "/en/locations/agadir" }
   ];
 
+  const caseStudiesLinks: SitemapLink[] = caseStudies.map((study) => (
+    isFrench
+      ? { label: study.frTopicName || study.frTitle, path: `/realisations/${study.frSlug || study.slug}` }
+      : { label: study.topicName || study.title, path: `/en/work/${study.slug}` }
+  ));
+
+  const blogLinks: SitemapLink[] = (isFrench ? blogPostsFR : blogPostsEN).map((post) => ({
+    label: post.title,
+    path: isFrench ? `/blog/${post.slug}` : `/en/blog/${post.slug}`
+  }));
+
   const legalLinks: SitemapLink[] = isFrench ? [
     { label: "Politique de Confidentialité (09-08 / RGPD)", path: "/politique-de-confidentialite" },
     { label: "Conditions Générales d'Utilisation (CGU)", path: "/conditions-generales" },
-    { label: "Réalisations & Études de Cas", path: "/realisations" },
-    { label: "Blog & Actualités Marketing Digital", path: "/blog" }
+    { label: "Plan du Site Complet (HTML)", path: "/plan-du-site" }
   ] : [
     { label: "Privacy Policy (GDPR / Law 09-08)", path: "/en/privacy-policy" },
     { label: "Terms of Service & Agreements", path: "/en/terms-of-service" },
-    { label: "Work, Frameworks & Case Studies", path: "/en/work" },
-    { label: "Blog & Strategic Hospitality Guides", path: "/en/blog" }
+    { label: "Complete HTML Sitemap", path: "/en/sitemap" }
   ];
 
   const expertiseLinks: SitemapLink[] = getAllLiveMatrixLinks(isFrench ? 'fr' : 'en').map(item => ({
@@ -165,6 +211,8 @@ export default function Sitemap() {
   const filteredIndustries = filterLinks(industriesLinks);
   const filteredLocations = filterLinks(locationsLinks);
   const filteredExpertise = filterLinks(expertiseLinks);
+  const filteredCaseStudies = filterLinks(caseStudiesLinks);
+  const filteredBlog = filterLinks(blogLinks);
   const filteredLegal = filterLinks(legalLinks);
 
   const totalResults = 
@@ -173,6 +221,8 @@ export default function Sitemap() {
     filteredIndustries.length + 
     filteredLocations.length + 
     filteredExpertise.length +
+    filteredCaseStudies.length +
+    filteredBlog.length +
     filteredLegal.length;
 
   return (
@@ -270,7 +320,15 @@ export default function Sitemap() {
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-8">
+            {(filteredCore.length > 0 ||
+              filteredServices.length > 0 ||
+              filteredIndustries.length > 0 ||
+              filteredLocations.length > 0 ||
+              filteredExpertise.length > 0 ||
+              filteredCaseStudies.length > 0 ||
+              filteredLegal.length > 0) && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             
             {/* Core Pages Column */}
             {filteredCore.length > 0 && (
@@ -387,29 +445,88 @@ export default function Sitemap() {
               </div>
             )}
 
-            {/* Legal Column */}
-            {filteredLegal.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                  <Building className="text-accent" size={20} /> {textLegalHeader}
-                </h2>
+            {/* Case Studies + Legal Column */}
+            {(filteredCaseStudies.length > 0 || filteredLegal.length > 0) && (
+              <div className="space-y-8">
+                {filteredCaseStudies.length > 0 && (
+                  <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+                    <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
+                      <Award className="text-accent" size={20} /> {textCaseStudiesHeader}
+                    </h2>
+                    <p className="text-xs text-primary/70 font-light leading-relaxed">
+                      {isFrench
+                        ? "Scénarios stratégiques documentés illustrant l'acquisition directe, le SEO local et les campagnes d'acquisition pour les acteurs du tourisme et du B2B au Maroc."
+                        : "Documented strategy blueprints illustrating direct booking funnels, local Maps SEO, and paid media execution across Moroccan tourism and B2B verticals."}
+                    </p>
+                    <ul className="space-y-3 font-light text-sm">
+                      {filteredCaseStudies.map((link, idx) => (
+                        <li key={idx}>
+                          <Link to={link.path} className="flex items-center justify-between gap-2 text-primary hover:text-accent transition-colors py-1">
+                            <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40 shrink-0" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {filteredLegal.length > 0 && (
+                  <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
+                    <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
+                      <Building className="text-accent" size={20} /> {textLegalHeader}
+                    </h2>
+                    <p className="text-xs text-primary/70 font-light leading-relaxed">
+                      {isFrench
+                        ? "Cadre réglementaire conforme à la loi marocaine 09-08 (CNDP) et au RGPD, conditions contractuelles transparentes et index complet du site."
+                        : "Full regulatory compliance under Moroccan Law 09-08 (CNDP) and GDPR, transparent client agreements, and complete site directory."}
+                    </p>
+                    <ul className="space-y-3 font-light text-sm">
+                      {filteredLegal.map((link, idx) => (
+                        <li key={idx}>
+                          <Link to={link.path} className="flex items-center justify-between gap-2 text-primary hover:text-accent transition-colors py-1">
+                            <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40 shrink-0" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+              </div>
+            )}
+
+            {/* Full-Width Blog Articles & Guides Directory */}
+            {filteredBlog.length > 0 && (
+              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-5">
+                <div className="border-b border-primary/10 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2">
+                    <BookOpen className="text-accent" size={20} /> {textBlogHeader}
+                  </h2>
+                  <span className="text-xs font-medium text-primary/60">
+                    {isFrench
+                      ? `${filteredBlog.length} ${filteredBlog.length === 1 ? 'guide publié' : 'guides publiés'}`
+                      : `${filteredBlog.length} ${filteredBlog.length === 1 ? 'published guide' : 'published guides'}`}
+                  </span>
+                </div>
                 <p className="text-xs text-primary/70 font-light leading-relaxed">
                   {isFrench
-                    ? "Cadre réglementaire conforme à la loi marocaine 09-08 (CNDP) et au RGPD, conditions contractuelles transparentes, études de cas détaillées et bibliothèque d'articles experts."
-                    : "Full regulatory compliance under Moroccan Law 09-08 (CNDP) and GDPR, transparent client agreements, applied strategy case studies, and hospitality research guides."}
+                    ? "Guides pratiques et analyses techniques sur la création de sites web hôteliers au Maroc, la réduction des commissions OTA, l'intégration PMS (Cloudbeds, Mews, SiteMinder, Amenitiz), le SEO local Google Maps et la rentabilité Google & Meta Ads."
+                    : "Actionable guides and technical analyses covering hotel website engineering in Morocco, OTA commission reduction, PMS integration (Cloudbeds, Mews, SiteMinder, Amenitiz), Google Maps local SEO, and profitable Google & Meta Ads funnels."}
                 </p>
-                <ul className="space-y-3 font-light text-sm">
-                  {filteredLegal.map((link, idx) => (
+                <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2.5 font-light text-sm">
+                  {filteredBlog.map((link, idx) => (
                     <li key={idx}>
-                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
-                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
+                      <Link to={link.path} className="flex items-start justify-between gap-3 text-primary hover:text-accent transition-colors py-1.5 border-b border-primary/5">
+                        <span className="leading-snug">{link.label}</span>
+                        <ChevronRight size={14} className="text-primary/40 shrink-0 mt-1" />
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             )}
-
           </div>
         )}
 
@@ -422,8 +539,8 @@ export default function Sitemap() {
           </h2>
           <p className="text-xs md:text-sm text-primary/75 font-light leading-relaxed">
             {isFrench
-              ? "L'intégralité des ressources répertoriées sur ce plan du site est disponible en français et en anglais avec un balisage hreflang réciproque intégral, permettant aux établissements hôteliers, riads et entreprises marocaines de rayonner simultanément auprès des décideurs locaux et des voyageurs internationaux d'Europe, du Royaume-Uni et d'Amérique du Nord. Nos guides éditoriaux approfondissent la réduction des commissions OTA, l'intégration des moteurs PMS (Cloudbeds, Mews, SiteMinder, Amenitiz), l'optimisation des Core Web Vitals et l'arbitrage budgétaire entre Google Search, Meta Ads et TripAdvisor."
-              : "Every resource indexed in this directory is published natively in both English and French with reciprocal hreflang annotations, enabling Moroccan hotels, boutique riads, tour operators, and B2B enterprises to engage domestic stakeholders alongside international travelers from Europe, the UK, and North America. Our editorial library covers practical playbooks on reducing third-party OTA commissions, integrating direct booking PMS engines (Cloudbeds, Mews, SiteMinder, Amenitiz), passing Core Web Vitals benchmarks, and allocating ad spend across Google Search, Meta Ads, and TripAdvisor."}
+              ? "Les pages stratégiques répertoriées sur ce plan du site sont déployées en français et en anglais avec un balisage hreflang rigoureux (réciproque sur les pages bilingues et auto-référent sur les guides spécialisés par marché), permettant aux établissements hôteliers, riads et entreprises marocaines de rayonner simultanément auprès des décideurs locaux et des voyageurs internationaux d'Europe, du Royaume-Uni et d'Amérique du Nord. Nos guides éditoriaux approfondissent la réduction des commissions OTA, l'intégration des moteurs PMS (Cloudbeds, Mews, SiteMinder, Amenitiz), l'optimisation des Core Web Vitals et l'arbitrage budgétaire entre Google Search, Meta Ads et TripAdvisor."
+              : "Core strategic pages indexed in this directory are published in English and French with strict hreflang annotations (reciprocal across bilingual pairs and self-referencing on market-specific guides), enabling Moroccan hotels, boutique riads, tour operators, and B2B enterprises to engage domestic stakeholders alongside international travelers from Europe, the UK, and North America. Our editorial library covers practical playbooks on reducing third-party OTA commissions, integrating direct booking PMS engines (Cloudbeds, Mews, SiteMinder, Amenitiz), passing Core Web Vitals benchmarks, and allocating ad spend across Google Search, Meta Ads, and TripAdvisor."}
           </p>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO from '../../components/SEO';
-import { buildArticleSchema } from '../../components/SEO/StructuredData';
+import { buildArticleSchema, buildFAQPageSchema } from '../../components/SEO/StructuredData';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { getBlogPostBySlug } from '../../data/blogPosts';
 import { ArrowLeft, Clock } from 'lucide-react';
@@ -23,14 +23,24 @@ export default function BlogPost() {
     );
   }
 
-  const schema = buildArticleSchema({
+  const articleSchema = buildArticleSchema({
     type: 'BlogPosting',
     url: `https://urunk.com${location.pathname}`,
     headline: post.h1 || post.title,
     description: post.metaDescription,
+    image: post.image,
     datePublished: post.date,
     lang: isFrench ? 'fr' : 'en'
   });
+
+  const schemas: object[] = [articleSchema];
+  if (post.faqs && post.faqs.length > 0) {
+    schemas.push(
+      buildFAQPageSchema(
+        post.faqs.map(item => ({ question: item.q, answer: item.a }))
+      )
+    );
+  }
 
   // Concise SEO Title under 60 characters
   const seoTitle = post.seoTitle || (() => {
@@ -46,8 +56,9 @@ export default function BlogPost() {
       <SEO 
         title={seoTitle}
         description={post.metaDescription}
+        image={post.image}
         type="article"
-        schema={schema}
+        schema={schemas}
       />
       
       {/* Header Banner */}

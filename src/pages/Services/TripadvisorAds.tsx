@@ -1,58 +1,62 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import { buildServiceProviderSchema } from '../../components/SEO/StructuredData';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "TripAdvisor Ads Management",
-    "description": "Optimize your TripAdvisor listing and manage sponsored placements to stand out in your destination.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "Morocco"
-      },
-      {
-        "@type": "Country",
-        "name": "Worldwide"
-      }
-    ],
-    "url": "https://urunk.com/services/tripadvisor-ads"
-  };
-
 export default function TripadvisorAds() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "TripAdvisor Ads Management",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
-    },
-    "description": "Expert TripAdvisor Sponsored Placements management to boost your hotel's visibility."
-  };
-
   const faqs = [
     { q: "How do TripAdvisor Sponsored Placements work?", a: "Sponsored Placements push your property to the top of the search results for your destination (e.g., 'Hotels in Marrakech'). You only pay when a user clicks on your ad." },
     { q: "Is it worth it if I already have good reviews?", a: "Yes. If your destination is highly competitive, even a 5-star rating might leave you on page 2 or 3 of the organic rankings. Ads guarantee visibility so travelers actually see those great reviews." },
     { q: "Can you help improve our ranking organically too?", a: "Yes. Part of our service involves auditing your listing, advising on photo order, amenity tags, and implementing a strategy to generate more consistent, high-quality guest reviews." }
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://urunk.com/en/services/tripadvisor-ads#service",
+    "name": "TripAdvisor Ads for Hotels in Morocco",
+    "serviceType": "TripAdvisor Ads Management",
+    "description": "TripAdvisor Sponsored Placements management at 3,000 MAD/mo (approx. €280/mo), month-to-month with 15 days notice, to generate direct bookings.",
+    "provider": buildServiceProviderSchema(),
+    "areaServed": [
+      { "@type": "Country", "name": "Morocco" },
+      { "@type": "Country", "name": "Worldwide" }
+    ],
+    "url": "https://urunk.com/en/services/tripadvisor-ads",
+    "offers": {
+      "@type": "Offer",
+      "price": "3000",
+      "priceCurrency": "MAD",
+      "url": "https://urunk.com/en/services/tripadvisor-ads",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "3000",
+        "priceCurrency": "MAD",
+        "unitText": "MONTH"
+      }
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
+  };
+
   return (
     <div className="w-full">
       <SEO 
         title="TripAdvisor Ads for Hotels in Morocco | Urunk" 
         description="Drive ready-to-book travelers to your booking engine. Our TripAdvisor advertising experts capture high-intent users planning their Moroccan stays." 
-        schema={[schema, serviceSchema]}
+        schema={[serviceSchema, faqSchema]}
       />
       
       {/* Hero & AI Answer Block */}

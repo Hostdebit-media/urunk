@@ -1,6 +1,7 @@
 import React from "react";
 import Callout from "../../../components/fr/CalloutFR";
 import SEO from "../../../components/SEO";
+import { buildServiceProviderSchema } from "../../../components/SEO/StructuredData";
 import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
 import { getMatrixLinksForService } from "../../../data/matrixRelations";
 import { Check, ArrowRight, ChevronDown } from "lucide-react";
@@ -46,11 +47,7 @@ export default function WebsiteDesignFR() {
     serviceType: "Création de sites web pour hôtels, riads et maisons d'hôtes",
     description:
       "Forfaits transparents de création de sites web hôteliers au Maroc dès 12 000 MAD (paiement unique) : design mobile-first, connexion PMS, SEO bilingue et 0 % commission agence.",
-    provider: {
-      "@type": "Organization",
-      name: "Urunk",
-      url: "https://urunk.com",
-    },
+    provider: buildServiceProviderSchema(),
     areaServed: [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" },

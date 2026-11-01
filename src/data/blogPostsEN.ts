@@ -10,6 +10,7 @@ export interface BlogPostItem {
   category: string;
   image?: string;
   excerpt?: string;
+  faqs?: { q: string; a: string }[];
   content: string;
 }
 

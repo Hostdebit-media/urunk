@@ -2,6 +2,228 @@ import { BlogPostItem } from './blogPostsEN';
 
 export const blogPostsFR: BlogPostItem[] = [
   {
+    slug: "creation-site-web-maroc-pour-hotels",
+    title: "Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc",
+    seoTitle: "Création Site Web Maroc Hôtel & Riad : Guide | Urunk",
+    metaDescription: "Création de site web au Maroc pour hôtels et riads : WordPress rapide, réservation directe Cloudbeds/Mews, Core Web Vitals et SEO Google Maps sans OTA.",
+    h1: "Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc",
+    date: "1 Novembre 2026",
+    author: "Équipe Stratégie Hôtellerie Urunk",
+    readTime: "8 min de lecture",
+    category: "Création de Site Web",
+    image: "/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg",
+    faqs: [
+      {
+        q: "En combien de temps verrai-je une hausse des réservations directes après la refonte du site ?",
+        a: "Nous visons des résultats contractuels sous 90 jours ; la livraison technique du site se fait généralement en 4 à 6 semaines. Si les objectifs définis ensemble ne sont pas atteints dans le délai convenu, vous êtes remboursé selon les garanties écrites du contrat."
+      },
+      {
+        q: "Quel bénéfice financier concret peut-on attendre en récupérant des réservations directes ?",
+        a: "Nous récupérons une part significative des commissions OTA quand vous augmentez la part du canal direct, par exemple, passer de 10 % à 35 % de réservations directes réduit fortement les commissions versées aux plateformes. Ce transfert améliore la rentabilité nette de l'établissement car chaque point de réservation directe remplace une commission qui sortait auparavant du chiffre d'affaires."
+      },
+      {
+        q: "Qui possède le code, le domaine et les autres actifs numériques après la livraison du site ?",
+        a: "Vous conservez la propriété totale du code, du domaine et de tous les actifs numériques dès la livraison. Cette propriété est explicitement mentionnée dans les garanties contractuelles, en plus des conditions de remboursement et de résiliation."
+      }
+    ],
+    content: `
+      <figure class="not-prose mb-10 rounded-2xl overflow-hidden border border-primary/15 shadow-sm bg-bg-alt">
+        <img
+          src="/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg"
+          alt="Création de site web qui convertit pour un hôtel ou un riad au Maroc : stratégie, design, développement et réservation directe"
+          class="block w-full h-auto object-cover"
+          loading="eager"
+          width="1536"
+          height="1024"
+        />
+        <figcaption class="px-5 py-3.5 text-xs text-primary/75 bg-primary/5 border-t border-primary/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <span class="font-medium text-primary">
+            Les 4 piliers d'un site hôtelier qui convertit au Maroc : WordPress rapide, module PMS direct, SEO Google Maps et contenus FR/EN/AR
+          </span>
+          <span class="text-[11px] text-primary/60 italic shrink-0">Guide Ingénierie Hôtelière Urunk</span>
+        </figcaption>
+      </figure>
+
+      <p class="mb-5">
+        La <a href="/site-web-hotel" class="text-accent underline font-medium">création de site web au Maroc pour les hôtels et les riads</a> repose sur quatre piliers : un socle WordPress haute performance, un module de réservation directe connecté à votre système de gestion, un référencement local solide sur Google Maps, et des contenus adaptés en français, anglais et arabe. C'est cet ensemble, pas une seule brique isolée, qui fait la différence entre un site vitrine et un vrai canal d'acquisition.
+      </p>
+
+      <p class="mb-8">
+        L'enjeu est financier avant d'être technique. Booking.com et Expedia prélèvent jusqu'à 25 % de commission sur chaque nuit vendue. Multipliez ce taux par votre taux d'occupation annuel, et la somme devient difficile à ignorer. Chez Urunk, nous travaillons précisément sur ce problème, avec des hôtels, riads et agences de voyage à Marrakech, Casablanca, Agadir et Rabat.
+      </p>
+
+      <div class="not-prose bg-primary/5 border-l-4 border-accent p-6 rounded-r-2xl mb-10">
+        <h2 class="font-serif text-xl font-bold text-primary mb-4">Points clés à retenir</h2>
+        <ul class="list-disc pl-5 space-y-2.5 text-sm md:text-base text-primary/85 leading-relaxed">
+          <li>Un site bien conçu change cette équation en faveur de la réservation directe.</li>
+          <li><strong class="text-primary">WordPress recommandé pour l'hôtellerie marocaine :</strong> flexible, compatible avec les modules de réservation hôteliers et administrable par vos équipes sans compétences techniques avancées.</li>
+          <li><strong class="text-primary">Core Web Vitals non négociables :</strong> un LCP supérieur à 2,5 secondes nuit à votre positionnement Google et incite les voyageurs à réserver sur les OTA avant même qu'ils ne voient votre offre.</li>
+          <li><strong class="text-primary">Cloudbeds ou Mews selon votre profil :</strong> deux solutions pour synchroniser disponibilités et tarifs en temps réel, réduisant fortement le risque de double réservation si la configuration est correctement réalisée.</li>
+          <li><strong class="text-primary">Google Business Profile comme premier contact :</strong> les voyageurs cherchent souvent votre établissement sur Google Maps avant de cliquer sur votre site.</li>
+          <li><strong class="text-primary">Audit gratuit avant tout engagement :</strong> Urunk analyse les performances, la visibilité locale et les opportunités de conversion avant de démarrer le moindre projet.</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Pourquoi votre site actuel vous fait perdre de l'argent chaque nuit</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Le vrai coût des OTA que personne ne calcule vraiment</h3>
+      <p class="mb-4">
+        La commission OTA n'est pas une ligne de coût abstraite dans un bilan. C'est de l'argent qui sort à chaque réservation, chaque nuit, toute l'année. Un établissement qui réalise 70 % de ses réservations via Booking.com à 20 % de commission abandonne le cinquième de son chiffre d'affaires à une plateforme qui ne connaît même pas le nom de ses clients. Les OTA ont leur utilité : elles offrent de la visibilité internationale. Mais une dépendance exclusive est un choix financier lourd, pas une fatalité.
+      </p>
+      <p class="mb-6">
+        L'objectif réaliste pour un hôtel ou un riad marocain bien structuré est d'atteindre 30 à 40 % de <a href="/reservation-directe" class="text-accent underline">réservations directes</a> en 12 mois, contre souvent 5 à 15 % au départ. Chaque point de pourcentage déplacé vers le canal direct récupère une commission significative sur ce volume. C'est là que se joue la rentabilité nette de votre établissement.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Ce que cherche un voyageur avant de cliquer sur "Réserver"</h3>
+      <p class="mb-6">
+        Le comportement est fréquent : le voyageur découvre votre riad sur une OTA, ouvre un nouvel onglet, cherche votre nom sur Google, et arrive sur votre site avec une intention claire. Il décide en quelques secondes si l'expérience inspire confiance. Un site lent, non traduit dans sa langue ou sans module de réservation directe visible le renvoie immédiatement vers la plateforme intermédiaire. Ce n'est pas une question de goût esthétique ; c'est une question de conversion.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Création de site web au Maroc : quel socle technique pour un hôtel qui convertit vraiment ?</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">WordPress haute performance : un choix solide pour l'hôtellerie marocaine</h3>
+      <p class="mb-6">
+        WordPress s'impose pour les établissements au Maroc pour des raisons concrètes : il s'intègre aux modules de réservation hôteliers, supporte le multilingue sans développement lourd, et peut être administré par votre équipe sur place sans compétences techniques avancées. La configuration compte autant que le choix du système de gestion de contenu : un hébergement VPS managé, un réseau de diffusion de contenu (CDN) et une compression d'images correctement paramétrée font passer un site de lent à rapide sans toucher au code. Pour les cas où une plateforme propriétaire ou des besoins très spécifiques l'exigent, d'autres solutions peuvent être envisagées, mais WordPress reste le point de départ le plus adapté à la majorité des établissements hôteliers marocains.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Core Web Vitals : les métriques qui influencent votre position sur Google</h3>
+      <p class="mb-6">
+        Google évalue trois indicateurs de performance réelle pour classer votre site : le LCP (temps de chargement du contenu principal, seuil recommandé sous 2,5 secondes), l'INP (réactivité aux interactions, sous 200 millisecondes) et le CLS (stabilité visuelle de la page, sous 0,1). Ces seuils sont fixés par Google comme références de qualité. Un site qui dépasse le LCP de 2,5 secondes s'expose à perdre des positions sur des requêtes comme "riad Marrakech médina" au profit de pages mieux optimisées, y compris celles des OTA. <a href="https://developers.google.com/search/docs/appearance/core-web-vitals?hl=fr" target="_blank" rel="noopener noreferrer" class="text-accent underline">L'optimisation des Core Web Vitals</a> fait partie intégrante de tout projet de développement web sérieux dans l'hôtellerie, son impact sur le classement est contributif et s'évalue page par page sur les requêtes à trafic commercial.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Design multilingue FR/EN/AR : toucher les trois marchés prioritaires</h3>
+      <p class="mb-6">
+        Les voyageurs français et belges, les touristes anglophones et les visiteurs arabophones du Golfe représentent trois segments aux comportements de recherche distincts. Une traduction mécanique ne suffit pas : chaque version linguistique nécessite une structure d'URL propre (par exemple /fr/, /en/, /ar/), des balises hreflang correctement configurées et un contenu adapté à l'intention de chaque marché. Un riad de Marrakech qui active la version arabe de son site avec les bons mots-clés devient visible directement auprès des voyageurs saoudiens et émiratis qui ne passent pas par les mêmes plateformes que les voyageurs européens.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Comment intégrer un module de réservation directe sur votre site ?</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Cloudbeds et Mews : quelle connexion choisir selon votre établissement ?</h3>
+      <p class="mb-6">
+        Les deux solutions s'intègrent directement dans WordPress via un widget officiel et disposent d'une interface en français. Le choix entre elles dépend principalement de la taille de votre structure et du niveau de personnalisation souhaité sur le parcours client. Dans les deux cas, vérifiez la compatibilité avec les passerelles de paiement marocaines (CMI) et les conditions d'accès à l'API selon le plan souscrit. La connexion au système de gestion (PMS) synchronise tarifs et disponibilités en temps réel sur votre site, réduit fortement le risque de double réservation lorsque la configuration est correctement réalisée, et centralise la gestion de votre canal direct et de vos canaux OTA dans un seul tableau de bord.
+      </p>
+
+      <div class="not-prose overflow-x-auto my-8 border border-primary/15 rounded-xl shadow-xs">
+        <table class="min-w-full divide-y divide-primary/15 text-sm">
+          <thead class="bg-bg-alt text-primary font-serif font-bold">
+            <tr>
+              <th scope="col" class="py-3.5 px-4 text-left">Critère</th>
+              <th scope="col" class="py-3.5 px-4 text-left">Cloudbeds</th>
+              <th scope="col" class="py-3.5 px-4 text-left">Mews</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-primary/10 bg-white">
+            <tr>
+              <td class="py-3 px-4 font-semibold text-primary">Profil d'établissement idéal</td>
+              <td class="py-3 px-4 text-primary/85">Multi-propriétés, structures avec plusieurs types de chambres</td>
+              <td class="py-3 px-4 text-primary/85">Riads et hôtels boutique cherchant une expérience client premium</td>
+            </tr>
+            <tr class="bg-bg-light/40">
+              <td class="py-3 px-4 font-semibold text-primary">Intégration WordPress</td>
+              <td class="py-3 px-4 text-primary/85">Widget de recherche et bouton de réservation à copier dans le site</td>
+              <td class="py-3 px-4 text-primary/85">Widget intégré directement dans le site</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-primary">Synchronisation</td>
+              <td class="py-3 px-4 text-primary/85">PMS, module et gestionnaire de canaux centralisés</td>
+              <td class="py-3 px-4 text-primary/85">PMS et module de réservation synchronisés nativement</td>
+            </tr>
+            <tr class="bg-bg-light/40">
+              <td class="py-3 px-4 font-semibold text-primary">Interface en français</td>
+              <td class="py-3 px-4 text-emerald-800 font-medium">Oui</td>
+              <td class="py-3 px-4 text-emerald-800 font-medium">Oui</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-primary">API avancée</td>
+              <td class="py-3 px-4 text-primary/85">REST, GraphQL et webhooks disponibles</td>
+              <td class="py-3 px-4 text-primary/85">À vérifier selon le plan souscrit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Les éléments non négociables d'un tunnel de réservation directe</h3>
+      <p class="mb-6">
+        Le bouton de réservation doit être visible dès la page d'accueil. Le formulaire ne doit pas dépasser trois étapes, le paiement doit accepter les cartes marocaines via CMI, et la confirmation part automatiquement en trois langues. Un tunnel mal conçu annule tous vos efforts de trafic : le voyageur arrive sur votre site, ne trouve pas une interface claire, et retourne réserver sur la plateforme qui lui a présenté votre établissement. Vous payez la commission après avoir fait tout le travail.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">SEO local et Google Maps : capter vos voyageurs avant les OTA</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Optimiser Google Business Profile pour Marrakech, Casablanca, Agadir et Rabat</h3>
+      <p class="mb-6">
+        Google Maps est souvent le premier point de contact d'un voyageur qui cherche "riad Marrakech médina" depuis Paris ou Riyad. Un profil <a href="/services/google-business-profile" class="text-accent underline">Google Business Profile</a> complet change ce moment en faveur de votre établissement plutôt que d'un concurrent mieux référencé. Cela commence par une catégorie principale précise, Riad ou Hôtel boutique, et des photos haute résolution couvrant toutes les chambres et espaces communs. Les attributs (Wi-Fi, piscine, hammam, transfert aéroport, petit-déjeuner) doivent être complets, les avis répondus en français, anglais et arabe, et des publications régulières sur les offres et événements locaux viennent renforcer la visibilité de votre fiche.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Mots-clés de destination et contenu local pour devancer les plateformes</h3>
+      <p class="mb-6">
+        Les OTA ont une faiblesse structurelle : elles ne peuvent pas produire du contenu granulaire sur chaque destination, chaque quartier, chaque expérience locale. C'est là que votre site peut les battre sur leur propre terrain. Des pages dédiées par destination, des guides pratiques pour les voyageurs, des articles sur les activités à proximité de votre établissement créent de l'autorité sur les requêtes longue traîne que Booking.com ne peut pas traiter avec précision. Un riad situé dans la médina de Marrakech qui publie un contenu détaillé sur les souks, les hammams traditionnels et les excursions dans l'Atlas capte un trafic qualifié que les plateformes génériques laissent entièrement disponible.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">Ce que révèle un audit technique avant de refondre votre site</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Les blocages que nous identifions le plus souvent</h3>
+      <p class="mb-6">
+        Notre audit technique gratuit examine quatre dimensions : les performances (Core Web Vitals et temps de chargement réels sur mobile), la visibilité locale (état du Google Business Profile, cohérence des informations sur les annuaires), le tunnel de conversion (présence et fonctionnement du module de réservation directe), et l'architecture multilingue (balises hreflang, structure des URL, cohérence des contenus par langue). Les observations récurrentes lors de nos audits pointent vers des sites techniquement déficients, des profils Google Business Profile incomplets et du trafic payant renvoyé par défaut vers les OTA faute de module de réservation directe opérationnel.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Ce que le travail technique change concrètement</h3>
+      <p class="mb-6">
+        La migration vers un hébergement VPS, l'intégration d'un module de réservation Cloudbeds ou Mews, l'optimisation des Core Web Vitals jusqu'aux seuils Google, l'activation des trois langues avec hreflang et la refonte du profil Google Business Profile constituent le socle de chaque projet. Urunk s'engage contractuellement sur des résultats sous 90 jours, avec remboursement si les objectifs ne sont pas atteints, une livraison en 4 à 6 semaines, et la propriété totale du code, du domaine et de tous vos actifs numériques. Ce sont des garanties écrites, pas des engagements verbaux.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary">Ce que ça représente financièrement</h3>
+      <p class="mb-6">
+        Un établissement qui passe de 10 % à 35 % de réservations directes en 90 jours récupère une partie significative des commissions auparavant versées aux OTA sur ce volume. Le différentiel entre le coût d'une commission OTA et celui d'une acquisition par le canal direct est net. Et contrairement à votre présence sur Booking.com, votre site vous appartient entièrement, y compris après la fin de la collaboration.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4">La checklist pour lancer ou refondre votre site hôtelier au Maroc</h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-4 text-primary">Les 8 points à valider avant de signer avec une agence</h3>
+      <div class="not-prose bg-bg-alt p-6 md:p-8 rounded-2xl border border-primary/10 my-6">
+        <ol class="list-decimal pl-6 space-y-3 text-sm md:text-base text-primary/85 leading-relaxed">
+          <li><strong class="text-primary">Hébergement VPS ou cloud managé inclus</strong> dans le périmètre du projet</li>
+          <li><strong class="text-primary">Score Core Web Vitals cible défini</strong> et contractualisé avec des seuils précis</li>
+          <li><strong class="text-primary">Intégration PMS</strong> (Cloudbeds, Mews ou équivalent) comprise dans le périmètre</li>
+          <li><strong class="text-primary">Module de réservation directe</strong> avec paiement CMI opérationnel</li>
+          <li><strong class="text-primary">Structure multilingue FR/EN/AR</strong> avec balises hreflang correctement configurées</li>
+          <li><a href="https://services.google.com/fh/files/helpcenter/official_gbp_best_practices_playbook_2026.pdf" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-accent-hover underline"><strong>Optimisation Google Business Profile</strong></a> incluse dans la prestation</li>
+          <li><a href="https://www.pacaud-avocat.fr/blog/contrat-developpement-logiciel-clauses-indispensables" target="_blank" rel="noopener noreferrer" class="text-accent hover:text-accent-hover underline"><strong>Propriété totale</strong></a> du code, du domaine et du compte Google Analytics</li>
+          <li><strong class="text-primary">Garantie de résultats écrite</strong> avec délai, conditions de remboursement et procédure de résiliation</li>
+        </ol>
+      </div>
+
+      <h3 class="text-xl font-bold mt-8 mb-3 text-primary">Création de site web au Maroc : comment obtenir votre audit gratuit Urunk</h3>
+      <p class="mb-4">
+        Urunk propose un <a href="/contact" class="text-accent underline font-medium">audit technique gratuit</a> de votre site actuel : performances, SEO local, état du tunnel de conversion et visibilité Google Maps. L'audit identifie les blocages réels et chiffre le potentiel de réservations directes récupérables avant tout engagement de votre part. C'est le point de départ de chaque projet que nous menons à Marrakech, Casablanca, Agadir et Rabat.
+      </p>
+      <p class="mb-8">
+        Le projet démarre ensuite avec une garantie contractuelle de résultats sous 90 jours. Si les objectifs définis ensemble ne sont pas atteints, vous êtes remboursé. Vous êtes également libre de résilier sous 15 jours, et vos actifs numériques vous appartiennent totalement dès la livraison. Contactez notre équipe pour démarrer l'audit, c'est sans engagement, et les résultats chiffrés arrivent avant que vous décidiez quoi que ce soit. Pour toute <a href="/services/creation-site-web" class="text-accent underline">création de site internet au Maroc dans le secteur hôtelier</a>, c'est par là que commence le travail.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-12 mb-6">Questions fréquentes</h2>
+      <div class="not-prose space-y-4 my-6">
+        <div class="p-6 bg-white border border-primary/10 rounded-2xl shadow-xs">
+          <h3 class="font-serif font-bold text-base md:text-lg text-primary mb-2">En combien de temps verrai-je une hausse des réservations directes après la refonte du site ?</h3>
+          <p class="text-sm text-primary/80 leading-relaxed">
+            Nous visons des résultats contractuels sous 90 jours ; la livraison technique du site se fait généralement en 4 à 6 semaines. Si les objectifs définis ensemble ne sont pas atteints dans le délai convenu, vous êtes remboursé selon les garanties écrites du contrat.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-primary/10 rounded-2xl shadow-xs">
+          <h3 class="font-serif font-bold text-base md:text-lg text-primary mb-2">Quel bénéfice financier concret peut-on attendre en récupérant des réservations directes ?</h3>
+          <p class="text-sm text-primary/80 leading-relaxed">
+            Nous récupérons une part significative des commissions OTA quand vous augmentez la part du canal direct, par exemple, passer de 10 % à 35 % de réservations directes réduit fortement les commissions versées aux plateformes. Ce transfert améliore la rentabilité nette de l'établissement car chaque point de réservation directe remplace une commission qui sortait auparavant du chiffre d'affaires.
+          </p>
+        </div>
+        <div class="p-6 bg-white border border-primary/10 rounded-2xl shadow-xs">
+          <h3 class="font-serif font-bold text-base md:text-lg text-primary mb-2">Qui possède le code, le domaine et les autres actifs numériques après la livraison du site ?</h3>
+          <p class="text-sm text-primary/80 leading-relaxed">
+            Vous conservez la propriété totale du code, du domaine et de tous les actifs numériques dès la livraison. Cette propriété est explicitement mentionnée dans les garanties contractuelles, en plus des conditions de remboursement et de résiliation.
+          </p>
+        </div>
+      </div>
+    `
+  },
+  {
     slug: "reduire-commissions-ota",
     title: "Commissions OTA au Maroc : combien vous coûte réellement une réservation Booking.com, et par quel levier la récupérer en priorité ?",
     seoTitle: "Commissions OTA au Maroc : Récupérer Vos Réservations | Urunk",

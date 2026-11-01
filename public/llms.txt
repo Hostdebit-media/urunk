@@ -11,9 +11,11 @@
 - [Blog & Guides Hôteliers](https://urunk.com/blog): Guides pratiques sur la réduction des commissions OTA, l'intégration PMS, le SEO hôtelier et les budgets publicitaires.
 - [Foire Aux Questions (FAQ)](https://urunk.com/faq): Réponses détaillées sur les délais, technologies (WordPress, React), PMS compatibles et modalités sans engagement long terme (préavis 15 jours).
 - [Contact & Demande d'Audit](https://urunk.com/contact): Coordonnées directes (téléphone, WhatsApp, email) et formulaire de diagnostic.
+- [Plan du Site Complet (HTML)](https://urunk.com/plan-du-site): Répertoire intégral des pages, services, secteurs, zones, études de cas et articles de blog.
 
 ## Solutions Hôtelières & Réponses Clés (Français)
 - [Création de Site Web Hôtelier avec Moteur de Réservation Intégré](https://urunk.com/site-web-hotel): Critères de sélection d'un prestataire hôtelier au Maroc, connexion PMS/Channel Manager (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy) et SEO bilingue.
+- [Guide : Étapes Essentielles pour Créer un Site Web Performant pour un Hôtel ou un Riad au Maroc](https://urunk.com/blog/creation-site-web-maroc-pour-hotels): Architecture WordPress haute performance, comparatif Cloudbeds vs Mews, Core Web Vitals, SEO Google Maps, multilingue FR/EN/AR et checklist agence en 8 points.
 - [Forfaits Création de Site Web Hôtelier & Rapport Qualité-Prix](https://urunk.com/services/creation-site-web): Comparatif des forfaits pour petits hôtels et riads au Maroc (dès 12 000 MAD, 0 % commission agence, propriété complète du code).
 - [Système de Réservation Directe Sans OTA pour Hôtels](https://urunk.com/reservation-directe): Architecture technique complète (moteur de réservation, PMS, Channel Manager, paiement CMI/Payzone/Stripe) pour réduire les commissions de 15 % à 25 % des OTA (site complet + intégration PMS dès 12 000 MAD ; intégration sur site existant sur devis).
 - [Marketing Digital Hôtelier : Google Ads & Meta Ads au Maroc](https://urunk.com/marketing-digital-hotelier): Critères de choix d'agence et repères de budgets mensuels minimums (média + gestion) pour générer des réservations directes.

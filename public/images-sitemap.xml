@@ -64,4 +64,76 @@
       <image:caption>Example Strategy: Local SEO &amp; Social Ads for Workshops &amp; Experiences in Marrakech</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://urunk.com/blog/creation-site-web-maroc-pour-hotels</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg</image:loc>
+      <image:title>Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc</image:title>
+      <image:caption>Création de site web au Maroc pour hôtels et riads : WordPress rapide, réservation directe Cloudbeds/Mews, Core Web Vitals et SEO Google Maps sans OTA.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/blog/strategie-marketing-camp-desert</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Commercialiser un bivouac ou camp de luxe dans le désert marocain : positionnement, saisonnalité et acquisition directe</image:title>
+      <image:caption>Guide marketing pour camps de luxe et bivouacs dans le désert au Maroc (Agafay, Merzouga) : réservations directes, saisonnalité et réduction des OTA.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/blog/marketing-digital-tour-operateur</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Vendre des excursions et circuits au Maroc en direct : la méthode complète pour contourner GetYourGuide, Viator et les intermédiaires</image:title>
+      <image:caption>Guide marketing digital pour tour-opérateurs et agences d&apos;excursions au Maroc : vendez vos circuits en direct sans céder 25 % de commission aux OTA.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/blog/optimisation-vitesse-sites-web-hotellerie</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Vitesse de chargement et Core Web Vitals pour sites d&apos;hôtels et riads : chaque seconde de perdue vous coûte des réservations</image:title>
+      <image:caption>Pourquoi la lenteur de votre site web fait fuir vos clients vers Booking.com. Guide d&apos;optimisation Core Web Vitals (LCP, INP, CLS) pour riads et hôtels.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/blog/hotel-seo-morocco-guide</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Ranking on Google for a Moroccan Riad or Hotel: Google Business Profile, Structured Data, and Local Content in the Right Order</image:title>
+      <image:caption>Step-by-step SEO guide for Moroccan riads and boutique hotels. Master Google Business Profile, Hotel schema markup, and local organic rankings.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/blog/pms-integration-direct-booking-engine</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Choosing a PMS and Direct Booking Engine for a Moroccan Riad: The 7 Integration Traps to Avoid</image:title>
+      <image:caption>Choose and integrate the right PMS and direct booking engine for your riad in Morocco. Compare Cloudbeds, SiteMinder, and Amenitiz without sync errors.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/blog/desert-camp-marketing-strategy</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Marketing a Luxury Desert Camp or Bivouac in Morocco: Positioning, Seasonality, and Direct Guest Acquisition</image:title>
+      <image:caption>Digital marketing guide for luxury desert camps and bivouacs in Agafay and Merzouga: grow direct reservations and cut 20% OTA commission fees.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/blog/tour-operator-digital-marketing</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Selling Moroccan Tours and Excursions Directly: How to Bypass GetYourGuide, Viator, and Middlemen</image:title>
+      <image:caption>Digital marketing guide for Moroccan tour operators and excursion agencies: capture direct online bookings and eliminate 25% platform commission fees.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/en/blog/speed-optimization-hotel-websites</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Hotel Website Speed and Core Web Vitals in Morocco: Every Second of Delay Costs You Direct Bookings</image:title>
+      <image:caption>Discover why slow hotel websites lose guests to Booking.com and how to optimize Core Web Vitals (LCP, INP, CLS) for Moroccan riads and boutique hotels.</image:caption>
+    </image:image>
+  </url>
 </urlset>

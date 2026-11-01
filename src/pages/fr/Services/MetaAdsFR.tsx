@@ -1,6 +1,7 @@
 import React from "react";
 import Callout from "../../../components/Callout";
 import SEO from "../../../components/SEO";
+import { buildServiceProviderSchema } from "../../../components/SEO/StructuredData";
 import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
 import { getMatrixLinksForService } from "../../../data/matrixRelations";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
@@ -29,11 +30,7 @@ export default function MetaAdsFR() {
     serviceType: "Meta Ads pour Hôtels et Riads",
     description:
       "Campagnes Instagram et Facebook orientées réservations directes pour hôtels et riads au Maroc dès 4 000 MAD/mois d'honoraires fixes (0 % commission média).",
-    provider: {
-      "@type": "Organization",
-      name: "Urunk",
-      url: "https://urunk.com",
-    },
+    provider: buildServiceProviderSchema(),
     areaServed: [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" },

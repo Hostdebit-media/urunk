@@ -1,6 +1,7 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import { buildServiceProviderSchema } from '../../components/SEO/StructuredData';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
@@ -45,11 +46,7 @@ export default function WebsiteDesign() {
     "name": "Hotel Website Creation Packages in Morocco",
     "serviceType": "Website Design & PMS Integration for Hotels and Riads",
     "description": "Transparent hotel and riad website packages in Morocco starting at 12,000 MAD one-time: mobile-first UX, PMS booking engine sync, bilingual SEO, and 0% agency commission.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk",
-      "url": "https://urunk.com"
-    },
+    "provider": buildServiceProviderSchema(),
     "areaServed": [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" }

@@ -7,7 +7,7 @@ import { matrixRelations, findMatrixRelation, MatrixRelation, getRelatedMatrixLi
 import { buildMatrixMetadata } from '../data/matrixMetadata';
 import SEO from '../components/SEO';
 import RelatedExpertiseSection from '../components/RelatedExpertiseSection';
-import { buildFAQPageSchema } from '../components/SEO/StructuredData';
+import { buildFAQPageSchema, buildServiceProviderSchema } from '../components/SEO/StructuredData';
 import { 
   MapPin, 
   ArrowRight, 
@@ -177,6 +177,14 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   // 8. Schema.org FAQPage and Service Structured Data
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": pageHeading,
+    "description": metaDescription,
+    "provider": buildServiceProviderSchema(),
+    "areaServed": locationName
+  };
   const schemaFaqItems = localizedFaqs.map(f => ({
     question: f.q,
     answer: f.a
@@ -203,7 +211,7 @@ export default function MatrixLandingPage({ lang }: MatrixProps) {
       <SEO 
         title={metaPageTitle}
         description={metaDescription}
-        schema={faqSchema}
+        schema={[serviceSchema, faqSchema]}
         noindex={shouldNoIndex}
       />
       

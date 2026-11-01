@@ -51,6 +51,37 @@ export interface StructuredDataProps {
 
 const SITE_URL = 'https://urunk.com';
 
+export const URUNK_POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  "streetAddress": "3 Rue El Kadi Lass, Maarif",
+  "addressLocality": "Casablanca",
+  "addressRegion": "Casablanca-Settat",
+  "postalCode": "20330",
+  "addressCountry": "MA"
+} as const;
+
+export const URUNK_GEO_COORDINATES = {
+  "@type": "GeoCoordinates",
+  "latitude": 33.5855,
+  "longitude": -7.6365
+} as const;
+
+/** Canonical Service.provider builder with full Google Rich Results LocalBusiness fields */
+export function buildServiceProviderSchema() {
+  return {
+    "@type": "ProfessionalService",
+    "@id": `${SITE_URL}/#localbusiness`,
+    "name": "Urunk",
+    "url": SITE_URL,
+    "image": `${SITE_URL}/logo.png`,
+    "telephone": "+212668802096",
+    "email": "contact@urunk.com",
+    "priceRange": "$$$",
+    "address": URUNK_POSTAL_ADDRESS,
+    "geo": URUNK_GEO_COORDINATES
+  };
+}
+
 /** Helper builder for Organization schema */
 export function buildOrganizationSchema(customData?: OrganizationData, lang: string = 'fr') {
   const isFr = lang.startsWith('fr');
@@ -69,14 +100,7 @@ export function buildOrganizationSchema(customData?: OrganizationData, lang: str
       : "High-performance digital agency specializing in website design, Google Ads, Meta Ads, and TripAdvisor Ads."),
     "telephone": customData?.telephone || "+212668802096",
     "email": customData?.email || "contact@urunk.com",
-    "address": customData?.address || {
-      "@type": "PostalAddress",
-      "streetAddress": "3 Rue El Kadi Lass, Maarif",
-      "addressLocality": "Casablanca",
-      "addressRegion": "Casablanca-Settat",
-      "postalCode": "20330",
-      "addressCountry": "MA"
-    },
+    "address": customData?.address || URUNK_POSTAL_ADDRESS,
     "sameAs": customData?.sameAs || [
       "https://facebook.com/urunk",
       "https://instagram.com/urunk",
@@ -103,19 +127,8 @@ export function buildLocalBusinessSchema(customData?: ProfessionalServiceData, l
     "description": customData?.description || (isFr
       ? "Agence digitale spécialisée dans l'hôtellerie, création de sites web et référencement Google Ads & SEO au Maroc."
       : "Digital agency specializing in hospitality, hotel website design, and Google Ads & SEO in Morocco."),
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3 Rue El Kadi Lass, Maarif",
-      "addressLocality": "Casablanca",
-      "addressRegion": "Casablanca-Settat",
-      "postalCode": "20330",
-      "addressCountry": "MA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 33.5855,
-      "longitude": -7.6365
-    },
+    "address": URUNK_POSTAL_ADDRESS,
+    "geo": URUNK_GEO_COORDINATES,
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -154,11 +167,7 @@ export function buildProfessionalServiceSchema(customData?: ProfessionalServiceD
     "@type": ["ProfessionalService", "DigitalMarketingAgency"],
     "@id": `${SITE_URL}/#service`,
     "priceRange": customData?.priceRange || "$$$",
-    "geo": customData?.geo || {
-      "@type": "GeoCoordinates",
-      "latitude": 33.5855,
-      "longitude": -7.6365
-    },
+    "geo": customData?.geo || URUNK_GEO_COORDINATES,
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",

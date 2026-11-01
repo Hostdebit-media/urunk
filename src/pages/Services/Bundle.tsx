@@ -1,6 +1,7 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import { buildServiceProviderSchema } from '../../components/SEO/StructuredData';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -19,11 +20,7 @@ export default function Bundle() {
     "name": "Hotel Website + Paid Ads Bundle in Morocco",
     "serviceType": "Website Design & Ads Bundle for Hospitality",
     "description": "Combined direct-booking package in Morocco: custom hotel website with PMS sync + paid ad management starting at 16,000 MAD initial + 4,000 MAD/mo.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk",
-      "url": "https://urunk.com"
-    },
+    "provider": buildServiceProviderSchema(),
     "areaServed": [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" }

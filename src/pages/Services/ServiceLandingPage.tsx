@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { servicesData, extractNumericMadPrice } from '../../data/servicesData';
 import { getMatrixLinksForService } from '../../data/matrixRelations';
 import SEO from '../../components/SEO';
+import { buildServiceProviderSchema } from '../../components/SEO/StructuredData';
 import { routeMappings } from '../../components/Breadcrumbs';
 import Callout from '../../components/Callout';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
@@ -55,11 +56,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
     "name": data.heroTitle,
     "serviceType": mappedServiceLabel,
     "description": data.description,
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "Urunk",
-      "url": "https://urunk.com"
-    },
+    "provider": buildServiceProviderSchema(),
     "areaServed": [
       {
         "@type": "Country",

@@ -1,12 +1,76 @@
 import React from "react";
 import Callout from "../components/Callout";
 import SEO from "../components/SEO";
+import { buildServiceProviderSchema } from "../components/SEO/StructuredData";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { pricingCopyEN } from "../data/copy/pricing.en";
 
 export default function Pricing() {
   const { seo, hero, callout, packages, faq, cta } = pricingCopyEN;
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Urunk Pricing & Packages",
+    "provider": buildServiceProviderSchema(),
+    "areaServed": "Morocco",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Urunk Offers",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "price": "12000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Hotel Website",
+            "description": "Custom hotel & riad websites with direct booking engine."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO & Local Search",
+            "description": "SEO optimization and local Google Maps visibility."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Google Ads Management",
+            "description": "High-intent Google Ads campaigns."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Meta Ads Management",
+            "description": "Facebook and Instagram campaigns for direct booking."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "3000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "TripAdvisor Ads Management",
+            "description": "TripAdvisor metasearch campaign management."
+          }
+        }
+      ]
+    }
+  };
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -25,7 +89,7 @@ export default function Pricing() {
       <SEO
         title={seo.title}
         description={seo.description}
-        schema={faqSchema}
+        schema={[serviceSchema, faqSchema]}
       />
 
       {/* Hero & AI Answer Block */}

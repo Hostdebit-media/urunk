@@ -1,6 +1,7 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import { buildServiceProviderSchema } from '../../components/SEO/StructuredData';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
@@ -20,11 +21,7 @@ export default function MetaAds() {
     "name": "Meta Ads (Instagram & Facebook) for Hotels and Riads",
     "serviceType": "Meta Ads Management for Hospitality",
     "description": "Targeted Facebook and Instagram ad funnels for Moroccan hotels and riads starting at 4,000 MAD/mo flat fee (0% commission on ad spend).",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk",
-      "url": "https://urunk.com"
-    },
+    "provider": buildServiceProviderSchema(),
     "areaServed": [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" }

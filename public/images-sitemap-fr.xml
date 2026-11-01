@@ -32,4 +32,36 @@
       <image:caption>Scénario type : SEO Local &amp; Social Ads pour Ateliers &amp; Expériences à Marrakech</image:caption>
     </image:image>
   </url>
+  <url>
+    <loc>https://urunk.com/blog/creation-site-web-maroc-pour-hotels</loc>
+    <image:image>
+      <image:loc>https://urunk.com/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg</image:loc>
+      <image:title>Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc</image:title>
+      <image:caption>Création de site web au Maroc pour hôtels et riads : WordPress rapide, réservation directe Cloudbeds/Mews, Core Web Vitals et SEO Google Maps sans OTA.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/blog/strategie-marketing-camp-desert</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Commercialiser un bivouac ou camp de luxe dans le désert marocain : positionnement, saisonnalité et acquisition directe</image:title>
+      <image:caption>Guide marketing pour camps de luxe et bivouacs dans le désert au Maroc (Agafay, Merzouga) : réservations directes, saisonnalité et réduction des OTA.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/blog/marketing-digital-tour-operateur</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Vendre des excursions et circuits au Maroc en direct : la méthode complète pour contourner GetYourGuide, Viator et les intermédiaires</image:title>
+      <image:caption>Guide marketing digital pour tour-opérateurs et agences d&apos;excursions au Maroc : vendez vos circuits en direct sans céder 25 % de commission aux OTA.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://urunk.com/blog/optimisation-vitesse-sites-web-hotellerie</loc>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Vitesse de chargement et Core Web Vitals pour sites d&apos;hôtels et riads : chaque seconde de perdue vous coûte des réservations</image:title>
+      <image:caption>Pourquoi la lenteur de votre site web fait fuir vos clients vers Booking.com. Guide d&apos;optimisation Core Web Vitals (LCP, INP, CLS) pour riads et hôtels.</image:caption>
+    </image:image>
+  </url>
 </urlset>

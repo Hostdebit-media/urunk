@@ -1,6 +1,7 @@
 import React from 'react';
 import Callout from '../../components/Callout';
 import SEO from '../../components/SEO';
+import { buildServiceProviderSchema } from '../../components/SEO/StructuredData';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { getMatrixLinksForService } from '../../data/matrixRelations';
 import { Check, ArrowRight, ChevronDown } from 'lucide-react';
@@ -20,11 +21,7 @@ export default function GoogleAds() {
     "name": "Google Ads Management for Hotels & Businesses in Morocco",
     "serviceType": "Google Ads Management",
     "description": "Data-driven Google Search, Brand Defense, and Hotel Ads management in Morocco starting at 4,000 MAD/mo flat fee (0% ad-spend commission).",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk",
-      "url": "https://urunk.com"
-    },
+    "provider": buildServiceProviderSchema(),
     "areaServed": [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" }

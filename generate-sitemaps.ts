@@ -431,16 +431,18 @@ function generateImagesSitemap() {
       const frSlug = study.frSlug || caseStudySlugMap[study.slug] || study.slug;
       const frUrl = `${BASE_URL}/realisations/${frSlug}`;
 
-      const titleEscaped = escapeXml(study.topicName || study.slug);
-      const descEscaped = escapeXml(study.title);
+      const enTitleEscaped = escapeXml(study.topicName || study.slug);
+      const enDescEscaped = escapeXml(study.title);
+      const frTitleEscaped = escapeXml(study.frTopicName || study.topicName || study.slug);
+      const frDescEscaped = escapeXml(study.frTitle || study.title);
       const absoluteImgUrl = study.heroImage.startsWith('/') ? `${BASE_URL}${study.heroImage}` : study.heroImage;
 
       xml += `  <url>\n`;
       xml += `    <loc>${frUrl}</loc>\n`;
       xml += `    <image:image>\n`;
       xml += `      <image:loc>${escapeXml(absoluteImgUrl)}</image:loc>\n`;
-      xml += `      <image:title>${escapeXml(study.frTopicName || titleEscaped)} Exemple de Stratégie</image:title>\n`;
-      xml += `      <image:caption>${escapeXml(study.frTitle || descEscaped)}</image:caption>\n`;
+      xml += `      <image:title>${frTitleEscaped} Exemple de Stratégie</image:title>\n`;
+      xml += `      <image:caption>${frDescEscaped}</image:caption>\n`;
       xml += `    </image:image>\n`;
       xml += `  </url>\n`;
 
@@ -448,8 +450,39 @@ function generateImagesSitemap() {
       xml += `    <loc>${enUrl}</loc>\n`;
       xml += `    <image:image>\n`;
       xml += `      <image:loc>${escapeXml(absoluteImgUrl)}</image:loc>\n`;
-      xml += `      <image:title>${titleEscaped} Strategy Example</image:title>\n`;
-      xml += `      <image:caption>${descEscaped}</image:caption>\n`;
+      xml += `      <image:title>${enTitleEscaped} Strategy Example</image:title>\n`;
+      xml += `      <image:caption>${enDescEscaped}</image:caption>\n`;
+      xml += `    </image:image>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  // Add Blog Posts images (FR + EN)
+  for (const postFR of blogPostsFR) {
+    if (postFR.image) {
+      const frUrl = `${BASE_URL}/blog/${postFR.slug}`;
+      const absoluteImgUrl = postFR.image.startsWith('/') ? `${BASE_URL}${postFR.image}` : postFR.image;
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${escapeXml(absoluteImgUrl)}</image:loc>\n`;
+      xml += `      <image:title>${escapeXml(postFR.h1 || postFR.title)}</image:title>\n`;
+      xml += `      <image:caption>${escapeXml(postFR.metaDescription)}</image:caption>\n`;
+      xml += `    </image:image>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  for (const postEN of blogPostsEN) {
+    if (postEN.image) {
+      const enUrl = `${BASE_URL}/en/blog/${postEN.slug}`;
+      const absoluteImgUrl = postEN.image.startsWith('/') ? `${BASE_URL}${postEN.image}` : postEN.image;
+      xml += `  <url>\n`;
+      xml += `    <loc>${enUrl}</loc>\n`;
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${escapeXml(absoluteImgUrl)}</image:loc>\n`;
+      xml += `      <image:title>${escapeXml(postEN.h1 || postEN.title)}</image:title>\n`;
+      xml += `      <image:caption>${escapeXml(postEN.metaDescription)}</image:caption>\n`;
       xml += `    </image:image>\n`;
       xml += `  </url>\n`;
     }
@@ -489,6 +522,21 @@ function generateFrenchImagesSitemap() {
       xml += `      <image:loc>${escapeXml(absoluteImgUrl)}</image:loc>\n`;
       xml += `      <image:title>${titleEscaped} Exemple de Stratégie</image:title>\n`;
       xml += `      <image:caption>${descEscaped}</image:caption>\n`;
+      xml += `    </image:image>\n`;
+      xml += `  </url>\n`;
+    }
+  }
+
+  for (const postFR of blogPostsFR) {
+    if (postFR.image) {
+      const frUrl = `${BASE_URL}/blog/${postFR.slug}`;
+      const absoluteImgUrl = postFR.image.startsWith('/') ? `${BASE_URL}${postFR.image}` : postFR.image;
+      xml += `  <url>\n`;
+      xml += `    <loc>${frUrl}</loc>\n`;
+      xml += `    <image:image>\n`;
+      xml += `      <image:loc>${escapeXml(absoluteImgUrl)}</image:loc>\n`;
+      xml += `      <image:title>${escapeXml(postFR.h1 || postFR.title)}</image:title>\n`;
+      xml += `      <image:caption>${escapeXml(postFR.metaDescription)}</image:caption>\n`;
       xml += `    </image:image>\n`;
       xml += `  </url>\n`;
     }

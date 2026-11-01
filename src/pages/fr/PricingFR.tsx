@@ -1,12 +1,76 @@
 import React from "react";
 import Callout from "../../components/Callout";
 import SEO from "../../components/SEO";
+import { buildServiceProviderSchema } from "../../components/SEO/StructuredData";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import { pricingCopyFR } from "../../data/copy/pricing.fr";
 
 export default function PricingFR() {
   const { seo, hero, callout, packages, faq, cta } = pricingCopyFR;
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Tarifs et Packages Urunk",
+    "provider": buildServiceProviderSchema(),
+    "areaServed": "Morocco",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catalogue d'Offres Urunk",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "price": "12000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Création de Site Web",
+            "description": "Création de site web sur-mesure pour hôtels et riads."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO & Référencement Local",
+            "description": "Optimisation SEO et visibilité Google Maps pour l'hôtellerie."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gestion Google Ads",
+            "description": "Campagnes publicitaires Google de haute intention."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "4000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gestion Meta Ads",
+            "description": "Publicités Facebook et Instagram pour réservations directes."
+          }
+        },
+        {
+          "@type": "Offer",
+          "price": "3000",
+          "priceCurrency": "MAD",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gestion TripAdvisor Ads",
+            "description": "Optimisation TripAdvisor et comparateurs d'hôtels."
+          }
+        }
+      ]
+    }
+  };
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -25,7 +89,7 @@ export default function PricingFR() {
       <SEO
         title={seo.title}
         description={seo.description}
-        schema={faqSchema}
+        schema={[serviceSchema, faqSchema]}
       />
 
       {/* Hero & AI Answer Block */}

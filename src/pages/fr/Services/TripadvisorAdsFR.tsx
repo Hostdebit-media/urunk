@@ -1,38 +1,13 @@
 import React from "react";
 import Callout from "../../../components/fr/CalloutFR";
 import SEO from "../../../components/SEO";
+import { buildServiceProviderSchema } from "../../../components/SEO/StructuredData";
 import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
 import { getMatrixLinksForService } from "../../../data/matrixRelations";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function TripadvisorAdsFR() {
-
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Gestion TripAdvisor Ads",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Urunk"
-    },
-    "description": "Gestion des annonces et optimisation du profil TripAdvisor."
-  };
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "TripAdvisor Ads pour Hôtels",
-    "description": "Maximiser la visibilité sur TripAdvisor pour obtenir plus de réservations.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Urunk"
-    },
-    "areaServed": [
-      { "@type": "Country", "name": "Morocco" },
-      { "@type": "Country", "name": "Worldwide" }
-    ],
-    "url": "https://urunk.com/services/tripadvisor-ads"
-  };
   const faqs = [
     {
       q: "Qu'est-ce que les emplacements sponsorisés TripAdvisor ?",
@@ -48,12 +23,50 @@ export default function TripadvisorAdsFR() {
     },
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://urunk.com/services/tripadvisor-ads#service",
+    name: "Publicité TripAdvisor pour hôtels au Maroc",
+    serviceType: "Gestion TripAdvisor Ads",
+    description:
+      "Gestion TripAdvisor Ads à 3 000 MAD/mois (env. 280 €/mois), sans engagement de durée, pour générer des réservations directes.",
+    provider: buildServiceProviderSchema(),
+    areaServed: [
+      { "@type": "Country", name: "Morocco" },
+      { "@type": "Country", name: "Worldwide" },
+    ],
+    url: "https://urunk.com/services/tripadvisor-ads",
+    offers: {
+      "@type": "Offer",
+      price: "3000",
+      priceCurrency: "MAD",
+      url: "https://urunk.com/services/tripadvisor-ads",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "3000",
+        priceCurrency: "MAD",
+        unitText: "MONTH",
+      },
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <div className="w-full">
       <SEO
         title="Publicité TripAdvisor pour hôtels au Maroc | Urunk"
         description="Optimisation de votre présence sponsorisée sur TripAdvisor pour capter les voyageurs en phase finale de décision au Maroc."
-        schema={[schema, serviceSchema]}
+        schema={[serviceSchema, faqSchema]}
       />
 
       {/* Hero Section */}

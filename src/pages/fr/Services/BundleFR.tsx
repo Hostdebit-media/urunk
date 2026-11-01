@@ -1,6 +1,7 @@
 import React from "react";
 import Callout from "../../../components/fr/CalloutFR";
 import SEO from "../../../components/SEO";
+import { buildServiceProviderSchema } from "../../../components/SEO/StructuredData";
 import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -28,11 +29,7 @@ export default function BundleFR() {
     serviceType: "Forfait Site Web et Acquisition Publicitaire pour Hôtels",
     description:
       "Formule combinée pour hôtels et riads au Maroc : création de site web avec moteur de réservation + gestion publicitaire dès 16 000 MAD initial + 4 000 MAD/mois.",
-    provider: {
-      "@type": "Organization",
-      name: "Urunk",
-      url: "https://urunk.com",
-    },
+    provider: buildServiceProviderSchema(),
     areaServed: [
       { "@type": "Country", "name": "Morocco" },
       { "@type": "Country", "name": "Worldwide" },
