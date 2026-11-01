@@ -555,7 +555,120 @@ test('dist/_redirects conforms strictly to Cloudflare _redirects specification w
 
   assert.equal(seenSources.size, 190, `Expected all 190 redirect rules to be preserved, got ${seenSources.size}`);
   assert.ok(staticRules <= 2000, `Exceeded Cloudflare 2000 static rules limit (${staticRules})`);
-  assert.ok(dynamicRules <= 100, `Exceeded Cloudflare 100 dynamic rules limit (${dynamicRules})`);
+  assert.ok(dynamicRules <= 100, `Exceeded Cloudflare 2000 dynamic rules limit (${dynamicRules})`);
+});
+
+test('/marketing-digital-hotelier and /en/hotel-digital-marketing satisfy primary pillar SEO positioning, commercial integrity, JSON-LD parity, and zero cannibalization with /zones/maroc', async () => {
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const { servicesData } = await import('./servicesData');
+  const { locationsData } = await import('./locationsData');
+
+  const fr = servicesData['hotel-digital-marketing'].fr;
+  const en = servicesData['hotel-digital-marketing'].en;
+
+  // 1. Data-layer keyword alignment & commercial preservation
+  assert.match(fr.title, /Marketing Digital Hôtelier/i);
+  assert.match(fr.title, /Maroc/i);
+  assert.ok(fr.title.length >= 30 && fr.title.length <= 60, `FR title length (${fr.title.length}) must be 30-60`);
+  assert.match(fr.description, /marketing digital hôtelier/i);
+  assert.match(fr.description, /4 000 MAD\/mois/);
+  assert.ok(fr.description.length >= 120 && fr.description.length <= 158, `FR description length (${fr.description.length}) must be 120-158`);
+  assert.match(fr.heroTitle, /Marketing Digital Hôtelier au Maroc/i);
+  assert.match(fr.heroSub, /marketing digital hôtelier/i);
+  assert.equal(fr.features.length, 4, 'FR must expose the 4 integrated hotel digital marketing pillars');
+  assert.equal(fr.comparisonTable?.rows.length, 4, 'FR budget comparison table must preserve all 4 rows');
+  assert.equal(fr.evaluationCriteria?.items.length, 4, 'FR agency evaluation criteria must preserve all 4 items');
+  assert.ok(fr.faqs.length >= 5, 'FR must preserve at least 5 FAQs');
+
+  assert.match(en.title, /Hotel Digital Marketing/i);
+  assert.match(en.title, /Morocco/i);
+  assert.ok(en.title.length >= 30 && en.title.length <= 60, `EN title length (${en.title.length}) must be 30-60`);
+  assert.match(en.description, /hotel digital marketing/i);
+  assert.match(en.description, /4,000 MAD\/mo/);
+  assert.ok(en.description.length >= 120 && en.description.length <= 158, `EN description length (${en.description.length}) must be 120-158`);
+  assert.match(en.heroTitle, /Hotel Digital Marketing in Morocco/i);
+  assert.match(en.heroSub, /hotel digital marketing/i);
+  assert.equal(en.features.length, 4, 'EN must expose the 4 integrated hotel digital marketing pillars');
+  assert.equal(en.comparisonTable?.rows.length, 4, 'EN budget comparison table must preserve all 4 rows');
+  assert.equal(en.evaluationCriteria?.items.length, 4, 'EN agency evaluation criteria must preserve all 4 items');
+  assert.ok(en.faqs.length >= 5, 'EN must have at least 5 FAQs');
+
+  // 2. De-cannibalization of /zones/maroc and /en/locations/morocco in locationsData
+  assert.doesNotMatch(locationsData['morocco'].fr.title, /Marketing Digital Hôtelier/i);
+  assert.doesNotMatch(locationsData['morocco'].fr.description, /marketing digital hôtelier/i);
+  assert.doesNotMatch(locationsData['morocco'].en.title, /Hotel Digital Marketing|Hospitality Digital Marketing/i);
+  assert.doesNotMatch(locationsData['morocco'].en.description, /hotel digital marketing|hospitality digital marketing/i);
+
+  // 3. Post-build prerendered HTML verification
+  const frHtmlPath = path.resolve('dist/marketing-digital-hotelier/index.html');
+  const enHtmlPath = path.resolve('dist/en/hotel-digital-marketing/index.html');
+  const marocHtmlPath = path.resolve('dist/zones/maroc/index.html');
+  const moroccoHtmlPath = path.resolve('dist/en/locations/morocco/index.html');
+  if (!fs.existsSync(frHtmlPath)) return;
+
+  const frHtml = fs.readFileSync(frHtmlPath, 'utf8');
+  const enHtml = fs.readFileSync(enHtmlPath, 'utf8');
+  const marocHtml = fs.readFileSync(marocHtmlPath, 'utf8');
+  const moroccoHtml = fs.readFileSync(moroccoHtmlPath, 'utf8');
+
+  // Verify FR prerendered H1, H2 grammar fix, canonical, hreflang, and JSON-LD parity
+  const frH1 = [...frHtml.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/gi)].map(m => m[1].replace(/<[^>]*>/g, '').trim());
+  assert.equal(frH1.length, 1);
+  assert.match(frH1[0], /Marketing Digital Hôtelier au Maroc/i);
+
+  const frH2s = [...frHtml.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)].map(m => m[1].replace(/<[^>]*>/g, '').trim());
+  for (const h2 of frH2s) {
+    assert.doesNotMatch(h2, /Ce Que Vous Obtenez Avec|Est-ce que .* Convient à Votre Établissement/i, `Awkward H2 still present: "${h2}"`);
+  }
+
+  assert.ok(frHtml.includes('<link rel="canonical" data-static-seo="true" href="https://urunk.com/marketing-digital-hotelier" />'));
+  assert.ok(frHtml.includes('hreflang="fr" href="https://urunk.com/marketing-digital-hotelier"'));
+  assert.ok(frHtml.includes('hreflang="en" href="https://urunk.com/en/hotel-digital-marketing"'));
+  assert.ok(frHtml.includes('hreflang="x-default" href="https://urunk.com/marketing-digital-hotelier"'));
+
+  const frSchemas = JSON.parse(frHtml.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i)![1]);
+  const frService = frSchemas.find((s: Record<string, unknown>) => s['@type'] === 'Service');
+  const frBreadcrumb = frSchemas.find((s: Record<string, unknown>) => s['@type'] === 'BreadcrumbList');
+  const frProf = frSchemas.find((s: Record<string, unknown>) => Array.isArray(s['@type']) && s['@type'].includes('ProfessionalService'));
+  assert.ok(frProf, 'Prerendered FR page must include ProfessionalService schema matching React SEO.tsx');
+  assert.equal(frService.name, fr.heroTitle);
+  assert.equal(frService.serviceType, 'Marketing Digital Hôtelier');
+  assert.equal(frService.offers.price, '4000');
+  assert.equal(frBreadcrumb.itemListElement.length, 2, 'FR BreadcrumbList must match 2-level URL & React Breadcrumbs');
+  assert.equal(frBreadcrumb.itemListElement[1].name, 'Marketing Digital Hôtelier');
+
+  // Verify EN prerendered canonical, hreflang, H2 fix, and JSON-LD parity
+  const enH2s = [...enHtml.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)].map(m => m[1].replace(/<[^>]*>/g, '').trim());
+  for (const h2 of enH2s) {
+    assert.doesNotMatch(h2, /What You Get With|Is .* Right For Your Property/i, `Awkward EN H2 still present: "${h2}"`);
+  }
+  assert.ok(enHtml.includes('<link rel="canonical" data-static-seo="true" href="https://urunk.com/en/hotel-digital-marketing" />'));
+  const enSchemas = JSON.parse(enHtml.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i)![1]);
+  const enService = enSchemas.find((s: Record<string, unknown>) => s['@type'] === 'Service');
+  const enBreadcrumb = enSchemas.find((s: Record<string, unknown>) => s['@type'] === 'BreadcrumbList');
+  assert.equal(enService.name, en.heroTitle);
+  assert.equal(enService.serviceType, 'Hotel Digital Marketing');
+  assert.equal(enBreadcrumb.itemListElement.length, 2);
+  assert.equal(enBreadcrumb.itemListElement[1].name, 'Hotel Digital Marketing');
+
+  // Verify /zones/maroc, /en/locations/morocco, /google-ads-maroc, and /services/gestion-publicites-meta do not cannibalize
+  const decodeHtml = (s: string) =>
+    s.replace(/&amp;/g, '&').replace(/&#39;|&#x27;/g, "'").replace(/&quot;/g, '"');
+  const marocTitle = decodeHtml(marocHtml.match(/<title[^>]*>([\s\S]*?)<\/title>/i)![1].trim());
+  const moroccoTitle = decodeHtml(moroccoHtml.match(/<title[^>]*>([\s\S]*?)<\/title>/i)![1].trim());
+  assert.equal(marocTitle, locationsData['morocco'].fr.title);
+  assert.equal(moroccoTitle, locationsData['morocco'].en.title);
+  assert.doesNotMatch(marocTitle, /Marketing Digital Hôtelier/i);
+  assert.doesNotMatch(moroccoTitle, /Hotel Digital Marketing|Hospitality Digital Marketing/i);
+
+  const gadsHtml = fs.readFileSync(path.resolve('dist/google-ads-maroc/index.html'), 'utf8');
+  const metaHtml = fs.readFileSync(path.resolve('dist/services/gestion-publicites-meta/index.html'), 'utf8');
+  const gadsTitle = decodeHtml(gadsHtml.match(/<title[^>]*>([\s\S]*?)<\/title>/i)![1].trim());
+  const metaTitle = decodeHtml(metaHtml.match(/<title[^>]*>([\s\S]*?)<\/title>/i)![1].trim());
+  assert.doesNotMatch(gadsTitle, /Marketing Digital Hôtelier/i, '/google-ads-maroc must target Google Ads Maroc, not Marketing Digital Hôtelier');
+  assert.doesNotMatch(metaTitle, /Marketing Digital Hôtelier/i, '/services/gestion-publicites-meta must target Meta Ads, not Marketing Digital Hôtelier');
+  assert.ok(gadsHtml.includes('href="/marketing-digital-hotelier"'), '/google-ads-maroc must link internally to /marketing-digital-hotelier');
 });
 
 

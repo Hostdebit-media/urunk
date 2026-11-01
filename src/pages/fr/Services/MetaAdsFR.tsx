@@ -81,9 +81,9 @@ export default function MetaAdsFR() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong className="text-accent font-semibold">Ce que nous faisons :</strong> Urunk pilote vos campagnes Meta (Facebook &amp; Instagram) dès 4 000 MAD/mois d'honoraires fixes (0 % de marge sur votre budget média). Vous cherchez un <strong>dispositif combiné Google Ads + Meta Ads et les budgets mensuels minimums recommandés pour un hôtel au Maroc</strong> ? Consultez notre guide{" "}
+              <strong className="text-accent font-semibold">Ce que nous faisons :</strong> Urunk pilote vos campagnes Meta (Facebook &amp; Instagram) dès 4 000 MAD/mois d'honoraires fixes (0 % de marge sur votre budget média). Vous cherchez une <strong>stratégie globale combinant SEO hôtelier, Google Ads, Meta Ads et les budgets mensuels recommandés au Maroc</strong> ? Consultez notre page pilier{" "}
               <Link to="/marketing-digital-hotelier" className="underline text-accent-soft hover:text-white font-semibold">
-                Gestion Google Ads &amp; Meta Ads pour Hôtels au Maroc
+                Marketing Digital Hôtelier au Maroc
               </Link>.
             </Callout>
           </div>

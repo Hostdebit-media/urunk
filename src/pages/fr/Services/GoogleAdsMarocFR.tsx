@@ -754,7 +754,7 @@ export default function GoogleAdsMarocFR() {
                 </li>
                 <li>
                   <Link to="/marketing-digital-hotelier" className="text-primary hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-primary/5">
-                    <span>Google Ads &amp; Meta Ads Hôtels (Budgets &amp; ROI)</span>
+                    <span>Marketing Digital Hôtelier au Maroc (Stratégie &amp; ROI)</span>
                     <ArrowRight size={14} className="text-accent shrink-0" />
                   </Link>
                 </li>

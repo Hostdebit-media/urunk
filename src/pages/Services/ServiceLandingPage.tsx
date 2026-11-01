@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { servicesData, extractNumericMadPrice } from '../../data/servicesData';
 import { getMatrixLinksForService } from '../../data/matrixRelations';
 import SEO from '../../components/SEO';
+import { routeMappings } from '../../components/Breadcrumbs';
 import Callout from '../../components/Callout';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { Check, ArrowRight, ChevronDown, Sparkles, Award, ExternalLink } from 'lucide-react';
@@ -43,15 +44,19 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
     ? location.pathname.slice(0, -1)
     : location.pathname;
 
+  const mappedServiceLabel = routeMappings[serviceKey]
+    ? (isFrench ? routeMappings[serviceKey].fr : routeMappings[serviceKey].en)
+    : data.heroTitle;
+
   const schemaMarkup: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `https://urunk.com${cleanPath}#service`,
     "name": data.heroTitle,
-    "serviceType": data.heroTitle,
+    "serviceType": mappedServiceLabel,
     "description": data.description,
     "provider": {
-      "@type": "Organization",
+      "@type": "ProfessionalService",
       "name": "Urunk",
       "url": "https://urunk.com"
     },
@@ -213,7 +218,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
           {data.featuresTitle}
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className={`grid gap-8 ${data.features.length === 4 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
           {data.features.map((feature, i) => (
             <div key={i} className="p-8 rounded-2xl border border-primary/10 bg-white hover:border-accent/30 transition-all shadow-sm">
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10 text-accent mb-6 font-serif font-bold tabular-nums">

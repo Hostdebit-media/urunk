@@ -48,9 +48,9 @@ export interface LocationDataMap {
 export const locationsData: Record<string, LocationDataMap> = {
   'morocco': {
     en: {
-      title: "Digital Marketing & Web Design Agency Morocco | Urunk",
-      description: "Morocco's leading full-service digital growth agency. Specialized in high-performance React web design, corporate B2B SEO, Google Ads, and hotel marketing across the Kingdom.",
-      heroTitle: "National Digital Growth, Web Engineering & SEO Agency in Morocco",
+      title: "Web Engineering, SEO & Growth Agency Morocco | Urunk",
+      description: "Urunk national hub across Morocco (Casablanca, Marrakech, Rabat, Agadir, Tangier): high-speed React web design, enterprise SEO, and paid acquisition.",
+      heroTitle: "National Web Engineering, SEO & Client Acquisition Hub in Morocco",
       heroSub: "With a national population of over 37.5 million and an internet penetration rate exceeding 88.1%, Morocco is undergoing a sweeping digital transition. We help businesses across the Kingdom capture organic search dominance and drive direct margins.",
       calloutTitle: "National Digital Footprint & Performance",
       calloutBody: "We operate a comprehensive geographic network across Casablanca, Marrakech, Rabat, Agadir, and Tangier to establish market authority for Moroccan corporate and tourism leaders.",
@@ -84,9 +84,9 @@ export const locationsData: Record<string, LocationDataMap> = {
           link: "/en/google-ads-morocco"
         },
         {
-          title: "Hospitality & Hotel SEO",
-          desc: "We execute specialized SEO and PMS engine integrations for Riads, luxury hotels, and coastal resorts, driving commission-free direct booking growth.",
-          link: "/en/hotel-seo"
+          title: "Hotel Digital Marketing",
+          desc: "Dedicated hospitality acquisition combining Hotel SEO, Google Ads, Meta retargeting, and commission-free PMS booking tracking.",
+          link: "/en/hotel-digital-marketing"
         },
         {
           title: "AI Search & GEO Optimization",
@@ -129,9 +129,9 @@ export const locationsData: Record<string, LocationDataMap> = {
       ]
     },
     fr: {
-      title: "Agence SEO & Marketing Digital Maroc | Hub National Urunk",
-      description: "Agence de croissance digitale leader au Maroc. Référencement naturel SEO, création de sites web React haute performance, Google Ads et marketing hôtelier dans tout le Royaume.",
-      heroTitle: "Agence Nationale de Croissance Digitale, Ingénierie Web & SEO au Maroc",
+      title: "Agence Web, SEO & Acquisition au Maroc | Hub Urunk",
+      description: "Couverture nationale Urunk au Maroc (Casablanca, Marrakech, Rabat, Agadir, Tanger) : création de sites web React, SEO national et acquisition client.",
+      heroTitle: "Pôle National d'Ingénierie Web, SEO & Acquisition Client au Maroc",
       heroSub: "Avec une population nationale de plus de 37,5 millions d'habitants et un taux de pénétration internet de 88,1 %, le Maroc vit une transition digitale historique. Nous aidons les leaders du Royaume à s'imposer sur Google.",
       calloutTitle: "Présence Digitale Nationale & Performance",
       calloutBody: "Notre agence déploie ses experts à Casablanca, Marrakech, Rabat, Agadir et Tanger pour imposer l'autorité digitale des PME et acteurs touristiques marocains.",
@@ -165,9 +165,9 @@ export const locationsData: Record<string, LocationDataMap> = {
           link: "/google-ads-maroc"
         },
         {
-          title: "SEO Hôtelier & Réservations Directes",
-          desc: "Nous appliquons notre expertise SEO et d'intégration de moteurs de réservation pour maximiser l'acquisition en direct des hôtels et réduire les commissions des intermédiaires.",
-          link: "/seo-hotel"
+          title: "Marketing Digital Hôtelier",
+          desc: "Stratégie complète dédiée aux hôtels et riads au Maroc : SEO local, Google Ads, Meta Ads et suivi PMS des réservations directes sans commission.",
+          link: "/marketing-digital-hotelier"
         },
         {
           title: "Optimisation Moteurs IA (AEO)",

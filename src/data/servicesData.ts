@@ -455,6 +455,11 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "desc": "Upgrade slow hotel templates that hold back Core Web Vitals and booking conversion."
         },
         {
+          "label": "Hotel Digital Marketing in Morocco (Full Strategy)",
+          "to": "/en/hotel-digital-marketing",
+          "desc": "Combine Hotel SEO with Google Ads, Meta retargeting, and PMS revenue attribution."
+        },
+        {
           "label": "Editorial Guide: Hotel SEO Strategy in Morocco",
           "to": "/en/blog/hotel-seo-morocco-guide",
           "desc": "In-depth technical walkthrough of keyword architecture and on-page SEO for Moroccan stays."
@@ -615,6 +620,11 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "desc": "Refonte orientée Core Web Vitals et connexion PMS pour convertir votre trafic organique."
         },
         {
+          "label": "Marketing Digital Hôtelier au Maroc (Stratégie Globale)",
+          "to": "/marketing-digital-hotelier",
+          "desc": "Associez votre SEO hôtelier à Google Ads, Meta Ads et au suivi des réservations PMS."
+        },
+        {
           "label": "Guide Blog : Stratégie SEO Hôtellerie au Maroc",
           "to": "/blog/guide-seo-hotellerie-maroc",
           "desc": "Méthodologie complète pour structurer vos mots-clés et vos pages de destination."
@@ -684,24 +694,24 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   },
   "hotel-digital-marketing": {
     "en": {
-      "title": "Hotel Google Ads & Meta Ads Morocco: Agency & Budget | Urunk",
-      "description": "Specialized Google Ads and Meta Ads management for hotels and riads in Morocco: agency criteria, minimum monthly ad budgets, and GA4 ROI tracking.",
-      "heroTitle": "Google Ads & Meta Ads Management for Hotels in Morocco",
-      "heroSub": "Capture high-intent searchers on Google and retarget prospective guests on Instagram and Facebook with transparent hospitality media management.",
-      "calloutTitle": "Definition: Hospitality Paid Acquisition (Google Ads + Meta Ads)",
-      "calloutBody": "Hospitality paid acquisition combines Google Search & Hotel campaigns (capturing travelers actively searching dates, destinations, or your property name) with Meta Ads on Instagram and Facebook (visual discovery and booking-abandonment retargeting), tracked end-to-end into your PMS booking engine.",
+      "title": "Hotel Digital Marketing Morocco: SEO, Ads & ROI | Urunk",
+      "description": "Hotel digital marketing agency in Morocco: hospitality SEO, Google Ads, Meta Ads, and PMS direct-booking tracking for hotels & riads from 4,000 MAD/mo.",
+      "heroTitle": "Hotel Digital Marketing in Morocco: Direct Bookings, SEO, Google Ads & Meta Ads",
+      "heroSub": "Grow commission-free direct bookings for your hotel, riad, or resort with a unified hotel digital marketing strategy in Morocco combining Google Maps SEO, high-intent Google Ads, Meta retargeting, and cross-domain PMS revenue tracking.",
+      "calloutTitle": "Definition: Direct-Booking Hotel Digital Marketing",
+      "calloutBody": "Hotel digital marketing is an integrated hospitality acquisition system combining organic & local search visibility (Hotel SEO, Google Business Profile, and Free Booking Links), paid demand capture on Google Search & Hotel Ads, visual storytelling and retargeting via Meta Ads (Instagram & Facebook), and website conversion optimization tracked end-to-end into your PMS booking engine—designed to reduce 15%–25% OTA commission dependency.",
       "directAnswer": {
-        "question": "Which agency in Morocco manages hotel Google Ads & Meta Ads, and what minimum monthly budget is needed?",
-        "answer": "When selecting an agency in Morocco for hotel Google Ads and Meta Ads, verify four objective criteria: end-to-end GA4/PMS booking value tracking, brand-bidding protection against OTAs, 100% client ownership of ad accounts, and 0% markup on media spend. Regarding minimum monthly media spend (paid directly to Google/Meta): plan at least 3,000 to 5,000 MAD/month to test a single channel for a small riad or boutique hotel, and 6,000 to 12,000+ MAD/month combined media spend to run both Google Ads and Meta Ads effectively—plus fixed management fees (starting at 4,000 MAD/month per channel at Urunk, with 15-day notice).",
+        "question": "What hotel digital marketing strategy works best in Morocco, which agency criteria matter, and what minimum monthly budget is required?",
+        "answer": "An effective hotel digital marketing strategy in Morocco connects four pillars around your official website: local & bilingual Hotel SEO (Google Maps + Free Booking Links), Google Ads (brand protection against OTAs + feeder-market search), Meta Ads retargeting on Instagram and Facebook, and cross-domain GA4/GTM booking attribution into your PMS. When evaluating an agency, require 100% client ownership of ad accounts and 0% markup on media spend. Regarding minimum monthly platform media spend (paid directly to Google/Meta): plan at least 3,000 to 5,000 MAD/month to launch a single paid channel for a small riad or boutique hotel, and 6,000 to 12,000+ MAD/month combined media spend to run both Google Ads and Meta Ads effectively—plus fixed management retainers (starting at 4,000 MAD/month per channel at Urunk, with 15-day notice).",
         "highlights": [
-          "0% commission on ad spend — you pay Google & Meta directly",
-          "Fixed management fee from 4,000 MAD/mo per channel (15-day notice)",
+          "Integrated ecosystem: Hotel SEO, Google Maps, Google Ads, Meta Ads & PMS UX",
+          "Fixed retainers from 4,000 MAD/mo per lever — 0% markup on your ad spend",
           "Recommended combined media spend: 6,000–12,000+ MAD/mo (Google + Meta)",
-          "Full GA4 / GTM cross-domain tracking into your PMS booking engine"
+          "Full GA4 / GTM cross-domain revenue tracking into your PMS booking engine"
         ]
       },
       "comparisonTable": {
-        "title": "Monthly Google Ads & Meta Ads Budget Benchmarks for Hotels in Morocco",
+        "title": "Monthly Hotel Digital Marketing & Media Budget Benchmarks in Morocco",
         "subtitle": "Indicative planning ranges separating direct platform media spend from agency management fees (not guaranteed booking quotas).",
         "headers": [
           "Property Profile & Scope",
@@ -714,9 +724,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           [
             "Small Riad / Guesthouse (5–12 rooms) — Single Channel Starter",
             "3,000 – 5,000 MAD / mo (≈ €280–€460)",
-            "4,000 MAD / mo (1 channel: Google Ads OR Meta Ads)",
+            "4,000 MAD / mo (1 channel: SEO, Google Ads OR Meta Ads)",
             "7,000 – 9,000 MAD / mo",
-            "Brand protection against OTAs + focused high-intent search or retargeting"
+            "Brand protection against OTAs + Google Maps visibility or focused search"
           ],
           [
             "Boutique Hotel / Established Riad (10–25 rooms) — Dual Google + Meta",
@@ -730,12 +740,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
             "4,000 – 10,000 MAD / mo media spend",
             "16,000 MAD one-time build + 4,000 MAD / mo management",
             "16,000 MAD initial + 8,000–14,000 MAD / mo",
-            "Fixes slow site conversion first, then launches tracked paid acquisition"
+            "Fixes slow site conversion & PMS sync first, then scales direct acquisition"
           ],
           [
             "4★/5★ Hotel, Resort or Hospitality Group (25+ rooms)",
             "15,000 – 35,000+ MAD / mo across feeder markets",
-            "Custom multi-channel retainer",
+            "Custom multi-channel retainer (SEO + Google + Meta)",
             "23,000 – 45,000+ MAD / mo",
             "Year-round occupancy smoothing, MICE/spa packages & multi-language scale"
           ]
@@ -743,28 +753,38 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         "footnote": "Important Moroccan billing note: Ad spend is billed directly by Google and Meta to your hotel's international payment card (Moroccan corporate 'dotation e-commerce' card via your bank / Office des Changes, or foreign-currency account). Results depend on ADR, seasonality, rate parity, and booking engine speed; allow a 60–90 day optimization window."
       },
       "evaluationCriteria": {
-        "title": "How to Evaluate a Hotel Google Ads & Meta Ads Agency in Morocco",
-        "intro": "Clicks, impressions, and Instagram likes do not pay room-night operating costs. Use these four technical criteria to compare agencies objectively:",
+        "title": "How to Evaluate a Hotel Digital Marketing Agency in Morocco",
+        "intro": "Clicks, impressions, and Instagram likes do not pay room-night operating costs. Use these four technical criteria to compare hospitality marketing agencies objectively:",
         "items": [
           {
             "title": "Cross-Domain PMS Conversion Attribution",
-            "desc": "Because most hotel booking engines sit on an external domain (e.g., Cloudbeds, SiteMinder, Amenitiz), a generalist setup loses attribution at checkout. Your agency must configure cross-domain GA4 + GTM purchase events with dynamic booking value."
+            "desc": "Because most hotel booking engines sit on an external domain (e.g., Cloudbeds, SiteMinder, Amenitiz, Mews), a generalist setup loses attribution at checkout. Your agency must configure cross-domain GA4 + GTM purchase events with dynamic booking value."
           },
           {
             "title": "Separation of Brand Defense vs. Non-Brand Acquisition",
-            "desc": "Bidding on your own hotel name protects direct bookings from OTA brand-bidding and naturally shows high ROAS—but an honest agency reports Brand vs. Non-Brand campaigns separately so you see true incremental guest acquisition."
+            "desc": "Bidding on your own hotel name protects direct bookings from OTA brand-bidding and naturally shows high ROAS—but an honest agency reports Brand vs. Non-Brand search and organic SEO separately so you see true incremental guest acquisition."
           },
           {
             "title": "100% Account Ownership & Zero Media Markup",
-            "desc": "Always insist on owning your Google Ads ID, Meta Business Manager, and Meta Pixel directly. Avoid opaque 'all-inclusive' media bundles that hide a 20%–35% agency cut on ad spend."
+            "desc": "Always insist on owning your domain, Google Search Console, Google Business Profile, Google Ads ID, Meta Business Manager, and Meta Pixel directly. Avoid opaque 'all-inclusive' media bundles that hide a 20%–35% agency cut on ad spend."
           },
           {
-            "title": "Prerequisites Before Spending a Dirham on Ads",
-            "desc": "Paid traffic amplifies your current website's conversion rate. If your mobile page takes 5 seconds to load, lacks live PMS availability, or displays higher prices than Booking.com, fix the booking funnel before scaling ad spend."
+            "title": "Conversion & Rate-Parity Prerequisites Before Scaling Ads",
+            "desc": "Paid and organic traffic amplify your current website's conversion rate. If your mobile page takes 5 seconds to load, lacks live PMS availability, or displays higher prices than Booking.com, fix the direct booking funnel before scaling ad spend."
           }
         ]
       },
       "relatedLinks": [
+        {
+          "label": "Hotel SEO & Google Maps Visibility in Morocco",
+          "to": "/en/hotel-seo",
+          "desc": "Technical hospitality SEO, Google Business Profile optimization, and Free Booking Links."
+        },
+        {
+          "label": "Hotel Website Design & PMS Integration",
+          "to": "/en/hotel-website-design",
+          "desc": "High-speed bilingual hotel websites from 12,000 MAD engineered for direct checkout."
+        },
         {
           "label": "Google Ads Management in Morocco",
           "to": "/en/google-ads-morocco",
@@ -783,7 +803,17 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         {
           "label": "Direct Booking Systems Without OTAs",
           "to": "/en/direct-booking",
-          "desc": "Ensure your PMS, booking engine, and CMI/Stripe checkout convert paid clicks."
+          "desc": "Ensure your PMS, booking engine, and CMI/Stripe checkout convert direct traffic."
+        },
+        {
+          "label": "Guide: Google Ads Keyword Strategy for Riads",
+          "to": "/en/blog/google-ads-riads-keyword-research",
+          "desc": "Practical structure for feeder-market ad groups and negative keyword lists."
+        },
+        {
+          "label": "Guide: Meta Ads Funnel for Hotels",
+          "to": "/en/blog/meta-ads-for-hotels-instagram-facebook",
+          "desc": "Instagram and Facebook campaign architecture tailored to hospitality lead times."
         }
       ],
       "externalReferences": [
@@ -793,61 +823,74 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "source": "Google Ads Help"
         },
         {
+          "label": "Google Hotel Center — Free Booking Links",
+          "url": "https://support.google.com/hotelprices/answer/10476626",
+          "source": "Google Travel Help"
+        },
+        {
           "label": "Meta Travel & Hospitality Ad Solutions",
           "url": "https://www.facebook.com/business/help",
           "source": "Meta Business Help Center"
         }
       ],
-      "problemTitle": "Why do many Moroccan hotels burn ad budget without seeing direct bookings?",
-      "problemText1": "Boosting Instagram posts to broad audiences or running broad Google Ads keywords that send mobile clicks to a slow homepage without live availability rarely generates confirmed stays.",
-      "problemText2": "Effective hospitality media buying pairs bottom-of-funnel Google Search intent (feeder markets like France, the UK, Spain, Germany, and North America) with Meta retargeting that brings hesitant visitors back to your booking engine.",
-      "signsTitle": "Signs your hotel ad campaigns need restructuring:",
+      "problemTitle": "Why do disconnected hotel marketing actions fail to reduce OTA dependency?",
+      "problemText1": "Publishing sporadic Instagram posts, buying broad Google Ads clicks toward a slow mobile homepage, or neglecting your Google Maps listing creates isolated traffic spikes that still leak back to Booking.com and Expedia at checkout.",
+      "problemText2": "Profitable hotel digital marketing aligns the entire guest journey: local SEO and Google Maps build year-round organic discovery, Google Search Ads capture high-intent feeder markets (France, UK, Spain, Germany, North America), Meta Ads retarget undecided visitors, and your fast PMS booking engine converts stays with 0% OTA commission.",
+      "signsTitle": "Signs your hotel digital marketing needs an integrated overhaul:",
       "signs": [
-        "OTAs outbid your official website when travelers search your exact hotel or riad name",
-        "Your agency reports clicks and impressions instead of confirmed PMS booking revenue",
-        "Brand and non-brand search campaigns are mixed together, masking real CPA",
-        "Visitors open your booking calendar from Google Ads but abandon without Meta retargeting"
+        "OTAs outbid your official website on Google Search and dominate your Google Maps listing",
+        "Your agency reports clicks, impressions, or followers instead of confirmed PMS booking revenue",
+        "Brand and non-brand search campaigns are mixed together, masking real guest acquisition CPA",
+        "Mobile visitors open your booking calendar from SEO or Google Ads but abandon without Meta retargeting"
       ],
-      "featuresTitle": "How Urunk Manages Google Ads & Meta Ads for Hotels:",
+      "featuresTitle": "The 4 Pillars of Our Hotel Digital Marketing Strategy:",
       "features": [
         {
-          "title": "Google Search & Brand Protection",
-          "desc": "Reclaiming brand searches from OTAs and targeting high-intent destination + stay queries in your top feeder languages."
+          "title": "Hotel SEO & Local Google Maps Visibility",
+          "desc": "Bilingual FR/EN search architecture, Hotel Schema.org markup, Google Business Profile optimization, and official PMS Free Booking Links on Google Maps."
         },
         {
-          "title": "Meta Reels & Funnel Retargeting",
-          "desc": "Turning property video/photo assets into structured Instagram & Facebook funnels that re-engage recent website and calendar visitors."
+          "title": "Google Search, Hotel Ads & Brand Protection",
+          "desc": "Reclaiming brand searches from OTAs and capturing high-intent destination, neighborhood, and stay queries across your top international feeder markets."
         },
         {
-          "title": "GA4 & PMS Revenue Reporting",
-          "desc": "Cross-domain conversion tracking measuring actual reservation value, CPA, and ROAS by channel and market."
+          "title": "Meta Ads Storytelling & Dynamic Retargeting",
+          "desc": "Turning property video and photo assets into structured Instagram & Facebook Reels/Carousel funnels that bring undecided website visitors back to book direct."
+        },
+        {
+          "title": "Direct Conversion UX & GA4 / PMS Attribution",
+          "desc": "Mobile speed optimization, rate-parity perk framing, and cross-domain GA4 + GTM tracking connected to Cloudbeds, SiteMinder, Amenitiz, or Mews."
         }
       ],
-      "processTitle": "Our 3-Step Paid Media Execution",
+      "processTitle": "Our 3-Step Hospitality Growth Execution",
       "processSteps": [
         {
           "step": 1,
-          "title": "Booking Funnel & Tracking Audit (Week 1)",
-          "desc": "Verifying rate parity, mobile checkout speed, GA4/GTM cross-domain events, and Meta Pixel / Conversions API."
+          "title": "Direct Funnel, Local SEO & Tracking Audit (Week 1)",
+          "desc": "Auditing rate parity, mobile checkout speed, Google Business Profile, cross-domain GA4/GTM events, and Meta Pixel / Conversions API."
         },
         {
           "step": 2,
-          "title": "Campaign Architecture & Creative Launch (Weeks 2–3)",
-          "desc": "Deploying segmented FR/EN Google Search campaigns alongside Meta prospecting and booking-engine retargeting."
+          "title": "Omnichannel Architecture & Launch (Weeks 2–3)",
+          "desc": "Deploying technical/local SEO fixes, segmented FR/EN Google Search campaigns, and Meta prospecting + booking-engine retargeting."
         },
         {
           "step": 3,
-          "title": "60–90 Day Optimization & Seasonal Pacing",
-          "desc": "Pruning wasted search terms, shifting budget toward profitable feeder countries, and aligning offers with low/high season."
+          "title": "60–90 Day Revenue Optimization & Seasonal Pacing",
+          "desc": "Pruning wasted search terms, scaling profitable feeder countries, growing Google Maps visibility, and aligning offers with low/high season."
         }
       ],
-      "investmentTitle": "Paid Media Management",
+      "investmentTitle": "Hotel Digital Marketing Retainers",
       "investmentPrice": "Starting at 4,000 MAD/mo",
-      "investmentDesc": "Fixed management fee per channel (0% commission on your ad spend, paid directly to Google/Meta). 15-day cancellation notice.",
+      "investmentDesc": "Fixed monthly retainer per channel — Hotel SEO, Google Ads, or Meta Ads (0% commission on bookings or media spend). 15-day cancellation notice.",
       "faqs": [
         {
-          "q": "Which agency in Morocco offers strong Google Ads and Meta Ads management for hotels?",
-          "a": "Look for a hospitality-focused agency in Morocco that configures cross-domain GA4/PMS booking tracking, separates brand protection from non-brand acquisition, grants 100% client ownership of ad accounts, and charges a flat fee rather than a percentage of ad spend. Urunk specializes in Moroccan hotels, riads, and resorts from Casablanca and Marrakech with flat management starting at 4,000 MAD/month per channel."
+          "q": "What channels should a complete hotel digital marketing strategy in Morocco include?",
+          "a": "A resilient hotel digital marketing system combines four interconnected layers: (1) a fast bilingual direct-booking website synced with your PMS, (2) Hotel SEO and Google Business Profile optimization with Free Booking Links on Google Maps, (3) Google Search & Hotel Ads separating brand defense from non-brand acquisition, and (4) Meta Ads on Instagram and Facebook to inspire travelers and retarget abandoned booking sessions—all measured by confirmed PMS revenue."
+        },
+        {
+          "q": "Which agency in Morocco offers strong hotel digital marketing, Google Ads, and Meta Ads management?",
+          "a": "Look for a hospitality-specialized agency in Morocco that configures cross-domain GA4/PMS booking tracking, aligns Google Maps SEO with paid acquisition, separates brand protection from non-brand search, grants 100% client ownership of accounts, and charges a flat fee rather than a percentage of ad spend or room revenue. Urunk supports Moroccan hotels, riads, and resorts from Casablanca and Marrakech with flat retainers starting at 4,000 MAD/month per lever."
         },
         {
           "q": "What minimum monthly budget should a hotel in Morocco invest in Google Ads and Meta Ads?",
@@ -858,30 +901,34 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "a": "Your property pays Google and Meta directly using a Moroccan corporate international payment card ('dotation e-commerce' activated through your Moroccan bank under Office des Changes rules) or an eligible foreign-currency card. Urunk never marks up your media spend."
         },
         {
-          "q": "Should a small hotel start with Google Ads or Meta Ads first?",
-          "a": "If budget only allows one channel initially, start with Google Search + Brand Protection: it captures travelers actively searching your property name or specific destination dates. Add Meta Ads (Instagram/Facebook) second to retarget website visitors and showcase visual packages."
+          "q": "Should a small hotel prioritize SEO, Google Ads, or Meta Ads first?",
+          "a": "First verify that your website mobile speed and PMS booking engine convert cleanly. For immediate direct reservations, start with Google Search + Brand Protection + Google Business Profile optimization to capture travelers already searching your property or destination dates. Layer in Hotel SEO for compounding commission-free organic visibility over 3–6 months, and add Meta Ads (Instagram/Facebook) to retarget website visitors and promote seasonal packages."
+        },
+        {
+          "q": "How long does hotel digital marketing take to generate measurable direct bookings?",
+          "a": "Google brand-protection campaigns and Google Maps booking link fixes typically capture direct reservations within the first 2 to 4 weeks for established properties. Non-brand Google Ads and Meta retargeting funnels require a 60 to 90 day optimization window aligned with traveler booking lead times, while organic Hotel SEO compounds steadily over 3 to 6 months."
         }
       ]
     },
     "fr": {
-      "title": "Google Ads & Meta Ads Hôtel Maroc : Agence & Budget | Urunk",
-      "description": "Gestion Google Ads et Meta Ads pour hôtels et riads au Maroc : critères de choix d'agence, budgets mensuels minimums et suivi ROI dès 4 000 MAD/mois.",
-      "heroTitle": "Gestion Google Ads & Meta Ads pour Hôtels et Riads au Maroc",
-      "heroSub": "Captez l'intention de réservation sur Google et relancez vos visiteurs sur Instagram et Facebook grâce à un pilotage publicitaire dédié à l'hôtellerie marocaine.",
-      "calloutTitle": "Définition : Acquisition Payante Hôtelière (Google Ads + Meta Ads)",
-      "calloutBody": "En hôtellerie, Google Ads capte la demande active au moment précis où le voyageur cherche un établissement ou une destination, tandis que Meta Ads (Instagram/Facebook) suscite le désir visuel et recible les visiteurs ayant consulté vos chambres sans finaliser leur réservation.",
+      "title": "Marketing Digital Hôtelier au Maroc : SEO & Ads | Urunk",
+      "description": "Agence de marketing digital hôtelier au Maroc : SEO hôtelier, Google Ads, Meta Ads et réservations directes PMS sans commission. Dès 4 000 MAD/mois.",
+      "heroTitle": "Marketing Digital Hôtelier au Maroc : Acquisition Directe, SEO, Google Ads & Meta Ads",
+      "heroSub": "Développez les réservations directes de votre hôtel, riad ou resort sans commission OTA grâce à une stratégie de marketing digital hôtelier au Maroc réunissant référencement local Google Maps, campagnes Google Ads & Meta Ads et suivi des revenus relié à votre moteur PMS.",
+      "calloutTitle": "Définition : Marketing Digital Hôtelier Orienté Réservation Directe",
+      "calloutBody": "Le marketing digital hôtelier regroupe l'ensemble des leviers d'acquisition et de conversion permettant à un établissement d'attirer et de convertir ses hôtes sur son canal officiel sans commission d'intermédiation OTA (15 % à 25 %) : référencement naturel et local (SEO hôtelier, Google Maps & Free Booking Links), campagnes Google Ads (Search, Hotel Ads & protection de marque), publicités visuelles Meta Ads (Instagram & Facebook) et optimisation du tunnel de réservation PMS.",
       "directAnswer": {
-        "question": "Quelle agence choisir au Maroc pour Google Ads & Meta Ads hôteliers, et quel budget mensuel minimum prévoir ?",
-        "answer": "Pour choisir une agence Google Ads et Meta Ads dédiée aux hôtels au Maroc, exigez quatre garanties vérifiables : le suivi e-commerce GA4/GTM relié à votre moteur de réservation (PMS), la séparation entre protection de marque et conquête hors-marque, la propriété à 100 % de vos comptes publicitaires et 0 % de commission sur l'achat média. Côté budget média mensuel minimum (réglé directement à Google et Meta) : comptez 3 000 à 5 000 MAD/mois pour tester un seul levier sur un petit riad ou hôtel, et 6 000 à 12 000+ MAD/mois de budget média cumulé pour activer efficacement Google Ads + Meta Ads en parallèle, auxquels s'ajoutent les honoraires fixes de gestion (dès 4 000 MAD/mois par canal chez Urunk, préavis de 15 jours).",
+        "question": "Quelle stratégie de marketing digital hôtelier adopter au Maroc, quelle agence choisir et quel budget mensuel prévoir ?",
+        "answer": "Une stratégie de marketing digital hôtelier rentable au Maroc articule quatre piliers autour de votre site officiel : le référencement hôtelier local (SEO bilingue FR/EN & Google Maps), Google Ads (défense de votre nom de marque face aux OTA et conquête hors-marque), le reciblage visuel Meta Ads (Instagram & Facebook) et le suivi e-commerce GA4/GTM inter-domaines relié à votre moteur PMS. Pour choisir votre agence, exigez la propriété à 100 % de vos actifs et 0 % de marge sur l'achat média. Côté budget média mensuel minimum (réglé directement à Google et Meta) : comptez 3 000 à 5 000 MAD/mois pour démarrer sur un seul canal sur un petit riad ou hôtel, et 6 000 à 12 000+ MAD/mois de budget média cumulé pour activer efficacement Google Ads + Meta Ads en parallèle, auxquels s'ajoutent les honoraires fixes de gestion (dès 4 000 MAD/mois par levier chez Urunk, préavis de 15 jours).",
         "highlights": [
-          "0 % de marge sur votre budget média (réglé en direct à Google/Meta)",
-          "Gestion fixe dès 4 000 MAD/mois par levier (préavis de 15 jours)",
+          "Approche complète : SEO hôtelier, Google Maps, Google Ads, Meta Ads & conversion PMS",
+          "Forfaits fixes dès 4 000 MAD/mois par levier — 0 % de marge sur le budget média",
           "Budget média recommandé Google + Meta : 6 000 à 12 000+ MAD/mois",
-          "Tracking inter-domaines GA4 / GTM connecté à votre moteur PMS"
+          "Tracking inter-domaines GA4 / GTM connecté à votre moteur de réservation PMS"
         ]
       },
       "comparisonTable": {
-        "title": "Quel Budget Mensuel Minimum Investir en Google Ads et Meta Ads pour un Hôtel au Maroc ?",
+        "title": "Repères de Budgets Mensuels en Marketing Digital Hôtelier (SEO, Google Ads & Meta Ads) au Maroc",
         "subtitle": "Repères budgétaires réalistes distinguant le budget média (versé aux régies) et les frais de gestion d'agence. Ces fourchettes servent à calibrer votre trésorerie et ne constituent pas des promesses de volume garanti.",
         "headers": [
           "Profil d'Établissement & Dispositif",
@@ -894,9 +941,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           [
             "Petit Riad / Maison d'Hôtes (5–12 clés) — Démarrage 1 Canal",
             "3 000 à 5 000 MAD / mois (≈ 280–460 €)",
-            "4 000 MAD / mois (1 levier : Google Ads OU Meta Ads)",
+            "4 000 MAD / mois (1 levier : SEO, Google Ads OU Meta Ads)",
             "7 000 à 9 000 MAD / mois",
-            "Protéger le nom de marque face aux OTA et capter les requêtes très qualifiées"
+            "Protéger le nom de marque face aux OTA, optimiser Google Maps et capter l'intention directe"
           ],
           [
             "Boutique-Hôtel / Riad Établi (10–25 clés) — Duo Google + Meta",
@@ -910,12 +957,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
             "4 000 à 10 000 MAD / mois de budget média",
             "16 000 MAD création initiale + 4 000 MAD / mois gestion",
             "16 000 MAD initial + 8 000 à 14 000 MAD / mois",
-            "Déployer un tunnel direct rapide avant d'ouvrir les enchères publicitaires"
+            "Déployer un site hôtelier rapide relié au PMS avant d'ouvrir les enchères publicitaires"
           ],
           [
             "Hôtel 4★/5★, Resort ou Groupe Hôtelier (25+ clés)",
             "15 000 à 35 000+ MAD / mois multi-marchés",
-            "Sur périmètre multicanal dédié",
+            "Sur périmètre multicanal dédié (SEO + Google + Meta)",
             "23 000 à 45 000+ MAD / mois",
             "Lissage du taux d'occupation annuel, offres Spa/MICE et conquête internationale"
           ]
@@ -923,37 +970,47 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         "footnote": "Note facturation Maroc : le budget média est débité directement par Google et Meta sur la carte bancaire internationale de l'établissement (dotation e-commerce professionnelle auprès de votre banque marocaine selon la réglementation de l'Office des Changes, ou compte en devises). Prévoir 60 à 90 jours d'optimisation ; la rentabilité dépend du prix moyen par nuitée (ADR), de la parité tarifaire et de la fluidité du moteur de réservation."
       },
       "evaluationCriteria": {
-        "title": "Comment Évaluer une Agence Google Ads & Meta Ads pour Hôtels au Maroc ?",
-        "intro": "Avant de confier vos campagnes à un prestataire au Maroc, vérifiez ces 4 critères opérationnels propres à l'hôtellerie :",
+        "title": "Comment Choisir Votre Agence de Marketing Digital Hôtelier au Maroc ?",
+        "intro": "Avant de confier votre acquisition digitale à un prestataire au Maroc, vérifiez ces 4 critères techniques propres à l'hôtellerie indépendante :",
         "items": [
           {
             "title": "Suivi des Conversions Inter-Domaines jusqu'au PMS",
-            "desc": "La majorité des moteurs de réservation (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier) s'ouvrent sur un sous-domaine ou domaine tiers. Sans configuration GA4/GTM inter-domaines et Meta Conversions API, l'agence pilote à l'aveugle sur de simples clics."
+            "desc": "La majorité des moteurs de réservation (Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews) s'ouvrent sur un sous-domaine ou domaine tiers. Sans configuration GA4/GTM inter-domaines et Meta Conversions API, l'agence pilote à l'aveugle sur de simples clics au lieu du chiffre d'affaires réservé."
           },
           {
-            "title": "Séparation Stricte Marque vs Hors-Marque",
-            "desc": "Protéger le nom de votre hôtel contre les enchères de Booking.com est indispensable, mais une agence transparente isole toujours les campagnes « Marque » des campagnes « Hors-Marque » (ex. hôtel charme Marrakech) pour mesurer la vraie conquête client."
+            "title": "Séparation Stricte Marque vs Hors-Marque & Synergie SEO",
+            "desc": "Protéger le nom de votre hôtel contre les enchères de Booking.com est indispensable, mais une agence rigoureuse isole toujours les campagnes « Marque » des campagnes « Hors-Marque » et travaille votre SEO hôtelier / Google Maps pour bâtir une acquisition organique durable."
           },
           {
-            "title": "Propriété des Comptes & Zéro Marge sur l'Achat Média",
-            "desc": "Vos comptes Google Ads, Meta Business Manager, Pixel et audiences doivent appartenir juridiquement à votre hôtel. Évitez les forfaits « budget pub inclus » opaques où la part réellement versée à Google/Meta n'est pas justifiable."
+            "title": "Propriété des Actifs & Zéro Marge sur l'Achat Média",
+            "desc": "Votre site web, Google Search Console, fiche Google Business Profile, comptes Google Ads, Meta Business Manager et Pixel doivent appartenir juridiquement à votre hôtel. Évitez les forfaits « budget pub inclus » opaques où la part réellement versée aux régies n'est pas justifiable."
           },
           {
-            "title": "Prérequis Avant d'Investir en Publicité",
-            "desc": "N'achetez pas de trafic payant vers un site mobile lent (> 3 s), dépourvu de disponibilités en temps réel ou affichant des tarifs supérieurs aux OTA. La parité tarifaire (ou un avantage direct exclusif) conditionne le ROAS."
+            "title": "Conversion Mobile & Parité Tarifaire Avant l'Amplification",
+            "desc": "N'achetez pas de trafic vers un site mobile lent (> 3 s), dépourvu de disponibilités en temps réel ou affichant des tarifs supérieurs aux OTA. La vitesse du tunnel direct et la parité tarifaire (ou un avantage exclusif) conditionnent votre ROAS."
           }
         ]
       },
       "relatedLinks": [
         {
+          "label": "SEO Hôtelier & Visibilité Google Maps au Maroc",
+          "to": "/seo-hotel",
+          "desc": "Référencement naturel bilingue, fiche Google Business Profile et liens de réservation gratuits."
+        },
+        {
+          "label": "Création de Site Web Hôtelier & Connexion PMS",
+          "to": "/site-web-hotel",
+          "desc": "Sites hôteliers rapides dès 12 000 MAD conçus pour convertir sans commission OTA."
+        },
+        {
           "label": "Gestion Google Ads au Maroc",
           "to": "/google-ads-maroc",
-          "desc": "Détail technique de nos campagnes Google Search et protection de marque hôtelière."
+          "desc": "Détail technique de nos campagnes Google Search, Hotel Ads et protection de marque."
         },
         {
           "label": "Gestion Publicités Meta (Instagram & Facebook)",
           "to": "/services/gestion-publicites-meta",
-          "desc": "Formats Reels/Stories immersifs et reciblage dynamique des abandons de panier hôtelier."
+          "desc": "Formats Reels/Stories immersifs et reciblage dynamique des abandons de calendrier hôtelier."
         },
         {
           "label": "Formule Combinée Site Web + Publicités",
@@ -963,7 +1020,7 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
         {
           "label": "Systèmes de Réservation Directe Sans OTA",
           "to": "/reservation-directe",
-          "desc": "Vérifiez que votre moteur PMS et votre paiement CMI/Stripe convertissent votre trafic payant."
+          "desc": "Vérifiez que votre moteur PMS et votre paiement CMI/Stripe convertissent votre trafic acquis."
         },
         {
           "label": "Guide Blog : Mots-Clés Google Ads pour Riads",
@@ -983,61 +1040,74 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "source": "Aide Google Ads"
         },
         {
+          "label": "Google Hotel Center — Liens de réservation gratuits pour hôtels",
+          "url": "https://support.google.com/hotelprices/answer/10476626?hl=fr",
+          "source": "Aide Google Travel"
+        },
+        {
           "label": "Dotation commerce électronique pour les entreprises marocaines",
           "url": "https://www.oc.gov.ma",
           "source": "Office des Changes (Maroc)"
         }
       ],
-      "problemTitle": "Pourquoi de nombreux budgets publicitaires hôteliers ne génèrent-ils pas de réservations directes ?",
-      "problemText1": "Sponsoriser des publications Instagram sans ciblage d'intention ou envoyer du trafic Google Ads vers une page d'accueil lente sans calendrier de disponibilité génère des visites curieuses, mais très peu de nuitées confirmées.",
-      "problemText2": "En hôtellerie, la rentabilité repose sur la complémentarité des deux régies : Google Ads capte les voyageurs en phase active de comparaison de dates, puis Meta Ads relance visuellement les visiteurs ayant consulté vos chambres sur mobile.",
-      "signsTitle": "Signes que vos campagnes actuelles perdent en rentabilité :",
+      "problemTitle": "Pourquoi des actions digitales isolées ne suffisent-elles pas à réduire la dépendance aux OTA ?",
+      "problemText1": "Sponsoriser quelques publications Instagram sans reciblage, acheter des clics Google Ads vers un site mobile lent sans disponibilités en direct, ou négliger sa fiche Google Maps génère de la curiosité — mais renvoie finalement le voyageur réserver sur Booking.com ou Expedia au prix de 15 % à 25 % de commission.",
+      "problemText2": "Un marketing digital hôtelier performant orchestre tout le parcours de réservation : le SEO hôtelier et Google Maps bâtissent votre visibilité organique permanente, Google Ads capte la demande active sur vos marchés émetteurs (France, Royaume-Uni, Espagne, Allemagne, Amérique du Nord), Meta Ads relance visuellement les indécis et votre moteur PMS convertit en direct avec suivi exact du chiffre d'affaires.",
+      "signsTitle": "Signes que le marketing digital de votre hôtel manque de cohérence :",
       "signs": [
-        "Booking.com et Expedia s'affichent au-dessus de votre site officiel sur le nom exact de votre hôtel",
-        "Vos rapports mensuels parlent de clics et d'abonnés au lieu du chiffre d'affaires réservé dans le PMS",
-        "Les requêtes de marque et hors-marque sont mélangées dans la même campagne",
-        "Les visiteurs ouvrent votre calendrier de réservation sans jamais être reciblés sur Instagram/Facebook"
+        "Booking.com et Expedia dominent votre nom exact sur Google Search et captent les clics sur Google Maps",
+        "Vos prestataires parlent d'impressions, de clics ou d'abonnés au lieu du chiffre d'affaires réservé dans le PMS",
+        "Les requêtes de marque et hors-marque sont mélangées, masquant le coût réel d'acquisition de nouveaux hôtes",
+        "Les visiteurs consultent vos chambres depuis le SEO ou Google Ads sans être reciblés sur Instagram et Facebook"
       ],
-      "featuresTitle": "Notre Dispositif Google Ads & Meta Ads Hôtelier :",
+      "featuresTitle": "Les 4 Piliers de Notre Stratégie de Marketing Digital Hôtelier :",
       "features": [
         {
-          "title": "Google Search & Protection de Marque",
-          "desc": "Défense du nom de votre établissement face aux OTA et ciblage des intentions de séjour par marché émetteur (FR, UK, ES, DE, US)."
+          "title": "SEO Hôtelier & Visibilité Locale Google Maps",
+          "desc": "Architecture bilingue FR/EN, balisage Schema.org Hotel, optimisation de votre fiche Google Business Profile et activation des Free Booking Links vers votre site officiel."
+        },
+        {
+          "title": "Google Ads Search, Hotel Ads & Protection de Marque",
+          "desc": "Défense du nom de votre établissement face aux enchères des OTA et captation des intentions de séjour par ville, quartier et marché émetteur (FR, UK, ES, DE, US)."
         },
         {
           "title": "Meta Ads Visuelles & Reciblage Dynamique",
-          "desc": "Créations Reels/Carrousels mettant en scène l'expérience sur place et reciblage des abandons du tunnel de réservation."
+          "desc": "Créations Reels, Stories et carrousels valorisant l'expérience sur place (suites, rooftop, table, spa) et reciblant les visiteurs ayant abandonné le calendrier de réservation."
         },
         {
-          "title": "Attribution Revenus GA4 & PMS",
-          "desc": "Traçabilité complète du clic jusqu'à la confirmation de réservation pour arbitrer vos budgets selon le CPA et le ROAS réels."
+          "title": "Tunnel de Conversion Directe & Attribution GA4 / PMS",
+          "desc": "Optimisation de la vitesse mobile, mise en avant des avantages directs conformes à la parité tarifaire et traçabilité GA4 / GTM inter-domaines connectée à votre PMS."
         }
       ],
-      "processTitle": "Déploiement en 3 Étapes",
+      "processTitle": "Déploiement Opérationnel en 3 Étapes",
       "processSteps": [
         {
           "step": 1,
-          "title": "Audit du Tunnel, Parité & Tracking (Semaine 1)",
-          "desc": "Vérification de la vitesse mobile, de la parité tarifaire face aux OTA et configuration GA4/GTM + Pixel Meta."
+          "title": "Audit du Tunnel Direct, SEO Local & Tracking (Semaine 1)",
+          "desc": "Contrôle de la vitesse mobile, de la fiche Google Maps, de la parité tarifaire face aux OTA et configuration GA4/GTM inter-domaines + Pixel Meta."
         },
         {
           "step": 2,
-          "title": "Structuration & Lancement Bilingue (Semaines 2–3)",
-          "desc": "Mise en ligne des campagnes Google Search segmentées et des séquences Meta (acquisition + reciblage)."
+          "title": "Activation Multicanale Bilingue (Semaines 2–3)",
+          "desc": "Déploiement des optimisations SEO/GBP, lancement des campagnes Google Search segmentées et ouverture des séquences Meta Ads (découverte + reciblage)."
         },
         {
           "step": 3,
-          "title": "Optimisation Continue sur 60–90 Jours",
-          "desc": "Exclusion des requêtes non rentables, ajustement saisonnier des enchères et reporting transparent."
+          "title": "Pilotage du ROAS & Saisonnalité sur 60–90 Jours",
+          "desc": "Filtrage des requêtes non rentables, réallocation budgétaire par pays émetteur, renforcement organique et reporting mensuel basé sur les revenus PMS."
         }
       ],
-      "investmentTitle": "Gestion Campagnes Hôtelières",
+      "investmentTitle": "Accompagnement Marketing Hôtelier",
       "investmentPrice": "Dès 4 000 MAD / mois",
-      "investmentDesc": "Honoraires fixes par levier publicitaire (0 % de commission sur le budget média réglé directement aux régies). Préavis de 15 jours.",
+      "investmentDesc": "Honoraires fixes par levier activé — SEO hôtelier, Google Ads ou Meta Ads (0 % de commission sur vos réservations et sur le budget média). Préavis de 15 jours.",
       "faqs": [
         {
-          "q": "Quelle agence au Maroc propose la meilleure gestion de campagnes Google Ads et Meta Ads pour les hôtels ?",
-          "a": "La meilleure agence pour votre établissement est celle qui maîtrise les spécificités hôtelières : tracking e-commerce inter-domaines jusqu'au PMS (Cloudbeds, SiteMinder, Amenitiz, Mews), distinction claire entre protection de marque et acquisition hors-marque, création d'annonces bilingues FR/EN et facturation fixe sans marge sur votre budget média. Basée à Casablanca avec intervention à Marrakech, Rabat et Agadir, Urunk pilote ces campagnes dès 4 000 MAD/mois par canal avec propriété client à 100 %."
+          "q": "Quels leviers doit intégrer une stratégie complète de marketing digital hôtelier au Maroc ?",
+          "a": "Un dispositif complet de marketing digital hôtelier repose sur quatre briques complémentaires : (1) un site officiel rapide sur mobile relié en temps réel à votre moteur PMS, (2) le SEO hôtelier et l'optimisation Google Business Profile / Google Maps avec liens de réservation gratuits, (3) Google Ads (protection du nom de marque face aux OTA et campagnes Search hors-marque sur vos marchés émetteurs), et (4) Meta Ads (Instagram et Facebook) pour inspirer les voyageurs et recibler les abandons de calendrier — le tout piloté via un suivi des revenus GA4/PMS."
+        },
+        {
+          "q": "Quelle agence au Maroc choisir pour le marketing digital hôtelier et la gestion Google Ads / Meta Ads ?",
+          "a": "Privilégiez une agence spécialisée dans l'hôtellerie marocaine capable de configurer le tracking e-commerce inter-domaines jusqu'au PMS (Cloudbeds, SiteMinder, Amenitiz, Mews), d'articuler SEO local Google Maps et acquisition payante, de séparer strictement protection de marque et conquête hors-marque, et de facturer au forfait fixe sans marge sur l'achat média. Basée à Casablanca avec intervention à Marrakech, Rabat et Agadir, Urunk accompagne les hôtels et riads dès 4 000 MAD/mois par levier avec propriété client à 100 %."
         },
         {
           "q": "Quel budget mensuel minimum investir dans Google Ads et Meta Ads pour générer des réservations directes pour un hôtel au Maroc ?",
@@ -1048,12 +1118,12 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "a": "Les dépenses publicitaires sont facturées directement par Google et Meta sur la carte internationale de votre société marocaine (via la dotation commerce électronique ouverte auprès de votre banque conformément aux règles de l'Office des Changes) ou via un compte en devises. Urunk ne refacture aucune marge cachée sur vos clics."
         },
         {
-          "q": "Faut-il lancer Google Ads et Meta Ads simultanément si mon budget est limité ?",
-          "a": "Non. Si votre enveloppe globale est inférieure à 9 000 MAD/mois (frais inclus), concentrez d'abord 100 % de l'effort sur Google Ads (protection de votre nom d'hôtel face à Booking.com + requêtes intentionnistes ciblées). Activez ensuite Meta Ads en second palier pour recibler les visiteurs du site et promouvoir vos offres saisonnières."
+          "q": "Par quel levier commencer (SEO hôtelier, Google Ads ou Meta Ads) si mon budget est limité ?",
+          "a": "Assurez-vous d'abord que votre site mobile et votre moteur PMS permettent de réserver en moins de deux minutes. Si votre enveloppe globale est inférieure à 9 000 MAD/mois (frais inclus), concentrez le premier palier sur Google Ads (protection de votre nom d'hôtel face à Booking.com + requêtes intentionnistes ciblées) et la mise à niveau de votre fiche Google Maps. Déployez ensuite le SEO hôtelier pour bâtir un socle organique durable et Meta Ads pour recibler les visiteurs du site."
         },
         {
-          "q": "En combien de temps les campagnes génèrent-elles des réservations directes mesurables ?",
-          "a": "Les campagnes de protection de marque sur Google captent des réservations dès les premières semaines si votre établissement jouit déjà d'une notoriété ou d'une présence OTA. Pour les campagnes d'acquisition hors-marque et le reciblage Meta, comptez une fenêtre d'apprentissage et d'optimisation de 60 à 90 jours, modulée par le délai d'anticipation des voyageurs (lead time) et la saisonnalité."
+          "q": "En combien de temps une stratégie de marketing digital hôtelier génère-t-elle des réservations directes mesurables ?",
+          "a": "La protection de marque sur Google Ads et l'affichage du lien officiel sur Google Maps captent des réservations directes dès les 2 à 4 premières semaines lorsqu'un hôtel bénéficie déjà d'une notoriété ou d'une présence OTA. Les campagnes d'acquisition hors-marque et le reciblage Meta Ads nécessitent 60 à 90 jours d'optimisation selon le délai d'anticipation des séjours (lead time), tandis que le SEO hôtelier consolide vos positions organiques sur 3 à 6 mois."
         }
       ]
     }
@@ -1155,6 +1225,11 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "label": "Hotel Local SEO & Google Maps",
           "to": "/en/hotel-seo",
           "desc": "Rank your new hotel website on Google Search and the Google Hotel Map Pack."
+        },
+        {
+          "label": "Hotel Digital Marketing in Morocco",
+          "to": "/en/hotel-digital-marketing",
+          "desc": "Drive qualified traffic to your booking engine via SEO, Google Ads, and Meta retargeting."
         },
         {
           "label": "Marrakech Riad Website Design",
@@ -1341,6 +1416,11 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "label": "SEO Hôtelier & Google Maps au Maroc",
           "to": "/seo-hotel",
           "desc": "Positionnez votre nouveau site hôtelier sur Google Search et Google Maps."
+        },
+        {
+          "label": "Marketing Digital Hôtelier au Maroc",
+          "to": "/marketing-digital-hotelier",
+          "desc": "Alimentez votre moteur de réservation via une stratégie unifiée SEO, Google Ads et Meta Ads."
         },
         {
           "label": "Guide : Coût d'un Site de Réservation Directe au Maroc",
@@ -1530,9 +1610,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "desc": "Compare value-for-money website packages for small Moroccan hotels."
         },
         {
-          "label": "Hotel Google Ads & Meta Ads",
+          "label": "Hotel Digital Marketing in Morocco",
           "to": "/en/hotel-digital-marketing",
-          "desc": "Drive high-intent traffic and brand-protection clicks into your new booking engine."
+          "desc": "Drive direct bookings with an integrated Hotel SEO, Google Ads, and Meta retargeting strategy."
         },
         {
           "label": "Guide: PMS & Direct Booking Engine Integration",
@@ -1716,9 +1796,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
           "desc": "Comparatif rapport qualité-prix des formules web hôtelières sans commission."
         },
         {
-          "label": "Campagnes Google Ads & Meta Ads Hôtels",
+          "label": "Marketing Digital Hôtelier au Maroc",
           "to": "/marketing-digital-hotelier",
-          "desc": "Protégez votre nom de marque face à Booking.com et alimentez votre moteur direct."
+          "desc": "Stratégie complète combinant SEO hôtelier, protection de marque Google Ads et reciblage Meta Ads."
         },
         {
           "label": "Guide : Intégration PMS & Moteur de Réservation",
@@ -2479,9 +2559,9 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       "calloutBody": "Contrairement aux agences facturant 15 à 20 % de vos dépenses publicitaires, notre agence Google Ads au Maroc applique un forfait fixe dès 4 000 MAD/mois. Vous réglez votre budget média directement à Google et restez propriétaire à 100 % de votre compte.",
       "relatedLinks": [
         {
-          "label": "Google Ads & Meta Ads Spécial Hôtels au Maroc",
+          "label": "Marketing Digital Hôtelier au Maroc",
           "to": "/marketing-digital-hotelier",
-          "desc": "Repères de budgets mensuels minimums et gestion combinée Google + Meta pour réservations directes hôtelières."
+          "desc": "Stratégie dédiée aux hôtels et riads (SEO hôtelier, Google Ads, Meta Ads, budgets médias et suivi PMS)."
         },
         {
           "label": "Grille Tarifaire Transparente",

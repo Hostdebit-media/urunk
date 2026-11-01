@@ -68,9 +68,9 @@ export default function GoogleAds() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong>What we do:</strong> Urunk provides specialized Google Ads management for Moroccan hospitality businesses from 4,000 MAD/month flat fee (0% markup on media spend). Looking for combined <strong>Google Ads + Meta Ads hotel management and minimum monthly budget benchmarks</strong>? Read our{" "}
+              <strong>What we do:</strong> Urunk provides specialized Google Ads management for Moroccan hospitality businesses from 4,000 MAD/month flat fee (0% markup on media spend). Looking for an <strong>integrated strategy combining Hotel SEO, Google Ads, Meta Ads, and monthly budget benchmarks</strong>? Read our{" "}
               <Link to="/en/hotel-digital-marketing" className="underline text-accent-soft hover:text-white font-semibold">
-                Hotel Google Ads &amp; Meta Ads Morocco guide
+                Hotel Digital Marketing in Morocco guide
               </Link>.
             </Callout>
           </div>

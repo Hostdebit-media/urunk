@@ -68,9 +68,9 @@ export default function MetaAds() {
           </p>
           <div className="max-w-3xl mx-auto mb-10 text-left">
             <Callout variant="dark">
-              <strong>What we do:</strong> Urunk manages Meta (Facebook &amp; Instagram) funnels for Moroccan hotels and riads from 4,000 MAD/month flat fee. Comparing <strong>combined Google Ads + Meta Ads management and minimum monthly budgets</strong>? Explore our{" "}
+              <strong>What we do:</strong> Urunk manages Meta (Facebook &amp; Instagram) funnels for Moroccan hotels and riads from 4,000 MAD/month flat fee. Looking for an <strong>integrated strategy combining Hotel SEO, Google Ads, Meta Ads, and monthly budget benchmarks</strong>? Explore our{" "}
               <Link to="/en/hotel-digital-marketing" className="underline text-accent-soft hover:text-white font-semibold">
-                Hotel Google &amp; Meta Ads Morocco guide
+                Hotel Digital Marketing in Morocco guide
               </Link>.
             </Callout>
           </div>

@@ -21,6 +21,8 @@ import {
 import { buildMatrixMetadata } from './src/data/matrixMetadata';
 import { pricingCopyEN } from './src/data/copy/pricing.en';
 import { pricingCopyFR } from './src/data/copy/pricing.fr';
+import { buildProfessionalServiceSchema, buildBreadcrumbListSchema } from './src/components/SEO/StructuredData';
+import { routeMappings } from './src/components/Breadcrumbs';
 
 interface PageMetadata {
   path: string;
@@ -344,8 +346,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/zones/maroc',
     lang: 'fr',
-    title: 'Marketing Digital Hôtelier partout au Maroc | Urunk',
-    description: 'Création de sites web rapides, Google Ads et référencement naturel pour hôtels de charme, riads et traiteurs de luxe à travers le Maroc.'
+    title: 'Agence Web, SEO & Acquisition au Maroc | Hub Urunk',
+    description: 'Couverture nationale Urunk au Maroc (Casablanca, Marrakech, Rabat, Agadir, Tanger) : création de sites web React, SEO national et acquisition client.'
   },
   {
     path: '/zones/casablanca',
@@ -562,8 +564,8 @@ const staticPages: PageMetadata[] = [
   {
     path: '/en/locations/morocco',
     lang: 'en',
-    title: 'Hospitality Digital Marketing Services in Morocco | Urunk',
-    description: 'Bespoke web development, Google Ads, and search engine optimization services for luxury hotels, boutique stays, and tourism brands across Morocco.'
+    title: 'Web Engineering, SEO & Growth Agency Morocco | Urunk',
+    description: 'Urunk national hub across Morocco (Casablanca, Marrakech, Rabat, Agadir, Tangier): high-speed React web design, enterprise SEO, and paid acquisition.'
   },
   {
     path: '/en/locations/casablanca',
@@ -1335,7 +1337,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               <li><a href="/creation-site-web" style="color: #0F2D25; text-decoration: underline;">Création de Site Web &amp; Landing Pages Rapides</a></li>
               <li><a href="/services/bundle-site-ads" style="color: #0F2D25; text-decoration: underline;">Pack Complet Site Web + Campagnes Google Ads</a></li>
               <li><a href="/services/gestion-publicites-meta" style="color: #0F2D25; text-decoration: underline;">Publicités Meta Ads (Instagram &amp; Facebook)</a></li>
-              <li><a href="/marketing-digital-hotelier" style="color: #0F2D25; text-decoration: underline;">Google Ads &amp; Meta Ads Hôtels (Budgets &amp; ROI)</a></li>
+              <li><a href="/marketing-digital-hotelier" style="color: #0F2D25; text-decoration: underline;">Marketing Digital Hôtelier au Maroc (Stratégie &amp; Budgets)</a></li>
               <li><a href="/reservation-directe" style="color: #0F2D25; text-decoration: underline;">Stratégie de Réservation Directe Hôtelière</a></li>
             </ul>
           </div>
@@ -1408,18 +1410,18 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       },
       'hotel-digital-marketing': {
         en: [
-          'High-converting Instagram and Facebook video & carousel ad creatives',
-          'Custom audience retargeting for travelers who visited your site without booking',
-          'Lookalike audience modeling based on your highest-value past guest list',
-          'A/B testing of room offer headlines, seasonal packages, and call-to-action buttons',
-          'Monthly transparent reporting tracking Cost Per Acquisition (CPA) and ROI'
+          'Technical & local Hotel SEO, Google Business Profile optimization, and official Free Booking Links on Google Maps',
+          'Google Search & Hotel Ads campaigns separating brand defense against OTAs from feeder-market acquisition',
+          'Instagram & Facebook (Meta Ads) Reels/Carousel storytelling and dynamic booking-abandonment retargeting',
+          'Direct-booking mobile UX audit, rate-parity perk framing, and live PMS availability checks',
+          'Cross-domain GA4, Google Tag Manager, and PMS conversion tracking measuring actual booking revenue and ROAS'
         ],
         fr: [
-          'Créations publicitaires vidéo et carrousels Instagram & Facebook à haute conversion',
-          'Retargeting d\'audience ciblé pour les visiteurs du site n\'ayant pas finalisé la réservation',
-          'Modélisation d\'audiences similaires basées sur vos meilleurs clients historiques',
-          'Tests A/B sur les titres d\'offres, forfaits saisonniers et boutons d\'action',
-          'Rapports mensuels transparents mesurant le coût par acquisition (CPA) et le ROI'
+          'SEO hôtelier bilingue FR/EN, optimisation Google Business Profile et activation des Free Booking Links sur Google Maps',
+          'Campagnes Google Ads Search & Hotel Ads séparant protection du nom de marque et conquête hors-marque par pays émetteur',
+          'Funnels Meta Ads (Instagram & Facebook) en Reels/Carrousels et reciblage dynamique des abandons de calendrier',
+          'Optimisation du tunnel de réservation mobile, mise en valeur des avantages directs et contrôle de la parité tarifaire',
+          'Tracking e-commerce inter-domaines GA4, Google Tag Manager et PMS mesurant le chiffre d\'affaires réservé et le ROAS'
         ]
       }
     };
@@ -1451,8 +1453,8 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         fr: 'Parfait pour les établissements hôteliers et PME à Marrakech, Casablanca, Rabat ou Agadir souhaitant capter les recherches actives sur Google.'
       },
       'hotel-digital-marketing': {
-        en: 'Best for independent hotels, riads, and resorts combining Google Search/Hotel Ads with Instagram & Facebook retargeting to generate direct bookings.',
-        fr: 'Recommandé pour les hôtels, riads et resorts combinant Google Search / Hotel Ads et reciblage Meta Ads (Instagram & Facebook) pour générer des réservations directes.'
+        en: 'Built for independent boutique hotels, Medina riads, resorts, and hospitality groups across Morocco seeking an integrated direct-booking strategy (Hotel SEO, Google Maps, Google Ads, Meta retargeting, and PMS attribution) to reduce 15%–25% OTA commission leakage.',
+        fr: 'Conçu pour les hôtels indépendants, riads de médina, resorts et groupes hôteliers au Maroc souhaitant déployer une stratégie globale d\'acquisition directe (SEO hôtelier, Google Maps, Google Ads, Meta Ads et suivi PMS) afin de réduire les commissions OTA de 15 % à 25 %.'
       }
     };
 
@@ -1527,10 +1529,34 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
       </section>
     ` : '';
 
+    const rawPathSegs = page.path.split('/').filter(Boolean);
+    const breadcrumbContentSegs = isFR ? rawPathSegs : rawPathSegs.slice(1);
+    const breadcrumbTrailHtml = [
+      `<a href="${isFR ? '/' : '/en'}" style="color: #718096; text-decoration: none;">${isFR ? 'Accueil' : 'Home'}</a>`,
+      ...breadcrumbContentSegs.map((seg, idx) => {
+        const segHref = '/' + rawPathSegs.slice(0, isFR ? idx + 1 : idx + 2).join('/');
+        const mappedLabel = routeMappings[seg]
+          ? (isFR ? routeMappings[seg].fr : routeMappings[seg].en)
+          : seg.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        const isLastSeg = idx === breadcrumbContentSegs.length - 1;
+        return isLastSeg
+          ? `<span aria-current="page" style="color: #0F2D25; font-weight: 600;">${escapeHtml(mappedLabel)}</span>`
+          : `<a href="${segHref}" style="color: #718096; text-decoration: none;">${escapeHtml(mappedLabel)}</a>`;
+      })
+    ].join(' &gt; ');
+
+    const deliverablesHeading = serviceMapping.key === 'hotel-digital-marketing'
+      ? (isFR ? 'Livrables Clés de Notre Accompagnement en Marketing Digital Hôtelier' : 'Core Deliverables of Our Hotel Digital Marketing Scope')
+      : (isFR ? 'Ce Que Comprend Cet Accompagnement Opérationnel' : 'What Is Included in This Service Scope');
+
+    const fitHeading = serviceMapping.key === 'hotel-digital-marketing'
+      ? (isFR ? 'À Quels Établissements Hôteliers S\'adresse Ce Dispositif ?' : 'Which Hospitality Properties Benefit Most From This Strategy?')
+      : (isFR ? 'À Quels Établissements et Entreprises S\'adresse Cette Solution ?' : 'Which Properties and Businesses Is This Built For?');
+
     html += `
       <div>
         <header style="margin-bottom: 2.5rem;">
-          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;"><a href="${isFR ? '/' : '/en'}" style="color: #718096; text-decoration: none;">${isFR ? 'Accueil' : 'Home'}</a> &gt; <a href="${isFR ? '/services' : '/en/services'}" style="color: #718096; text-decoration: none;">Services</a> &gt; ${escapeHtml(item.heroTitle)}</p>
+          <nav aria-label="Breadcrumb" style="font-size: 0.9rem; color: #718096; margin-bottom: 0.5rem;">${breadcrumbTrailHtml}</nav>
           <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(item.heroTitle)}</h1>
           <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.6; margin-bottom: 1.5rem;">
             ${escapeHtml(item.heroSub)}
@@ -1543,12 +1569,12 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         </header>
 
         <section class="page-specific-deliverables" style="margin-bottom: 3rem; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem;">
-          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">${isFR ? `Ce Que Vous Obtenez Avec ${escapeHtml(serviceName)}` : `What You Get With ${escapeHtml(serviceName)}`}</h2>
+          <h2 style="color: #0F2D25; font-size: 1.8rem; margin-top: 0; margin-bottom: 1rem; font-family: Georgia, serif;">${escapeHtml(deliverablesHeading)}</h2>
           <ul style="padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; color: #4a5568; margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.6;">
             ${delivs.map(d => `<li>${escapeHtml(d)}</li>`).join('')}
           </ul>
 
-          <h2 style="color: #0F2D25; font-size: 1.6rem; margin-top: 1.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${isFR ? `Est-ce que ${escapeHtml(serviceName)} Convient à Votre Établissement ?` : `Is ${escapeHtml(serviceName)} Right For Your Property?`}</h2>
+          <h2 style="color: #0F2D25; font-size: 1.6rem; margin-top: 1.5rem; margin-bottom: 0.75rem; font-family: Georgia, serif;">${escapeHtml(fitHeading)}</h2>
           <p style="margin: 0; color: #4a5568; font-size: 1.05rem; line-height: 1.7; background: #FAF8F5; padding: 1.25rem; border-radius: 8px;">
             ${escapeHtml(propertyFit)}
           </p>
@@ -2220,7 +2246,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           <ul style="padding-left: 1.25rem; line-height: 1.8; color: #4a5568;">
             <li><a href="${isFR ? '/site-web-hotel' : '/en/hotel-website-design'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Création de site web hôtelier avec moteur de réservation intégré' : 'Hotel website design with integrated booking engine'}</a></li>
             <li><a href="${isFR ? '/reservation-directe' : '/en/direct-booking'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Systèmes de réservation directe sans OTA (PMS & CMI)' : 'Direct booking systems without OTAs (PMS & CMI)'}</a></li>
-            <li><a href="${isFR ? '/marketing-digital-hotelier' : '/en/hotel-digital-marketing'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Campagnes Google Ads & Meta Ads pour hôtels au Maroc' : 'Google Ads & Meta Ads management for hotels in Morocco'}</a></li>
+            <li><a href="${isFR ? '/marketing-digital-hotelier' : '/en/hotel-digital-marketing'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Marketing digital hôtelier au Maroc (SEO, Google Ads & Meta Ads)' : 'Hotel digital marketing in Morocco (SEO, Google Ads & Meta Ads)'}</a></li>
             <li><a href="${isFR ? '/tarifs' : '/en/pricing'}" style="color: #0F2D25; font-weight: 600; text-decoration: underline;">${isFR ? 'Grille complète des tarifs Urunk en dirhams (MAD)' : 'Complete Urunk pricing rate card in MAD'}</a></li>
           </ul>
         </section>
@@ -3689,6 +3715,41 @@ function prerender() {
             "url": canonicalUrl
           }
         });
+      } else if (matchedServiceMapping?.key === 'hotel-digital-marketing' && srvEntryForSchema) {
+        schemas.push(buildProfessionalServiceSchema(undefined, page.lang));
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": `${canonicalUrl}#service`,
+          "name": srvEntryForSchema.heroTitle,
+          "serviceType": routeMappings['hotel-digital-marketing'][page.lang],
+          "description": pageDesc,
+          "provider": {
+            "@type": "ProfessionalService",
+            "name": "Urunk",
+            "url": "https://urunk.com"
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "Morocco" },
+            { "@type": "Country", "name": "Worldwide" }
+          ],
+          ...(numericServicePrice
+            ? {
+                "offers": {
+                  "@type": "Offer",
+                  "price": numericServicePrice,
+                  "priceCurrency": "MAD",
+                  "url": canonicalUrl,
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": numericServicePrice,
+                    "priceCurrency": "MAD",
+                    "unitText": "MONTH"
+                  }
+                }
+              }
+            : {})
+        });
       } else {
         schemas.push({
           "@context": "https://schema.org",
@@ -4385,6 +4446,28 @@ function prerender() {
             }
           ]
         });
+      } else if (page.path === '/marketing-digital-hotelier' || page.path === '/en/hotel-digital-marketing') {
+        const rawSegs = page.path.split('/').filter(Boolean);
+        const contentSegs = page.lang === 'fr' ? rawSegs : rawSegs.slice(1);
+        schemas.push(
+          buildBreadcrumbListSchema([
+            {
+              name: page.lang === 'fr' ? 'Accueil' : 'Home',
+              url: page.lang === 'fr' ? `${BASE_URL}/` : `${BASE_URL}/en`,
+              position: 1
+            },
+            ...contentSegs.map((seg, idx) => {
+              const origEnd = page.lang === 'fr' ? idx + 1 : idx + 2;
+              const segUrl = `${BASE_URL}/${rawSegs.slice(0, origEnd).join('/')}`;
+              const mapped = routeMappings[seg];
+              return {
+                name: mapped ? mapped[page.lang] : seg,
+                url: segUrl,
+                position: idx + 2
+              };
+            })
+          ])
+        );
       } else if (isCommercialService && page.path !== '/services' && page.path !== '/en/services') {
         schemas.push({
           "@context": "https://schema.org",
