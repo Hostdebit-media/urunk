@@ -46,8 +46,8 @@ test('slugMappings maintains strict bidirectional reciprocity for all hospitalit
 });
 
 test('non-reciprocal routes fall back safely without claiming reciprocal hreflang', () => {
-  assert.equal(getEquivalentRoute('/creation-site-web'), '/en/services/website-design');
-  assert.equal(hasReciprocalTranslation('/creation-site-web'), false);
+  assert.equal(getEquivalentRoute('/services/creation-site-web'), '/en/services/website-design');
+  assert.equal(hasReciprocalTranslation('/services/creation-site-web'), true);
 
   assert.equal(getEquivalentRoute('/blog/article-uniquement-francophone'), '/en/blog');
   assert.equal(hasReciprocalTranslation('/blog/article-uniquement-francophone'), false);
@@ -554,7 +554,7 @@ test('dist/_redirects conforms strictly to Cloudflare _redirects specification w
     }
   }
 
-  assert.equal(seenSources.size, 190, `Expected all 190 redirect rules to be preserved, got ${seenSources.size}`);
+  assert.equal(seenSources.size, 193, `Expected all 193 redirect rules to be preserved, got ${seenSources.size}`);
   assert.ok(staticRules <= 2000, `Exceeded Cloudflare 2000 static rules limit (${staticRules})`);
   assert.ok(dynamicRules <= 100, `Exceeded Cloudflare 2000 dynamic rules limit (${dynamicRules})`);
 });
@@ -801,7 +801,7 @@ test('all 37 reported crawl URLs and all 274 prerendered dist/ HTML routes emit 
     '/agence-seo-maroc',
     '/agence-web-casablanca',
     '/agence-web-maroc',
-    '/creation-site-web',
+    '/services/creation-site-web',
     '/en/google-ads-morocco',
     '/en/pricing',
     '/en/seo-agency-morocco',

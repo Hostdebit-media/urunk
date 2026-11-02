@@ -62,7 +62,6 @@ export const routeMap: Record<string, string> = {
   '/tarifs': '/en/pricing',
   '/services': '/en/services',
   '/services/creation-site-web': '/en/services/website-design',
-  '/creation-site-web': '/en/services/website-design',
   '/agence-web-maroc': '/en/web-design-morocco',
   '/agence-web-casablanca': '/en/web-design-casablanca',
   '/agence-seo-maroc': '/en/seo-agency-morocco',
@@ -87,6 +86,7 @@ export const routeMap: Record<string, string> = {
   '/services/local-seo-morocco': '/en/services/local-seo-morocco',
 
   // Industries (FR -> EN)
+  '/secteurs': '/en/industries',
   '/secteurs/hotels-resorts': '/en/industries/hotels-resorts',
   '/secteurs/riads-maisons-hotes': '/en/industries/riads-boutique-hotels',
   '/secteurs/tour-operateurs': '/en/industries/tour-operators',
@@ -120,7 +120,6 @@ export const routeMap: Record<string, string> = {
   '/en/web-design-morocco': '/agence-web-maroc',
   '/en/web-design-casablanca': '/agence-web-casablanca',
   '/en/seo-agency-morocco': '/agence-seo-maroc',
-  '/en/seo-morocco': '/agence-seo-maroc',
   '/en/seo-agency-casablanca': '/agence-seo-casablanca',
   '/en/hotel-seo': '/seo-hotel',
   '/en/hotel-digital-marketing': '/marketing-digital-hotelier',
@@ -142,6 +141,7 @@ export const routeMap: Record<string, string> = {
   '/en/services/local-seo-morocco': '/services/local-seo-morocco',
 
   // Industries (EN -> FR)
+  '/en/industries': '/secteurs',
   '/en/industries/hotels-resorts': '/secteurs/hotels-resorts',
   '/en/industries/riads-boutique-hotels': '/secteurs/riads-maisons-hotes',
   '/en/industries/tour-operators': '/secteurs/tour-operateurs',

@@ -9,6 +9,9 @@
 /en/seo-riad-marrakech.html /en/riad-seo-marrakech 301
 /en/services/meta-ads-management /en/services/meta-ads 301
 /en/website-design /en/services/website-design 301
+/en/seo-morocco /en/seo-agency-morocco 301
+/en/seo-morocco.html /en/seo-agency-morocco 301
+/creation-site-web /services/creation-site-web 301
 
 # 1. Direct .html Extension Single-Hop Normalization
 /fr/tarifs.html /tarifs 301
@@ -110,7 +113,7 @@
 /fr/referencement-local-casablanca /referencement-local-casablanca 301
 /fr/seo-riad-marrakech /seo-riad-marrakech 301
 /fr/site-web-riad-marrakech /site-web-riad-marrakech 301
-/fr/creation-site-web /creation-site-web 301
+/fr/creation-site-web /services/creation-site-web 301
 
 # 5. Legacy /fr/services/* -> Root French Services
 /fr/services/creation-site-web /services/creation-site-web 301
@@ -166,7 +169,7 @@
 # 8. Legacy English Core Services & Landing Pages -> /en/
 /web-design-morocco /en/web-design-morocco 301
 /web-design-casablanca /en/web-design-casablanca 301
-/seo-morocco /en/seo-morocco 301
+/seo-morocco /en/seo-agency-morocco 301
 /seo-agency-morocco /en/seo-agency-morocco 301
 /seo-agency-casablanca /en/seo-agency-casablanca 301
 /hotel-seo /en/hotel-seo 301

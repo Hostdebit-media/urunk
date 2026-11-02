@@ -49,6 +49,7 @@ const CORE_PAGES = [
   { fr: '/services/local-seo-morocco', en: '/en/services/local-seo-morocco', changefreq: 'monthly', priority: '0.9' },
 
   // Industry landing pages
+  { fr: '/secteurs', en: '/en/industries', changefreq: 'monthly', priority: '0.8' },
   { fr: '/secteurs/hotels-resorts', en: '/en/industries/hotels-resorts', changefreq: 'monthly', priority: '0.8' },
   { fr: '/secteurs/riads-maisons-hotes', en: '/en/industries/riads-boutique-hotels', changefreq: 'monthly', priority: '0.8' },
   { fr: '/secteurs/tour-operateurs', en: '/en/industries/tour-operators', changefreq: 'monthly', priority: '0.8' },
@@ -65,9 +66,7 @@ const CORE_PAGES = [
 ];
 
 // French-only standalone landing pages (emitted with self-referencing fr + x-default hreflang only)
-const FR_ONLY_PAGES = [
-  { fr: '/creation-site-web', changefreq: 'monthly', priority: '0.8' }
-];
+const FR_ONLY_PAGES: { fr: string; changefreq: string; priority: string }[] = [];
 
 // English-only standalone landing pages (emitted with self-referencing en hreflang only)
 const EN_ONLY_PAGES = [

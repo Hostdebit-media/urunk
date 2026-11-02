@@ -98,7 +98,6 @@ export default function Sitemap() {
     { label: "Création de Site Web Hôtelier", path: "/site-web-hotel" },
     { label: "Création de Site Web Riad Marrakech", path: "/site-web-riad-marrakech" },
     { label: "Forfaits Création de Site Web Hôtelier", path: "/services/creation-site-web" },
-    { label: "Création Site Web Maroc : Tarifs et Prix", path: "/creation-site-web" },
     { label: "Agence Web Maroc : Hôtels & Riads", path: "/agence-web-maroc" },
     { label: "Agence Web Casablanca : Création Sur Mesure", path: "/agence-web-casablanca" },
     { label: "Stratégies Réservation Directe : Moins d'OTA", path: "/reservation-directe" },

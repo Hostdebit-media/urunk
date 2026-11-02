@@ -722,7 +722,7 @@ export default function GoogleAdsMarocFR() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/creation-site-web" className="text-primary hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-primary/5">
+                  <Link to="/services/creation-site-web" className="text-primary hover:text-accent transition-colors flex items-center justify-between py-1 border-b border-primary/5">
                     <span>Création de Site Web Haute Conversion</span>
                     <ArrowRight size={14} className="text-accent shrink-0" />
                   </Link>

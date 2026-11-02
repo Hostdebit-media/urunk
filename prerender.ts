@@ -182,12 +182,6 @@ const staticPages: PageMetadata[] = [
     description: 'Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix au Maroc ? Comparatif petits hôtels & riads dès 12 000 MAD sans commission.'
   },
   {
-    path: '/creation-site-web',
-    lang: 'fr',
-    title: 'Création Site Web Maroc : Tarifs et Prix | Urunk',
-    description: 'Création de sites web professionnels au Maroc dès 12 000 MAD : sites ultra-rapides, réservation directe pour hôtels et riads, tarifs transparents.'
-  },
-  {
     path: '/realisations',
     lang: 'fr',
     title: 'Réalisations & Études de Cas Hôtelières | Urunk',
@@ -312,6 +306,12 @@ const staticPages: PageMetadata[] = [
     lang: 'fr',
     title: 'Référencement Local Maroc : Visibilité Google Maps | Urunk',
     description: 'Captez les touristes en recherche active autour de vous. Optimisation SEO locale et présence sur cartes pour les établissements au Maroc.'
+  },
+  {
+    path: '/secteurs',
+    lang: 'fr',
+    title: 'Secteurs d’activité | Urunk',
+    description: 'Sites web, référencement et annonces pour les hôtels, riads, tour-opérateurs, restaurants et PME au Maroc.'
   },
   {
     path: '/secteurs/hotels-resorts',
@@ -532,6 +532,12 @@ const staticPages: PageMetadata[] = [
     description: 'Connect with tourists searching in your local area. We optimize your local citation networks, maps profiles, and geographically-targeted content.'
   },
   {
+    path: '/en/industries',
+    lang: 'en',
+    title: 'Industries We Serve | Urunk',
+    description: 'Websites, SEO and advertising for hotels, riads, tour operators, restaurants and SMEs in Morocco.'
+  },
+  {
     path: '/en/industries/hotels-resorts',
     lang: 'en',
     title: 'Hotels & Resorts Digital Marketing Agency | Urunk',
@@ -601,7 +607,6 @@ const staticPages: PageMetadata[] = [
 
 // Mapping service routes to serviceData keys
 const serviceRouteMapping: { key: string, enPath: string, frPath: string }[] = [
-  { key: 'creation-site-web-prix', enPath: '', frPath: '/creation-site-web' },
   { key: 'google-ads-morocco', enPath: '/en/services/google-ads', frPath: '/google-ads-maroc' },
   { key: 'meta-ads', enPath: '/en/services/meta-ads', frPath: '/services/gestion-publicites-meta' },
   { key: 'tripadvisor-ads', enPath: '/en/services/tripadvisor-ads', frPath: '/services/tripadvisor-ads' },
@@ -945,7 +950,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
               ${isFR
                 ? "Sites bilingues français et anglais rapides sur réseau mobile, connectés à votre calendrier PMS ou équipés de formulaires courts de demande de devis et de contact WhatsApp."
                 : "Bilingual English and French websites built for mobile speed, connected to your live PMS calendar or equipped with short quote inquiry forms and direct WhatsApp contact."}
-              <a href="${isFR ? '/creation-site-web' : '/en/services/website-design'}" style="color: #9E3018; font-weight: 600; margin-left: 0.4rem;">${isFR ? 'Détail création web' : 'Website design details'}</a>
+              <a href="${isFR ? '/services/creation-site-web' : '/en/services/website-design'}" style="color: #9E3018; font-weight: 600; margin-left: 0.4rem;">${isFR ? 'Détail création web' : 'Website design details'}</a>
             </p>
           </article>
 
@@ -1341,7 +1346,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             <h2 style="color: #0F2D25; font-size: 1.3rem; margin-top: 0; margin-bottom: 0.75rem; font-family: Georgia, serif;">Synergie SEA + SEO &amp; Conversion</h2>
             <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.9;">
               <li><a href="/agence-seo-maroc" style="color: #0F2D25; text-decoration: underline;">Agence SEO Maroc (Référencement Naturel Durable)</a></li>
-              <li><a href="/creation-site-web" style="color: #0F2D25; text-decoration: underline;">Création de Site Web &amp; Landing Pages Rapides</a></li>
+              <li><a href="/services/creation-site-web" style="color: #0F2D25; text-decoration: underline;">Création de Site Web &amp; Landing Pages Rapides</a></li>
               <li><a href="/services/bundle-site-ads" style="color: #0F2D25; text-decoration: underline;">Pack Complet Site Web + Campagnes Google Ads</a></li>
               <li><a href="/services/gestion-publicites-meta" style="color: #0F2D25; text-decoration: underline;">Publicités Meta Ads (Instagram &amp; Facebook)</a></li>
               <li><a href="/marketing-digital-hotelier" style="color: #0F2D25; text-decoration: underline;">Marketing Digital Hôtelier au Maroc (Stratégie &amp; Budgets)</a></li>
@@ -2424,6 +2429,39 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
           </section>
         </div>
       `;
+    } else if (page.path === '/secteurs' || page.path === '/en/industries') {
+      const h1Text = isFR ? 'Secteurs d’activité' : 'Industries we serve';
+      const sectorHubList = [
+        { key: 'hotels-resorts', pathFr: '/secteurs/hotels-resorts', pathEn: '/en/industries/hotels-resorts' },
+        { key: 'riads-boutique-hotels', pathFr: '/secteurs/riads-maisons-hotes', pathEn: '/en/industries/riads-boutique-hotels' },
+        { key: 'tour-operators', pathFr: '/secteurs/tour-operateurs', pathEn: '/en/industries/tour-operators' },
+        { key: 'restaurants-catering', pathFr: '/secteurs/restaurants-traiteurs', pathEn: '/en/industries/restaurants-catering' },
+        { key: 'corporate-smes', pathFr: '/secteurs/pme-entreprises', pathEn: '/en/industries/corporate-smes' }
+      ];
+
+      html += `
+        <div>
+          <header style="margin-bottom: 2.5rem; text-align: center;">
+            <h1 style="font-size: 2.75rem; color: #0F2D25; margin-bottom: 1rem; line-height: 1.2; font-family: Georgia, serif;">${escapeHtml(h1Text)}</h1>
+            <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.6; max-width: 800px; margin: 0 auto;">${escapeHtml(page.description)}</p>
+          </header>
+
+          <section style="margin-bottom: 3rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+              ${sectorHubList.map(sec => {
+                const entry = industriesData[sec.key][lang];
+                const href = isFR ? sec.pathFr : sec.pathEn;
+                return `
+                  <div style="background: #ffffff; border: 1px solid #e2e8f0; padding: 1.5rem; border-radius: 10px;">
+                    <h2 style="color: #0F2D25; font-size: 1.35rem; margin-top: 0; font-family: Georgia, serif;"><a href="${href}" style="color: #0F2D25; text-decoration: none;">${escapeHtml(entry.title)}</a></h2>
+                    <p style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">${escapeHtml(entry.description)}</p>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </section>
+        </div>
+      `;
     } else if (page.path === '/zones' || page.path === '/en/locations') {
       const h1Text = isFR ? "Nos Zones d'Intervention au Maroc" : "Locations We Serve in Morocco";
       const subText = isFR 
@@ -2581,7 +2619,6 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
         { name: 'Agadir', url: '/en/locations/agadir' }
       ];
       const services = isFR ? [
-        { name: 'Création Site Web (Tarifs)', url: '/creation-site-web' },
         { name: 'Service Création Site Web', url: '/services/creation-site-web' },
         { name: 'Agence Web Maroc', url: '/agence-web-maroc' },
         { name: 'Agence Web Casablanca', url: '/agence-web-casablanca' },
@@ -3224,7 +3261,7 @@ function generateFallbackBody(page: PageMetadata, allPages: PageMetadata[]): str
             <p style="color: #0F2D25; font-weight: 700; margin-top: 0; margin-bottom: 0.75rem; font-size: 0.95rem;">${isFR ? 'Navigation' : 'Navigation'}</p>
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem;">
               <li><a href="${isFR ? '/plan-du-site' : '/en/sitemap'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Plan du site' : 'Sitemap'}</a></li>
-              <li><a href="${isFR ? '/creation-site-web' : '/en/services/website-design'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Création de site web' : 'Website design'}</a></li>
+              <li><a href="${isFR ? '/services/creation-site-web' : '/en/services/website-design'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Création de site web' : 'Website design'}</a></li>
               <li><a href="${isFR ? '/agence-web-casablanca' : '/en/web-design-casablanca'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Agence web Casablanca' : 'Web design Casablanca'}</a></li>
               <li><a href="${isFR ? '/blog' : '/en/blog'}" style="color: #4a5568; text-decoration: none;">Blog</a></li>
               <li><a href="${isFR ? '/realisations' : '/en/work'}" style="color: #4a5568; text-decoration: none;">${isFR ? 'Dossiers métiers' : 'Project dossiers'}</a></li>
@@ -4255,7 +4292,14 @@ function prerender() {
       });
     }
 
-    if (page.path === '/services' || page.path === '/en/services' || page.path === '/zones' || page.path === '/en/locations') {
+    if (
+      page.path === '/services' ||
+      page.path === '/en/services' ||
+      page.path === '/secteurs' ||
+      page.path === '/en/industries' ||
+      page.path === '/zones' ||
+      page.path === '/en/locations'
+    ) {
       schemas.push({
         "@context": "https://schema.org",
         "@type": "CollectionPage",

@@ -102,7 +102,7 @@ const services: ServiceItem[] = [
     titleFr: 'Référencement SEO Maroc',
     desc: 'Expert search engine optimization to capture high-intent organic traffic searching for Morocco tourism.',
     descFr: 'Optimisation de référencement naturel pour optimiser Google Maroc et l\'international.',
-    path: '/en/seo-morocco',
+    path: '/en/seo-agency-morocco',
     pathFr: '/agence-seo-maroc',
   },
   {

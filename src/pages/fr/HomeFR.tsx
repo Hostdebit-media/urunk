@@ -238,7 +238,7 @@ export default function HomeFR() {
               </h3>
               <p className="text-sm sm:text-base text-primary/80 leading-relaxed mb-3">
                 Nous concevons des sites bilingues en français et en anglais qui chargent vite sur réseau mobile. Pour un hôtel ou un riad, nous connectons directement votre calendrier PMS (Cloudbeds, Mews, Sirvoy, Little Hotelier). Pour une agence d'excursions, un traiteur ou une PME, nous mettons en place des pages claires avec demande de devis rapide et contact WhatsApp.{' '}
-                <Link to="/creation-site-web" className="font-semibold text-accent hover:underline underline-offset-4">
+                <Link to="/services/creation-site-web" className="font-semibold text-accent hover:underline underline-offset-4">
                   Détail de la création web
                 </Link>
               </p>

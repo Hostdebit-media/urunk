@@ -7,7 +7,6 @@ import URLNormalizer from './components/URLNormalizer';
 // Lazy loading pages for optimal code splitting and performance
 const Home = lazy(() => import('./pages/Home'));
 const WebsiteDesign = lazy(() => import('./pages/Services/WebsiteDesign'));
-const SeoMorocco = lazy(() => import('./pages/Services/SeoMorocco'));
 const HotelSeo = lazy(() => import('./pages/Services/HotelSeo'));
 const HotelDigitalMarketing = lazy(() => import('./pages/Services/HotelDigitalMarketing'));
 const HotelWebsiteDesign = lazy(() => import('./pages/Services/HotelWebsiteDesign'));
@@ -16,7 +15,6 @@ const LocalSeoCasablanca = lazy(() => import('./pages/Services/LocalSeoCasablanc
 const RiadSeoMarrakech = lazy(() => import('./pages/Services/RiadSeoMarrakech'));
 const RiadWebsiteDesignMarrakech = lazy(() => import('./pages/Services/RiadWebsiteDesignMarrakech'));
 const AgenceWebMaroc = lazy(() => import('./pages/fr/Services/AgenceWebMaroc'));
-const CreationSiteWebFR = lazy(() => import('./pages/fr/Services/CreationSiteWebFR'));
 const AgenceSeoMaroc = lazy(() => import('./pages/fr/Services/AgenceSeoMaroc'));
 const AgenceSeoCasablanca = lazy(() => import('./pages/fr/Services/AgenceSeoCasablanca'));
 const SeoHotel = lazy(() => import('./pages/fr/Services/SeoHotel'));
@@ -47,6 +45,8 @@ const WordPressSeo = lazy(() => import('./pages/Services/WordPressSeo'));
 const EcommerceSeo = lazy(() => import('./pages/Services/EcommerceSeo'));
 
 // Industry Landing Pages
+const IndustriesIndex = lazy(() => import('./pages/Industries/IndustriesIndex'));
+const SectorsIndexFR = lazy(() => import('./pages/fr/SectorsIndexFR'));
 const HotelsResorts = lazy(() => import('./pages/Industries/HotelsResorts'));
 const RiadsBoutiqueStays = lazy(() => import('./pages/Industries/RiadsBoutiqueStays'));
 const TourOperators = lazy(() => import('./pages/Industries/TourOperators'));
@@ -128,7 +128,6 @@ export default function App() {
               <Route path="tarifs" element={<PricingFR />} />
               <Route path="services" element={<ServicesIndexFR />} />
               <Route path="services/creation-site-web" element={<WebsiteDesignFR />} />
-              <Route path="creation-site-web" element={<CreationSiteWebFR />} />
               <Route path="agence-web-maroc" element={<AgenceWebMaroc />} />
               <Route path="agence-web-casablanca" element={<WebDesignCasablancaFR />} />
               <Route path="agence-seo-maroc" element={<AgenceSeoMaroc />} />
@@ -155,6 +154,7 @@ export default function App() {
               <Route path="services/local-seo-morocco" element={<LocalSeoMoroccoFR />} />
 
               {/* Dedicated Industry Routes FR */}
+              <Route path="secteurs" element={<SectorsIndexFR />} />
               <Route path="secteurs/hotels-resorts" element={<HotelsResorts />} />
               <Route path="secteurs/riads-maisons-hotes" element={<RiadsBoutiqueStays />} />
               <Route path="secteurs/tour-operateurs" element={<TourOperators />} />
@@ -194,7 +194,6 @@ export default function App() {
               <Route path="services/website-design" element={<WebsiteDesign />} />
               <Route path="web-design-morocco" element={<WebDesignMorocco />} />
               <Route path="web-design-casablanca" element={<WebDesignCasablanca />} />
-              <Route path="seo-morocco" element={<SeoMorocco />} />
               <Route path="seo-agency-morocco" element={<SeoAgencyMorocco />} />
               <Route path="seo-agency-casablanca" element={<SeoAgencyCasablanca />} />
               <Route path="hotel-seo" element={<HotelSeo />} />
@@ -222,6 +221,7 @@ export default function App() {
               <Route path="services/local-seo-morocco" element={<LocalSeoMorocco />} />
 
               {/* Dedicated Industry Routes EN */}
+              <Route path="industries" element={<IndustriesIndex />} />
               <Route path="industries/hotels-resorts" element={<HotelsResorts />} />
               <Route path="industries/riads-boutique-hotels" element={<RiadsBoutiqueStays />} />
               <Route path="industries/tour-operators" element={<TourOperators />} />

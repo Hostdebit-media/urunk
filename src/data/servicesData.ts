@@ -3695,6 +3695,14 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
       {
         "q": "How do you measure and report SEO success?",
         "a": "We track meaningful commercial metrics: qualified organic lead conversions, direct bookings, revenue attribution, top-3 keyword market share, and organic traffic growth."
+      },
+      {
+        "q": "Do you optimize for French or English?",
+        "a": "Both. We develop sophisticated bilingual SEO strategies, utilizing proper hreflang tags to ensure you rank for both French and English search intents without duplicate content penalties."
+      },
+      {
+        "q": "How long until we see results in Morocco?",
+        "a": "While technical improvements can show results in weeks, a noticeable increase in qualified organic traffic and leads typically takes 3-6 months, depending on your industry's competitiveness."
       }
     ]
   },
