@@ -3,7 +3,8 @@ import SEO from '../../components/SEO';
 import { buildArticleSchema, parseIsoDate } from '../../components/SEO/StructuredData';
 import { Link } from 'react-router-dom';
 import { getBlogPosts } from '../../data/blogPosts';
-import { ArrowRight, Clock } from 'lucide-react';
+import Section from '../../components/ui/Section';
+import Hairline from '../../components/ui/Hairline';
 
 export default function BlogIndex() {
   const posts = getBlogPosts(false);
@@ -52,42 +53,47 @@ export default function BlogIndex() {
   ];
 
   return (
-    <div className="w-full pb-20">
-      <SEO 
-        title="Hospitality Marketing Blog | Urunk Agency" 
-        description="Actionable advice, SEO tips, and ad strategies for hotels, riads, and tour operators looking to increase direct bookings in Morocco & worldwide." 
+    <div className="w-full bg-bg-light text-primary">
+      <SEO
+        title="Hospitality Marketing Blog | Urunk Agency"
+        description="Actionable advice, SEO tips, and ad strategies for hotels, riads, and tour operators looking to increase direct bookings in Morocco & worldwide."
         schema={schemaMarkup}
       />
-      
-      <section className="bg-bg-alt py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">Insights & Strategy</span>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Hospitality Marketing Insights</h1>
-          <p className="text-xl text-primary/80 max-w-2xl mx-auto">
+
+      <Section tone="alt" className="pt-28 md:pt-36 border-b border-border-subtle">
+        <div className="max-w-4xl">
+          <p className="text-sm font-medium text-accent mb-4">Insights &amp; Strategy</p>
+          <h1 className="font-serif text-primary mb-6 text-balance">
+            Hospitality Marketing Insights
+          </h1>
+          <p className="text-lg md:text-xl text-primary/80 max-w-[62ch] leading-relaxed">
             Learn how to reduce OTA commissions, optimize your website, and run high-ROI ad campaigns for your tourism business.
           </p>
         </div>
-      </section>
+      </Section>
 
-      <section className="py-20 px-6 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, i) => (
-            <Link to={`/en/blog/${post.slug}`} key={i} className="group bg-white border border-primary/10 rounded-2xl p-8 hover:shadow-sm transition-all flex flex-col h-full hover:border-accent/40">
-              <div className="flex justify-between items-center text-xs font-semibold   mb-4">
-                <span className="text-accent">{post.category || "Hospitality"}</span>
-                <span className="text-primary/70 flex items-center gap-1"><Clock size={12}/> {post.readTime}</span>
+      <Section tone="light">
+        <Hairline />
+        {posts.map((post) => (
+          <div key={post.slug}>
+            <article className="py-9 md:py-11 grid md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+              <div className="md:col-span-3 text-sm text-primary/70 space-y-1">
+                <p className="font-medium text-accent">{post.category || "Hospitality"}</p>
+                <p className="tabular-nums text-xs text-primary/60">{post.readTime}</p>
               </div>
-              <h2 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors line-clamp-2">{post.title}</h2>
-              <p className="text-primary/70 text-sm mb-8 line-clamp-3 flex-grow leading-relaxed">
-                {post.metaDescription}
-              </p>
-              <div className="text-sm font-semibold flex items-center gap-1.5 text-accent mt-auto pt-4 border-t border-primary/5">
-                Read full article <ArrowRight size={14}/>
+              <div className="md:col-span-9 max-w-[68ch]">
+                <h2 className="font-serif text-[26px] leading-snug text-primary mb-3">
+                  <Link to={`/en/blog/${post.slug}`}>{post.title}</Link>
+                </h2>
+                <p className="text-primary/80 leading-relaxed">
+                  {post.metaDescription}
+                </p>
               </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+            </article>
+            <Hairline />
+          </div>
+        ))}
+      </Section>
     </div>
   );
 }

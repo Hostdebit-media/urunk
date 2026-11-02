@@ -1,11 +1,14 @@
-import React from "react";
-import Callout from "../../../components/fr/CalloutFR";
-import SEO from "../../../components/SEO";
-import { buildServiceProviderSchema } from "../../../components/SEO/StructuredData";
-import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
-import { getMatrixLinksForService } from "../../../data/matrixRelations";
-import { Check, ArrowRight, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Callout from '../../../components/fr/CalloutFR';
+import SEO from '../../../components/SEO';
+import { buildServiceProviderSchema } from '../../../components/SEO/StructuredData';
+import RelatedExpertiseSection from '../../../components/RelatedExpertiseSection';
+import { getMatrixLinksForService } from '../../../data/matrixRelations';
+import Button from '../../../components/ui/Button';
+import Section from '../../../components/ui/Section';
+import Hairline from '../../../components/ui/Hairline';
+import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function WebsiteDesignFR() {
   const faqs = [
@@ -15,7 +18,7 @@ export default function WebsiteDesignFR() {
     },
     {
       q: "Vaut-il mieux payer un site hôtelier en forfait unique (dès 12 000 MAD) ou louer un site SaaS au mois ?",
-      a: "Les constructeurs de sites en location mensuelle affichent un coût d'entrée faible, mais vous ne possédez ni le code ni le thème : si vous changez de PMS dans 2 ans, votre site disparaît et votre référencement Google repart de zéro. Avec un forfait unique dès 12 000 MAD chez Urunk, votre établissement amortit la création en quelques réservations directes épargnées des 15 % à 25 % de commissions OTA, tout en conservant son domaine, son hébergement et son code source.",
+      a: "Les constructeurs de sites en location mensuelle affichent un coût d'entrée faible, mais vous ne possédez ni le code ni le thème : si vous changez de PMS dans 2 ans, votre site disparaît et votre référencement Google repart de zéro. Avec un forfait unique dès 12 000 MAD chez Urunk, votre établissement amortit la création en quelques réservations directes épargnées des [À CONFIRMER] de commissions OTA, tout en conservant son domaine, son hébergement et son code source.",
     },
     {
       q: "Combien de temps faut-il pour livrer un site web hôtelier clé en main ?",
@@ -49,8 +52,8 @@ export default function WebsiteDesignFR() {
       "Forfaits transparents de création de sites web hôteliers au Maroc dès 12 000 MAD (paiement unique) : design mobile-first, connexion PMS, SEO bilingue et 0 % commission agence.",
     provider: buildServiceProviderSchema(),
     areaServed: [
-      { "@type": "Country", "name": "Morocco" },
-      { "@type": "Country", "name": "Worldwide" },
+      { "@type": "Country", name: "Morocco" },
+      { "@type": "Country", name: "Worldwide" },
     ],
     url: "https://urunk.com/services/creation-site-web",
     offers: {
@@ -106,9 +109,32 @@ export default function WebsiteDesignFR() {
     {
       name: "Dépendance Exclusive aux OTA (Statu Quo)",
       fit: "Établissements sans site réservable en direct",
-      cost: "15 % à 25 % de commission sur chaque nuitée vendue",
+      cost: "[À CONFIRMER] de commission sur chaque nuitée vendue",
       ownership: "Base client et relation voyageur contrôlées par l'OTA",
       verdict: "Érode fortement la marge nette dès que le remplissage progresse",
+    },
+  ];
+
+  const relatedGuides = [
+    {
+      to: '/site-web-hotel',
+      title: 'Choisir son Prestataire Web Hôtelier',
+      desc: "Grille d'évaluation technique pour sélectionner votre agence au Maroc.",
+    },
+    {
+      to: '/reservation-directe',
+      title: 'Systèmes de Réservation Sans OTA',
+      desc: 'Comparatif PMS, Channel Manager et passerelles CMI / Payzone / Stripe.',
+    },
+    {
+      to: '/blog/cout-site-web-reservation-directe-maroc',
+      title: "Guide : Coût Réel d'un Site Direct",
+      desc: 'Calcul du seuil de rentabilité face aux commissions Booking.com.',
+    },
+    {
+      to: '/realisations/art-house-marrakech',
+      title: 'Étude de Cas Marrakech',
+      desc: "Exemple concret d'architecture mobile-first orientée conversion directe.",
     },
   ];
 
@@ -120,387 +146,387 @@ export default function WebsiteDesignFR() {
         schema={[serviceSchema, faqSchema]}
       />
 
-      {/* Hero & Direct Answer Block (Question A2) */}
-      <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
-            Forfaits & Rapport Qualité-Prix Hôtellerie
-          </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+      {/* Editorial Hero & Direct Answer Block */}
+      <Section tone="dark" className="pt-28 md:pt-36">
+        <div className="max-w-4xl">
+          <p className="text-sm text-bg-light/75 mb-4">
+            Forfaits et rapport qualité-prix hôtellerie
+          </p>
+          <h1 className="font-serif text-bg-light mb-6 text-balance">
             Forfaits de Création de Site Web Hôtelier au Maroc
           </h1>
-          <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-bg-light/85 mb-10 max-w-[65ch] leading-relaxed">
             Comparez objectivement les formules de création web pour un petit hôtel, un riad ou une maison d'hôtes : paiement unique dès 12 000 MAD, connexion PMS incluse et 0 % de commission agence.
           </p>
 
-          {/* Opening GEO / AEO Answer Block */}
-          <div className="max-w-3xl mx-auto mb-8 bg-white/10 border border-white/15 p-6 md:p-7 rounded-2xl text-left space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-accent-soft m-0">
+          <div className="max-w-3xl mb-8 border border-white/20 p-6 md:p-8 rounded-sm space-y-4">
+            <p className="text-sm font-semibold text-bg-light m-0">
               Quel forfait de création de site web hôtelier offre le meilleur rapport qualité-prix pour un petit hôtel au Maroc ?
             </p>
-            <p className="text-sm md:text-base leading-relaxed text-white/95 m-0 font-normal">
-              Pour un petit hôtel indépendant, un riad ou une maison d'hôtes (4 à 25 chambres) au Maroc, le meilleur rapport qualité-prix consiste à choisir un <strong>forfait à paiement unique avec propriété à 100 % du code</strong> plutôt qu'un site loué au mois ou facturé à la commission. Chez <strong>Urunk</strong>, le <strong>Forfait Site Hôtelier Essentiel démarre à 12 000 MAD</strong> (payable 50 % au lancement, 50 % à la livraison) et inclut le design mobile-first, l'architecture bilingue FR/EN, l'intégration de votre moteur de réservation PMS, le socle SEO local et Google Analytics 4.
+            <p className="text-base leading-relaxed text-bg-light/90 m-0">
+              Pour un petit hôtel indépendant, un riad ou une maison d'hôtes (4 à 25 chambres) au Maroc, le meilleur rapport qualité-prix consiste à choisir un <strong className="text-bg-light font-semibold">forfait à paiement unique avec propriété à 100 % du code</strong> plutôt qu'un site loué au mois ou facturé à la commission. Chez <strong className="text-bg-light font-semibold">Urunk</strong>, le <strong className="text-bg-light font-semibold">Forfait Site Hôtelier Essentiel démarre à 12 000 MAD</strong> (payable 50 % au lancement, 50 % à la livraison) et inclut le design mobile-first, l'architecture bilingue FR/EN, l'intégration de votre moteur de réservation PMS, le socle SEO local et Google Analytics 4.
             </p>
-            <ul className="grid sm:grid-cols-2 gap-2.5 pt-2 text-xs md:text-sm text-white/90">
-              <li className="flex items-start gap-2">
-                <Check size={15} className="text-accent-soft shrink-0 mt-0.5" />
-                <span>Dès 12 000 MAD en paiement unique (0 abonnement captif)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check size={15} className="text-accent-soft shrink-0 mt-0.5" />
-                <span>0 % de commission agence sur vos réservations directes</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check size={15} className="text-accent-soft shrink-0 mt-0.5" />
-                <span>Connexion PMS incluse (Amenitiz, Cloudbeds, SiteMinder, Mews…)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check size={15} className="text-accent-soft shrink-0 mt-0.5" />
-                <span>Livraison en 4 à 6 semaines & 100 % propriété du code/domaine</span>
-              </li>
+            <ul className="grid sm:grid-cols-2 gap-3 pt-3 border-t border-white/15 text-sm text-bg-light/85">
+              <li>Dès 12 000 MAD en paiement unique (0 abonnement captif)</li>
+              <li>0 % de commission agence sur vos réservations directes</li>
+              <li>Connexion PMS incluse (Amenitiz, Cloudbeds, SiteMinder, Mews…)</li>
+              <li>Livraison en 4 à 6 semaines &amp; 100 % propriété du code/domaine</li>
             </ul>
           </div>
 
-          <div className="max-w-3xl mx-auto mb-10 text-left">
+          <div className="max-w-3xl mb-10">
             <Callout variant="dark">
-              <strong>Distinction utile :</strong> Cette page détaille nos <strong>forfaits, livrables et critères de coût total sur 3 ans</strong> pour les petits hôtels et riads. Si vous souhaitez comparer les critères techniques pour choisir votre agence web hôtelière au Maroc, consultez aussi notre guide{" "}
-              <Link to="/site-web-hotel" className="underline text-accent-soft hover:text-white font-semibold">
+              <strong className="text-bg-light font-semibold">Distinction utile :</strong> Cette page détaille nos <strong className="text-bg-light font-semibold">forfaits, livrables et critères de coût total sur 3 ans</strong> pour les petits hôtels et riads. Si vous souhaitez comparer les critères techniques pour choisir votre agence web hôtelière au Maroc, consultez aussi notre guide{' '}
+              <Link to="/site-web-hotel">
                 prestataire de site web hôtelier avec moteur de réservation intégré
               </Link>.
             </Callout>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-              className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
-            >
-              Demander un devis détaillé <ArrowRight size={18} />
-            </Link>
-            <Link
-              to="/tarifs"
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-4 rounded-xl font-semibold transition-all inline-flex items-center gap-2"
-            >
+          <div className="flex flex-wrap items-center gap-6">
+            <Button href="/contact" variant="primary">
+              Demander un devis détaillé
+            </Button>
+            <Button href="/tarifs" variant="secondary">
               Voir toute la grille tarifaire
-            </Link>
+            </Button>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Structured Package Comparison Table */}
-      <section className="py-20 px-6 bg-white border-b border-primary/10 scroll-mt-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-3xl mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-accent block mb-2">
-              Comparatif Coût Total de Possession (TCO)
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-3">
-              Quel Forfait Choisir pour un Petit Hôtel ou Riad au Maroc ?
-            </h2>
-            <p className="text-sm md:text-base text-primary/75 font-light leading-relaxed">
-              Un site hôtelier « pas cher » à la création mais lent sur mobile ou verrouillé dans un abonnement propriétaire coûte souvent plus cher sur 3 ans qu'un site rapide vous appartenant intégralement.
-            </p>
-          </div>
-
-          <p className="md:hidden text-xs text-primary/60 mb-2 font-medium">
-            ← Faites glisser horizontalement pour comparer toutes les colonnes →
+      <Section tone="light">
+        <div className="max-w-3xl mb-10">
+          <p className="text-sm text-accent font-medium mb-2">
+            Comparatif coût total de possession (TCO)
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-primary/10 bg-bg shadow-xs">
-            <table className="w-full text-left border-collapse tabular-nums min-w-[720px]">
-              <thead>
-                <tr className="bg-primary text-white text-xs uppercase tracking-wider">
-                  <th className="py-4 px-5 font-semibold border-b border-white/10">Formule / Modèle</th>
-                  <th className="py-4 px-5 font-semibold border-b border-white/10">Profil d'Établissement</th>
-                  <th className="py-4 px-5 font-semibold border-b border-white/10">Budget & Modèle Économique</th>
-                  <th className="py-4 px-5 font-semibold border-b border-white/10">Propriété de l'Actif</th>
-                  <th className="py-4 px-5 font-semibold border-b border-white/10">Rapport Qualité-Prix</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-primary/10 text-sm">
-                {packageRows.map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-bg-alt/40"}>
-                    <td className="py-4 px-5 align-top font-semibold text-primary">{row.name}</td>
-                    <td className="py-4 px-5 align-top text-primary/80 font-light">{row.fit}</td>
-                    <td className="py-4 px-5 align-top text-primary/85 font-medium">{row.cost}</td>
-                    <td className="py-4 px-5 align-top text-primary/80 font-light">{row.ownership}</td>
-                    <td className="py-4 px-5 align-top text-primary/80 font-light">{row.verdict}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-4 text-xs text-primary/65 font-light leading-relaxed">
-            Note : les frais mensuels de votre logiciel PMS / Channel Manager tiers et les frais de transaction monétique (CMI, Payzone ou Stripe) sont facturés directement par ces opérateurs selon votre nombre de chambres.
+          <h2 className="font-serif text-primary mb-3 text-balance">
+            Quel Forfait Choisir pour un Petit Hôtel ou Riad au Maroc ?
+          </h2>
+          <p className="text-primary/80 leading-relaxed max-w-[65ch]">
+            Un site hôtelier « pas cher » à la création mais lent sur mobile ou verrouillé dans un abonnement propriétaire coûte souvent plus cher sur 3 ans qu'un site rapide vous appartenant intégralement.
           </p>
         </div>
-      </section>
 
-      {/* Evaluation Criteria: What Makes True Value-for-Money */}
-      <section className="py-20 px-6 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-14 items-center">
-          <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-accent block mb-2">
-              Critères d'Achat Objectifs
-            </span>
-            <h2 className="text-3xl font-serif font-bold mb-6 text-primary">
+        <p className="md:hidden text-xs text-primary/70 mb-2">
+          Faites glisser horizontalement pour comparer toutes les colonnes
+        </p>
+        <div className="overflow-x-auto border border-border-subtle rounded-sm bg-bg-card">
+          <table className="w-full text-left border-collapse tabular-nums min-w-[720px]">
+            <thead>
+              <tr className="bg-primary text-bg-light text-sm">
+                <th className="py-4 px-5 font-medium border-b border-white/15">Formule / Modèle</th>
+                <th className="py-4 px-5 font-medium border-b border-white/15">Profil d'Établissement</th>
+                <th className="py-4 px-5 font-medium border-b border-white/15">Budget &amp; Modèle Économique</th>
+                <th className="py-4 px-5 font-medium border-b border-white/15">Propriété de l'Actif</th>
+                <th className="py-4 px-5 font-medium border-b border-white/15">Rapport Qualité-Prix</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border-subtle text-sm">
+              {packageRows.map((row, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? 'bg-bg-card' : 'bg-bg-light'}>
+                  <td className="py-4 px-5 align-top font-semibold text-primary">{row.name}</td>
+                  <td className="py-4 px-5 align-top text-primary/85">{row.fit}</td>
+                  <td className="py-4 px-5 align-top text-primary font-medium">{row.cost}</td>
+                  <td className="py-4 px-5 align-top text-primary/85">{row.ownership}</td>
+                  <td className="py-4 px-5 align-top text-primary/85">{row.verdict}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-sm text-primary/70 leading-relaxed max-w-[68ch]">
+          Note : les frais mensuels de votre logiciel PMS / Channel Manager tiers et les frais de transaction monétique (CMI, Payzone ou Stripe) sont facturés directement par ces opérateurs selon votre nombre de chambres.
+        </p>
+      </Section>
+
+      {/* Evaluation Criteria */}
+      <Section tone="alt">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-7">
+            <p className="text-sm text-accent font-medium mb-2">
+              Critères d'achat objectifs
+            </p>
+            <h2 className="font-serif text-primary mb-6 text-balance">
               Les 4 Critères qui Déterminent la Rentabilité d'un Forfait Web Hôtelier
             </h2>
-            <p className="text-primary/80 mb-5 leading-relaxed font-light">
-              Pour un petit hôtel de 6 à 20 chambres au Maroc, économiser seulement quelques réservations mensuelles habituellement soumises à 15 %–25 % de commission Booking.com suffit à amortir un forfait fixe de 12 000 MAD.
-            </p>
-            <p className="text-primary/80 leading-relaxed font-light">
-              Encore faut-il que le forfait inclue dès le départ les briques techniques qui transforment réellement un visiteur mobile international en client direct :
-            </p>
+            <div className="space-y-4 text-primary/85 leading-relaxed max-w-[65ch]">
+              <p>
+                Pour un petit hôtel de 6 à 20 chambres au Maroc, économiser seulement quelques réservations mensuelles habituellement soumises à [À CONFIRMER] de commission Booking.com suffit à amortir un forfait fixe de 12 000 MAD.
+              </p>
+              <p>
+                Encore faut-il que le forfait inclue dès le départ les briques techniques qui transforment réellement un visiteur mobile international en client direct :
+              </p>
+            </div>
           </div>
-          <div className="bg-white p-8 rounded-2xl border border-primary/10 shadow-xs">
-            <h3 className="text-xl font-serif font-bold mb-5 text-primary">Ce qui doit impérativement figurer au devis :</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex gap-3 text-primary/85">
-                <Check size={20} className="text-accent shrink-0 mt-0.5" />
-                <span><strong>Barre de réservation mobile fixe :</strong> accès immédiat aux dates et tarifs réels sans zoom ni rechargement lent.</span>
-              </li>
-              <li className="flex gap-3 text-primary/85">
-                <Check size={20} className="text-accent shrink-0 mt-0.5" />
-                <span><strong>Synchronisation PMS & WhatsApp :</strong> tunnel instantané pour les voyageurs décidés + contact WhatsApp rapide pour les demandes de transfert ou privatisation.</span>
-              </li>
-              <li className="flex gap-3 text-primary/85">
-                <Check size={20} className="text-accent shrink-0 mt-0.5" />
-                <span><strong>Architecture SEO bilingue (FR/EN) :</strong> URLs dédiées, balises hreflang et Schema.org Hotel pour capter l'Europe et l'international.</span>
-              </li>
-              <li className="flex gap-3 text-primary/85">
-                <Check size={20} className="text-accent shrink-0 mt-0.5" />
-                <span><strong>Propriété complète sans commission :</strong> aucun pourcentage prélevé par l'agence web sur votre chiffre d'affaires direct.</span>
-              </li>
-            </ul>
+
+          <div className="lg:col-span-5 border border-border-subtle bg-bg-card p-8 rounded-sm">
+            <h3 className="font-serif text-primary pb-4 mb-6 border-b border-border-subtle">
+              Ce qui doit impérativement figurer au devis :
+            </h3>
+            <div className="divide-y divide-border-subtle text-sm text-primary/85">
+              <p className="py-3.5 pt-0 leading-relaxed m-0">
+                <strong className="text-primary font-semibold">Barre de réservation mobile fixe :</strong> accès immédiat aux dates et tarifs réels sans zoom ni rechargement lent.
+              </p>
+              <p className="py-3.5 leading-relaxed m-0">
+                <strong className="text-primary font-semibold">Synchronisation PMS &amp; WhatsApp :</strong> tunnel instantané pour les voyageurs décidés + contact WhatsApp rapide pour les demandes de transfert ou privatisation.
+              </p>
+              <p className="py-3.5 leading-relaxed m-0">
+                <strong className="text-primary font-semibold">Architecture SEO bilingue (FR/EN) :</strong> URLs dédiées, balises hreflang et Schema.org Hotel pour capter l'Europe et l'international.
+              </p>
+              <p className="py-3.5 pb-0 leading-relaxed m-0">
+                <strong className="text-primary font-semibold">Propriété complète sans commission :</strong> aucun pourcentage prélevé par l'agence web sur votre chiffre d'affaires direct.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Technical Performance & Architecture Deep-Dive */}
-      <section className="py-20 px-6 bg-white border-y border-primary/10">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider font-mono">Spécifications Techniques</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mt-2">Architecture Web Hôtelière & Core Web Vitals</h2>
-            <p className="text-primary/70 font-light text-sm mt-3 leading-relaxed">
+      <Section tone="light">
+        <div className="space-y-16">
+          <div className="max-w-3xl">
+            <p className="text-sm text-accent font-medium mb-2">Spécifications techniques</p>
+            <h2 className="font-serif text-primary mb-3 text-balance">
+              Architecture Web Hôtelière &amp; Core Web Vitals
+            </h2>
+            <p className="text-primary/80 leading-relaxed max-w-[65ch]">
               La lenteur mobile est la première cause d'abandon vers les OTA. Chaque forfait Urunk est optimisé selon les seuils Core Web Vitals de Google.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 tabular-nums">
-            <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-center space-y-2">
-              <div className="text-3xl font-bold text-accent font-serif">&lt; 1,5s</div>
-              <h3 className="font-bold text-primary text-sm">LCP Cible Mobile</h3>
-              <p className="text-xs font-light text-primary/70">Affichage rapide des visuels de chambres en AVIF/WebP sans dégrader la netteté.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 border-y border-border-subtle py-8 tabular-nums">
+            <div>
+              <p className="font-serif text-2xl text-accent mb-2 m-0">[À CONFIRMER]</p>
+              <h3 className="font-serif text-lg text-primary mb-2">LCP Cible Mobile</h3>
+              <p className="text-sm text-primary/75 leading-relaxed m-0">
+                Affichage rapide des visuels de chambres en AVIF/WebP sans dégrader la netteté.
+              </p>
             </div>
-            <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-center space-y-2">
-              <div className="text-3xl font-bold text-accent font-serif">&lt; 0,05</div>
-              <h3 className="font-bold text-primary text-sm">CLS (Stabilité Visuelle)</h3>
-              <p className="text-xs font-light text-primary/70">Aucun saut de mise en page lors de l'ouverture du calendrier de disponibilité.</p>
+            <div>
+              <p className="font-serif text-2xl text-accent mb-2 m-0">[À CONFIRMER]</p>
+              <h3 className="font-serif text-lg text-primary mb-2">CLS (Stabilité Visuelle)</h3>
+              <p className="text-sm text-primary/75 leading-relaxed m-0">
+                Aucun saut de mise en page lors de l'ouverture du calendrier de disponibilité.
+              </p>
             </div>
-            <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-center space-y-2">
-              <div className="text-3xl font-bold text-accent font-serif">&lt; 100ms</div>
-              <h3 className="font-bold text-primary text-sm">INP (Réactivité Tactile)</h3>
-              <p className="text-xs font-light text-primary/70">Sélection fluide des dates, chambres et options sur smartphone.</p>
+            <div>
+              <p className="font-serif text-2xl text-accent mb-2 m-0">[À CONFIRMER]</p>
+              <h3 className="font-serif text-lg text-primary mb-2">INP (Réactivité Tactile)</h3>
+              <p className="text-sm text-primary/75 leading-relaxed m-0">
+                Sélection fluide des dates, chambres et options sur smartphone.
+              </p>
             </div>
-            <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-center space-y-2">
-              <div className="text-3xl font-bold text-accent font-serif">90+</div>
-              <h3 className="font-bold text-primary text-sm">Objectif PageSpeed</h3>
-              <p className="text-xs font-light text-primary/70">Code léger pensé pour les réseaux 4G/5G utilisés par les voyageurs en mobilité.</p>
+            <div>
+              <p className="font-serif text-2xl text-accent mb-2 m-0">[À CONFIRMER]</p>
+              <h3 className="font-serif text-lg text-primary mb-2">Objectif PageSpeed</h3>
+              <p className="text-sm text-primary/75 leading-relaxed m-0">
+                Code léger pensé pour les réseaux 4G/5G utilisés par les voyageurs en mobilité.
+              </p>
             </div>
           </div>
 
-          {/* Workflow Integration PMS */}
-          <div className="grid lg:grid-cols-12 gap-12 items-center pt-4">
-            <div className="lg:col-span-6 space-y-6">
-              <span className="text-accent font-semibold text-xs uppercase tracking-wider font-mono">Connexion PMS Incluse</span>
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary">Intégration Moteur de Réservation & Paiement</h3>
-              <p className="text-primary/80 font-light text-sm leading-relaxed">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-6 space-y-5">
+              <p className="text-sm text-accent font-medium m-0">Connexion PMS incluse</p>
+              <h3 className="font-serif text-primary m-0">
+                Intégration Moteur de Réservation &amp; Paiement
+              </h3>
+              <p className="text-primary/85 leading-relaxed max-w-[60ch]">
                 Conservez vos outils de réception habituels. Nous raccordons votre site hôtelier à votre PMS et Channel Manager existant, ou vous aidons à sélectionner la solution adaptée à votre capacité.
               </p>
-              <ul className="space-y-3 text-xs text-primary/80 font-light">
-                <li className="flex items-center gap-3"><Check size={16} className="text-accent shrink-0" /> <strong>Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy & Guesty</strong>.</li>
-                <li className="flex items-center gap-3"><Check size={16} className="text-accent shrink-0" /> Synchronisation temps réel des disponibilités, restrictions de séjour et codes promo directs.</li>
-                <li className="flex items-center gap-3"><Check size={16} className="text-accent shrink-0" /> Passerelles monétiques sécurisées (CMI / Payzone au Maroc ou Stripe selon éligibilité).</li>
+              <ul className="space-y-3 text-sm text-primary/85 pt-2 border-t border-border-subtle">
+                <li><strong>Amenitiz, Cloudbeds, SiteMinder, Little Hotelier, Mews, Sirvoy &amp; Guesty</strong>.</li>
+                <li>Synchronisation temps réel des disponibilités, restrictions de séjour et codes promo directs.</li>
+                <li>Passerelles monétiques sécurisées (CMI / Payzone au Maroc ou Stripe selon éligibilité).</li>
               </ul>
             </div>
-            <div className="lg:col-span-6 bg-primary text-white p-8 md:p-10 rounded-3xl space-y-6">
-              <h3 className="text-xl font-serif font-bold text-accent-soft">Engagements Contractuels Clairs</h3>
-              <ul className="space-y-3 text-xs text-white/90 font-light">
-                <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
-                  <span><strong>Forfait Fixe :</strong> Dès 12 000 MAD (≈ 1 100 €) payable en deux échéances claires (50 % commande, 50 % mise en ligne).</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
-                  <span><strong>Délai Maîtrisé :</strong> 4 à 6 semaines du cadrage initial au déploiement en production.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
-                  <span><strong>Support Post-Mise en Ligne :</strong> Formation de votre équipe réception et suivi technique correctif après lancement.</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0"></div>
-                  <span><strong>Propriété à 100 % :</strong> Code source, nom de domaine, hébergement et compte GA4 à votre nom.</span>
-                </li>
-              </ul>
+
+            <div className="lg:col-span-6 bg-primary text-bg-light p-8 md:p-10 rounded-sm space-y-5">
+              <h3 className="font-serif text-bg-light m-0">Engagements Contractuels Clairs</h3>
+              <div className="divide-y divide-white/15 text-sm text-bg-light/90">
+                <p className="py-3 pt-0 leading-relaxed m-0">
+                  <strong className="text-bg-light font-semibold">Forfait Fixe :</strong> Dès 12 000 MAD (≈ 1 100 €) payable en deux échéances claires (50 % commande, 50 % mise en ligne).
+                </p>
+                <p className="py-3 leading-relaxed m-0">
+                  <strong className="text-bg-light font-semibold">Délai Maîtrisé :</strong> 4 à 6 semaines du cadrage initial au déploiement en production.
+                </p>
+                <p className="py-3 leading-relaxed m-0">
+                  <strong className="text-bg-light font-semibold">Support Post-Mise en Ligne :</strong> Formation de votre équipe réception et suivi technique correctif après lancement.
+                </p>
+                <p className="py-3 pb-0 leading-relaxed m-0">
+                  <strong className="text-bg-light font-semibold">Propriété à 100 % :</strong> Code source, nom de domaine, hébergement et compte GA4 à votre nom.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Process & Pricing */}
-      <section className="py-20 px-6 bg-bg-alt border-b border-primary/10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent font-semibold text-xs uppercase tracking-wider font-mono">Calendrier & Budget</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mt-1">Déploiement en 4 à 6 Semaines</h2>
-            <p className="text-primary/70 font-light text-sm mt-3 leading-relaxed">
-              Un processus structuré en trois jalons pour livrer votre site hôtelier à temps et sans dépassement budgétaire.
+      <Section tone="alt">
+        <div className="max-w-3xl mb-12">
+          <p className="text-sm text-accent font-medium mb-2">Calendrier et budget</p>
+          <h2 className="font-serif text-primary mb-3 text-balance">
+            Déploiement en 4 à 6 Semaines
+          </h2>
+          <p className="text-primary/80 leading-relaxed max-w-[65ch]">
+            Un processus structuré en trois jalons pour livrer votre site hôtelier à temps et sans dépassement budgétaire.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-7">
+            <Hairline />
+            <div className="py-7 flex gap-6 items-baseline">
+              <span className="font-serif text-2xl text-accent shrink-0 tabular-nums w-8">01</span>
+              <div>
+                <h3 className="font-serif text-primary mb-2">Semaines 1–2 : Cadrage, Arborescence &amp; Mix PMS</h3>
+                <p className="text-primary/80 leading-relaxed m-0 max-w-[60ch]">
+                  Étude de votre positionnement tarifaire, de vos marchés émetteurs et structuration des pages chambres, expériences et localisation pour réduire les frictions vers le moteur direct.
+                </p>
+              </div>
+            </div>
+            <Hairline />
+            <div className="py-7 flex gap-6 items-baseline">
+              <span className="font-serif text-2xl text-accent shrink-0 tabular-nums w-8">02</span>
+              <div>
+                <h3 className="font-serif text-primary mb-2">Semaines 3–4 : Design UI/UX Mobile &amp; Contenus Bilingues</h3>
+                <p className="text-primary/80 leading-relaxed m-0 max-w-[60ch]">
+                  Création d'une interface fidèle à l'atmosphère de votre hôtel ou riad et rédaction optimisée en français et anglais pour répondre aux intentions de recherche Google.
+                </p>
+              </div>
+            </div>
+            <Hairline />
+            <div className="py-7 flex gap-6 items-baseline">
+              <span className="font-serif text-2xl text-accent shrink-0 tabular-nums w-8">03</span>
+              <div>
+                <h3 className="font-serif text-primary mb-2">Semaines 5–6 : Intégration PMS, GA4 &amp; Mise en Ligne</h3>
+                <p className="text-primary/80 leading-relaxed m-0 max-w-[60ch]">
+                  Connexion du moteur de réservation, vérification des redirections SEO, paramétrage Google Analytics 4 / Tag Manager et formation de votre équipe.
+                </p>
+              </div>
+            </div>
+            <Hairline />
+          </div>
+
+          <div className="lg:col-span-5 bg-bg-card p-8 md:p-10 rounded-sm border border-border-subtle space-y-5 lg:sticky lg:top-28">
+            <p className="text-sm text-accent font-medium m-0">
+              Forfait essentiel petit hôtel et riad
+            </p>
+            <h3 className="font-serif text-primary m-0">Un Budget Fixe Sans Abonnement Captif</h3>
+            <p className="text-sm text-primary/80 leading-relaxed m-0">
+              Idéal pour les petits hôtels indépendants, riads et maisons d'hôtes souhaitant un actif durable et rapide sans commission agence.
+            </p>
+            <div className="py-4 border-y border-border-subtle tabular-nums">
+              <div className="font-serif text-3xl text-accent">À partir de 12 000 MAD</div>
+              <p className="text-xs text-primary/70 mt-1 m-0">
+                50 % à la commande, 50 % à la livraison finale, 0 % commission.
+              </p>
+            </div>
+            <ul className="space-y-2.5 text-sm text-primary/85">
+              <li>Architecture SEO bilingue (FR/EN) &amp; Schema.org Hotel</li>
+              <li>Intégration de votre moteur PMS / Channel Manager</li>
+              <li>Optimisation Core Web Vitals &amp; images AVIF/WebP</li>
+              <li>Suivi des conversions Google Analytics 4 &amp; GTM</li>
+            </ul>
+            <Button href="/contact" variant="dark" className="w-full">
+              Recevoir un chiffrage personnalisé
+            </Button>
+            <p className="text-xs text-primary/70 m-0">
+              Besoin du site + gestion Ads immédiate ? Voir le{' '}
+              <Link to="/services/bundle-site-ads">
+                Pack Site + Publicité dès 16 000 MAD
+              </Link>.
             </p>
           </div>
-
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-7 space-y-10">
-              <div className="relative pl-8 border-l border-primary/10 space-y-12">
-                <div className="relative">
-                  <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent border-4 border-bg-alt flex items-center justify-center"></div>
-                  <h3 className="font-serif font-bold text-lg text-primary mb-2">Semaines 1–2 : Cadrage, Arborescence & Mix PMS</h3>
-                  <p className="text-sm text-primary/80 font-light leading-relaxed">
-                    Étude de votre positionnement tarifaire, de vos marchés émetteurs et structuration des pages chambres, expériences et localisation pour réduire les frictions vers le moteur direct.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent border-4 border-bg-alt flex items-center justify-center"></div>
-                  <h3 className="font-serif font-bold text-lg text-primary mb-2">Semaines 3–4 : Design UI/UX Mobile & Contenus Bilingues</h3>
-                  <p className="text-sm text-primary/80 font-light leading-relaxed">
-                    Création d'une interface fidèle à l'atmosphère de votre hôtel ou riad et rédaction optimisée en français et anglais pour répondre aux intentions de recherche Google.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-accent border-4 border-bg-alt flex items-center justify-center"></div>
-                  <h3 className="font-serif font-bold text-lg text-primary mb-2">Semaines 5–6 : Intégration PMS, GA4 & Mise en Ligne</h3>
-                  <p className="text-sm text-primary/80 font-light leading-relaxed">
-                    Connexion du moteur de réservation, vérification des redirections SEO, paramétrage Google Analytics 4 / Tag Manager et formation de votre équipe.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 bg-white p-10 rounded-3xl border border-primary/10 shadow-sm space-y-6 lg:sticky lg:top-32">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider border border-accent/15">
-                Forfait Essentiel Petit Hôtel & Riad
-              </span>
-              <h3 className="text-3xl font-serif font-bold text-primary">Un Budget Fixe Sans Abonnement Captif</h3>
-              <p className="text-sm text-primary/80 font-light leading-relaxed">
-                Idéal pour les petits hôtels indépendants, riads et maisons d'hôtes souhaitant un actif durable et rapide sans commission agence.
-              </p>
-              <div className="py-4 border-y border-primary/5 tabular-nums">
-                <div className="text-3xl font-serif font-bold text-accent">À partir de 12 000 MAD</div>
-                <p className="text-xs text-primary/60 mt-1">50 % à la commande · 50 % à la livraison finale · 0 % commission.</p>
-              </div>
-              <ul className="space-y-2.5 text-xs text-primary/75 font-light">
-                <li className="flex items-center gap-2.5"><Check size={14} className="text-accent" /> Architecture SEO bilingue (FR/EN) & Schema.org Hotel</li>
-                <li className="flex items-center gap-2.5"><Check size={14} className="text-accent" /> Intégration de votre moteur PMS / Channel Manager</li>
-                <li className="flex items-center gap-2.5"><Check size={14} className="text-accent" /> Optimisation Core Web Vitals & images AVIF/WebP</li>
-                <li className="flex items-center gap-2.5"><Check size={14} className="text-accent" /> Suivi des conversions Google Analytics 4 & GTM</li>
-              </ul>
-              <Link
-                to="/contact"
-                className="w-full bg-primary hover:bg-primary-light text-white py-3.5 rounded-xl font-bold transition-all text-center block text-sm"
-              >
-                Recevoir un chiffrage personnalisé
-              </Link>
-              <p className="text-[11px] text-primary/60 text-center m-0">
-                Besoin du site + gestion Ads immédiate ? Voir le{" "}
-                <Link to="/services/bundle-site-ads" className="text-accent underline font-medium">
-                  Pack Site + Publicité dès 16 000 MAD
-                </Link>.
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
+      </Section>
 
       {/* Contextual Hospitality Links */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
-        <div className="mb-8">
-          <span className="text-xs font-bold uppercase tracking-wider text-accent block mb-2">
-            Ressources Complémentaires
-          </span>
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-primary">
-            Comparer les Solutions Techniques & le Retour sur Investissement
+      <Section tone="light">
+        <div className="max-w-3xl mb-10">
+          <p className="text-sm text-accent font-medium mb-2">
+            Ressources complémentaires
+          </p>
+          <h2 className="font-serif text-primary text-balance">
+            Comparer les Solutions Techniques &amp; le Retour sur Investissement
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <Link to="/site-web-hotel" className="p-6 rounded-2xl border border-primary/10 bg-white hover:border-accent/40 transition-all">
-            <h3 className="font-serif font-bold text-base text-primary mb-2">Choisir son Prestataire Web Hôtelier →</h3>
-            <p className="text-xs text-primary/70 font-light m-0">Grille d'évaluation technique pour sélectionner votre agence au Maroc.</p>
-          </Link>
-          <Link to="/reservation-directe" className="p-6 rounded-2xl border border-primary/10 bg-white hover:border-accent/40 transition-all">
-            <h3 className="font-serif font-bold text-base text-primary mb-2">Systèmes de Réservation Sans OTA →</h3>
-            <p className="text-xs text-primary/70 font-light m-0">Comparatif PMS, Channel Manager et passerelles CMI / Payzone / Stripe.</p>
-          </Link>
-          <Link to="/blog/cout-site-web-reservation-directe-maroc" className="p-6 rounded-2xl border border-primary/10 bg-white hover:border-accent/40 transition-all">
-            <h3 className="font-serif font-bold text-base text-primary mb-2">Guide : Coût Réel d'un Site Direct →</h3>
-            <p className="text-xs text-primary/70 font-light m-0">Calcul du seuil de rentabilité face aux commissions Booking.com.</p>
-          </Link>
-          <Link to="/realisations/art-house-marrakech" className="p-6 rounded-2xl border border-primary/10 bg-white hover:border-accent/40 transition-all">
-            <h3 className="font-serif font-bold text-base text-primary mb-2">Étude de Cas Marrakech →</h3>
-            <p className="text-xs text-primary/70 font-light m-0">Exemple concret d'architecture mobile-first orientée conversion directe.</p>
-          </Link>
+
+        <div>
+          <Hairline />
+          {relatedGuides.map((item, idx) => (
+            <React.Fragment key={idx}>
+              <div className="py-6 grid md:grid-cols-12 gap-3 md:gap-8 items-baseline">
+                <div className="md:col-span-5">
+                  <h3 className="font-serif text-xl text-primary m-0">
+                    <Link to={item.to}>{item.title}</Link>
+                  </h3>
+                </div>
+                <div className="md:col-span-7">
+                  <p className="text-sm text-primary/80 leading-relaxed m-0">{item.desc}</p>
+                </div>
+              </div>
+              <Hairline />
+            </React.Fragment>
+          ))}
         </div>
-      </section>
+      </Section>
 
       <RelatedExpertiseSection
-        kicker="Ingénierie Web par Ville"
+        kicker="Ingénierie web par ville"
         title="Création de Sites Web & Réservation Directe par Ville au Maroc"
         subtitle="Consultez nos feuilles de route dédiées à Marrakech, Casablanca, Agadir et Rabat pour les hôtels, riads et entreprises."
-        links={getMatrixLinksForService("hotel-website-design", "fr")}
+        links={getMatrixLinksForService('hotel-website-design', 'fr')}
         isFrench={true}
-        bgVariant="white"
+        bgVariant="alt"
       />
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-serif font-bold mb-10 text-center">
+      <Section tone="light">
+        <div className="max-w-3xl">
+          <p className="text-sm text-accent font-medium mb-2">FAQ</p>
+          <h2 className="font-serif text-primary mb-10 text-balance">
             Questions Fréquentes sur les Forfaits de Site Web Hôtelier
           </h2>
-          <div className="flex flex-col border-t border-primary/20">
+          <div>
+            <Hairline />
             {faqs.map((faq, i) => (
-              <details key={i} open={i === 0} className="group border-b border-primary/20">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none py-6 pr-4 text-lg">
-                  <span>{faq.q}</span>
-                  <span className="transition group-open:rotate-180 text-accent shrink-0 ml-3">
-                    <ChevronDown size={24} />
-                  </span>
-                </summary>
-                <div className="text-primary/75 pb-6 pr-4 leading-relaxed text-sm md:text-base">
-                  {faq.a}
-                </div>
-              </details>
+              <React.Fragment key={i}>
+                <details open={i === 0} className="group py-5">
+                  <summary className="flex justify-between items-center gap-6 cursor-pointer list-none font-serif text-xl text-primary">
+                    <span>{faq.q}</span>
+                    <ChevronDown
+                      size={18}
+                      className="text-accent shrink-0 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <div className="pt-4 text-primary/85 leading-relaxed max-w-[65ch]">
+                    {faq.a}
+                  </div>
+                </details>
+                <Hairline />
+              </React.Fragment>
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-          Prêt à rentabiliser votre site officiel sans commission agence ?
-        </h2>
-        <p className="text-lg text-primary/80 mb-8 max-w-2xl mx-auto font-light">
-          Partagez le nombre de chambres et le PMS actuel de votre établissement : nous vous adressons une recommandation forfaitaire claire sous 24h ouvrées.
-        </p>
-        <Link
-          to="/contact"
-          className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors"
-        >
-          Demander mon devis forfaitaire <ArrowRight size={18} />
-        </Link>
-      </section>
+      {/* Closing CTA */}
+      <Section tone="dark">
+        <div className="max-w-3xl">
+          <h2 className="font-serif text-bg-light mb-4 text-balance">
+            Prêt à rentabiliser votre site officiel sans commission agence ?
+          </h2>
+          <p className="text-lg text-bg-light/85 mb-8 max-w-[60ch] leading-relaxed">
+            Partagez le nombre de chambres et le PMS actuel de votre établissement : nous vous adressons une recommandation forfaitaire claire sous [À CONFIRMER].
+          </p>
+          <Button href="/contact" variant="primary">
+            Demander mon devis forfaitaire
+          </Button>
+        </div>
+      </Section>
     </div>
   );
 }

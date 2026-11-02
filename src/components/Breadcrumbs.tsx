@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, Home } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 export const routeMappings: Record<string, { en: string; fr: string }> = {
   'services': { en: 'Services', fr: 'Services' },
@@ -110,11 +110,10 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <nav className="w-full overflow-hidden text-xs md:text-sm text-primary/80 font-medium px-4 sm:px-6 md:px-12 max-w-7xl mx-auto py-2.5 md:py-3.5 print:hidden" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-1 md:space-x-2 overflow-x-auto whitespace-nowrap scrollbar-none py-1 max-w-full">
+    <nav className="w-full overflow-hidden text-xs md:text-sm text-primary/75 font-normal px-[clamp(20px,5vw,56px)] py-3 print:hidden" aria-label="Breadcrumb">
+      <ol className="flex items-center space-x-1 md:space-x-2 overflow-x-auto whitespace-nowrap scrollbar-none py-1 max-w-[1240px] mx-auto w-full list-none m-0 p-0">
         <li className="inline-flex items-center">
-          <Link to={isFrench ? '/' : '/en'} className="inline-flex items-center py-1 hover:text-accent transition-colors">
-            <Home size={14} className="mr-1.5 shrink-0" />
+          <Link to={isFrench ? '/' : '/en'} className="inline-flex items-center py-1 text-primary/75 no-underline hover:text-accent hover:underline transition-colors">
             <span>{isFrench ? 'Accueil' : 'Home'}</span>
           </Link>
         </li>
@@ -129,13 +128,13 @@ export default function Breadcrumbs() {
 
           return (
             <li key={routePath} className="flex items-center">
-              <ChevronRight size={14} className="text-primary/40 mx-1 shrink-0" />
+              <ChevronRight size={13} className="text-primary/40 mx-1 shrink-0" />
               {isLast ? (
-                <span className="text-primary font-semibold truncate max-w-[200px] md:max-w-xs" aria-current="page">
+                <span className="text-primary font-medium truncate max-w-[200px] md:max-w-xs" aria-current="page">
                   {label}
                 </span>
               ) : (
-                <Link to={routePath} className="hover:text-accent transition-colors truncate max-w-[150px] md:max-w-none py-1">
+                <Link to={routePath} className="text-primary/75 no-underline hover:text-accent hover:underline transition-colors truncate max-w-[150px] md:max-w-none py-1">
                   {label}
                 </Link>
               )}

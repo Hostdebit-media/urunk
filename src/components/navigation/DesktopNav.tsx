@@ -28,7 +28,7 @@ export default function DesktopNav({ isFrench }: DesktopNavProps) {
   return (
     <nav
       id="main-navigation"
-      className="hidden lg:flex items-center self-stretch gap-6 xl:gap-8 text-[13.5px] xl:text-sm font-medium shrink-0"
+      className="hidden lg:flex items-center self-stretch gap-7 xl:gap-8 text-[15px] font-medium shrink-0"
       aria-label={isFrench ? 'Navigation principale' : 'Main Navigation'}
     >
       {navData.map((group) => {
@@ -40,7 +40,7 @@ export default function DesktopNav({ isFrench }: DesktopNavProps) {
             <Link
               key={group.id}
               to={isFrench ? group.link!.fr : group.link!.en}
-              className="py-2 whitespace-nowrap shrink-0 text-primary/90 hover:text-accent hover:underline underline-offset-4 focus-visible:ring-2 focus-visible:ring-accent outline-none rounded-sm transition-colors"
+              className="py-2 whitespace-nowrap shrink-0 text-primary no-underline hover:text-accent hover:underline underline-offset-4 rounded-sm transition-colors"
             >
               {isFrench ? group.title.fr : group.title.en}
             </Link>
@@ -59,44 +59,58 @@ export default function DesktopNav({ isFrench }: DesktopNavProps) {
             {group.link ? (
               <Link
                 to={isFrench ? group.link.fr : group.link.en}
-                className={`flex items-center gap-1 py-2 whitespace-nowrap shrink-0 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent outline-none rounded-sm transition-colors cursor-pointer text-primary/90 ${isOpen ? 'text-accent font-semibold' : ''}`}
+                className={`flex items-center gap-1 py-2 whitespace-nowrap shrink-0 no-underline hover:text-accent rounded-sm transition-colors cursor-pointer ${
+                  isOpen ? 'text-accent font-semibold' : 'text-primary'
+                }`}
                 aria-expanded={isOpen}
                 aria-haspopup="true"
               >
                 <span>{isFrench ? group.title.fr : group.title.en}</span>
-                <ChevronDown size={14} className={`shrink-0 transition-transform duration-150 text-primary/60 ${isOpen ? 'rotate-180 text-accent' : ''}`} />
+                <ChevronDown
+                  size={14}
+                  className={`shrink-0 transition-transform duration-150 ${
+                    isOpen ? 'rotate-180 text-accent' : 'text-primary/65'
+                  }`}
+                />
               </Link>
             ) : (
               <button
                 type="button"
                 onClick={() => setActiveDropdown(isOpen ? null : group.id)}
-                className={`flex items-center gap-1 py-2 whitespace-nowrap shrink-0 hover:text-accent focus-visible:ring-2 focus-visible:ring-accent outline-none rounded-sm transition-colors cursor-pointer text-primary/90 ${isOpen ? 'text-accent font-semibold' : ''}`}
+                className={`flex items-center gap-1 py-2 whitespace-nowrap shrink-0 hover:text-accent rounded-sm transition-colors cursor-pointer ${
+                  isOpen ? 'text-accent font-semibold' : 'text-primary'
+                }`}
                 aria-expanded={isOpen}
                 aria-haspopup="true"
               >
                 <span>{isFrench ? group.title.fr : group.title.en}</span>
-                <ChevronDown size={14} className={`shrink-0 transition-transform duration-150 text-primary/60 ${isOpen ? 'rotate-180 text-accent' : ''}`} />
+                <ChevronDown
+                  size={14}
+                  className={`shrink-0 transition-transform duration-150 ${
+                    isOpen ? 'rotate-180 text-accent' : 'text-primary/65'
+                  }`}
+                />
               </button>
             )}
 
             {isOpen && group.columns ? (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[min(92vw,52rem)] z-50">
-                <div className="bg-white shadow-lg rounded-xl p-6 border border-primary/10 w-full grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[calc(100vh-5.5rem)] overflow-y-auto">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-1 w-[min(92vw,58rem)] z-50">
+                <div className="bg-bg-card rounded-sm p-7 border border-border-subtle w-full grid grid-cols-1 md:grid-cols-3 gap-7 max-h-[calc(100vh-5.5rem)] overflow-y-auto">
                   {group.columns.map((col, idx) => (
-                    <div key={idx} className="space-y-2.5">
-                      <p className="text-xs font-semibold text-primary/60 border-b border-primary/10 pb-2">
+                    <div key={idx} className="space-y-3">
+                      <p className="text-xs font-semibold text-primary/70 border-b border-border-subtle pb-2 m-0">
                         {isFrench ? col.heading.fr : col.heading.en}
                       </p>
-                      <div className="space-y-1">
+                      <div className="divide-y divide-border-subtle/50">
                         {col.items.map((item, itemIdx) => {
                           const href = isFrench ? item.link.fr : item.link.en;
                           return (
                             <Link
                               key={itemIdx}
                               to={href}
-                              className="group/item block p-2 rounded-lg hover:bg-bg-alt focus-visible:bg-bg-alt outline-none transition-colors"
+                              className="group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors"
                             >
-                              <span className="font-semibold text-sm text-primary group-hover/item:text-accent transition-colors block">
+                              <span className="font-medium text-[15px] text-primary group-hover/item:text-accent transition-colors block">
                                 {isFrench ? item.title.fr : item.title.en}
                               </span>
                               <span className="text-xs text-primary/70 leading-relaxed block">
@@ -111,12 +125,12 @@ export default function DesktopNav({ isFrench }: DesktopNavProps) {
                 </div>
               </div>
             ) : isOpen && group.simpleItems ? (
-              <div className="absolute top-full left-0 pt-2 z-50">
+              <div className="absolute top-full left-0 pt-1 z-50">
                 <div
-                  className={`bg-white shadow-lg rounded-xl p-3 border border-primary/10 max-h-[calc(100vh-5.5rem)] overflow-y-auto ${
+                  className={`bg-bg-card rounded-sm p-4 border border-border-subtle max-h-[calc(100vh-5.5rem)] overflow-y-auto ${
                     isMultiColumnSimple
-                      ? 'w-[min(90vw,540px)] grid grid-cols-1 md:grid-cols-2 gap-1.5'
-                      : 'min-w-[300px] max-w-[360px] flex flex-col gap-1'
+                      ? 'w-[min(90vw,540px)] grid grid-cols-1 md:grid-cols-2 gap-x-4 divide-y md:divide-y-0'
+                      : 'min-w-[300px] max-w-[360px] divide-y divide-border-subtle/50'
                   }`}
                 >
                   {group.simpleItems.map((item, itemIdx) => {
@@ -125,9 +139,9 @@ export default function DesktopNav({ isFrench }: DesktopNavProps) {
                       <Link
                         key={itemIdx}
                         to={href}
-                        className="group/item block p-2 rounded-lg hover:bg-bg-alt focus-visible:bg-bg-alt outline-none transition-colors"
+                        className="group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors"
                       >
-                        <span className="font-semibold text-sm text-primary group-hover/item:text-accent transition-colors block">
+                        <span className="font-medium text-[15px] text-primary group-hover/item:text-accent transition-colors block">
                           {isFrench ? item.title.fr : item.title.en}
                         </span>
                         <span className="text-xs text-primary/70 leading-relaxed block">

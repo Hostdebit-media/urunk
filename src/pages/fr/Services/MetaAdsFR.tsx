@@ -1,11 +1,14 @@
-import React from "react";
-import Callout from "../../../components/Callout";
-import SEO from "../../../components/SEO";
-import { buildServiceProviderSchema } from "../../../components/SEO/StructuredData";
-import RelatedExpertiseSection from "../../../components/RelatedExpertiseSection";
-import { getMatrixLinksForService } from "../../../data/matrixRelations";
-import { ArrowRight, Check, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import Callout from '../../../components/Callout';
+import SEO from '../../../components/SEO';
+import { buildServiceProviderSchema } from '../../../components/SEO/StructuredData';
+import RelatedExpertiseSection from '../../../components/RelatedExpertiseSection';
+import { getMatrixLinksForService } from '../../../data/matrixRelations';
+import Button from '../../../components/ui/Button';
+import Section from '../../../components/ui/Section';
+import Hairline from '../../../components/ui/Hairline';
+import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function MetaAdsFR() {
   const faqs = [
@@ -32,8 +35,8 @@ export default function MetaAdsFR() {
       "Campagnes Instagram et Facebook orientées réservations directes pour hôtels et riads au Maroc dès 4 000 MAD/mois d'honoraires fixes (0 % commission média).",
     provider: buildServiceProviderSchema(),
     areaServed: [
-      { "@type": "Country", "name": "Morocco" },
-      { "@type": "Country", "name": "Worldwide" },
+      { "@type": "Country", name: "Morocco" },
+      { "@type": "Country", name: "Worldwide" },
     ],
     url: "https://urunk.com/services/gestion-publicites-meta",
     offers: {
@@ -61,251 +64,216 @@ export default function MetaAdsFR() {
         schema={[serviceSchema, faqSchema]}
       />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
-            Publicité sur les réseaux sociaux
-          </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+      {/* Editorial Hero */}
+      <Section tone="dark" className="pt-28 md:pt-36">
+        <div className="max-w-4xl">
+          <p className="text-sm text-bg-light/75 mb-4">Publicité sur les réseaux sociaux</p>
+          <h1 className="font-serif text-bg-light mb-6 text-balance">
             Publicité Meta Ads pour hôtels et riads
           </h1>
-          <p className="text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light">
-            Ne laissez plus partir vos futurs clients. Inspirez les voyageurs
-            sur Facebook et Instagram, puis reciblez-les jusqu'à ce qu'ils
-            réservent.
+          <p className="text-lg md:text-xl text-bg-light/85 mb-10 max-w-[65ch] leading-relaxed">
+            Ne laissez plus partir vos futurs clients. Inspirez les voyageurs sur Facebook et Instagram, puis reciblez-les jusqu'à ce qu'ils réservent.
           </p>
-          <div className="max-w-3xl mx-auto mb-10 text-left">
+          <div className="max-w-3xl mb-10">
             <Callout variant="dark">
-              <strong className="text-accent font-semibold">Ce que nous faisons :</strong> Urunk pilote vos campagnes Meta (Facebook &amp; Instagram) dès 4 000 MAD/mois d'honoraires fixes (0 % de marge sur votre budget média). Vous cherchez une <strong>stratégie globale combinant SEO hôtelier, Google Ads, Meta Ads et les budgets mensuels recommandés au Maroc</strong> ? Consultez notre page pilier{" "}
-              <Link to="/marketing-digital-hotelier" className="underline text-accent-soft hover:text-white font-semibold">
+              <strong className="text-bg-light font-semibold">Ce que nous faisons :</strong> Urunk pilote vos campagnes Meta (Facebook &amp; Instagram) dès 4 000 MAD/mois d'honoraires fixes (0 % de marge sur votre budget média). Vous cherchez une <strong className="text-bg-light font-semibold">stratégie globale combinant SEO hôtelier, Google Ads, Meta Ads et les budgets mensuels recommandés au Maroc</strong> ? Consultez notre page pilier{' '}
+              <Link to="/marketing-digital-hotelier">
                 Marketing Digital Hôtelier au Maroc
               </Link>.
             </Callout>
           </div>
-          <Link
-            to="/contact"
-            className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
-          >
-            Demander un audit publicitaire <ArrowRight size={18} />
-          </Link>
+          <Button href="/contact" variant="primary">
+            Demander un audit publicitaire
+          </Button>
         </div>
-      </section>
+      </Section>
 
       {/* Problem Section */}
-      <section className="py-20 px-6 max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">
+      <Section tone="alt">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-7">
+            <h2 className="font-serif text-primary mb-6 text-balance">
               Faites-vous simplement du « boost de publication » ?
             </h2>
-            <p className="text-primary/80 mb-6 leading-relaxed">
-              De nombreux propriétaires d'hôtels appuient sur le bouton «
-              Booster la publication » sur Instagram dans l'espoir d'obtenir des
-              réservations. Mais les « j'aime » ne payent pas les factures. Ce
-              bouton est conçu pour générer de l'engagement, pas du chiffre
-              d'affaires.
-            </p>
-            <p className="text-primary/80 leading-relaxed">
-              Un véritable retour sur investissement nécessite le Meta Ads
-              Manager. Nous construisons des entonnoirs complets : les audiences
-              froides découvrent vos meilleures vidéos, les audiences tièdes
-              explorent vos équipements, et les audiences chaudes (qui ont
-              visité votre page de réservation) reçoivent l'incitation finale
-              pour réserver directement.
-            </p>
+            <div className="space-y-4 text-primary/85 leading-relaxed max-w-[65ch]">
+              <p>
+                De nombreux propriétaires d'hôtels appuient sur le bouton « Booster la publication » sur Instagram dans l'espoir d'obtenir des réservations. Mais les « j'aime » ne payent pas les factures. Ce bouton est conçu pour générer de l'engagement, pas du chiffre d'affaires.
+              </p>
+              <p>
+                Un véritable retour sur investissement nécessite le Meta Ads Manager. Nous construisons des entonnoirs complets : les audiences froides découvrent vos meilleures vidéos, les audiences tièdes explorent vos équipements, et les audiences chaudes (qui ont visité votre page de réservation) reçoivent l'incitation finale pour réserver directement.
+              </p>
+            </div>
           </div>
-          <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10">
-            <h3 className="text-xl font-bold mb-4">
+
+          <div className="lg:col-span-5 border border-border-subtle bg-bg-card p-8 rounded-sm">
+            <h3 className="font-serif text-primary pb-4 mb-6 border-b border-border-subtle">
               Erreurs courantes sur Meta Ads :
             </h3>
-            <ul className="space-y-4">
-              <li className="flex gap-3 text-primary/80">
-                <Check size={20} className="text-accent shrink-0" /> Booster des
-                publications au lieu d'utiliser des campagnes de conversion
-              </li>
-              <li className="flex gap-3 text-primary/80">
-                <Check size={20} className="text-accent shrink-0" /> Oublier
-                d'installer le Pixel Meta pour le retargeting
-              </li>
-              <li className="flex gap-3 text-primary/80">
-                <Check size={20} className="text-accent shrink-0" /> Utiliser
-                des visuels statiques et chargés au lieu de vidéos verticales
-                fluides
-              </li>
-              <li className="flex gap-3 text-primary/80">
-                <Check size={20} className="text-accent shrink-0" /> Diffuser la
-                même publicité à tout le monde sans segmenter la maturité du
-                prospect
-              </li>
-            </ul>
+            <div className="divide-y divide-border-subtle text-sm text-primary/85">
+              <p className="py-3.5 pt-0 m-0">Booster des publications au lieu d'utiliser des campagnes de conversion</p>
+              <p className="py-3.5 m-0">Oublier d'installer le Pixel Meta pour le retargeting</p>
+              <p className="py-3.5 m-0">Utiliser des visuels statiques et chargés au lieu de vidéos verticales fluides</p>
+              <p className="py-3.5 pb-0 m-0">Diffuser la même publicité à tout le monde sans segmenter la maturité du prospect</p>
+            </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* Ce qui est inclus */}
-      <section className="bg-primary text-white py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
+      <Section tone="light">
+        <div className="max-w-3xl mb-12">
+          <h2 className="font-serif text-primary text-balance">
             Stratégie sociale à entonnoir complet.
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-accent">
-                Ciblage d'Audience
-              </h3>
-              <p className="text-white/80 text-sm leading-relaxed">
-                Nous ciblons les voyageurs ayant manifesté un intérêt pour votre
-                destination en créant des audiences similaires basées sur vos
-                clients passés.
-              </p>
+        </div>
+
+        <div>
+          <Hairline />
+          <div className="py-8 grid md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+            <div className="md:col-span-1 text-sm font-medium text-accent tabular-nums">01</div>
+            <div className="md:col-span-4">
+              <h3 className="font-serif text-primary m-0">Ciblage d'Audience</h3>
             </div>
-            <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-accent">
-                Création & Rédaction
-              </h3>
-              <p className="text-white/80 text-sm leading-relaxed">
-                Nous concevons des visuels captivants et des textes persuasifs
-                qui transmettent l'émotion et l'expérience unique de votre
-                établissement.
-              </p>
-            </div>
-            <div className="bg-white/10 p-8 rounded-2xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4 text-accent">
-                Retargeting Puissant
-              </h3>
-              <p className="text-white/80 text-sm leading-relaxed">
-                Nous configurons le Pixel afin d'accompagner les utilisateurs
-                ayant quitté votre site sans réserver, leur rappelant d'inscrire
-                leur séjour.
+            <div className="md:col-span-7">
+              <p className="text-primary/80 leading-relaxed m-0 max-w-[65ch]">
+                Nous ciblons les voyageurs ayant manifesté un intérêt pour votre destination en créant des audiences similaires basées sur vos clients passés.
               </p>
             </div>
           </div>
+          <Hairline />
+          <div className="py-8 grid md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+            <div className="md:col-span-1 text-sm font-medium text-accent tabular-nums">02</div>
+            <div className="md:col-span-4">
+              <h3 className="font-serif text-primary m-0">Création &amp; Rédaction</h3>
+            </div>
+            <div className="md:col-span-7">
+              <p className="text-primary/80 leading-relaxed m-0 max-w-[65ch]">
+                Nous concevons des visuels captivants et des textes persuasifs qui transmettent l'émotion et l'expérience unique de votre établissement.
+              </p>
+            </div>
+          </div>
+          <Hairline />
+          <div className="py-8 grid md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+            <div className="md:col-span-1 text-sm font-medium text-accent tabular-nums">03</div>
+            <div className="md:col-span-4">
+              <h3 className="font-serif text-primary m-0">Retargeting Puissant</h3>
+            </div>
+            <div className="md:col-span-7">
+              <p className="text-primary/80 leading-relaxed m-0 max-w-[65ch]">
+                Nous configurons le Pixel afin d'accompagner les utilisateurs ayant quitté votre site sans réserver, leur rappelant d'inscrire leur séjour.
+              </p>
+            </div>
+          </div>
+          <Hairline />
         </div>
-      </section>
+      </Section>
 
       {/* Process & Pricing */}
-      <section className="py-20 px-6 bg-bg-alt">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-3xl font-bold mb-8">Comment ça marche</h2>
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
-                  1
-                </div>
+      <Section tone="alt">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-7">
+            <h2 className="font-serif text-primary mb-8">Comment ça marche</h2>
+            <div>
+              <Hairline />
+              <div className="py-6 flex gap-6 items-baseline">
+                <span className="font-serif text-2xl text-accent shrink-0 tabular-nums w-8">1</span>
                 <div>
-                  <h3 className="font-bold mb-1">
-                    Pixel Meta & Analyse des Contenus
-                  </h3>
-                  <p className="text-sm text-primary/80">
-                    Nous vérifions l'installation du Pixel Meta sur votre site
-                    et sélectionnons vos meilleures photos/vidéos.
+                  <h3 className="font-serif text-primary mb-2">Pixel Meta &amp; Analyse des Contenus</h3>
+                  <p className="text-primary/80 leading-relaxed m-0 max-w-[60ch]">
+                    Nous vérifions l'installation du Pixel Meta sur votre site et sélectionnons vos meilleures photos/vidéos.
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
-                  2
-                </div>
+              <Hairline />
+              <div className="py-6 flex gap-6 items-baseline">
+                <span className="font-serif text-2xl text-accent shrink-0 tabular-nums w-8">2</span>
                 <div>
-                  <h3 className="font-bold mb-1">
-                    Conception des Campagnes & Visuels
-                  </h3>
-                  <p className="text-sm text-primary/80">
-                    Nous préparons les éléments graphiques, rédigeons les textes
-                    et paramétrons les entonnoirs dans Ads Manager.
+                  <h3 className="font-serif text-primary mb-2">Conception des Campagnes &amp; Visuels</h3>
+                  <p className="text-primary/80 leading-relaxed m-0 max-w-[60ch]">
+                    Nous préparons les éléments graphiques, rédigeons les textes et paramétrons les entonnoirs dans Ads Manager.
                   </p>
                 </div>
               </div>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
-                  3
-                </div>
+              <Hairline />
+              <div className="py-6 flex gap-6 items-baseline">
+                <span className="font-serif text-2xl text-accent shrink-0 tabular-nums w-8">3</span>
                 <div>
-                  <h3 className="font-bold mb-1">Optimisation Mensuelle</h3>
-                  <p className="text-sm text-primary/80">
-                    Nous renouvelons les annonces fatiguées et réallouons le
-                    budget vers les campagnes générant les réservations les plus
-                    rentables.
+                  <h3 className="font-serif text-primary mb-2">Optimisation Mensuelle</h3>
+                  <p className="text-primary/80 leading-relaxed m-0 max-w-[60ch]">
+                    Nous renouvelons les annonces fatiguées et réallouons le budget vers les campagnes générant les réservations les plus rentables.
                   </p>
                 </div>
               </div>
+              <Hairline />
             </div>
           </div>
 
-          <div className="bg-white p-10 rounded-2xl shadow-sm border border-primary/10 flex flex-col justify-center items-center text-center">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium mb-6">
-              Frais de gestion
-            </span>
-            <h3 className="text-4xl font-bold mb-2">
-              À partir de 4 000 MAD
-              <span className="text-xl font-normal text-primary/70">/mois</span>
+          <div className="lg:col-span-5 bg-bg-card p-8 md:p-10 rounded-sm border border-border-subtle space-y-5">
+            <p className="text-sm text-accent font-medium m-0">Frais de gestion</p>
+            <h3 className="font-serif text-3xl text-primary tabular-nums m-0">
+              À partir de 4 000 MAD<span className="text-lg text-primary/70">/mois</span>
             </h3>
-            <p className="text-primary/70 text-sm mb-8">
-              Hors budget publicitaire payé directement à Meta. Sans engagement
-              longue durée.
+            <p className="text-primary/80 leading-relaxed m-0">
+              Hors budget publicitaire payé directement à Meta. Sans engagement longue durée.
             </p>
-            <Link
-              to="/contact"
-              className="w-full bg-primary hover:bg-primary-light text-white py-3 rounded-xl font-medium transition-colors"
-            >
+            <Button href="/contact" variant="dark" className="w-full">
               Développer mes réservations
-            </Link>
+            </Button>
           </div>
         </div>
-      </section>
+      </Section>
 
       <RelatedExpertiseSection
-        kicker="Acquisition Régionale & Social Ads"
+        kicker="Acquisition régionale et social ads"
         title="Publicité Meta Ads & Réservation Directe par Ville au Maroc"
         subtitle="Découvrez nos dispositifs d'acquisition Instagram, Facebook, Google Ads et réservation directe à Marrakech, Casablanca et Agadir."
         links={getMatrixLinksForService('meta-ads', 'fr')}
         isFrench={true}
-        bgVariant="white"
+        bgVariant="default"
       />
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-bg-alt border-t border-primary/10">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-10 text-center">
-            Foire aux questions
-          </h2>
-          <div className="flex flex-col border-t border-primary/20">
+      <Section tone="alt">
+        <div className="max-w-3xl">
+          <p className="text-sm text-accent font-medium mb-2">FAQ</p>
+          <h2 className="font-serif text-primary mb-10">Foire aux questions</h2>
+          <div>
+            <Hairline />
             {faqs.map((faq, i) => (
-              <details key={i} className="group border-b border-primary/20">
-                <summary className="flex justify-between items-center font-medium cursor-pointer list-none py-6 pr-4 text-lg">
-                  <span>{faq.q}</span>
-                  <span className="transition group-open:rotate-180 text-accent">
-                    <ChevronDown size={24} />
-                  </span>
-                </summary>
-                <div className="text-primary/70 pb-6 pr-4 leading-relaxed">
-                  {faq.a}
-                </div>
-              </details>
+              <React.Fragment key={i}>
+                <details open={i === 0} className="group py-5">
+                  <summary className="flex justify-between items-center gap-6 cursor-pointer list-none font-serif text-xl text-primary">
+                    <span>{faq.q}</span>
+                    <ChevronDown
+                      size={18}
+                      className="text-accent shrink-0 transition-transform duration-200 group-open:rotate-180"
+                    />
+                  </summary>
+                  <div className="pt-4 text-primary/85 leading-relaxed max-w-[65ch]">
+                    {faq.a}
+                  </div>
+                </details>
+                <Hairline />
+              </React.Fragment>
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6">
-          Prêt à transformer l'attention en réservations ?
-        </h2>
-        <p className="text-xl text-primary/80 mb-8">
-          Construisons un entonnoir sur les réseaux sociaux rentable pour votre
-          établissement.
-        </p>
-        <Link
-          to="/contact"
-          className="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 transition-colors"
-        >
-          Obtenir une proposition de campagne <ArrowRight size={18} />
-        </Link>
-      </section>
+      {/* Closing CTA */}
+      <Section tone="dark">
+        <div className="max-w-3xl">
+          <h2 className="font-serif text-bg-light mb-4 text-balance">
+            Prêt à transformer l'attention en réservations ?
+          </h2>
+          <p className="text-lg text-bg-light/85 mb-8">
+            Construisons un entonnoir sur les réseaux sociaux rentable pour votre établissement.
+          </p>
+          <Button href="/contact" variant="primary">
+            Obtenir une proposition de campagne
+          </Button>
+        </div>
+      </Section>
     </div>
   );
 }

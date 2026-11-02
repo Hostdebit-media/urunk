@@ -1,21 +1,9 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { useLocation, Link } from 'react-router-dom';
-import { 
-  Globe, 
-  FileText, 
-  Briefcase, 
-  MapPin, 
-  Building, 
-  ChevronRight, 
-  Search, 
-  HelpCircle, 
-  Navigation,
-  Info,
-  BookOpen,
-  Award
-} from 'lucide-react';
+import { Search } from 'lucide-react';
 import SEO from '../components/SEO';
+import Section from '../components/ui/Section';
+import Hairline from '../components/ui/Hairline';
 import { buildArticleSchema } from '../components/SEO/StructuredData';
 import { getAllLiveMatrixLinks } from '../data/matrixRelations';
 import { blogPostsFR } from '../data/blogPostsFR';
@@ -32,19 +20,17 @@ export default function Sitemap() {
   const isFrench = !location.pathname.startsWith('/en');
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Page titles and descriptions
-  const pageTitle = isFrench 
-    ? "Plan du Site — Index Complet des Pages | Urunk" 
+  const pageTitle = isFrench
+    ? "Plan du Site — Index Complet des Pages | Urunk"
     : "Sitemap — Complete Index of Pages | Urunk";
 
   const pageDescription = isFrench
     ? "Explorez le plan de site complet d'Urunk. Retrouvez l'index de toutes nos pages d'expertise, de services web, de référencement local, de nos secteurs d'activité et guides."
     : "Explore Urunk's complete sitemap indexing all hotel digital marketing services, regional location hubs, industry guides, case studies, and corporate pages.";
 
-  // Bilingual copy for headings
   const textHeroBadge = isFrench ? "Index des Pages" : "Site Index";
   const textHeroTitle = isFrench ? "Plan du Site" : "Complete Sitemap";
-  const textHeroSub = isFrench 
+  const textHeroSub = isFrench
     ? "Naviguez facilement à travers l'ensemble des pages, services, expertises géographiques et ressources de l'agence Urunk."
     : "Navigate smoothly through all core pages, services, industry specializations, and geographic hubs offered by Urunk.";
 
@@ -57,8 +43,8 @@ export default function Sitemap() {
   const textBlogHeader = isFrench ? "Articles de Blog & Guides Hôteliers" : "Blog Articles & Strategic Guides";
   const textLegalHeader = isFrench ? "Utilitaires & Mentions Légales" : "Legal & Utilities";
 
-  const textSearchLabel = isFrench ? "Rechercher une page ou un service" : "Search pages or services...";
-  const textSearchTip = isFrench 
+  const textSearchLabel = isFrench ? "Rechercher une page ou un service" : "Search pages or services";
+  const textSearchTip = isFrench
     ? "Conseil : Tapez un mot-clé comme « Riad », « Google Ads » ou « Casablanca » pour filtrer instantanément."
     : "Tip: Type a keyword like 'Riad', 'Google Ads', or 'Casablanca' to filter the sitemap links instantly.";
 
@@ -69,10 +55,9 @@ export default function Sitemap() {
 
   const textHowToTitle = isFrench ? "Comment naviguer efficacement" : "How to Navigate Our Site";
   const textHowToDesc = isFrench
-    ? "Pour trouver les informations les plus pertinentes, vous pouvez suivre notre entonnoir : commencez par explorer nos Hubs Régionaux pour appréhender le contexte de votre ville de prédilection, puis consultez la page Sectorielle correspondante (comme les Riads de Marrakech) pour découvrir des cas d'études locaux concrets (Art House Marrakech, Nomad Eats). Si vous êtes prêt à lancer votre projet, visitez notre page tarifs ou utilisez notre formulaire de contact pour obtenir un audit technique gratuit sous 24h."
+    ? "Pour trouver les informations les plus pertinentes, vous pouvez suivre notre entonnoir : commencez par explorer nos Hubs Régionaux pour appréhender le contexte de votre ville de prédilection, puis consultez la page Sectorielle correspondante (comme les Riads de Marrakech) pour découvrir des cas d'études locaux concrets (Art House Marrakech, Nomad Eats). Si vous êtes prêt à lancer votre projet, visitez notre page tarifs ou utilisez notre formulaire de contact pour obtenir un audit technique gratuit sous [À CONFIRMER]."
     : "To find the most relevant solutions for your company, we recommend following our discovery funnel: begin by checking our Regional Hubs to understand local search volume in your city, then proceed to the industry specialization page (e.g., Riads & Boutique Hotels) to read concrete Moroccan case studies (Art House Marrakech, Nomad Eats). If you have a specific technical objective, jump directly to our focused services or request your free direct booking audit.";
 
-  // Define bilingual link mapping
   const coreLinks: SitemapLink[] = isFrench ? [
     { label: "Accueil", path: "/" },
     { label: "Catalogue Complet des Services", path: "/services" },
@@ -196,11 +181,10 @@ export default function Sitemap() {
     path: item.path
   }));
 
-  // Helper filter function for search term
   const filterLinks = (links: SitemapLink[]) => {
     if (!searchTerm.trim()) return links;
-    return links.filter(link => 
-      link.label.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    return links.filter(link =>
+      link.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
       link.path.toLowerCase().includes(searchTerm.toLowerCase())
     );
   };
@@ -214,19 +198,19 @@ export default function Sitemap() {
   const filteredBlog = filterLinks(blogLinks);
   const filteredLegal = filterLinks(legalLinks);
 
-  const totalResults = 
-    filteredCore.length + 
-    filteredServices.length + 
-    filteredIndustries.length + 
-    filteredLocations.length + 
+  const totalResults =
+    filteredCore.length +
+    filteredServices.length +
+    filteredIndustries.length +
+    filteredLocations.length +
     filteredExpertise.length +
     filteredCaseStudies.length +
     filteredBlog.length +
     filteredLegal.length;
 
   return (
-    <div className="w-full bg-bg text-primary pb-24">
-      <SEO 
+    <div className="w-full bg-bg-light text-primary">
+      <SEO
         title={pageTitle}
         description={pageDescription}
         schema={[
@@ -251,75 +235,70 @@ export default function Sitemap() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 bg-primary text-white relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-yellow-400 text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+      <Section tone="dark" className="pt-28 md:pt-36">
+        <div className="max-w-[68ch]">
+          <p className="text-sm font-medium text-bg-light/75 mb-5">
             {textHeroBadge}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+          </p>
+          <h1 className="mb-6 text-bg-light">
             {textHeroTitle}
           </h1>
-          <p className="text-base md:text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-bg-light/85 leading-relaxed">
             {textHeroSub}
           </p>
         </div>
-      </section>
+      </Section>
 
-      {/* Dynamic Navigation & Search Tips Guide Section */}
-      <section className="py-12 px-6 bg-white border-b border-primary/10">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-          <div className="p-6 md:p-8 bg-primary/5 rounded-3xl border border-primary/10 space-y-4">
-            <h2 className="text-lg font-serif font-bold text-primary flex items-center gap-2">
-              <Navigation className="text-accent" size={20} /> {textStructureTitle}
-            </h2>
-            <p className="text-xs text-primary/75 leading-relaxed font-light">
+      {/* Architecture & Navigation Guide */}
+      <Section tone="alt">
+        <div className="grid md:grid-cols-2 gap-12">
+          <div className="space-y-4 max-w-[65ch]">
+            <h3 className="text-primary">{textStructureTitle}</h3>
+            <p className="text-sm text-primary/80 leading-relaxed">
               {textStructureDesc}
             </p>
           </div>
-          <div className="p-6 md:p-8 bg-primary/5 rounded-3xl border border-primary/10 space-y-4">
-            <h2 className="text-lg font-serif font-bold text-primary flex items-center gap-2">
-              <HelpCircle className="text-accent" size={20} /> {textHowToTitle}
-            </h2>
-            <p className="text-xs text-primary/75 leading-relaxed font-light">
+          <div className="space-y-4 max-w-[65ch]">
+            <h3 className="text-primary">{textHowToTitle}</h3>
+            <p className="text-sm text-primary/80 leading-relaxed">
               {textHowToDesc}
             </p>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Live Interactive Search Section */}
-      <section className="pt-12 px-6 max-w-6xl mx-auto">
-        <div className="relative max-w-xl mx-auto">
-          <label htmlFor="sitemap-search-input" className="sr-only">{textSearchLabel}</label>
+      {/* Search & Directory */}
+      <Section tone="light">
+        <div className="max-w-xl mb-14">
+          <label htmlFor="sitemap-search-input" className="block text-sm font-medium text-primary mb-2">
+            {textSearchLabel}
+          </label>
           <div className="relative">
-            <Search className="absolute left-4 top-3.5 text-primary/40" size={18} />
-            <input 
+            <Search className="absolute left-3.5 top-3.5 text-primary/45" size={18} aria-hidden="true" />
+            <input
               id="sitemap-search-input"
               type="text"
               placeholder={textSearchLabel}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 rounded-xl border border-primary/20 focus:border-accent focus:outline-none text-sm bg-white"
+              className="w-full pl-11 pr-4 py-3 rounded-sm border border-border-subtle focus:border-accent focus:outline-none text-base bg-bg-card text-primary"
             />
           </div>
-          <p className="text-[11px] text-primary/60 mt-2 text-center">
+          <p className="text-xs text-primary/65 mt-2">
             {textSearchTip}
           </p>
         </div>
-      </section>
 
-      {/* Sitemap Links Grid */}
-      <section className="py-12 px-6 max-w-6xl mx-auto">
+        <Hairline className="mb-12" />
+
         {totalResults === 0 ? (
-          <div className="text-center py-16 bg-white rounded-3xl border border-primary/10">
-            <Info size={40} className="mx-auto text-primary/30 mb-4" />
-            <p className="text-sm font-medium text-primary/75">
+          <div className="py-12">
+            <p className="text-base text-primary/80">
               {isFrench ? "Aucun résultat pour cette recherche." : "No pages found matching your search criteria."}
             </p>
           </div>
         ) : (
-          <div className="space-y-8">
+          <div className="space-y-16">
             {(filteredCore.length > 0 ||
               filteredServices.length > 0 ||
               filteredIndustries.length > 0 ||
@@ -327,141 +306,24 @@ export default function Sitemap() {
               filteredExpertise.length > 0 ||
               filteredCaseStudies.length > 0 ||
               filteredLegal.length > 0) && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            
-            {/* Core Pages Column */}
-            {filteredCore.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                  <Globe className="text-accent" size={20} /> {textCoreHeader}
-                </h2>
-                <p className="text-xs text-primary/70 font-light leading-relaxed">
-                  {isFrench
-                    ? "Découvrez la mission d'Urunk, notre transparence tarifaire sans commission d'intermédiaire, notre garantie contractuelle de 90 jours et l'accès direct à votre diagnostic gratuit."
-                    : "Explore Urunk's mission, our transparent commission-free pricing model, our 90-day direct growth guarantee, and direct access to your complimentary channel audit."}
-                </p>
-                <ul className="space-y-3 font-light text-sm">
-                  {filteredCore.map((link, idx) => (
-                    <li key={idx}>
-                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
-                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14 items-start">
 
-            {/* Services Column */}
-            {filteredServices.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                  <FileText className="text-accent" size={20} /> {textServicesHeader}
-                </h2>
-                <p className="text-xs text-primary/70 font-light leading-relaxed">
-                  {isFrench
-                    ? "Solutions techniques de création de sites web ultra-rapides, d'intégration PMS, de référencement naturel local Google Maps et de pilotage publicitaire Google, Meta et TripAdvisor."
-                    : "Specialized engineering for high-speed direct booking websites, PMS integration, Google Maps local SEO, and high-intent Google, Meta, and TripAdvisor ad management."}
-                </p>
-                <ul className="space-y-3 font-light text-sm">
-                  {filteredServices.map((link, idx) => (
-                    <li key={idx}>
-                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
-                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Industries Column */}
-            {filteredIndustries.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                  <Briefcase className="text-accent" size={20} /> {textIndustriesHeader}
-                </h2>
-                <p className="text-xs text-primary/70 font-light leading-relaxed">
-                  {isFrench
-                    ? "Stratégies sectorielles calibrées pour réduire la dépendance aux OTA (15 à 25 % de commission) des hôtels, riads, tour-opérateurs, restaurateurs et PME B2B au Maroc."
-                    : "Vertical playbooks engineered to eliminate 15–25% OTA commission leakage across luxury hotels, boutique Medina riads, tour operators, restaurants, and corporate SMEs."}
-                </p>
-                <ul className="space-y-3 font-light text-sm">
-                  {filteredIndustries.map((link, idx) => (
-                    <li key={idx}>
-                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
-                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Locations Column */}
-            {filteredLocations.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                  <MapPin className="text-accent" size={20} /> {textLocationsHeader}
-                </h2>
-                <p className="text-xs text-primary/70 font-light leading-relaxed">
-                  {isFrench
-                    ? "Couverture opérationnelle à Casablanca, Marrakech, Rabat, Agadir et sur tout le Royaume pour capter l'intention de recherche géolocalisée des clientèles locales et internationales."
-                    : "Dedicated regional hubs across Casablanca, Marrakech, Rabat, Agadir, and nationwide Morocco capturing localized commercial and international travel search demand."}
-                </p>
-                <ul className="space-y-3 font-light text-sm">
-                  {filteredLocations.map((link, idx) => (
-                    <li key={idx}>
-                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
-                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* City & Sector Expertise Column */}
-            {filteredExpertise.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                  <Navigation className="text-accent" size={20} /> {textExpertiseHeader}
-                </h2>
-                <p className="text-xs text-primary/70 font-light leading-relaxed">
-                  {isFrench
-                    ? "Pôles spécialisés associant chaque levier d'acquisition (SEO hôtelier, site web riad, réservation directe, Google Ads, Meta Ads, TripAdvisor) aux marchés de Marrakech, Casablanca, Agadir et Rabat."
-                    : "Specialized local-intent pages pairing core growth services (Hotel SEO, Riad Web Design, Direct Booking, Google Ads, Meta & TripAdvisor Ads) with Marrakech, Casablanca, Agadir, and Rabat."}
-                </p>
-                <ul className="space-y-3 font-light text-sm">
-                  {filteredExpertise.map((link, idx) => (
-                    <li key={idx}>
-                      <Link to={link.path} className="flex items-center justify-between text-primary hover:text-accent transition-colors py-1">
-                        <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Case Studies + Legal Column */}
-            {(filteredCaseStudies.length > 0 || filteredLegal.length > 0) && (
-              <div className="space-y-8">
-                {filteredCaseStudies.length > 0 && (
-                  <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                    <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                      <Award className="text-accent" size={20} /> {textCaseStudiesHeader}
-                    </h2>
-                    <p className="text-xs text-primary/70 font-light leading-relaxed">
+                {/* Core Pages Column */}
+                {filteredCore.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="text-primary border-b border-border-subtle pb-3">
+                      {textCoreHeader}
+                    </h3>
+                    <p className="text-sm text-primary/75 leading-relaxed">
                       {isFrench
-                        ? "Scénarios stratégiques documentés illustrant l'acquisition directe, le SEO local et les campagnes d'acquisition pour les acteurs du tourisme et du B2B au Maroc."
-                        : "Documented strategy blueprints illustrating direct booking funnels, local Maps SEO, and paid media execution across Moroccan tourism and B2B verticals."}
+                        ? "Découvrez la mission d'Urunk, notre transparence tarifaire sans commission d'intermédiaire, notre garantie contractuelle de 90 jours et l'accès direct à votre diagnostic gratuit."
+                        : "Explore Urunk's mission, our transparent commission-free pricing model, our 90-day direct growth guarantee, and direct access to your complimentary channel audit."}
                     </p>
-                    <ul className="space-y-3 font-light text-sm">
-                      {filteredCaseStudies.map((link, idx) => (
-                        <li key={idx}>
-                          <Link to={link.path} className="flex items-center justify-between gap-2 text-primary hover:text-accent transition-colors py-1">
-                            <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40 shrink-0" />
+                    <ul className="divide-y divide-border-subtle/60 text-sm">
+                      {filteredCore.map((link, idx) => (
+                        <li key={idx} className="py-2">
+                          <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                            {link.label}
                           </Link>
                         </li>
                       ))}
@@ -469,57 +331,173 @@ export default function Sitemap() {
                   </div>
                 )}
 
-                {filteredLegal.length > 0 && (
-                  <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-                    <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2 border-b border-primary/10 pb-3">
-                      <Building className="text-accent" size={20} /> {textLegalHeader}
-                    </h2>
-                    <p className="text-xs text-primary/70 font-light leading-relaxed">
+                {/* Services Column */}
+                {filteredServices.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="text-primary border-b border-border-subtle pb-3">
+                      {textServicesHeader}
+                    </h3>
+                    <p className="text-sm text-primary/75 leading-relaxed">
                       {isFrench
-                        ? "Cadre réglementaire conforme à la loi marocaine 09-08 (CNDP) et au RGPD, conditions contractuelles transparentes et index complet du site."
-                        : "Full regulatory compliance under Moroccan Law 09-08 (CNDP) and GDPR, transparent client agreements, and complete site directory."}
+                        ? "Solutions techniques de création de sites web ultra-rapides, d'intégration PMS, de référencement naturel local Google Maps et de pilotage publicitaire Google, Meta et TripAdvisor."
+                        : "Specialized engineering for high-speed direct booking websites, PMS integration, Google Maps local SEO, and high-intent Google, Meta, and TripAdvisor ad management."}
                     </p>
-                    <ul className="space-y-3 font-light text-sm">
-                      {filteredLegal.map((link, idx) => (
-                        <li key={idx}>
-                          <Link to={link.path} className="flex items-center justify-between gap-2 text-primary hover:text-accent transition-colors py-1">
-                            <span>{link.label}</span> <ChevronRight size={14} className="text-primary/40 shrink-0" />
+                    <ul className="divide-y divide-border-subtle/60 text-sm">
+                      {filteredServices.map((link, idx) => (
+                        <li key={idx} className="py-2">
+                          <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                            {link.label}
                           </Link>
                         </li>
                       ))}
                     </ul>
                   </div>
                 )}
-              </div>
-            )}
+
+                {/* Industries Column */}
+                {filteredIndustries.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="text-primary border-b border-border-subtle pb-3">
+                      {textIndustriesHeader}
+                    </h3>
+                    <p className="text-sm text-primary/75 leading-relaxed">
+                      {isFrench
+                        ? "Stratégies sectorielles calibrées pour réduire la dépendance aux OTA ([À CONFIRMER] de commission) des hôtels, riads, tour-opérateurs, restaurateurs et PME B2B au Maroc."
+                        : "Vertical playbooks engineered to eliminate [À CONFIRMER] OTA commission leakage across luxury hotels, boutique Medina riads, tour operators, restaurants, and corporate SMEs."}
+                    </p>
+                    <ul className="divide-y divide-border-subtle/60 text-sm">
+                      {filteredIndustries.map((link, idx) => (
+                        <li key={idx} className="py-2">
+                          <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Locations Column */}
+                {filteredLocations.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="text-primary border-b border-border-subtle pb-3">
+                      {textLocationsHeader}
+                    </h3>
+                    <p className="text-sm text-primary/75 leading-relaxed">
+                      {isFrench
+                        ? "Couverture opérationnelle à Casablanca, Marrakech, Rabat, Agadir et sur tout le Royaume pour capter l'intention de recherche géolocalisée des clientèles locales et internationales."
+                        : "Dedicated regional hubs across Casablanca, Marrakech, Rabat, Agadir, and nationwide Morocco capturing localized commercial and international travel search demand."}
+                    </p>
+                    <ul className="divide-y divide-border-subtle/60 text-sm">
+                      {filteredLocations.map((link, idx) => (
+                        <li key={idx} className="py-2">
+                          <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* City & Sector Expertise Column */}
+                {filteredExpertise.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="text-primary border-b border-border-subtle pb-3">
+                      {textExpertiseHeader}
+                    </h3>
+                    <p className="text-sm text-primary/75 leading-relaxed">
+                      {isFrench
+                        ? "Pôles spécialisés associant chaque levier d'acquisition (SEO hôtelier, site web riad, réservation directe, Google Ads, Meta Ads, TripAdvisor) aux marchés de Marrakech, Casablanca, Agadir et Rabat."
+                        : "Specialized local-intent pages pairing core growth services (Hotel SEO, Riad Web Design, Direct Booking, Google Ads, Meta & TripAdvisor Ads) with Marrakech, Casablanca, Agadir, and Rabat."}
+                    </p>
+                    <ul className="divide-y divide-border-subtle/60 text-sm">
+                      {filteredExpertise.map((link, idx) => (
+                        <li key={idx} className="py-2">
+                          <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Case Studies + Legal Column */}
+                {(filteredCaseStudies.length > 0 || filteredLegal.length > 0) && (
+                  <div className="space-y-12">
+                    {filteredCaseStudies.length > 0 && (
+                      <div className="space-y-4">
+                        <h3 className="text-primary border-b border-border-subtle pb-3">
+                          {textCaseStudiesHeader}
+                        </h3>
+                        <p className="text-sm text-primary/75 leading-relaxed">
+                          {isFrench
+                            ? "Scénarios stratégiques documentés illustrant l'acquisition directe, le SEO local et les campagnes d'acquisition pour les acteurs du tourisme et du B2B au Maroc."
+                            : "Documented strategy blueprints illustrating direct booking funnels, local Maps SEO, and paid media execution across Moroccan tourism and B2B verticals."}
+                        </p>
+                        <ul className="divide-y divide-border-subtle/60 text-sm">
+                          {filteredCaseStudies.map((link, idx) => (
+                            <li key={idx} className="py-2">
+                              <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {filteredLegal.length > 0 && (
+                      <div className="space-y-4">
+                        <h3 className="text-primary border-b border-border-subtle pb-3">
+                          {textLegalHeader}
+                        </h3>
+                        <p className="text-sm text-primary/75 leading-relaxed">
+                          {isFrench
+                            ? "Cadre réglementaire conforme à la loi marocaine 09-08 (CNDP) et au RGPD, conditions contractuelles transparentes et index complet du site."
+                            : "Full regulatory compliance under Moroccan Law 09-08 (CNDP) and GDPR, transparent client agreements, and complete site directory."}
+                        </p>
+                        <ul className="divide-y divide-border-subtle/60 text-sm">
+                          {filteredLegal.map((link, idx) => (
+                            <li key={idx} className="py-2">
+                              <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors">
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
 
               </div>
             )}
 
             {/* Full-Width Blog Articles & Guides Directory */}
             {filteredBlog.length > 0 && (
-              <div className="bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-5">
-                <div className="border-b border-primary/10 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <h2 className="text-xl font-serif font-bold text-primary flex items-center gap-2">
-                    <BookOpen className="text-accent" size={20} /> {textBlogHeader}
+              <div className="pt-8 border-t border-border-subtle space-y-5">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+                  <h2 className="text-primary">
+                    {textBlogHeader}
                   </h2>
-                  <span className="text-xs font-medium text-primary/60">
+                  <span className="text-sm font-medium text-primary/65 tabular-nums">
                     {isFrench
                       ? `${filteredBlog.length} ${filteredBlog.length === 1 ? 'guide publié' : 'guides publiés'}`
                       : `${filteredBlog.length} ${filteredBlog.length === 1 ? 'published guide' : 'published guides'}`}
                   </span>
                 </div>
-                <p className="text-xs text-primary/70 font-light leading-relaxed">
+                <p className="text-sm text-primary/75 leading-relaxed max-w-[68ch]">
                   {isFrench
                     ? "Guides pratiques et analyses techniques sur la création de sites web hôteliers au Maroc, la réduction des commissions OTA, l'intégration PMS (Cloudbeds, Mews, SiteMinder, Amenitiz), le SEO local Google Maps et la rentabilité Google & Meta Ads."
                     : "Actionable guides and technical analyses covering hotel website engineering in Morocco, OTA commission reduction, PMS integration (Cloudbeds, Mews, SiteMinder, Amenitiz), Google Maps local SEO, and profitable Google & Meta Ads funnels."}
                 </p>
-                <ul className="grid md:grid-cols-2 gap-x-8 gap-y-2.5 font-light text-sm">
+                <ul className="grid md:grid-cols-2 gap-x-10 text-sm">
                   {filteredBlog.map((link, idx) => (
-                    <li key={idx}>
-                      <Link to={link.path} className="flex items-start justify-between gap-3 text-primary hover:text-accent transition-colors py-1.5 border-b border-primary/5">
-                        <span className="leading-snug">{link.label}</span>
-                        <ChevronRight size={14} className="text-primary/40 shrink-0 mt-1" />
+                    <li key={idx} className="py-2.5 border-b border-border-subtle/60">
+                      <Link to={link.path} className="text-accent hover:text-accent-hover transition-colors leading-snug">
+                        {link.label}
                       </Link>
                     </li>
                   ))}
@@ -530,19 +508,19 @@ export default function Sitemap() {
         )}
 
         {/* Editorial Architecture & Bilingual Coverage Note */}
-        <div className="mt-12 bg-white p-8 rounded-3xl border border-primary/10 shadow-sm space-y-4">
-          <h2 className="text-xl font-serif font-bold text-primary">
+        <div className="mt-16 pt-12 border-t border-border-subtle max-w-[68ch] space-y-4">
+          <h3 className="text-primary">
             {isFrench
               ? "Écosystème Bilingue, Maillage Sémantique & Ressources Éditoriales"
               : "Bilingual Content Ecosystem, Semantic Linking & Editorial Resources"}
-          </h2>
-          <p className="text-xs md:text-sm text-primary/75 font-light leading-relaxed">
+          </h3>
+          <p className="text-sm text-primary/80 leading-relaxed">
             {isFrench
               ? "Les pages stratégiques répertoriées sur ce plan du site sont déployées en français et en anglais avec un balisage hreflang rigoureux (réciproque sur les pages bilingues et auto-référent sur les guides spécialisés par marché), permettant aux établissements hôteliers, riads et entreprises marocaines de rayonner simultanément auprès des décideurs locaux et des voyageurs internationaux d'Europe, du Royaume-Uni et d'Amérique du Nord. Nos guides éditoriaux approfondissent la réduction des commissions OTA, l'intégration des moteurs PMS (Cloudbeds, Mews, SiteMinder, Amenitiz), l'optimisation des Core Web Vitals et l'arbitrage budgétaire entre Google Search, Meta Ads et TripAdvisor."
               : "Core strategic pages indexed in this directory are published in English and French with strict hreflang annotations (reciprocal across bilingual pairs and self-referencing on market-specific guides), enabling Moroccan hotels, boutique riads, tour operators, and B2B enterprises to engage domestic stakeholders alongside international travelers from Europe, the UK, and North America. Our editorial library covers practical playbooks on reducing third-party OTA commissions, integrating direct booking PMS engines (Cloudbeds, Mews, SiteMinder, Amenitiz), passing Core Web Vitals benchmarks, and allocating ad spend across Google Search, Meta Ads, and TripAdvisor."}
           </p>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }

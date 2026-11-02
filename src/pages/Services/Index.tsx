@@ -1,30 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Monitor, 
-  Search, 
-  MapPin, 
-  Target, 
-  Globe, 
-  LayoutGrid, 
-  TrendingUp, 
-  Sparkles, 
-  BadgePercent, 
-  Compass, 
-  CheckCircle,
-  Code,
-  Layers,
-  Smartphone,
-  Briefcase,
-  Megaphone
-} from 'lucide-react';
 import SEO from '../../components/SEO';
 import RelatedExpertiseSection from '../../components/RelatedExpertiseSection';
 import { getAllLiveMatrixLinks } from '../../data/matrixRelations';
+import Section from '../../components/ui/Section';
+import Button from '../../components/ui/Button';
+import Hairline from '../../components/ui/Hairline';
 
 interface ServiceItem {
-  icon: React.ReactNode;
   category: string;
   categoryFr: string;
   title: string;
@@ -38,7 +21,6 @@ interface ServiceItem {
 const services: ServiceItem[] = [
   // 1. Web Design
   {
-    icon: <Monitor size={32} />,
     category: 'Web Design',
     categoryFr: 'Création Web',
     title: 'Website Design & Development',
@@ -49,7 +31,6 @@ const services: ServiceItem[] = [
     pathFr: '/services/creation-site-web',
   },
   {
-    icon: <Code size={32} />,
     category: 'Web Design',
     categoryFr: 'Création Web',
     title: 'Morocco Web Design Agency',
@@ -60,7 +41,6 @@ const services: ServiceItem[] = [
     pathFr: '/agence-web-maroc',
   },
   {
-    icon: <Layers size={32} />,
     category: 'Web Design',
     categoryFr: 'Création Web',
     title: 'Casablanca Web Design',
@@ -71,7 +51,6 @@ const services: ServiceItem[] = [
     pathFr: '/agence-web-casablanca',
   },
   {
-    icon: <Smartphone size={32} />,
     category: 'Web Design',
     categoryFr: 'Création Web',
     title: 'Hotel Website Design',
@@ -82,7 +61,6 @@ const services: ServiceItem[] = [
     pathFr: '/site-web-hotel',
   },
   {
-    icon: <Compass size={32} />,
     category: 'Web Design',
     categoryFr: 'Création Web',
     title: 'Riad Website Design Marrakech',
@@ -95,7 +73,6 @@ const services: ServiceItem[] = [
 
   // 2. SEO & Organic Growth
   {
-    icon: <Search size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'SEO Morocco',
@@ -106,7 +83,6 @@ const services: ServiceItem[] = [
     pathFr: '/agence-seo-maroc',
   },
   {
-    icon: <TrendingUp size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'SEO Agency Morocco',
@@ -117,7 +93,6 @@ const services: ServiceItem[] = [
     pathFr: '/agence-seo-maroc',
   },
   {
-    icon: <Briefcase size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'SEO Agency Casablanca',
@@ -128,7 +103,6 @@ const services: ServiceItem[] = [
     pathFr: '/agence-seo-casablanca',
   },
   {
-    icon: <Sparkles size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'Hotel SEO',
@@ -139,7 +113,6 @@ const services: ServiceItem[] = [
     pathFr: '/seo-hotel',
   },
   {
-    icon: <MapPin size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'Riad SEO Marrakech',
@@ -150,7 +123,6 @@ const services: ServiceItem[] = [
     pathFr: '/seo-riad-marrakech',
   },
   {
-    icon: <Sparkles size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'AI SEO Optimization',
@@ -161,7 +133,6 @@ const services: ServiceItem[] = [
     pathFr: '/services/ai-seo-optimization',
   },
   {
-    icon: <Layers size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'WordPress SEO',
@@ -172,7 +143,6 @@ const services: ServiceItem[] = [
     pathFr: '/services/wordpress-seo',
   },
   {
-    icon: <BadgePercent size={32} />,
     category: 'SEO & Organic',
     categoryFr: 'Référencement & SEO',
     title: 'E-commerce SEO',
@@ -185,7 +155,6 @@ const services: ServiceItem[] = [
 
   // 3. Local SEO & Maps
   {
-    icon: <MapPin size={32} />,
     category: 'Local SEO & Maps',
     categoryFr: 'SEO Local & Cartes',
     title: 'Local SEO Casablanca',
@@ -196,7 +165,6 @@ const services: ServiceItem[] = [
     pathFr: '/referencement-local-casablanca',
   },
   {
-    icon: <CheckCircle size={32} />,
     category: 'Local SEO & Maps',
     categoryFr: 'SEO Local & Cartes',
     title: 'Google Business Profile',
@@ -207,7 +175,6 @@ const services: ServiceItem[] = [
     pathFr: '/services/google-business-profile',
   },
   {
-    icon: <Compass size={32} />,
     category: 'Local SEO & Maps',
     categoryFr: 'SEO Local & Cartes',
     title: 'Local SEO Morocco',
@@ -220,7 +187,6 @@ const services: ServiceItem[] = [
 
   // 4. Paid Advertising
   {
-    icon: <Target size={32} />,
     category: 'Paid Advertising',
     categoryFr: 'Publicité Payante',
     title: 'Google Ads Management',
@@ -231,7 +197,6 @@ const services: ServiceItem[] = [
     pathFr: '/google-ads-maroc',
   },
   {
-    icon: <Megaphone size={32} />,
     category: 'Paid Advertising',
     categoryFr: 'Publicité Payante',
     title: 'Meta Ads (FB & IG)',
@@ -242,7 +207,6 @@ const services: ServiceItem[] = [
     pathFr: '/services/gestion-publicites-meta',
   },
   {
-    icon: <Globe size={32} />,
     category: 'Paid Advertising',
     categoryFr: 'Publicité Payante',
     title: 'TripAdvisor Ads Optimization',
@@ -253,7 +217,6 @@ const services: ServiceItem[] = [
     pathFr: '/services/tripadvisor-ads',
   },
   {
-    icon: <Target size={32} />,
     category: 'Paid Advertising',
     categoryFr: 'Publicité Payante',
     title: 'Google Ads Morocco',
@@ -266,7 +229,6 @@ const services: ServiceItem[] = [
 
   // 5. Hospitality Solutions
   {
-    icon: <Megaphone size={32} />,
     category: 'Hospitality Solutions',
     categoryFr: 'Solutions de Croissance',
     title: 'Hotel Digital Marketing',
@@ -277,7 +239,6 @@ const services: ServiceItem[] = [
     pathFr: '/marketing-digital-hotelier',
   },
   {
-    icon: <Compass size={32} />,
     category: 'Hospitality Solutions',
     categoryFr: 'Solutions de Croissance',
     title: 'Direct Booking Strategy',
@@ -288,7 +249,6 @@ const services: ServiceItem[] = [
     pathFr: '/reservation-directe',
   },
   {
-    icon: <LayoutGrid size={32} />,
     category: 'Hospitality Solutions',
     categoryFr: 'Solutions de Croissance',
     title: 'The Website & Ads Bundle',
@@ -304,8 +264,7 @@ export default function ServicesIndex() {
   const location = useLocation();
   const isFrench = !location.pathname.startsWith('/en');
   const allExpertiseLinks = getAllLiveMatrixLinks(isFrench ? 'fr' : 'en');
-  
-  // Dynamic categories list based on language
+
   const rawCategories = [
     { en: 'All Services', fr: 'Tous les Services' },
     { en: 'Web Design', fr: 'Création Web' },
@@ -317,9 +276,8 @@ export default function ServicesIndex() {
 
   const [activeTab, setActiveTab] = useState('All Services');
 
-  // Filter services and deduplicate by localized destination path
   const seenPaths = new Set<string>();
-  const filteredServices = services.filter(service => {
+  const filteredServices = services.filter((service) => {
     if (activeTab !== 'All Services' && service.category !== activeTab) return false;
     const targetPath = isFrench ? service.pathFr : service.path;
     if (seenPaths.has(targetPath)) return false;
@@ -328,44 +286,52 @@ export default function ServicesIndex() {
   });
 
   return (
-    <div className="bg-bg-light min-h-screen pb-24">
-      <SEO 
-        title={isFrench ? "Nos Services d'Acquisition & Marketing Digital | Urunk" : "Our Acquisition & Digital Marketing Services | Urunk"}
-        description={isFrench ? "Découvrez notre catalogue complet de services d'acquisition : création de sites web hôteliers, référencement SEO, Google Ads, et solutions sur mesure." : "Explore our comprehensive suite of growth and digital acquisition services: high-speed hotel web design, SEO, Google Ads, and custom hospitality solutions."}
+    <div className="bg-bg-light text-primary min-h-screen">
+      <SEO
+        title={
+          isFrench
+            ? "Nos Services d'Acquisition & Marketing Digital | Urunk"
+            : "Our Acquisition & Digital Marketing Services | Urunk"
+        }
+        description={
+          isFrench
+            ? "Découvrez notre catalogue complet de services d'acquisition : création de sites web hôteliers, référencement SEO, Google Ads, et solutions sur mesure."
+            : "Explore our comprehensive suite of growth and digital acquisition services: high-speed hotel web design, SEO, Google Ads, and custom hospitality solutions."
+        }
       />
-      
+
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 bg-primary text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,110,85,0.15),transparent_50%)]"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-accent-soft text-xs font-bold tracking-wider uppercase mb-6 border border-white/10">
+      <Section tone="dark" className="pt-28 md:pt-36">
+        <div className="max-w-4xl">
+          <p className="text-sm font-medium text-bg-light/75 mb-4">
             {isFrench ? "Catalogue Complet" : "Comprehensive Suite"}
-          </span>
-          <h1 className="text-4xl md:text-6xl font-serif text-white font-bold mb-6">
+          </p>
+          <h1 className="font-serif text-bg-light mb-6 text-balance">
             {isFrench ? "Nos Services d'Acquisition" : "Acquisition Services"}
           </h1>
-          <p className="text-lg md:text-xl text-white/80 font-light max-w-2xl mx-auto leading-relaxed">
-            {isFrench 
-              ? "Des solutions de marketing sur mesure et haut de gamme pour transformer votre établissement en un moteur de réservations directes." 
+          <p className="text-lg md:text-xl text-bg-light/85 max-w-[62ch] leading-relaxed">
+            {isFrench
+              ? "Des solutions de marketing sur mesure et haut de gamme pour transformer votre établissement en un moteur de réservations directes."
               : "Bespoke digital growth and marketing solutions designed to scale direct bookings and maximize revenue for your business."}
           </p>
         </div>
-      </section>
+      </Section>
 
-      {/* Category Tabs Section */}
-      <section className="py-12 border-b border-primary/5 sticky top-16 bg-bg-light/90 backdrop-blur-md z-40 shadow-[0_2px_15px_rgba(15,45,37,0.01)]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex overflow-x-auto pb-3 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-none snap-x gap-3 justify-start md:justify-center items-center">
+      {/* Category Filter Controls */}
+      <div className="border-b border-border-subtle bg-bg-light sticky top-[76px] z-30 px-[clamp(20px,5vw,56px)]">
+        <div className="max-w-[1240px] mx-auto w-full py-4">
+          <div className="flex overflow-x-auto gap-2 items-center">
             {rawCategories.map((cat, idx) => {
               const isActive = activeTab === cat.en;
               return (
                 <button
                   key={idx}
+                  type="button"
                   onClick={() => setActiveTab(cat.en)}
-                  className={`snap-center px-5 py-3 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                    isActive 
-                      ? 'bg-primary text-white shadow-sm' 
-                      : 'bg-bg-alt/30 text-primary hover:bg-bg-alt/80 border border-primary/5'
+                  className={`px-4 py-2 rounded-sm text-sm font-medium transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                    isActive
+                      ? 'bg-primary text-bg-light'
+                      : 'bg-bg-card text-primary/80 hover:text-primary border border-border-subtle'
                   }`}
                 >
                   {isFrench ? cat.fr : cat.en}
@@ -374,45 +340,52 @@ export default function ServicesIndex() {
             })}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Services Grid Section */}
-      <section className="py-16 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
-          {filteredServices.length === 0 ? (
-            <div className="text-center py-24 text-primary/60">
-              {isFrench ? "Aucun service trouvé." : "No services found."}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  to={isFrench ? service.pathFr : service.path}
-                  id={`service-card-${index}`}
-                  className="group bg-white p-8 rounded-2xl border border-primary/10 hover:border-accent/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full premium-card"
-                >
-                  <div className="w-16 h-16 bg-bg-alt text-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {service.icon}
+      {/* Editorial Service Rows */}
+      <Section tone="light">
+        {filteredServices.length === 0 ? (
+          <div className="py-16 text-primary/65">
+            {isFrench ? "Aucun service trouvé." : "No services found."}
+          </div>
+        ) : (
+          <div>
+            <Hairline />
+            {filteredServices.map((service, index) => {
+              const targetPath = isFrench ? service.pathFr : service.path;
+              const label = isFrench ? service.titleFr : service.title;
+              const categoryLabel = isFrench ? service.categoryFr : service.category;
+              const description = isFrench ? service.descFr : service.desc;
+
+              return (
+                <div key={targetPath} id={`service-card-${index}`}>
+                  <div className="py-8 md:py-10 grid md:grid-cols-12 gap-4 md:gap-8 items-baseline">
+                    <div className="md:col-span-3 flex items-baseline gap-3">
+                      <span className="tabular-nums text-xs text-primary/50">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className="text-sm font-medium text-accent">
+                        {categoryLabel}
+                      </span>
+                    </div>
+                    <div className="md:col-span-4">
+                      <h2 className="font-serif text-[26px] leading-snug text-primary">
+                        <Link to={targetPath}>{label}</Link>
+                      </h2>
+                    </div>
+                    <div className="md:col-span-5">
+                      <p className="text-primary/80 text-base leading-relaxed max-w-[60ch]">
+                        {description}
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-xs uppercase tracking-wider font-semibold text-accent mb-2 block">
-                    {isFrench ? service.categoryFr : service.category}
-                  </span>
-                  <h2 className="text-xl font-serif font-bold text-primary mb-4">
-                    {isFrench ? service.titleFr : service.title}
-                  </h2>
-                  <p className="text-primary/70 mb-8 flex-grow text-sm font-light leading-relaxed">
-                    {isFrench ? service.descFr : service.desc}
-                  </p>
-                  <div className="mt-auto flex items-center text-accent font-semibold group-hover:translate-x-1.5 transition-all text-sm">
-                    {isFrench ? 'Découvrir la solution' : 'Explore solution'} <ArrowRight size={16} className="ml-2" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+                  <Hairline />
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </Section>
 
       <RelatedExpertiseSection
         kicker={isFrench ? "Expertises Croisées Ville & Secteur" : "Regional & Sector Matrix"}
@@ -428,33 +401,25 @@ export default function ServicesIndex() {
         }
         links={allExpertiseLinks}
         isFrench={isFrench}
-        bgVariant="white"
+        bgVariant="alt"
       />
 
-      {/* Trust Callout */}
-      <section className="py-8 px-6 md:px-12">
-        <div className="max-w-4xl mx-auto bg-primary text-white p-8 md:p-12 rounded-3xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(212,110,85,0.15),transparent_50%)]"></div>
-          <div className="relative z-10 text-center space-y-6">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-white">
-              {isFrench ? "Besoin d'un audit de visibilité ?" : "Need a custom visibility audit?"}
-            </h2>
-            <p className="text-white/85 text-sm md:text-base font-light max-w-xl mx-auto leading-relaxed">
-              {isFrench 
-                ? "Nous analysons votre site web, votre positionnement local et vos campagnes existantes pour identifier vos plus grands leviers de croissance directe." 
-                : "We will analyze your website, local positioning, and active ad accounts to locate your highest leverage opportunities for direct revenue."}
-            </p>
-            <div className="pt-4">
-              <Link 
-                to={isFrench ? "/contact" : "/en/contact"}
-                className="btn-white bg-white hover:bg-bg-light text-primary px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm inline-flex items-center gap-2"
-              >
-                {isFrench ? "Demander mon audit gratuit" : "Request Free Audit"} <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
+      {/* Audit Callout */}
+      <Section tone="dark">
+        <div className="max-w-2xl">
+          <h2 className="font-serif text-bg-light mb-4 text-balance">
+            {isFrench ? "Besoin d'un audit de visibilité ?" : "Need a custom visibility audit?"}
+          </h2>
+          <p className="text-bg-light/85 text-lg mb-8 leading-relaxed">
+            {isFrench
+              ? "Nous analysons votre site web, votre positionnement local et vos campagnes existantes pour identifier vos plus grands leviers de croissance directe."
+              : "We will analyze your website, local positioning, and active ad accounts to locate your highest leverage opportunities for direct revenue."}
+          </p>
+          <Button variant="dark" href={isFrench ? "/contact" : "/en/contact"}>
+            {isFrench ? "Demander mon audit gratuit" : "Request Free Audit"}
+          </Button>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }
