@@ -172,6 +172,7 @@ export default function App() {
 
               <Route path="realisations" element={<WorkFR />} />
               <Route path="realisations/:slug" element={<CaseStudy />} />
+              <Route path="blog/etudes-de-cas-succes-hotellerie" element={<Navigate to="/realisations" replace />} />
               <Route path="blog" element={<BlogFR />} />
               <Route path="blog/:slug" element={<BlogPost />} />
               <Route path="faq" element={<FAQFR />} />
@@ -239,6 +240,7 @@ export default function App() {
 
               <Route path="work" element={<WorkIndex />} />
               <Route path="work/:slug" element={<CaseStudy />} />
+              <Route path="blog/case-study-roundup-success" element={<Navigate to="/en/work" replace />} />
               <Route path="blog" element={<BlogIndex />} />
               <Route path="blog/:slug" element={<BlogPost />} />
               <Route path="faq" element={<FAQ />} />

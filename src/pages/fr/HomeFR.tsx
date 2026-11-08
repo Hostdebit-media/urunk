@@ -206,7 +206,7 @@ export default function HomeFR() {
             </p>
             <p className="text-base m-0">
               <Link to="/realisations" className="font-medium">
-                Consulter nos exemples d'architectures par métier
+                Consulter nos réalisations et études de cas
               </Link>
             </p>
           </div>

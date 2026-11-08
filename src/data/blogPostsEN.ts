@@ -1639,49 +1639,6 @@ export const blogPostsEN: BlogPostItem[] = [
     `
   },
   {
-    slug: "case-study-roundup-success",
-    title: "Direct Booking Case Study Roundup: Proven Success in Moroccan Tourism",
-    seoTitle: "Direct Booking Case Study Roundup | Urunk",
-    metaDescription: "Explore real case studies showing how Moroccan hotels, riads, and tour operators increased direct bookings and cut OTA commissions with Urunk.",
-    h1: "Direct Booking Case Study Roundup: Proven Success in Moroccan Tourism",
-    date: "September 1, 2026",
-    author: "Urunk Growth Analytics",
-    readTime: "8 min read",
-    category: "Case Studies",
-    content: `
-      <div class="bg-primary/5 border-l-4 border-accent p-6 rounded-r-2xl mb-10">
-        <div class="text-lg font-bold text-accent mb-2">AI Summary & Verified Case Studies</div>
-        <p class="text-sm text-primary/80 leading-relaxed">
-          <strong>Summary of Outcomes:</strong> Moroccan hospitality clients built sustainable direct booking funnels while lowering annual OTA commission payouts and expanding organic search visibility.
-        </p>
-      </div>
-
-      <p class="text-lg leading-relaxed mb-6">Here are three real-world examples of Moroccan hospitality providers reclaiming digital sovereignty and direct booking growth with Urunk.</p>
-
-      <div class="space-y-6 my-8">
-        <div class="bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
-          <h3 class="text-xl font-bold mb-2">1. Travel Morocco Services (Excursions & Private Tours)</h3>
-          <p class="text-sm text-primary/70 mb-3">Replaced third-party OTA dependency with a fast WordPress site, WhatsApp direct inquiry funnel, and TripAdvisor optimization.</p>
-          <span class="text-accent font-bold text-sm">Direct Booking Growth | Enhanced TripAdvisor Ranking</span>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
-          <h3 class="text-xl font-bold mb-2">2. Nomad Eats Catering (Gastronomy & Events)</h3>
-          <p class="text-sm text-primary/70 mb-3">Launched a modern web platform and targeted B2B Google Ads campaigns to capture corporate event inquiries.</p>
-          <span class="text-accent font-bold text-sm">Qualified B2B Corporate Leads | Lower Cost Per Lead</span>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
-          <h3 class="text-xl font-bold mb-2">3. Art House Marrakech (Art Gallery & Tourist Workshops)</h3>
-          <p class="text-sm text-primary/70 mb-3">Executed hyper-local SEO optimization paired with targeted Meta Ads to convert tourists planning trip activities.</p>
-          <span class="text-accent font-bold text-sm">Increased Organic Search Visibility | Optimized Meta Campaign ROI</span>
-        </div>
-      </div>
-
-      <p class="mb-6">View our complete <a href="/en/work" class="text-accent hover:underline">Portfolio & Work</a> or check our <a href="/en/pricing" class="text-accent hover:underline">Transparent Pricing Plans</a>.</p>
-    `
-  },
-  {
     slug: "meta-ads-for-hotels-instagram-facebook",
     title: "Meta Ads (Instagram & Facebook) for Riads and Hotels in Morocco: Strategy, Retargeting, and Profitability in 2026",
     seoTitle: "Meta Ads for Hotels Morocco: Instagram & Facebook | Urunk",

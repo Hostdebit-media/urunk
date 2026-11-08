@@ -26,10 +26,10 @@ export default function CaseStudy() {
       <Section tone="light" className="pt-32">
         <div className="max-w-[68ch]">
           <h1 className="font-serif text-primary mb-6">
-            {isFrench ? "Exemple de stratégie introuvable" : "Strategy Example Not Found"}
+            {isFrench ? "Étude de cas introuvable" : "Case Study Not Found"}
           </h1>
           <Link to={isFrench ? "/realisations" : "/en/work"}>
-            {isFrench ? "Retour aux exemples de stratégies" : "Return to Strategy Examples"}
+            {isFrench ? "Retour aux réalisations" : "Return to Work"}
           </Link>
         </div>
       </Section>

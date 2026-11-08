@@ -11,7 +11,6 @@ export const blogSlugMap: Record<string, string> = {
   "signs-website-losing-bookings": "signes-site-web-perd-reservations",
   "google-ads-riads-keyword-research": "google-ads-riads-recherche-mots-cles",
   "get-more-5-star-reviews": "obtenir-plus-avis-5-etoiles",
-  "case-study-roundup-success": "etudes-de-cas-succes-hotellerie",
   "meta-ads-for-hotels-instagram-facebook": "publicites-meta-pour-hotels-instagram-facebook",
   "hotel-seo-morocco-guide": "guide-seo-hotellerie-maroc",
   "pms-integration-direct-booking-engine": "integration-pms-moteur-reservation-directe",
@@ -165,6 +164,8 @@ export const routeMap: Record<string, string> = {
   '/en/sitemap': '/plan-du-site',
   '/en/html-sitemap': '/plan-du-site',
   '/en/thank-you': '/merci',
+  '/blog/etudes-de-cas-succes-hotellerie': '/realisations',
+  '/en/blog/case-study-roundup-success': '/en/work',
 
   // Legacy mappings support (old un-prefixed EN)
   '/about': '/en/about',

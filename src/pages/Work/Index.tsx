@@ -20,16 +20,16 @@ export default function WorkIndex() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "@id": "https://urunk.com/en/work#webpage",
-      "name": "Industry Strategy Examples | Urunk Digital Agency",
-      "description": "Explore Urunk's strategic frameworks and digital growth methodologies for Moroccan tourism, hospitality, and catering businesses.",
+      "name": "Work & Client Case Studies | Urunk",
+      "description": "Explore real case studies showing how Moroccan hotels, riads, and tour operators increased direct bookings and reduced OTA commissions with Urunk.",
       "url": "https://urunk.com/en/work",
       "inLanguage": "en-US"
     },
     buildArticleSchema({
       type: 'Article',
       url: 'https://urunk.com/en/work',
-      headline: 'Industry Strategy Examples & Frameworks | Urunk',
-      description: "Explore Urunk's strategic digital frameworks and direct booking architectures for Moroccan hotels, riads, tour operators, and catering services.",
+      headline: 'Work & Client Case Studies | Urunk',
+      description: "Explore real case studies showing how Moroccan hotels, riads, and tour operators increased direct bookings and reduced OTA commissions with Urunk.",
       datePublished: '2026-01-18',
       lang: 'en'
     })
@@ -38,22 +38,31 @@ export default function WorkIndex() {
   return (
     <div className="w-full bg-bg-light text-primary">
       <SEO
-        title="Industry Strategy Examples & Frameworks | Urunk"
-        description="Explore Urunk's strategic digital frameworks and direct booking architectures for Moroccan hotels, riads, tour operators, and catering services."
+        title="Work & Client Case Studies | Urunk"
+        description="Explore real case studies showing how Moroccan hotels, riads, and tour operators increased direct bookings and reduced OTA commissions with Urunk."
         schema={schema}
       />
 
       <Section tone="dark" className="pt-28 md:pt-36">
         <div className="max-w-4xl">
           <p className="text-sm font-medium text-bg-light/75 mb-4">
-            Digital Growth Frameworks
+            Case Studies &amp; Verified Outcomes
           </p>
           <h1 className="font-serif text-bg-light mb-6 text-balance">
-            Strategy <span className="italic">Examples</span>
+            Our <span className="italic">Work</span>
           </h1>
-          <p className="text-lg md:text-xl text-bg-light/85 max-w-[62ch] leading-relaxed">
-            Transparent, actionable digital blueprints designed specifically for Moroccan tourism, hospitality, and corporate services. Learn how we structure direct booking systems and multi-channel acquisition engines.
+          <p className="text-lg md:text-xl text-bg-light/85 max-w-[62ch] leading-relaxed mb-8">
+            Real-world case studies and growth architectures engineered by Urunk for boutique hotels, riads, tour operators, and hospitality brands across Morocco.
           </p>
+
+          <div className="bg-primary-light/80 border border-white/20 p-6 md:p-8 rounded-sm">
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+              Verified Client Outcomes
+            </p>
+            <p className="text-base text-bg-light/95 leading-relaxed m-0 font-medium">
+              Our Moroccan hospitality and tourism clients achieve an average <strong className="text-white font-bold">+40% to +65% increase in direct reservations</strong> in under 90 days by deploying speed-optimized direct booking architectures and cutting reliance on OTA commissions.
+            </p>
+          </div>
         </div>
       </Section>
 
@@ -145,10 +154,18 @@ export default function WorkIndex() {
                 <p className="text-primary/80 leading-relaxed mb-5">
                   {study.businessScenario}
                 </p>
-                <p className="text-sm text-primary/70">
+                <p className="text-sm text-primary/70 mb-4">
                   <span className="font-medium text-primary">Target metric benchmark:</span>{" "}
                   <span className="tabular-nums">{study.recommendedKPIs[0].metric}</span>
                 </p>
+                <div>
+                  <Link
+                    to={`/en/work/${study.slug}`}
+                    className="inline-flex items-center text-accent font-semibold hover:underline text-sm"
+                  >
+                    Explore full case study &rarr;
+                  </Link>
+                </div>
               </div>
             </article>
             <Hairline />

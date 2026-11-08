@@ -72,6 +72,8 @@ const CANONICAL_REDIRECTS: Record<string, string> = {
   "/creation-site-web": "/services/creation-site-web",
   "/blog/pages-atterrissage-haute-conversion-hotels": "/blog/landing-pages-hotels",
   "/en/blog/high-converting-hotel-landing-pages": "/en/blog/landing-pages-hotels",
+  "/blog/etudes-de-cas-succes-hotellerie": "/realisations",
+  "/en/blog/case-study-roundup-success": "/en/work",
   "/secteurs/ecommerce": "/secteurs/hotels-resorts",
   "/en/industries/ecommerce": "/en/industries/hotels-resorts",
   "/about": "/en/about",

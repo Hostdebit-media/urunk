@@ -190,6 +190,10 @@
 # 10. Specific SEO URL Normalization 301 Redirects
 /blog/pages-atterrissage-haute-conversion-hotels /blog/landing-pages-hotels 301
 /en/blog/high-converting-hotel-landing-pages /en/blog/landing-pages-hotels 301
+/blog/etudes-de-cas-succes-hotellerie /realisations 301
+/blog/etudes-de-cas-succes-hotellerie.html /realisations 301
+/en/blog/case-study-roundup-success /en/work 301
+/en/blog/case-study-roundup-success.html /en/work 301
 /secteurs/ecommerce /secteurs/hotels-resorts 301
 /en/industries/ecommerce /en/industries/hotels-resorts 301
 /en/services/bundle /en/services/bundle-site-ads 301

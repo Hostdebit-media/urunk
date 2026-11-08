@@ -358,8 +358,8 @@ export const navData: NavGroup[] = [
     title: { en: 'Resources', fr: 'Ressources' },
     simpleItems: [
       {
-        title: { en: 'Project Dossiers', fr: 'Dossiers métiers' },
-        desc: { en: 'Technical setups by hospitality and service sector', fr: 'Exemples d’architectures mises en place par métier' },
+        title: { en: 'Work', fr: 'Réalisations' },
+        desc: { en: 'Case studies, verified results, and digital setups', fr: 'Études de cas, résultats vérifiés et architectures déployées' },
         link: { en: '/en/work', fr: '/realisations' },
         icon: BarChart3
       },

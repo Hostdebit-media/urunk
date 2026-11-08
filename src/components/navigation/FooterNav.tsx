@@ -193,7 +193,7 @@ export default function FooterNav({ isFrench }: FooterNavProps) {
               </li>
               <li>
                 <Link to={isFrench ? '/realisations' : '/en/work'} className={linkClass}>
-                  {isFrench ? 'Dossiers métiers' : 'Project dossiers'}
+                  {isFrench ? 'Réalisations' : 'Work'}
                 </Link>
               </li>
               <li>

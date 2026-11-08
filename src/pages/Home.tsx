@@ -206,7 +206,7 @@ export default function Home() {
             </p>
             <p className="text-base m-0">
               <Link to="/en/work" className="font-medium">
-                Browse technical setups by sector
+                Explore our work and case studies
               </Link>
             </p>
           </div>

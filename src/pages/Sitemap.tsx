@@ -63,7 +63,7 @@ export default function Sitemap() {
     { label: "Catalogue Complet des Services", path: "/services" },
     { label: "À Propos de Urunk", path: "/a-propos" },
     { label: "Tarifs & Formules d'Agence", path: "/tarifs" },
-    { label: "Réalisations & Études de Cas", path: "/realisations" },
+    { label: "Réalisations", path: "/realisations" },
     { label: "Blog & Guides Hôteliers", path: "/blog" },
     { label: "Foire Aux Questions (FAQ)", path: "/faq" },
     { label: "Demander mon Audit Gratuit", path: "/contact" }
@@ -72,7 +72,7 @@ export default function Sitemap() {
     { label: "All Services Overview", path: "/en/services" },
     { label: "About Urunk", path: "/en/about" },
     { label: "Pricing & Packages", path: "/en/pricing" },
-    { label: "Work & Case Studies", path: "/en/work" },
+    { label: "Work", path: "/en/work" },
     { label: "Blog & Hospitality Guides", path: "/en/blog" },
     { label: "Frequently Asked Questions", path: "/en/faq" },
     { label: "Contact & Free Audit", path: "/en/contact" }

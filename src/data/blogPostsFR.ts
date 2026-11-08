@@ -2261,49 +2261,6 @@ export const blogPostsFR: BlogPostItem[] = [
     `
   },
   {
-    slug: "etudes-de-cas-succes-hotellerie",
-    title: "Études de Cas Réservations Directes : Les Stratégies Gagnantes au Maroc",
-    seoTitle: "Études de Cas : Réservations Directes | Urunk",
-    metaDescription: "Découvrez des études de cas réelles démontrant comment des hôtels et agences de voyage au Maroc ont augmenté leurs réservations directes avec Urunk.",
-    h1: "Études de Cas Réservations Directes : Les Stratégies Gagnantes au Maroc",
-    date: "1 Septembre 2026",
-    author: "Pôle Data & Performance Urunk",
-    readTime: "8 min de lecture",
-    category: "Études de Cas",
-    content: `
-      <div class="bg-primary/5 border-l-4 border-accent p-6 rounded-r-2xl mb-10">
-        <div class="text-lg font-bold text-accent mb-2">Synthèse des Résultats Client</div>
-        <p class="text-sm text-primary/80 leading-relaxed">
-          <strong>Résultats Obtenus :</strong> Nos clients hôteliers ont enregistré une hausse moyenne de <strong>+40 % à +65 % de leurs réservations directes</strong> en moins de 90 jours.
-        </p>
-      </div>
-
-      <p class="text-lg leading-relaxed mb-6">Voici trois exemples concrets d'établissements au Maroc ayant développé leurs réservations directes grâce à la méthodologie Urunk.</p>
-
-      <div class="space-y-6 my-8">
-        <div class="bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
-          <h3 class="text-xl font-bold mb-2">1. Travel Morocco Services (Tours & Excursions)</h3>
-          <p class="text-sm text-primary/70 mb-3">Site web WordPress sur mesure avec réservation instantanée + optimisation TripAdvisor.</p>
-          <span class="text-accent font-bold text-sm">Croissance des Réservations Directes | Visibilité TripAdvisor Renforcée</span>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
-          <h3 class="text-xl font-bold mb-2">2. Nomad Eats Catering (Gastronomie & Traiteur)</h3>
-          <p class="text-sm text-primary/70 mb-3">Plateforme web moderne et campagnes Google Ads B2B ciblées pour capter les événements d'entreprises.</p>
-          <span class="text-accent font-bold text-sm">Demandes de Devis Qualifiées | Coût par Prospect Optimisé</span>
-        </div>
-
-        <div class="bg-white p-6 rounded-2xl border border-primary/10 shadow-sm">
-          <h3 class="text-xl font-bold mb-2">3. Art House Marrakech (Ateliers Artistiques)</h3>
-          <p class="text-sm text-primary/70 mb-3">Optimisation SEO local associée à des campagnes Meta Ads pour convertir les touristes en quête d'activités.</p>
-          <span class="text-accent font-bold text-sm">Visibilité Organique Accrue | Rentabilité Pub Optimisée</span>
-        </div>
-      </div>
-
-      <p class="mb-6">Consultez l'ensemble de nos <a href="/realisations" class="text-accent hover:underline">Réalisations & Portfolio</a> ainsi que nos <a href="/tarifs" class="text-accent hover:underline">Tarifs Détaillés</a>.</p>
-    `
-  },
-  {
     slug: "publicites-meta-pour-hotels-instagram-facebook",
     title: "Publicités Meta (Instagram & Facebook) pour Riads et Hôtels au Maroc : Stratégie, Retargeting et Rentabilité en 2026",
     seoTitle: "Meta Ads Hôtels Maroc : Instagram & Facebook | Urunk",

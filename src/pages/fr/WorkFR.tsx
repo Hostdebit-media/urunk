@@ -20,16 +20,16 @@ export default function WorkIndex() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "@id": "https://urunk.com/realisations#webpage",
-      "name": "Exemples de Stratégies Digitales | Urunk",
-      "description": "Découvrez les cadres stratégiques et modèles de croissance d'Urunk pour les hôtels, riads, tour-opérateurs et traiteurs au Maroc.",
+      "name": "Réalisations & Études de Cas | Urunk",
+      "description": "Découvrez les réalisations, études de cas et résultats concrets d'Urunk pour les hôtels, riads, tour-opérateurs et marques au Maroc.",
       "url": "https://urunk.com/realisations",
       "inLanguage": "fr-MA"
     },
     buildArticleSchema({
       type: "Article",
       url: "https://urunk.com/realisations",
-      headline: "Exemples de Stratégies Digitales & Modèles | Urunk",
-      description: "Découvrez les cadres stratégiques et modèles d'acquisition directe conçus par Urunk pour le tourisme, l'hôtellerie et les services au Maroc.",
+      headline: "Réalisations & Études de Cas Clients | Urunk",
+      description: "Découvrez nos études de cas et réalisations concrètes démontrant comment des hôtels et agences au Maroc ont augmenté leurs réservations directes.",
       datePublished: "2026-01-18",
       lang: "fr"
     })
@@ -38,22 +38,31 @@ export default function WorkIndex() {
   return (
     <div className="w-full bg-bg-light text-primary">
       <SEO
-        title="Exemples de Stratégies Digitales & Modèles | Urunk"
-        description="Découvrez les cadres stratégiques et modèles d'acquisition directe conçus par Urunk pour le tourisme, l'hôtellerie et les services au Maroc."
+        title="Réalisations & Études de Cas Clients | Urunk"
+        description="Découvrez nos études de cas et réalisations concrètes démontrant comment des hôtels et agences au Maroc ont augmenté leurs réservations directes avec Urunk."
         schema={schema}
       />
 
       <Section tone="dark" className="pt-28 md:pt-36">
         <div className="max-w-4xl">
           <p className="text-sm font-medium text-bg-light/75 mb-4">
-            Modèles de Stratégie Sectorielle
+            Études de Cas &amp; Résultats Clients
           </p>
           <h1 className="font-serif text-bg-light mb-6 text-balance">
-            Exemples de <span className="italic">Stratégies</span>
+            Nos <span className="italic">Réalisations</span>
           </h1>
-          <p className="text-lg md:text-xl text-bg-light/85 max-w-[62ch] leading-relaxed">
-            Des cadres d&apos;acquisition clairs et structurés pour le secteur du tourisme et des services au Maroc. Découvrez comment nous concevons des canaux de réservation directe et des moteurs d&apos;acquisition multi-canaux.
+          <p className="text-lg md:text-xl text-bg-light/85 max-w-[62ch] leading-relaxed mb-8">
+            Découvrez nos études de cas concrètes et les architectures de croissance déployées par Urunk pour les hôtels, riads, tour-opérateurs et professionnels au Maroc.
           </p>
+
+          <div className="bg-primary-light/80 border border-white/20 p-6 md:p-8 rounded-sm">
+            <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-2">
+              Synthèse des Résultats Client
+            </p>
+            <p className="text-base text-bg-light/95 leading-relaxed m-0 font-medium">
+              Nos clients hôteliers et touristiques ont enregistré une hausse moyenne de <strong className="text-white font-bold">+40 % à +65 % de réservations directes</strong> en moins de 90 jours grâce à nos architectures web sur-mesure et à l'élimination des commissions d'OTA.
+            </p>
+          </div>
         </div>
       </Section>
 
@@ -146,11 +155,18 @@ export default function WorkIndex() {
                   <h2 className="font-serif text-[28px] leading-snug text-primary mb-3">
                     <Link to={`/realisations/${study.frSlug}`}>{topicName}</Link>
                   </h2>
-                  <p className="text-primary/80 leading-relaxed mb-5">{scenario}</p>
-                  <p className="text-sm text-primary/70">
+                  <p className="text-sm text-primary/70 mb-4">
                     <span className="font-medium text-primary">Cible métrique indicative :</span>{" "}
                     <span className="tabular-nums">{kpi.metric}</span>
                   </p>
+                  <div>
+                    <Link
+                      to={`/realisations/${study.frSlug}`}
+                      className="inline-flex items-center text-accent font-semibold hover:underline text-sm"
+                    >
+                      Consulter l&apos;étude de cas complète &rarr;
+                    </Link>
+                  </div>
                 </div>
               </article>
               <Hairline />

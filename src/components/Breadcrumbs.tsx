@@ -49,8 +49,8 @@ export const routeMappings: Record<string, { en: string; fr: string }> = {
 
   'pricing': { en: 'Pricing', fr: 'Tarifs' },
   'tarifs': { en: 'Pricing', fr: 'Tarifs' },
-  'work': { en: 'Strategy Examples', fr: 'Exemples de Stratégies' },
-  'realisations': { en: 'Strategy Examples', fr: 'Exemples de Stratégies' },
+  'work': { en: 'Work', fr: 'Réalisations' },
+  'realisations': { en: 'Work', fr: 'Réalisations' },
   'about': { en: 'About Us', fr: 'À Propos' },
   'a-propos': { en: 'About Us', fr: 'À Propos' },
   'blog': { en: 'Blog & Articles', fr: 'Blog & Guide' },
