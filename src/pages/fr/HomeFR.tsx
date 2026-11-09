@@ -43,8 +43,8 @@ export default function HomeFR() {
   return (
     <div className="w-full">
       <SEO
-        title="Agence Web & SEO Maroc pour Hôtels et Riads | Urunk"
-        description="Agence web et SEO au Maroc pour hôtels, riads et PME : sites rapides, Google Ads et référencement local à Casablanca et Marrakech. Audit gratuit."
+        title="Agence Web Hôtels & Riads Maroc | Réservation Directe | Urunk"
+        description="Sites web premium pour hôtels et riads au Maroc, SEO local et Google Ads. Développez vos réservations directes. Audit offert."
         schema={homeFrServiceSchemas}
       />
 
@@ -52,20 +52,21 @@ export default function HomeFR() {
       <Section tone="light" id="hero-section-fr" className="pt-12 md:pt-20">
         <div className="space-y-12">
           <div className="max-w-4xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-5">Studio digital spécialisé · Hôtellerie & tourisme · Maroc</p>
             <h1
               className="text-[clamp(38px,4.6vw,68px)] leading-[1.04] max-w-[26ch] mb-6"
               id="hero-h1-fr"
             >
-              Sites web, SEO local et annonces Google pour hôtels, riads et PME au Maroc
+              Agence web & SEO pour hôtels et riads au Maroc
             </h1>
             <p
               className="text-lg text-primary/85 leading-relaxed max-w-[65ch] mb-4"
               id="hero-subtext-fr"
             >
-              Depuis notre bureau de Casablanca, nous créons des sites rapides reliés à votre moteur de réservation, améliorons votre classement sur Google Maps et lançons vos annonces de recherche pour vous aider à recevoir plus de réservations directes ou de demandes de devis.
+              Votre établissement mérite mieux qu'une simple vitrine. Nous concevons des sites élégants reliés à votre système de réservation et associons SEO local et campagnes ciblées pour transformer davantage de recherches en contacts directs.
             </p>
             <p className="text-base text-primary/75 leading-relaxed max-w-[65ch] mb-8">
-              Un site complet est livré en 4 à 6 semaines dès 12 000 MAD, et chaque suivi mensuel reste résiliable avec 15 jours de préavis.
+              Depuis Casablanca, nous accompagnons les hôtels indépendants, riads et maisons d'hôtes au Maroc. Sites bilingues dès 12 000 MAD, avec un périmètre et un devis clairs.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 mb-6" id="hero-actions-fr">
@@ -82,6 +83,12 @@ export default function HomeFR() {
                 WhatsApp : +212 668-802096
               </Button>
             </div>
+
+            <nav aria-label="Explorer nos expertises" className="flex flex-wrap gap-x-6 gap-y-2 mb-6 text-sm">
+              <Link to="/site-web-hotel" className="font-semibold">Sites web hôteliers</Link>
+              <Link to="/seo-hotel" className="font-semibold">SEO hôtelier</Link>
+              <Link to="/reservation-directe" className="font-semibold">Réservation directe</Link>
+            </nav>
 
             <p className="text-sm text-primary/70 leading-relaxed m-0">
               3 Rue El Kadi Lass, Maarif, Casablanca. Intervention à Casablanca, Marrakech, Rabat et Agadir.
@@ -134,10 +141,10 @@ export default function HomeFR() {
               Pourquoi vos futurs clients passent encore par les plateformes à commission
             </h2>
             <p className="text-bg-light/85 leading-relaxed mb-4">
-              Lorsqu'un voyageur repère le nom de votre riad ou de votre hôtel mais tombe sur un site lent sur téléphone ou une fiche Google Maps incomplète, il retourne réserver sur Booking.com, Expedia ou Viator. Ces intermédiaires retiennent en général [À CONFIRMER] du montant du séjour selon contrat.
+              Lorsqu'un voyageur repère le nom de votre riad ou de votre hôtel mais tombe sur un site lent sur téléphone ou une fiche Google Maps incomplète, il peut retourner réserver sur une plateforme comme Booking.com ou Expedia. Les commissions varient selon la plateforme, votre contrat et les options de visibilité choisies.
             </p>
             <p className="text-sm text-bg-light/70 leading-relaxed m-0">
-              Source et repère tarifaire : le taux de base moyen documenté par{' '}
+              Pour connaître les conditions applicables à votre établissement, consultez la documentation de{' '}
               <a
                 href="https://partner.booking.com"
                 target="_blank"
@@ -146,7 +153,7 @@ export default function HomeFR() {
               >
                 Booking.com Partner Hub
               </a>{' '}
-              s'établit autour de 15 % hors options de visibilité additionnelles (programme Preferred Partner, Visibility Booster) ou revendeurs d'activités (documentation partenaires consultée en octobre 2026 ; vérifiez le taux exact inscrit à votre contrat).
+              et vérifiez les frais prévus dans votre contrat, y compris les programmes de visibilité optionnels.
             </p>
           </div>
 
@@ -168,7 +175,7 @@ export default function HomeFR() {
                     </span>
                   </td>
                   <td className="py-5 px-4 align-top text-bg-light/85 leading-relaxed tabular-nums">
-                    [À CONFIRMER] de commission selon votre contrat et les programmes de mise en avant activés.
+                    Commissions variables selon votre contrat et les programmes de mise en avant activés.
                   </td>
                   <td className="py-5 pl-4 align-top text-bg-light/80 leading-relaxed">
                     Échanges filtrés par la plateforme et présentation d'établissements concurrents sous vos chambres.
@@ -305,7 +312,7 @@ export default function HomeFR() {
               <li className="py-6">
                 <p className="text-xs font-semibold text-accent mb-1 m-0">01</p>
                 <h3 className="mb-2">
-                  Première étape : diagnostic écrit sous [À CONFIRMER]
+                  Première étape : diagnostic écrit et proposition claire
                 </h3>
                 <p className="text-primary/80 leading-relaxed m-0">
                   Nous testons votre site actuel sur téléphone, vérifions votre fiche Google Maps et identifions les freins à la prise de contact. Vous recevez un constat clair accompagné d'un devis forfaitaire chiffré.

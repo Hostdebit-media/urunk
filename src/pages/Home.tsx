@@ -43,8 +43,8 @@ export default function Home() {
   return (
     <div className="w-full">
       <SEO
-        title="Morocco Web & SEO Agency for Hotels & Riads | Urunk EN"
-        description="Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking websites, Google Ads, and local SEO in Casablanca and Marrakech. Free audit."
+        title="Hotel Website Design & SEO in Morocco | Urunk"
+        description="Premium hotel and riad websites in Morocco, connected booking engines, local SEO, and Google Ads. Grow direct enquiries. Request a free audit."
         schema={homeServiceSchemas}
       />
 
@@ -52,20 +52,21 @@ export default function Home() {
       <Section tone="light" id="hero-section" className="pt-12 md:pt-20">
         <div className="space-y-12">
           <div className="max-w-4xl">
+            <p className="text-xs uppercase tracking-[0.18em] text-accent font-semibold mb-5">Independent digital studio · Hospitality & tourism · Morocco</p>
             <h1
               className="text-[clamp(38px,4.6vw,68px)] leading-[1.04] max-w-[26ch] mb-6"
               id="hero-h1"
             >
-              Websites, local SEO, and Google Ads for hotels, riads, and SMEs in Morocco
+              Hotel and riad websites built for direct bookings in Morocco
             </h1>
             <p
               className="text-lg text-primary/85 leading-relaxed max-w-[65ch] mb-4"
               id="hero-subtext"
             >
-              From our office in Casablanca, we build fast websites connected to your booking engine, improve your local Google Maps rankings, and run search ads so you receive more direct bookings and quote inquiries.
+              Your property deserves more than a digital brochure. We pair refined website design and booking-engine integration with local SEO and focused advertising to turn more qualified searches into direct guest enquiries.
             </p>
             <p className="text-base text-primary/75 leading-relaxed max-w-[65ch] mb-8">
-              Complete websites launch in 4 to 6 weeks starting at 12,000 MAD, and monthly services can be canceled anytime with 15 days notice.
+              Based in Casablanca, we work with independent hotels, riads, and boutique stays across Morocco. Bilingual websites from 12,000 MAD, with a defined scope and transparent quote.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 mb-6" id="hero-actions">
@@ -82,6 +83,12 @@ export default function Home() {
                 WhatsApp: +212 668-802096
               </Button>
             </div>
+
+            <nav aria-label="Explore our expertise" className="flex flex-wrap gap-x-6 gap-y-2 mb-6 text-sm">
+              <Link to="/en/hotel-website-design" className="font-semibold">Hotel website design</Link>
+              <Link to="/en/hotel-seo" className="font-semibold">Hotel SEO</Link>
+              <Link to="/en/direct-booking" className="font-semibold">Direct bookings</Link>
+            </nav>
 
             <p className="text-sm text-primary/70 leading-relaxed m-0">
               3 Rue El Kadi Lass, Maarif, Casablanca. Serving Casablanca, Marrakech, Rabat, and Agadir.
@@ -134,10 +141,10 @@ export default function Home() {
               Why guests who already know your name still book through OTA platforms
             </h2>
             <p className="text-bg-light/85 leading-relaxed mb-4">
-              When a traveler looks up your riad or hotel by name and finds a slow mobile website or an incomplete Google Maps listing, they fall back to Booking.com, Expedia, or Viator. Those platforms typically deduct [À CONFIRMER] of each stay depending on your contract.
+              When a traveler looks up your riad or hotel by name and finds a slow mobile website or an incomplete Google Maps listing, they may return to platforms such as Booking.com or Expedia. Commissions vary by provider, your agreement, and any optional visibility programmes.
             </p>
             <p className="text-sm text-bg-light/70 leading-relaxed m-0">
-              Industry rate reference: standard base commission averages 15% before optional visibility programs (such as Preferred Partner or Visibility Booster) or activity reseller fees, per public{' '}
+              For the terms that apply to your property, review the{' '}
               <a
                 href="https://partner.booking.com"
                 target="_blank"
@@ -146,7 +153,7 @@ export default function Home() {
               >
                 Booking.com Partner Hub
               </a>{' '}
-              partner documentation (reviewed October 2026; check your property agreement for your exact rate).
+              partner documentation and your signed agreement, including any optional promotional programmes.
             </p>
           </div>
 
@@ -168,7 +175,7 @@ export default function Home() {
                     </span>
                   </td>
                   <td className="py-5 px-4 align-top text-bg-light/85 leading-relaxed tabular-nums">
-                    [À CONFIRMER] commission depending on your contract terms and optional visibility add-ons.
+                    Commission varies according to your agreement and optional visibility add-ons.
                   </td>
                   <td className="py-5 pl-4 align-top text-bg-light/80 leading-relaxed">
                     Intermediated messaging and competing properties displayed alongside your rooms.
@@ -305,7 +312,7 @@ export default function Home() {
               <li className="py-6">
                 <p className="text-xs font-semibold text-accent mb-1 m-0">01</p>
                 <h3 className="mb-2">
-                  First step: written audit within [À CONFIRMER]
+                  First step: a written audit and clear proposal
                 </h3>
                 <p className="text-primary/80 leading-relaxed m-0">
                   We test your current website on mobile, check your Google Maps listing, and point out what is slowing down bookings or inquiries, alongside a fixed-price written quote.
