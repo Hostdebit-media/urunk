@@ -335,7 +335,7 @@ export const locationsData: Record<string, LocationDataMap> = {
       calloutBody: "De Casablanca Finance City à Aïn Sebaâ, nous aidons les entreprises B2B à capter des contrats qualifiés et à maîtriser leurs coûts d'acquisition.",
       overviewTitle: "Écosystème d'Affaires à Casablanca : Dominer l'Acquisition B2B et l'Autorité Technologique",
       overviewText1: "Casablanca est le poumon économique indiscutable du Royaume et la principale porte d'entrée financière de l'Afrique du Nord et de l'Ouest. Abritant une population métropolitaine de plus de 3,4 millions d'habitants (plus de 4,2 millions pour le Grand Casablanca), la métropole génère à elle seule plus de 32 % du PIB national. Elle concentre le quartier d'affaires d'envergure internationale Casablanca Finance City (CFC), les sièges sociaux des multinationales, les cabinets de conseil, les études juridiques majeures et des zones industrielles de premier plan telles que Aïn Sebaâ, Sidi Maârouf et Mohammedia. Cette densité économique exceptionnelle engendre une concurrence commerciale et industrielle extrêmement rude. Le taux de pénétration internet y atteint 90 % en zone urbaine, incitant les directeurs d'achats, les décideurs et les chefs d'entreprises à s'appuyer massivement sur les moteurs de recherche pour découvrir et évaluer leurs futurs partenaires B2B.",
-      overviewText2: "Le comportement de recherche locale à Casablanca est hautement transactionnel et technique, les décideurs formulant des requêtes précises principalement en français et en anglais pour trouver des solutions industrielles, de l'ingénierie ou du conseil juridique. Dans ce contexte d'affaires exigeant, un site web lent, obsolète ou mal sécurisé dégrade instantanément l'image de marque et pousse les prospects vers la concurrence. De plus, face à l'essor fulgurant des moteurs de recherche basés sur l'Intelligence Artificielle (ChatGPT, Gemini, Perplexity), les entreprises casablancaises doivent optimiser leur présence pour l'AEO (Answer Engine Optimization) afin d'être citées comme la référence de leur secteur. Urunk conçoit des portails web en React ultra-sécurisés (dès 12 000 MAD) et déploie des stratégies SEO B2B et des campagnes de recherche Google Ads pour capter les demandes de devis d'affaires et garantir une croissance prévisible de votre pipeline.",
+      overviewText2: "À Casablanca, les besoins diffèrent selon les secteurs : demande de devis industriels, prise de contact commerciale, services de proximité ou réservation d’affaires. Une page utile présente les prestations, les zones desservies, les conditions et les preuves disponibles. Urunk propose un cadrage web, SEO ou publicitaire selon les recherches pertinentes et les données accessibles, sans garantir un volume de demandes.",
       whyPartnerTitle: "Pourquoi les Groupes de Casablanca ont Besoin d'un Spécialiste Digital Local",
       whyPartnerText: "Le secteur corporatif et industriel à Casablanca est régi par des normes de conformité strictes (notamment la réglementation CNDP sur la protection des données personnelles) et des logiques commerciales multiculturelles. Pour s'adresser efficacement aux décideurs et ingénieurs locaux, une simple présence digitale standardisée ne suffit pas. Il vous faut un partenaire technologique local capable d'allier rigueur de développement web (architecture React sécurisée éliminant les vulnérabilités classiques de WordPress) et stratégies SEO pointues adaptées au marché marocain. Urunk met à votre disposition cette expertise de pointe pour faire de votre site un actif stratégique d'acquisition B2B incontournable.",
       marketHighlightsTitle: "Atouts pour les Entreprises à Casablanca",
@@ -411,20 +411,20 @@ export const locationsData: Record<string, LocationDataMap> = {
     },
     marketStats: [
       {
-        label: { fr: "Contribution au PIB National", en: "Contribution to National GDP" },
-        value: "32.4%"
+        label: { fr: "Demandes de devis", en: "Quote requests" },
+        value: "B2B"
       },
       {
-        label: { fr: "Sièges d'Entreprises B2B & Multinationales", en: "B2B & Corporate Headquarters" },
-        value: "60%+"
+        label: { fr: "Services aux entreprises", en: "Business services" },
+        value: "SEO"
       },
       {
-        label: { fr: "Trafic Voyageurs d'Affaires & Événements", en: "Business Travel & MICE Share" },
-        value: "45%"
+        label: { fr: "Voyages d’affaires et événements", en: "Business travel and events" },
+        value: "MICE"
       },
       {
-        label: { fr: "Recherches B2B Locales sur Mobile", en: "Mobile Local B2B Searches" },
-        value: "68%"
+        label: { fr: "Recherches locales sur mobile", en: "Mobile local search" },
+        value: "Maps"
       }
     ],
     faqByService: {
@@ -451,7 +451,7 @@ export const locationsData: Record<string, LocationDataMap> = {
       calloutTitle: "Bypassing OTA Commissions in Marrakech",
       calloutBody: "Reduce dependency on platforms like Booking.com, TripAdvisor, and Airbnb. We boost direct bookings with custom PMS integrations and local Medina search authority.",
       overviewTitle: "Marrakech Digital Maturity: Transitioning from Medina Heritage to Web-Scale Growth",
-      overviewText1: "Marrakech is the undisputed capital of Moroccan tourism, welcoming over 3.5 million international arrivals annually to its world-famous historic Medina, Gueliz modern district, and luxury resorts in the Palmeraie. With an estimated local population exceeding 1 million residents, the city's economic vitality is deeply linked to hospitality, boutique crafts, real estate, and excursion services. This extreme saturation means that over 1,500 active boutique guest houses (Riads) and hotels are actively bidding for the attention of global travelers. However, despite high internet penetration of over 85% among tourists and local businesses alike, many Marrakech-based hospitality operators remain heavily dependent on high-commission Online Travel Agencies (OTAs) such as Booking.com and Expedia. These major platforms charge anywhere from 18% to 25% commission on every transaction, severely reducing the net profit margins and direct customer relationship of local hospitality brands.",
+      overviewText1: "Marrakech combines heritage accommodation in the Medina, urban hotels in Gueliz and resort properties around the city. Travelers compare location, room details, services, availability and booking conditions across official websites and intermediaries. For accommodation providers, the right distribution strategy depends on actual commission agreements, acquisition costs and the value of direct customer relationships.",
       overviewText2: "In this high-stakes digital environment, traditional word-of-mouth and simple social media postings are no longer sufficient to secure steady year-round occupancy. Modern luxury travelers from the United Kingdom, France, Germany, and the United States conduct detailed mobile search queries (making up over 74% of local travel searches) weeks before setting foot in Morocco. If a Riad or tour company does not appear in the coveted Google Maps Local Pack for highly profitable terms like 'best boutique riad Marrakech medina' or 'private desert tour from Marrakech', they are practically invisible. Furthermore, legacy website designs that load slowly, fail on mobile browsers, or lack a secure multilingual direct booking interface (English, French, and German) suffer from massive booking abandonment rates. Urunk designs custom React-engineered web architectures that load in under 1 second, optimize Google Hotel Ads campaigns, and construct local SEO authority to turn digital visitors into direct, commission-free guests.",
       whyPartnerTitle: "Why Marrakech Businesses Need a Digital Partner Grounded in Morocco",
       whyPartnerText: "Successfully navigating Marrakech's unique business landscape requires far more than generic digital templates. You need a dedicated technical partner with a deep, intuitive understanding of Moroccan search behaviors, multilingual target demographics, regional seasonal tourist shifts (such as Marrakech peaking in spring and autumn), and the precise technical constraints of local payment gateways (like the CMI) and popular property management systems (PMS) such as Cloudbeds, SitesMinder, and Amenitiz. A local agency like Urunk understands how to translate Medina charm into high-converting digital assets, ensuring that your marketing spend is optimized for actual high-margin revenue rather than empty traffic.",
@@ -511,7 +511,7 @@ export const locationsData: Record<string, LocationDataMap> = {
       faqs: [
         {
           q: "Why is specialized digital marketing essential for a Riad in Marrakech?",
-          a: "The Marrakech Medina hosts over 1,500 guest houses. Standard marketing fails to stand out against OTAs, whereas specialized Riad SEO captures direct bookings."
+          a: "The Medina has a competitive accommodation market. A riad can differentiate itself with accurate location information, original room and experience content, and a clear direct-booking path."
         },
         {
           q: "Can Urunk manage both web design and advertising for a Marrakech tourism brand?",
@@ -527,8 +527,8 @@ export const locationsData: Record<string, LocationDataMap> = {
       calloutTitle: "Réduire les Commissions OTA à Marrakech",
       calloutBody: "Libérez-vous de l'emprise de Booking.com, TripAdvisor et Airbnb. Développez vos réservations directes grâce à nos intégrations PMS et notre visibilité locale.",
       overviewTitle: "Maturité Digitale de Marrakech : Entre Tradition et Innovation Web",
-      overviewText1: "Marrakech est incontestablement la capitale touristique du Royaume, accueillant chaque année plus de 3,5 millions de visiteurs internationaux au cœur de sa médina millénaire, du quartier moderne de Guéliz et des resorts prestigieux de la Palmeraie. Avec une population locale de plus de 1 million d'habitants, l'économie régionale dépend en grande partie de l'hôtellerie, de l'artisanat de luxe, de l'immobilier et des excursions touristiques. Cette attractivité génère une concurrence intense, illustrée par la présence de plus de 1 500 riads et maisons d'hôtes actifs luttant pour capter l'attention des voyageurs. Toutefois, malgré un taux de pénétration internet supérieur à 85 % parmi les visiteurs et les commerçants locaux, beaucoup d'établissements restent dépendants des plateformes de réservation en ligne (OTA) comme Booking.com et Expedia, qui prélèvent des commissions exorbitantes de 18 % à 25 % par séjour, réduisant significativement leur rentabilité nette.",
-      overviewText2: "Dans cet environnement hautement concurrentiel, le simple bouche-à-oreille et des publications basiques sur les réseaux sociaux ne suffisent plus à garantir un taux d'occupation stable toute l'année. Les voyageurs de luxe (européens, américains et du Moyen-Orient) effectuent des recherches mobiles rigoureuses (représentant 74 % des recherches hôtelières à Marrakech) plusieurs semaines avant leur départ. Si votre riad n'apparaît pas dans le Top 3 de Google Maps (Local Pack) sur des requêtes stratégiques comme « meilleur riad de charme marrakech médina », il perd toute visibilité. De plus, les sites web lents, non adaptés aux smartphones ou dépourvus de moteurs de réservation multilingues sécurisés (FR, EN, DE) entraînent un abandon immédiat du panier d'achat. Urunk développe des architectures web réactives sous React, chargeant en moins de 1 seconde, et orchestre des campagnes Google Ads et de référencement naturel d'autorité pour transformer ces visiteurs digitaux en clients directs.",
+      overviewText1: "Marrakech associe les hébergements de charme de la médina, les hôtels urbains de Guéliz et les resorts autour de la ville. Les voyageurs comparent localisation, chambres, services, disponibilité et conditions de réservation sur les sites officiels et les plateformes. Le choix des canaux dépend des commissions réellement négociées, des coûts d'acquisition et de la valeur de la relation directe.",
+      overviewText2: "Le site officiel doit faciliter la comparaison sur mobile : description des chambres, accès depuis les principaux quartiers, politiques de réservation et disponibilité. Nous proposons de vérifier le parcours de réservation, les pages par langue, la visibilité locale et le suivi des conversions avant de sélectionner les actions SEO ou publicitaires. Les performances sont mesurées selon la configuration et les données disponibles.",
       whyPartnerTitle: "Pourquoi les Entreprises de Marrakech ont Besoin d'un Partenaire Digital Local",
       whyPartnerText: "Pour s'imposer sur le marché complexe de Marrakech, les solutions génériques préconçues ne suffisent pas. Il est indispensable de s'entourer d'un partenaire technique disposant d'une expertise fine du comportement de recherche au Maroc, de la forte saisonnalité touristique locale (les pics d'activité du printemps et de l'automne) et des protocoles de paiement électronique nationaux (CMI) et internationaux (Stripe), tout en maîtrisant les intégrations de PMS majeurs comme Cloudbeds ou SiteMinder. Urunk associe rigueur d'ingénierie et sensibilité culturelle marocaine pour concevoir des campagnes sur-mesure qui protègent vos marges opérationnelles et captent une clientèle internationale haut de gamme.",
       marketHighlightsTitle: "Atouts Spécifiques pour Marrakech",
@@ -587,7 +587,7 @@ export const locationsData: Record<string, LocationDataMap> = {
       faqs: [
         {
           q: "Pourquoi un marketing spécialisé est-il indispensable pour un Riad à Marrakech ?",
-          a: "Avec plus de 1 500 riads dans la médina, un marketing générique ne suffit plus à se démarquer des plateformes d'intermédiation."
+          a: "Dans un marché concurrentiel, un riad peut se différencier par des informations précises sur sa localisation, ses chambres, ses expériences et ses conditions de réservation directe."
         },
         {
           q: "Urunk peut-il gérer le site web et la publicité pour un établissement à Marrakech ?",
@@ -613,20 +613,20 @@ export const locationsData: Record<string, LocationDataMap> = {
     },
     marketStats: [
       {
-        label: { fr: "Riads et Maisons d'Hôtes en Médina", en: "Medina Riads & Boutique Stays" },
-        value: "1,500+"
+        label: { fr: "Hébergements de charme", en: "Boutique accommodation" },
+        value: "Riads"
       },
       {
-        label: { fr: "Part des Nuitées Hôtelières Nationales", en: "Share of National Hotel Overnights" },
-        value: "40%+"
+        label: { fr: "Visibilité de destination", en: "Destination visibility" },
+        value: "SEO"
       },
       {
-        label: { fr: "Commission Moyenne Payée aux OTAs", en: "Average Commission Paid to OTAs" },
-        value: "18% – 25%"
+        label: { fr: "Coût de distribution", en: "Distribution cost" },
+        value: "OTA"
       },
       {
-        label: { fr: "Recherches Hébergement Internationales", en: "International Lodging Searches" },
-        value: "82%"
+        label: { fr: "Contenus multilingues", en: "Multilingual content" },
+        value: "FR/EN"
       }
     ],
     faqByService: {
