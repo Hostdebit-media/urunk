@@ -1,0 +1,18 @@
+{
+  "baseVersion": "b32afe29-5e60-4871-abb3-012100fe8357",
+  "appendModule": "ops/revenue-module-v49.js",
+  "edits": [
+    [
+      "  if(url.pathname===\"/private/growth/crm/sales\"||url.pathname===\"/private/growth/crm/sales/\")return urunkSalesRoute(request,env,url);",
+      "  if(url.pathname===URUNK_REVENUE_BASE||url.pathname===URUNK_REVENUE_BASE+\"/\")return urunkRevenueRoute(request,env,url);\n  if(url.pathname===\"/private/growth/crm/sales\"||url.pathname===\"/private/growth/crm/sales/\")return urunkSalesRoute(request,env,url);"
+    ],
+    [
+      "<a href=\"/private/growth/crm\">CRM & prospects</a> · <a href=\"/cdn-cgi/access/logout\">",
+      "<a href=\"/private/growth/crm\">CRM & prospects</a> · <a href=\"/private/growth/crm/revenue\">Acquisition & revenus</a> · <a href=\"/cdn-cgi/access/logout\">"
+    ],
+    [
+      "<a href=\"/private/growth/crm\">CRM</a><a href=\"/cdn-cgi/access/logout\">",
+      "<a href=\"/private/growth/crm\">CRM</a><a href=\"/private/growth/crm/revenue\">Revenus</a><a href=\"/cdn-cgi/access/logout\">"
+    ]
+  ]
+}
