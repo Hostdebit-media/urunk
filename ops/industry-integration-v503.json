@@ -1,0 +1,23 @@
+{
+  "base": "ff614d37-bfc1-4b21-834f-571326306b2f",
+  "replaceModule": [
+    "ops/audit-funnel-v502.js",
+    "ops/audit-funnel-v503.js"
+  ],
+  "append": "ops/industry-module-v503.js",
+  "edits": [
+    [
+      "  if(url.hostname===\"urunk.com\"&&Object.hasOwn(URUNK_AUDIT_PATHS,url.pathname))return urunkAuditRoute(request,env,url);",
+      "  if(url.hostname===\"urunk.com\"&&[\"GET\",\"HEAD\"].includes(request.method)){\n    const industry=urunkIndustrySegmentV503(\"industrial\");\n    if([industry.fr.path,industry.en.path].includes(url.pathname))return urunkIndustrialPageV503(request,url);\n    if([industry.fr.path+\"/\",industry.en.path+\"/\"].includes(url.pathname))return Response.redirect(\"https://urunk.com\"+url.pathname.slice(0,-1),301);\n    if(url.pathname===\"/sitemap-industries.xml\")return urunkIndustrySitemapV503(request);\n  }\n  if(url.hostname===\"urunk.com\"&&Object.hasOwn(URUNK_AUDIT_PATHS,url.pathname))return urunkAuditRoute(request,env,url);"
+    ],
+    [
+      "return urunkTextResource(request,URUNK_ROBOTS_V34+\"Sitemap: https://urunk.com/sitemap-audit.xml\\n\");",
+      "return urunkTextResource(request,URUNK_ROBOTS_V34+\"Sitemap: https://urunk.com/sitemap-audit.xml\\nSitemap: https://urunk.com/sitemap-industries.xml\\n\");"
+    ],
+    [
+      "\"cache-control\":path===\"/tarifs\"||path===\"/en/pricing\"?\"no-store\":\"public, max-age=3600\"",
+      "\"cache-control\":path===\"/tarifs\"||path===\"/en/pricing\"||path===\"/secteurs\"||path===\"/en/industries\"||path.startsWith(\"/secteurs/\")||path.startsWith(\"/en/industries/\")?\"no-store\":\"public, max-age=3600\""
+    ]
+  ],
+  "init": "urunkInstallIndustryV503(URUNK_AUTHORITY_BLOCKS);"
+}
