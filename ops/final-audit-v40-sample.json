@@ -1,0 +1,1250 @@
+{
+  "sitemaps": [
+    {
+      "u": "https://urunk.com/pages-sitemap.xml",
+      "count": 120
+    },
+    {
+      "u": "https://urunk.com/pages-sitemap-fr.xml",
+      "count": 60
+    },
+    {
+      "u": "https://urunk.com/posts-sitemap.xml",
+      "count": 47
+    },
+    {
+      "u": "https://urunk.com/posts-sitemap-fr.xml",
+      "count": 24
+    },
+    {
+      "u": "https://urunk.com/images-sitemap.xml",
+      "count": 17
+    },
+    {
+      "u": "https://urunk.com/images-sitemap-fr.xml",
+      "count": 8
+    }
+  ],
+  "total": 167,
+  "rows": [
+    {
+      "p": "/",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/",
+      "title": "Agence Web & SEO Maroc pour Hôtels et Riads | Urunk",
+      "desc": "Agence web et SEO au Maroc pour hôtels, riads et PME : sites rapides, Google Ads et référencement local à Casablanca et Marrakech. Audit gratuit.",
+      "h1": [
+        "\n          Votre indépendance digitale commence ici.\n        "
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/"
+        ],
+        [
+          "en",
+          "https://urunk.com/en"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/"
+        ]
+      ],
+      "words": 619,
+      "unknownLinks": [],
+      "links": 27,
+      "types": [
+        "WebSite",
+        "Organization",
+        "LocalBusiness",
+        "Service",
+        "FAQPage"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Lorsqu'un voyageur repère le nom de votre riad ou de votre hôtel mais tombe sur un site lent sur téléphone ou une fiche Google Maps incomplète, il retourne réserver sur Booking.com, Expedia ou Viator, où les commissions représentent en général 15 % à 25 % du montant du séjour selon contrat (taux de base moyen de 15 % hors option",
+        "Vous restez propriétaire à 100 % du domaine, du code source et des comptes publicitaires, avec 0 MAD de frais d'ouverture et un préavis écrit de 15 jours.\n          Consulter la grille tarifaire"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/a-propos",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/a-propos",
+      "title": "À Propos d'Urunk : Agence Web & SEO Hôtelier Maroc | Urunk",
+      "desc": "Découvrez la démarche Urunk : cadrage, conception web, référencement et mesure des acquisitions pour les hôtels, riads et entreprises au Maroc.",
+      "h1": [
+        "À Propos d'Urunk : Agence Web & SEO Hôtelier Maroc | Urunk"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/a-propos"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/about"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/a-propos"
+        ]
+      ],
+      "words": 466,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Fondée pour répondre à un déséquilibre structurel du marché touristique et B2B marocain, Urunk accompagne les hôtels indépendants, les riads de prestige, les opérateurs d'excursions et les PME ambitieuses dans la reprise en main de leur acquisition client. Pendant trop longtemps, d'excellents établissements à Marrakech, Agadir o",
+        "Nous combinons une ingénierie web moderne (sites sur-mesure à 12 000 MAD livrés en 4 à 6 semaines, optimisés sur les Core Web Vitals) avec un pilotage chirurgical du référencement naturel local (SEO Google Maps) et des campagnes payantes à haute intention sur Google Ads, Meta Ads et TripAdvisor. Notre modèle économique est 100 %",
+        "Site Web Sur-Mesure (12 000 MAD / ≈ 1 100 €) — Livré clé en main sous 4 à 6 semaines, vitesse mobile optimale, raccordement PMS (Cloudbeds, Mews, SiteMinder) et 0 % de commission d'intermédiaire."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en",
+      "title": "Morocco Web & SEO Agency for Hotels & Riads | Urunk",
+      "desc": "Web design and SEO agency in Morocco for hotels, riads, and SMEs: fast booking websites, Google Ads, and local SEO in Casablanca and Marrakech. Free audit.",
+      "h1": [
+        "\n          Your digital independence starts here.\n        "
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/"
+        ],
+        [
+          "en",
+          "https://urunk.com/en"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/"
+        ]
+      ],
+      "words": 526,
+      "unknownLinks": [],
+      "links": 27,
+      "types": [
+        "WebSite",
+        "Organization",
+        "LocalBusiness",
+        "Service",
+        "FAQPage"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "When a traveler looks up your riad or hotel by name and finds a slow mobile website or an incomplete Google Maps listing, they fall back to Booking.com, Expedia, or Viator, where commissions typically deduct 15% to 25% per stay depending on contract (standard base rate averaging 15% before optional visibility programs per Bookin",
+        "You retain 100% ownership of your domain, source code, and ad accounts, with 0 MAD setup fees and 15 days written notice.\n          View full rate card"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/tarifs",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/tarifs",
+      "title": "Nos Tarifs : Forfaits Marketing Riad Clairs | Urunk",
+      "desc": "Comparez nos forfaits fixes sans commission pour la création de site, le SEO et Google Ads. Optimisez votre budget d'acquisition directe.",
+      "h1": [
+        "Nos Tarifs : Forfaits Marketing Riad Clairs | Urunk"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/tarifs"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/pricing"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/tarifs"
+        ]
+      ],
+      "words": 557,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Contrairement aux agences traditionnelles facturant au pourcentage ou imposant des abonnements propriétaires opaques, la grille tarifaire d'Urunk est publique, forfaitaire et conçue pour maximiser votre marge nette dès le premier trimestre. Vous conservez 100 % de la propriété de votre code source, de votre nom de domaine et de ",
+        "Trafic direct haute intention (0 % marge média)",
+        "Simulation illustrative, non issue d'un client : 12 chambres × 365 jours × 70 % d'occupation × 1 600 MAD = 4 905 600 MAD de recettes chambres. Avec 65 % des recettes via OTA et une commission hypothétique de 20 %, les commissions atteignent 637 728 MAD. Transférer 10 % de ces recettes OTA vers le canal direct économiserait envir"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/pricing",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/pricing",
+      "title": "Hotel Marketing Packages & Clear Pricing | Urunk",
+      "desc": "Compare clear, commission-free packages for web design, SEO, and Google Ads. Select the perfect investment model to grow direct sales.",
+      "h1": [
+        "Hotel Marketing Packages & Clear Pricing | Urunk"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/tarifs"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/pricing"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/tarifs"
+        ]
+      ],
+      "words": 441,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Unlike legacy agencies hiding behind custom quotes or charging ongoing software licensing fees, Urunk publishes clear, fixed-rate investments engineered to maximize your net margin from quarter one. You retain 100% ownership of your website code, domain, analytics, and ad accounts.",
+        "High-Intent Guest Traffic (0% Ad Markup)",
+        "Illustrative scenario, not a client result: 12 rooms × 365 days × 70% occupancy × 1,600 MAD = 4,905,600 MAD room revenue. With 65% of revenue through OTAs and an assumed 20% commission, fees total 637,728 MAD. Moving 10% of that OTA revenue to direct channels would save about 63,773 MAD before payment, software, media and manage"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/about",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/about",
+      "title": "About Urunk: Boutique Hotel Marketing Agency | Urunk",
+      "desc": "Discover Urunk's approach to website development, search visibility and acquisition measurement for hotels, riads and businesses in Morocco.",
+      "h1": [
+        "About Urunk: Boutique Hotel Marketing Agency | Urunk"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/a-propos"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/about"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/a-propos"
+        ]
+      ],
+      "words": 422,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "AboutPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Founded to solve a structural margin leak across Morocco's hospitality and B2B sectors, Urunk empowers independent hotels, luxury Medina riads, tour operators, and growth-stage SMEs to own their customer acquisition pipeline. For years, exceptional properties in Marrakech, Agadir, and Fes surrendered 15% to 25% of their gross ro",
+        "We bridge modern front-end software engineering (fixed-fee 12,000 MAD custom websites delivered in 4 to 6 weeks and optimised for Core Web Vitals) with surgical local SEO, Google Maps 3-Pack positioning, and high-intent paid acquisition across Google Ads, Meta Ads, and TripAdvisor. Our business model is 100% aligned with your ne"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/services",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/services",
+      "title": "Nos Services : Croissance Hôtelière Maroc | Urunk",
+      "desc": "De la conception de sites web ultra-rapides au référencement Google Maps et netlinking. Explorez nos leviers de croissance hôtelière.",
+      "h1": [
+        "Nos Services de Croissance Hôtelière & Digitale"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services"
+        ]
+      ],
+      "words": 1373,
+      "unknownLinks": [],
+      "links": 60,
+      "types": [
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Sites web hôteliers sur mesure livrés en 4 à 6 semaines avec moteur PMS connecté, 100 % propriété du code et 0 % commission OTA."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/services/agence-seo-maroc",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/services/agence-seo-maroc",
+      "title": "Agence SEO Maroc : Référencement Naturel & SEO Local | Urunk",
+      "desc": "Audit SEO, référencement technique, contenus FR/EN et suivi des demandes qualifiées pour les entreprises au Maroc. Découvrez les livrables Urunk.",
+      "h1": [
+        "Agence Experte en Référencement Naturel au Maroc"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services/agence-seo-maroc"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services/seo-agency-morocco"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services/agence-seo-maroc"
+        ]
+      ],
+      "words": 779,
+      "unknownLinks": [],
+      "links": 33,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Le trafic naturel représente moins de 40 % de vos visites totales",
+        "Le devis détaille le nombre de pages, la cadence de production, les accès requis, les interventions techniques et les éventuels frais tiers. Aucun classement ni volume de ventes garanti."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/services/seo-agency-morocco",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/services/seo-agency-morocco",
+      "title": "SEO Agency Morocco: Organic & Local Search | Urunk",
+      "desc": "Technical SEO audits, bilingual content and qualified lead tracking for Moroccan businesses. Explore Urunk's deliverables and process.",
+      "h1": [
+        "Morocco's Technical & Bilingual Organic Search Agency"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services/agence-seo-maroc"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services/seo-agency-morocco"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services/agence-seo-maroc"
+        ]
+      ],
+      "words": 746,
+      "unknownLinks": [],
+      "links": 33,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "We prioritize pages that can answer relevant searches and support qualified inquiries. Deliverables, responsibilities and measurement criteria are agreed before implementation; search rankings are not guaranteed.",
+        "Organic search traffic represents less than 40% of your total website visitors",
+        "The proposal specifies page scope, content cadence, required access, technical work and any third-party charges. No ranking or sales volume is guaranteed."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/services/ai-seo-optimization",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/services/ai-seo-optimization",
+      "title": "Optimisation SEO & Visibilité IA (GEO / AEO) | Urunk",
+      "desc": "Audit de visibilité IA, contenu vérifiable, suivi des mentions et citations, optimisation technique et éditoriale. Aucun placement garanti.",
+      "h1": [
+        "Référencement SEO & Optimisation Moteurs IA"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services/ai-seo-optimization"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services/ai-seo-optimization"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services/ai-seo-optimization"
+        ]
+      ],
+      "words": 729,
+      "unknownLinks": [],
+      "links": 33,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Les plateformes d'IA sélectionnent leurs propres sources et peuvent produire des réponses différentes pour une même question. Nous ne garantissons ni une citation, ni une recommandation, ni un délai de prise en compte."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/services/seo-hotel",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/services/seo-hotel",
+      "title": "SEO Hôtel Maroc : Google Maps & Recherche Locale | Urunk",
+      "desc": "Service SEO local et organique pour hôtels et riads au Maroc : Google Maps, fiche GBP, Schema.org Hotel et pages de destination dès 4 000 MAD/mois.",
+      "h1": [
+        "SEO Hôtelier au Maroc : Visibilité Google Maps & Recherche Locale"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services/seo-hotel"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services/hotel-seo"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services/seo-hotel"
+        ]
+      ],
+      "words": 2222,
+      "unknownLinks": [],
+      "links": 38,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Respect strict des règles Google (aucune promesse de rang #1 garanti)",
+        "Booking.com et Expedia génèrent plus de 75 % de vos nuitées en ligne",
+        "Positions garanties dans le Pack Maps ou notes d'avis garanties"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/services/ai-seo-optimization",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/services/ai-seo-optimization",
+      "title": "AI SEO & Answer Engine Optimization Morocco | Urunk",
+      "desc": "AI visibility audits, verifiable content, mention and citation tracking, and technical SEO. No guaranteed AI placement.",
+      "h1": [
+        "AI SEO & Generative Engine Optimization"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services/ai-seo-optimization"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services/ai-seo-optimization"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services/ai-seo-optimization"
+        ]
+      ],
+      "words": 637,
+      "unknownLinks": [],
+      "links": 33,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/services/direct-booking",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/services/direct-booking",
+      "title": "Hotel Direct Booking System Morocco: Cut OTA Fees | Urunk",
+      "desc": "Compare direct booking systems, PMS, Channel Managers, and CMI/Stripe payment gateways for independent hotels and riads in Morocco. Build from 12,000 MAD.",
+      "h1": [
+        "Direct Booking Systems Without OTAs for Independent Hotels in Morocco"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/services/reservation-directe"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/services/direct-booking"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/services/reservation-directe"
+        ]
+      ],
+      "words": 1634,
+      "unknownLinks": [],
+      "links": 37,
+      "types": [
+        "Service",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "OTA commissions represent 15%–25% of almost every room night sold",
+        "12,000 MAD one-time covers a complete direct-booking website build + PMS integration (0% agency commission); standalone PMS/payment integration onto an existing site is quoted on custom scope. Third-party PMS software billed directly by vendor.",
+        "Even as direct bookings grow to 35%–60% of revenue, keeping residual rooms on Booking.com or Expedia requires a two-way Channel Manager so a direct website sale immediately closes that room everywhere else."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/zones/casablanca",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/zones/casablanca",
+      "title": "Agence Marketing Digital à Casablanca | Urunk",
+      "desc": "Création de site web, référencement local Google Maps et campagnes d'acquisition de prospects pour entreprises et restaurateurs à Casablanca.",
+      "h1": [
+        "SEO B2B, Référencement Local & Agence Web à Casablanca"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/zones/casablanca"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/locations/casablanca"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/zones/casablanca"
+        ]
+      ],
+      "words": 904,
+      "unknownLinks": [],
+      "links": 35,
+      "types": [
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "À Casablanca, les besoins diffèrent selon les secteurs : demande de devis industriels, prise de contact commerciale, services de proximité ou réservation d’affaires. Une page utile présente les prestations, les zones desservies, les conditions et les preuves disponibles. Urunk propose un cadrage web, SEO ou publicitaire selon le"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/zones/marrakech",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/zones/marrakech",
+      "title": "Marketing Digital pour Riads & Villas Marrakech | Urunk",
+      "desc": "Optimisez le classement Google Maps et TripAdvisor. SEO hôtelier d'expert et création web rapide adaptés aux riads haut de gamme de Marrakech.",
+      "h1": [
+        "Croissance Digitale, Ingénierie Web & SEO à Marrakech"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/zones/marrakech"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/locations/marrakech"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/zones/marrakech"
+        ]
+      ],
+      "words": 1019,
+      "unknownLinks": [],
+      "links": 39,
+      "types": [
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/secteurs/pme-entreprises",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/secteurs/pme-entreprises",
+      "title": "Marketing Digital pour PME & Entreprises Maroc | Urunk",
+      "desc": "Développez la visibilité de votre entreprise. Création de site web institutionnel professionnel, référencement Google et acquisition B2B.",
+      "h1": [
+        "Stratégie Digitale & SEO B2B pour PME & Grandes Entreprises"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/secteurs/pme-entreprises"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/industries/corporate-smes"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/secteurs/pme-entreprises"
+        ]
+      ],
+      "words": 756,
+      "unknownLinks": [],
+      "links": 35,
+      "types": [
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Urunk Agency déploie des architectures numériques rapides pour les acteurs de ce secteur au Maroc (Casablanca, Marrakech, Rabat, Agadir). Nos équipes conçoivent des sites web synchronisés avec vos systèmes métiers et pilotent des campagnes Google Ads et SEO local pour développer vos demandes et réservations directes en réduisant",
+        "Nous définissons les exigences de sécurité et de performance au cadrage, puis vérifions les résultats avec des tests adaptés. Aucun framework ne garantit à lui seul la sécurité d'un site."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/realisations",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/realisations",
+      "title": "Réalisations & Études de Cas Hôtelières | Urunk",
+      "desc": "Besoin de preuves concrètes ? Découvrez les résultats de riads et traiteurs de luxe qui ont multiplié leurs réservations directes avec nous.",
+      "h1": [
+        "\n            Nos Réalisations & Modèles de Croissance au Maroc\n          "
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/realisations"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/work"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/realisations"
+        ]
+      ],
+      "words": 805,
+      "unknownLinks": [],
+      "links": 28,
+      "types": [
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Dans l'hôtellerie et le tourisme au Maroc, la majorité des établissements perdent entre 15 % et 25 % de leur chiffre d'affaires brut en commissions versées aux plateformes tierces (Booking.com, Expedia, GetYourGuide). Parallèlement, de nombreuses PME à Casablanca et Rabat souffrent de sites institutionnels lents qui ne convertis",
+        "Les dossiers ci-dessous sont des scénarios pédagogiques, sauf indication explicite de résultats vérifiés. Ils expliquent comment définir un coût par acquisition (CPA), une part de réservations directes, une visibilité locale et un ROAS. Les objectifs chiffrés ne sont ni des résultats clients constatés, ni des garanties.",
+        "Problématique : Les organisateurs de circuits et d'excursions indépendants au Maroc dépendent souvent à l'excès des plateformes tierces (Viator, GetYourGuide, TripAdvisor) auxquelles ils versent 20 à 30 % de commission par client. Si ces intermédiaires apportent un volume initial, la pérennité financière exige de capter l'intérê"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/work/travel-morocco-services",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/work/travel-morocco-services",
+      "title": "Example Strategy: Direct Booking for Tour Operators | Urunk",
+      "desc": "Strategic framework outlining how Moroccan tour operators can build high-converting direct booking channels, lower OTA commissions, and scale search.",
+      "h1": [
+        "Example Strategy: Direct Booking Growth for a Moroccan Tour Operator"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/realisations/services-voyage-maroc"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/work/travel-morocco-services"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/realisations/services-voyage-maroc"
+        ]
+      ],
+      "words": 347,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "Article",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "author": "J.Mellal",
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Independent tour operators and excursion providers in Morocco often rely heavily on third-party OTAs (Viator, GetYourGuide, TripAdvisor) paying 20%-30% commissions per seat. While OTAs deliver initial volume, sustainable profitability requires capturing direct traveler inquiries before they book elsewhere. This strategic framewo",
+        "High OTA commission fees (20-30%) severely reducing operating margins per private tour or excursion seat"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/blog",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/blog",
+      "title": "Blog Marketing Riad : Conseils & Stratégies SEO | Urunk",
+      "desc": "Découvrez des guides complets et des conseils d'experts sur le SEO hôtelier, l'optimisation de site et les fiches Google Maps au Maroc.",
+      "h1": [
+        "Blog Marketing Riad : Conseils & Stratégies SEO | Urunk"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/blog"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/blog"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/blog"
+        ]
+      ],
+      "words": 1089,
+      "unknownLinks": [],
+      "links": 46,
+      "types": [
+        "Blog",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Guide marketing digital pour tour-opérateurs et agences d'excursions au Maroc : vendez vos circuits en direct sans céder 25 % de commission aux OTA."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/blog",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/blog",
+      "title": "Hotel Marketing Blog: Direct Booking Guides | Urunk",
+      "desc": "Practical guides for hotels and riads in Morocco: direct booking costs, website performance, local SEO and acquisition measurement.",
+      "h1": [
+        "Hotel Marketing Blog: Direct Booking Guides | Urunk"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/blog"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/blog"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/blog"
+        ]
+      ],
+      "words": 951,
+      "unknownLinks": [],
+      "links": 45,
+      "types": [
+        "Blog",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Digital marketing guide for luxury desert camps and bivouacs in Agafay and Merzouga: grow direct reservations and cut 20% OTA commission fees.",
+        "Digital marketing guide for Moroccan tour operators and excursion agencies: capture direct online bookings and eliminate 25% platform commission fees."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/blog/marketing-email-automatisation-pour-hotels",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/blog/marketing-email-automatisation-pour-hotels",
+      "title": "Email Marketing Automatisé pour Hôtels | Urunk",
+      "desc": "Mettez en place des séquences d'e-mails automatisées pour votre hôtel ou riad : e-mails pré-séjour, demandes d'avis post-séjour et offres d'anniversaire.",
+      "h1": [
+        "Email Marketing Automatisé pour Hôtels : Transformer Votre Fichier Client en Réservations Directes"
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/blog/marketing-email-automatisation-pour-hotels"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/blog/email-marketing-automation-for-hotels"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/blog/marketing-email-automatisation-pour-hotels"
+        ]
+      ],
+      "words": 620,
+      "unknownLinks": [],
+      "links": 28,
+      "types": [
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "author": "J.Mellal",
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Supposons une campagne hypothétique générant 10 réservations additionnelles avec une contribution de 500 MAD chacune avant coûts de campagne. Si l'envoi, la création et la gestion coûtent 1 500 MAD, la contribution additionnelle est de 3 500 MAD et le ROI illustratif est (5 000 − 1 500) / 1 500 = 233 %. Il ne s'agit pas d'une mo"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/blog/hotel-seo-morocco-guide",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/blog/hotel-seo-morocco-guide",
+      "title": "Hotel SEO Morocco: Google Maps, Schema & Direct Bookings...",
+      "desc": "Step-by-step SEO guide for Moroccan riads and boutique hotels. Master Google Business Profile, Hotel schema markup, and local organic rankings.",
+      "h1": [
+        "Ranking on Google for a Moroccan Riad or Hotel: Google Business Profile, Structured Data, and Local Content in the Right Order"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/blog/guide-seo-hotellerie-maroc"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/blog/hotel-seo-morocco-guide"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/blog/guide-seo-hotellerie-maroc"
+        ]
+      ],
+      "words": 868,
+      "unknownLinks": [],
+      "links": 26,
+      "types": [
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "author": "J.Mellal",
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/contact",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/contact",
+      "title": "Contact Urunk : Audit SEO & Web Offert | Urunk",
+      "desc": "Prêt à diviser vos commissions d'OTAs ? Contactez-nous dès aujourd'hui pour obtenir votre audit de performance, vitesse et SEO local gratuit.",
+      "h1": [
+        "\n              Contactez Urunk & Demandez Votre Audit Digital Gratuit\n            "
+      ],
+      "lang": "fr",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/contact"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/contact"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/contact"
+        ]
+      ],
+      "words": 421,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Évaluation des Pertes en Commissions OTA (15 % à 25 %) : Estimation du volume de réservations récupérables en direct via l'intégration fluide d'un moteur PMS sans commission.",
+        "Oui, à 100 %. Vous conservez l'intégralité des constats techniques et des pistes d'optimisation partagés lors de notre diagnostic, que vous décidiez de confier le déploiement à Urunk ou à votre équipe interne."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/blog/seasonal-pricing-revenue-management",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/blog/seasonal-pricing-revenue-management",
+      "title": "Dynamic Pricing & Revenue Management Morocco | Urunk",
+      "desc": "Revenue management playbook for independent riads and hotels in Morocco: seasonal rate tiers, minimum stay rules (MLOS), and direct RevPAR growth.",
+      "h1": [
+        "Revenue Management & Dynamic Pricing for Moroccan Riads and Independent Hotels: The Operational Blueprint"
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/blog/tarification-saisonniere-gestion-revenus"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/blog/seasonal-pricing-revenue-management"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/blog/tarification-saisonniere-gestion-revenus"
+        ]
+      ],
+      "words": 853,
+      "unknownLinks": [],
+      "links": 27,
+      "types": [
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "author": "J.Mellal",
+      "imgs": 1,
+      "missingAlt": 0,
+      "missingDims": 1,
+      "claims": [
+        "Use an illustrative 10-room hotel with 7 rooms sold at 1,000 MAD: occupancy is 70%, ADR is 1,000 MAD and RevPAR is 700 MAD. Compare the same dates across channels and deduct actual distribution costs to calculate contribution. Do not impose a minimum stay until booking pace and displacement risk justify it.",
+        "Revenue management: Seasonal rates and minimum-stay rules are hypotheses to test, not guaranteed RevPAR gains. Compare occupancy, ADR, RevPAR and net contribution by date and channel before applying restrictions.",
+        "Saturated demand (+100% standard pricing)"
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    },
+    {
+      "p": "/en/contact",
+      "status": 200,
+      "redirect": false,
+      "canonical": "https://urunk.com/en/contact",
+      "title": "Contact Our Search Experts: Get Your Free Audit | Urunk",
+      "desc": "Ready to stop losing OTA commissions? Contact our team for a free website performance, speed, and local SEO diagnostic audit today.",
+      "h1": [
+        "\n              Contact Urunk & Request Your Free Direct Booking Audit\n            "
+      ],
+      "lang": "en",
+      "robots": "index, follow, max-image-preview:large",
+      "alts": [
+        [
+          "fr",
+          "https://urunk.com/contact"
+        ],
+        [
+          "en",
+          "https://urunk.com/en/contact"
+        ],
+        [
+          "x-default",
+          "https://urunk.com/contact"
+        ]
+      ],
+      "words": 382,
+      "unknownLinks": [],
+      "links": 25,
+      "types": [
+        "ContactPage",
+        "BreadcrumbList"
+      ],
+      "schemaErr": false,
+      "deprecated": false,
+      "imgs": 0,
+      "missingAlt": 0,
+      "missingDims": 0,
+      "claims": [
+        "Yes, 100%. All technical findings, speed benchmarks, and keyword opportunities shared in your diagnostic are yours to keep whether you partner with Urunk or implement them internally."
+      ],
+      "release": "v36-live-overlay",
+      "csp": true,
+      "xrobots": null
+    }
+  ],
+  "misc": [
+    {
+      "p": "/robots.txt",
+      "status": 200,
+      "text": "# Public crawling policy. Existing AI crawler permissions retained.\nUser-agent: *\nUser-agent: OAI-SearchBot\nUser-agent: GPTBot\nUser-agent: ChatGPT-User\nUser-agent: ClaudeBot\nUser-agent: PerplexityBot\nUser-agent: Google-Extended\nUser-agent: Applebot-Extended\nUser-agent: Amazonbot\nUser-agent: meta-externalagent\nAllow: /\nDisallow: /api\nDisallow: /private\n\nSitemap: https://urunk.com/sitemap.xml\nSitemap: https://urunk.com/sitemap-fr.xml\n"
+    },
+    {
+      "p": "/llms.txt",
+      "status": 200,
+      "text": "# Urunk — Web, SEO and digital acquisition in Morocco\n\n> Urunk is a Casablanca-based digital agency serving hotels, riads, tourism operators and businesses in Morocco. Services include website creation, technical and local SEO, paid search and AI search visibility audits. French and English content is available. Service scope, prices and provider eligibility should be confirmed in a written proposal.\n\n## Français — services et information commerciale\n- [Accueil](https://urunk.com/): Positionnement, offres et méthodologie.\n- [Services](https://urunk.com/services): Catalogue des prestations.\n- [Tarifs](https://urunk.com/tarifs): Création dès 12 000 MAD; gestion Google Ads dès 4 000 MAD/mois. Budget média et frais tiers distincts.\n- [Création de site](https://urunk.com/services/creation-site-web): Forfaits, périmètre et coûts.\n- [SEO national](https://urunk.com/services/agence-seo-maroc): Audit, contenus FR/EN, référencement technique et mesure; dès 12 000 MAD/mois.\n- [SEO local](https://urunk.com/services/local-seo-morocco): Visibilité locale et suivi; dès 4 000 MAD/mois.\n- [SEO hôtelier](https://urunk.com/services/seo-hotel): Site, fiche Google et suivi des réservations attribuables.\n- [GEO et SEO IA](https://urunk.com/services/ai-seo-optimization): Audit de visibilité IA, suivi des mentions et citations; dès 14 000 MAD/mois. Aucune citation garantie.\n- [Google Ads](https://urunk.com/services/google-ads-maroc): Gestion, suivi et budget média séparé.\n- [Réservation directe](https://urunk.com/services/reservation-directe): Intégration selon compatibilité du fournisseur et éligibilité monétique.\n- [PME et entreprises](https://urunk.com/secteurs/pme-entreprises): Acquisition B2B et demandes de devis.\n- [Hôtels et resorts](https://urunk.com/secteurs/hotels-resorts): Acquisition et réservation hôtelières.\n- [Casablanca](https://urunk.com/zones/casablanca): Référencement et création web B2B.\n- [Marrakech](https://urunk.com/zones/marrakech): Référencement et acquisition hôtelière.\n- [À propos](https://urunk.com/a-propos): Démarche et informations de l'agence.\n- [Réalisations](https://urunk.com/realisations): Scénarios pédagogiques, pas des résultats clients vérifiés sauf indication explicite.\n- [Blog](https://urunk.com/blog): Guides pratiques et hypothèses de calcul.\n- [Contact](https://urunk.com/contact): Demande de diagnostic.\n- [Plan du site](https://urunk.com/plan-du-site): Répertoire des contenus.\n\n## English — services and commercial information\n- [Home](https://urunk.com/en): Agency overview.\n- [Pricing](https://urunk.com/en/pricing): Website builds from 12,000 MAD; Google Ads management from 4,000 MAD/month. Media and third-party fees separate.\n- [Website packages](https://urunk.com/en/services/website-design): Scope and total cost considerations.\n- [National SEO](https://urunk.com/en/services/seo-agency-morocco): Technical SEO, bilingual content and measurement; from 12,000 MAD/month.\n- [Local SEO](https://urunk.com/en/services/local-seo-morocco): Local visibility and measurement; from 4,000 MAD/month.\n- [Hotel SEO](https://urunk.com/en/services/hotel-seo): Website and Business Profile optimization.\n- [AI SEO and GEO](https://urunk.com/en/services/ai-seo-optimization): AI visibility audits and citation tracking; from 14,000 MAD/month. No guaranteed citations.\n- [Google Ads](https://urunk.com/en/services/google-ads-morocco): Campaign management and measurement.\n- [Direct booking](https://urunk.com/en/services/direct-booking): Provider-dependent integrations and acceptance testing.\n- [B2B and SMEs](https://urunk.com/en/industries/corporate-smes): Qualified inquiries and buyer-focused pages.\n- [Hotels and resorts](https://urunk.com/en/industries/hotels-resorts): Hospitality acquisition.\n- [About](https://urunk.com/en/about): Agency approach.\n- [Portfolio](https://urunk.com/en/work): Illustrative frameworks, not verified client outcomes unless explicitly documented.\n- [Blog](https://urunk.com/en/blog): Educational guides.\n- [Contact](https://urunk.com/en/contact): Request an assessment.\n- [HTML sitemap](https://urunk.com/en/sitemap): Page directory.\n\n## Editorial evidence\nIllustrative figures are assumptions, not performance guarantees. Search rankings, AI citations, advertising returns and booking volumes depend on market conditions and measurement quality. Consult the relevant service page and written scope for current terms.\n\n## Selected guides\n- [Commissions OTA](https://urunk.com/blog/reduire-commissions-ota)\n- [Coût du site de réservation](https://urunk.com/blog/cout-site-web-reservation-directe-maroc)\n- [Guide SEO hôtelier](https://urunk.com/blog/guide-seo-hotellerie-maroc)\n- [OTA distribution costs](https://urunk.com/en/blog/reduce-ota-commissions)\n- [Direct booking website cost](https://urunk.com/en/blog/direct-booking-website-cost-morocco)\n- [Hotel SEO guide](https://urunk.com/en/blog/hotel-seo-morocco-guide)\n\n## Discovery\n- [XML sitemap](https://urunk.com/sitemap.xml)\n- [French XML sitemap](https://urunk.com/sitemap-fr.xml)\n"
+    }
+  ],
+  "rendered": {
+    "h1": "Votre indépendance digitale commence ici.",
+    "images": [
+      {
+        "src": "/images/optimized/moroccan-riad-architecture-800.jpg",
+        "alt": "Cour intérieure d’un riad marocain traditionnel avec arches et zelliges",
+        "width": "800",
+        "height": "1071",
+        "loading": "lazy"
+      },
+      {
+        "src": "/images/optimized/art-house-hero-800.jpg",
+        "alt": "Artisan travaillant dans un atelier traditionnel au Maroc",
+        "width": "800",
+        "height": "533",
+        "loading": "lazy"
+      },
+      {
+        "src": "/images/optimized/moroccan-riad-hospitality-800.jpg",
+        "alt": "Patio d’un riad marocain avec piscine et végétation",
+        "width": "800",
+        "height": "533",
+        "loading": "lazy"
+      },
+      {
+        "src": "/images/optimized/sahara-camel-800.jpg",
+        "alt": "Caravane de chameaux dans le désert marocain",
+        "width": "800",
+        "height": "533",
+        "loading": "lazy"
+      }
+    ],
+    "overflow": false,
+    "schemas": [
+      [
+        "WebSite",
+        "Organization",
+        "LocalBusiness",
+        "Service",
+        "FAQPage"
+      ],
+      [
+        "FAQPage"
+      ]
+    ]
+  }
+}
