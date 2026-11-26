@@ -33,3 +33,13 @@ CREATE TABLE IF NOT EXISTS crm_month_review_v507 (
 );
 CREATE INDEX IF NOT EXISTS crm_cost_date_v507 ON crm_costs_v507(incurred_date,category);
 CREATE INDEX IF NOT EXISTS crm_acq_date_v507 ON crm_acquisitions_v507(acquired_date,channel);
+
+-- Any subsequent source entry invalidates an earlier completeness review.
+CREATE TRIGGER IF NOT EXISTS crm_cost_review_v507 AFTER INSERT ON crm_costs_v507
+BEGIN UPDATE crm_month_review_v507 SET cost_complete=0,cash_complete=0 WHERE month IN (substr(NEW.incurred_date,1,7),substr(NEW.paid_date,1,7)); END;
+CREATE TRIGGER IF NOT EXISTS crm_acq_review_insert_v507 AFTER INSERT ON crm_acquisitions_v507
+BEGIN UPDATE crm_month_review_v507 SET acquisition_complete=0 WHERE month=substr(NEW.acquired_date,1,7); END;
+CREATE TRIGGER IF NOT EXISTS crm_acq_review_update_v507 AFTER UPDATE ON crm_acquisitions_v507
+BEGIN UPDATE crm_month_review_v507 SET acquisition_complete=0 WHERE month IN (substr(OLD.acquired_date,1,7),substr(NEW.acquired_date,1,7)); END;
+CREATE TRIGGER IF NOT EXISTS crm_cash_review_v507 AFTER INSERT ON crm_payments_v506
+BEGIN UPDATE crm_month_review_v507 SET cash_complete=0 WHERE month=substr(NEW.received_date,1,7); END;
