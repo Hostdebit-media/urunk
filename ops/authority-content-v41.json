@@ -1,0 +1,722 @@
+{
+  "/services/creation-site-web": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Comparez le forfait à partir de 12 000 MAD avec les besoins réels : nombre de gabarits, langues, édition, formulaires et intégration. Demandez une liste des coûts récurrents, licences et accès remis, puis validez le parcours sur mobile avant réception.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/website-design": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Compare the 12,000 MAD starting package with actual requirements: templates, languages, editing, forms and integration. Request an itemized list of recurring costs, licenses and handover access, then approve the mobile journey before acceptance.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/agence-web-maroc": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Pour un site B2B, commencez par les services, les spécifications, les références autorisées et les demandes de devis. Pour un hôtel, privilégiez chambres, disponibilités et réservation. Le cahier des charges distingue ces parcours et les interfaces existantes.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/web-design-morocco": {
+    "heading": "Scope and acceptance criteria",
+    "body": "For B2B, start with services, specifications, authorized references and quote requests. For hotels, prioritize rooms, availability and booking. The brief separates these journeys and existing integration requirements.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/agence-web-casablanca": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Un site fournisseur à Casablanca doit expliquer capacités, délais, zones desservies et critères de qualification. Prévoyez des formulaires adaptés aux demandes de devis, des documents accessibles et le suivi des demandes qualifiées, pas seulement des visites.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/web-design-casablanca": {
+    "heading": "Scope and acceptance criteria",
+    "body": "A Casablanca supplier site should explain capabilities, lead times, service areas and qualification criteria. Plan quote forms, accessible documents and qualified enquiry tracking rather than visits alone.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/agence-seo-maroc": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Le programme national commence par une cartographie des intentions en français et en anglais, un audit d'indexation et une sélection de pages prioritaires. Le suivi rapproche impressions, clics et demandes qualifiées ; les résultats dépendent aussi du marché.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/seo-agency-morocco": {
+    "heading": "Scope and acceptance criteria",
+    "body": "National SEO starts with French and English search intent mapping, an indexation audit and prioritized pages. Reporting connects impressions, clicks and qualified enquiries; outcomes also depend on the market.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/agence-seo-casablanca": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Pour les prestataires et fournisseurs casablancais, séparez les recherches de proximité des recherches nationales de produits ou métiers. Les pages détaillent le périmètre, les critères de devis et les preuves disponibles. Suivez les demandes par activité.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/seo-agency-casablanca": {
+    "heading": "Scope and acceptance criteria",
+    "body": "For Casablanca suppliers and service firms, distinguish proximity queries from national product or trade queries. Pages should explain scope, quote criteria and available evidence. Track enquiries by business line.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/seo-hotel": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Comparez visibilité de marque, recherches de destination, fiche Google et moteur de réservation. Reliez les événements du site aux réservations confirmées lorsque le fournisseur le permet. Le rapport distingue clics, démarrages et réservations.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/hotel-seo": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Compare brand visibility, destination searches, Business Profile and booking engine. Connect site events with confirmed reservations when the provider supports it. Reporting distinguishes clicks, starts and confirmed bookings.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/marketing-digital-hotelier": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Choisissez les canaux selon la contribution par séjour : SEO pour la découverte, Search pour la demande existante, Meta pour les tests créatifs. Vérifiez disponibilité, coûts de distribution et attribution avant d'arbitrer le budget.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/hotel-digital-marketing": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Choose channels using contribution per stay: SEO for discovery, Search for existing demand and Meta for creative testing. Verify availability, distribution costs and attribution before reallocating budget.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/site-web-hotel": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Le test de réception couvre types de chambres, devises, dates, occupation, politique d'annulation, confirmation et erreurs de paiement. Les capacités dépendent du moteur et du contrat ; le devis identifie les intégrations incluses.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/hotel-website-design": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Acceptance covers room types, currencies, dates, occupancy, cancellation terms, confirmation and payment failures. Capabilities depend on the booking engine and contract; the proposal identifies included integrations.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/reservation-directe": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Cartographiez les disponibilités et tarifs entre PMS, channel manager et moteur. Testez annulation, modification, doublon et échec de paiement. Calculez la contribution directe après frais logiciels, paiement et acquisition, pas uniquement la commission OTA.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/direct-booking": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Map availability and rates between PMS, channel manager and booking engine. Test cancellation, changes, duplicate events and payment failures. Calculate direct contribution after software, payment and acquisition costs, not OTA commission alone.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/google-ads-maroc": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Fixez un objectif de coût par demande qualifiée ou réservation confirmée avant le lancement. Séparez marque et découverte, examinez les termes de recherche et rapprochez les conversions des ventes réelles. Le budget média reste séparé des honoraires.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/google-ads-morocco": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Set a qualified enquiry or confirmed booking cost objective before launch. Separate brand and discovery, inspect search terms and reconcile conversions with actual sales. Media spend remains separate from management fees.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/referencement-local-casablanca": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Vérifiez l'éligibilité de la fiche Google, les horaires, les catégories et les coordonnées. Distinguez zone de service et adresse ouverte au public. Mesurez appels et demandes qualifiées sans promettre de rang fixe sur Maps.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/local-seo-casablanca": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Verify Business Profile eligibility, hours, categories and contact information. Distinguish service areas from public-facing addresses. Measure calls and qualified enquiries without promising a fixed Maps rank.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/seo-riad-marrakech": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Pour un riad, expliquez précisément l'accès, les équipements, les types de chambres et les conditions de séjour. Travaillez les requêtes de destination pertinentes à la clientèle réelle, puis mesurez les réservations confirmées par langue.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/riad-seo-marrakech": {
+    "heading": "Scope and acceptance criteria",
+    "body": "For a riad, explain access, amenities, room types and stay conditions precisely. Target destination searches relevant to actual guests, then measure confirmed bookings by language.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/site-web-riad-marrakech": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Présentez les chambres, les accès à la médina et les services réellement disponibles avec des photographies autorisées. Vérifiez le parcours international : langue, devise, dates, conditions de séjour et contact humain en cas de difficulté.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/riad-website-design-marrakech": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Present rooms, medina access and actual services using authorized photography. Test the international journey: language, currency, dates, stay terms and human support if problems arise.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/gestion-publicites-meta": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Préparez des créations par offre et audience, avec disponibilité et prix vérifiés. Respectez les préférences publicitaires et la provenance des données. Comparez les dépenses aux réservations réellement attribuables sans compter deux fois.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/meta-ads": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Prepare creatives by offer and audience with verified availability and pricing. Respect advertising preferences and data provenance. Compare spend against attributable confirmed bookings without double counting.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/tripadvisor-ads": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Vérifiez les produits publicitaires disponibles pour votre établissement, l'éligibilité du compte et la qualité de la fiche. Distinguez clics référents et réservations confirmées avant de renouveler la campagne.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/tripadvisor-ads": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Check available advertising products, account eligibility and listing quality. Distinguish referral clicks from confirmed bookings before renewing a campaign.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/bundle-site-ads": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Le site et la campagne font l'objet de livrables séparés : parcours de conversion, événements validés, accès publicitaires et rapport de suivi. Les dépenses médias et les abonnements tiers sont chiffrés à part dans le devis.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/bundle-site-ads": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Website and campaign have separate deliverables: conversion journey, tested events, advertising access and reporting. Media spend and third-party subscriptions are itemized separately in the proposal.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/ai-seo-optimization": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Établissez une liste de questions commerciales, une référence datée par moteur et une correspondance avec les pages utiles. Notez mention, source citée et concurrent, en distinguant absence et absence de données. Aucun moteur n'est tenu de citer Urunk.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/ai-seo-optimization": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Create a commercial question list, dated baseline by engine and mapping to useful pages. Record mention, cited source and competitor, distinguishing absence from missing data. No engine is required to cite Urunk.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/wordpress-seo": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Inventoriez thème, extensions, hébergement, redirections et gabarits avant intervention. Testez les changements de cache et de données structurées sur un environnement contrôlé, puis mesurez l'indexabilité et la vitesse après publication.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/wordpress-seo": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Inventory theme, plugins, hosting, redirects and templates before intervention. Test caching and structured data changes in a controlled environment, then measure indexability and speed after publishing.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/ecommerce-seo": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Auditez catégories, variantes, filtres, produits indisponibles et liens internes. Privilégiez les pages répondant à une demande réelle ; mesurez les transactions et la marge par catégorie après coûts de distribution.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/ecommerce-seo": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Audit categories, variants, filters, unavailable products and internal links. Prioritize pages answering real demand; measure transactions and contribution by category after distribution costs.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/google-business-profile": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Confirmez la propriété de la fiche et son éligibilité, corrigez catégories, horaires et informations, puis organisez les réponses aux avis authentiques. La mesure distingue actions sur fiche et ventes confirmées.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/google-business-profile": {
+    "heading": "Scope and acceptance criteria",
+    "body": "Confirm profile ownership and eligibility, correct categories, hours and information, then organize responses to authentic reviews. Measurement distinguishes profile actions from confirmed sales.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/services/local-seo-morocco": {
+    "heading": "Périmètre et critères de réception",
+    "body": "Le forfait une ville, le programme multi-villes et la gestion de fiche seule répondent à des périmètres différents. Vérifiez lieux éligibles, pages utiles et responsabilités avant devis ; aucune position ni note d'avis n'est garantie.",
+    "link": "/contact",
+    "label": "Discuter du périmètre"
+  },
+  "/en/services/local-seo-morocco": {
+    "heading": "Scope and acceptance criteria",
+    "body": "The one-city foundation, multi-city program and profile-only management address different scopes. Verify eligible locations, useful pages and responsibilities before a proposal; no ranking or review score is guaranteed.",
+    "link": "/en/contact",
+    "label": "Discuss your scope"
+  },
+  "/expertise/seo-hotel/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Comparez visibilité de marque, recherches de destination, fiche Google et moteur de réservation. Reliez les événements du site aux réservations confirmées lorsque le fournisseur le permet. Le rapport distingue clics, démarrages et réservations.",
+    "link": "/services/seo-hotel",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/hotel-seo/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Compare brand visibility, destination searches, Business Profile and booking engine. Connect site events with confirmed reservations when the provider supports it. Reporting distinguishes clicks, starts and confirmed bookings.",
+    "link": "/en/services/hotel-seo",
+    "label": "See the national service scope"
+  },
+  "/expertise/seo-hotel/agadir": {
+    "heading": "Diagnostic adapté : Agadir",
+    "body": "À Agadir, distinguez séjours balnéaires, hébergements de surf et clientèle professionnelle. Vérifiez la saisonnalité de la demande à partir des réservations réelles et des disponibilités. Comparez visibilité de marque, recherches de destination, fiche Google et moteur de réservation. Reliez les événements du site aux réservations confirmées lorsque le fournisseur le permet. Le rapport distingue clics, démarrages et réservations.",
+    "link": "/services/seo-hotel",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/hotel-seo/agadir": {
+    "heading": "Local implementation: Agadir",
+    "body": "In Agadir, distinguish beach stays, surf accommodation and business guests. Assess seasonality from actual reservations and availability. Compare brand visibility, destination searches, Business Profile and booking engine. Connect site events with confirmed reservations when the provider supports it. Reporting distinguishes clicks, starts and confirmed bookings.",
+    "link": "/en/services/hotel-seo",
+    "label": "See the national service scope"
+  },
+  "/expertise/seo-hotel/casablanca": {
+    "heading": "Diagnostic adapté : Casablanca",
+    "body": "À Casablanca, distinguez séjours d'affaires, événements et demandes B2B. Précisez l'accès, les services professionnels et les conditions de devis ou de réservation. Comparez visibilité de marque, recherches de destination, fiche Google et moteur de réservation. Reliez les événements du site aux réservations confirmées lorsque le fournisseur le permet. Le rapport distingue clics, démarrages et réservations.",
+    "link": "/services/seo-hotel",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/hotel-seo/casablanca": {
+    "heading": "Local implementation: Casablanca",
+    "body": "In Casablanca, distinguish business stays, events and B2B enquiries. Explain access, business services and quote or booking terms. Compare brand visibility, destination searches, Business Profile and booking engine. Connect site events with confirmed reservations when the provider supports it. Reporting distinguishes clicks, starts and confirmed bookings.",
+    "link": "/en/services/hotel-seo",
+    "label": "See the national service scope"
+  },
+  "/expertise/seo-hotel/rabat": {
+    "heading": "Diagnostic adapté : Rabat",
+    "body": "À Rabat, différenciez les visiteurs professionnels, institutionnels et culturels selon les services réellement proposés. Privilégiez des informations précises sur accès, horaires et disponibilité. Comparez visibilité de marque, recherches de destination, fiche Google et moteur de réservation. Reliez les événements du site aux réservations confirmées lorsque le fournisseur le permet. Le rapport distingue clics, démarrages et réservations.",
+    "link": "/services/seo-hotel",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/hotel-seo/rabat": {
+    "heading": "Local implementation: Rabat",
+    "body": "In Rabat, distinguish business, institutional and cultural visitors according to actual services. Prioritize accurate access, hours and availability information. Compare brand visibility, destination searches, Business Profile and booking engine. Connect site events with confirmed reservations when the provider supports it. Reporting distinguishes clicks, starts and confirmed bookings.",
+    "link": "/en/services/hotel-seo",
+    "label": "See the national service scope"
+  },
+  "/expertise/site-web-hotel/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Le test de réception couvre types de chambres, devises, dates, occupation, politique d'annulation, confirmation et erreurs de paiement. Les capacités dépendent du moteur et du contrat ; le devis identifie les intégrations incluses.",
+    "link": "/services/site-web-hotel",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/hotel-website-design/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Acceptance covers room types, currencies, dates, occupancy, cancellation terms, confirmation and payment failures. Capabilities depend on the booking engine and contract; the proposal identifies included integrations.",
+    "link": "/en/services/hotel-website-design",
+    "label": "See the national service scope"
+  },
+  "/expertise/site-web-hotel/agadir": {
+    "heading": "Diagnostic adapté : Agadir",
+    "body": "À Agadir, distinguez séjours balnéaires, hébergements de surf et clientèle professionnelle. Vérifiez la saisonnalité de la demande à partir des réservations réelles et des disponibilités. Le test de réception couvre types de chambres, devises, dates, occupation, politique d'annulation, confirmation et erreurs de paiement. Les capacités dépendent du moteur et du contrat ; le devis identifie les intégrations incluses.",
+    "link": "/services/site-web-hotel",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/hotel-website-design/agadir": {
+    "heading": "Local implementation: Agadir",
+    "body": "In Agadir, distinguish beach stays, surf accommodation and business guests. Assess seasonality from actual reservations and availability. Acceptance covers room types, currencies, dates, occupancy, cancellation terms, confirmation and payment failures. Capabilities depend on the booking engine and contract; the proposal identifies included integrations.",
+    "link": "/en/services/hotel-website-design",
+    "label": "See the national service scope"
+  },
+  "/expertise/seo-riad/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Pour un riad, expliquez précisément l'accès, les équipements, les types de chambres et les conditions de séjour. Travaillez les requêtes de destination pertinentes à la clientèle réelle, puis mesurez les réservations confirmées par langue.",
+    "link": "/services/seo-riad-marrakech",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/riad-seo/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. For a riad, explain access, amenities, room types and stay conditions precisely. Target destination searches relevant to actual guests, then measure confirmed bookings by language.",
+    "link": "/en/services/riad-seo-marrakech",
+    "label": "See the national service scope"
+  },
+  "/expertise/site-web-riad/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Présentez les chambres, les accès à la médina et les services réellement disponibles avec des photographies autorisées. Vérifiez le parcours international : langue, devise, dates, conditions de séjour et contact humain en cas de difficulté.",
+    "link": "/services/site-web-riad-marrakech",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/riad-website-design/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Present rooms, medina access and actual services using authorized photography. Test the international journey: language, currency, dates, stay terms and human support if problems arise.",
+    "link": "/en/services/riad-website-design-marrakech",
+    "label": "See the national service scope"
+  },
+  "/expertise/reservation-directe/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Cartographiez les disponibilités et tarifs entre PMS, channel manager et moteur. Testez annulation, modification, doublon et échec de paiement. Calculez la contribution directe après frais logiciels, paiement et acquisition, pas uniquement la commission OTA.",
+    "link": "/services/reservation-directe",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/direct-booking/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Map availability and rates between PMS, channel manager and booking engine. Test cancellation, changes, duplicate events and payment failures. Calculate direct contribution after software, payment and acquisition costs, not OTA commission alone.",
+    "link": "/en/services/direct-booking",
+    "label": "See the national service scope"
+  },
+  "/expertise/reservation-directe/agadir": {
+    "heading": "Diagnostic adapté : Agadir",
+    "body": "À Agadir, distinguez séjours balnéaires, hébergements de surf et clientèle professionnelle. Vérifiez la saisonnalité de la demande à partir des réservations réelles et des disponibilités. Cartographiez les disponibilités et tarifs entre PMS, channel manager et moteur. Testez annulation, modification, doublon et échec de paiement. Calculez la contribution directe après frais logiciels, paiement et acquisition, pas uniquement la commission OTA.",
+    "link": "/services/reservation-directe",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/direct-booking/agadir": {
+    "heading": "Local implementation: Agadir",
+    "body": "In Agadir, distinguish beach stays, surf accommodation and business guests. Assess seasonality from actual reservations and availability. Map availability and rates between PMS, channel manager and booking engine. Test cancellation, changes, duplicate events and payment failures. Calculate direct contribution after software, payment and acquisition costs, not OTA commission alone.",
+    "link": "/en/services/direct-booking",
+    "label": "See the national service scope"
+  },
+  "/expertise/reservation-directe/riads-maisons-hotes": {
+    "heading": "Diagnostic adapté : Riads",
+    "body": "Pour les riads et maisons d'hôtes, prévoyez les contraintes d'accès, la faible capacité, les conditions d'arrivée et les demandes de groupes. Cartographiez les disponibilités et tarifs entre PMS, channel manager et moteur. Testez annulation, modification, doublon et échec de paiement. Calculez la contribution directe après frais logiciels, paiement et acquisition, pas uniquement la commission OTA.",
+    "link": "/services/reservation-directe",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/direct-booking/riads-boutique-hotels": {
+    "heading": "Local implementation: Riads",
+    "body": "For riads and boutique hotels, account for access constraints, limited inventory, arrival arrangements and group enquiries. Map availability and rates between PMS, channel manager and booking engine. Test cancellation, changes, duplicate events and payment failures. Calculate direct contribution after software, payment and acquisition costs, not OTA commission alone.",
+    "link": "/en/services/direct-booking",
+    "label": "See the national service scope"
+  },
+  "/expertise/google-ads/casablanca": {
+    "heading": "Diagnostic adapté : Casablanca",
+    "body": "À Casablanca, distinguez séjours d'affaires, événements et demandes B2B. Précisez l'accès, les services professionnels et les conditions de devis ou de réservation. Fixez un objectif de coût par demande qualifiée ou réservation confirmée avant le lancement. Séparez marque et découverte, examinez les termes de recherche et rapprochez les conversions des ventes réelles. Le budget média reste séparé des honoraires.",
+    "link": "/services/google-ads-maroc",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/google-ads/casablanca": {
+    "heading": "Local implementation: Casablanca",
+    "body": "In Casablanca, distinguish business stays, events and B2B enquiries. Explain access, business services and quote or booking terms. Set a qualified enquiry or confirmed booking cost objective before launch. Separate brand and discovery, inspect search terms and reconcile conversions with actual sales. Media spend remains separate from management fees.",
+    "link": "/en/services/google-ads-morocco",
+    "label": "See the national service scope"
+  },
+  "/expertise/google-ads/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Fixez un objectif de coût par demande qualifiée ou réservation confirmée avant le lancement. Séparez marque et découverte, examinez les termes de recherche et rapprochez les conversions des ventes réelles. Le budget média reste séparé des honoraires.",
+    "link": "/services/google-ads-maroc",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/google-ads/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Set a qualified enquiry or confirmed booking cost objective before launch. Separate brand and discovery, inspect search terms and reconcile conversions with actual sales. Media spend remains separate from management fees.",
+    "link": "/en/services/google-ads-morocco",
+    "label": "See the national service scope"
+  },
+  "/expertise/tripadvisor-ads/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Vérifiez les produits publicitaires disponibles pour votre établissement, l'éligibilité du compte et la qualité de la fiche. Distinguez clics référents et réservations confirmées avant de renouveler la campagne.",
+    "link": "/services/tripadvisor-ads",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/tripadvisor-ads/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Check available advertising products, account eligibility and listing quality. Distinguish referral clicks from confirmed bookings before renewing a campaign.",
+    "link": "/en/services/tripadvisor-ads",
+    "label": "See the national service scope"
+  },
+  "/expertise/creation-site-web/rabat": {
+    "heading": "Diagnostic adapté : Rabat",
+    "body": "À Rabat, différenciez les visiteurs professionnels, institutionnels et culturels selon les services réellement proposés. Privilégiez des informations précises sur accès, horaires et disponibilité. Pour un site B2B, commencez par les services, les spécifications, les références autorisées et les demandes de devis. Pour un hôtel, privilégiez chambres, disponibilités et réservation. Le cahier des charges distingue ces parcours et les interfaces existantes.",
+    "link": "/services/agence-web-maroc",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/web-design/rabat": {
+    "heading": "Local implementation: Rabat",
+    "body": "In Rabat, distinguish business, institutional and cultural visitors according to actual services. Prioritize accurate access, hours and availability information. For B2B, start with services, specifications, authorized references and quote requests. For hotels, prioritize rooms, availability and booking. The brief separates these journeys and existing integration requirements.",
+    "link": "/en/services/web-design-morocco",
+    "label": "See the national service scope"
+  },
+  "/expertise/meta-ads/marrakech": {
+    "heading": "Diagnostic adapté : Marrakech",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Préparez des créations par offre et audience, avec disponibilité et prix vérifiés. Respectez les préférences publicitaires et la provenance des données. Comparez les dépenses aux réservations réellement attribuables sans compter deux fois.",
+    "link": "/services/gestion-publicites-meta",
+    "label": "Voir le périmètre national"
+  },
+  "/en/expertise/meta-ads/marrakech": {
+    "heading": "Local implementation: Marrakech",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. Prepare creatives by offer and audience with verified availability and pricing. Respect advertising preferences and data provenance. Compare spend against attributable confirmed bookings without double counting.",
+    "link": "/en/services/meta-ads",
+    "label": "See the national service scope"
+  },
+  "/secteurs/hotels-resorts": {
+    "heading": "Parcours d'acquisition propre au secteur",
+    "body": "Priorisez les chambres et offres selon les dates de séjour, la marge et les contraintes de distribution. Testez la réservation de bout en bout et comparez les canaux sur la contribution nette.",
+    "link": "/services/seo-hotel",
+    "label": "Service recommandé"
+  },
+  "/en/industries/hotels-resorts": {
+    "heading": "Sector-specific acquisition journey",
+    "body": "Prioritize rooms and offers by stay dates, contribution and distribution constraints. Test the complete booking flow and compare channels on net contribution.",
+    "link": "/en/services/hotel-seo",
+    "label": "Relevant service"
+  },
+  "/secteurs/riads-maisons-hotes": {
+    "heading": "Parcours d'acquisition propre au secteur",
+    "body": "Pour une petite capacité, une réservation annulée ou un séjour mal renseigné peut peser lourd. Clarifiez l'accès, les conditions et les disponibilités ; mesurez les demandes et réservations par langue.",
+    "link": "/services/site-web-riad-marrakech",
+    "label": "Service recommandé"
+  },
+  "/en/industries/riads-boutique-hotels": {
+    "heading": "Sector-specific acquisition journey",
+    "body": "For small inventory, a cancellation or poorly documented stay can matter. Clarify access, terms and availability; measure enquiries and bookings by language.",
+    "link": "/en/services/riad-website-design-marrakech",
+    "label": "Relevant service"
+  },
+  "/secteurs/tour-operateurs": {
+    "heading": "Parcours d'acquisition propre au secteur",
+    "body": "Présentez durée, itinéraire, point de rendez-vous, inclusions, capacité et annulation. Calculez la contribution par participant après transport, guide, commission et acquisition.",
+    "link": "/services/google-ads-maroc",
+    "label": "Service recommandé"
+  },
+  "/en/industries/tour-operators": {
+    "heading": "Sector-specific acquisition journey",
+    "body": "Explain duration, itinerary, meeting point, inclusions, capacity and cancellation terms. Calculate contribution per participant after transport, guide, commission and acquisition.",
+    "link": "/en/services/google-ads-morocco",
+    "label": "Relevant service"
+  },
+  "/secteurs/restaurants-traiteurs": {
+    "heading": "Parcours d'acquisition propre au secteur",
+    "body": "Séparez réservations de tables et devis événementiels. Pour les événements, recueillez date, capacité, budget indicatif et contraintes alimentaires ; suivez les devis acceptés plutôt que les clics.",
+    "link": "/services/agence-web-casablanca",
+    "label": "Service recommandé"
+  },
+  "/en/industries/restaurants-catering": {
+    "heading": "Sector-specific acquisition journey",
+    "body": "Separate table bookings from event quotes. For events, collect date, capacity, indicative budget and dietary requirements; track accepted quotes rather than clicks.",
+    "link": "/en/services/web-design-casablanca",
+    "label": "Relevant service"
+  },
+  "/secteurs/pme-entreprises": {
+    "heading": "Parcours d'acquisition propre au secteur",
+    "body": "Structurez les pages par métier, capacité et besoin acheteur. Les formulaires qualifient le projet, les délais et les coordonnées ; mesurez les demandes acceptées par l'équipe commerciale.",
+    "link": "/services/agence-seo-maroc",
+    "label": "Service recommandé"
+  },
+  "/en/industries/corporate-smes": {
+    "heading": "Sector-specific acquisition journey",
+    "body": "Structure pages by trade, capability and buyer need. Forms qualify project, timeframe and contact details; measure enquiries accepted by the sales team.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "Relevant service"
+  },
+  "/zones/marrakech": {
+    "heading": "Priorités locales",
+    "body": "À Marrakech, distinguez la médina, les quartiers modernes et les séjours de loisirs. Vérifiez les accès, les langues et les prestations réellement proposées par l'établissement. Le cadrage sélectionne les recherches, pages et canaux selon les données disponibles.",
+    "link": "/services/agence-seo-maroc",
+    "label": "Méthode SEO"
+  },
+  "/en/locations/marrakech": {
+    "heading": "Local priorities",
+    "body": "In Marrakech, distinguish medina stays, modern districts and leisure visits. Verify access, languages and the property's actual services. The brief selects queries, pages and channels using available data.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "SEO methodology"
+  },
+  "/zones/agadir": {
+    "heading": "Priorités locales",
+    "body": "À Agadir, distinguez séjours balnéaires, hébergements de surf et clientèle professionnelle. Vérifiez la saisonnalité de la demande à partir des réservations réelles et des disponibilités. Le cadrage sélectionne les recherches, pages et canaux selon les données disponibles.",
+    "link": "/services/agence-seo-maroc",
+    "label": "Méthode SEO"
+  },
+  "/en/locations/agadir": {
+    "heading": "Local priorities",
+    "body": "In Agadir, distinguish beach stays, surf accommodation and business guests. Assess seasonality from actual reservations and availability. The brief selects queries, pages and channels using available data.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "SEO methodology"
+  },
+  "/zones/casablanca": {
+    "heading": "Priorités locales",
+    "body": "À Casablanca, distinguez séjours d'affaires, événements et demandes B2B. Précisez l'accès, les services professionnels et les conditions de devis ou de réservation. Le cadrage sélectionne les recherches, pages et canaux selon les données disponibles.",
+    "link": "/services/agence-seo-maroc",
+    "label": "Méthode SEO"
+  },
+  "/en/locations/casablanca": {
+    "heading": "Local priorities",
+    "body": "In Casablanca, distinguish business stays, events and B2B enquiries. Explain access, business services and quote or booking terms. The brief selects queries, pages and channels using available data.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "SEO methodology"
+  },
+  "/zones/rabat": {
+    "heading": "Priorités locales",
+    "body": "À Rabat, différenciez les visiteurs professionnels, institutionnels et culturels selon les services réellement proposés. Privilégiez des informations précises sur accès, horaires et disponibilité. Le cadrage sélectionne les recherches, pages et canaux selon les données disponibles.",
+    "link": "/services/agence-seo-maroc",
+    "label": "Méthode SEO"
+  },
+  "/en/locations/rabat": {
+    "heading": "Local priorities",
+    "body": "In Rabat, distinguish business, institutional and cultural visitors according to actual services. Prioritize accurate access, hours and availability information. The brief selects queries, pages and channels using available data.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "SEO methodology"
+  },
+  "/zones/maroc": {
+    "heading": "Priorités nationales",
+    "body": "Séparez les requêtes nationales, locales et internationales. Les pages françaises et anglaises répondent à des besoins distincts ; les autres langues sont évaluées selon les données de demande et les ressources disponibles.",
+    "link": "/services/agence-seo-maroc",
+    "label": "Stratégie nationale"
+  },
+  "/en/locations/morocco": {
+    "heading": "National priorities",
+    "body": "Separate national, local and international queries. French and English pages address different needs; additional languages are evaluated against demand data and available resources.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "National strategy"
+  },
+  "/": {
+    "heading": "Comment choisir votre accompagnement",
+    "body": "Un site web, un audit SEO et une campagne publicitaire répondent à des problèmes différents. Commencez par définir l'objectif : devis qualifiés, réservations confirmées ou visibilité. Le diagnostic précise les données nécessaires et les étapes de mesure.",
+    "link": "/services",
+    "label": "En savoir plus"
+  },
+  "/en": {
+    "heading": "Choose your acquisition plan",
+    "body": "A website, SEO audit and advertising campaign solve different problems. Start with the objective: qualified enquiries, confirmed bookings or visibility. The diagnostic identifies necessary data and measurement steps.",
+    "link": "/en/services",
+    "label": "Learn more"
+  },
+  "/a-propos": {
+    "heading": "Méthode et transparence éditoriale",
+    "body": "Nous distinguons les exemples pédagogiques des résultats clients documentés. Les estimations indiquent leurs hypothèses ; les engagements commerciaux sont définis dans un devis écrit. Les références clients ne sont publiées qu'avec autorisation et éléments vérifiables.",
+    "link": "/realisations",
+    "label": "En savoir plus"
+  },
+  "/en/about": {
+    "heading": "Method and editorial transparency",
+    "body": "We distinguish illustrative scenarios from documented client results. Estimates state their assumptions; commercial commitments are defined in a written proposal. Client references are published only with permission and verifiable evidence.",
+    "link": "/en/work",
+    "label": "Learn more"
+  },
+  "/tarifs": {
+    "heading": "Ce qui entre dans le coût total",
+    "body": "Comparez honoraires initiaux et récurrents, licences, hébergement, budget média, frais de paiement et maintenance. Les tarifs affichés sont des points de départ ; le devis précise les livrables et les exclusions.",
+    "link": "/contact",
+    "label": "En savoir plus"
+  },
+  "/en/pricing": {
+    "heading": "What belongs in total cost",
+    "body": "Compare upfront and recurring fees, licenses, hosting, media budget, payment fees and maintenance. Published prices are starting points; the proposal specifies deliverables and exclusions.",
+    "link": "/en/contact",
+    "label": "Learn more"
+  },
+  "/services": {
+    "heading": "Choisir selon votre objectif",
+    "body": "Pour un besoin de visibilité organique, privilégiez l'audit SEO ; pour une campagne mesurable, vérifiez d'abord le parcours de conversion. Un moteur de réservation ou un outil métier nécessite une vérification des interfaces.",
+    "link": "/services/agence-seo-maroc",
+    "label": "En savoir plus"
+  },
+  "/en/services": {
+    "heading": "Choose by objective",
+    "body": "For organic visibility, start with an SEO audit; for measurable campaigns, verify the conversion journey first. A booking engine or business system requires an integration check.",
+    "link": "/en/services/seo-agency-morocco",
+    "label": "Learn more"
+  },
+  "/realisations": {
+    "heading": "Lire les scénarios",
+    "body": "Les dossiers présentent des méthodes de travail, pas des résultats clients certifiés. Un cas documenté indique la période, la référence de départ, les interventions, la source des données et les limites d'attribution.",
+    "link": "/a-propos",
+    "label": "En savoir plus"
+  },
+  "/en/work": {
+    "heading": "How to read these scenarios",
+    "body": "These examples describe methods, not certified client outcomes. A documented case states the period, baseline, interventions, data source and attribution limitations.",
+    "link": "/en/about",
+    "label": "Learn more"
+  },
+  "/blog": {
+    "heading": "Comment utiliser nos guides",
+    "body": "Les articles proposent des méthodes et calculs à adapter aux contrats et données réels. Les hypothèses ne constituent pas des résultats garantis ; vérifiez les conditions des plateformes avant application.",
+    "link": "/a-propos",
+    "label": "En savoir plus"
+  },
+  "/en/blog": {
+    "heading": "How to use our guides",
+    "body": "The guides offer methods and calculations to adapt to actual contracts and data. Assumptions are not guaranteed results; verify platform conditions before implementation.",
+    "link": "/en/about",
+    "label": "Learn more"
+  },
+  "/faq": {
+    "heading": "Budget et engagements",
+    "body": "Les honoraires de gestion Google Ads démarrent à 4 000 MAD/mois ; les dépenses médias sont séparées. Le repère de 3 500 à 6 000 MAD/mois pour Search local est indicatif, non un minimum universel. Le devis précise les conditions.",
+    "link": "/tarifs",
+    "label": "En savoir plus"
+  },
+  "/en/faq": {
+    "heading": "Budget and commitments",
+    "body": "Google Ads management starts at 4,000 MAD/month; media spend is separate. The 3,500–6,000 MAD/month local Search reference is illustrative, not a universal minimum. The proposal defines terms.",
+    "link": "/en/pricing",
+    "label": "Learn more"
+  },
+  "/contact": {
+    "heading": "Préparer votre demande",
+    "body": "Indiquez votre activité, votre objectif, votre site actuel et les principales contraintes. Ne transmettez pas de mot de passe ni de données clients dans le formulaire. Le diagnostic identifie les prochaines étapes et les accès éventuellement nécessaires.",
+    "link": "/services",
+    "label": "En savoir plus"
+  },
+  "/en/contact": {
+    "heading": "Prepare your enquiry",
+    "body": "Share your business, objective, current website and main constraints. Do not include passwords or customer records in the form. The diagnostic identifies next steps and any necessary access.",
+    "link": "/en/services",
+    "label": "Learn more"
+  },
+  "/secteurs": {
+    "heading": "Une méthode par secteur",
+    "body": "Un hôtel mesure les réservations confirmées ; un traiteur distingue demandes de devis et événements signés ; une entreprise B2B suit les opportunités acceptées. Choisissez votre secteur pour définir les pages prioritaires, le parcours et les indicateurs adaptés.",
+    "link": "/secteurs/pme-entreprises",
+    "label": "En savoir plus"
+  },
+  "/en/industries": {
+    "heading": "A sector-specific method",
+    "body": "A hotel measures confirmed bookings; catering separates enquiries from signed events; B2B companies track accepted opportunities. Select your sector to define priority pages, conversion journeys and suitable metrics.",
+    "link": "/en/industries/corporate-smes",
+    "label": "Learn more"
+  },
+  "/zones": {
+    "heading": "Interventions et couverture",
+    "body": "Nous étudions les besoins par ville et secteur, sans présumer d'une implantation physique dans chaque zone. Le périmètre, les échanges à distance et les déplacements éventuels sont définis au cadrage.",
+    "link": "/zones/maroc",
+    "label": "En savoir plus"
+  },
+  "/en/locations": {
+    "heading": "Service coverage",
+    "body": "We assess needs by city and sector without assuming a physical office in each area. Scope, remote collaboration and any travel are agreed during scoping.",
+    "link": "/en/locations/morocco",
+    "label": "Learn more"
+  },
+  "/realisations/services-voyage-maroc": {
+    "heading": "Protocole de mesure proposé",
+    "body": "Définissez une référence de ventes par excursion, le coût par participant et la capacité avant de tester les campagnes. Les résultats doivent être rapprochés des ventes confirmées.",
+    "link": "/contact",
+    "label": "Évaluer votre projet"
+  },
+  "/en/work/travel-morocco-services": {
+    "heading": "Proposed measurement protocol",
+    "body": "Define a sales baseline by excursion, per-participant cost and capacity before testing campaigns. Reconcile results with confirmed sales.",
+    "link": "/en/contact",
+    "label": "Assess your project"
+  },
+  "/realisations/nomad-eats-traiteur": {
+    "heading": "Protocole de mesure proposé",
+    "body": "Mesurez les devis qualifiés, les événements signés et la marge par prestation. Distinguez le scénario proposé d'un résultat client constaté.",
+    "link": "/contact",
+    "label": "Évaluer votre projet"
+  },
+  "/en/work/nomad-eats-catering": {
+    "heading": "Proposed measurement protocol",
+    "body": "Measure qualified quotes, signed events and contribution per engagement. Distinguish the proposed scenario from an observed client result.",
+    "link": "/en/contact",
+    "label": "Assess your project"
+  },
+  "/realisations/art-house-marrakech": {
+    "heading": "Protocole de mesure proposé",
+    "body": "Testez la disponibilité par atelier, le nombre de places, le coût des canaux et les réservations confirmées. Ce modèle ne constitue pas une preuve de résultat.",
+    "link": "/contact",
+    "label": "Évaluer votre projet"
+  },
+  "/en/work/art-house-marrakech": {
+    "heading": "Proposed measurement protocol",
+    "body": "Test availability by workshop, capacity, channel cost and confirmed bookings. This model is not evidence of results.",
+    "link": "/en/contact",
+    "label": "Assess your project"
+  }
+}
