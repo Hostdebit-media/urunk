@@ -1,0 +1,22 @@
+{
+  "base": "6842b7de-1cc6-4c7b-ad99-e73f05386814",
+  "append": "ops/followup-module-v505.js",
+  "edits": [
+    [
+      "  if(url.pathname===URUNK_QUAL_BASE||url.pathname===URUNK_QUAL_BASE+\"/\")return urunkQualificationRouteV504(request,env,url);",
+      "  if(url.pathname===URUNK_FOLLOW_BASE||url.pathname===URUNK_FOLLOW_BASE+\"/\")return urunkFollowRouteV505(request,env,url);\n  if(url.pathname===URUNK_QUAL_BASE||url.pathname===URUNK_QUAL_BASE+\"/\")return urunkQualificationRouteV504(request,env,url);"
+    ],
+    [
+      "<a href=\"/private/growth/crm/qualification\">Qualification</a><a href=\"/cdn-cgi/access/logout\">",
+      "<a href=\"/private/growth/crm/qualification\">Qualification</a><a href=\"/private/growth/crm/follow-up\">Relances</a><a href=\"/cdn-cgi/access/logout\">"
+    ],
+    [
+      "<a href=\"/private/growth/crm/sales\">Ventes</a> · <a href=\"/private/growth/crm/revenue\">Revenus</a></nav>",
+      "<a href=\"/private/growth/crm/sales\">Ventes</a> · <a href=\"/private/growth/crm/follow-up\">Relances</a> · <a href=\"/private/growth/crm/revenue\">Revenus</a></nav>"
+    ],
+    [
+      "<a href=\"/private/growth/crm/sales\">Devis et relances</a></nav>",
+      "<a href=\"/private/growth/crm/sales\">Devis</a> · <a href=\"/private/growth/crm/follow-up\">Relances</a></nav>"
+    ]
+  ]
+}
