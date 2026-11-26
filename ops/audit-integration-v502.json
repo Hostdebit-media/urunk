@@ -1,0 +1,31 @@
+{
+  "base": "051500d4-226f-404c-8b56-872edb118021",
+  "append": "ops/audit-funnel-v502.js",
+  "extra": "const URUNK_AUDIT_CTA_FR='<section data-urunk-audit=\"v502\" class=\"mt-8 border-t border-primary/15 pt-8\"><h2 class=\"font-serif text-3xl mb-3\">Votre site peut-il attirer davantage de prospects ?</h2><p class=\"mb-4\">Demandez un diagnostic SEO initial gratuit : visibilité, points techniques et priorités de croissance. Sans engagement.</p><a class=\"underline font-medium text-accent\" href=\"/audit-seo-gratuit\">Demander mon audit SEO gratuit</a></section>';\nconst URUNK_AUDIT_CTA_EN='<section data-urunk-audit=\"v502\" class=\"mt-8 border-t border-primary/15 pt-8\"><h2 class=\"font-serif text-3xl mb-3\">Could your website attract more qualified inquiries?</h2><p class=\"mb-4\">Request a free initial SEO review: visibility, technical issues and growth priorities. No commitment.</p><a class=\"underline font-medium text-accent\" href=\"/en/free-seo-audit\">Request my free SEO audit</a></section>';\nconst URUNK_AUDIT_SITEMAP='<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\" xmlns:xhtml=\"http://www.w3.org/1999/xhtml\">'+Object.keys(URUNK_AUDIT_PATHS).map(p=>'<url><loc>https://urunk.com'+p+'</loc><xhtml:link rel=\"alternate\" hreflang=\"fr\" href=\"https://urunk.com/audit-seo-gratuit\"/><xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"https://urunk.com/en/free-seo-audit\"/><xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"https://urunk.com/audit-seo-gratuit\"/></url>').join(\"\")+'</urlset>';\nfunction urunkAuditSitemap(request){return new Response(request.method===\"HEAD\"?null:URUNK_AUDIT_SITEMAP,{headers:{\"Content-Type\":\"application/xml; charset=utf-8\",\"Cache-Control\":\"public, max-age=3600\",\"X-Content-Type-Options\":\"nosniff\"}})}\n",
+  "ctaPaths": [
+    "/",
+    "/en",
+    "/tarifs",
+    "/en/pricing",
+    "/services/agence-seo-maroc",
+    "/en/services/seo-agency-morocco",
+    "/services/seo-hotel",
+    "/en/services/hotel-seo",
+    "/services/local-seo-morocco",
+    "/en/services/local-seo-morocco"
+  ],
+  "edits": [
+    [
+      "  const source = VALID_SOURCES.has(rawSource) ? rawSource : lang === \"en\" ? \"contact_page_en\" : \"contact_page_fr\";",
+      "  const source = options.auditFunnel===true ? \"seo_audit_\"+lang : VALID_SOURCES.has(rawSource) ? rawSource : lang === \"en\" ? \"contact_page_en\" : \"contact_page_fr\";"
+    ],
+    [
+      "  if(url.pathname===URUNK_REVENUE_BASE||url.pathname===URUNK_REVENUE_BASE+\"/\")return urunkRevenueRoute(request,env,url);",
+      "  if(url.hostname===\"urunk.com\"&&Object.hasOwn(URUNK_AUDIT_PATHS,url.pathname))return urunkAuditRoute(request,env,url);\n  if(url.hostname===\"urunk.com\"&&url.pathname===\"/sitemap-audit.xml\"&&[\"GET\",\"HEAD\"].includes(request.method))return urunkAuditSitemap(request);\n  if(url.pathname===URUNK_REVENUE_BASE||url.pathname===URUNK_REVENUE_BASE+\"/\")return urunkRevenueRoute(request,env,url);"
+    ],
+    [
+      "return urunkTextResource(request,URUNK_ROBOTS_V34);",
+      "return urunkTextResource(request,URUNK_ROBOTS_V34+\"Sitemap: https://urunk.com/sitemap-audit.xml\\n\");"
+    ]
+  ]
+}
