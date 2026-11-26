@@ -1,0 +1,22 @@
+{
+  "base": "92d63397-4d61-41fe-8bcc-a7f560fa60fa",
+  "append": "ops/contracts-module-v506.js",
+  "edits": [
+    [
+      "  if(url.pathname===URUNK_FOLLOW_BASE||url.pathname===URUNK_FOLLOW_BASE+\"/\")return urunkFollowRouteV505(request,env,url);",
+      "  if(url.pathname===URUNK_BILL_BASE||url.pathname===URUNK_BILL_BASE+\"/\")return urunkBillRouteV506(request,env,url);\n  if(url.pathname===URUNK_FOLLOW_BASE||url.pathname===URUNK_FOLLOW_BASE+\"/\")return urunkFollowRouteV505(request,env,url);"
+    ],
+    [
+      "<a href=\"/private/growth/crm/follow-up\">Relances</a><a href=\"/cdn-cgi/access/logout\">",
+      "<a href=\"/private/growth/crm/follow-up\">Relances</a><a href=\"/private/growth/crm/contracts\">Contrats</a><a href=\"/cdn-cgi/access/logout\">"
+    ],
+    [
+      "<a href=\"/private/growth/crm/follow-up\">Relances</a></nav>",
+      "<a href=\"/private/growth/crm/follow-up\">Relances</a> · <a href=\"/private/growth/crm/contracts\">Contrats & encaissements</a></nav>"
+    ],
+    [
+      "<a href=\"/private/growth/crm/revenue\">Revenus</a></nav><section><h2>Relances prioritaires",
+      "<a href=\"/private/growth/crm/revenue\">Revenus</a> · <a href=\"/private/growth/crm/contracts\">Contrats</a></nav><section><h2>Relances prioritaires"
+    ]
+  ]
+}
