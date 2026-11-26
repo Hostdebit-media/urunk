@@ -57,7 +57,7 @@ const urunkNormalizeSchema=(html,path)=>{
 const urunkAssetResponse=(response,body,request,originalPath,activePrefix,changed,edits)=>{
   const h=new Headers(response.headers);
   const current=activePrefix===URUNK_PATCH_PREFIX;
-  const immutable=current&&/\-[a-zA-Z0-9]{6,}\\.(?:js|mjs|css)$/.test(originalPath);
+  const immutable=current&&/\-[a-zA-Z0-9]{6,}\.(?:js|mjs|css)$/.test(originalPath);
   const ttl=immutable?86400:3600;
   h.set("cache-control", "public, max-age="+ttl+(immutable?", immutable":""));
   h.set("cdn-cache-control","public, max-age="+ttl);
@@ -70,7 +70,7 @@ const urunkAssetResponse=(response,body,request,originalPath,activePrefix,change
   }
   const tag=h.get("etag");
   const requested=request.headers.get("if-none-match");
-  if(tag&&requested&&requested.split(",").some(t=>t.trim()==="*"||t.trim().replace(/^W\\//,"")===tag.replace(/^W\\//,""))){
+  if(tag&&requested&&requested.split(",").some(t=>t.trim()==="*"||t.trim().replace(/^W\//,"")===tag.replace(/^W\//,""))){
     h.delete("content-length");h.delete("content-encoding");
     return new Response(null,{status:304,headers:h});
   }
@@ -97,7 +97,7 @@ worker_default.fetch = async function(request,env,ctx) {
   }
   const target=new URL(url);target.pathname=originalPath;
   const response=await urunkOriginalFetch(new Request(target.toString(),{method:"GET",headers}),env,ctx);
-  if(response.status!==200)return response;
+  if(response.status!==200)return request.method==="HEAD"?new Response(null,{status:response.status,headers:response.headers}):response;
   const ct=response.headers.get("content-type")||"";
   const html=ct.includes("text/html")&&!isVirtual;
   const javascript=isVirtual&&/\.(?:js|mjs)$/.test(originalPath)&&/javascript|ecmascript/.test(ct);
@@ -111,7 +111,6 @@ worker_default.fetch = async function(request,env,ctx) {
   if(javascript){result.text=result.text.replace(/(["'])@type\1\s*:\s*(["'])ProfessionalService\2/g,'$1@type$1:$2LocalBusiness$2').replace(/(["'])@type\1\s*:\s*\[\s*(["'])ProfessionalService\2\s*,\s*(["'])DigitalMarketingAgency\3\s*\]/g,'$1@type$1:"LocalBusiness"').replace(/(["'])@type\1\s*:\s*\[\s*(["'])LocalBusiness\2\s*,\s*(["'])ProfessionalService\3\s*\]/g,'$1@type$1:"LocalBusiness"');}
   result.text=urunkPatchAssetLinks(result.text,javascript);
   if(javascript){
-    const changed=result.text!==original;
     return urunkAssetResponse(response,result.text,request,originalPath,activePrefix,true,result.count);
   }
   if(result.text===original)return new Response(original,{status:response.status,headers:response.headers});
