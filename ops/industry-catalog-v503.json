@@ -1,0 +1,203 @@
+{
+  "version": "5.0.3",
+  "segments": [
+    {
+      "id": "hotels",
+      "sector": "hospitality",
+      "goal": "bookings",
+      "fr": {
+        "path": "/secteurs/hotels-resorts",
+        "title": "Hôtels & resorts : développez les réservations directes",
+        "intro": "Faites des pages chambres, offres et expériences un parcours de réservation clair, sur mobile comme sur ordinateur.",
+        "needs": [
+          "Identifier les obstacles entre la recherche et le moteur de réservation.",
+          "Présenter les types de chambres, conditions et avantages directs sans ambiguïté.",
+          "Mesurer les réservations confirmées et le coût d’acquisition par canal."
+        ],
+        "offer": "Growth — SEO + Ads",
+        "price": 8000,
+        "service": "/services/seo-hotel",
+        "measure": "Réservations directes confirmées, taux de conversion et contribution nette."
+      },
+      "en": {
+        "path": "/en/industries/hotels-resorts",
+        "title": "Hotels & resorts: grow direct bookings",
+        "intro": "Turn room, offer and experience pages into a clear booking journey on mobile and desktop.",
+        "needs": [
+          "Identify friction between search and the booking engine.",
+          "Present room types, terms and direct-booking benefits clearly.",
+          "Measure confirmed bookings and acquisition costs by channel."
+        ],
+        "offer": "Growth — SEO + Ads",
+        "price": 8000,
+        "service": "/en/services/hotel-seo",
+        "measure": "Confirmed direct bookings, conversion rate and net contribution."
+      }
+    },
+    {
+      "id": "riads",
+      "sector": "hospitality",
+      "goal": "bookings",
+      "fr": {
+        "path": "/secteurs/riads-maisons-hotes",
+        "title": "Riads & maisons d’hôtes : rendez votre établissement plus facile à réserver",
+        "intro": "Mettez en valeur l’expérience, l’accès, les chambres et les disponibilités, pour des voyageurs qui vous découvrent en français ou en anglais.",
+        "needs": [
+          "Clarifier l’accès, les conditions de séjour et les questions fréquentes.",
+          "Structurer les pages locales et les informations de réservation.",
+          "Simplifier la demande de disponibilité et le parcours mobile."
+        ],
+        "offer": "SEO — Visibilité durable",
+        "price": 4000,
+        "service": "/services/site-web-riad-marrakech",
+        "measure": "Demandes de disponibilité qualifiées et réservations par langue."
+      },
+      "en": {
+        "path": "/en/industries/riads-boutique-hotels",
+        "title": "Riads & guesthouses: make your property easier to book",
+        "intro": "Showcase the stay, access, rooms and availability for French- and English-speaking travelers.",
+        "needs": [
+          "Clarify access, stay policies and common guest questions.",
+          "Structure local pages and booking information.",
+          "Simplify availability inquiries and mobile booking."
+        ],
+        "offer": "SEO — Sustainable Visibility",
+        "price": 4000,
+        "service": "/en/services/riad-website-design-marrakech",
+        "measure": "Qualified availability inquiries and bookings by language."
+      }
+    },
+    {
+      "id": "industrial",
+      "sector": "b2b",
+      "goal": "leads",
+      "fr": {
+        "path": "/secteurs/industrie-b2b",
+        "title": "Industrie & B2B : transformez votre expertise en demandes de devis",
+        "intro": "Pour fabricants, sous-traitants et prestataires industriels au Maroc : présentez vos capacités et vos références aux acheteurs qui recherchent un fournisseur.",
+        "needs": [
+          "Organiser les pages par procédés, capacités, applications et zones desservies.",
+          "Publier uniquement des certifications, équipements et références vérifiables.",
+          "Qualifier les demandes par besoin technique, délai et coordonnées professionnelles."
+        ],
+        "offer": "SEO — Visibilité durable",
+        "price": 4000,
+        "service": "/services/agence-seo-maroc",
+        "measure": "Demandes de devis pertinentes, opportunités acceptées par les commerciaux et devis gagnés."
+      },
+      "en": {
+        "path": "/en/industries/industrial-b2b",
+        "title": "Industrial & B2B: turn your expertise into RFQs",
+        "intro": "For manufacturers, subcontractors and industrial service providers in Morocco: present your capabilities and references to buyers searching for suppliers.",
+        "needs": [
+          "Organize pages around processes, capabilities, applications and service areas.",
+          "Publish only verifiable certifications, equipment and references.",
+          "Qualify inquiries by technical need, timeframe and business contact details."
+        ],
+        "offer": "SEO — Sustainable Visibility",
+        "price": 4000,
+        "service": "/en/services/seo-agency-morocco",
+        "measure": "Relevant RFQs, sales-accepted opportunities and won quotations."
+      }
+    },
+    {
+      "id": "smes",
+      "sector": "local",
+      "goal": "local",
+      "fr": {
+        "path": "/secteurs/pme-entreprises",
+        "title": "PME & services locaux : attirez les bonnes demandes",
+        "intro": "Clarifiez vos prestations et votre zone d’intervention pour aider les prospects à vous trouver et à choisir le bon service.",
+        "needs": [
+          "Construire des pages par service et besoin client.",
+          "Vérifier les informations locales et la cohérence du profil Google Business lorsque pertinent.",
+          "Simplifier la prise de contact et distinguer les demandes qualifiées."
+        ],
+        "offer": "SEO — Visibilité durable",
+        "price": 4000,
+        "service": "/services/local-seo-morocco",
+        "measure": "Demandes pertinentes, appels qualifiés et devis acceptés."
+      },
+      "en": {
+        "path": "/en/industries/corporate-smes",
+        "title": "SMEs & local businesses: attract the right inquiries",
+        "intro": "Clarify your services and coverage so prospects can find you and choose the right service.",
+        "needs": [
+          "Build pages around services and customer needs.",
+          "Verify local information and Google Business Profile consistency when relevant.",
+          "Simplify contact and distinguish qualified inquiries."
+        ],
+        "offer": "SEO — Sustainable Visibility",
+        "price": 4000,
+        "service": "/en/services/local-seo-morocco",
+        "measure": "Relevant inquiries, qualified calls and accepted quotes."
+      }
+    },
+    {
+      "id": "tourism",
+      "sector": "tourism",
+      "goal": "leads",
+      "fr": {
+        "path": "/secteurs/tour-operateurs",
+        "title": "Tourisme & voyages : captez les demandes d’itinéraires",
+        "intro": "Aidez les voyageurs à comparer vos circuits et excursions, à comprendre les inclusions et à demander une proposition adaptée.",
+        "needs": [
+          "Décrire les itinéraires, durées, départs et conditions d’annulation.",
+          "Structurer les offres par destination et intention de recherche.",
+          "Qualifier les demandes par dates, taille du groupe et type de séjour."
+        ],
+        "offer": "Ads — Acquisition ciblée",
+        "price": 4000,
+        "service": "/services/google-ads-maroc",
+        "measure": "Demandes d’itinéraires qualifiées, réservations confirmées et contribution par voyage."
+      },
+      "en": {
+        "path": "/en/industries/tour-operators",
+        "title": "Tourism & travel: capture itinerary inquiries",
+        "intro": "Help travelers compare tours and excursions, understand inclusions and request an appropriate proposal.",
+        "needs": [
+          "Describe itineraries, duration, departures and cancellation terms.",
+          "Structure offers by destination and search intent.",
+          "Qualify inquiries by dates, group size and trip type."
+        ],
+        "offer": "Ads — Targeted Acquisition",
+        "price": 4000,
+        "service": "/en/services/google-ads-morocco",
+        "measure": "Qualified itinerary inquiries, confirmed bookings and contribution per trip."
+      }
+    },
+    {
+      "id": "restaurants",
+      "sector": "local",
+      "goal": "local",
+      "fr": {
+        "path": "/secteurs/restaurants-traiteurs",
+        "title": "Restaurants & traiteurs : distinguez réservations et demandes événementielles",
+        "intro": "Facilitez les réservations de tables et les devis de réception avec des parcours distincts et des informations accessibles.",
+        "needs": [
+          "Présenter les menus, horaires, localisation et modalités de réservation.",
+          "Qualifier les événements par date, capacité et besoins.",
+          "Mesurer les réservations et devis acceptés plutôt que les clics seuls."
+        ],
+        "offer": "SEO — Visibilité durable",
+        "price": 4000,
+        "service": "/services/local-seo-morocco",
+        "measure": "Réservations confirmées et demandes événementielles qualifiées."
+      },
+      "en": {
+        "path": "/en/industries/restaurants-catering",
+        "title": "Restaurants & caterers: separate bookings from event inquiries",
+        "intro": "Make table bookings and event quotations easier with separate journeys and accessible information.",
+        "needs": [
+          "Present menus, hours, location and booking terms.",
+          "Qualify events by date, capacity and requirements.",
+          "Measure confirmed bookings and accepted quotes rather than clicks alone."
+        ],
+        "offer": "SEO — Sustainable Visibility",
+        "price": 4000,
+        "service": "/en/services/local-seo-morocco",
+        "measure": "Confirmed reservations and qualified event inquiries."
+      }
+    }
+  ]
+}
