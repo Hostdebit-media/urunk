@@ -1,0 +1,1992 @@
+{
+  "viewport": [
+    390,
+    844
+  ],
+  "design": "43",
+  "css": {
+    "status": 200,
+    "etag": "W/\"urunk-v43-index-dzwlw4ue.css\"",
+    "release": "v43-live-overlay",
+    "has": true
+  },
+  "out": [
+    {
+      "p": "/",
+      "h1": {
+        "text": "Votre indépendance digitale commence ici.",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 79
+      },
+      "h2": [
+        {
+          "text": "Pourquoi vos futurs clients passent encore par les plateform",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        },
+        {
+          "text": "Trois services complémentaires selon votre besoin",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Comment se déroule un projet avec notre équipe",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        }
+      ],
+      "body": [
+        {
+          "text": "Sites web, référencement naturel et campagnes publicitaires ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 216
+        },
+        {
+          "text": "Un voyageur qui connaît déjà votre nom retourne souvent rése",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        }
+      ],
+      "sections": [
+        {
+          "text": "Agence web & acquisition · CasablancaVotre indépendance digi",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "40px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1351
+        },
+        {
+          "text": "Le coût réelPourquoi vos futurs clients passent encore par l",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1351
+        },
+        {
+          "text": "ServicesTrois services complémentaires selon votre besoinCon",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 2212
+        }
+      ],
+      "authority": {
+        "text": "Comment choisir votre accompagnementUn site web, un audit SE",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 408
+      },
+      "fields": [
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 292,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 292,
+          "height": 49
+        },
+        {
+          "text": "Sélectionnez votre activitéRiad ou maison d'hôtesHôtel ou co",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "normal",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 292,
+          "height": 48
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 28,
+          "height": 48
+        }
+      ],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Demander un audit gratuit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 266,
+          "height": 48
+        },
+        {
+          "text": "Envoyer ma demande d'audit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 292,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/en",
+      "h1": {
+        "text": "Your digital independence starts here.",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 79
+      },
+      "h2": [
+        {
+          "text": "Why guests who already know your name still book through OTA",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        },
+        {
+          "text": "Three practical services tailored to your stage",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "How a project runs with our team",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        }
+      ],
+      "body": [
+        {
+          "text": "Websites, SEO and paid campaigns for hotels, riads and busin",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 189
+        },
+        {
+          "text": "A traveller who looks you up by name often books elsewhere w",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        }
+      ],
+      "sections": [
+        {
+          "text": "Web & acquisition agency · CasablancaYour digital independen",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "40px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1324
+        },
+        {
+          "text": "The real costWhy guests who already know your name still boo",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1324
+        },
+        {
+          "text": "ServicesThree practical services tailored to your stageTake ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 2185
+        }
+      ],
+      "authority": {
+        "text": "Choose your acquisition planA website, SEO audit and adverti",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 326
+      },
+      "fields": [
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 292,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 292,
+          "height": 49
+        },
+        {
+          "text": "Select your business typeRiad or guesthouseHotel or resortTo",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "normal",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 292,
+          "height": 48
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 28,
+          "height": 48
+        }
+      ],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Request a free audit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 212,
+          "height": 48
+        },
+        {
+          "text": "Send audit request",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 292,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/services/agence-seo-maroc",
+      "h1": {
+        "text": "Agence SEO Spécialisée au Maroc",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 79
+      },
+      "h2": [
+        {
+          "text": "Votre site attire-t-il les bons prospects ?",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Livrables du référencement naturel",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Du diagnostic au suivi",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 33
+        }
+      ],
+      "body": [
+        {
+          "text": "Pour PME, entreprises B2B, commerces et professionnels du to",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 162
+        },
+        {
+          "text": "Une stratégie guidée par vos objectifs commerciaux : Nous pr",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 328,
+          "height": 157
+        }
+      ],
+      "sections": [
+        {
+          "text": "Solution digitale hôtellerie et tourismeAgence SEO Spécialis",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1173
+        },
+        {
+          "text": "Diagnostic terrainVotre site attire-t-il les bons prospects ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1055
+        },
+        {
+          "text": "Livrables du référencement naturel01Optimisation BilingueCib",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 856
+        }
+      ],
+      "authority": {
+        "text": "Périmètre et critères de réceptionLe programme national comm",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 381
+      },
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Demander un audit gratuit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 266,
+          "height": 48
+        },
+        {
+          "text": "Demander un devis détaillé",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 286,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/expertise/seo-hotel/agadir",
+      "h1": {
+        "text": "SEO Hôtelier à Agadir",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 40
+      },
+      "h2": [
+        {
+          "text": "Indicateurs Clés du Marché : Agadir",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Pourquoi tant de sites d'hôtels marocains restent-ils peu vi",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        },
+        {
+          "text": "Nos 3 Leviers SEO Hôteliers :",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 33
+        }
+      ],
+      "body": [
+        {
+          "text": "SEO hôtelier à Agadir et Taghazout : captez les recherches i",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        },
+        {
+          "text": "Urunk Agency déploie son expertise SEO Hôtelier à Agadir en ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 300,
+          "height": 243
+        }
+      ],
+      "sections": [
+        {
+          "text": "Accueil/Expertise/Agadir/SEO HôtelierAgadir, Hôtels & Resort",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 881
+        },
+        {
+          "text": "Repères et dynamique du secteurIndicateurs Clés du Marché : ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 775
+        },
+        {
+          "text": "Diagnostic stratégiquePourquoi tant de sites d'hôtels maroca",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1896
+        }
+      ],
+      "authority": {
+        "text": "Diagnostic adapté : AgadirÀ Agadir, distinguez séjours balné",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 488
+      },
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Demander un audit de visibilité",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 307,
+          "height": 48
+        },
+        {
+          "text": "Stratégie de Réservation Directe pour Hôtels & Riads",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 350,
+          "height": 69
+        },
+        {
+          "text": "Obtenir un devis personnalisé",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 284,
+          "height": 69
+        }
+      ]
+    },
+    {
+      "p": "/secteurs/pme-entreprises",
+      "h1": {
+        "text": "Stratégie Digitale & SEO B2B pour PME & Grandes Entreprises",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 119
+      },
+      "h2": [
+        {
+          "text": "Le saut digital B2B : Affirmer votre autorité commerciale à ",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        },
+        {
+          "text": "Comment Urunk Aide les PME & Entreprises",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Expertises Locales Dédiées à Votre Secteur d'Activité",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        }
+      ],
+      "body": [
+        {
+          "text": "Affirmez votre leadership à Casablanca, Rabat et sur tout le",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        },
+        {
+          "text": "Urunk Agency accompagne les acteurs de ce secteur au Maroc a",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 328,
+          "height": 157
+        }
+      ],
+      "sections": [
+        {
+          "text": "Expertise sectorielleStratégie Digitale & SEO B2B pour PME &",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1078
+        },
+        {
+          "text": "Analyse du marchéLe saut digital B2B : Affirmer votre autori",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1333
+        },
+        {
+          "text": "Services connectésComment Urunk Aide les PME & Entreprises01",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1272
+        }
+      ],
+      "authority": {
+        "text": "Parcours d'acquisition propre au secteurStructurez les pages",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 327
+      },
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Demander un audit gratuit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 266,
+          "height": 48
+        },
+        {
+          "text": "Génération de Leads d'Entreprises B2B",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 350,
+          "height": 69
+        }
+      ]
+    },
+    {
+      "p": "/zones/casablanca",
+      "h1": {
+        "text": "SEO B2B, Référencement Local & Agence Web à Casablanca",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 158
+      },
+      "h2": [
+        {
+          "text": "Écosystème d'Affaires à Casablanca : Dominer l'Acquisition B",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 131
+        },
+        {
+          "text": "Nos Services à Casablanca",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 33
+        },
+        {
+          "text": "Pôles d'Expertise Métier & Acquisition dans cette Zone",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        }
+      ],
+      "body": [
+        {
+          "text": "Création web, SEO B2B et référencement local pour les entrep",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 162
+        },
+        {
+          "text": "Urunk Agency déploie une présence opérationnelle et stratégi",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 328,
+          "height": 202
+        }
+      ],
+      "sections": [
+        {
+          "text": "Pôle régionalSEO B2B, Référencement Local & Agence Web à Cas",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1216
+        },
+        {
+          "text": "Analyse régionaleÉcosystème d'Affaires à Casablanca : Domine",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1391
+        },
+        {
+          "text": "Services locauxNos Services à Casablanca01SEO B2B & Autorité",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1572
+        }
+      ],
+      "authority": {
+        "text": "Priorités localesÀ Casablanca, distinguez séjours d'affaires",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 353
+      },
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Lancer un projet dans cette zone",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 319,
+          "height": 48
+        },
+        {
+          "text": "Contacter l'agence à Casablanca",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 315,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/realisations",
+      "h1": {
+        "text": "SEO B2B, Référencement Local & Agence Web à Casablanca",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 158
+      },
+      "h2": [
+        {
+          "text": "Écosystème d'Affaires à Casablanca : Dominer l'Acquisition B",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 131
+        },
+        {
+          "text": "Nos Services à Casablanca",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 33
+        },
+        {
+          "text": "Pôles d'Expertise Métier & Acquisition dans cette Zone",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        }
+      ],
+      "body": [
+        {
+          "text": "Création web, SEO B2B et référencement local pour les entrep",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 162
+        },
+        {
+          "text": "Urunk Agency déploie une présence opérationnelle et stratégi",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 328,
+          "height": 202
+        }
+      ],
+      "sections": [
+        {
+          "text": "Pôle régionalSEO B2B, Référencement Local & Agence Web à Cas",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1216
+        },
+        {
+          "text": "Analyse régionaleÉcosystème d'Affaires à Casablanca : Domine",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1391
+        },
+        {
+          "text": "Services locauxNos Services à Casablanca01SEO B2B & Autorité",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1572
+        }
+      ],
+      "authority": {
+        "text": "Priorités localesÀ Casablanca, distinguez séjours d'affaires",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 353
+      },
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Lancer un projet dans cette zone",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 319,
+          "height": 48
+        },
+        {
+          "text": "Contacter l'agence à Casablanca",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 315,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/tarifs",
+      "h1": {
+        "text": "Des Tarifs d'Agence Transparents",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 79
+      },
+      "h2": [
+        {
+          "text": "Un projet une fois, un accompagnement au mois.",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Prestations individuelles",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 33
+        },
+        {
+          "text": "Le modèle financier de la réservation directe",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        }
+      ],
+      "body": [
+        {
+          "text": "Arrêtez de surpayer les OTA. Investissez dans votre propre m",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        },
+        {
+          "text": "En résumé : Urunk facture un tarif forfaitaire à partir de 1",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px 0px 0px 20px",
+          "radius": "0px",
+          "width": 350,
+          "height": 202
+        }
+      ],
+      "sections": [
+        {
+          "text": "Investissement TransparentDes Tarifs d'Agence TransparentsAr",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1156
+        },
+        {
+          "text": "Structure tarifaireUn projet une fois, un accompagnement au ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1899
+        },
+        {
+          "text": "Grille détailléePrestations individuellesLes tarifs publiés ",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 871
+        }
+      ],
+      "authority": {
+        "text": "Ce qui entre dans le coût totalComparez honoraires initiaux ",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 326
+      },
+      "fields": [
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        }
+      ],
+      "calculation": "18.000,00&nbsp;MAD",
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Demander un audit gratuit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 266,
+          "height": 48
+        },
+        {
+          "text": "Demander un devis web",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 284,
+          "height": 48
+        },
+        {
+          "text": "Discuter de ce pack",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 204,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/blog",
+      "h1": {
+        "text": "Stratégies & Conseils Hôtellerie",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 79
+      },
+      "h2": [
+        {
+          "text": "Étapes essentielles pour créer un site web performant pour u",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "20px",
+          "line": "26px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 78
+        },
+        {
+          "text": "Commissions OTA au Maroc : combien vous coûte réellement une",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "20px",
+          "line": "26px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 104
+        },
+        {
+          "text": "Google Ads ou TripAdvisor Ads pour un riad ou un hôtel au Ma",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "20px",
+          "line": "26px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 78
+        }
+      ],
+      "body": [
+        {
+          "text": "Découvrez comment réduire les commissions des OTA, optimiser",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 135
+        },
+        {
+          "text": "Création de site web au Maroc pour hôtels et riads : WordPre",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        }
+      ],
+      "sections": [
+        {
+          "text": "Ressources & ExpertiseStratégies & Conseils HôtellerieDécouv",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 422
+        },
+        {
+          "text": "Création de Site Web8 min de lectureÉtapes essentielles pour",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 7373
+        }
+      ],
+      "authority": {
+        "text": "Comment utiliser nos guidesLes articles proposent des méthod",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 326
+      },
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": []
+    },
+    {
+      "p": "/en/blog/email-marketing-automation-for-hotels",
+      "h1": {
+        "text": "Email Marketing Automation for Hotels: Turning Guest Databas",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "30px",
+        "line": "34.2px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 137
+      },
+      "h2": [
+        {
+          "text": "Implementation and measurement",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "24px",
+          "line": "30px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 316,
+          "height": 30
+        },
+        {
+          "text": "Configure triggers and safeguards",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "24px",
+          "line": "30px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 30
+        },
+        {
+          "text": "Three sequences, three objectives",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "24px",
+          "line": "30px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 30
+        }
+      ],
+      "body": [
+        {
+          "text": "Build a lifecycle workflow around booking ID, arrival and de",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 316,
+          "height": 297
+        },
+        {
+          "text": "For a confirmed reservation, send essential arrival informat",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 351
+        }
+      ],
+      "sections": [
+        {
+          "text": "Back to all articlesEmail MarketingAugust 14, 20268 min read",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 475
+        },
+        {
+          "text": "Implementation and measurementBuild a lifecycle workflow aro",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 3974
+        },
+        {
+          "text": "Ready to Boost Your Direct Bookings?Our team at Urunk specia",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 431
+        }
+      ],
+      "authority": null,
+      "fields": [],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Book a Free Strategy Consultation",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 331,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/contact",
+      "h1": {
+        "text": "Prêt à obtenir plus de réservations directes et réduire les ",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 119
+      },
+      "h2": [
+        {
+          "text": "Tarification transparente & suivi",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "20px",
+          "line": "26px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 26
+        },
+        {
+          "text": "Obtenir mon devis gratuit",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "20px",
+          "line": "26px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 284,
+          "height": 26
+        },
+        {
+          "text": "À quoi s'attendre : Notre processus d'intégration en 3 étape",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        }
+      ],
+      "body": [
+        {
+          "text": "Parlez-nous de votre établissement. Sous 48 heures, nous vou",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        },
+        {
+          "text": "Devis clair, périmètre défini et suivi de performance mensue",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 45
+        }
+      ],
+      "sections": [
+        {
+          "text": "Contactez-nousPrêt à obtenir plus de réservations directes e",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 431
+        },
+        {
+          "text": "E-mailcontact@urunk.comTéléphone(+212)0668802096Adresse3 Rue",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1388
+        },
+        {
+          "text": "Processus TransparentÀ quoi s'attendre : Notre processus d'i",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1854
+        }
+      ],
+      "authority": {
+        "text": "Préparer votre demandeIndiquez votre activité, votre objecti",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 353
+      },
+      "fields": [
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 284,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 284,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 284,
+          "height": 49
+        },
+        {
+          "text": "Sélectionnez un servicePack Site Web (À partir de 12 000 MAD",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "normal",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 284,
+          "height": 48
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 284,
+          "height": 96
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "400",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 28,
+          "height": 48
+        }
+      ],
+      "calculation": null,
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Obtenir mon devis gratuit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 22.4px",
+          "radius": "8px",
+          "width": 284,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "p": "/en/services/direct-booking",
+      "h1": {
+        "text": "Direct Booking Systems Without OTAs for Independent Hotels i",
+        "font": "Gloock, Georgia, \"Times New Roman\", serif",
+        "size": "36px",
+        "line": "39.6px",
+        "weight": "400",
+        "padding": "0px",
+        "radius": "0px",
+        "width": 350,
+        "height": 158
+      },
+      "h2": [
+        {
+          "text": "Why do independent Moroccan hotels lose 15% to 25% of revenu",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        },
+        {
+          "text": "What Urunk Implements to Grow Your Direct Share:",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 66
+        },
+        {
+          "text": "Comparing Direct Booking Engines & PMS Ecosystems Used in Mo",
+          "font": "Gloock, Georgia, \"Times New Roman\", serif",
+          "size": "28px",
+          "line": "32.76px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 98
+        }
+      ],
+      "body": [
+        {
+          "text": "Choose and integrate the right technical booking stack—Booki",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 350,
+          "height": 108
+        },
+        {
+          "text": "Definition: Direct Booking Technical Stack : A direct bookin",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "14px",
+          "line": "22.4px",
+          "weight": "400",
+          "padding": "0px",
+          "radius": "0px",
+          "width": 328,
+          "height": 224
+        }
+      ],
+      "sections": [
+        {
+          "text": "Hospitality and tourism digital infrastructureDirect Booking",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "96px 20px 48px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1776
+        },
+        {
+          "text": "Operational contextWhy do independent Moroccan hotels lose 1",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 1155
+        },
+        {
+          "text": "What Urunk Implements to Grow Your Direct Share:01PMS & Book",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16.37px",
+          "line": "27.0105px",
+          "weight": "400",
+          "padding": "48px 20px",
+          "radius": "0px",
+          "width": 390,
+          "height": 964
+        }
+      ],
+      "authority": {
+        "text": "Scope and acceptance criteriaMap availability and rates betw",
+        "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+        "size": "16.37px",
+        "line": "27.0105px",
+        "weight": "400",
+        "padding": "24px",
+        "radius": "12px",
+        "width": 350,
+        "height": 353
+      },
+      "fields": [
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        },
+        {
+          "text": "",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "16px",
+          "line": "23.2px",
+          "weight": "500",
+          "padding": "12px 14px",
+          "radius": "8px",
+          "width": 308,
+          "height": 49
+        }
+      ],
+      "calculation": "MAD&nbsp;8,000.00",
+      "overflow": false,
+      "controls": [
+        {
+          "text": "Request a free audit",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 212,
+          "height": 48
+        },
+        {
+          "text": "Request a detailed proposal",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 17.6px",
+          "radius": "8px",
+          "width": 286,
+          "height": 48
+        },
+        {
+          "text": "Calculate",
+          "font": "\"Hanken Grotesk\", system-ui, -apple-system, sans-serif",
+          "size": "15px",
+          "line": "21.75px",
+          "weight": "600",
+          "padding": "12.8px 22.4px",
+          "radius": "8px",
+          "width": 308,
+          "height": 48
+        }
+      ]
+    }
+  ]
+}
