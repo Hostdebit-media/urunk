@@ -36,3 +36,5 @@ BEGIN SELECT RAISE(ABORT,'payment_amount_or_date_invalid'); END;
 CREATE INDEX IF NOT EXISTS crm_contract_client_v506 ON crm_contracts_v506(client_id);
 CREATE INDEX IF NOT EXISTS crm_invoice_client_v506 ON crm_invoices_v506(client_id);
 CREATE INDEX IF NOT EXISTS crm_payment_invoice_v506 ON crm_payments_v506(invoice_id);
+
+CREATE UNIQUE INDEX IF NOT EXISTS crm_contract_signed_v506 ON crm_contracts_v506(client_id,offer,signed_ref) WHERE signed_ref<>'';
