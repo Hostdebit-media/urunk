@@ -3,7 +3,7 @@ const URUNK_CRM_STAGES=["new","contacted","qualified","proposal","won","lost"];
 const URUNK_CRM_LABELS={new:"Nouveau",contacted:"Contacté",qualified:"Qualifié",proposal:"Proposition",won:"Gagné",lost:"Perdu"};
 const URUNK_CRM_NOTIFICATIONS={pending:"En attente",accepted:"Accepté par Resend",failed:"Échec fournisseur",unknown:"À vérifier",sent:"Envoyé",delivered:"Livré",bounced:"Rebond",complained:"Plainte",delivery_delayed:"Retard",suppressed:"Supprimé"};
 const urunkCrmHash=async x=>Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(x))),b=>b.toString(16).padStart(2,"0")).join("");
-function urunkCrmPath(x){try{const u=new URL(x||"/","https://urunk.com");return u.origin==="https://urunk.com"||u.origin==="https://www.urunk.com"?u.pathname.slice(0,200):""}catch{return ""}}
+function urunkCrmPath(x){if(!x)return "";try{const u=new URL(x||"/","https://urunk.com");return u.origin==="https://urunk.com"||u.origin==="https://www.urunk.com"?u.pathname.slice(0,200):""}catch{return ""}}
 function urunkCrmAttribution(a){if(!a||a.consent_analytics!==true)return null;return {consent_analytics:true,landing_page:urunkCrmPath(a.landing_page||""),referrer_host:a.referrer_host||"",utm_source:a.utm_source||"",utm_medium:a.utm_medium||"",utm_campaign:a.utm_campaign||""}}
 async function urunkCrmReserve(env,x,now){
  if(!env.CRM_DB)throw Error("CRM unavailable");
@@ -11,9 +11,8 @@ async function urunkCrmReserve(env,x,now){
  const canonical=JSON.stringify([x.name.toLowerCase(),x.email.toLowerCase(),x.phone.replace(/\D/g,""),x.business.toLowerCase(),x.service.toLowerCase(),x.message]);
  const fingerprint=await urunkCrmHash(created.slice(0,10)+"|"+canonical);
  const key=x.clientKey?await urunkCrmHash("client|"+x.clientKey):null;
- const result=await env.CRM_DB.prepare("INSERT INTO crm_leads(id,request_key,fingerprint,created_at,updated_at,name,email,phone,business,service,message,lang,source,page_path,privacy_accepted_at,analytics_consent,landing_page,referrer_host,utm_source,utm_medium,utm_campaign) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING").bind(id,key,fingerprint,created,created,x.name,x.email,x.phone,x.business,x.service,x.message,x.lang,x.source,urunkCrmPath(x.pageUrl||x.sourcePage),created,a?1:0,a?.landing_page||"",a?.referrer_host||"",a?.utm_source||"",a?.utm_medium||"",a?.utm_campaign||"").run();
- if(!result.success)throw Error("CRM insert failed");
- return Number(result.meta?.changes)===1?id:null;
+ const result=await env.CRM_DB.prepare("INSERT INTO crm_leads(id,request_key,fingerprint,created_at,updated_at,name,email,phone,business,service,message,lang,source,page_path,privacy_accepted_at,analytics_consent,landing_page,referrer_host,utm_source,utm_medium,utm_campaign) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING RETURNING id").bind(id,key,fingerprint,created,created,x.name,x.email,x.phone,x.business,x.service,x.message,x.lang,x.source,urunkCrmPath(x.pageUrl||x.sourcePage),created,a?1:0,a?.landing_page||"",a?.referrer_host||"",a?.utm_source||"",a?.utm_medium||"",a?.utm_campaign||"").first();
+ return result?.id||null;
 }
 async function urunkCrmNotify(env,id,status,providerId=null){
  if(!id)return;
@@ -54,13 +53,13 @@ async function urunkCrmRoute(request,env,url){
    const b=await readBoundedBody(request,8192);if(!b.ok)return fail("Payload too large",413);
    const f=new URLSearchParams(b.text),csrf=await urunkCrmCsrf(request);
    if(f.get("csrf")!==csrf)return fail("Invalid CSRF",403);
-   const id=f.get("id")||"",revision=Number(f.get("revision"));
+   const id=f.get("id")||"",revision=f.has("revision")?Number(f.get("revision")):-1;
    if(!/^[0-9a-f-]{36}$/i.test(id)||!Number.isSafeInteger(revision)||revision<0)return fail("Invalid request",400);
    const action=f.get("action"),now=new Date().toISOString();
    if(action==="update"){
     const stage=f.get("stage")||"",raw=f.get("value")||"",value=Math.round(Number(raw)*100),date=f.get("follow_up")||"",note=(f.get("note")||"").trim();
     if(!URUNK_CRM_STAGES.includes(stage)||!/^\d{1,10}(\.\d{1,2})?$/.test(raw)||!Number.isSafeInteger(value)||value<0||value>100000000000||note.length>2000||(date&&(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!Number.isFinite(Date.parse(date))||new Date(date).toISOString().slice(0,10)!==date)))return fail("Invalid fields",400);
-    const r=await db.prepare("UPDATE crm_leads SET stage=?,value_minor=?,follow_up=?,note=?,updated_at=?,revision=revision+1 WHERE id=? AND revision=?").bind(stage,value,date,note,now,id,revision).run();if(!r.success||r.meta?.changes!==1)return fail("Conflict; reload the record",409);
+    const r=await db.prepare("UPDATE crm_leads SET stage=?,value_minor=?,follow_up=?,note=?,updated_at=?,revision=revision+1 WHERE id=? AND revision=? RETURNING id").bind(stage,value,date,note,now,id,revision).first();if(!r?.id)return fail("Conflict; reload the record",409);
    }else if(action==="delivery"){
     const lead=await db.prepare("SELECT provider_id,notification_status FROM crm_leads WHERE id=?").bind(id).first();
     if(!lead||!lead.provider_id||!/^[A-Za-z0-9_-]{8,128}$/.test(lead.provider_id)||!env.RESEND_API_KEY)return fail("Delivery status unavailable",409);
@@ -68,7 +67,7 @@ async function urunkCrmRoute(request,env,url){
     if(!res.ok)return fail("Provider status not accessible",502);
     const data=await res.json(),status=String(data.last_event||"");
     if(!["sent","delivered","bounced","complained","delivery_delayed","suppressed","failed"].includes(status))return fail("No verified delivery state available",409);
-    const r=await db.prepare("UPDATE crm_leads SET notification_status=?,notification_updated_at=? WHERE id=? AND notification_status=?").bind(status,now,id,lead.notification_status).run();if(!r.success||r.meta?.changes!==1)return fail("Status changed; retry",409);
+    const r=await db.prepare("UPDATE crm_leads SET notification_status=?,notification_updated_at=? WHERE id=? AND notification_status=? RETURNING id").bind(status,now,id,lead.notification_status).first();if(!r?.id)return fail("Status changed; retry",409);
    }else if(action==="erase"){
     if(f.get("confirm")!=="SUPPRIMER")return fail("Confirmation required",400);
     const r=await db.batch([db.prepare("DELETE FROM crm_history WHERE lead_id=? AND EXISTS(SELECT 1 FROM crm_leads WHERE id=? AND revision=?)").bind(id,id,revision),db.prepare("DELETE FROM crm_leads WHERE id=? AND revision=?").bind(id,revision)]);if(!r.every(x=>x.success)||r[1].meta?.changes!==1)return fail("Conflict; reload the record",409);
