@@ -1,0 +1,976 @@
+{
+  "viewport": [
+    1440,
+    900
+  ],
+  "headerAudit": {
+    "root": {
+      "tag": "HEADER",
+      "text": "UrunkServicesSecteurs et villesSecteursTous les secteursVue d’ensemble des métiers accompagnés partout au MarocHôtels et complexes",
+      "cls": "print:hidden sticky top-0 left-0 right-0 z-50 w-full bg-bg-light px-[clamp(20px,5vw,56px)] transition-colors duration-200 border-b border-transparent",
+      "size": "18px",
+      "bg": "rgb(250, 249, 246)",
+      "color": "rgb(15, 45, 37)",
+      "w": 1440,
+      "h": 73,
+      "x": 0,
+      "y": 0,
+      "display": "block"
+    },
+    "menu": [
+      {
+        "text": "Secteurs et villes",
+        "label": null,
+        "expanded": "false",
+        "outer": "<button type=\"button\" class=\"flex items-center gap-1 py-2 whitespace-nowrap shrink-0 hover:text-accent rounded-sm transition-colors cursor-pointer text-primary\" aria-expanded=\"false\" aria-haspopup=\"true\"><span>Secteurs et villes</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down shrink-0 transition-transform duration-150 text-pr"
+      },
+      {
+        "text": "Ressources",
+        "label": null,
+        "expanded": "false",
+        "outer": "<button type=\"button\" class=\"flex items-center gap-1 py-2 whitespace-nowrap shrink-0 hover:text-accent rounded-sm transition-colors cursor-pointer text-primary\" aria-expanded=\"false\" aria-haspopup=\"true\"><span>Ressources</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down shrink-0 transition-transform duration-150 text-primary/65"
+      },
+      {
+        "text": "",
+        "label": "Ouvrir le menu",
+        "expanded": "false",
+        "outer": "<button type=\"button\" class=\"p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm text-primary hover:bg-bg-alt transition-colors cursor-pointer\" aria-label=\"Ouvrir le menu\" aria-expanded=\"false\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu text-primary\" aria-hidden=\"true\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16"
+      }
+    ],
+    "links": [
+      {
+        "tag": "A",
+        "text": "Urunk",
+        "cls": "font-serif text-[26px] leading-none font-normal text-primary no-underline hover:text-accent transition-colors whitespace-nowrap shrink-0",
+        "size": "26px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 79,
+        "h": 26,
+        "x": 100,
+        "y": 23,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Services",
+        "cls": "flex items-center gap-1 py-2 whitespace-nowrap shrink-0 no-underline hover:text-accent rounded-sm transition-colors cursor-pointer text-primary",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 75,
+        "h": 37,
+        "x": 348,
+        "y": 17,
+        "display": "flex"
+      },
+      {
+        "tag": "A",
+        "text": "Tous les secteursVue d’ensemble des métiers accompagnés partout au Maroc",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 285,
+        "y": 130,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Hôtels et complexesConnexion PMS et campagnes de recherche hôtelière",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 285,
+        "y": 211,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Riads et maisons d’hôtesSites bilingues et présence sur Google Maps en médina",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 285,
+        "y": 293,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Tour-opérateursPages d’itinéraires mobiles et contact WhatsApp direct",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 285,
+        "y": 374,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Restaurants et traiteursRéservations de table et devis pour réceptions",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 62,
+        "x": 285,
+        "y": 456,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "PME et entreprises B2BSites vitrines rapides et demandes de devis locales",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 80,
+        "x": 285,
+        "y": 518,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Toutes les villesVilles couvertes et interventions locales au Maroc",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 584,
+        "y": 130,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "MarocAccompagnement dans les principales villes du Maroc",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 584,
+        "y": 211,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "CasablancaBureau à Maarif pour PME, traiteurs et hôtels d’affaires",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 584,
+        "y": 293,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "MarrakechRiads, villas et activités en Médina, Guéliz et Palmeraie",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 584,
+        "y": 374,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "RabatSites professionnels et référencement local à Rabat",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 81,
+        "x": 584,
+        "y": 456,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "AgadirHôtels côtiers, résidences et activités à Agadir et Taghazout",
+        "cls": "group/item block py-2.5 px-2 rounded-sm no-underline hover:bg-bg-alt transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 271,
+        "h": 80,
+        "x": 584,
+        "y": 537,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "Tarifs",
+        "cls": "py-2 whitespace-nowrap shrink-0 text-primary no-underline hover:text-accent hover:underline underline-offset-4 rounded-sm transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 37,
+        "h": 37,
+        "x": 621,
+        "y": 17,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "À propos",
+        "cls": "py-2 whitespace-nowrap shrink-0 text-primary no-underline hover:text-accent hover:underline underline-offset-4 rounded-sm transition-colors",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 61,
+        "h": 37,
+        "x": 817,
+        "y": 17,
+        "display": "block"
+      },
+      {
+        "tag": "A",
+        "text": "FR/EN",
+        "cls": "inline-flex items-center px-3 py-1.5 min-h-[38px] rounded-sm text-[13px] font-medium whitespace-nowrap shrink-0 no-underline transition-colors border cursor-pointer border-border-subtle text-primary hover:border-accent bg-bg-card",
+        "size": "13px",
+        "bg": "rgb(255, 255, 255)",
+        "color": "rgb(15, 45, 37)",
+        "w": 71,
+        "h": 38,
+        "x": 1047,
+        "y": 17,
+        "display": "flex"
+      },
+      {
+        "tag": "A",
+        "text": "Demander un audit gratuit",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+        "size": "14px",
+        "bg": "rgb(137, 90, 19)",
+        "color": "rgb(255, 255, 255)",
+        "w": 210,
+        "h": 40,
+        "x": 1130,
+        "y": 16,
+        "display": "flex"
+      }
+    ],
+    "panels": [
+      {
+        "tag": "DIV",
+        "text": "SecteursTous les secteursVue d’ensemble des métiers accompagnés partout au MarocHôtels et complexesConnexion PMS et campagnes de r",
+        "cls": "absolute left-1/2 -translate-x-1/2 top-full pt-1 w-[min(92vw,58rem)] z-50",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 928,
+        "h": 575,
+        "x": 256,
+        "y": 72,
+        "display": "block"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "tag": "SECTION",
+      "text": "Agence web & acquisition · CasablancaVotre indépendance digitale commence ici.Sites web, référencement naturel et campagnes public",
+      "cls": "bg-bg-light text-primary py-[clamp(64px,7.5vw,112px)] px-[clamp(20px,4vw,44px)] pt-10 md:pt-16 pb-[clamp(56px,7vw,96px)]",
+      "size": "18px",
+      "bg": "rgb(250, 249, 246)",
+      "color": "rgb(15, 45, 37)",
+      "w": 1440,
+      "h": 787,
+      "x": 0,
+      "y": 73,
+      "display": "block"
+    },
+    "title": {
+      "tag": "H1",
+      "text": "Votre indépendance digitale commence ici.",
+      "cls": "type-display mt-6 mb-7",
+      "size": "54px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(15, 45, 37)",
+      "w": 697,
+      "h": 119,
+      "x": 100,
+      "y": 245,
+      "display": "block"
+    },
+    "images": [
+      {
+        "tag": "IMG",
+        "text": "",
+        "cls": "w-full h-full object-cover object-cover",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 479,
+        "h": 599,
+        "x": 861,
+        "y": 137,
+        "display": "block",
+        "src": "/images/optimized/moroccan-riad-architecture-800.jpg",
+        "alt": "Cour intérieure d’un riad marocain traditionnel avec arches et zelliges"
+      }
+    ],
+    "actions": [
+      {
+        "tag": "A",
+        "text": "Demander un audit gratuit",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+        "size": "15px",
+        "bg": "rgb(137, 90, 19)",
+        "color": "rgb(255, 255, 255)",
+        "w": 227,
+        "h": 48,
+        "x": 100,
+        "y": 547,
+        "display": "flex"
+      },
+      {
+        "tag": "A",
+        "text": "Voir nos réalisations",
+        "cls": "link-arrow",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(137, 90, 19)",
+        "w": 188,
+        "h": 37,
+        "x": 359,
+        "y": 552,
+        "display": "flex"
+      }
+    ],
+    "form": [
+      {
+        "cls": "bg-bg-card rounded-sm p-7 sm:p-9 text-primary border border-border-subtle",
+        "fields": [
+          {
+            "name": "name",
+            "type": "text",
+            "required": true,
+            "label": "Nom et établissement *"
+          },
+          {
+            "name": "contact",
+            "type": "text",
+            "required": true,
+            "label": "E-mail ou numéro WhatsApp *"
+          },
+          {
+            "name": "establishment_type",
+            "type": "select-one",
+            "required": true,
+            "label": "Activité principale *"
+          },
+          {
+            "name": "_gotcha",
+            "type": "text",
+            "required": false,
+            "label": "Site web"
+          },
+          {
+            "name": "",
+            "type": "checkbox",
+            "required": true,
+            "label": "J'accepte le traitement de ces données pour répondre à ma demande selon la politique de confidentialité."
+          }
+        ]
+      }
+    ]
+  },
+  "footerAudit": {
+    "root": {
+      "tag": "FOOTER",
+      "text": "Parlons de votre projetUn hôtel ou un riad à faire réserver en direct ?Demander un audit gratuitUrunkAgence de création de sites w",
+      "cls": "print:hidden bg-primary text-bg-light pt-14 pb-10 px-[clamp(20px,5vw,56px)] mt-auto",
+      "size": "18px",
+      "bg": "rgb(15, 45, 37)",
+      "color": "rgb(250, 249, 246)",
+      "w": 1440,
+      "h": 949,
+      "x": 0,
+      "y": 6837,
+      "display": "block"
+    },
+    "headings": [],
+    "links": [
+      {
+        "t": "Demander un audit gratuit",
+        "href": "/contact"
+      },
+      {
+        "t": "Urunk",
+        "href": "/"
+      },
+      {
+        "t": "+212 668-802096",
+        "href": "tel:+212668802096"
+      },
+      {
+        "t": "contact@urunk.com",
+        "href": "mailto:contact@urunk.com"
+      },
+      {
+        "t": "Création de site web",
+        "href": "/services/creation-site-web"
+      },
+      {
+        "t": "Agence web Maroc",
+        "href": "/services/agence-web-maroc"
+      },
+      {
+        "t": "Agence web Casablanca",
+        "href": "/services/agence-web-casablanca"
+      },
+      {
+        "t": "Site web hôtel",
+        "href": "/services/site-web-hotel"
+      },
+      {
+        "t": "Agence SEO Maroc",
+        "href": "/services/agence-seo-maroc"
+      },
+      {
+        "t": "SEO Casablanca",
+        "href": "/services/agence-seo-casablanca"
+      },
+      {
+        "t": "SEO hôtelier",
+        "href": "/services/seo-hotel"
+      },
+      {
+        "t": "Google Ads Maroc",
+        "href": "/services/google-ads-maroc"
+      },
+      {
+        "t": "Réservation directe",
+        "href": "/services/reservation-directe"
+      },
+      {
+        "t": "Secteurs",
+        "href": "/secteurs"
+      },
+      {
+        "t": "Hôtels et complexes",
+        "href": "/secteurs/hotels-resorts"
+      },
+      {
+        "t": "Riads et maisons d'hôtes",
+        "href": "/secteurs/riads-maisons-hotes"
+      },
+      {
+        "t": "Tour-opérateurs",
+        "href": "/secteurs/tour-operateurs"
+      },
+      {
+        "t": "Restaurants et traiteurs",
+        "href": "/secteurs/restaurants-traiteurs"
+      },
+      {
+        "t": "PME et entreprises B2B",
+        "href": "/secteurs/pme-entreprises"
+      },
+      {
+        "t": "Villes au Maroc",
+        "href": "/zones"
+      },
+      {
+        "t": "Toutes les zones",
+        "href": "/zones"
+      },
+      {
+        "t": "Maroc",
+        "href": "/zones/maroc"
+      },
+      {
+        "t": "Casablanca",
+        "href": "/zones/casablanca"
+      },
+      {
+        "t": "Marrakech",
+        "href": "/zones/marrakech"
+      },
+      {
+        "t": "Rabat",
+        "href": "/zones/rabat"
+      },
+      {
+        "t": "Agadir",
+        "href": "/zones/agadir"
+      },
+      {
+        "t": "À propos",
+        "href": "/a-propos"
+      },
+      {
+        "t": "Réalisations",
+        "href": "/realisations"
+      },
+      {
+        "t": "Blog et guides",
+        "href": "/blog"
+      },
+      {
+        "t": "Tarifs",
+        "href": "/tarifs"
+      },
+      {
+        "t": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "t": "Contact",
+        "href": "/contact"
+      },
+      {
+        "t": "Plan du site",
+        "href": "/plan-du-site"
+      },
+      {
+        "t": "Confidentialité",
+        "href": "/politique-de-confidentialite"
+      },
+      {
+        "t": "Conditions générales",
+        "href": "/conditions-generales"
+      },
+      {
+        "t": "FR/EN",
+        "href": "/en"
+      }
+    ],
+    "grids": [
+      {
+        "tag": "DIV",
+        "text": "UrunkAgence de création de sites web, référencement local et campagnes publicitaires pour hôtels, riads, voyagistes et PME au Maro",
+        "cls": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(250, 249, 246)",
+        "w": 1240,
+        "h": 596,
+        "x": 100,
+        "y": 7087,
+        "display": "grid"
+      }
+    ]
+  },
+  "price": {
+    "h1": {
+      "tag": "H1",
+      "text": "Des Tarifs d'Agence Transparents",
+      "cls": "type-display text-bg-light mb-6",
+      "size": "54px",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(250, 249, 246)",
+      "w": 697,
+      "h": 119,
+      "x": 100,
+      "y": 291,
+      "display": "block"
+    },
+    "articles": [
+      {
+        "box": {
+          "tag": "ARTICLE",
+          "text": "Projet ponctuelCréation de Site WebÀ partir de 12 000 MADTarif forfaitaire (50 % au démarrage, 50 % à la livraison)—Design WordPre",
+          "cls": "flex flex-col border border-border-subtle bg-bg-card rounded-sm p-8 md:p-10",
+          "size": "18px",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(15, 45, 37)",
+          "w": 608,
+          "h": 460,
+          "x": 100,
+          "y": 1157,
+          "display": "flex"
+        },
+        "heading": {
+          "tag": "H3",
+          "text": "Création de Site Web",
+          "cls": "text-primary mb-3",
+          "size": "24.4px",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(15, 45, 37)",
+          "w": 526,
+          "h": 32,
+          "x": 141,
+          "y": 1231,
+          "display": "block"
+        },
+        "links": [
+          {
+            "tag": "A",
+            "text": "Demander un devis web",
+            "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+            "size": "15px",
+            "bg": "rgb(137, 90, 19)",
+            "color": "rgb(255, 255, 255)",
+            "w": 526,
+            "h": 48,
+            "x": 141,
+            "y": 1528,
+            "display": "inline-flex"
+          }
+        ]
+      },
+      {
+        "box": {
+          "tag": "ARTICLE",
+          "text": "Accompagnement mensuelGestion de PublicitésÀ partir de 4 000 MAD/moisFrais de gestion (Dépenses publicitaires facturées séparément",
+          "cls": "flex flex-col border border-border-subtle bg-bg-card rounded-sm p-8 md:p-10",
+          "size": "18px",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(15, 45, 37)",
+          "w": 608,
+          "h": 460,
+          "x": 732,
+          "y": 1157,
+          "display": "flex"
+        },
+        "heading": {
+          "tag": "H3",
+          "text": "Gestion de Publicités",
+          "cls": "text-primary mb-3",
+          "size": "24.4px",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(15, 45, 37)",
+          "w": 526,
+          "h": 32,
+          "x": 773,
+          "y": 1231,
+          "display": "block"
+        },
+        "links": [
+          {
+            "tag": "A",
+            "text": "Demander un audit",
+            "cls": "text-accent underline underline-offset-4 decoration-1 font-medium inline-flex items-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed w-full",
+            "size": "18px",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(137, 90, 19)",
+            "w": 526,
+            "h": 30,
+            "x": 773,
+            "y": 1547,
+            "display": "inline-flex"
+          }
+        ]
+      },
+      {
+        "box": {
+          "tag": "ARTICLE",
+          "text": "Meilleur rapport qualité-prixPack Site Web + PublicitésStratégie unifiée pour un maximum de réservations directes—Création et déve",
+          "cls": "mt-6 border border-accent/40 bg-bg-alt rounded-sm p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center",
+          "size": "18px",
+          "bg": "rgb(243, 239, 231)",
+          "color": "rgb(15, 45, 37)",
+          "w": 1240,
+          "h": 250,
+          "x": 100,
+          "y": 1641,
+          "display": "grid"
+        },
+        "heading": {
+          "tag": "H3",
+          "text": "Pack Site Web + Publicités",
+          "cls": "text-primary mb-2",
+          "size": "24.4px",
+          "bg": "rgba(0, 0, 0, 0)",
+          "color": "rgb(15, 45, 37)",
+          "w": 761,
+          "h": 32,
+          "x": 141,
+          "y": 1711,
+          "display": "block"
+        },
+        "links": [
+          {
+            "tag": "A",
+            "text": "Discuter de ce pack",
+            "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+            "size": "15px",
+            "bg": "rgb(137, 90, 19)",
+            "color": "rgb(255, 255, 255)",
+            "w": 365,
+            "h": 48,
+            "x": 934,
+            "y": 1765,
+            "display": "inline-flex"
+          }
+        ]
+      }
+    ],
+    "grids": [
+      {
+        "tag": "DIV",
+        "text": "Investissement TransparentDes Tarifs d'Agence TransparentsArrêtez de surpayer les OTA. Investissez dans votre propre moteur de rés",
+        "cls": "grid lg:grid-cols-12 gap-12 lg:gap-16 items-start",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(250, 249, 246)",
+        "w": 1240,
+        "h": 493,
+        "x": 100,
+        "y": 255,
+        "display": "grid"
+      },
+      {
+        "tag": "DIV",
+        "text": "Projet ponctuelCréation de Site WebÀ partir de 12 000 MADTarif forfaitaire (50 % au démarrage, 50 % à la livraison)—Design WordPre",
+        "cls": "grid lg:grid-cols-2 gap-6 mt-12",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 1240,
+        "h": 460,
+        "x": 100,
+        "y": 1157,
+        "display": "grid"
+      },
+      {
+        "tag": "ARTICLE",
+        "text": "Meilleur rapport qualité-prixPack Site Web + PublicitésStratégie unifiée pour un maximum de réservations directes—Création et déve",
+        "cls": "mt-6 border border-accent/40 bg-bg-alt rounded-sm p-8 md:p-10 grid lg:grid-cols-12 gap-8 items-center",
+        "size": "18px",
+        "bg": "rgb(243, 239, 231)",
+        "color": "rgb(15, 45, 37)",
+        "w": 1240,
+        "h": 250,
+        "x": 100,
+        "y": 1641,
+        "display": "grid"
+      },
+      {
+        "tag": "UL",
+        "text": "—Création et développement complet du site web—Gestion Google Ads OU TripAdvisor Ads—Configuration du suivi des conversions—Délai ",
+        "cls": "grid sm:grid-cols-2 gap-x-8 gap-y-2 text-[15px] text-primary/85 list-none p-0 m-0",
+        "size": "15px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "oklab(0.271481 -0.0387743 0.00460036 / 0.85)",
+        "w": 761,
+        "h": 58,
+        "x": 141,
+        "y": 1793,
+        "display": "grid"
+      },
+      {
+        "tag": "DIV",
+        "text": "Grille détailléePrestations individuellesLes tarifs publiés ci-contre servent de base au devis. Un périmètre sur mesure fait l'obj",
+        "cls": "grid lg:grid-cols-12 gap-12 lg:gap-16 items-start",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 1240,
+        "h": 464,
+        "x": 100,
+        "y": 2050,
+        "display": "grid"
+      },
+      {
+        "tag": "DL",
+        "text": "Chiffre d'affaires mensuel (exemple)200 000 MADCommission OTA à 15 % (exemple)≈ 30 000 MADCréation de site directdès 12 000 MAD",
+        "cls": "grid sm:grid-cols-3 gap-px bg-border-subtle border border-border-subtle rounded-sm overflow-hidden m-0 mt-10",
+        "size": "18px",
+        "bg": "rgb(218, 212, 200)",
+        "color": "rgb(15, 45, 37)",
+        "w": 1240,
+        "h": 118,
+        "x": 100,
+        "y": 2916,
+        "display": "grid"
+      },
+      {
+        "tag": "DIV",
+        "text": "Réservations directes vs canaux tiersExemple illustratif : 200 000 MAD de recettes mensuelles réalisées via OTA, avec une commissi",
+        "cls": "grid md:grid-cols-2 gap-10 lg:gap-16 mt-10 text-primary/85 leading-relaxed",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "oklab(0.271481 -0.0387743 0.00460036 / 0.85)",
+        "w": 1240,
+        "h": 301,
+        "x": 100,
+        "y": 3074,
+        "display": "grid"
+      },
+      {
+        "tag": "DL",
+        "text": "Paiement50 % au démarrage, 50 % à la livraison.Propriété100 % du site et des actifs après paiement.MédiaBudget publicitaire payé d",
+        "cls": "grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-subtle border border-border-subtle rounded-sm overflow-hidden m-0",
+        "size": "18px",
+        "bg": "rgb(218, 212, 200)",
+        "color": "rgb(15, 45, 37)",
+        "w": 1240,
+        "h": 124,
+        "x": 100,
+        "y": 3645,
+        "display": "grid"
+      },
+      {
+        "tag": "FORM",
+        "text": "Création initiale (MAD)Abonnements et maintenance mensuels (MAD)Horizon (mois)Autres frais (MAD)CalculerRésultat après calcul",
+        "cls": "grid gap-4 sm:grid-cols-2",
+        "size": "18px",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(15, 45, 37)",
+        "w": 1070,
+        "h": 235,
+        "x": 185,
+        "y": 5265,
+        "display": "grid"
+      }
+    ],
+    "buttons": [
+      {
+        "tag": "A",
+        "text": "Demander un audit gratuit",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+        "size": "15px",
+        "bg": "rgb(137, 90, 19)",
+        "color": "rgb(255, 255, 255)",
+        "w": 227,
+        "h": 48,
+        "x": 100,
+        "y": 530,
+        "display": "flex"
+      },
+      {
+        "tag": "A",
+        "text": "Demander un devis web",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+        "size": "15px",
+        "bg": "rgb(137, 90, 19)",
+        "color": "rgb(255, 255, 255)",
+        "w": 526,
+        "h": 48,
+        "x": 141,
+        "y": 1528,
+        "display": "inline-flex"
+      },
+      {
+        "tag": "A",
+        "text": "Discuter de ce pack",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+        "size": "15px",
+        "bg": "rgb(137, 90, 19)",
+        "color": "rgb(255, 255, 255)",
+        "w": 365,
+        "h": 48,
+        "x": 934,
+        "y": 1765,
+        "display": "inline-flex"
+      },
+      {
+        "tag": "A",
+        "text": "Planifier une consultation gratuite",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-a",
+        "size": "15px",
+        "bg": "rgb(137, 90, 19)",
+        "color": "rgb(255, 255, 255)",
+        "w": 279,
+        "h": 48,
+        "x": 100,
+        "y": 4589,
+        "display": "inline-flex"
+      }
+    ]
+  },
+  "contact": {
+    "h1": "Prêt à obtenir plus de réservations directes et réduire les coûts OTA ?",
+    "form": [
+      {
+        "box": {
+          "tag": "FORM",
+          "text": "Obtenir mon devis gratuitVotre nom *Numéro WhatsApp ou E-mail *Nom de l'établissement *Service souhaité *Sélectionnez un servicePa",
+          "cls": "bg-bg-card border border-border-subtle rounded-sm p-8 md:p-10 text-primary space-y-5",
+          "size": "18px",
+          "bg": "rgb(255, 255, 255)",
+          "color": "rgb(15, 45, 37)",
+          "w": 697,
+          "h": 821,
+          "x": 643,
+          "y": 652,
+          "display": "block"
+        },
+        "fields": [
+          {
+            "name": "name",
+            "type": "text",
+            "required": true,
+            "autocomplete": "",
+            "label": "Votre nom *",
+            "placeholder": "Omar Aziz"
+          },
+          {
+            "name": "email",
+            "type": "text",
+            "required": true,
+            "autocomplete": "",
+            "label": "Numéro WhatsApp ou E-mail *",
+            "placeholder": "+212 600-000000 ou vous@etablissement.com"
+          },
+          {
+            "name": "business",
+            "type": "text",
+            "required": true,
+            "autocomplete": "",
+            "label": "Nom de l'établissement *",
+            "placeholder": "Riad Atlas"
+          },
+          {
+            "name": "service",
+            "type": "select-one",
+            "required": true,
+            "autocomplete": "",
+            "label": "Service souhaité *"
+          },
+          {
+            "name": "message",
+            "type": "textarea",
+            "required": false,
+            "autocomplete": "",
+            "label": "Message facultatif (site actuel, budget publicitaire, objectifs de réservation)",
+            "placeholder": "URL du site actuel, budget publicitaire, principaux défis..."
+          },
+          {
+            "name": "_gotcha",
+            "type": "text",
+            "required": false,
+            "autocomplete": "off",
+            "label": "Site Web",
+            "placeholder": ""
+          },
+          {
+            "name": "",
+            "type": "checkbox",
+            "required": true,
+            "autocomplete": "",
+            "label": "En soumettant ce formulaire, vous acceptez notre Politique de confidentialité.",
+            "placeholder": ""
+          }
+        ],
+        "submit": "<button type=\"submit\" class=\"w-full bg-accent hover:bg-accent-hover text-bg-card py-3.5 px-6 rounded-sm font-medium transition-colors flex items-center justify-center gap-2 disabled:opacity-75 cursor-pointer text-[15px]\"><span>Obtenir mon devis gratuit</span></button>"
+      }
+    ]
+  }
+}

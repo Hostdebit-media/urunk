@@ -1,0 +1,30 @@
+[
+  [
+    "const attribution = normalizeLeadAttribution(data.attribution, startTime);",
+    "const attribution = urunkCrmAttribution(normalizeLeadAttribution(data.attribution, startTime));"
+  ],
+  [
+    "  const subjectLeadLabel = business ?",
+    "  let crmId;\n  try {\n    crmId = await urunkCrmReserve(env,{name,email:validEmail,phone:validPhone,business,service,message,lang,source,pageUrl,sourcePage,clientKey:clientIdempotencyKey,attribution},startTime);\n    if (!crmId) return jsonResponse(409,{ok:false,code:\"DUPLICATE_SUBMISSION\"},corsHeaders);\n  } catch {\n    logSafeContactEvent(\"error\",{status:503,code:\"CRM_STORAGE_FAILED\",source,lang});\n    return jsonResponse(503,{ok:false,code:\"CRM_STORAGE_FAILED\"},corsHeaders);\n  }\n  const subjectLeadLabel = business ?"
+  ],
+  [
+    "  if (clientIdempotencyKey) {\n    resendHeaders[\"Idempotency-Key\"] = clientIdempotencyKey;\n  }",
+    "  resendHeaders[\"Idempotency-Key\"] = clientIdempotencyKey || \"urunk-crm-\"+crmId;"
+  ],
+  [
+    "    if (!providerRes.ok) {\n      logSafeContactEvent",
+    "    if (!providerRes.ok) {\n      await urunkCrmNotify(env,crmId,providerRes.status>=500?\"unknown\":\"failed\");\n      logSafeContactEvent"
+  ],
+  [
+    "    if (!messageId) {\n      logSafeContactEvent",
+    "    if (!messageId) {\n      await urunkCrmNotify(env,crmId,\"unknown\");\n      logSafeContactEvent"
+  ],
+  [
+    "    logSafeContactEvent(\"info\", {\n      status: 200,\n      code: \"DELIVERED\",",
+    "    await urunkCrmNotify(env,crmId,\"accepted\",messageId.slice(0,128));\n    logSafeContactEvent(\"info\", {\n      status: 200,\n      code: \"PROVIDER_ACCEPTED\","
+  ],
+  [
+    "  } catch {\n    logSafeContactEvent(\"error\", {\n      status: 502,\n      code: \"EMAIL_DELIVERY_FAILED\",",
+    "  } catch {\n    await urunkCrmNotify(env,crmId,\"unknown\");\n    logSafeContactEvent(\"error\", {\n      status: 502,\n      code: \"EMAIL_DELIVERY_FAILED\","
+  ]
+]

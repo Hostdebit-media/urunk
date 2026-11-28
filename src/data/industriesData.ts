@@ -40,7 +40,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       calloutBody: "Our hotel marketing framework combines organic Search Engine Optimization, Google Hotel Ads, PMS engine integration, and speed optimization to drive commission-free direct reservations.",
       overviewTitle: "The High-Commission Trap: Breaking Morocco's Hotel OTA Dependency",
       overviewText1: "Morocco's luxury hotel and resort sector is experiencing unprecedented growth, driven by massive national infrastructure projects and a surging global reputation. However, many hotels and resorts remain highly dependent on high-commission Online Travel Agencies (OTAs) like Booking.com and Expedia. These external platforms typically charge anywhere from 18% to 25% commission on every booking, directly cutting into net profit margins and preventing properties from establishing direct relationships with their guests. This reliance severely restricts direct cash flow. Additionally, Morocco's tourism has sharp seasonal swings (with Agadir peaking in summer, and Marrakech during spring/autumn), meaning hotels must maximize their yield during high seasons without letting OTAs swallow their profits.",
-      overviewText2: "The digital search landscape for luxury Moroccan resorts is fiercely competitive, multiculturally diverse, and language-dependent, with potential guests from France, the UK, Germany, and the Middle East querying search engines in diverse languages (French, English, German, and Arabic). If a resort's website does not rank organically for these multilingual search terms, the property becomes virtually invisible, forcing guests to book through OTAs. Crucially, over 80% of bookings and travel research are conducted on mobile devices, meaning that slow-loading legacy websites, unoptimized PMS reservation forms, and lack of clear mobile booking interfaces lead to instant cart abandonment. Urunk engineers custom React-based hotel website platforms starting at 12,000 MAD (≈€1,100) and executes targeted SEO and PPC campaigns. Our direct booking framework bypasses OTA commission fees, boosting direct, commission-free reservations by up to +40% within 4 to 6 weeks.",
+      overviewText2: "Travelers compare hotels across languages and devices. The official website should present accurate room details, availability, rates and policies, with a booking path that works on mobile. We assess the current website, booking engine and acquisition costs before recommending changes. Direct booking results depend on demand, pricing, availability and the quality of the booking experience.",
       keyChallengesTitle: "Key Challenges We Solve for Hoteliers",
       keyChallenges: [
         "Excessive 18–25% commission fees paid to Booking.com, Agoda, and Expedia.",
@@ -52,7 +52,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       solutions: [
         {
           title: "Direct Booking Engine Setup",
-          desc: "We integrate and optimize top-tier PMS platforms (Cloudbeds, SiteMinder, D-EDGE) to offer a friction-free mobile checkout process, guaranteeing +30% higher conversion.",
+          desc: "We assess the existing booking engine and the integration options supported by the provider, then optimize the mobile booking path and measure conversion where tracking is available.",
           link: "/en/services/website-design"
         },
         {
@@ -96,7 +96,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       calloutBody: "Notre méthode combine référencement naturel hôtelier, Google Hotel Ads, intégration PMS et optimisation de conversion pour accroître les réservations directes sans commission.",
       overviewTitle: "Le piège des commissions : Briser la dépendance hôtelière aux OTA au Maroc",
       overviewText1: "Le secteur de l'hôtellerie de luxe et des resorts au Maroc connaît un essor exceptionnel, mais de nombreux établissements restent fortement tributaires des centrales de réservation tierces (OTA) comme Booking.com ou Expedia. Ces plateformes intermédiaires prélèvent de 18 % à 25 % de commission sur chaque nuitée, ce qui érode directement l'EBITDA opérationnel de l'hôtel tout en privant les équipes sur place de la relation directe et de la fidélisation client. De plus, la forte saisonnalité du marché marocain (l'été pour Agadir, le printemps/automne pour Marrakech) exige des établissements qu'ils maximisent leur rentabilité lors des pics d'activité, sans laisser les intermédiaires accaparer leurs revenus.",
-      overviewText2: "L'écosystème de recherche pour l'hôtellerie marocaine est intensément multilingue, concurrentiel et dépendant de la provenance des visiteurs. Les voyageurs français, britanniques ou allemands formulent des requêtes dans leurs langues maternelles. Sans une stratégie SEO hôtelière multilingue d'envergure, le site officiel de votre hôtel reste invisible, laissant les OTA régner sur les résultats de recherche. De surcroît, plus de 80 % du trafic hôtelier s'effectue sur mobile. Un site web hôtelier lent, non adaptatif ou doté d'un moteur de réservation (PMS) complexe sur smartphone entraîne un abandon immédiat au profit des plateformes d'intermédiation.",
+      overviewText2: "Les voyageurs comparent les établissements dans plusieurs langues et sur différents appareils. Le site officiel doit présenter les chambres, les disponibilités, les tarifs et les conditions de réservation de manière claire, avec un parcours utilisable sur mobile. Nous évaluons le site, le moteur de réservation et les coûts d'acquisition avant de recommander les actions prioritaires.",
       keyChallengesTitle: "Défis Clés Résolus pour les Hôteliers",
       keyChallenges: [
         "Commissions exorbitantes (18 à 25%) versées aux plateformes OTA.",
@@ -108,7 +108,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       solutions: [
         {
           title: "Intégration de Moteurs de Réservation (PMS)",
-          desc: "Nous connectons et optimisons les solutions hôtelières de premier plan (Cloudbeds, SiteMinder, Amenitiz) pour fluidifier le paiement et garantir +30 % de réservations directes.",
+          desc: "Nous vérifions les possibilités d’intégration du moteur de réservation existant, puis optimisons le parcours mobile et mesurons les conversions lorsque le suivi est disponible.",
           link: "/reservation-directe"
         },
         {
@@ -131,7 +131,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       caseStudySlug: "art-house-marrakech",
       caseStudyName: "Stratégie de Réservation Directe pour Hôtels & Riads",
       caseStudyMetric: "Métrique Cible : Réduction des Commissions OTA",
-      caseStudyDesc: "Un modèle stratégique détaillant comment un établissement de charme à Marrakech peut optimiser son canal d'acquisition direct et réduire sa dépendance aux intermédiaires. Notre campagne a réduit la dépendance hôtelière aux OTA de 34 % en 90 jours.",
+      caseStudyDesc: "Scénario pédagogique illustrant comment un établissement de charme à Marrakech pourrait améliorer son canal direct. Les objectifs et calculs présentés sont illustratifs, et ne constituent pas un résultat client vérifié.",
       faqs: [
         {
           q: "Comment réduire les commissions Booking.com pour notre hôtel au Maroc ?",
@@ -496,7 +496,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       calloutBody: "Empowering Moroccan SMEs, industrial leaders, legal practices, and consulting firms with high-value digital assets and organic search rankings.",
       overviewTitle: "The B2B Digital Leap: Establishing Market Authority in Casablanca & Rabat",
       overviewText1: "Morocco's corporate and B2B SME economy is undergoing a massive digital modernization, supported by national initiatives. Business decision-makers, industrial procurement managers, logistics leaders, and legal councils no longer rely on traditional offline relationships or physical catalogs; they perform thorough online research to identify, evaluate, and choose B2B service partners, legal advisors, and suppliers in Casablanca, Rabat, Tangier, and across the country.",
-      overviewText2: "B2B search queries are highly specific, analytical, and professional, focused on technical competency, regulatory compliance, and verified case studies. If a B2B firm's website is slow, outdated, or invisible for high-intent keywords, it misses out on lucrative tenders. Additionally, with the rise of AI search engines (like ChatGPT, Gemini, and Perplexity), corporate brands must optimize their web assets for Answer Engine Optimization (GEO), ensuring they are cited as the leading authority in their sector. Urunk equips corporate SMEs with secure, fast React websites (from 12,000 MAD) and implements autoridad-driven SEO and PPC (4,000 MAD/month) to target this commercial search intent.",
+      overviewText2: "Industrial and B2B buyers need precise information: capabilities, materials, service areas, applicable qualifications, lead times and a route to request a quote. We map service pages to buyer needs, identify evidence gaps, and plan bilingual SEO and conversion tracking where relevant. A qualified inquiry is distinct from a signed contract or tender award.",
       keyChallengesTitle: "Key B2B Growth Barriers",
       keyChallenges: [
         "Outdated corporate websites that look unprofessional and lack mobile responsiveness.",
@@ -531,7 +531,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       caseStudySlug: "nomad-eats-catering",
       caseStudyName: "Corporate B2B Lead Acquisition Strategy",
       caseStudyMetric: "Target KPI: Cost-Efficient Lead Generation",
-      caseStudyDesc: "An educational framework illustrating how corporate services and event management companies can establish inbound market visibility using search intent. Our custom B2B funnels generate stable, high-value corporate inquiries.",
+      caseStudyDesc: "An illustrative framework for corporate services and event businesses: map buyer searches to service pages, capture relevant inquiries and measure lead quality. This is a proposed approach, not a verified client result.",
       faqs: [
         {
           q: "Why is B2B SEO essential for companies in Casablanca and Rabat?",
@@ -552,7 +552,7 @@ export const industriesData: Record<string, IndustryDataMap> = {
       calloutBody: "Accompagnement des PME, acteurs industriels, cabinets et sociétés de services avec des outils digitaux performants et générateurs de contrats.",
       overviewTitle: "Le saut digital B2B : Affirmer votre autorité commerciale à Casablanca & Rabat",
       overviewText1: "L'économie des PME et des grandes entreprises B2B au Maroc connaît une modernisation digitale accélérée, soutenue par les politiques publiques de digitalisation. Les directeurs d'achats, les chefs de projets industriels et les décideurs corporatifs n'utilisent plus d'annuaires physiques ; ils étudient et sélectionnent désormais leurs prestataires, conseils juridiques et partenaires logistiques directement via la recherche Google à Casablanca, Rabat ou Tanger.",
-      overviewText2: "Le comportement de recherche B2B est rationnel, technique et s'exprime majoritairement en français ou en anglais. Il exige de trouver une expertise démontrée, des études de cas détaillées et un environnement informatique hautement sécurisé. Si le site institutionnel de votre entreprise est obsolète, invisible ou lent, vous êtes d'office exclu des appels d'offres stratégiques. Face à l'essor des moteurs IA (ChatGPT, Gemini, Perplexity), les entreprises doivent également optimiser leurs contenus pour l'AEO (AEO pour Moteurs d'IA) afin d'être citées comme l'autorité de référence. Urunk dote ces entreprises de portails web en React rapides et sécurisés (dès 12 000 MAD) et déploie un SEO d'autorité (4 000 MAD/mois) pour capter ces appels d'offres.",
+      overviewText2: "Un acheteur industriel ou B2B cherche des informations précises : procédés, matières, capacités, zones desservies, qualifications applicables et modalités de devis. Nous proposons une architecture par expertise, une stratégie SEO FR/EN et un formulaire adapté à la qualification des demandes. Une demande commerciale ne constitue pas un marché remporté.",
       keyChallengesTitle: "Obstacles à la Croissance B2B",
       keyChallenges: [
         "Sites web institutionnels lents ou obsolètes altérant l'image de marque.",
@@ -587,15 +587,15 @@ export const industriesData: Record<string, IndustryDataMap> = {
       caseStudySlug: "nomad-eats-traiteur",
       caseStudyName: "Génération de Leads d'Entreprises B2B",
       caseStudyMetric: "Métrique d'Exemple : Demandes Qualifiées B2B",
-      caseStudyDesc: "Une étude de concept montrant comment les entreprises de services B2B peuvent se positionner auprès des directions d'entreprises et des décideurs. Nos stratégies sur-mesure maximisent votre exposition d'autorité sur le marché marocain.",
+      caseStudyDesc: "Scénario pédagogique : structurer des pages par expertise, documenter les capacités vérifiables et simplifier les demandes de devis. Il ne s'agit pas d'un résultat client mesuré.",
       faqs: [
         {
           q: "Pourquoi le SEO B2B est-il crucial à Casablanca et Rabat ?",
-          a: "Les responsables d'achats et directeurs étudient rigoureusement les acteurs en ligne avant tout engagement contractuel. Un bon rang garantit l'accès aux appels d'offres."
+          a: "Une présence en ligne claire peut faciliter l'identification d'un fournisseur. L'accès aux appels d'offres dépend toutefois des critères de qualification, des références et des procédures d'achat."
         },
         {
           q: "Comment Urunk garantit-il la sécurité et la vitesse des sites d'entreprises ?",
-          a: "Nos sites sont développés sous React/TypeScript sans CMS vulnérable, garantissant des temps de chargement instantanés et une sécurité maximale."
+          a: "Nous définissons les exigences de sécurité et de performance au cadrage, puis vérifions les résultats avec des tests adaptés. Aucun framework ne garantit à lui seul la sécurité d'un site."
         }
       ]
     }

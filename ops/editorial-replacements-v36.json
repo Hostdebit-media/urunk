@@ -1,0 +1,134 @@
+{
+  "en/tripadvisor-vs-google-ads": [
+    {
+      "old": "Properties with few reviews or ratings below 4.3/5 rarely achieve acceptable direct booking ROI.",
+      "newer": "A property with limited recent reviews may need to strengthen its listing before paying for traffic. There is no universal rating cutoff for profitable campaigns."
+    }
+  ],
+  "en/google-ads-riads-keyword-research": [
+    {
+      "old": "The majority of hospitality Google Ads accounts we audit don't fail because of high bid auctions; they fail because of poorly chosen broad-match keywords, total neglect of negative keyword exclusions, and a failure to tie cost-per-acquisition back to OTA commission benchmarks. This guide outlines a disciplined 3-group campaign structure, an intent-driven keyword selection methodology, and a maximum CPC framework designed to target profitability on paid clicks.",
+      "newer": "Start a Google Ads audit with search terms, keyword match types, exclusions, conversion tracking and actual booking contribution. This guide proposes three campaign groups and a maximum CPC calculation, not a guaranteed profitable outcome."
+    },
+    {
+      "old": "Brand searches are your highest-converting traffic. Prospective guests searching for your exact property name already know you. Without an official brand defense campaign, OTAs bid on your name and capture the booking at an 18% commission penalty.",
+      "newer": "Brand queries indicate existing awareness. Test whether brand ads add confirmed bookings beyond organic traffic, and compare their incremental cost with actual OTA contract fees."
+    }
+  ],
+  "fr/google-ads-riads-recherche-mots-cles": [
+    {
+      "old": "La plupart des campagnes Google Ads de riads que nous auditons ne perdent pas d'argent à cause des enchères. Elles en perdent parce que les mots-clés sont mal choisis, que les requêtes non pertinentes ne sont jamais exclues, et que personne ne compare le coût d'une réservation payée au coût d'une commission OTA. Ce guide décrit une structure en trois groupes, une méthode pour construire la liste de mots-clés, et un calcul d'enchère qui relie chaque clic à une rentabilité réelle.",
+      "newer": "Commencez l'audit par les termes de recherche, les types de correspondance, les exclusions, le suivi des conversions et la marge réelle par réservation. La structure en trois groupes proposée ici sert de méthode de test, sans garantie de rentabilité."
+    }
+  ],
+  "en/get-more-5-star-reviews": [
+    {
+      "old": "<strong>WhatsApp:</strong> Unmatched 98% open rates in Morocco. Ideal when you have already established WhatsApp communication for arrival coordination and airport transfers. Keep the message concise with a single direct link.",
+      "newer": "<strong>WhatsApp:</strong> Use the channel if the guest has agreed to receive messages there. Send a short, neutral request for an honest review with one link; do not filter guests by expected rating."
+    }
+  ],
+  "en/meta-ads-for-hotels-instagram-facebook": [
+    {
+      "old": "Never launch broad discovery ads on Meta without first activating your website retargeting campaign. Retargeting converts warm visitors who already know your property; it produces your highest ROAS and self-funds broader prospecting campaigns.",
+      "newer": "Compare retargeting and prospecting against your objectives and consented audience size. A small audience may not justify a separate retargeting campaign; measure incremental confirmed bookings and avoid assuming it has the highest return."
+    }
+  ],
+  "fr/publicites-meta-pour-hotels-instagram-facebook": [
+    {
+      "old": "<strong>Format :</strong> Carrousel présentant les suites avec les avantages exclusifs de la réservation directe (transfert aéroport offert dès 3 nuits, accueil thé et pâtisseries, annulation souple). C'est la campagne au ROAS le plus élevé.",
+      "newer": "<strong>Format :</strong> Présentez les chambres et les avantages effectivement disponibles. Comparez les créations et audiences selon le coût par réservation confirmée, sans présumer du meilleur ROAS."
+    }
+  ],
+  "en/email-marketing-automation-for-hotels": [
+    {
+      "old": "<strong>Key Revenue Strategy:</strong> Email marketing generates an average 36 MAD ROI for every 1 MAD spent. Hotels can automate three core sequences: <em>Pre-Arrival Orientation</em> (upselling transfers &amp; hammam sessions), <em>Post-Stay Thank You &amp; Review Push</em>, and <em>Annual Anniversary Win-Back Offers</em>.",
+      "newer": "<strong>Practical workflow:</strong> Separate operational guest messages from optional marketing. Use pre-arrival information, a neutral post-stay review request and a consent-based return offer; measure incremental contribution rather than assume a universal ROI."
+    },
+    {
+      "old": "Remind past guests of their memorable stay with an exclusive 15% direct booking promo code for their next trip.",
+      "newer": "Send an optional return offer only to eligible, opted-in guests. Choose the discount using contribution margin, availability and channel terms."
+    }
+  ],
+  "fr/marketing-email-automatisation-pour-hotels": [
+    {
+      "old": "<strong>Rentabilité Clé :</strong> L'e-mailing génère un ROI moyen de 36 € pour chaque euro investi. Les hôtels peuvent automatiser 3 séquences essentielles : <em>Accueil Pré-Séjour</em> (ventes de transferts et soins), <em>Remerciement &amp; Demande d'Avis</em> et <em>Offre Anniversaire de Séjour</em>.",
+      "newer": "<strong>Méthode pratique :</strong> Séparez les messages liés au séjour des communications promotionnelles facultatives. Préparez l'arrivée, sollicitez un avis honnête après le départ et proposez un retour avec accord préalable. Mesurez la marge additionnelle plutôt qu'un ROI universel."
+    },
+    {
+      "old": "Proposez un code promo exclusif de 15 % de réduction directe pour leur prochain voyage au Maroc.",
+      "newer": "Adressez une offre facultative aux clients éligibles ayant accepté la prospection. Calculez la remise selon la marge, les disponibilités et les conditions de distribution."
+    }
+  ],
+  "en/whatsapp-automation-hotel-guest-experience": [
+    {
+      "old": "<strong>Field reality:</strong> While traditional pre-arrival hospitality emails average an open rate of only 21% among international travelers visiting Morocco, WhatsApp messages achieve an astonishing <strong>98% open rate</strong> with a median read time under 3 minutes.",
+      "newer": "<strong>Channel choice:</strong> Compare email and WhatsApp using your own delivery, response and opt-out data. Ask guests which channel they prefer, and do not assume universal read or open rates."
+    },
+    {
+      "old": "<strong>Measured economic impact:</strong> Independent Moroccan riads and boutique hotels that deploy automated 4-stage WhatsApp sequences (booking confirmation, medina pickup guidance, in-stay concierge, and post-checkout review request) triple their pre-arrival airport transfer and dinner bookings, eliminate medina arrival friction, and increase their 5-star Google review volume by over <strong>+60%</strong>.",
+      "newer": "<strong>Measurement:</strong> Track successful arrival assistance, confirmed add-on purchases, response times and genuine reviews. Compare with a dated baseline; no increase in sales or ratings is guaranteed."
+    }
+  ],
+  "fr/automatisation-whatsapp-experience-client-hotel": [
+    {
+      "old": "<strong>Le constat terrain :</strong> Alors que les e-mails de pré-séjour ont un taux d'ouverture moyen de 21 % auprès des voyageurs internationaux au Maroc, les messages WhatsApp affichent un <strong>taux d'ouverture de 98 %</strong> et un délai moyen de lecture inférieur à 3 minutes.",
+      "newer": "<strong>Choix du canal :</strong> Comparez e-mail et WhatsApp à partir de vos données de livraison, de réponse et de désinscription. Demandez le canal préféré du voyageur, sans présumer d'un taux de lecture universel."
+    },
+    {
+      "old": "<strong>Impact économique mesuré :</strong> Un riad ou hôtel indépendant automatisant ses séquences WhatsApp (confirmation, arrivée médina, conciergerie et post-départ) multiplie par 3 les réservations de transferts et dîners d'arrivée, élimine le stress d'arrivée des clients et augmente de +60 % son volume d'avis 5 étoiles Google.",
+      "newer": "<strong>Mesure :</strong> Suivez les arrivées assistées, les ventes additionnelles confirmées, les délais de réponse et les avis authentiques. Comparez à une référence datée, sans promettre de hausse."
+    }
+  ],
+  "en/landing-pages-hotels": [
+    {
+      "old": "<strong>The expensive budget leak:</strong> Sending paid advertising traffic from Google Ads or Instagram campaigns to a generic hotel homepage results in an <strong>average bounce rate of 68%</strong>. Digital travelers make split-second decisions and abandon a page within 5 seconds if they do not immediately see the specific room or offer advertised.",
+      "newer": "<strong>Landing-page relevance:</strong> A generic homepage may not match the advertised room, offer or destination. Compare dedicated and general landing pages using confirmed booking cost, booking completion and mobile performance; no universal bounce-rate figure applies."
+    }
+  ],
+  "fr/landing-pages-hotels": [
+    {
+      "old": "<strong>L'erreur qui coûte des dizaines de milliers de dirhams :</strong> Envoyer du trafic publicitaire Google Ads ou Instagram Ads vers la page d'accueil générale d'un riad ou hôtel entraîne un <strong>taux de rebond moyen de 68 %</strong>. Un internaute met moins de 5 secondes pour quitter une page s'il ne trouve pas immédiatement la réponse exacte à sa recherche.",
+      "newer": "<strong>Pertinence de la page :</strong> Une page d'accueil générale ne correspond pas toujours à la chambre ou à l'offre annoncée. Comparez une page dédiée et une page générale selon les réservations confirmées, le coût d'acquisition et les performances mobiles."
+    }
+  ],
+  "en/seasonal-pricing-revenue-management": [
+    {
+      "old": "<strong>The Morocco opportunity:</strong> Transitioning from static year-round pricing to dynamic seasonal yield management with strict Minimum Length of Stay (MLOS) rules allows independent Moroccan properties to grow their Revenue Per Available Room (<strong>RevPAR</strong>) by <strong>+22% to +38%</strong> without increasing property overhead.",
+      "newer": "<strong>Revenue management:</strong> Seasonal rates and minimum-stay rules are hypotheses to test, not guaranteed RevPAR gains. Compare occupancy, ADR, RevPAR and net contribution by date and channel before applying restrictions."
+    },
+    {
+      "old": "For years, the owner charged a flat rate of 950 MAD per night year-round, modestly bumping prices to 1,200 MAD for New Year's Eve. The consequence was catastrophic revenue leakage: luxury suites sold out months in advance for July and August when European beachgoers would gladly have paid 1,700 MAD, while single-night Saturday bookings during the Gnaoua World Music Festival prevented lucrative 4-night extended stays. Following Urunk's restructuring into a 4-tier seasonal rate matrix, enforcing a 3-night MLOS over key festival dates, and introducing a +18% OTA markup: average occupancy climbed from <strong>52% to 71%</strong>, Average Daily Rate (ADR) surged from <strong>950 MAD to 1,340 MAD</strong>, and annual net accommodation revenue expanded by <strong>+318,000 MAD</strong>.",
+      "newer": "Consider a property using a single annual rate. Test a seasonal price calendar based on actual booking pace, lead time, cancellation risk and variable costs. Compare matched dates and calculate net revenue after commissions and operating costs. This is an illustrative planning scenario, not a documented Urunk client result."
+    }
+  ],
+  "fr/tarification-saisonniere-gestion-revenus": [
+    {
+      "old": "<strong>L'opportunité au Maroc :</strong> Appliquer une tarification dynamique avec gestion fine de la durée minimale de séjour (MLOS) et déconnexion intelligente des canaux permet aux riads et petits hôtels d'accroître leur revenu par chambre disponible (<strong>RevPAR</strong>) de <strong>+22 % à +38 %</strong> sans augmenter leurs charges de fonctionnement.",
+      "newer": "<strong>Revenue management :</strong> Les tarifs saisonniers et durées minimales sont des hypothèses à tester, pas une hausse garantie du RevPAR. Comparez occupation, ADR, RevPAR et marge nette par date et canal."
+    },
+    {
+      "old": "Pendant des années, le gérant appliquait un tarif unique de 950 MAD toute l'année, avec une timide hausse à 1 200 MAD pour le Nouvel An. Conséquence : des chambres bradées en plein été (juillet/août) où la demande sur la côte atlantique aurait accepté 1 700 MAD, et des week-ends du Festival Gnaoua réservés 6 mois plus tôt pour une seule nuit le samedi, bloquant les séjours de 4 nuits. Après l'audit Urunk et le déploiement d'une grille en 4 saisons, d'une règle MLOS de 3 nuits sur les dates clés et d'une majoration systématique de 18 % sur Booking : le taux d'occupation est passé de <strong>52 % à 71 %</strong>, le prix moyen (ADR) a grimpé de <strong>950 MAD à 1 340 MAD</strong>, et le chiffre d'affaires annuel hébergement a progressé de <strong>+318 000 MAD</strong>.",
+      "newer": "Prenons un établissement appliquant un tarif annuel unique. Testez une grille saisonnière selon le rythme réel des réservations, le délai de réservation, le risque d'annulation et les coûts variables. Comparez des dates comparables et calculez le revenu net après commissions et charges. Ce scénario est pédagogique, pas un résultat client Urunk documenté."
+    }
+  ],
+  "en/rebranding-renovating-hotel-digital-launch": [
+    {
+      "old": "<strong>The lethal technical hazard:</strong> Switching names or changing domain names without a strict 301 SEO redirection map destroys years of accumulated Google search equity, leading to a catastrophic drop of up to <strong>-70% in organic traffic</strong> at the exact moment of grand reopening.",
+      "newer": "<strong>Migration risk:</strong> Changing URLs without relevant permanent redirects can disrupt crawling and indexing. Map old URLs to equivalent new pages, test redirects and monitor Search Console; traffic fluctuations vary by site."
+    },
+    {
+      "old": "Acquired by new proprietors and renovated over 10 months, the property underwent complete rebranding. Rather than starting on a blank domain with zero search engine credibility, Urunk orchestrated the technical migration: exact 1:1 301 permanent redirects mapping every legacy URL to the new architecture, a twilight architectural photo/drone shoot accentuating the new spaces, a WordPress site natively connected to Cloudbeds, and a geo-targeted Meta ad campaign aimed at art and culture enthusiasts in the UK, France, and Spain. The results: <strong>84% occupancy during the first 60 days post-reopening</strong>, <strong>62% direct bookings with zero OTA commissions</strong>, and complete amortization of digital setup costs within 25 days.",
+      "newer": "Consider a renovated hotel changing its name. Inventory existing URLs, preserve relevant pages or map them to equivalent destinations, update booking and Business Profile information, and test the new site. Track organic traffic, confirmed bookings and contribution before and after reopening. This is a planning example, not a documented client outcome."
+    }
+  ],
+  "fr/rebranding-renovation-hotel-lancement-digital": [
+    {
+      "old": "<strong>Le risque technique majeur :</strong> Changer de nom ou d'adresse web sans plan de redirection SEO 301 strict détruit des années d'autorité de domaine sur Google, provoquant une chute brutale de trafic organique pouvant atteindre <strong>-70 %</strong> lors de la réouverture.",
+      "newer": "<strong>Risque de migration :</strong> Modifier les URL sans redirections permanentes pertinentes peut perturber l'exploration et l'indexation. Associez chaque ancienne URL à une destination équivalente, testez les redirections et surveillez Search Console ; les variations de trafic dépendent du site."
+    },
+    {
+      "old": "Repris par un nouvel acquéreur après 10 mois de travaux intensifs, l'établissement a changé de nom. Plutôt que de repartir de zéro sur un nouveau nom de domaine vierge sans réputation, Urunk a orchestré la migration technique : redirection 301 de chaque ancienne URL vers la nouvelle architecture, shooting photo et vidéo au crépuscule mettant en valeur les nouveaux volumes, refonte du site sous WordPress connecté au PMS Cloudbeds, et campagne Meta Ads ciblée sur les amateurs d'art et de culture en France, Espagne et Grande-Bretagne. Résultat : <strong>taux d'occupation de 84 % dès les 60 premiers jours post-réouverture</strong>, <strong>62 % de réservations directes sans commission OTA</strong>, et investissement digital intégralement rentabilisé en 25 jours.",
+      "newer": "Prenons un hôtel rénové qui change de nom. Inventoriez les URL existantes, conservez les pages pertinentes ou associez-les à leurs équivalents, actualisez la fiche Google et les informations de réservation, puis testez le nouveau site. Suivez le trafic organique, les réservations confirmées et la marge avant et après réouverture. Il s'agit d'un scénario pédagogique, non d'un résultat client documenté."
+    }
+  ]
+}

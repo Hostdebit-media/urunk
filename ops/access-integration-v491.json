@@ -1,0 +1,25 @@
+{
+  "baseVersion": "fad68a7c-9708-48a9-afc3-791841e332dd",
+  "module": "ops/access-recovery-v491.js",
+  "replaceFunction": "urunkGrowthAuthorized",
+  "endAnchor": "function urunkGrowthResponse(",
+  "edits": [
+    [
+      "request.headers.get(\"Cf-Access-Jwt-Assertion\"));",
+      "urunkVerifiedSessionsV491.get(request));"
+    ],
+    [
+      "return urunkGrowthResponse(\"Authentication required\",403,\"text/plain; charset=utf-8\",request.method);",
+      "return urunkAccessRecoveryV491(request);"
+    ],
+    [
+      "return fail(\"Authentication required\",403);",
+      "return urunkAccessRecoveryV491(request);"
+    ]
+  ],
+  "counts": [
+    1,
+    1,
+    3
+  ]
+}

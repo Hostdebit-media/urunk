@@ -1,0 +1,34 @@
+{
+  "base": "d123c180-03d0-402c-b986-1579e0a61bc6",
+  "replace": [
+    "ops/audit-funnel-v503.js",
+    "ops/audit-funnel-v504.js"
+  ],
+  "append": "ops/qualification-module-v504.js",
+  "edits": [
+    [
+      "crmId = await urunkCrmReserve(env,{name,email:validEmail,phone:validPhone,business,service,message,lang,source,pageUrl,sourcePage,clientKey:clientIdempotencyKey,attribution},startTime);",
+      "crmId = await urunkCrmReserve(env,{name,email:validEmail,phone:validPhone,business,service,message,lang,source,pageUrl,sourcePage,clientKey:clientIdempotencyKey,attribution,qualification:options.auditFunnel===true?urunkQualificationFieldsV504(data.qualification||{}):urunkQualificationFieldsV504()},startTime);"
+    ],
+    [
+      "const key=x.clientKey?await urunkCrmHash(\"client|\"+x.clientKey):null;",
+      "const key=x.clientKey?await urunkCrmHash(\"client|\"+x.clientKey):null;\n const q=x.qualification||urunkQualificationFieldsV504();"
+    ],
+    [
+      "utm_source,utm_medium,utm_campaign) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING RETURNING id",
+      "utm_source,utm_medium,utm_campaign,qualification_website,qualification_sector,qualification_goal,qualification_budget,qualification_timeframe) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT DO NOTHING RETURNING id"
+    ],
+    [
+      "a?.utm_source||\"\",a?.utm_medium||\"\",a?.utm_campaign||\"\").first();",
+      "a?.utm_source||\"\",a?.utm_medium||\"\",a?.utm_campaign||\"\",q.website,q.sector,q.goal,q.budget,q.timeframe).first();"
+    ],
+    [
+      "  if(url.pathname===URUNK_REVENUE_BASE||url.pathname===URUNK_REVENUE_BASE+\"/\")return urunkRevenueRoute(request,env,url);",
+      "  if(url.pathname===URUNK_QUAL_BASE||url.pathname===URUNK_QUAL_BASE+\"/\")return urunkQualificationRouteV504(request,env,url);\n  if(url.pathname===URUNK_REVENUE_BASE||url.pathname===URUNK_REVENUE_BASE+\"/\")return urunkRevenueRoute(request,env,url);"
+    ],
+    [
+      "<a href=\"/private/growth/crm/sales\">Pilotage commercial</a><a href=\"/cdn-cgi/access/logout\">",
+      "<a href=\"/private/growth/crm/sales\">Pilotage commercial</a><a href=\"/private/growth/crm/qualification\">Qualification</a><a href=\"/cdn-cgi/access/logout\">"
+    ]
+  ]
+}

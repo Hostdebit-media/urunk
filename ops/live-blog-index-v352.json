@@ -1,0 +1,384 @@
+{
+  "en": [
+    {
+      "slug": "reduce-ota-commissions",
+      "h1": "OTA Commissions in Morocco: How Much Does a Booking.com Reservation Really Cost, and Which Lever Should You Activate First?",
+      "title": "OTA Commissions in Morocco: How Much Does a Booking.com Reservation Really Cost, and Which Lever Should You Activate First?",
+      "metaDescription": "Calculate the true cost of Booking.com commissions for your Moroccan riad, with ROI math, a decision matrix, and a 90-day plan to grow direct bookings.",
+      "date": "October 15, 2026",
+      "category": "Direct Bookings",
+      "readTime": "10 min read"
+    },
+    {
+      "slug": "tripadvisor-vs-google-ads",
+      "h1": "Google Ads vs. TripAdvisor Ads for Riads & Hotels in Morocco: Which Channel Generates Real Revenue and in What Sequence to Deploy?",
+      "title": "Google Ads vs. TripAdvisor Ads for Riads & Hotels in Morocco: Which Channel Generates Real Revenue and in What Sequence to Deploy?",
+      "metaDescription": "Google Ads or TripAdvisor Ads for your hotel or riad in Morocco? Learn which channel to choose based on traveler intent, decision matrix, and action plan.",
+      "date": "October 10, 2026",
+      "category": "Paid Advertising",
+      "readTime": "10 min read"
+    },
+    {
+      "slug": "website-book-now-button",
+      "h1": "The 'Book Now' Button on Your Riad's Website: Where to Place It, How to Design It, and How to Measure If It Converts",
+      "title": "The 'Book Now' Button on Your Riad's Website: Where to Place It, How to Design It, and How to Measure If It Converts",
+      "metaDescription": "Where should you position the Book Now button on your riad website? Mobile UX guidelines, sticky bottom bars, micro-interactions, and tracking methods.",
+      "date": "October 5, 2026",
+      "category": "Website Conversion",
+      "readTime": "8 min read"
+    },
+    {
+      "slug": "wordpress-vs-wix-hospitality",
+      "h1": "WordPress, Wix, or Squarespace for a Hotel or Riad in Morocco: Which CMS to Choose Based on Booking Engine, Languages, and 3-Year TCO",
+      "title": "WordPress, Wix, or Squarespace for a Hotel or Riad in Morocco: Which CMS to Choose Based on Booking Engine, Languages, and 3-Year TCO",
+      "metaDescription": "Which CMS should you choose for a riad or hotel in Morocco? WordPress vs Wix vs Squarespace compared on PMS integrations, multilingual SEO, and 3-year TCO.",
+      "date": "October 1, 2026",
+      "category": "Technology",
+      "readTime": "11 min read"
+    },
+    {
+      "slug": "optimize-tripadvisor-listing",
+      "h1": "Your Riad's TripAdvisor Listing: 5 Levers That Drive Direct Bookings (and 3 Practices That Penalize You)",
+      "title": "Your Riad's TripAdvisor Listing: 5 Levers That Drive Direct Bookings (and 3 Practices That Penalize You)",
+      "metaDescription": "Optimize your Moroccan riad's TripAdvisor listing to capture commission-free direct bookings with ranking strategies, photo order, and review replies.",
+      "date": "September 28, 2026",
+      "category": "Reputation & Visibility",
+      "readTime": "9 min read"
+    },
+    {
+      "slug": "direct-booking-website-cost-morocco",
+      "h1": "How Much Does a Direct-Booking Website for a Moroccan Riad or Boutique Hotel Cost in 2026, and How Quickly Does It Pay for Itself?",
+      "title": "How Much Does a Direct-Booking Website for a Moroccan Riad or Boutique Hotel Cost in 2026, and How Quickly Does It Pay for Itself?",
+      "metaDescription": "How much does a direct-booking hotel website cost in Morocco in 2026? Itemized quotes, hidden costs, payback timeline matrix, and realistic ROI formulas.",
+      "date": "September 22, 2026",
+      "category": "Pricing & Strategy",
+      "readTime": "10 min read"
+    },
+    {
+      "slug": "signs-website-losing-bookings",
+      "h1": "5 Critical Signs Your Moroccan Hotel Website Is Sending Guests to Booking.com, and How to Test It in One Hour",
+      "title": "5 Critical Signs Your Moroccan Hotel Website Is Sending Guests to Booking.com, and How to Test It in One Hour",
+      "metaDescription": "Is your hotel website leaking bookings to Booking.com? Discover the 5 warning signs, the private mobile test methodology, and the step-by-step fix roadmap.",
+      "date": "September 15, 2026",
+      "category": "Website Optimization",
+      "readTime": "9 min read"
+    },
+    {
+      "slug": "google-ads-riads-keyword-research",
+      "h1": "Google Ads for Riads in Morocco: How to Select Keywords, Exclude Wasteful Queries, and Set a Profitable Bid",
+      "title": "Google Ads for Riads in Morocco: How to Select Keywords, Exclude Wasteful Queries, and Set a Profitable Bid",
+      "metaDescription": "Structure profitable Google Ads campaigns for your Moroccan riad with 3-tier ad groups, high-intent keywords, negative lists, and max CPC formulas.",
+      "date": "September 10, 2026",
+      "category": "PPC & Google Ads",
+      "readTime": "11 min read"
+    },
+    {
+      "slug": "get-more-5-star-reviews",
+      "h1": "How to Get More Reviews on TripAdvisor and Google for Your Moroccan Hotel Without Being Pushy: Timing, Channels, and High-Converting Messages",
+      "title": "How to Get More Reviews on TripAdvisor and Google for Your Moroccan Hotel Without Being Pushy: Timing, Channels, and High-Converting Messages",
+      "metaDescription": "Collect more 5-star Google and TripAdvisor reviews for your Moroccan riad without being pushy using smart timing, WhatsApp flows, and guest templates.",
+      "date": "September 5, 2026",
+      "category": "Reputation Management",
+      "readTime": "10 min read"
+    },
+    {
+      "slug": "meta-ads-for-hotels-instagram-facebook",
+      "h1": "Meta Ads (Instagram & Facebook) for Riads and Hotels in Morocco: Strategy, Retargeting, and Profitability in 2026",
+      "title": "Meta Ads (Instagram & Facebook) for Riads and Hotels in Morocco: Strategy, Retargeting, and Profitability in 2026",
+      "metaDescription": "Complete Meta Ads (Facebook & Instagram) guide for Moroccan hotels and riads. Immersive Reels, dynamic retargeting, CAPI server tracking, and ROI vs OTAs.",
+      "date": "August 28, 2026",
+      "category": "Social Advertising",
+      "readTime": "12 min read"
+    },
+    {
+      "slug": "hotel-seo-morocco-guide",
+      "h1": "Ranking on Google for a Moroccan Riad or Hotel: Google Business Profile, Structured Data, and Local Content in the Right Order",
+      "title": "Ranking on Google for a Moroccan Riad or Hotel: Google Business Profile, Structured Data, and Local Content in the Right Order",
+      "metaDescription": "Step-by-step SEO guide for Moroccan riads and boutique hotels. Master Google Business Profile, Hotel schema markup, and local organic rankings.",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+      "date": "March 12, 2026",
+      "category": "Search Engine Optimization",
+      "readTime": "12 min read"
+    },
+    {
+      "slug": "pms-integration-direct-booking-engine",
+      "h1": "Choosing a PMS and Direct Booking Engine for a Moroccan Riad: The 7 Integration Traps to Avoid",
+      "title": "Choosing a PMS and Direct Booking Engine for a Moroccan Riad: The 7 Integration Traps to Avoid",
+      "metaDescription": "Choose and integrate the right PMS and direct booking engine for your riad in Morocco. Compare Cloudbeds, SiteMinder, and Amenitiz without sync errors.",
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
+      "date": "March 13, 2026",
+      "category": "Hospitality Tech",
+      "readTime": "12 min read"
+    },
+    {
+      "slug": "email-marketing-automation-for-hotels",
+      "h1": "Email Marketing Automation for Hotels: Turning Guest Databases into Direct Bookings",
+      "title": "Email Marketing Automation for Hotels: Turning Guest Databases into Direct Bookings",
+      "metaDescription": "Discover how to set up automated email marketing workflows for hotels and riads. Post-stay follow-ups, pre-arrival welcome sequences, and win-back offers.",
+      "date": "August 14, 2026",
+      "category": "Email Marketing",
+      "readTime": "8 min read"
+    },
+    {
+      "slug": "desert-camp-marketing-strategy",
+      "h1": "Marketing a Luxury Desert Camp or Bivouac in Morocco: Positioning, Seasonality, and Direct Guest Acquisition",
+      "title": "Marketing a Luxury Desert Camp or Bivouac in Morocco (Agafay, Merzouga, M'Hamid): Positioning, Seasonality, and Direct Guest Acquisition",
+      "metaDescription": "Digital marketing guide for luxury desert camps and bivouacs in Agafay and Merzouga: grow direct reservations and cut 20% OTA commission fees.",
+      "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
+      "date": "March 14, 2026",
+      "category": "Niche Hospitality",
+      "readTime": "12 min read"
+    },
+    {
+      "slug": "tour-operator-digital-marketing",
+      "h1": "Selling Moroccan Tours and Excursions Directly: How to Bypass GetYourGuide, Viator, and Middlemen",
+      "title": "Selling Moroccan Tours and Excursions Directly: How to Bypass GetYourGuide, Viator, and Middlemen",
+      "metaDescription": "Digital marketing guide for Moroccan tour operators and excursion agencies: capture direct online bookings and eliminate 25% platform commission fees.",
+      "image": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1200&q=80",
+      "date": "March 15, 2026",
+      "category": "Tour Marketing",
+      "readTime": "13 min read"
+    },
+    {
+      "slug": "speed-optimization-hotel-websites",
+      "h1": "Hotel Website Speed and Core Web Vitals in Morocco: Every Second of Delay Costs You Direct Bookings",
+      "title": "Hotel Website Speed and Core Web Vitals in Morocco: Every Second of Delay Costs You Direct Bookings",
+      "metaDescription": "Discover why slow hotel websites lose guests to Booking.com and how to optimize Core Web Vitals (LCP, INP, CLS) for Moroccan riads and boutique hotels.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "date": "March 16, 2026",
+      "category": "Technical Optimization",
+      "readTime": "11 min read"
+    },
+    {
+      "slug": "whatsapp-automation-hotel-guest-experience",
+      "h1": "WhatsApp Business & Automated Concierge for Moroccan Riads and Boutique Hotels: The Operational Playbook",
+      "title": "WhatsApp Business & Automated Concierge for Moroccan Riads and Boutique Hotels: From Medina Arrival to Direct Upsells and 5-Star Reviews",
+      "metaDescription": "Operational playbook for Moroccan riads and hotels: automate WhatsApp medina arrival flows, boost dining and spa upsells, and earn 5-star reviews.",
+      "date": "July 28, 2026",
+      "category": "Guest Experience & Tech",
+      "readTime": "12 min read"
+    },
+    {
+      "slug": "landing-pages-hotels",
+      "h1": "Anatomy of a High-Converting Hotel Landing Page: Turning Paid Ad Clicks into Direct Bookings",
+      "title": "Anatomy of a High-Converting Hotel Landing Page: Turning Google & Meta Ad Clicks into Direct Bookings",
+      "metaDescription": "Master the 8 essential conversion components of high-ROI hotel landing pages for Google Ads and Meta campaigns in Morocco to stop traffic waste.",
+      "date": "July 22, 2026",
+      "category": "Landing Page UX & Conversion",
+      "readTime": "11 min read"
+    },
+    {
+      "slug": "seasonal-pricing-revenue-management",
+      "h1": "Revenue Management & Dynamic Pricing for Moroccan Riads and Independent Hotels: The Operational Blueprint",
+      "title": "Revenue Management & Dynamic Pricing for Moroccan Riads and Independent Hotels: Maximizing RevPAR Across Seasons",
+      "metaDescription": "Revenue management playbook for independent riads and hotels in Morocco: seasonal rate tiers, minimum stay rules (MLOS), and direct RevPAR growth.",
+      "date": "July 18, 2026",
+      "category": "Revenue Management",
+      "readTime": "13 min read"
+    },
+    {
+      "slug": "rebranding-renovating-hotel-digital-launch",
+      "h1": "Rebranding & Digital Relaunch of a Renovated Moroccan Riad or Hotel: The 60-Day Master Playbook",
+      "title": "Rebranding & Digital Relaunch of a Renovated Moroccan Riad or Hotel: The Complete 60-Day Strategic Plan",
+      "metaDescription": "Step-by-step digital relaunch guide for renovated riads and hotels in Morocco: protect SEO rankings, plan architectural shoots, and run launch ads.",
+      "date": "July 12, 2026",
+      "category": "Rebranding & Brand Strategy",
+      "readTime": "12 min read"
+    }
+  ],
+  "fr": [
+    {
+      "slug": "creation-site-web-maroc-pour-hotels",
+      "h1": "Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc",
+      "title": "Étapes essentielles pour créer un site web performant pour un hôtel ou un riad au Maroc",
+      "metaDescription": "Création de site web au Maroc pour hôtels et riads : WordPress rapide, réservation directe Cloudbeds/Mews, Core Web Vitals et SEO Google Maps sans OTA.",
+      "image": "/images/blog/fr/creation-site-web-maroc-pour-hotels.jpg",
+      "date": "1 Novembre 2026",
+      "category": "Création de Site Web",
+      "readTime": "8 min de lecture"
+    },
+    {
+      "slug": "reduire-commissions-ota",
+      "h1": "Commissions OTA au Maroc : combien vous coûte réellement une réservation Booking.com, et par quel levier la récupérer en priorité ?",
+      "title": "Commissions OTA au Maroc : combien vous coûte réellement une réservation Booking.com, et par quel levier la récupérer en priorité ?",
+      "metaDescription": "Calculez le coût réel des commissions Booking.com pour votre riad au Maroc : calcul concret, matrice de priorité et plan d'action sur 90 jours.",
+      "date": "15 Octobre 2026",
+      "category": "Réservations Directes",
+      "readTime": "9 min de lecture"
+    },
+    {
+      "slug": "tripadvisor-vs-google-ads",
+      "h1": "Google Ads ou TripAdvisor Ads pour un riad ou un hôtel au Maroc : quel canal rapporte réellement, et dans quel ordre le déployer ?",
+      "title": "Google Ads ou TripAdvisor Ads pour un riad ou un hôtel au Maroc : quel canal rapporte réellement, et dans quel ordre le déployer ?",
+      "metaDescription": "Google Ads ou TripAdvisor Ads pour votre hôtel ou riad au Maroc ? Comparez l'intention voyageur, la rentabilité et le plan d'action selon votre budget.",
+      "date": "10 Octobre 2026",
+      "category": "Publicité Digitale",
+      "readTime": "10 min de lecture"
+    },
+    {
+      "slug": "bouton-reserver-site-web",
+      "h1": "Bouton « Réserver » sur le site de votre riad : où le placer, comment le concevoir, et comment savoir s'il fonctionne",
+      "title": "Bouton « Réserver » sur le site de votre riad : où le placer, comment le concevoir, et comment savoir s'il fonctionne",
+      "metaDescription": "Où placer le bouton Réserver sur le site de votre riad ? Ergonomie mobile, barre sticky, micro-interactions et suivi GA4 pour vos réservations directes.",
+      "date": "5 Octobre 2026",
+      "category": "Conversion Web",
+      "readTime": "8 min de lecture"
+    },
+    {
+      "slug": "wordpress-vs-wix-hotellerie",
+      "h1": "WordPress, Wix ou Squarespace pour un riad ou un hôtel au Maroc : quel CMS choisir selon votre moteur de réservation, vos langues et votre budget",
+      "title": "WordPress, Wix ou Squarespace pour un riad ou un hôtel au Maroc : quel CMS choisir selon votre moteur de réservation, vos langues et votre budget",
+      "metaDescription": "Quel CMS choisir pour un riad ou hôtel au Maroc ? Comparatif WordPress, Wix et Squarespace : moteur de réservation, multilingue, SEO et coût sur 3 ans.",
+      "date": "1 Octobre 2026",
+      "category": "Technologie",
+      "readTime": "11 min de lecture"
+    },
+    {
+      "slug": "optimiser-annonce-tripadvisor",
+      "h1": "Fiche TripAdvisor de votre riad : les 5 leviers qui font venir des réservations directes (et les 3 pratiques qui vous pénalisent)",
+      "title": "Fiche TripAdvisor de votre riad : les 5 leviers qui font venir des réservations directes (et les 3 pratiques qui vous pénalisent)",
+      "metaDescription": "Optimisez la fiche TripAdvisor de votre riad au Maroc pour générer plus de réservations directes : algorithme, ordre des photos et gestion des avis.",
+      "date": "28 Septembre 2026",
+      "category": "Visibilité & Avis",
+      "readTime": "9 min de lecture"
+    },
+    {
+      "slug": "cout-site-web-reservation-directe-maroc",
+      "h1": "Combien coûte un site de réservation directe pour un riad ou un petit hôtel au Maroc en 2026, et en combien de temps il se rembourse",
+      "title": "Combien coûte un site de réservation directe pour un riad ou un petit hôtel au Maroc en 2026, et en combien de temps il se rembourse",
+      "metaDescription": "Combien coûte un site web de réservation directe pour riad au Maroc en 2026 ? Détail des devis, coûts cachés, rentabilité et délai d'amortissement.",
+      "date": "22 Septembre 2026",
+      "category": "Tarifs & Stratégie",
+      "readTime": "10 min de lecture"
+    },
+    {
+      "slug": "signes-site-web-perd-reservations",
+      "h1": "5 signes que votre site d'hôtel ou de riad envoie vos clients vers Booking.com, et comment le vérifier en une heure",
+      "title": "5 signes que votre site d'hôtel ou de riad envoie vos clients vers Booking.com, et comment le vérifier en une heure",
+      "metaDescription": "Votre site d'hôtel perd-il des clients au profit de Booking.com ? Découvrez les 5 signaux d'alerte, le test mobile et le plan d'action correctif.",
+      "date": "15 Septembre 2026",
+      "category": "Optimisation Web",
+      "readTime": "8 min de lecture"
+    },
+    {
+      "slug": "google-ads-riads-recherche-mots-cles",
+      "h1": "Google Ads pour un riad au Maroc : comment choisir vos mots-clés, exclure le bruit et fixer une enchère qui reste rentable",
+      "title": "Google Ads pour un riad au Maroc : comment choisir vos mots-clés, exclure le bruit et fixer une enchère qui reste rentable",
+      "metaDescription": "Structurez vos campagnes Google Ads pour un riad au Maroc : architecture en 3 groupes, mots-clés d'intention, exclusions et calcul du CPC maximal.",
+      "date": "10 Septembre 2026",
+      "category": "Google Ads & PPC",
+      "readTime": "11 min de lecture"
+    },
+    {
+      "slug": "obtenir-plus-avis-5-etoiles",
+      "h1": "Obtenir plus d'avis sur TripAdvisor et Google sans harceler vos clients : le moment, le canal et le message qui fonctionnent",
+      "title": "Obtenir plus d'avis sur TripAdvisor et Google sans harceler vos clients : le moment, le canal et le message qui fonctionnent",
+      "metaDescription": "Obtenez plus d'avis 5 étoiles sur Google et TripAdvisor pour votre riad sans importuner vos hôtes : timing idéal, séquences WhatsApp et e-mails types.",
+      "date": "5 Septembre 2026",
+      "category": "E-Réputation",
+      "readTime": "9 min de lecture"
+    },
+    {
+      "slug": "publicites-meta-pour-hotels-instagram-facebook",
+      "h1": "Publicités Meta (Instagram & Facebook) pour Riads et Hôtels au Maroc : Stratégie, Retargeting et Rentabilité en 2026",
+      "title": "Publicités Meta (Instagram & Facebook) pour Riads et Hôtels au Maroc : Stratégie, Retargeting et Rentabilité en 2026",
+      "metaDescription": "Guide Meta Ads (Facebook et Instagram) pour riads et hôtels au Maroc : formats Reels immersifs, retargeting, suivi CAPI et rentabilité face aux OTA.",
+      "date": "28 Août 2026",
+      "category": "Publicité Sociale",
+      "readTime": "12 min de lecture"
+    },
+    {
+      "slug": "guide-seo-hotellerie-maroc",
+      "h1": "Apparaître sur Google pour un riad ou un hôtel au Maroc : Google Business Profile, données structurées et contenu local, dans cet ordre",
+      "title": "Apparaître sur Google pour un riad ou un hôtel au Maroc : Google Business Profile, données structurées et contenu local, dans cet ordre",
+      "metaDescription": "Positionnez votre riad ou hôtel sur Google au Maroc : fiche Google Business Profile, Core Web Vitals, balisage Schema Hotel et plan SEO sur 120 jours.",
+      "date": "22 Août 2026",
+      "category": "Référencement Naturel",
+      "readTime": "12 min de lecture"
+    },
+    {
+      "slug": "integration-pms-moteur-reservation-directe",
+      "h1": "Choisir un PMS pour votre riad ou petit hôtel au Maroc : la grille de sélection à appliquer avant de comparer les logiciels",
+      "title": "Choisir un PMS pour votre riad ou petit hôtel au Maroc : la grille de sélection à appliquer avant de comparer les logiciels",
+      "metaDescription": "Choisissez et intégrez le bon PMS et moteur de réservation directe pour votre riad ou hôtel au Maroc : comparatif, synchronisation OTA et coûts réels.",
+      "date": "18 Août 2026",
+      "category": "Technologie Hôtelière",
+      "readTime": "10 min de lecture"
+    },
+    {
+      "slug": "marketing-email-automatisation-pour-hotels",
+      "h1": "Email Marketing Automatisé pour Hôtels : Transformer Votre Fichier Client en Réservations Directes",
+      "title": "Email Marketing Automatisé pour Hôtels : Transformer Votre Fichier Client en Réservations Directes",
+      "metaDescription": "Mettez en place des séquences d'e-mails automatisées pour votre hôtel ou riad : e-mails pré-séjour, demandes d'avis post-séjour et offres d'anniversaire.",
+      "date": "14 Août 2026",
+      "category": "Marketing par E-mail",
+      "readTime": "8 min de lecture"
+    },
+    {
+      "slug": "strategie-marketing-camp-desert",
+      "h1": "Commercialiser un bivouac ou camp de luxe dans le désert marocain : positionnement, saisonnalité et acquisition directe",
+      "title": "Commercialiser un bivouac ou camp de luxe dans le désert marocain (Agafay, Merzouga, M'Hamid) : positionnement, saisonnalité et acquisition directe",
+      "metaDescription": "Guide marketing pour camps de luxe et bivouacs dans le désert au Maroc (Agafay, Merzouga) : réservations directes, saisonnalité et réduction des OTA.",
+      "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
+      "date": "14 Mars 2026",
+      "category": "Hôtellerie de Niche",
+      "readTime": "12 min de lecture"
+    },
+    {
+      "slug": "marketing-digital-tour-operateur",
+      "h1": "Vendre des excursions et circuits au Maroc en direct : la méthode complète pour contourner GetYourGuide, Viator et les intermédiaires",
+      "title": "Vendre des excursions et circuits au Maroc en direct : la méthode complète pour contourner GetYourGuide, Viator et les intermédiaires",
+      "metaDescription": "Guide marketing digital pour tour-opérateurs et agences d'excursions au Maroc : vendez vos circuits en direct sans céder 25 % de commission aux OTA.",
+      "image": "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1200&q=80",
+      "date": "15 Mars 2026",
+      "category": "Marketing d'Excursion",
+      "readTime": "13 min de lecture"
+    },
+    {
+      "slug": "optimisation-vitesse-sites-web-hotellerie",
+      "h1": "Vitesse de chargement et Core Web Vitals pour sites d'hôtels et riads : chaque seconde de perdue vous coûte des réservations",
+      "title": "Vitesse de chargement et Core Web Vitals pour sites d'hôtels et riads : chaque seconde de perdue vous coûte des réservations",
+      "metaDescription": "Pourquoi la lenteur de votre site web fait fuir vos clients vers Booking.com. Guide d'optimisation Core Web Vitals (LCP, INP, CLS) pour riads et hôtels.",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "date": "16 Mars 2026",
+      "category": "Optimisation Technique",
+      "readTime": "11 min de lecture"
+    },
+    {
+      "slug": "automatisation-whatsapp-experience-client-hotel",
+      "h1": "WhatsApp Business et Conciergerie Automatisée pour Riads et Hôtels au Maroc : Le Guide Opérationnel Complet",
+      "title": "WhatsApp Business et Conciergerie Automatisée pour Riads et Hôtels au Maroc : De l'Arrivée en Médina aux Ventes Additionnelles et Avis 5 Étoiles",
+      "metaDescription": "Guide WhatsApp pour riads et hôtels au Maroc : automatisez l'accueil en médina, développez vos ventes additionnelles (dîners, spa) et vos avis Google.",
+      "date": "28 Juillet 2026",
+      "category": "Expérience Client & Tech",
+      "readTime": "12 min de lecture"
+    },
+    {
+      "slug": "landing-pages-hotels",
+      "h1": "Anatomie d'une Landing Page Hôtelière à Forte Conversion : Transformer vos Clics Publicitaires en Réservations Directes",
+      "title": "Anatomie d'une Landing Page Hôtelière à Forte Conversion : Transformer vos Clics Google Ads et Meta Ads en Réservations Directes",
+      "metaDescription": "Découvrez les 8 éléments clés d'une landing page d'hôtel performante pour rentabiliser vos campagnes Google Ads et Meta Ads au Maroc sans perte.",
+      "date": "22 Juillet 2026",
+      "category": "Design de Conversion",
+      "readTime": "11 min de lecture"
+    },
+    {
+      "slug": "tarification-saisonniere-gestion-revenus",
+      "h1": "Revenue Management et Tarification Saisonière pour Riads et Hôtels Indépendants au Maroc : La Méthode Complète",
+      "title": "Revenue Management et Tarification Saisonière pour Riads et Hôtels Indépendants au Maroc : Maximiser le RevPAR",
+      "metaDescription": "Guide de Revenue Management pour riads et hôtels au Maroc : grille tarifaire saisonnière, durées minimales de séjour (MLOS) et hausse du RevPAR direct.",
+      "date": "18 Juillet 2026",
+      "category": "Revenue Management",
+      "readTime": "13 min de lecture"
+    },
+    {
+      "slug": "rebranding-renovation-hotel-lancement-digital",
+      "h1": "Rebranding et Relancement Digital d'un Riad ou Hôtel Rénové au Maroc : Le Plan Stratégique à 60 Jours",
+      "title": "Rebranding et Relancement Digital d'un Riad ou Hôtel Rénové au Maroc : Le Plan Stratégique à 60 Jours",
+      "metaDescription": "Réussissez le relancement digital d'un riad ou hôtel rénové au Maroc : préservation du SEO, shooting d'architecture, refonte web et campagnes de lancement.",
+      "date": "12 Juillet 2026",
+      "category": "Stratégie de Marque",
+      "readTime": "12 min de lecture"
+    }
+  ]
+}

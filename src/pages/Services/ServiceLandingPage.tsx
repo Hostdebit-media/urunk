@@ -37,6 +37,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
   }
 
   const data = dataMap[lang];
+  const isCrossSector = ['seo-morocco', 'seo-agency-morocco', 'ai-seo-optimization', 'local-seo-morocco', 'seo-agency-casablanca', 'wordpress-seo', 'ecommerce-seo', 'web-design-morocco', 'web-design-casablanca', 'creation-site-web-prix'].includes(serviceKey);
   const serviceExpertiseLinks = getMatrixLinksForService(serviceKey, lang);
 
   const numericPrice = extractNumericMadPrice(data.investmentPrice);
@@ -63,7 +64,7 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
         "name": "Morocco"
       },
       {
-        "@type": "Country",
+        "@type": "Place",
         "name": "Worldwide"
       }
     ],
@@ -115,8 +116,8 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
         <div className="max-w-4xl">
           <p className="text-sm text-bg-light/75 mb-4">
             {isFrench
-              ? 'Solution digitale hôtellerie et tourisme'
-              : 'Hospitality and tourism digital infrastructure'}
+              ? (isCrossSector ? 'Expertise digitale pour les entreprises au Maroc' : 'Solution digitale hôtellerie et tourisme')
+              : (isCrossSector ? 'Digital expertise for businesses in Morocco' : 'Hospitality and tourism digital infrastructure')}
           </p>
 
           <h1 className="font-serif text-bg-light mb-6 text-balance">
@@ -441,8 +442,8 @@ export default function ServiceLandingPage({ serviceKey }: ServiceLandingPagePro
             </p>
             <h2 className="font-serif text-primary text-balance">
               {isFrench
-                ? 'Approfondir Votre Stratégie Digitale Hôtelière'
-                : 'Explore Related Hospitality Solutions & Guides'}
+                ? (isCrossSector ? 'Approfondir votre stratégie digitale' : 'Approfondir votre stratégie digitale hôtelière')
+                : (isCrossSector ? 'Explore related digital solutions & guides' : 'Explore related hospitality solutions & guides')}
             </h2>
           </div>
 

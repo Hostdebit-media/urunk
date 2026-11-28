@@ -1,0 +1,133 @@
+{
+  "version": "5.0.1",
+  "currency": "MAD",
+  "priceBasis": "Indicative starting fees; signed quote defines taxes, scope and third-party expenses",
+  "offers": [
+    {
+      "id": "web-foundation",
+      "billing": "one_time",
+      "amount": 12000,
+      "fr": {
+        "name": "Site Web — Fondation",
+        "audience": "Hôtels, riads et entreprises",
+        "items": [
+          "Design responsive et parcours de conversion",
+          "Fondations SEO techniques",
+          "Intégrations selon le devis",
+          "Recette et livraison documentées"
+        ]
+      },
+      "en": {
+        "name": "Website — Foundation",
+        "audience": "Hotels, riads and businesses",
+        "items": [
+          "Responsive design and conversion journey",
+          "Technical SEO foundations",
+          "Integrations as scoped in the quote",
+          "Documented acceptance and delivery"
+        ]
+      }
+    },
+    {
+      "id": "seo-growth",
+      "billing": "monthly",
+      "amount": 4000,
+      "fr": {
+        "name": "SEO — Visibilité durable",
+        "audience": "Entreprises avec un site existant",
+        "items": [
+          "Diagnostic et plan de priorités",
+          "Optimisations techniques et éditoriales convenues",
+          "Suivi Search Console et visibilité locale",
+          "Bilan mensuel et actions du mois suivant"
+        ]
+      },
+      "en": {
+        "name": "SEO — Sustainable Visibility",
+        "audience": "Businesses with an existing website",
+        "items": [
+          "Diagnostic and prioritized roadmap",
+          "Agreed technical and content improvements",
+          "Search Console and local visibility tracking",
+          "Monthly report and next actions"
+        ]
+      }
+    },
+    {
+      "id": "ads-performance",
+      "billing": "monthly",
+      "amount": 4000,
+      "fr": {
+        "name": "Ads — Acquisition ciblée",
+        "audience": "Entreprises avec un budget média défini",
+        "items": [
+          "Gestion d’un canal Google Ads ou Meta Ads",
+          "Suivi des conversions sous réserve des accès",
+          "Optimisation hebdomadaire",
+          "Rapport mensuel ; budget média séparé"
+        ]
+      },
+      "en": {
+        "name": "Ads — Targeted Acquisition",
+        "audience": "Businesses with a defined media budget",
+        "items": [
+          "Management of one Google Ads or Meta Ads channel",
+          "Conversion tracking subject to access",
+          "Weekly optimization",
+          "Monthly report; media spend separate"
+        ]
+      }
+    },
+    {
+      "id": "growth-partner",
+      "billing": "monthly",
+      "amount": 8000,
+      "fr": {
+        "name": "Growth — SEO + Ads",
+        "audience": "Entreprises prêtes à développer deux leviers",
+        "items": [
+          "Périmètres SEO et Ads réunis",
+          "Un canal publicitaire et un site",
+          "Revue des demandes et conversions",
+          "Feuille de route commerciale mensuelle"
+        ]
+      },
+      "en": {
+        "name": "Growth — SEO + Ads",
+        "audience": "Businesses ready to develop two channels",
+        "items": [
+          "Combined SEO and Ads scopes",
+          "One advertising channel and one website",
+          "Lead and conversion review",
+          "Monthly commercial roadmap"
+        ]
+      }
+    }
+  ],
+  "additional": {
+    "complexWebsite": 25000,
+    "tripadvisorMonthly": 3000,
+    "maintenance": "quote"
+  },
+  "architecture": {
+    "contract": [
+      "offer_id",
+      "customer_id",
+      "status",
+      "start_date",
+      "end_date",
+      "monthly_fee_minor",
+      "currency",
+      "renewal_date",
+      "signed_quote_reference"
+    ],
+    "states": [
+      "draft",
+      "active",
+      "paused",
+      "ended"
+    ],
+    "mrr": "Sum of monthly fees for signed active contracts; exclude setup, media spend, taxes and one-off projects. Do not infer cash collected from MRR.",
+    "payment": "Manual reconciliation in V5.0.6; no automatic billing or charges in V5.0.1."
+  }
+}

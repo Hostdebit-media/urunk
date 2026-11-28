@@ -2226,131 +2226,217 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
     }
   },
   "seo-morocco": {
-    "en": {
-      "title": "SEO Agency Morocco: Organic Search Growth | Urunk",
-      "description": "Specialized SEO agency in Morocco helping Moroccan enterprises and hospitality brands grow qualified organic traffic and direct inquiries.",
-      "heroTitle": "Morocco-Based SEO Agency",
-      "heroSub": "We turn organic search traffic into your most profitable revenue channel. Specialized SEO strategies for Moroccan businesses and hospitality brands.",
-      "calloutTitle": "Compete Effectively in Moroccan Search",
-      "calloutBody": "Whether you're a local business in Casablanca or a luxury hotel looking to attract international tourists, our tailored SEO strategies ensure you capture the top spots on Google when it matters most.",
-      "problemTitle": "Is your Moroccan business practically invisible online?",
-      "problemText1": "Having a beautiful website is useless if your target audience can't find it. If you aren't on the first page of Google, your competitors are stealing your potential clients every single day.",
-      "problemText2": "SEO in Morocco requires a deep understanding of bilingual search behavior (French and English), local search intent, and mobile-first optimization. Generic SEO tactics won't cut it.",
-      "signsTitle": "Signs you need professional SEO in Morocco:",
+    "fr": {
+      "title": "Agence SEO au Maroc : référencement naturel FR/EN | Urunk",
+      "description": "Audit SEO, référencement technique, contenus bilingues et suivi des demandes qualifiées pour les entreprises au Maroc. Découvrez les livrables et tarifs Urunk.",
+      "heroTitle": "Agence SEO au Maroc : gagnez en visibilité auprès de vos futurs clients",
+      "heroSub": "Pour PME, entreprises B2B, commerces et professionnels du tourisme : identifiez les recherches utiles à votre activité, corrigez les freins techniques et développez des pages qui répondent aux besoins de vos prospects.",
+      "calloutTitle": "Une stratégie guidée par vos objectifs commerciaux",
+      "calloutBody": "Nous priorisons les pages susceptibles de générer des demandes pertinentes plutôt que de promettre une première position Google. Le périmètre, les livrables et les critères de mesure sont définis avant intervention.",
+      "directAnswer": {
+        "question": "Que comprend une prestation SEO au Maroc ?",
+        "answer": "Un audit technique et éditorial, une cartographie des intentions de recherche, un plan d'optimisation et un suivi des résultats. Le SEO national Urunk est proposé à partir de 12 000 MAD par mois, selon le périmètre.",
+        "highlights": [
+          "Audit indexation et architecture",
+          "Stratégie FR/EN adaptée au marché",
+          "Priorités par page et intention",
+          "Rapport mensuel et plan d'action"
+        ]
+      },
+      "problemTitle": "Votre site attire-t-il les bons prospects ?",
+      "problemText1": "Une entreprise industrielle peut être recherchée pour un procédé, une capacité ou un devis. Un hôtel doit répondre à des questions de destination, de disponibilité et de réservation. Un même modèle de contenu ne répond pas à ces deux besoins.",
+      "problemText2": "Nous séparons les requêtes de marque, les recherches de services et les besoins informationnels. Les décisions s'appuient sur les données disponibles, notamment Search Console et les conversions configurées avec votre accord.",
+      "signsTitle": "Quand demander un audit SEO ?",
       "signs": [
-        "Your website receives very little organic traffic",
-        "You rank well for your brand name, but not for your services",
-        "International clients can't find your Moroccan business",
-        "You have no structured bilingual SEO strategy"
+        "Les pages de services ne génèrent pas de demandes qualifiées.",
+        "Plusieurs URLs répondent à la même recherche.",
+        "Les versions FR et EN ciblent mal leurs publics.",
+        "Les rapports ne distinguent pas trafic, demandes et ventes."
       ],
-      "featuresTitle": "Our Proven Moroccan SEO Framework:",
+      "featuresTitle": "Livrables du référencement naturel",
       "features": [
         {
-          "title": "Bilingual Optimization",
-          "desc": "Targeting both French-speaking locals/Europeans and English-speaking international markets."
+          "title": "Audit technique",
+          "desc": "Contrôle des statuts HTTP, de l'indexabilité, des canonicals, du maillage interne et des signaux de performance disponibles. Remise d'une liste de corrections priorisée."
         },
         {
-          "title": "Technical Excellence",
-          "desc": "Ensuring lightning-fast load times and perfect mobile rendering for Moroccan networks."
+          "title": "Cartographie des recherches",
+          "desc": "Association de chaque intention à une page cible ; distinction entre requêtes B2B, locales et touristiques. Les volumes sont indiqués uniquement lorsqu'une source est disponible."
         },
         {
-          "title": "High-Authority Link Building",
-          "desc": "Earning powerful backlinks from authoritative Moroccan and international publications."
+          "title": "Optimisation éditoriale FR/EN",
+          "desc": "Titres, réponses directes, descriptions, preuves vérifiables, FAQ utiles et liens internes. Adaptation linguistique, sans traduction automatique non relue."
+        },
+        {
+          "title": "Mesure et reporting",
+          "desc": "Suivi des clics et impressions Search Console, conversions organiques lorsque le suivi est opérationnel et évolution des pages prioritaires. Les limites d'attribution sont documentées."
+        },
+        {
+          "title": "Autorité éditoriale",
+          "desc": "Identification de sources, partenaires et opportunités de visibilité pertinentes. Aucun lien acheté ni placement éditorial garanti dans le périmètre standard."
         }
       ],
-      "processTitle": "How We Rank Your Business",
+      "processTitle": "Du diagnostic au suivi",
       "processSteps": [
         {
           "step": 1,
-          "title": "Comprehensive SEO Audit",
-          "desc": "Identifying technical bottlenecks and missed keyword opportunities."
+          "title": "Diagnostic initial",
+          "desc": "Recenser les pages, les données accessibles, les objectifs et les contraintes techniques."
         },
         {
           "step": 2,
-          "title": "Strategic Implementation",
-          "desc": "Optimizing on-page content, site architecture, and meta data."
+          "title": "Plan priorisé",
+          "desc": "Valider les corrections, pages à retravailler, responsabilités et calendrier."
         },
         {
           "step": 3,
-          "title": "Ongoing Growth",
-          "desc": "Continuous monitoring, content creation, and link building to secure top rankings."
+          "title": "Mise en œuvre et mesure",
+          "desc": "Appliquer les changements validés, vérifier les pages et présenter les résultats disponibles avec les prochaines actions."
         }
       ],
-      "investmentTitle": "National & International SEO",
-      "investmentPrice": "Starting at 12,000 MAD/mo",
-      "investmentDesc": "Comprehensive SEO strategy tailored to your market and competition.",
+      "investmentTitle": "SEO national et international",
+      "investmentPrice": "À partir de 12 000 MAD / mois",
+      "investmentDesc": "Le devis détaille le nombre de pages, la cadence de production, les accès requis, les interventions techniques et les éventuels frais tiers. Aucun classement ni volume de ventes garanti.",
       "faqs": [
         {
-          "q": "Do you optimize for French or English?",
-          "a": "Both. We develop sophisticated bilingual SEO strategies, utilizing proper hreflang tags to ensure you rank for both French and English search intents without duplicate content penalties."
+          "q": "Pouvez-vous garantir la première position Google ?",
+          "a": "Non. Les classements dépendent notamment de la concurrence, de la qualité du site et des systèmes de recherche. Nous définissons des objectifs mesurables et documentons les progrès."
         },
         {
-          "q": "How long until we see results in Morocco?",
-          "a": "While technical improvements can show results in weeks, a noticeable increase in qualified organic traffic and leads typically takes 3-6 months, depending on your industry's competitiveness."
+          "q": "Comment mesurer les résultats ?",
+          "a": "Nous comparons les clics, impressions et demandes organiques attribuables aux périodes de référence, selon les données disponibles et la configuration du suivi."
+        },
+        {
+          "q": "Le référencement local est-il inclus ?",
+          "a": "Les besoins locaux peuvent être intégrés au devis. Pour une entreprise dépendante de Google Maps, une prestation SEO local dédiée peut être plus adaptée."
+        },
+        {
+          "q": "Combien de temps faut-il ?",
+          "a": "Les délais varient selon l'état du site, les ressources, la concurrence et l'exploration des moteurs. Le plan précise les jalons, pas une date garantie de classement."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "SEO local Maroc",
+          "to": "/services/local-seo-morocco",
+          "desc": "Pour les recherches géographiques et Google Maps."
+        },
+        {
+          "label": "SEO hôtel",
+          "to": "/seo-hotel",
+          "desc": "Pour les établissements et la demande de réservation."
+        },
+        {
+          "label": "Tarifs",
+          "to": "/tarifs",
+          "desc": "Comparer les offres et demander un devis."
         }
       ]
     },
-    "fr": {
-      "title": "Agence SEO Maroc : Référencement Naturel | Urunk",
-      "description": "Agence SEO au Maroc dédiée aux entreprises marocaines et acteurs touristiques : référencement technique, contenus bilingues et trafic qualifié.",
-      "heroTitle": "Agence SEO Spécialisée au Maroc",
-      "heroSub": "Nous transformons le trafic de recherche organique en votre canal de revenus le plus rentable. Stratégies SEO spécialisées pour les entreprises et l'hôtellerie au Maroc.",
-      "calloutTitle": "Renforcez Votre Visibilité Digitale au Maroc",
-      "calloutBody": "Que vous soyez une entreprise à Casablanca ou un établissement hôtelier cherchant à attirer des voyageurs internationaux, nos stratégies SEO sur mesure ciblent les requêtes commerciales à forte intention.",
-      "problemTitle": "Votre entreprise marocaine est-elle invisible en ligne ?",
-      "problemText1": "Avoir un beau site web est inutile si votre public cible ne le trouve pas. Si vous n'êtes pas sur la première page de Google, vos concurrents vous volent vos clients potentiels chaque jour.",
-      "problemText2": "Le SEO au Maroc nécessite une compréhension approfondie du comportement de recherche bilingue (français et anglais), de l'intention locale et de l'optimisation mobile. Les tactiques SEO génériques ne suffisent pas.",
-      "signsTitle": "Signes que vous avez besoin d'un SEO professionnel au Maroc :",
+    "en": {
+      "title": "SEO Agency Morocco: Technical & Bilingual SEO | Urunk",
+      "description": "Technical SEO audits, bilingual content and qualified lead tracking for Moroccan businesses. Explore Urunk's deliverables, process and pricing.",
+      "heroTitle": "SEO agency in Morocco: reach customers searching for your services",
+      "heroSub": "For SMEs, B2B companies, local businesses and hospitality brands: identify relevant searches, resolve technical barriers and build pages around real buyer needs.",
+      "calloutTitle": "Commercial objectives before rankings",
+      "calloutBody": "We prioritize pages that can answer relevant searches and support qualified inquiries. Deliverables, responsibilities and measurement criteria are agreed before implementation; search rankings are not guaranteed.",
+      "directAnswer": {
+        "question": "What does an SEO service in Morocco include?",
+        "answer": "A technical and editorial audit, search-intent mapping, a prioritized optimization plan and ongoing reporting. Urunk's national SEO service starts at 12,000 MAD per month, depending on scope.",
+        "highlights": [
+          "Indexability and site architecture",
+          "FR/EN search-intent strategy",
+          "Page-level action plan",
+          "Monthly reporting"
+        ]
+      },
+      "problemTitle": "Is your website attracting the right prospects?",
+      "problemText1": "Industrial buyers may search for a manufacturing capability, specification or quote. Hotel guests search for destinations, availability and booking options. A generic content template cannot serve both audiences equally well.",
+      "problemText2": "We distinguish branded searches, service queries and informational needs. Priorities are informed by available Search Console data and properly configured conversion tracking.",
+      "signsTitle": "When to request an SEO audit",
       "signs": [
-        "Votre site web reçoit très peu de trafic organique",
-        "Vous êtes bien classé pour votre nom de marque, mais pas pour vos services",
-        "Les clients internationaux ne trouvent pas votre entreprise",
-        "Vous n'avez pas de stratégie SEO bilingue structurée"
+        "Service pages attract few qualified inquiries.",
+        "Multiple URLs target the same search intent.",
+        "French and English pages do not match their audiences.",
+        "Reports do not distinguish traffic, leads and sales."
       ],
-      "featuresTitle": "Notre Cadre SEO Marocain Éprouvé :",
+      "featuresTitle": "SEO deliverables",
       "features": [
         {
-          "title": "Optimisation Bilingue",
-          "desc": "Ciblage des locaux/européens francophones et des marchés internationaux anglophones."
+          "title": "Technical audit",
+          "desc": "Review HTTP status, indexability, canonicals, internal links and available performance signals. Deliver a prioritized remediation list."
         },
         {
-          "title": "Excellence Technique",
-          "desc": "Garantir des temps de chargement ultra-rapides et un rendu mobile parfait."
+          "title": "Search-intent mapping",
+          "desc": "Assign each relevant query group to a target page and separate B2B, local and travel needs. Keyword volume is reported only when a source is available."
         },
         {
-          "title": "Netlinking de Haute Autorité",
-          "desc": "Acquisition de backlinks puissants provenant de publications marocaines et internationales."
+          "title": "Bilingual content optimization",
+          "desc": "Improve titles, direct answers, descriptions, verifiable evidence, useful FAQs and internal links; review each locale for natural language."
+        },
+        {
+          "title": "Measurement and reporting",
+          "desc": "Track Search Console clicks and impressions and organic conversions where tracking is operational. Document attribution limitations."
+        },
+        {
+          "title": "Editorial authority",
+          "desc": "Identify relevant sources, partnerships and outreach opportunities. Paid links and guaranteed editorial placements are not included in the standard scope."
         }
       ],
-      "processTitle": "Comment Nous Classons Votre Entreprise",
+      "processTitle": "From assessment to reporting",
       "processSteps": [
         {
           "step": 1,
-          "title": "Audit SEO Complet",
-          "desc": "Identification des freins techniques et des opportunités de mots-clés manquées."
+          "title": "Baseline assessment",
+          "desc": "Inventory pages, available data, business objectives and technical constraints."
         },
         {
           "step": 2,
-          "title": "Implémentation Stratégique",
-          "desc": "Optimisation du contenu On-Page, de l'architecture du site et des métadonnées."
+          "title": "Prioritized plan",
+          "desc": "Agree on fixes, content priorities, ownership and delivery milestones."
         },
         {
           "step": 3,
-          "title": "Croissance Continue",
-          "desc": "Surveillance, création de contenu et création de liens en continu pour sécuriser les premières places."
+          "title": "Implementation and review",
+          "desc": "Apply approved changes, verify pages and report observed results with next actions."
         }
       ],
-      "investmentTitle": "SEO National & International",
-      "investmentPrice": "À partir de 12 000 MAD / mois",
-      "investmentDesc": "Stratégie SEO complète adaptée à votre marché et à la concurrence.",
+      "investmentTitle": "National and international SEO",
+      "investmentPrice": "Starting at 12,000 MAD/mo",
+      "investmentDesc": "The proposal specifies page scope, content cadence, required access, technical work and any third-party charges. No ranking or sales volume is guaranteed.",
       "faqs": [
         {
-          "q": "Optimisez-vous pour le français ou l'anglais ?",
-          "a": "Les deux. Nous développons des stratégies SEO bilingues sophistiquées, utilisant des balises hreflang appropriées pour vous classer sur les deux langues sans pénalité pour contenu dupliqué."
+          "q": "Can you guarantee first place on Google?",
+          "a": "No. Rankings depend on competition, site quality and search systems. We agree on measurable objectives and document progress."
         },
         {
-          "q": "Combien de temps avant de voir des résultats au Maroc ?",
-          "a": "Bien que les améliorations techniques puissent montrer des résultats en quelques semaines, une augmentation notable du trafic et des leads prend généralement 3 à 6 mois."
+          "q": "How do you measure performance?",
+          "a": "Compare clicks, impressions and attributable organic inquiries against a baseline using available data and tracking configuration."
+        },
+        {
+          "q": "Is local SEO included?",
+          "a": "Local requirements can be scoped in the proposal. Businesses relying on Google Maps may benefit more from a dedicated local SEO service."
+        },
+        {
+          "q": "How long does SEO take?",
+          "a": "Timelines vary with site condition, resources, competition and crawling. We define milestones rather than guaranteed ranking dates."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Local SEO Morocco",
+          "to": "/en/services/local-seo-morocco",
+          "desc": "For geographic searches and Google Maps."
+        },
+        {
+          "label": "Hotel SEO",
+          "to": "/en/hotel-seo",
+          "desc": "For accommodation and booking demand."
+        },
+        {
+          "label": "Pricing",
+          "to": "/en/pricing",
+          "desc": "Compare offers and request a proposal."
         }
       ]
     }
@@ -2913,136 +2999,211 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
   }
 ,
   "ai-seo-optimization": {
-  "en": {
-    "title": "AI SEO Optimization: Modern Search Content | Urunk",
-    "description": "Ensure your hotel, riad, or brand is cited by ChatGPT, Gemini, Perplexity, and Google AI Overviews with our pioneering AI Search Optimization services.",
-    "heroTitle": "AI SEO & Generative Engine Optimization",
-    "heroSub": "Position your Moroccan hospitality brand, enterprise, or ecommerce store directly inside AI conversational answers across ChatGPT, Gemini, Claude, and Perplexity.",
-    "calloutTitle": "The Future of Discovery is Generative AI",
-    "calloutBody": "Over 30% of global travelers and high-ticket buyers now consult conversational AI models before booking. We engineer your digital entity authority, knowledge graph citations, and semantic structured data so generative engines consistently recommend your brand as the definitive authority in Morocco.",
-    "problemTitle": "Is your brand invisible to conversational AI models?",
-    "problemText1": "Traditional search engines rank blue links based on keywords and PageRank. Conversational AI search engines operate on neural embeddings, entity confidence scores, knowledge graph nodes, and consensus citations.",
-    "problemText2": "If your digital entity is not semantically structured across trusted Moroccan and global data repositories, large language models will hallucinate competitors or omit your property entirely from curated travel itineraries.",
-    "signsTitle": "Signals your brand needs Generative Engine Optimization (GEO):",
-    "signs": [
-      "ChatGPT or Perplexity does not recommend your hotel when asked for best stays in your destination",
-      "Google AI Overviews summarize competitor packages while ignoring your domain",
-      "Your website lacks semantic Schema.org entity relationships and Wikipedia/Wikidata grounding",
-      "LLMs provide inaccurate pricing, location, or amenity details when queried about your brand"
-    ],
-    "featuresTitle": "Our AI Search & GEO Implementation Architecture:",
-    "features": [
-      {
-        "title": "Entity & Knowledge Graph Grounding",
-        "desc": "Structuring your brand data with multi-layered Schema.org markup, sameAs entity anchors, and authoritative data corroboration."
+    "fr": {
+      "title": "Agence GEO Maroc : audit et optimisation de la visibilité IA | Urunk",
+      "description": "Mesurez vos mentions et citations dans ChatGPT, Gemini, Perplexity et Google AI. Audit GEO, contenu vérifiable, suivi des sources et rapport comparatif.",
+      "heroTitle": "GEO et SEO IA au Maroc : mesurer et améliorer votre visibilité",
+      "heroSub": "Pour les entreprises, hôtels et marques qui veulent être mieux compris dans les réponses de recherche assistée par IA. Nous évaluons les mentions, citations et erreurs factuelles avant de prioriser les améliorations.",
+      "calloutTitle": "Des observations, pas des promesses de recommandation",
+      "calloutBody": "Les plateformes d'IA sélectionnent leurs propres sources et peuvent produire des réponses différentes pour une même question. Nous ne garantissons ni une citation, ni une recommandation, ni un délai de prise en compte.",
+      "directAnswer": {
+        "question": "Qu'est-ce que le GEO ?",
+        "answer": "Le Generative Engine Optimization vise à améliorer la qualité, l'accessibilité et la clarté des informations qu'un moteur de recherche assisté par IA peut retrouver. L'audit mesure la visibilité observée sur un échantillon documenté de questions.",
+        "highlights": [
+          "Liste de questions représentatives",
+          "Mentions et citations séparées",
+          "Sources et concurrents observés",
+          "Suivi daté, avec limites"
+        ]
       },
-      {
-        "title": "Semantic Vector Optimization",
-        "desc": "Crafting content with authoritative topical depth and natural conversational syntax that aligns with LLM retrieval-augmented generation (RAG)."
+      "problemTitle": "Votre marque est-elle décrite correctement dans les réponses IA ?",
+      "problemText1": "Les réponses peuvent omettre une entreprise, citer une ancienne page ou afficher des informations inexactes. Une mention de marque ne constitue pas nécessairement une citation de votre site.",
+      "problemText2": "Nous cherchons à distinguer ces phénomènes et à identifier les pages et sources publiques qui méritent d'être corrigées, enrichies ou mieux reliées.",
+      "signsTitle": "Quand lancer un audit de visibilité IA ?",
+      "signs": [
+        "Les réponses présentent des tarifs ou services obsolètes.",
+        "Les concurrents apparaissent sur les questions pertinentes.",
+        "Les pages de référence ne sont pas clairement identifiables.",
+        "Vous ne disposez pas d'une mesure reproductible."
+      ],
+      "featuresTitle": "Livrables GEO et visibilité IA",
+      "features": [
+        {
+          "title": "Mesure initiale",
+          "desc": "Définition des questions, langues, plateformes disponibles et dates. Conservation des réponses observées et de leurs sources lorsqu'elles sont affichées."
+        },
+        {
+          "title": "Mentions, citations et exactitude",
+          "desc": "Séparer la présence de marque de la citation de domaine ; relever les erreurs factuelles et les sources concurrentes."
+        },
+        {
+          "title": "Optimisation du contenu",
+          "desc": "Réponses directes, définitions, tableaux de comparaison, sources vérifiables, informations commerciales cohérentes et données structurées adaptées."
+        },
+        {
+          "title": "Accessibilité et cohérence",
+          "desc": "Examiner les pages publiques, l'exploration, les informations d'entreprise et la concordance entre les versions linguistiques."
+        },
+        {
+          "title": "Rapport comparatif",
+          "desc": "Comparer les mêmes questions à des dates différentes, distinguer les plateformes et signaler la variabilité des résultats et les données manquantes."
+        }
+      ],
+      "processTitle": "Une démarche GEO reproductible",
+      "processSteps": [
+        {
+          "step": 1,
+          "title": "Cadrage",
+          "desc": "Valider les audiences, questions, plateformes accessibles et critères d'observation."
+        },
+        {
+          "step": 2,
+          "title": "Audit et corrections",
+          "desc": "Cartographier les sources, proposer puis appliquer les améliorations éditoriales et techniques convenues."
+        },
+        {
+          "step": 3,
+          "title": "Suivi",
+          "desc": "Rejouer l'échantillon, documenter les variations et définir les prochaines priorités."
+        }
+      ],
+      "investmentTitle": "Accompagnement GEO et SEO IA",
+      "investmentPrice": "À partir de 14 000 MAD / mois",
+      "investmentDesc": "Le devis précise les plateformes couvertes, le nombre de questions, la fréquence des mesures et les pages à optimiser. Les outils tiers et accès nécessaires sont précisés séparément.",
+      "faqs": [
+        {
+          "q": "Garantissez-vous une recommandation ChatGPT ?",
+          "a": "Non. Aucune plateforme ne garantit une citation ou une recommandation à la suite d'une optimisation externe."
+        },
+        {
+          "q": "Quelle différence entre mention et citation ?",
+          "a": "Une mention nomme votre marque ; une citation renvoie à une source identifiable. Nous les mesurons séparément."
+        },
+        {
+          "q": "Le GEO remplace-t-il le SEO ?",
+          "a": "Non. Un site accessible, des informations exactes et un contenu utile restent fondamentaux. Le GEO ajoute une observation des réponses générées."
+        },
+        {
+          "q": "Quand verrai-je des résultats ?",
+          "a": "Les réponses et leurs sources peuvent évoluer à tout moment. Nous mesurons les changements observés sans promettre de délai de prise en compte."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Agence SEO Maroc",
+          "to": "/agence-seo-maroc",
+          "desc": "Renforcer les fondations du référencement naturel."
+        },
+        {
+          "label": "Tarifs",
+          "to": "/tarifs",
+          "desc": "Consulter les offres et demander un périmètre adapté."
+        }
+      ]
+    },
+    "en": {
+      "title": "GEO & AI SEO Morocco: AI Search Visibility Audit | Urunk",
+      "description": "Measure brand mentions and citations in ChatGPT, Gemini, Perplexity and Google AI. Evidence-led GEO audits, content improvements and comparative reporting.",
+      "heroTitle": "GEO and AI SEO in Morocco: measure and improve AI search visibility",
+      "heroSub": "For businesses, hotels and brands seeking more accurate representation in AI-assisted search. Assess mentions, citations and factual errors before prioritizing improvements.",
+      "calloutTitle": "Evidence, not guaranteed recommendations",
+      "calloutBody": "AI platforms select their own sources and may return different answers to the same question. We cannot guarantee a citation, recommendation or timeline for changes to appear.",
+      "directAnswer": {
+        "question": "What is generative engine optimization (GEO)?",
+        "answer": "GEO aims to improve the clarity, accessibility and quality of information AI-assisted search can retrieve. An audit measures observed visibility across a documented sample of questions.",
+        "highlights": [
+          "Representative query sample",
+          "Separate mentions and citations",
+          "Observed sources and competitors",
+          "Dated reporting with limitations"
+        ]
       },
-      {
-        "title": "Multi-Model Brand Citation Strategy",
-        "desc": "Securing citations across primary LLM training corpora, industry directories, editorial publications, and verified review platforms."
-      }
-    ],
-    "processTitle": "Our Generative AI Optimization Roadmap",
-    "processSteps": [
-      {
-        "step": 1,
-        "title": "AI Visibility & Entity Audit",
-        "desc": "Benchmarking brand prompts across ChatGPT, Gemini, Perplexity, and Claude to assess current recommendation frequency and sentiment."
-      },
-      {
-        "step": 2,
-        "title": "Semantic Schema & Content Re-engineering",
-        "desc": "Injecting comprehensive JSON-LD entity graphs and structuring technical content for optimal neural embeddings and information extraction."
-      },
-      {
-        "step": 3,
-        "title": "Consensus Building & Digital PR",
-        "desc": "Publishing authoritative co-citations on leading Moroccan tourism, corporate, and regional directories to solidify LLM knowledge retrieval."
-      }
-    ],
-    "investmentTitle": "AI SEO & Generative Engine Retainer",
-    "investmentPrice": "Starting at 14,000 MAD/mo",
-    "investmentDesc": "Comprehensive Generative Engine Optimization (GEO), Knowledge Graph structuring, and multi-model citation engineering.",
-    "faqs": [
-      {
-        "q": "How does Generative Engine Optimization (GEO) differ from traditional SEO?",
-        "a": "While traditional SEO focuses on keyword rankings and backlinks for SERP blue links, GEO focuses on establishing entity confidence, neural semantic associations, and consensus citations so LLMs (ChatGPT, Gemini, Perplexity) synthesize your brand as the primary recommendation in generative summaries."
-      },
-      {
-        "q": "How quickly do AI models update their recommendations?",
-        "a": "Search-grounded models like Perplexity and Google AI Overviews retrieve live web data instantly, showing improvements in 2 to 4 weeks. Base model weights reflect changes during subsequent training and fine-tuning cycles, reinforced continuously by live retrieval layers."
-      }
-    ]
+      "problemTitle": "Is your brand accurately represented in AI answers?",
+      "problemText1": "Answers can omit a business, cite an outdated page or present incorrect information. A brand mention does not necessarily include a citation of your website.",
+      "problemText2": "We distinguish those outcomes and identify public pages and sources that should be corrected, expanded or connected more clearly.",
+      "signsTitle": "When to request an AI visibility audit",
+      "signs": [
+        "Answers contain outdated prices or services.",
+        "Competitors appear on relevant buyer questions.",
+        "Reference pages are difficult to identify.",
+        "There is no repeatable visibility baseline."
+      ],
+      "featuresTitle": "GEO and AI visibility deliverables",
+      "features": [
+        {
+          "title": "Baseline measurement",
+          "desc": "Define questions, languages, available platforms and dates. Record observed answers and sources where displayed."
+        },
+        {
+          "title": "Mentions, citations and factual accuracy",
+          "desc": "Distinguish brand presence from domain citations and identify factual errors and competing sources."
+        },
+        {
+          "title": "Content optimization",
+          "desc": "Improve direct answers, definitions, comparisons, verifiable sources, commercial consistency and appropriate structured data."
+        },
+        {
+          "title": "Accessibility and consistency",
+          "desc": "Review public pages, crawlability, business information and alignment between language versions."
+        },
+        {
+          "title": "Comparative reporting",
+          "desc": "Repeat the same query sample, compare platforms separately and document variability and missing data."
+        }
+      ],
+      "processTitle": "A repeatable GEO workflow",
+      "processSteps": [
+        {
+          "step": 1,
+          "title": "Scope",
+          "desc": "Agree on audiences, questions, accessible platforms and observation criteria."
+        },
+        {
+          "step": 2,
+          "title": "Audit and improve",
+          "desc": "Map sources, recommend and implement agreed editorial and technical changes."
+        },
+        {
+          "step": 3,
+          "title": "Monitor",
+          "desc": "Repeat the sample, document observed changes and define next priorities."
+        }
+      ],
+      "investmentTitle": "GEO and AI SEO retainer",
+      "investmentPrice": "Starting at 14,000 MAD/mo",
+      "investmentDesc": "The proposal defines platform coverage, query count, measurement frequency and target pages. Required access and third-party tools are specified separately.",
+      "faqs": [
+        {
+          "q": "Can you guarantee a ChatGPT recommendation?",
+          "a": "No. No AI platform guarantees a citation or recommendation following external optimization."
+        },
+        {
+          "q": "What is the difference between a mention and a citation?",
+          "a": "A mention names a brand; a citation points to an identifiable source. We measure them separately."
+        },
+        {
+          "q": "Does GEO replace SEO?",
+          "a": "No. Accessible websites, accurate facts and useful content remain essential. GEO adds measurement of generated answers."
+        },
+        {
+          "q": "When will results appear?",
+          "a": "Answers and sources can change at any time. We report observed changes without promising a specific timeline."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "SEO Agency Morocco",
+          "to": "/en/seo-agency-morocco",
+          "desc": "Strengthen organic search fundamentals."
+        },
+        {
+          "label": "Pricing",
+          "to": "/en/pricing",
+          "desc": "Review published offers and request a tailored scope."
+        }
+      ]
+    }
   },
-  "fr": {
-    "title": "Optimisation SEO via l'IA : Contenu Recherche | Urunk",
-    "description": "Faites recommander votre hôtel, riad ou marque par ChatGPT, Gemini, Perplexity et Google AI Overviews grâce à notre expertise en optimisation pour IA générative.",
-    "heroTitle": "Référencement SEO & Optimisation Moteurs IA",
-    "heroSub": "Positionnez votre établissement hôtelier ou entreprise marocaine directement dans les réponses conversationnelles de ChatGPT, Gemini, Claude et Perplexity.",
-    "calloutTitle": "L'Avenir de la Recherche Passe par l'IA Générative",
-    "calloutBody": "Plus de 30 % des voyageurs internationaux et décideurs B2B interrogent désormais des modèles d'IA avant de réserver. Nous structurons l'autorité de votre entité numérique et vos données sémantiques pour que les moteurs d'IA recommandent systématiquement votre marque comme la référence au Maroc.",
-    "problemTitle": "Votre marque est-elle absente des réponses de l'IA ?",
-    "problemText1": "Les moteurs de recherche classiques classent des liens en fonction de mots-clés. Les moteurs d'IA générative fonctionnent sur des plongements neuronaux (embeddings), des graphes de connaissances et des citations de consensus.",
-    "problemText2": "Sans une architecture sémantique rigoureuse et une présence consolidée dans les sources de données vérifiées, les modèles de langage omettent votre établissement ou suggèrent vos concurrents directs.",
-    "signsTitle": "Signes que vous devez optimiser votre visibilité sur l'IA :",
-    "signs": [
-      "ChatGPT ou Perplexity ne cite pas votre hôtel lors de requêtes sur votre destination",
-      "Les aperçus IA de Google (AI Overviews) affichent des concurrents sans mentionner votre offre",
-      "Votre site manque de balisage sémantique Schema.org avancé reliant votre entité aux référentiels officiels",
-      "Les IA fournissent des informations erronées ou obsolètes sur vos services"
-    ],
-    "featuresTitle": "Notre Architecture d'Optimisation Moteurs Génératifs (GEO) :",
-    "features": [
-      {
-        "title": "Structuration de Graphe de Connaissances",
-        "desc": "Implémentation de données structurées Schema.org exhaustives avec liaisons d'entités sameAs et corroborations de données fiables."
-      },
-      {
-        "title": "Optimisation Sémantique Vectorielle",
-        "desc": "Rédaction à haute valeur ajoutée et syntaxe conversationnelle optimisée pour la génération augmentée de récupération (RAG)."
-      },
-      {
-        "title": "Stratégie de Citations Multi-Modèles",
-        "desc": "Ancrage de votre autorité sur les répertoires et publications consultés par les corpus d'entraînement de ChatGPT, Gemini et Perplexity."
-      }
-    ],
-    "processTitle": "Notre Méthodologie d'Optimisation IA",
-    "processSteps": [
-      {
-        "step": 1,
-        "title": "Audit de Visibilité IA & Benchmark",
-        "desc": "Test systématique de dizaines de prompts sectoriels sur ChatGPT, Gemini et Perplexity pour mesurer votre taux de citation actuel."
-      },
-      {
-        "step": 2,
-        "title": "Restructuration Sémantique & JSON-LD",
-        "desc": "Déploiement d'un maillage sémantique de pointe facilitant l'extraction de données factuelles par les robots d'indexation IA."
-      },
-      {
-        "step": 3,
-        "title": "Consolidation d'Autorité & RP Digitales",
-        "desc": "Diffusion d'articles de référence et co-citations sur des plateformes marocaines et internationales à forte réputation numérique."
-      }
-    ],
-    "investmentTitle": "Accompagnement SEO IA & Moteurs Génératifs",
-    "investmentPrice": "À partir de 14 000 MAD / mois",
-    "investmentDesc": "Optimisation complète pour moteurs génératifs (GEO), structuration de graphe de connaissances et monitoring de visibilité IA.",
-    "faqs": [
-      {
-        "q": "Quelle est la différence entre le SEO traditionnel et le SEO pour IA (GEO) ?",
-        "a": "Le SEO classique optimise les classements sur les pages de résultats traditionnelles de Google. Le GEO (Generative Engine Optimization) vise à influencer les réponses synthétisées générées par les LLMs (ChatGPT, Gemini, Perplexity), en positionnant votre marque comme la réponse d'autorité la plus fiable."
-      },
-      {
-        "q": "En combien de temps observe-t-on des résultats sur les moteurs IA ?",
-        "a": "Les moteurs avec recherche en direct (comme Perplexity ou Google AI Overviews) intègrent les données optimisées en 2 à 4 semaines. Pour les modèles entraînés par batchs, les citations s'ancrent durablement au fil des cycles d'apprentissage."
-      }
-    ]
-  }
-}
-,
   "ecommerce-seo": {
   "en": {
     "title": "Ecommerce SEO Services: Boost Store Sales | Urunk",
@@ -3634,144 +3795,221 @@ export const servicesData: Record<string, { en: ServicePageData; fr: ServicePage
 }
 ,
   "seo-agency-morocco": {
-  "en": {
-    "title": "SEO Agency Morocco: Technical & Bilingual SEO | Urunk",
-    "description": "Specialized SEO agency in Morocco delivering measurable organic growth through technical search optimization, FR/EN content architecture, and digital PR.",
-    "heroTitle": "Morocco's Technical & Bilingual Organic Search Agency",
-    "heroSub": "We turn Google search into your most profitable, predictable customer acquisition channel. Tailored organic search strategies for Moroccan enterprises, luxury hospitality, and digital brands.",
-    "calloutTitle": "Engineering Unfair Organic Search Advantages",
-    "calloutBody": "Ranking on Google is not about tricks or superficial keyword stuffing. We combine deep technical web performance, bilingual semantic content architecture (French and English), and premium digital PR to place your brand at the absolute summit of high-value search results.",
-    "problemTitle": "Is your Moroccan business missing out on high-intent search revenue?",
-    "problemText1": "Over 85% of high-intent purchase journeys in Morocco start with a search engine. When your company doesn't hold top-3 organic positions, prospective clients buy from your competitors instead.",
-    "problemText2": "The Moroccan search ecosystem demands nuanced multilingual optimization, technical Core Web Vitals compliance, and authoritative link acquisition that generic international agencies simply cannot deliver.",
-    "signsTitle": "Signals your enterprise needs a specialized Moroccan SEO partner:",
-    "signs": [
-      "Organic search traffic represents less than 40% of your total website visitors",
-      "Your site ranks for brand terms, but loses on lucrative non-branded service searches",
-      "Bilingual search performance is inconsistent between French and English markets",
-      "Previous SEO agencies delivered hollow ranking reports without measurable revenue growth"
-    ],
-    "featuresTitle": "Our Full-Scale SEO Growth Architecture:",
-    "features": [
-      {
-        "title": "Multilingual Semantic Architecture",
-        "desc": "Engineered site taxonomy and content clusters optimized for French-speaking domestic markets and English-speaking global clients."
+    "fr": {
+      "title": "Agence SEO au Maroc : référencement naturel FR/EN | Urunk",
+      "description": "Audit SEO, référencement technique, contenus bilingues et suivi des demandes qualifiées pour les entreprises au Maroc. Découvrez les livrables et tarifs Urunk.",
+      "heroTitle": "Agence SEO au Maroc : gagnez en visibilité auprès de vos futurs clients",
+      "heroSub": "Pour PME, entreprises B2B, commerces et professionnels du tourisme : identifiez les recherches utiles à votre activité, corrigez les freins techniques et développez des pages qui répondent aux besoins de vos prospects.",
+      "calloutTitle": "Une stratégie guidée par vos objectifs commerciaux",
+      "calloutBody": "Nous priorisons les pages susceptibles de générer des demandes pertinentes plutôt que de promettre une première position Google. Le périmètre, les livrables et les critères de mesure sont définis avant intervention.",
+      "directAnswer": {
+        "question": "Que comprend une prestation SEO au Maroc ?",
+        "answer": "Un audit technique et éditorial, une cartographie des intentions de recherche, un plan d'optimisation et un suivi des résultats. Le SEO national Urunk est proposé à partir de 12 000 MAD par mois, selon le périmètre.",
+        "highlights": [
+          "Audit indexation et architecture",
+          "Stratégie FR/EN adaptée au marché",
+          "Priorités par page et intention",
+          "Rapport mensuel et plan d'action"
+        ]
       },
-      {
-        "title": "Technical Core Web Vitals Tuning",
-        "desc": "Sub-second server response times, optimized JavaScript hydration, and clean mobile crawl efficiency."
+      "problemTitle": "Votre site attire-t-il les bons prospects ?",
+      "problemText1": "Une entreprise industrielle peut être recherchée pour un procédé, une capacité ou un devis. Un hôtel doit répondre à des questions de destination, de disponibilité et de réservation. Un même modèle de contenu ne répond pas à ces deux besoins.",
+      "problemText2": "Nous séparons les requêtes de marque, les recherches de services et les besoins informationnels. Les décisions s'appuient sur les données disponibles, notamment Search Console et les conversions configurées avec votre accord.",
+      "signsTitle": "Quand demander un audit SEO ?",
+      "signs": [
+        "Les pages de services ne génèrent pas de demandes qualifiées.",
+        "Plusieurs URLs répondent à la même recherche.",
+        "Les versions FR et EN ciblent mal leurs publics.",
+        "Les rapports ne distinguent pas trafic, demandes et ventes."
+      ],
+      "featuresTitle": "Livrables du référencement naturel",
+      "features": [
+        {
+          "title": "Audit technique",
+          "desc": "Contrôle des statuts HTTP, de l'indexabilité, des canonicals, du maillage interne et des signaux de performance disponibles. Remise d'une liste de corrections priorisée."
+        },
+        {
+          "title": "Cartographie des recherches",
+          "desc": "Association de chaque intention à une page cible ; distinction entre requêtes B2B, locales et touristiques. Les volumes sont indiqués uniquement lorsqu'une source est disponible."
+        },
+        {
+          "title": "Optimisation éditoriale FR/EN",
+          "desc": "Titres, réponses directes, descriptions, preuves vérifiables, FAQ utiles et liens internes. Adaptation linguistique, sans traduction automatique non relue."
+        },
+        {
+          "title": "Mesure et reporting",
+          "desc": "Suivi des clics et impressions Search Console, conversions organiques lorsque le suivi est opérationnel et évolution des pages prioritaires. Les limites d'attribution sont documentées."
+        },
+        {
+          "title": "Autorité éditoriale",
+          "desc": "Identification de sources, partenaires et opportunités de visibilité pertinentes. Aucun lien acheté ni placement éditorial garanti dans le périmètre standard."
+        }
+      ],
+      "processTitle": "Du diagnostic au suivi",
+      "processSteps": [
+        {
+          "step": 1,
+          "title": "Diagnostic initial",
+          "desc": "Recenser les pages, les données accessibles, les objectifs et les contraintes techniques."
+        },
+        {
+          "step": 2,
+          "title": "Plan priorisé",
+          "desc": "Valider les corrections, pages à retravailler, responsabilités et calendrier."
+        },
+        {
+          "step": 3,
+          "title": "Mise en œuvre et mesure",
+          "desc": "Appliquer les changements validés, vérifier les pages et présenter les résultats disponibles avec les prochaines actions."
+        }
+      ],
+      "investmentTitle": "SEO national et international",
+      "investmentPrice": "À partir de 12 000 MAD / mois",
+      "investmentDesc": "Le devis détaille le nombre de pages, la cadence de production, les accès requis, les interventions techniques et les éventuels frais tiers. Aucun classement ni volume de ventes garanti.",
+      "faqs": [
+        {
+          "q": "Pouvez-vous garantir la première position Google ?",
+          "a": "Non. Les classements dépendent notamment de la concurrence, de la qualité du site et des systèmes de recherche. Nous définissons des objectifs mesurables et documentons les progrès."
+        },
+        {
+          "q": "Comment mesurer les résultats ?",
+          "a": "Nous comparons les clics, impressions et demandes organiques attribuables aux périodes de référence, selon les données disponibles et la configuration du suivi."
+        },
+        {
+          "q": "Le référencement local est-il inclus ?",
+          "a": "Les besoins locaux peuvent être intégrés au devis. Pour une entreprise dépendante de Google Maps, une prestation SEO local dédiée peut être plus adaptée."
+        },
+        {
+          "q": "Combien de temps faut-il ?",
+          "a": "Les délais varient selon l'état du site, les ressources, la concurrence et l'exploration des moteurs. Le plan précise les jalons, pas une date garantie de classement."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "SEO local Maroc",
+          "to": "/services/local-seo-morocco",
+          "desc": "Pour les recherches géographiques et Google Maps."
+        },
+        {
+          "label": "SEO hôtel",
+          "to": "/seo-hotel",
+          "desc": "Pour les établissements et la demande de réservation."
+        },
+        {
+          "label": "Tarifs",
+          "to": "/tarifs",
+          "desc": "Comparer les offres et demander un devis."
+        }
+      ]
+    },
+    "en": {
+      "title": "SEO Agency Morocco: Technical & Bilingual SEO | Urunk",
+      "description": "Technical SEO audits, bilingual content and qualified lead tracking for Moroccan businesses. Explore Urunk's deliverables, process and pricing.",
+      "heroTitle": "SEO agency in Morocco: reach customers searching for your services",
+      "heroSub": "For SMEs, B2B companies, local businesses and hospitality brands: identify relevant searches, resolve technical barriers and build pages around real buyer needs.",
+      "calloutTitle": "Commercial objectives before rankings",
+      "calloutBody": "We prioritize pages that can answer relevant searches and support qualified inquiries. Deliverables, responsibilities and measurement criteria are agreed before implementation; search rankings are not guaranteed.",
+      "directAnswer": {
+        "question": "What does an SEO service in Morocco include?",
+        "answer": "A technical and editorial audit, search-intent mapping, a prioritized optimization plan and ongoing reporting. Urunk's national SEO service starts at 12,000 MAD per month, depending on scope.",
+        "highlights": [
+          "Indexability and site architecture",
+          "FR/EN search-intent strategy",
+          "Page-level action plan",
+          "Monthly reporting"
+        ]
       },
-      {
-        "title": "High-Impact Digital PR & Link Acquisition",
-        "desc": "Securing contextual backlinks from leading Moroccan news outlets, industry journals, and global publications."
-      }
-    ],
-    "processTitle": "Our Proven Enterprise SEO Methodology",
-    "processSteps": [
-      {
-        "step": 1,
-        "title": "Deep Technical & Market Audit",
-        "desc": "Analyzing crawl logs, indexation hygiene, keyword revenue opportunity, and competitor gap matrices."
-      },
-      {
-        "step": 2,
-        "title": "Structural Optimization & Content Strategy",
-        "desc": "Re-architecting URL hierarchies, deploying rich schema markup, and executing high-depth content clusters."
-      },
-      {
-        "step": 3,
-        "title": "Authoritative Outreach & Iterative Scaling",
-        "desc": "Executing strategic PR outreach, tracking rank trajectories, and continuously expanding topical domain visibility."
-      }
-    ],
-    "investmentTitle": "Enterprise SEO Strategic Retainer",
-    "investmentPrice": "Starting at 12,000 MAD/mo",
-    "investmentDesc": "Comprehensive full-service SEO management including technical engineering, bilingual content production, and digital PR.",
-    "faqs": [
-      {
-        "q": "Why is bilingual SEO essential for businesses in Morocco?",
-        "a": "Moroccan business decision-makers and local consumers primarily search in French, while international tourists, foreign investors, and export buyers search in English. A robust bilingual SEO strategy captures both markets without keyword cannibalization."
-      },
-      {
-        "q": "How do you measure and report SEO success?",
-        "a": "We track meaningful commercial metrics: qualified organic lead conversions, direct bookings, revenue attribution, top-3 keyword market share, and organic traffic growth."
-      },
-      {
-        "q": "Do you optimize for French or English?",
-        "a": "Both. We develop sophisticated bilingual SEO strategies, utilizing proper hreflang tags to ensure you rank for both French and English search intents without duplicate content penalties."
-      },
-      {
-        "q": "How long until we see results in Morocco?",
-        "a": "While technical improvements can show results in weeks, a noticeable increase in qualified organic traffic and leads typically takes 3-6 months, depending on your industry's competitiveness."
-      }
-    ]
+      "problemTitle": "Is your website attracting the right prospects?",
+      "problemText1": "Industrial buyers may search for a manufacturing capability, specification or quote. Hotel guests search for destinations, availability and booking options. A generic content template cannot serve both audiences equally well.",
+      "problemText2": "We distinguish branded searches, service queries and informational needs. Priorities are informed by available Search Console data and properly configured conversion tracking.",
+      "signsTitle": "When to request an SEO audit",
+      "signs": [
+        "Service pages attract few qualified inquiries.",
+        "Multiple URLs target the same search intent.",
+        "French and English pages do not match their audiences.",
+        "Reports do not distinguish traffic, leads and sales."
+      ],
+      "featuresTitle": "SEO deliverables",
+      "features": [
+        {
+          "title": "Technical audit",
+          "desc": "Review HTTP status, indexability, canonicals, internal links and available performance signals. Deliver a prioritized remediation list."
+        },
+        {
+          "title": "Search-intent mapping",
+          "desc": "Assign each relevant query group to a target page and separate B2B, local and travel needs. Keyword volume is reported only when a source is available."
+        },
+        {
+          "title": "Bilingual content optimization",
+          "desc": "Improve titles, direct answers, descriptions, verifiable evidence, useful FAQs and internal links; review each locale for natural language."
+        },
+        {
+          "title": "Measurement and reporting",
+          "desc": "Track Search Console clicks and impressions and organic conversions where tracking is operational. Document attribution limitations."
+        },
+        {
+          "title": "Editorial authority",
+          "desc": "Identify relevant sources, partnerships and outreach opportunities. Paid links and guaranteed editorial placements are not included in the standard scope."
+        }
+      ],
+      "processTitle": "From assessment to reporting",
+      "processSteps": [
+        {
+          "step": 1,
+          "title": "Baseline assessment",
+          "desc": "Inventory pages, available data, business objectives and technical constraints."
+        },
+        {
+          "step": 2,
+          "title": "Prioritized plan",
+          "desc": "Agree on fixes, content priorities, ownership and delivery milestones."
+        },
+        {
+          "step": 3,
+          "title": "Implementation and review",
+          "desc": "Apply approved changes, verify pages and report observed results with next actions."
+        }
+      ],
+      "investmentTitle": "National and international SEO",
+      "investmentPrice": "Starting at 12,000 MAD/mo",
+      "investmentDesc": "The proposal specifies page scope, content cadence, required access, technical work and any third-party charges. No ranking or sales volume is guaranteed.",
+      "faqs": [
+        {
+          "q": "Can you guarantee first place on Google?",
+          "a": "No. Rankings depend on competition, site quality and search systems. We agree on measurable objectives and document progress."
+        },
+        {
+          "q": "How do you measure performance?",
+          "a": "Compare clicks, impressions and attributable organic inquiries against a baseline using available data and tracking configuration."
+        },
+        {
+          "q": "Is local SEO included?",
+          "a": "Local requirements can be scoped in the proposal. Businesses relying on Google Maps may benefit more from a dedicated local SEO service."
+        },
+        {
+          "q": "How long does SEO take?",
+          "a": "Timelines vary with site condition, resources, competition and crawling. We define milestones rather than guaranteed ranking dates."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Local SEO Morocco",
+          "to": "/en/services/local-seo-morocco",
+          "desc": "For geographic searches and Google Maps."
+        },
+        {
+          "label": "Hotel SEO",
+          "to": "/en/hotel-seo",
+          "desc": "For accommodation and booking demand."
+        },
+        {
+          "label": "Pricing",
+          "to": "/en/pricing",
+          "desc": "Compare offers and request a proposal."
+        }
+      ]
+    }
   },
-  "fr": {
-    "title": "Agence SEO Maroc : Expert Référencement | Urunk",
-    "description": "Agence SEO spécialisée au Maroc : croissance organique mesurable grâce au référencement technique, à la stratégie de contenu bilingue et au netlinking.",
-    "heroTitle": "Agence Experte en Référencement Naturel au Maroc",
-    "heroSub": "Faites de Google votre canal d'acquisition de clients le plus rentable et pérenne. Stratégies SEO sur-mesure pour entreprises marocaines, hôtellerie haut de gamme et e-commerce.",
-    "calloutTitle": "Construisez un Avantage Concurrentiel Durable sur Google",
-    "calloutBody": "Le référencement naturel n'est pas une question d'artifices. Nous combinons excellence technique web, architecture sémantique bilingue (français et anglais) et relations presse digitales pour positionner votre marque au sommet des requêtes les plus rentables du marché marocain et international.",
-    "problemTitle": "Votre entreprise passe-t-elle à côté des opportunités Google au Maroc ?",
-    "problemText1": "Plus de 85 % des parcours d'achat à forte valeur ajoutée au Maroc débutent sur un moteur de recherche. Si vous ne figurez pas dans les 3 premières positions, vos prospects signent chez vos concurrents.",
-    "problemText2": "Le marché marocain exige une maîtrise fine du comportement de recherche bilingue, des performances techniques irréprochables sur réseaux mobiles et des liens d'autorité locaux.",
-    "signsTitle": "Signes que vous devez collaborer avec une agence SEO d'élite :",
-    "signs": [
-      "Le trafic naturel représente moins de 40 % de vos visites totales",
-      "Vous êtes visible sur votre nom de marque, mais absent sur vos prestations stratégiques",
-      "Votre visibilité est déséquilibrée entre vos versions française et anglaise",
-      "Vos prestataires précédents vous ont fourni des rapports vagues sans impact sur votre chiffre d'affaires"
-    ],
-    "featuresTitle": "Notre Architecture de Croissance SEO Complète :",
-    "features": [
-      {
-        "title": "Architecture Sémantique Bilingue",
-        "desc": "Arborescences et silos de contenu taillés sur mesure pour séduire à la fois les marchés francophones et anglophones."
-      },
-      {
-        "title": "Excellence Technique & Core Web Vitals",
-        "desc": "Optimisation du code, temps de réponse serveur inférieurs à 300 ms et fluidité mobile exemplaire."
-      },
-      {
-        "title": "Netlinking Stratégique & Relations Presse",
-        "desc": "Acquisition de backlinks d'autorité depuis des médias marocains et des portails sectoriels reconnus."
-      }
-    ],
-    "processTitle": "Notre Démarche Méthodologique",
-    "processSteps": [
-      {
-        "step": 1,
-        "title": "Audit Technique & Analyse d'Opportunité",
-        "desc": "Diagnostic approfondi des freins d'indexation, étude sémantique concurrentielle et identification des gains rapides."
-      },
-      {
-        "step": 2,
-        "title": "Optimisation On-Page & Structuration",
-        "desc": "Refonte des balises, déploiement du balisage Schema.org avancé et création de contenus d'autorité."
-      },
-      {
-        "step": 3,
-        "title": "Campagnes de Netlinking & Suivi ROI",
-        "desc": "Développement de l'autorité du domaine, suivi régulier des conversions et ajustements continus de positionnement."
-      }
-    ],
-    "investmentTitle": "Accompagnement SEO Entreprise",
-    "investmentPrice": "À partir de 12 000 MAD / mois",
-    "investmentDesc": "Prise en charge intégrale : SEO technique, stratégie de contenu bilingue, netlinking premium et reporting mensuel orienté business.",
-    "faqs": [
-      {
-        "q": "Pourquoi le SEO bilingue est-il indispensable au Maroc ?",
-        "a": "Les clients locaux et décideurs marocains effectuent principalement leurs recherches en français, tandis que les touristes internationaux et acheteurs étrangers utilisent l'anglais. Une stratégie bilingue rigoureuse avec balises hreflang capte les deux audiences sans risque de cannibalisation."
-      },
-      {
-        "q": "Quels indicateurs suivez-vous pour mesurer la performance ?",
-        "a": "Nous mesurons l'impact réel sur votre activité : volume de formulaires de contact qualifiés, réservations directes, chiffre d'affaires généré et évolution des positions dans le Top 3."
-      }
-    ]
-  }
-}
-,
   "web-design-casablanca": {
   "en": {
     "title": "Website Design Casablanca | Web Design Agency | Urunk",

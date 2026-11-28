@@ -1,0 +1,185 @@
+{
+  "before": {
+    "header": {
+      "text": "UrunkServicesSecteurs et villesTarifsRessourcesÀ proposFR/ENDemander un audit gratuitFR/EN",
+      "cls": "print:hidden sticky top-0 left-0 right-0 z-50 w-full bg-bg-light px-[clamp(20px,5vw,56px)] transition-colors duration-200 border-b border-transparent",
+      "w": 390,
+      "h": 73,
+      "y": 0,
+      "size": "16.37px",
+      "display": "block",
+      "position": "sticky"
+    },
+    "menu": {
+      "text": "",
+      "cls": "p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm text-primary hover:bg-bg-alt transition-colors cursor-pointer",
+      "w": 44,
+      "h": 44,
+      "y": 14,
+      "size": "16.37px",
+      "display": "flex",
+      "position": "static"
+    },
+    "hero": {
+      "text": "Agence web & acquisition · CasablancaVotre indépendance digitale commence ici.Sites web, r",
+      "cls": "bg-bg-light text-primary py-[clamp(64px,7.5vw,112px)] px-[clamp(20px,4vw,44px)] pt-10 md:pt-16 pb-[clamp(56px,7vw,96px)]",
+      "w": 390,
+      "h": 1319,
+      "y": 73,
+      "size": "16.37px",
+      "display": "block",
+      "position": "static"
+    },
+    "title": {
+      "text": "Votre indépendance digitale commence ici.",
+      "cls": "type-display mt-6 mb-7",
+      "w": 350,
+      "h": 119,
+      "y": 154,
+      "size": "36px",
+      "display": "block",
+      "position": "static"
+    },
+    "img": {
+      "text": "",
+      "cls": "w-full h-full object-cover object-cover",
+      "w": 350,
+      "h": 438,
+      "y": 838,
+      "size": "16.37px",
+      "display": "block",
+      "position": "static"
+    },
+    "footer": {
+      "text": "Parlons de votre projetUn hôtel ou un riad à faire réserver en direct ?Demander un audit g",
+      "cls": "print:hidden bg-primary text-bg-light pt-14 pb-10 px-[clamp(20px,5vw,56px)] mt-auto",
+      "w": 390,
+      "h": 2171,
+      "y": 11538,
+      "size": "16.37px",
+      "display": "block",
+      "position": "static"
+    },
+    "actions": [
+      {
+        "text": "Demander un audit gratuit",
+        "cls": "bg-accent text-white hover:bg-accent-hover active:translate-y-px min-h-12 px-7 py-3.5 text-[15px] font-semibold tracking-[0.01em] rounded-sm no-underline inline-flex items-center justify-center text-center transition-colors cursor-pointer d",
+        "w": 217,
+        "h": 48,
+        "y": 499,
+        "size": "15px",
+        "display": "flex",
+        "position": "static"
+      },
+      {
+        "text": "Voir nos réalisations",
+        "cls": "link-arrow",
+        "w": 173,
+        "h": 34,
+        "y": 567,
+        "size": "16.37px",
+        "display": "flex",
+        "position": "static"
+      }
+    ],
+    "nav": [
+      {
+        "text": "Urunk",
+        "cls": "font-serif text-[26px] leading-none font-normal text-primary no-underline hover:text-accent transition-colors whitespace-nowrap shrink-0",
+        "w": 79,
+        "h": 26,
+        "y": 23,
+        "size": "26px",
+        "display": "block",
+        "position": "static"
+      },
+      {
+        "text": "FR/EN",
+        "cls": "inline-flex items-center px-3 py-1.5 min-h-[38px] rounded-sm text-[13px] font-medium whitespace-nowrap shrink-0 no-underline transition-colors border cursor-pointer border-border-subtle text-primary hover:border-accent bg-bg-card",
+        "w": 71,
+        "h": 38,
+        "y": 17,
+        "size": "13px",
+        "display": "flex",
+        "position": "static"
+      }
+    ]
+  },
+  "open": {
+    "expanded": "true",
+    "links": [
+      {
+        "text": "Urunk",
+        "cls": "font-serif text-[26px] leading-none font-normal text-primary no-underline hover:text-accent transition-colors whitespace-nowrap shrink-0",
+        "w": 79,
+        "h": 26,
+        "y": 23,
+        "size": "26px",
+        "display": "block",
+        "position": "static"
+      },
+      {
+        "text": "FR/EN",
+        "cls": "inline-flex items-center px-3 py-1.5 min-h-[38px] rounded-sm text-[13px] font-medium whitespace-nowrap shrink-0 no-underline transition-colors border cursor-pointer border-border-subtle text-primary hover:border-accent bg-bg-card",
+        "w": 71,
+        "h": 38,
+        "y": 17,
+        "size": "13px",
+        "display": "flex",
+        "position": "static"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "",
+        "cls": "p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm text-primary hover:bg-bg-alt transition-colors cursor-pointer",
+        "w": 44,
+        "h": 44,
+        "y": 14,
+        "size": "16.37px",
+        "display": "flex",
+        "position": "static",
+        "expanded": "true"
+      }
+    ],
+    "panels": [],
+    "scroll": false
+  },
+  "expanded": {
+    "links": [
+      {
+        "text": "Urunk",
+        "cls": "font-serif text-[26px] leading-none font-normal text-primary no-underline hover:text-accent transition-colors whitespace-nowrap shrink-0",
+        "w": 79,
+        "h": 26,
+        "y": 23,
+        "size": "26px",
+        "display": "block",
+        "position": "static"
+      },
+      {
+        "text": "FR/EN",
+        "cls": "inline-flex items-center px-3 py-1.5 min-h-[38px] rounded-sm text-[13px] font-medium whitespace-nowrap shrink-0 no-underline transition-colors border cursor-pointer border-border-subtle text-primary hover:border-accent bg-bg-card",
+        "w": 71,
+        "h": 38,
+        "y": 17,
+        "size": "13px",
+        "display": "flex",
+        "position": "static"
+      }
+    ],
+    "buttons": [
+      {
+        "text": "",
+        "cls": "p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-sm text-primary hover:bg-bg-alt transition-colors cursor-pointer",
+        "w": 44,
+        "h": 44,
+        "y": 14,
+        "size": "16.37px",
+        "display": "flex",
+        "position": "static",
+        "expanded": "true"
+      }
+    ]
+  }
+}

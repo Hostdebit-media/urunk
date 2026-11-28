@@ -1,0 +1,22 @@
+{
+  "base": "5a71b31e-ea4d-4128-be22-0a4cee066978",
+  "append": "ops/intelligence-module-v507.js",
+  "edits": [
+    [
+      "  if(url.pathname===URUNK_BILL_BASE||url.pathname===URUNK_BILL_BASE+\"/\")return urunkBillRouteV506(request,env,url);",
+      "  if(url.pathname===URUNK_BI_BASE||url.pathname===URUNK_BI_BASE+\"/\")return urunkBiRouteV507(request,env,url);\n  if(url.pathname===URUNK_BILL_BASE||url.pathname===URUNK_BILL_BASE+\"/\")return urunkBillRouteV506(request,env,url);"
+    ],
+    [
+      "<a href=\"/private/growth/crm/contracts\">Contrats</a><a href=\"/cdn-cgi/access/logout\">",
+      "<a href=\"/private/growth/crm/contracts\">Contrats</a><a href=\"/private/growth/crm/intelligence\">Rentabilité</a><a href=\"/cdn-cgi/access/logout\">"
+    ],
+    [
+      "<a href=\"/private/growth/crm/contracts\">Contrats & encaissements</a></nav>",
+      "<a href=\"/private/growth/crm/contracts\">Contrats & encaissements</a> · <a href=\"/private/growth/crm/intelligence\">Rentabilité</a></nav>"
+    ],
+    [
+      "<a href=\"/private/growth/crm/revenue\">Revenus</a></nav><section><h2>Registre commercial",
+      "<a href=\"/private/growth/crm/revenue\">Revenus</a> · <a href=\"/private/growth/crm/intelligence\">Rentabilité</a></nav><section><h2>Registre commercial"
+    ]
+  ]
+}
